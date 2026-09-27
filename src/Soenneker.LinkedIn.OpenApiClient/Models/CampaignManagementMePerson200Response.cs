@@ -35,10 +35,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignManagementMePerson200ResponseId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseId? CampaignManagementMePerson200ResponseId { get; set; }
 #nullable restore
 #else
-        public string CampaignManagementMePerson200ResponseId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseId CampaignManagementMePerson200ResponseId { get; set; }
 #endif
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,7 +156,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "artifact", n => { Artifact = n.GetStringValue(); } },
                 { "authorizationMethod", n => { AuthorizationMethod = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseAuthorizationMethod>(); } },
                 { "backgroundPicture", n => { BackgroundPicture = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture.CreateFromDiscriminatorValue); } },
-                { "id", n => { CampaignManagementMePerson200ResponseId = n.GetStringValue(); } },
+                { "id", n => { CampaignManagementMePerson200ResponseId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseId>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseId.CreateFromDiscriminatorValue); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData.CreateFromDiscriminatorValue); } },
                 { "firstName", n => { FirstName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName.CreateFromDiscriminatorValue); } },
                 { "geoLocation", n => { GeoLocation = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation.CreateFromDiscriminatorValue); } },
@@ -180,7 +180,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("artifact", Artifact);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseAuthorizationMethod>("authorizationMethod", AuthorizationMethod);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture>("backgroundPicture", BackgroundPicture);
-            writer.WriteStringValue("id", CampaignManagementMePerson200ResponseId);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseId>("id", CampaignManagementMePerson200ResponseId);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData>("data", Data);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName>("firstName", FirstName);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation>("geoLocation", GeoLocation);

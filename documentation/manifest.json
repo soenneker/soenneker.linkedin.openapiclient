@@ -578,7 +578,7 @@
   "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos": {
     "error": null,
     "file": "73d5b5d6bb13e4afb77be7dc.json",
-    "sha256": "a36947a68296f105eca603b37eeb041fd38011d01342c811f00c1c48ed754272",
+    "sha256": "5552e492df2648ffe791a6b2b9d60ae27d52fdfe1073271ced65a0f27ba69584",
     "version": "li-dma-data-portability-2026-08"
   },
   "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-viewer-count-analytics": {
@@ -773,10 +773,16 @@
     "sha256": "43f14575448cd3adc57826d198e2736ff62d5244b59c30710a4cbac7678ea3d9",
     "version": "li-dma-data-portability-2026-08"
   },
+  "https://learn.microsoft.com/en-us/linkedin/k2/itm-preview/itm-full-profile": {
+    "error": null,
+    "file": "d639d1b99505ac4546fdf811.json",
+    "sha256": "6eada42cd36a2070c2beaf745ce17e1ffe73d7535d84ba65d1fdde4305a7e474",
+    "version": ""
+  },
   "https://learn.microsoft.com/en-us/linkedin/learning/": {
     "error": null,
     "file": "ad2462ce5cc88b6f86c0eb52.json",
-    "sha256": "e260012e3dd52204900f7fc20db145d3c665419dbe2c7f6ea5abebd2ad2e63f2",
+    "sha256": "a26c313668c00227269826e491a8ff9ec4d256fcfc53357eef4cfb130d2732a3",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations": {
@@ -1376,7 +1382,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api": {
     "error": null,
     "file": "900f8e2ecc020ef34ba6876c.json",
-    "sha256": "29d5ebbdfef0f51167df92af83a450394800a8345da3ed7d3950b1e4e92e1b69",
+    "sha256": "1a82f556c50eeed7a90c69bc1c4ab2a34e87c9920df601d22070ede73a5de31e",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview": {
@@ -1460,7 +1466,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search": {
     "error": null,
     "file": "2fe4c53e786da55f090297d7.json",
-    "sha256": "5cab4b5965f3d44089bf1b79b1481c1f261526c4664f059467efe78b5b22c89c",
+    "sha256": "fafadf7373bd8f824f5030f2bec48a678139e98aa6be5b76885ee593b0e48ad3",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics": {
@@ -2168,7 +2174,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview": {
     "error": null,
     "file": "19c40eb9d1f410c96cc5d1d4.json",
-    "sha256": "77c496f5692d545f68d8d93c303b301162bd7f0e7f3505e32d72c08ad1655032",
+    "sha256": "61ca831009a417de63c1463cc737b2feb6c200f3c1a6cf19ff05e45b94d91988",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers": {
@@ -2384,7 +2390,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/": {
     "error": null,
     "file": "cf81349877581333e7632513.json",
-    "sha256": "7046ecee18fd41fd39157637292e3e519c8fbeb38b872c8c0467a738b5fc415d",
+    "sha256": "c21d223e3ebd6a296e31e34b919b4a1f904ac26a6f4c17ddfec734a6d700fe1e",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/video-ads-usecase": {
@@ -2558,7 +2564,7 @@
   "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe": {
     "error": null,
     "file": "55b0427bf7c3253d60b01463.json",
-    "sha256": "33ff69dc8073724547459ca7ee3ab170ac073e26e1fca8e17ff1d78f55595f4e",
+    "sha256": "ae406f8991a7326da9ebce9e0f541ff3362f75b504f9fb5026a593ecf38d67f9",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq": {
@@ -2654,7 +2660,7 @@
   "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development": {
     "error": null,
     "file": "fc13908da730ba4bb4ee20c7.json",
-    "sha256": "e87af67fa90a3cf02116313f376fc52a201f58a4dbdd00abcc3a91c1dce97c54",
+    "sha256": "dab053848667ed8fcac6fe6d18bd99b5e828f18a0b677ffe08bca06614314562",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview": {
@@ -3212,7 +3218,7 @@
   "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile": {
     "error": null,
     "file": "164d6f8e55e312d582e1d581.json",
-    "sha256": "966a1c009eface9db675dc0b872995662c740e943133ce8d70db0f930a0ccc07",
+    "sha256": "a0ac2cf4be9d0eab32daadedbf5492956e0aebdd956662a3d8f9c2ee52ba701a",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification": {
@@ -3242,7 +3248,7 @@
   "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile": {
     "error": null,
     "file": "429ca2beb7c0a60a65c3a25a.json",
-    "sha256": "5285f4cf5447b376d9fe5051fde0883ed55fc60bdbb3cf1877ac43ddabf5ceaf",
+    "sha256": "6ed7614a49acac8bae7c7fef29cec0cb22ed2e6adc4b7f811d50a62599c02199",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor": {
@@ -4142,7 +4148,7 @@
   "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs": {
     "error": null,
     "file": "321f78a1ed4eeb2394b8f0cb.json",
-    "sha256": "6075bf93c465b39bf9cfa5d8fadf04b1643891b8645dcbde5856c97d78179314",
+    "sha256": "e761b82b3abd5da15aa27f733fb456b355d3a4e560835e9d17aa55d7220929d1",
     "version": "li-lts-unversioned"
   },
   "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents": {

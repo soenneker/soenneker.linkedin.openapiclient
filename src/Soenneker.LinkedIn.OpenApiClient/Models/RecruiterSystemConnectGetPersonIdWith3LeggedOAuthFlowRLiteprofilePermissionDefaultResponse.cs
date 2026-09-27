@@ -83,6 +83,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePicture ProfilePicture { get; set; }
 #endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId? RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponse"/> and sets the default values.
         /// </summary>
@@ -117,6 +125,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "ID", n => { ID = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseLastName>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseLastName.CreateFromDiscriminatorValue); } },
                 { "profilePicture", n => { ProfilePicture = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePicture>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePicture.CreateFromDiscriminatorValue); } },
+                { "id", n => { RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -135,6 +144,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("ID", ID);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseLastName>("lastName", LastName);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePicture>("profilePicture", ProfilePicture);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId>("id", RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,300 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/k2/itm-preview/itm-full-profile",
+  "Title": "Internal Talent Management API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/k2/itm-preview/itm-full-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Internal Talent Management API",
+      "Anchor": "internal-talent-management-api",
+      "SectionPath": [],
+      "Text": "The Internal Talent Management API returns a member\u2019s LinkedIn profile at the direction of that member and subject to the member\u2019s privacy settings. This private API is only available to support an organization\u2019s internal talent initiatives, and use is restricted to current employees.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Internal Talent Management API",
+      "Anchor": "internal-talent-management-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Internal Talent Management API",
+      "Anchor": "internal-talent-management-api",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "You must use an access token with r_fullprofile scope to make an authenticated call on behalf of a user. Please refer to OAuth 2.0 Authentication Code Flow to learn more about how to retrieve an access token with required scope.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "You may only store data returned from the Profile API for the authenticated members with their permission. Please refer to this document for guidance on storing authenticated member data. You may never store data returned from the Profile API for members other than the authenticated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "|",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Current Member\u0027s Profile",
+      "Anchor": "retrieve-current-members-profile",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile"
+      ],
+      "Text": "To identify and retrieve the current member\u0027s profile based on the access token, call below endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Current Member\u0027s Profile",
+      "Anchor": "retrieve-current-members-profile",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Current Member\u0027s Profile",
+      "Anchor": "retrieve-current-members-profile",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me\nAuthorization: Bearer \u003Caccess_token\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Current Member\u0027s Profile",
+      "Anchor": "retrieve-current-members-profile",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/v2/me\u0027 \\\n--header \u0027Authorization: Bearer \u003Caccess_token\u003E\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return 200 OK HTTP status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022lastName\u0022: {\n      \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Smith\u0022\n      },\n      \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n      }\n  },\n  \u0022educations\u0022: {\n      \u0022932103556\u0022: {\n          \u0022startMonthYear\u0022: {\n              \u0022month\u0022: 2,\n              \u0022year\u0022: 2022\n          },\n          \u0022endMonthYear\u0022: {\n              \u0022month\u0022: 2,\n              \u0022year\u0022: 2029\n          },\n          \u0022fieldsOfStudy\u0022: [\n              {\n                  \u0022fieldOfStudyName\u0022: {\n                      \u0022localized\u0022: {\n                          \u0022en_US\u0022: \u0022Business\u0022\n                      },\n                      \u0022preferredLocale\u0022: {\n                          \u0022country\u0022: \u0022US\u0022,\n                          \u0022language\u0022: \u0022en\u0022\n                      }\n                  }\n              }\n          ],\n          \u0022degreeName\u0022: {\n              \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Master of Science - MS\u0022\n              },\n              \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n              }\n          },\n          \u0022id\u0022: 932103556,\n          \u0022schoolName\u0022: {\n              \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022LinkedIn University\u0022\n              },\n              \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n              }\n          }\n      }\n  },\n  \u0022industryId\u0022: \u0022urn:li:industry:70\u0022,\n  \u0022id\u0022: \u0022123abc\u0022,\n  \u0022headline\u0022: {\n      \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022LinkedIn Headline\u0022\n      },\n      \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n      }\n  },\n  \u0022localizedFirstName\u0022: \u0022John\u0022,\n  \u0022localizedLastName\u0022: \u0022Smith\u0022,\n  \u0022vanityName\u0022: \u0022john-smith-vanityName\u0022,\n  \u0022supportedLocales\u0022: [\n      {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n      }\n  ],\n  \u0022localizedHeadline\u0022: \u0022LinkedIn Headline\u0022,\n  \u0022positions\u0022: {\n      \u00222063330102\u0022: {\n          \u0022company~\u0022: {\n              \u0022vanityName\u0022: \u0022LinkedIn-vanityName\u0022,\n              \u0022localizedName\u0022: \u0022LinkedIn\u0022,\n              \u0022name\u0022: {\n                  \u0022localized\u0022: {\n                      \u0022en_US\u0022: \u0022LinkedIn\u0022\n                  },\n                  \u0022preferredLocale\u0022: {\n                      \u0022country\u0022: \u0022US\u0022,\n                      \u0022language\u0022: \u0022en\u0022\n                  }\n              },\n              \u0022id\u0022: 33200573\n          },\n          \u0022startMonthYear\u0022: {\n              \u0022month\u0022: 10,\n              \u0022year\u0022: 2022\n          },\n          \u0022company\u0022: \u0022urn:li:organization:33200573\u0022,\n          \u0022id\u0022: 2063330102,\n          \u0022title\u0022: {\n              \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Software Test Engineer\u0022\n              },\n              \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n              }\n          }\n      }\n  },\n  \u0022firstName\u0022: {\n      \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022John\u0022\n      },\n      \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n      }\n  },\n  \u0022profilePicture\u0022: {...},\n  \u0022geoLocation\u0022: {\n      \u0022geo\u0022: \u0022urn:li:geo:100477049\u0022,\n      \u0022autoGenerated\u0022: false\n  },\n  \u0022location\u0022: {\n      \u0022countryCode\u0022: \u0022US\u0022\n  },\n  \u0022lastModified\u0022: 1706455706765\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Sample Response"
+      ],
+      "Text": "To know more about the fields returned in the response, refer here - Full Profile Fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Person ID",
+      "Anchor": "person-id",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Person ID"
+      ],
+      "Text": "The urn returned in the id object is the unique identifier of the member. This should be stored and referenced where possible as LinkedIn APIs utilize both URNs and IDs. In our API documentation, we reference this urn as Person ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Person ID",
+      "Anchor": "person-id",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Person ID"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Person ID",
+      "Anchor": "person-id",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Person ID"
+      ],
+      "Text": "Each Person ID is unique to the context of your application only. Sharing a Person ID across applications will not work and result in a 404 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Public Profile URL",
+      "Anchor": "public-profile-url",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Public Profile URL"
+      ],
+      "Text": "The vanityName is used to represent the public profile URL in the following format: https://www.linkedin.com/in/{vanityName}.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving additional organization data with response projections",
+      "Anchor": "retrieving-additional-organization-data-with-response-projections",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Retrieving additional organization data with response projections"
+      ],
+      "Text": "When you call an API, the response may contain organization URNs referencing the organization data as stored by LinkedIn. These URNs are valuable on their own; however, there may be instances when you want to expand a URN and access the values associated with the entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving additional organization data with response projections",
+      "Anchor": "retrieving-additional-organization-data-with-response-projections",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Retrieving additional organization data with response projections"
+      ],
+      "Text": "Additional organization data can be added the API response by altering the request URL with projection strings as shown in the example. To know more about response projections refer here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving additional organization data with response projections",
+      "Anchor": "retrieving-additional-organization-data-with-response-projections",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Retrieving additional organization data with response projections"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving additional organization data with response projections",
+      "Anchor": "retrieving-additional-organization-data-with-response-projections",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Retrieving additional organization data with response projections"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me?projection=(positions*(company~,*),educations*(school~,*),*)\nAuthorization: Bearer \u003Caccess_token\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving additional organization data with response projections",
+      "Anchor": "retrieving-additional-organization-data-with-response-projections",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Retrieving additional organization data with response projections"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/v2/me?projection=(positions*(company~,*),educations*(school~,*),*)\u0027 \\\n--header \u0027Authorization: Bearer \u003Caccess_token\u003E\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Retrieving additional organization data with response projections",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022positions\u0022: {\n        \u00222063330102\u0022: {\n            \u0022company~\u0022: {\n                \u0022vanityName\u0022: \u0022company-vanityName\u0022,\n                \u0022localizedName\u0022: \u0022LinkedIN\u0022,\n                \u0022name\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022LinkedIn\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022id\u0022: 33200573\n            },\n            \u0022startMonthYear\u0022: {..},\n            \u0022company\u0022: \u0022urn:li:organization:33200573\u0022,\n            \u0022id\u0022: 2063330102,\n            \u0022title\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Software Test Engineer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }\n        }\n    },\n    \u0022id\u0022: \u0022EuEsmEHA9O\u0022,\n    \u0022headline\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022LinkedIN Headline\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022localizedFirstName\u0022: \u0022John\u0022,\n    \u0022localizedLastName\u0022: \u0022Smith\u0022,\n    \u0022vanityName\u0022: \u0022vanityName\u0022,\n    \u0022supportedLocales\u0022: [\n        {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        },\n        {\n            \u0022country\u0022: \u0022IN\u0022,\n            \u0022language\u0022: \u0022hi\u0022\n        }\n    ],\n    \u0022localizedHeadline\u0022: \u0022Test Engineer [Edited AGAIN Version 2]\u0022,\n    \u0022profilePicture\u0022: {...}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification",
+      "Anchor": "certification",
+      "SectionPath": [
+        "Certification"
+      ],
+      "Text": "To ensure the Internal Talent Management API behaves as expected and adheres to the agreed upon Internal Talent Management API terms, LinkedIn must certify the finished development of your integration of this API into your application before it is released to your current employees. Upon completing development, please reach out to your Business Development point of contact to schedule a certification call.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -73,6 +73,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName LastName { get; set; }
 #endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId? LinkedinLiveEventsMeGetDefaultResponseId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId LinkedinLiveEventsMeGetDefaultResponseId { get; set; }
+#endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The profilePicture property</summary>
@@ -116,6 +124,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "geoLocation", n => { GeoLocation = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation.CreateFromDiscriminatorValue); } },
                 { "ID", n => { ID = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName.CreateFromDiscriminatorValue); } },
+                { "id", n => { LinkedinLiveEventsMeGetDefaultResponseId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId.CreateFromDiscriminatorValue); } },
                 { "profilePicture", n => { ProfilePicture = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture.CreateFromDiscriminatorValue); } },
             };
         }
@@ -134,6 +143,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation>("geoLocation", GeoLocation);
             writer.WriteStringValue("ID", ID);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName>("lastName", LastName);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId>("id", LinkedinLiveEventsMeGetDefaultResponseId);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture>("profilePicture", ProfilePicture);
             writer.WriteAdditionalData(AdditionalData);
         }
