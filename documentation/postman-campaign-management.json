@@ -1115,6 +1115,123 @@
                       "status": "OK"
                     }
                   ]
+                },
+                {
+                  "id": "fc1dada6-89aa-43e5-98e0-d4f948f03b06",
+                  "name": "Me-Person V2 Full Profile",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "oauth2": {
+                        "addTokenTo": "header"
+                      },
+                      "type": "oauth2"
+                    },
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "http://api.linkedin.com/v2/me"
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": null,
+                      "body": "{\n    \u0022localizedLastName\u0022: \u0022Deon\u0022,\n    \u0022profilePicture\u0022: {\n        \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:D5603AQHLnj9nsEZ3-g\u0022\n    },\n    \u0022vanityName\u0022: \u0022ring-deon-n8ba409\u0022,\n    \u0022lastName\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Deon\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022firstName\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Ring\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022localizedHeadline\u0022: \u0022Professional Tester\u0022,\n    \u0022id\u0022: \u0022qrOweYM47u\u0022,\n    \u0022headline\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Professional Tester\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022localizedFirstName\u0022: \u0022Ring\u0022\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": ":status",
+                          "value": 200
+                        },
+                        {
+                          "key": "date",
+                          "value": "Tue, 22 Sep 2026 18:34:40 GMT"
+                        },
+                        {
+                          "key": "content-type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "x-restli-protocol-version",
+                          "value": "1.0.0"
+                        },
+                        {
+                          "key": "x-content-type-options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "strict-transport-security",
+                          "value": "max-age=31536000"
+                        },
+                        {
+                          "key": "x-li-fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "x-li-pop",
+                          "value": "cf-prod-lva1-x"
+                        },
+                        {
+                          "key": "x-li-proto",
+                          "value": "http/2"
+                        },
+                        {
+                          "key": "x-li-uuid",
+                          "value": "AAZcFp6ZKt9vlYxlfebGuQ=="
+                        },
+                        {
+                          "key": "set-cookie",
+                          "value": "lidc=\u0022b=VB26:s=V:r=V:a=V:p=V:g=6434:u=31:x=1:i=1790102080:t=1790184674:v=2:sig=AQGhu0d9tnyCF99F8Uo3I6saQ5apze3B\u0022"
+                        },
+                        {
+                          "key": "x-li-route-key",
+                          "value": "\u0022b=VB26:s=V:r=V:a=V:p=V:g=6434:u=31:x=1:i=1790102080:t=1790184674:v=2:sig=AQGhu0d9tnyCF99F8Uo3I6saQ5apze3B\u0022"
+                        },
+                        {
+                          "key": "cf-cache-status",
+                          "value": "DYNAMIC"
+                        },
+                        {
+                          "key": "content-encoding",
+                          "value": "gzip"
+                        },
+                        {
+                          "key": "server",
+                          "value": "cloudflare"
+                        },
+                        {
+                          "key": "cf-ray",
+                          "value": "a3f367b098664b96-SJC"
+                        },
+                        {
+                          "key": "alt-svc",
+                          "value": "h3=\u0022:443\u0022; ma=86400"
+                        }
+                      ],
+                      "id": "98c966a1-371d-414a-820d-038fadf413d0",
+                      "name": "Me-Person",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": "{{baseUrl}}/me"
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
                 }
               ],
               "name": "User Access"

@@ -19,6 +19,7 @@ using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Me;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.OrganizationAcls;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Posts;
 using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Shares;
+using Soenneker.LinkedIn.OpenApiClient.CampaignManagement.V2;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -106,6 +107,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement
         public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Shares.SharesRequestBuilder Shares
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Shares.SharesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v2 property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.V2.V2RequestBuilder V2
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.V2.V2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.campaignManagement.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
