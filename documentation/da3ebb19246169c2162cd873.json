@@ -10,6 +10,7 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module7",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide",
@@ -1008,6 +1009,18 @@
         "Handling ACL"
       ],
       "Text": "To create a new ACL group, retrieve, update, or delete an existing ACL group, use /entityAcls with parameter entityType=JOB_REQUISITION.\nTo create, retrieve, update, or delete existing ACL assignees, use /entityAclAssignees.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification",
+      "Anchor": "certification",
+      "SectionPath": [
+        "Migration guidelines",
+        "Certification"
+      ],
+      "Text": "Before scheduling your migration certification demo, complete every test case in Module 7 Certification. It covers migration readiness and cutover, job requisition and job requisition stage sync, ID parity and deduplication, application re-linkage, One Click Export continuity, ACL migration, and cross-cutting migration checks.",
       "Headers": [],
       "Rows": []
     }

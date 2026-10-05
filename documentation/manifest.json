@@ -1382,7 +1382,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api": {
     "error": null,
     "file": "900f8e2ecc020ef34ba6876c.json",
-    "sha256": "29d5ebbdfef0f51167df92af83a450394800a8345da3ed7d3950b1e4e92e1b69",
+    "sha256": "1a82f556c50eeed7a90c69bc1c4ab2a34e87c9920df601d22070ede73a5de31e",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview": {
@@ -4331,10 +4331,16 @@
     "sha256": "e2fed66f54295593908f4c2b266a11178a0c6e86fb7264f0302200d569332e1c",
     "version": "li-lts-2026-04"
   },
+  "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module7": {
+    "error": null,
+    "file": "725ae3c557eb189c2cd06281.json",
+    "sha256": "2bba0969c4ac7f252b05653c5f7b10a951479a2640b0b86af3f65a020c3994d0",
+    "version": "li-lts-2026-04"
+  },
   "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification": {
     "error": null,
     "file": "a0a6b9e09110a91c7d1be6cc.json",
-    "sha256": "b92747ccc19e01d378c8efbd3a5a31ca7e459bf79161055a9006443222946191",
+    "sha256": "b69c243fc1e49beb03196bac288ef93ba8be52b3d76bf13b9f20bf030cfeb94d",
     "version": "li-lts-2026-04"
   },
   "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration": {
@@ -4370,19 +4376,19 @@
   "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide": {
     "error": null,
     "file": "da3ebb19246169c2162cd873.json",
-    "sha256": "eee1e5179998c409e6a132d90cd056aec20e521f15957733fbc62d7d99cd9419",
+    "sha256": "e37938208b099e13d0e7f656a9eef7efa1cfc73d2ebd4bcfccba17d58b2aaf28",
     "version": "li-lts-2026-04"
   },
   "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes": {
     "error": null,
     "file": "b8d90efc74577877bbe443f2.json",
-    "sha256": "3d87c884da22baef6ea7c7f865ac4bff438843edde654f0042e456dda56c91c8",
+    "sha256": "5fea0bb0dff3e06bcf427863d236086246c1135f3c6fa545310902739cd289c8",
     "version": "li-lts-2026-04"
   },
   "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources": {
     "error": null,
     "file": "5e4b8ab35dcda55747370aad.json",
-    "sha256": "e91b9184c8d1d682fe5976ffa2702aa4d4a4691778dfbb8871167c831fd3cf6d",
+    "sha256": "d488261d7bc7e3cba42781c4b3501f6a6b839cb877884e6108d795e058800efc",
     "version": "li-lts-2026-04"
   },
   "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/unified-search": {

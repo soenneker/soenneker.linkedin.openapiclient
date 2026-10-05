@@ -1,0 +1,1305 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module7",
+  "Title": "Module 7 - Job posting to job requisition migration",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module7",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 7 - Job posting to job requisition migration",
+      "Anchor": "module-7---job-posting-to-job-requisition-migration",
+      "SectionPath": [],
+      "Text": "As a LinkedIn partner migrating from job postings to job requisitions, you must demonstrate every test case in this module to LinkedIn as part of certification. This module covers the full migration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 7 - Job posting to job requisition migration",
+      "Anchor": "module-7---job-posting-to-job-requisition-migration",
+      "SectionPath": [],
+      "Text": "Prepare for migration cutover\nSync job requisitions\nSync job requisition stages\nMaintain requisition ID parity and deduplication\nRe-link migrated applications\nMaintain One Click Export continuity\nMigrate requisition ACLs\nComplete cross-cutting migration checks",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "Each test case has a unique rule ID in this format, RSC-\u003CMSS\u003E-\u003CBNN\u003E, that follows the same section-based scheme used in every certification module, as explained below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "RSC: the certification program, Recruiter System Connect.\n\u003CMSS\u003E: the module and section number combined: M is the certification module number (7 for this migration module), and SS is the section number within the module, zero-padded to two digits (01, 02, and so on), assigned to each section in this article in order\n\u003CBNN\u003E: the check-type band and sequence number combined: B is the check-type band (1 functional, 2 quantitative, 3 qualitative, 4 charter, 5 readiness. This module only explains the functional band, a test of your integration\u0027s behavior that you demonstrate to LinkedIn), and NN is a sequential number within that check-type band for the section, zero-padded to two digits (01, 02, and so on)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "For example, RSC-701-102 is Module 7, section 01 (prepare for migration cutover), functional band (1), the second functional case in that section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "Each test case appears in a three-column table, as explained below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "Rule: the rule ID for the test case, in the format described above.\nExecution Steps: the actions you must perform and demonstrate to LinkedIn to satisfy the rule.\nExpected Result: the outcome LinkedIn confirms after you complete the execution steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "Before starting certification, refer to the RSC Job Requisition Migration Guide for the full migration plan, field mappings, and cutover timeline. This module uses private job and public job as defined in the migration guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Prepare for migration cutover",
+      "Anchor": "prepare-for-migration-cutover",
+      "SectionPath": [
+        "Prepare for migration cutover"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-701-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Move private job sync to the /rest/jobRequisitions API. 1. Demonstrate that a private job previously synced through /v2/simpleJobPostings now syncs through PUT /rest/jobRequisitions with header LinkedIn-Version set to the latest API version per the API docs and x-restli-method: batch_update. 2. Demonstrate integrationContext is the org URN urn:li:organization:{id}. 3. Confirm public jobs route strictly to /rest/simpleJobPostings, never /v2/simpleJobPostings, and aren\u0027t duplicated onto /rest/jobRequisitions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Private jobs are created and updated exclusively through /rest/jobRequisitions. \u2022 /v2/simpleJobPostings is no longer used for private job creation. \u2022 Public jobs continue exclusively on /rest/simpleJobPostings. \u2022 /v2/simpleJobPostings is used only to close legacy private job copies (refer to RSC-701-106), never to post public jobs. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-701-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle the new synchronous per-entity response instead of polling a task URN. 1. Submit a batch_update and demonstrate the 200 OK response with the per-entity results map (status: 204) and the errors map. 2. Demonstrate you no longer create or poll a /simpleJobPostingTasks API for private jobs. 3. Demonstrate a close is now requisitionStatus: CLOSED (and a soft delete is DELETE), replacing jobPostingOperationType: CLOSE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The integration parses the results map and the errors map, then records the per-entity status. \u2022 No task-status polling is used for requisition sync. \u2022 requisitionStatus (OPEN/CLOSED) replaces jobPostingOperationType. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-701-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that an update sends the complete field set. 1. Update an existing requisition and demonstrate the request body includes all available fields, not a partial update. 2. Negative test: demonstrate that omitting a previously-populated optional field (for example, description) would set it to null, so your update must always re-send it.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every update to a requisition specifies all available fields. \u2022 Omitting a field sets it to null. \u2022 The partner\u0027s update path re-sends the full record so no field is unintentionally cleared. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-701-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide the old\u2192new field mapping and new-field population plan. 1. Produce a mapping document (or code) that maps every /v2/simpleJobPostings field your integration sent to its /rest/jobRequisitions equivalent. 2. For each new required field (externalCreatedAt, externalLastModifiedAt, numberOfOpenings, owners, locations, accessRestricted, requisitionStatus, title), state the ATS source. 3. For each new optional field (preferredSkills, compensation, requisitionType, parentRequisitionId, targetedStartAt, hiredCount, vanityIdentifier), state whether the ATS has a source, and confirm you send it when one exists.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 A complete field-mapping is provided as a certification prerequisite (used for LinkedIn code review). \u2022 All new required fields have a documented ATS source. \u2022 Optional fields are sent when the ATS has a corresponding value and skipped otherwise. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-701-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Respect the requisition batch and throughput limits. 1. Demonstrate requisition batches to /rest/jobRequisitions grouped at \u2264100 records in sequential order (limit 100,000/day). 2. Demonstrate production requests use query tunneling to stay under URL length limits.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Requisition creations through /rest/jobRequisitions are batched \u2264100 and paced within daily throttle limits. \u2022 Query tunneling is used in production. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-701-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public job partners post public jobs through /rest/simpleJobPostings and close legacy private job copies through /v2/simpleJobPostings only. 1. For a partner that posts public jobs and receives an automatic private copy in LinkedIn Recruiter, demonstrate public jobs are now posted through the /rest/simpleJobPostings endpoint. 2. Demonstrate that legacy private job copies are closed through the /v2/simpleJobPostings endpoint (closing a legacy private job isn\u0027t possible through /rest/simpleJobPostings). 3. Confirm the move of public job posting to /rest/simpleJobPostings is complete.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Public jobs are posted through /rest/simpleJobPostings. \u2022 Legacy private job copies are closed exclusively through /v2/simpleJobPostings. \u2022 The public job posting cutover to /rest/simpleJobPostings is complete. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-701-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "After cutover, no new private job is created on /v2/simpleJobPostings. New private jobs are created through /rest/jobRequisitions only. 1. Create a new private job after cutover and demonstrate it is created through /rest/jobRequisitions. 2. Negative test: demonstrate that no new private job is created against the /v2/simpleJobPostings endpoint during or after migration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All new private jobs are created through /rest/jobRequisitions. \u2022 No new private job creation traffic is sent to the /v2/simpleJobPostings endpoint after cutover. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-701-501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm the cutover completes before the mandated deadline. 1. Present a cutover readiness plan stating the volume of private job requisitions to migrate, the application-resync approach, and the target date to stop /v2/simpleJobPostings (and /v2/atsApplications) traffic. A full CSV of every old and new job isn\u0027t required \u2014 a representative sample and the ID-mapping rule from RSC-704-101 are sufficient. 2. Demonstrate all new and updated applications submitted through the /rest/atsApplications API with the requisition ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 By July 31, 2027, /rest/jobRequisitions is the sole path for creating and updating all private job requisitions. \u2022 /v2/atsApplications and /v2/simpleJobPostings receive no requisition traffic. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync job requisitions",
+      "Anchor": "sync-job-requisitions",
+      "SectionPath": [
+        "Sync job requisitions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-702-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync a new requisition through the /rest/jobRequisitions API with all required fields. 1. Send a PUT request to /rest/jobRequisitions with ids[0].externalJobRequisitionId and ids[0].integrationContext=urn:li:organization:{id}. 2. Body includes every required field: accessRestricted, title, externalCreatedAt, externalLastModifiedAt, locations (\u22651 with locationType), requisitionStatus: OPEN, owners (\u22651 with emailAddress \u002B ownerType), numberOfOpenings. 3. Confirm status: 204 in the response and the requisition appears in the Recruiter 1CE dropdown.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The requisition is created and returns per-entity status: 204. \u2022 All required fields are accepted. \u2022 The record is visible in the Recruiter 1CE dropdown. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Send every optional field the ATS supports on a requisition. 1. On a requisition, populate description, basicSkills, preferredSkills, categories (uppercase job-function codes), workplaceTypes (On-site, Hybrid, or Remote), industries (urn:li:industry:{id}), compensation (period, type, and value), employmentStatus, experienceLevel, targetedStartAt, hiredCount, requisitionType, vanityIdentifier. 2. Demonstrate each value in Recruiter or your logs. 3. Skip fields with no ATS source (don\u0027t send empty placeholders).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All optional fields with an ATS source are sent and reflected on the requisition. \u2022 Fields absent from the ATS are omitted. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map the old ACL flag to the first-class accessRestricted Boolean. 1. Sync a requisition with accessRestricted: true and demonstrate that only recruiters in the ACL group (or, on version 202510 and later, the owner regardless of ACL settings) can view it in the 1CE dropdown. 2. Sync one with accessRestricted: false and demonstrate all recruiters can view it. 3. Confirm the value is derived from the same private or public intent used by the legacy PRIVATE /v2/simpleJobPostings.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 accessRestricted: true gates the requisition to the ACL group (on version 202510 and later, the owner always sees it regardless of ACL settings). \u2022 accessRestricted: false exposes it to all recruiters. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Certify the standard or evergreen (pipeline) hiring model through requisitionType. 1. Create a requisition with requisitionType: STANDARD (the field\u0027s default). 2. Create a requisition with requisitionType: EVERGREEN and confirm it carries no parentRequisitionId. 3. Create one or more requisitions with requisitionType: STANDARD that link to the evergreen parent through parentRequisitionId.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 STANDARD and EVERGREEN requisitions sync correctly. \u2022 An EVERGREEN requisition with a parentRequisitionId is rejected or avoided. \u2022 STANDARD requisitions with parentRequisitionId correctly resolve to the evergreen parent. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Certify requisitionStatus CLOSE transitions (replace-all) replacing legacy operation types. 1. Update a synced requisition using a full replace-all payload (partial updates aren\u0027t supported) and demonstrate the change in Recruiter. 2. Close it by sending requisitionStatus: CLOSED (replacing jobPostingOperationType: CLOSE) and confirm it disappears from LinkedIn Recruiter, the 1CE dropdown, and the Jobs \u0026 Feedback section. 3. Confirm closed requisitions remain synced and counted for historical parity. 4. If your platform supports closing a requisition, implement this CLOSE path (a partner must implement CLOSE, DELETE, or both; refer to RSC-702-106).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Updates are applied through replace-all. \u2022 Partial field updates aren\u0027t used. \u2022 requisitionStatus: CLOSED closes the requisition and removes it from Recruiter, the 1CE dropdown, and the Jobs \u0026 Feedback section. \u2022 Closed requisitions are retained in the historical set. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Certify requisition removal through the DELETE endpoint (soft delete). 1. Send a DELETE request to /rest/jobRequisitions?ids=List((externalJobRequisitionId:{id},integrationContext:urn:li:organization:{id})). 2. Confirm status: 204, that the requisition is removed from Recruiter, and that it no longer appears in the 1CE dropdown or the Jobs \u0026 Feedback section. 3. If your platform supports requisition deletion, implement this DELETE path (a partner must implement CLOSE, DELETE, or both; refer to RSC-702-105).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 DELETE performs a soft delete, removing the requisition and all copies of its data from Recruiter, the 1CE dropdown, and the Jobs \u0026 Feedback section. \u2022 The response returns 204. \u2022 The partner has implemented at least one of requisitionStatus CLOSE or DELETE. Relevant documentation: Sync Job Requisitions (Delete)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#delete-job-requisitions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[For code review] externalJobRequisitionId is a strict 1:1 with your ATS requisition ID. 1. Demonstrate that externalJobRequisitionId equals your ATS\u0027s own requisition identifier with no added prefix, suffix, or transformation. 2. Demonstrate that any customer-facing or human-readable Req ID is sent separately as vanityIdentifier, not overloaded onto the canonical ID. 3. Provide the ID mapping as a deliverable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 externalJobRequisitionId maps 1:1 to the ATS requisition ID. \u2022 Display identifiers are carried by vanityIdentifier, keeping the canonical key stable. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-108",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[For code review] Requisition referential integrity survives the ID remap \u2014 parent and child references still resolve (complements the strict 1:1 ID check in RSC-702-107). 1. Where parentRequisitionId is populated, demonstrate it references a valid, already-migrated requisition (no dangling parent after the ID remap in RSC-704-101). 2. Demonstrate every migrated child requisition stage or application references a requisition that was actually synced through /rest/jobRequisitions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 parentRequisitionId, when populated, resolves to a migrated requisition, with no dangling parent. \u2022 No migrated requisition stage or application references a requisition ID that was never synced. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Migrated requisition volume matches the source private job volume. 1. Count all private jobs (open and closed, from the beginning of time) in the ATS that must migrate. Exclude requisitions deleted at source. They no longer exist in the ATS and aren\u0027t sent to LinkedIn. 2. Count the requisitions successfully synced to LinkedIn through /rest/jobRequisitions. 3. Compare the totals.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The migrated requisition count matches the source private job count (open and closed, excluding source-deleted requisitions) within 5%. \u2022 Count parity is asserted over the historical synced set, so a legitimately deleted requisition isn\u0027t a parity gap. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-301",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Beta-Exit data-quality thresholds on migrated requisitions. 1. Sample migrated requisitions and measure description length, title length, location sufficiency (country/region is the minimum), and ACL presence. 2. Report each rate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 On the migrated set: \u003C10% have description under 200 chars and \u003C5% have title under 5 chars. \u2022 Also, \u003C5% have insufficient location data (country/region is the minimum; a record with a valid country/region through locationGeoUrn or locationName passes), and \u003C5% lack an ACL where one is expected. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-302",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requisition changes propagate promptly. 1. Create or update a requisition and time its appearance in Recruiter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Requisition ingestion latency is within the expected 5\u201330 minute window. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-303",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Schema-coverage data quality on migrated requisitions. 1. The LinkedIn team shares the data-quality report for the requisition records synced during the migration or historical resync. 2. Review the report for any requisition schema field that wasn\u0027t mapped or synced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The requisition schema-coverage data-quality (DQ) requirement is met on the migrated set. \u2022 Any requisition schema field that isn\u0027t mapped or synced is explicitly called out. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-702-401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-run the requisition sync over the charter sample. 1. Repeat RSC-702-101, RSC-702-105, and RSC-702-201 across the ~10-customer charter sample.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Requisition create, update, or close and count parity hold across the charter sample. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync job requisition stages",
+      "Anchor": "sync-job-requisition-stages",
+      "SectionPath": [
+        "Sync job requisition stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-703-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map ATS pipeline stages to the stage schema as a deliverable. 1. Produce a mapping of your ATS requisition stage model to jobRequisitionStageId, parent jobRequisitionId, stageName, stageType, stageStatus, stageOrder, externalCreatedAt, externalLastModifiedAt. 2. Note that jobRequisitionId here must equal the requisition\u0027s externalJobRequisitionId.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 A complete stage-field mapping is provided. \u2022 The parent linkage (jobRequisitionId = externalJobRequisitionId) is documented. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync the job requisition stages with all required fields. 1. Send a PUT request to /rest/jobRequisitionStages with ids[0].jobRequisitionStageId (\u226450 chars), ids[0].jobRequisitionId (\u2264100 chars), ids[0].integrationContext. 2. Body includes all required fields: stageName, stageOrder, externalCreatedAt, externalLastModifiedAt. 3. Confirm status: 204 and that the synced records define the job requisition\u0027s stages.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Stages are created and return status: 204. \u2022 The synced records define the stages for the requisition. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Group ATS stage names into the standard stageType enum. 1. For each stage, send a stageType from PRE_APPLICATION, CONTACTED, APPLIED, SCREEN, INTERVIEW, REFERENCE_CHECK, OFFER, PRE_HIRE, HIRED, DISPOSITIONED, SHORTLISTED, HIRING_MANAGER_REVIEW, UNKNOWN. 2. For stages that don\u0027t map, send UNKNOWN (the default).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 ATS stage names are grouped into valid stageType values. \u2022 Unmappable stages default to UNKNOWN. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Preserve job requisition stage order through stageOrder. 1. Sync multiple job requisition stages with monotonically increasing stageOrder. 2. Demonstrate the order is preserved in Recruiter or the stage list.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Stage sequence in LinkedIn matches the ATS job requisition stage order through stageOrder. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Certify stage activation state through stageStatus ACTIVE/INACTIVE. 1. Sync a stage with stageStatus: ACTIVE (default). 2. Deactivate it by sending stageStatus: INACTIVE and demonstrate the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 stageStatus toggles between ACTIVE and INACTIVE and is reflected in LinkedIn. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Certify stage upsert idempotency and stage removal through DELETE. 1. Re-send a stage with the same jobRequisitionStageId and changed fields. Confirm no duplicate is created. 2. If your platform supports job-requisition-stage deletion, send a DELETE request to /rest/jobRequisitionStages?ids=List((jobRequisitionId:{id},jobRequisitionStageId:{sid},integrationContext:urn:li:organization:{id})) and confirm 204.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Re-sending the same stage ID updates in place (no duplicate). \u2022 Where stage deletion is supported, the DELETE returns 204 and removes all copies of the stage data. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[For code review] Stage IDs are strict 1:1 and correctly parented. 1. Demonstrate jobRequisitionStageId maps 1:1 to your ATS stage ID (no transformation). 2. Demonstrate every stage\u0027s jobRequisitionId resolves to an existing requisition. 3. Confirm you don\u0027t conflate job requisition stage definitions with application-stage history.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Stage and parent-requisition IDs are faithful 1:1 references. \u2022 Job requisition stage definitions and application-stage history are kept as separate concepts. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Synced stages match the ATS pipeline definitions. 1. Count the distinct pipeline stages defined for a sample of migrated requisitions in the ATS. 2. Count the stages synced to LinkedIn. 3. Compare.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Synced stage counts match the ATS pipeline definitions within 5%. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-301",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Schema-coverage data quality on migrated requisition stages. 1. The LinkedIn team shares the data-quality report for the stage records synced during the migration or historical resync. 2. Review the report for any requisition stage schema field that wasn\u0027t mapped or synced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The stage schema-coverage DQ requirement is met on the migrated set. \u2022 Any requisition stage schema field that isn\u0027t mapped or synced is explicitly called out. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-302",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stage changes propagate promptly (mirrors the requisition latency check in RSC-702-302). 1. Create or update a requisition stage and time its appearance in Recruiter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Stage ingestion latency is within the expected 5\u201330 minute window. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-303",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Referential integrity: application stages resolve to synced requisition stages (application stage ID = requisition stage ID). 1. Measure the share of applications whose stage reference doesn\u0027t resolve to a jobRequisitionStageId synced through /jobRequisitionStages. The synced stage ID must belong to the matching parent jobRequisitionId. 2. Measure the share of synced requisition stages that no application references. 3. The LinkedIn team shares the data-quality report for the migrated records.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 On the migrated set: \u003C5% of applications reference a stage that isn\u0027t a synced requisition stage under the correct parent requisition. \u2022 Also, \u003C10% of synced stages have no referencing application (mirrors the application-stage completeness thresholds in Module 2). \u2022 The application stage ID and the requisition stage ID are the same identifier. Relevant documentation: Sync Job Requisition Stages; Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-703-401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-run stage sync over the charter sample. 1. Repeat RSC-703-102 and RSC-703-104 across the ~10-customer charter sample.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Stage sync and ordering hold across the charter sample. Relevant documentation: Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Maintain requisition ID parity and deduplication",
+      "Anchor": "maintain-requisition-id-parity-and-deduplication",
+      "SectionPath": [
+        "Maintain requisition ID parity and deduplication"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-704-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Choose the canonical externalJobRequisitionId for each migrated job using the requisition-ID decision tree. 1. For each migrated private job, determine whether your ATS has a requisitions concept. Then check whether the LinkedIn Recruiter private job posting already used the same internal ID as its requisition. 2. If the private job posting ID already equals the ATS requisition ID, reuse that ID as externalJobRequisitionId (same integrationContext). This way, LinkedIn treats the migrated requisition as the same entity as the old posting. 3. If the private job posting ID differs from the internal requisition ID, resolve each job posting to its corresponding requisition and send that real requisition ID as externalJobRequisitionId in the /rest/jobRequisitions call. 4. Demonstrate the chosen rule is applied across the whole migrated set, not just samples.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Each migrated job\u0027s externalJobRequisitionId is the real ATS requisition ID. \u2022 The old externalJobPostingId is reused only when it already equals that requisition ID. \u2022 Otherwise, the corresponding requisition ID is used. \u2022 The mapping is applied consistently across the entire migrated set. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-704-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The migrated job appears exactly once in the 1CE dropdown. 1. In Recruiter, open the 1CE dropdown for a member. 2. Locate a migrated job and confirm it appears once (the requisition), not twice. 3. Repeat for multiple open or active migrated jobs. A closed requisition is removed from Recruiter and the 1CE dropdown (refer to RSC-702-105), so it should be absent, not shown once.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Open or active migrated jobs appear exactly once in the 1CE dropdown. \u2022 The requisition is shown and the old posting is suppressed. \u2022 A closed migrated requisition is absent from the dropdown, consistent with RSC-702-105. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-704-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applications created under the old API stay visible after cutover. 1. Identify applications that were created through the old API against a now-migrated job. 2. After cutover, confirm those applications still appear in Recruiter, linked to the migrated requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Applications created with the old API continue to appear in LinkedIn Recruiter after migration. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-704-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[For code review] Provide the requisition-vs-posting entity model and confirm whether the job posting and requisition IDs are the same. 1. Describe how your ATS models job requisitions and job postings today (for example, 1:1, 1:many, or postings-only), and whether requisitions are available only as a premium or paid feature. 2. State what you currently map to ATS job posting in your data model and what you plan to map to requisition going forward. 3. State whether, in your ATS, the private job posting ID and its requisition ID are the same identifier or different. 4. Explain and share the mapping between job posting and requisition IDs used for the migration (see the decision tree in RSC-704-101; ID genuineness is proven under RSC-702-107).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The requisition-vs-posting entity model (today\u0027s model, the current ATS job posting mapping, and the target model) is documented and reviewed with LinkedIn before migration begins. \u2022 The submission clearly states whether the job posting and requisition IDs are the same, and the shared mapping matches that statement. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Re-link migrated applications",
+      "Anchor": "re-link-migrated-applications",
+      "SectionPath": [
+        "Re-link migrated applications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-705-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Every new and updated application links to a requisition through atsJobRequisitionId. 1. Create a new application against a migrated job and demonstrate the payload includes atsJobRequisitionId matching the job\u0027s externalJobRequisitionId. 2. Demonstrate the requisition itself is synced through /rest/jobRequisitions. 3. Negative test: attempt a new application without atsJobRequisitionId and demonstrate it is rejected or avoided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 New and updated atsApplication records always include atsJobRequisitionId. \u2022 The referenced requisition exists (synced through /rest/jobRequisitions). Relevant documentation: Sync Applications; RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-705-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "New applications surface against the migrated job. 1. Create a new application (with notes and stages) against a migrated requisition. 2. Confirm it appears in the Recruiter In-ATS indicator and (if applicable) the Connected Project for that requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 New applications against migrated jobs appear in Recruiter linked to the correct requisition. Relevant documentation: Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-705-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Discontinue the /v2/atsApplications endpoint for private jobs. 1. Demonstrate new and updated applications for migrated jobs are sent through the /rest/atsApplications API, carrying the requisition ID. 2. Demonstrate no requisition applications go to the /v2/atsApplications endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Applications for migrated jobs use the /rest/atsApplications API. \u2022 The /v2/atsApplications endpoint is retired for requisitions. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-705-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resolve all applications previously linked by job posting ID to the correct atsJobRequisitionId and fully resync them through the /rest/atsApplications API. 1. Identify every application previously linked to a job posting ID for a now-migrated job. 2. Resolve each application to the correct atsJobRequisitionId (matching the migrated requisition\u0027s externalJobRequisitionId). 3. Resync the complete application history through the /rest/atsApplications API with atsJobRequisitionId set to the migrated requisition\u0027s externalJobRequisitionId. 4. Re-run linkage completeness (RSC-705-301) after the backfill.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All historical applications carry the correct atsJobRequisitionId. \u2022 The full application history is resynced through the /rest/atsApplications endpoint and passes linkage completeness. Relevant documentation: Sync Applications; RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-705-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resync the complete application history for migrated jobs (the Applications analog of the requisition full-history resync in RSC-708-102 and the ACL resync in RSC-707-103). 1. Trigger a full historical sync of all applications (from the beginning of time) for now-migrated jobs through the /rest/atsApplications API, each carrying its atsJobRequisitionId. 2. Re-run linkage completeness (RSC-705-301) after the backfill.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The full application history is backfilled against the migrated requisitions through the /rest/atsApplications API and passes linkage completeness. Relevant documentation: Sync Applications; RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-705-301",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post-migration applications are attributed to a requisition. 1. Sample post-migration applications and measure the rate missing a resolvable atsJobRequisitionId.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 \u003C5% of post-migration applications are missing a valid job-requisition linkage. Relevant documentation: Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Maintain One Click Export continuity",
+      "Anchor": "maintain-one-click-export-continuity",
+      "SectionPath": [
+        "Maintain One Click Export continuity"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-706-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle the new REQUISITION reference entity on /exportedCandidates. 1. Export a candidate to a migrated requisition in Recruiter. 2. Demonstrate /exportedCandidates returns referenceEntityType = \u0022REQUISITION\u0022 and referenceEntityId = the requisition ID. 3. Demonstrate the ATS parses REQUISITION and routes the exported candidate to the correct requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 /exportedCandidates returns referenceEntityType: \u0022REQUISITION\u0022 with the requisition ID. \u2022 The ATS correctly consumes the new reference type. Relevant documentation: Retrieve Exported Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-706-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Both old and new requisitions remain exportable from the 1CE dropdown. 1. Demonstrate that jobs still on /v2/simpleJobPostings (private) appear in the 1CE dropdown. 2. Demonstrate that jobs on /rest/jobRequisitions also appear. 3. Confirm ID-matched pairs are deduped to a single entry (ties to RSC-704-102).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Old and new requisitions both appear in the 1CE dropdown. \u2022 ID-matched pairs show once. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Migrate requisition ACLs",
+      "Anchor": "migrate-requisition-acls",
+      "SectionPath": [
+        "Migrate requisition ACLs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-707-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage requisition ACLs through entityType=JOB_REQUISITION. 1. Create, retrieve, update, and delete an ACL group through /entityAcls with parameter entityType=JOB_REQUISITION. 2. Manage assignees through /entityAclAssignees. 3. Demonstrate requisitions are gated by these ACLs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Requisition ACLs are managed through /entityAcls with parameter entityType=JOB_REQUISITION and /entityAclAssignees. Relevant documentation: RSC Job Requisition Migration Guide; Sync ACLs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-707-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACL gating works end-to-end on a migrated requisition. 1. Create an ACL, create a requisition with accessRestricted: true, and assign it to the ACL. 2. Log in as an ACL member and confirm the secured requisition is visible (1CE dropdown \u002B In-ATS indicator). 3. Log in as a non-member who isn\u0027t the requisition owner and confirm it isn\u0027t visible. 4. Remove and re-add a non-owner user and confirm visibility follows. 5. On version 202510 and later, log in as the requisition owner without ACL membership and confirm the requisition is visible in the 1CE dropdown.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 ACL members see the secured requisition. \u2022 Non-members who aren\u0027t the requisition owner don\u0027t. \u2022 Removing and re-adding a non-owner assignee updates visibility accordingly. \u2022 On version 202510 and later, the requisition owner can see it in the 1CE dropdown regardless of ACL membership. Relevant documentation: RSC Job Requisition Migration Guide; Sync ACLs; Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-707-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resync the complete set of requisition ACLs and assignees to LinkedIn using entityType=JOB_REQUISITION. 1. Trigger a full historical resync of all existing requisition ACL groups through /entityAcls with entityType=JOB_REQUISITION. 2. Resync all corresponding assignees through /entityAclAssignees. 3. Confirm every migrated requisition that requires gating is covered by a resynced ACL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The complete ACL history is resynced under entityType=JOB_REQUISITION with its assignees. \u2022 All migrated requisitions requiring access control are gated by a resynced ACL. Relevant documentation: RSC Job Requisition Migration Guide; Sync ACLs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-707-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Model ACLs as generically as possible, falling back to a per-user ACL group only when a broader grouping isn\u0027t possible. 1. Prefer a single broad or shared ACL group (for example, one group covering all recruiters who should see a given set of requisitions) rather than many narrow groups. 2. Where a generic grouping can\u0027t represent the ATS\u0027s access model, create an ACL group per user (one group per recruiter) and assign requisitions to it. 3. Demonstrate requisitions are gated by the chosen ACL structure through entityType=JOB_REQUISITION.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 ACLs are modeled as generically as possible. \u2022 Per-user ACL groups are used only as a fallback when a broader grouping can\u0027t express the access model. \u2022 Requisitions are correctly gated under the chosen ACL structure. Relevant documentation: RSC Job Requisition Migration Guide; Sync ACLs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Complete cross-cutting migration checks",
+      "Anchor": "complete-cross-cutting-migration-checks",
+      "SectionPath": [
+        "Complete cross-cutting migration checks"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-708-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No data loss or double-counting during the cutover window. 1. Describe your cutover strategy for private jobs. Options include a hard cut or a phased window where both endpoints stay active while different jobs migrate at different times. 2. Demonstrate that each individual private job is written to only one endpoint. Once migrated, it goes to /rest/jobRequisitions only, never to both simultaneously. 3. Demonstrate the ID-match rule (RSC-704-101) prevents duplicates during any overlap.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 No individual private job is ever written to both /v2/simpleJobPostings and /rest/jobRequisitions at the same time. \u2022 A phased window may keep both endpoints active for different jobs, but it never double-writes the same job. \u2022 The transition produces no duplicate or lost records. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-708-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resync the complete private job history as requisitions. 1. Trigger a full historical sync of all private jobs (open and closed, from the beginning of time) through /rest/jobRequisitions. Exclude jobs deleted at source. They no longer exist in the ATS. 2. Re-run count parity (RSC-702-201) after the backfill.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The full private job history (excluding source-deleted jobs) is backfilled as requisitions and passes count parity over the historical synced set. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-708-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-sending the same records doesn\u0027t duplicate. 1. Re-send the same externalJobRequisitionId (and the same stage IDs) and demonstrate the records update in place. 2. Confirm no duplicate requisitions or stages are created. 3. Sync jobRequisitionStages if applicable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Re-sending identical keys upserts in place with no duplication. Relevant documentation: Sync Job Requisitions; Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-708-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle the per-entity errors map for partial-batch failures. 1. Submit a batch where one entity is invalid (for example, missing required numberOfOpenings or a future externalCreatedAt). 2. Demonstrate the 200 OK response contains a successful results entry and an errors entry. Also demonstrate that your integration surfaces the failure, retries transient 4xx/5xx, and logs the call and response (including headers) for support. Mask the Authorization bearer token (and any other secrets) in these logs; retain diagnostic headers such as x-li-uuid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The integration reads the per-entity errors map, distinguishes it from success, and retries and logs appropriately. \u2022 A call-and-response log with the Authorization bearer token and other secrets masked, and diagnostic headers such as x-li-uuid retained, is available for LinkedIn debugging. Relevant documentation: Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-708-501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm legacy endpoints are dark for requisitions after cutover. 1. Present traffic evidence that, after cutover, no private job requisitions are sent to /v2/atsApplications or /v2/simpleJobPostings. 2. Confirm this holds ahead of the July 31, 2027 deadline.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The legacy /v2/atsApplications and /v2/simpleJobPostings endpoints receive zero requisition traffic post-cutover, ahead of the deadline. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-708-503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attest the requisition, application, and ACL resync is complete and legacy job postings are closed, or call out any gap. 1. Confirm that every previously posted job posting has been resynced as a requisition and that the corresponding legacy private job postings have been closed. 2. Exemption: where no ID mismatch exists (the externalJobPostingId of the job posting already equals the externalJobRequisitionId), the partner may leave the legacy postings in place and sync requisitions only. LinkedIn dedups the ID-matched pair, so no duplicate results occur. Closing the legacy postings remains acceptable but isn\u0027t required. Where an ID mismatch exists, the legacy postings must be closed, and LinkedIn engineering involvement and evaluation is required before proceeding. 3. If a complete resync of all jobRequisitions isn\u0027t possible, or the legacy private job postings that should be closed can\u0027t be closed, clearly document each gap. Call out the scope, reason, and remediation plan. 4. Provide the attestation (or the gap call-out) to LinkedIn as a certification prerequisite.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The partner attests a complete resync of requisitions, applications, and ACLs. \u2022 Legacy private job postings are closed. \u2022 Any inability to fully resync, or to close legacy job postings where required, is explicitly called out to LinkedIn with scope and remediation. \u2022 ID-mismatch partners are handled through the engineering-led ID-mismatch migration pipeline. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

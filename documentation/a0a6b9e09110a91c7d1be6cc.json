@@ -14,6 +14,7 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module7",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
@@ -63,7 +64,7 @@
       "SectionPath": [
         "Certification Process"
       ],
-      "Text": "Similar to development modules, we have defined 6 certification modules. These describe all the test cases that have to be demoed to LinkedIn for a partner or customer to get certified.",
+      "Text": "Similar to development modules, we have defined 7 certification modules. These describe all the test cases that have to be demoed to LinkedIn for a partner or customer to get certified.",
       "Headers": [],
       "Rows": []
     },
@@ -74,7 +75,7 @@
       "SectionPath": [
         "Certification Process"
       ],
-      "Text": "Module 1 Certification - Configure Customer Applications and ATS Integrations\nModule 2 Certification - Sync Data from ATS to LinkedIn\nModule 3 Certification - Retrieve Data from LinkedIn\nModule 4 Certification - Sync ACLs\nModule 5 Certification - Data Deletion\nModule 6 Certification - Other",
+      "Text": "Module 1 Certification - Configure Customer Applications and ATS Integrations\nModule 2 Certification - Sync Data from ATS to LinkedIn\nModule 3 Certification - Retrieve Data from LinkedIn\nModule 4 Certification - Sync ACLs\nModule 5 Certification - Data Deletion\nModule 6 Certification - Other\nModule 7 Certification - Job Posting to Job Requisition Migration",
       "Headers": [],
       "Rows": []
     },
@@ -85,7 +86,7 @@
       "SectionPath": [
         "Certification Process"
       ],
-      "Text": "Module 1 Certification demo is applicable for partners\u0027 ATS only. Certification demo for remaining modules is applicable for both partners and customers.",
+      "Text": "Module 1 and Module 7 Certification demos are applicable for partners\u0027 ATS only. Certification demo for remaining modules is applicable for both partners and customers.",
       "Headers": [],
       "Rows": []
     },
