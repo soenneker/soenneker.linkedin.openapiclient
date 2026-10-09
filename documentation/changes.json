@@ -1,10 +1,14 @@
 {
   "ChangedPages": [
-    "https://learn.microsoft.com/en-us/linkedin/",
-    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/",
     "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development",
-    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview"
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs"
   ],
   "ChangedPostmanCollections": [],
   "PostmanFetchIssues": [
@@ -16,6 +20,476 @@
   ],
   "AddedOperations": [],
   "RemovedOperations": [],
-  "SpecificationChanges": [],
-  "SpecificationChanged": false
+  "SpecificationChanges": [
+    {
+      "Pointer": "/paths/~1pages-data-portability~1rest~1dmaLiveVideos/get/responses/default/content/application~1json/schema/anyOf",
+      "Before": [
+        {
+          "additionalProperties": {
+            "properties": {
+              "author": {
+                "properties": {
+                  "organization": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  }
+                },
+                "type": "object",
+                "x-linkedin-inferred-from-example": true
+              },
+              "event": {
+                "description": "The event URN this live video is associated with\n\nDocumented type: EventUrn (optional)\n\nRequirement: No",
+                "type": "string",
+                "x-linkedin-inferred-from-example": true
+              },
+              "id": {
+                "description": "Unique identifier for the live video event\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              },
+              "liveVideoAsset": {
+                "description": "The video recording for the live video\n\nDocumented type: Video (optional)\n\nRequirement: No",
+                "properties": {
+                  "captions": {
+                    "items": {},
+                    "type": "array",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "downloadUrl": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "downloadUrlExpiresAt": {
+                    "type": "integer",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "status": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "thumbnails": {
+                    "items": {
+                      "properties": {
+                        "downloadUrl": {
+                          "type": "string",
+                          "x-linkedin-inferred-from-example": true
+                        },
+                        "downloadUrlExpiresAt": {
+                          "type": "integer",
+                          "x-linkedin-inferred-from-example": true
+                        }
+                      },
+                      "type": "object",
+                      "x-linkedin-inferred-from-example": true
+                    },
+                    "type": "array",
+                    "x-linkedin-inferred-from-example": true
+                  }
+                },
+                "type": "object",
+                "x-linkedin-inferred-from-example": true
+              },
+              "name": {
+                "description": "The name of the live video\n\nDocumented type: String (optional)\n\nRequirement: No",
+                "type": "string"
+              },
+              "scheduledAt": {
+                "description": "The epoch time in milliseconds the live video is intended to start streaming\n\nDocumented type: Time (optional)\n\nRequirement: No",
+                "type": "integer",
+                "x-linkedin-inferred-from-example": true
+              },
+              "state": {
+                "description": "The state of the live video\n\nDocumented type: LiveVideoState\n\nRequirement: No",
+                "type": "string",
+                "x-linkedin-inferred-from-example": true
+              },
+              "ugcPost": {
+                "description": "The UGC post associated with the live video. Can be resolved via the DMA Posts API BATCH_GET.\n\nDocumented type: UgcPostUrn (optional)\n\nRequirement: No",
+                "type": "string",
+                "x-linkedin-inferred-from-example": true
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "type": "object",
+            "x-linkedin-schema": "dma_pages_data_portability_events_live_videos_schema",
+            "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos#schema"
+          },
+          "type": "object",
+          "x-linkedin-inferred-from-example": true
+        },
+        {
+          "properties": {
+            "errors": {
+              "additionalProperties": {
+                "properties": {
+                  "code": {
+                    "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string",
+                    "type": "string"
+                  },
+                  "errorDetailType": {
+                    "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string",
+                    "type": "string"
+                  },
+                  "errorDetails": {
+                    "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
+                  },
+                  "message": {
+                    "description": "A description of the error.\n\nDocumented type: string",
+                    "type": "string"
+                  },
+                  "serviceErrorCode": {
+                    "description": "A subcode that further classifies the error.\n\nDocumented type: int",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "status": {
+                    "description": "The HTTP status code.\n\nDocumented type: int",
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "type": "object",
+                "x-linkedin-schema": "dma_error_responses_error_response",
+                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response"
+              },
+              "type": "object",
+              "x-linkedin-inferred-from-example": true
+            },
+            "results": {
+              "additionalProperties": {
+                "properties": {
+                  "author": {
+                    "properties": {
+                      "organization": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      }
+                    },
+                    "type": "object",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "event": {
+                    "description": "The event URN this live video is associated with\n\nDocumented type: EventUrn (optional)\n\nRequirement: No",
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "id": {
+                    "description": "Unique identifier for the live video event\n\nDocumented type: Long\n\nRequirement: Yes",
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "liveVideoAsset": {
+                    "description": "The video recording for the live video\n\nDocumented type: Video (optional)\n\nRequirement: No",
+                    "properties": {
+                      "captions": {
+                        "items": {},
+                        "type": "array",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "downloadUrl": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "downloadUrlExpiresAt": {
+                        "type": "integer",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "status": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "thumbnails": {
+                        "items": {
+                          "properties": {
+                            "downloadUrl": {
+                              "type": "string",
+                              "x-linkedin-inferred-from-example": true
+                            },
+                            "downloadUrlExpiresAt": {
+                              "type": "integer",
+                              "x-linkedin-inferred-from-example": true
+                            }
+                          },
+                          "type": "object",
+                          "x-linkedin-inferred-from-example": true
+                        },
+                        "type": "array",
+                        "x-linkedin-inferred-from-example": true
+                      }
+                    },
+                    "type": "object",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "name": {
+                    "description": "The name of the live video\n\nDocumented type: String (optional)\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "scheduledAt": {
+                    "description": "The epoch time in milliseconds the live video is intended to start streaming\n\nDocumented type: Time (optional)\n\nRequirement: No",
+                    "type": "integer",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "state": {
+                    "description": "The state of the live video\n\nDocumented type: LiveVideoState\n\nRequirement: No",
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "ugcPost": {
+                    "description": "The UGC post associated with the live video. Can be resolved via the DMA Posts API BATCH_GET.\n\nDocumented type: UgcPostUrn (optional)\n\nRequirement: No",
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object",
+                "x-linkedin-schema": "dma_pages_data_portability_events_live_videos_schema",
+                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos#schema"
+              },
+              "type": "object",
+              "x-linkedin-inferred-from-example": true
+            },
+            "statuses": {
+              "additionalProperties": {
+                "type": "integer",
+                "x-linkedin-inferred-from-example": true
+              },
+              "type": "object",
+              "x-linkedin-inferred-from-example": true
+            }
+          },
+          "type": "object",
+          "x-linkedin-inferred-from-example": true
+        }
+      ],
+      "After": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Unique identifier for the live video event\n\nDocumented type: Long\n\nRequirement: Yes"
+              },
+              "scheduledAt": {
+                "type": "integer",
+                "x-linkedin-inferred-from-example": true,
+                "description": "The epoch time in milliseconds the live video is intended to start streaming\n\nDocumented type: Time (optional)\n\nRequirement: No"
+              },
+              "liveVideoAsset": {
+                "type": "object",
+                "properties": {
+                  "captions": {
+                    "type": "array",
+                    "items": {},
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "downloadUrl": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "downloadUrlExpiresAt": {
+                    "type": "integer",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "status": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "thumbnails": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "downloadUrl": {
+                          "type": "string",
+                          "x-linkedin-inferred-from-example": true
+                        },
+                        "downloadUrlExpiresAt": {
+                          "type": "integer",
+                          "x-linkedin-inferred-from-example": true
+                        }
+                      },
+                      "x-linkedin-inferred-from-example": true
+                    },
+                    "x-linkedin-inferred-from-example": true
+                  }
+                },
+                "x-linkedin-inferred-from-example": true,
+                "description": "The video recording for the live video\n\nDocumented type: Video (optional)\n\nRequirement: No"
+              },
+              "state": {
+                "type": "string",
+                "x-linkedin-inferred-from-example": true,
+                "description": "The state of the live video\n\nDocumented type: LiveVideoState\n\nRequirement: No"
+              },
+              "ugcPost": {
+                "type": "string",
+                "x-linkedin-inferred-from-example": true,
+                "description": "The UGC post associated with the live video. Can be resolved via the DMA Posts API BATCH_GET.\n\nDocumented type: UgcPostUrn (optional)\n\nRequirement: No"
+              },
+              "event": {
+                "type": "string",
+                "x-linkedin-inferred-from-example": true,
+                "description": "The event URN this live video is associated with\n\nDocumented type: EventUrn (optional)\n\nRequirement: No"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the live video\n\nDocumented type: String (optional)\n\nRequirement: No"
+              },
+              "author": {
+                "type": "object",
+                "properties": {
+                  "organization": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  }
+                },
+                "x-linkedin-inferred-from-example": true
+              }
+            },
+            "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos#schema",
+            "required": [
+              "id"
+            ],
+            "x-linkedin-schema": "dma_pages_data_portability_events_live_videos_schema"
+          },
+          "x-linkedin-inferred-from-example": true
+        },
+        {
+          "type": "object",
+          "properties": {
+            "errors": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "status": {
+                    "type": "integer",
+                    "x-linkedin-inferred-from-example": true
+                  }
+                },
+                "x-linkedin-inferred-from-example": true
+              },
+              "x-linkedin-inferred-from-example": true
+            },
+            "results": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Unique identifier for the live video event\n\nDocumented type: Long\n\nRequirement: Yes"
+                  },
+                  "scheduledAt": {
+                    "type": "integer",
+                    "x-linkedin-inferred-from-example": true,
+                    "description": "The epoch time in milliseconds the live video is intended to start streaming\n\nDocumented type: Time (optional)\n\nRequirement: No"
+                  },
+                  "liveVideoAsset": {
+                    "type": "object",
+                    "properties": {
+                      "captions": {
+                        "type": "array",
+                        "items": {},
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "downloadUrl": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "downloadUrlExpiresAt": {
+                        "type": "integer",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "status": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "thumbnails": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "downloadUrl": {
+                              "type": "string",
+                              "x-linkedin-inferred-from-example": true
+                            },
+                            "downloadUrlExpiresAt": {
+                              "type": "integer",
+                              "x-linkedin-inferred-from-example": true
+                            }
+                          },
+                          "x-linkedin-inferred-from-example": true
+                        },
+                        "x-linkedin-inferred-from-example": true
+                      }
+                    },
+                    "x-linkedin-inferred-from-example": true,
+                    "description": "The video recording for the live video\n\nDocumented type: Video (optional)\n\nRequirement: No"
+                  },
+                  "state": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true,
+                    "description": "The state of the live video\n\nDocumented type: LiveVideoState\n\nRequirement: No"
+                  },
+                  "ugcPost": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true,
+                    "description": "The UGC post associated with the live video. Can be resolved via the DMA Posts API BATCH_GET.\n\nDocumented type: UgcPostUrn (optional)\n\nRequirement: No"
+                  },
+                  "event": {
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true,
+                    "description": "The event URN this live video is associated with\n\nDocumented type: EventUrn (optional)\n\nRequirement: No"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the live video\n\nDocumented type: String (optional)\n\nRequirement: No"
+                  },
+                  "author": {
+                    "type": "object",
+                    "properties": {
+                      "organization": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      }
+                    },
+                    "x-linkedin-inferred-from-example": true
+                  }
+                },
+                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos#schema",
+                "required": [
+                  "id"
+                ],
+                "x-linkedin-schema": "dma_pages_data_portability_events_live_videos_schema"
+              },
+              "x-linkedin-inferred-from-example": true
+            },
+            "statuses": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "x-linkedin-inferred-from-example": true
+              },
+              "x-linkedin-inferred-from-example": true
+            }
+          },
+          "x-linkedin-inferred-from-example": true
+        }
+      ]
+    }
+  ],
+  "SpecificationChanged": true
 }

@@ -8,7 +8,7 @@
   "https://learn.microsoft.com/en-us/linkedin/compliance/": {
     "error": null,
     "file": "4a79ddbdab55860516e690cb.json",
-    "sha256": "43a4e52803f54d429506f5234be8701b1ac7392e9510f0704f46a7b5880208b6",
+    "sha256": "4e34772b4b38b15c5bd8570ea2a51d9d4011b1bb7e554836a432566be14c3a16",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/compliance/announcements/data-restrictions": {
@@ -128,7 +128,7 @@
   "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people": {
     "error": null,
     "file": "d3e9de7c734fb2964d360bb1.json",
-    "sha256": "5854428afefa46442dbfed22468dfa79af49ec3693f93e34e72cf2e9a93754a3",
+    "sha256": "8246ffa012b59ea69edf3cde0d5c5f9831cb9dcadc817129310bf87c324968bd",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation": {
@@ -218,7 +218,7 @@
   "https://learn.microsoft.com/en-us/linkedin/consumer/": {
     "error": null,
     "file": "ec119c8a141329f5621cc530.json",
-    "sha256": "034df4799c704272a164ba7ec941fff2dbe2a9886f53f5d7b78103f7ac41f5f1",
+    "sha256": "f07723674831cc928156f2957c2c57874cbb2f53592c721a64a624740ef9a6d3",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/": {
@@ -578,7 +578,7 @@
   "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos": {
     "error": null,
     "file": "73d5b5d6bb13e4afb77be7dc.json",
-    "sha256": "5552e492df2648ffe791a6b2b9d60ae27d52fdfe1073271ced65a0f27ba69584",
+    "sha256": "a36947a68296f105eca603b37eeb041fd38011d01342c811f00c1c48ed754272",
     "version": "li-dma-data-portability-2026-08"
   },
   "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-viewer-count-analytics": {
@@ -1466,7 +1466,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search": {
     "error": null,
     "file": "2fe4c53e786da55f090297d7.json",
-    "sha256": "fafadf7373bd8f824f5030f2bec48a678139e98aa6be5b76885ee593b0e48ad3",
+    "sha256": "5cab4b5965f3d44089bf1b79b1481c1f261526c4664f059467efe78b5b22c89c",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics": {
@@ -2174,7 +2174,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview": {
     "error": null,
     "file": "19c40eb9d1f410c96cc5d1d4.json",
-    "sha256": "77c496f5692d545f68d8d93c303b301162bd7f0e7f3505e32d72c08ad1655032",
+    "sha256": "61ca831009a417de63c1463cc737b2feb6c200f3c1a6cf19ff05e45b94d91988",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers": {
@@ -2390,7 +2390,7 @@
   "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/": {
     "error": null,
     "file": "cf81349877581333e7632513.json",
-    "sha256": "7046ecee18fd41fd39157637292e3e519c8fbeb38b872c8c0467a738b5fc415d",
+    "sha256": "c21d223e3ebd6a296e31e34b919b4a1f904ac26a6f4c17ddfec734a6d700fe1e",
     "version": "li-lms-2026-09"
   },
   "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/video-ads-usecase": {
@@ -2660,7 +2660,7 @@
   "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development": {
     "error": null,
     "file": "fc13908da730ba4bb4ee20c7.json",
-    "sha256": "e87af67fa90a3cf02116313f376fc52a201f58a4dbdd00abcc3a91c1dce97c54",
+    "sha256": "dab053848667ed8fcac6fe6d18bd99b5e828f18a0b677ffe08bca06614314562",
     "version": ""
   },
   "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview": {
@@ -4148,7 +4148,7 @@
   "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs": {
     "error": null,
     "file": "321f78a1ed4eeb2394b8f0cb.json",
-    "sha256": "6075bf93c465b39bf9cfa5d8fadf04b1643891b8645dcbde5856c97d78179314",
+    "sha256": "e761b82b3abd5da15aa27f733fb456b355d3a4e560835e9d17aa55d7220929d1",
     "version": "li-lts-unversioned"
   },
   "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents": {
