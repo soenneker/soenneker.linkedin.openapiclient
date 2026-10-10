@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item
+namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \lead-sync\leadnotifications\{webhookId}
@@ -17,7 +17,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item
     public partial class WithWebhookItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.Item.WithWebhookItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.Item.WithWebhookItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.Item.WithWebhookItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.Item.WithWebhookItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.Item.WithWebhookItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item;
 using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,18 +17,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadNotificationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.leadSync.leadnotifications.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder"/></returns>
-        public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("webhookId", position);
-                return new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.Item.WithWebhookItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.LeadNotificationsRequestBuilder"/> and sets the default values.
         /// </summary>

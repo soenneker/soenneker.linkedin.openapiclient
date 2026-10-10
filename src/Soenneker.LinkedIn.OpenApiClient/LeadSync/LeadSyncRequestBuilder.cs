@@ -6,6 +6,7 @@ using Soenneker.LinkedIn.OpenApiClient.LeadSync.AdAccounts;
 using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadFormResponses;
 using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadForms;
 using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications;
+using Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped;
 using Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls;
 using System.Collections.Generic;
 using System.IO;
@@ -38,6 +39,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.LeadSync
         public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.LeadNotificationsRequestBuilder LeadNotifications
         {
             get => new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadNotifications.LeadNotificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The leadnotificationsEscaped property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.LeadnotificationsEscapedRequestBuilder LeadnotificationsEscaped
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.LeadSync.LeadnotificationsEscaped.LeadnotificationsEscapedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizationAcls property</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.LeadSync.OrganizationAcls.OrganizationAclsRequestBuilder OrganizationAcls

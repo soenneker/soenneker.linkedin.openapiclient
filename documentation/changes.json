@@ -1,13 +1,15 @@
 {
   "ChangedPages": [
-    "https://learn.microsoft.com/en-us/linkedin/compliance/",
     "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
     "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/restricted-use-cases",
     "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/",
-    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs"
   ],
   "ChangedPostmanCollections": [],
@@ -21,6 +23,234 @@
   "AddedOperations": [],
   "RemovedOperations": [],
   "SpecificationChanges": [
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/description",
+      "Before": {
+        "description": "Provide a short description for your image or article.\n\nDocumented type: string\n\nRequirement: No",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/media/description",
+      "Before": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No",
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/originalUrl",
+      "Before": {
+        "description": "Provide the URL of the article you would like to share here.\n\nDocumented type: string\n\nRequirement: No",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/status",
+      "Before": {
+        "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/required",
+      "Before": [
+        "status"
+      ],
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/x-linkedin-schema",
+      "Before": "consumer_integrations_self_serve_share_on_linkedin_share_media",
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/x-source-url",
+      "Before": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-media",
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/x-linkedin-learn-schema",
+      "Before": true,
+      "After": null
+    },
+    {
+      "Pointer": "/paths/~1linkedin-live-events~1v2~1ugcPosts/post/requestBody/content/application~1json/schema/properties/specificContent/anyOf",
+      "Before": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_marketing_community_management_shares_ugc_post_api_sharecontent"
+            }
+          ],
+          "description": "Represents type-specific content of this object. For a share this is the share text and media, and for an article it\u0027s the article contents.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_compliance_integrations_shares_ugc_post_api_sharecontent"
+            }
+          ],
+          "description": "Represents type-specific content of this object. For a share this is the share text and media, and for an article it is the article contents.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        },
+        {
+          "properties": {
+            "com.linkedin.ugc.ShareContent": {
+              "properties": {
+                "media": {
+                  "items": {
+                    "properties": {
+                      "media": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "status": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      }
+                    },
+                    "type": "object",
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "type": "array",
+                  "x-linkedin-inferred-from-example": true
+                },
+                "shareCommentary": {
+                  "properties": {
+                    "attributes": {
+                      "items": {},
+                      "type": "array",
+                      "x-linkedin-inferred-from-example": true
+                    },
+                    "text": {
+                      "type": "string",
+                      "x-linkedin-inferred-from-example": true
+                    }
+                  },
+                  "type": "object",
+                  "x-linkedin-inferred-from-example": true
+                },
+                "shareMediaCategory": {
+                  "type": "string",
+                  "x-linkedin-inferred-from-example": true
+                }
+              },
+              "type": "object",
+              "x-linkedin-inferred-from-example": true
+            }
+          },
+          "type": "object",
+          "x-linkedin-inferred-from-example": true
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_consumer_integrations_live_video_live_video_target_audience_share_content"
+            }
+          ],
+          "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_consumer_integrations_self_serve_share_on_linkedin_share_content"
+            }
+          ],
+          "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        }
+      ],
+      "After": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_marketing_community_management_shares_ugc_post_api_sharecontent"
+            }
+          ],
+          "description": "Represents type-specific content of this object. For a share this is the share text and media, and for an article it\u0027s the article contents.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_compliance_integrations_shares_ugc_post_api_sharecontent"
+            }
+          ],
+          "description": "Represents type-specific content of this object. For a share this is the share text and media, and for an article it is the article contents.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "com.linkedin.ugc.ShareContent": {
+              "type": "object",
+              "properties": {
+                "media": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "media": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      },
+                      "status": {
+                        "type": "string",
+                        "x-linkedin-inferred-from-example": true
+                      }
+                    },
+                    "x-linkedin-inferred-from-example": true
+                  },
+                  "x-linkedin-inferred-from-example": true
+                },
+                "shareCommentary": {
+                  "type": "object",
+                  "properties": {
+                    "attributes": {
+                      "type": "array",
+                      "items": {},
+                      "x-linkedin-inferred-from-example": true
+                    },
+                    "text": {
+                      "type": "string",
+                      "x-linkedin-inferred-from-example": true
+                    }
+                  },
+                  "x-linkedin-inferred-from-example": true
+                },
+                "shareMediaCategory": {
+                  "type": "string",
+                  "x-linkedin-inferred-from-example": true
+                }
+              },
+              "x-linkedin-inferred-from-example": true
+            }
+          },
+          "x-linkedin-inferred-from-example": true
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_consumer_integrations_live_video__share_content"
+            }
+          ],
+          "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_consumer_integrations_live_video_live_video_target_audience_share_content"
+            }
+          ],
+          "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_consumer_integrations_self_serve_share_on_linkedin_share_content"
+            }
+          ],
+          "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+        }
+      ]
+    },
     {
       "Pointer": "/paths/~1pages-data-portability~1rest~1dmaLiveVideos/get/responses/default/content/application~1json/schema/anyOf",
       "Before": [
@@ -124,35 +354,17 @@
             "errors": {
               "additionalProperties": {
                 "properties": {
-                  "code": {
-                    "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string",
-                    "type": "string"
-                  },
-                  "errorDetailType": {
-                    "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string",
-                    "type": "string"
-                  },
-                  "errorDetails": {
-                    "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
-                  },
                   "message": {
-                    "description": "A description of the error.\n\nDocumented type: string",
-                    "type": "string"
-                  },
-                  "serviceErrorCode": {
-                    "description": "A subcode that further classifies the error.\n\nDocumented type: int",
-                    "format": "int32",
-                    "type": "integer"
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
                   },
                   "status": {
-                    "description": "The HTTP status code.\n\nDocumented type: int",
-                    "format": "int32",
-                    "type": "integer"
+                    "type": "integer",
+                    "x-linkedin-inferred-from-example": true
                   }
                 },
                 "type": "object",
-                "x-linkedin-schema": "dma_error_responses_error_response",
-                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response"
+                "x-linkedin-inferred-from-example": true
               },
               "type": "object",
               "x-linkedin-inferred-from-example": true
@@ -371,14 +583,32 @@
                 "properties": {
                   "message": {
                     "type": "string",
-                    "x-linkedin-inferred-from-example": true
+                    "description": "A description of the error.\n\nDocumented type: string"
+                  },
+                  "serviceErrorCode": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "A subcode that further classifies the error.\n\nDocumented type: int"
                   },
                   "status": {
                     "type": "integer",
-                    "x-linkedin-inferred-from-example": true
+                    "format": "int32",
+                    "description": "The HTTP status code.\n\nDocumented type: int"
+                  },
+                  "errorDetails": {
+                    "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
+                  },
+                  "errorDetailType": {
+                    "type": "string",
+                    "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string"
                   }
                 },
-                "x-linkedin-inferred-from-example": true
+                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response",
+                "x-linkedin-schema": "dma_error_responses_error_response"
               },
               "x-linkedin-inferred-from-example": true
             },
