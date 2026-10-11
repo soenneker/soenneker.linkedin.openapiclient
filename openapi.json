@@ -140094,7 +140094,20 @@
                 "properties": {
                   "announcementImage": {
                     "properties": {
+                      "description": {
+                        "description": "Provide a short description for your image or article.\n\nDocumented type: string\n\nRequirement: No",
+                        "type": "string"
+                      },
                       "media": {
+                        "description": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No",
+                        "type": "string"
+                      },
+                      "originalUrl": {
+                        "description": "Provide the URL of the article you would like to share here.\n\nDocumented type: string\n\nRequirement: No",
+                        "type": "string"
+                      },
+                      "status": {
+                        "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes",
                         "type": "string"
                       },
                       "title": {
@@ -140109,7 +140122,12 @@
                         "type": "object"
                       }
                     },
-                    "type": "object"
+                    "required": [
+                      "status"
+                    ],
+                    "type": "object",
+                    "x-linkedin-schema": "consumer_integrations_self_serve_share_on_linkedin_share_media",
+                    "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-media"
                   },
                   "author": {
                     "properties": {
@@ -140131,7 +140149,8 @@
                   }
                 },
                 "type": "object"
-              }
+              },
+              "x-linkedin-learn-schema": true
             }
           }
         },
@@ -141822,14 +141841,6 @@
                         },
                         "type": "object",
                         "x-linkedin-inferred-from-example": true
-                      },
-                      {
-                        "allOf": [
-                          {
-                            "$ref": "#/components/schemas/Learn_consumer_integrations_live_video__share_content"
-                          }
-                        ],
-                        "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
                       },
                       {
                         "allOf": [

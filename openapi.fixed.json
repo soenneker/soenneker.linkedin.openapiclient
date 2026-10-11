@@ -88468,7 +88468,8 @@
                     "scheduledAt": 1591892529000
                   }
                 }
-              }
+              },
+              "x-linkedin-learn-schema": true
             }
           }
         },
@@ -500917,15 +500918,33 @@
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/#register"
       },
       "LinkedinLiveEventsLiveVideosRequestAnnouncementImage": {
+        "required": [
+          "status"
+        ],
         "type": "object",
         "properties": {
+          "description": {
+            "type": "string",
+            "description": "Provide a short description for your image or article.\n\nDocumented type: string\n\nRequirement: No"
+          },
           "media": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No"
+          },
+          "originalUrl": {
+            "type": "string",
+            "description": "Provide the URL of the article you would like to share here.\n\nDocumented type: string\n\nRequirement: No"
+          },
+          "status": {
+            "type": "string",
+            "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes"
           },
           "title": {
             "$ref": "#/components/schemas/LinkedinLiveEventsLiveVideosRequestAnnouncementImageTitle"
           }
-        }
+        },
+        "x-linkedin-schema": "consumer_integrations_self_serve_share_on_linkedin_share_media",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-media"
       },
       "LinkedinLiveEventsLiveVideosRequestAuthor": {
         "type": "object",
