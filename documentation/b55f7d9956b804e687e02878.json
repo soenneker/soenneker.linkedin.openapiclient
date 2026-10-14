@@ -1193,7 +1193,7 @@
         "Example Requests and Responses",
         "Example 3: Plus Tier - Fully Verified Member with Metadata"
       ],
-      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027",
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: 202607\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -1253,7 +1253,7 @@
         "Example Requests and Responses",
         "Example 4: Plus Tier - Partially Verified Member"
       ],
-      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verificationCriteria=WORKPLACE\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027",
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verificationCriteria=WORKPLACE\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: 202607\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -1313,7 +1313,7 @@
         "Example Requests and Responses",
         "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays"
       ],
-      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verifiedWithinDays=0\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027",
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verifiedWithinDays=0\u0027 \\\n  -H \u0027LinkedIn-Version: 202607\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027",
       "Headers": [],
       "Rows": []
     },

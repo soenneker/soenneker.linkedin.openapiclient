@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
-    /// <summary>Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.Documented type: stringRequirement: False</summary>
+    /// <summary>Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.Documented type: stringRequirement: False</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CampaignManagementCreateCampaignSponsoredupdates201ResponsePacingStrategy
     {

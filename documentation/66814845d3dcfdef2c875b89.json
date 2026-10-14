@@ -35,7 +35,7 @@
       "Section": "Migrations",
       "Anchor": "migrations",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -62,6 +62,23 @@
         "Version Status"
       ],
       "Rows": [
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202610 (October 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "October 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
         [
           {
             "Text": "Developers using LinkedIn Marketing APIs version 202609 (September 2026) to migrate to the latest versions.",
@@ -244,7 +261,7 @@
             "Values": []
           },
           {
-            "Text": "Active",
+            "Text": "Deprecated",
             "Links": [],
             "Values": []
           }

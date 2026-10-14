@@ -6,6 +6,7 @@
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/integration-requirements-company-intel",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/follower-statistics",
@@ -101,7 +102,7 @@
       "Section": "Recent Marketing API Changes",
       "Anchor": "recent-marketing-api-changes",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -110,10 +111,22 @@
       "Section": "Product \u0026 Platform Announcements",
       "Anchor": "product--platform-announcements",
       "SectionPath": [
-        "September 2026 - Version 202609 (Latest)",
+        "October 2026 - Version 202610 (Latest)",
         "Product \u0026 Platform Announcements"
       ],
-      "Text": "Company Intelligence API: New campaignGroup, objectiveType, and seniority filters:\nStarting with the 202609 version, the accountIntelligence endpoint finder now supports filtering results by the following optional fields under filterCriteria: campaignGroup, objectiveType, or member seniority, in addition to the existing campaign filter. Only one of campaign, campaignGroup, objectiveType, or seniority can be passed in the filterCriteria parameter. Organic metrics are 0 when campaign, campaignGroup or objectiveType filter is used. The seniority filter is supported only with LAST_90_DAYS lookback window and when campaign, campaignGroup, and objectiveType aren\u0027t used in the filterCriteria. These fields are request-only and do not change the response schema. Versions 202608 and below do not support these filters.\n\nAds Reporting API: New MEMBER_DESIGNATED_MARKET_AREA pivot:\nStarting with the 202609 version, in the adAnalytics endpoint\u0027s analytics finder, pivot.value parameter now supports MEMBER_DESIGNATED_MARKET_AREA, letting partners request analytics reports grouped by Nielsen Designated Market Area (DMA), consistent with other member demographic pivots such as MEMBER_REGION_V2. Pivot items are returned as urn:li:geo:{id} URNs. You may use the /adTargetingEntities resource to resolve these geo URNs to DMA region names.\nWhen displaying results grouped by this pivot, you must display a \u0022circle R\u0022 notice of registration immediately following each display of the DMA marks (that is, DMA\u00AE) and the statement \u0022DMA\u00AE is a registered service mark of The Nielsen Company.\u0022\n\nConversions API: New hashedFirstName and hashedLastName fields:\nStarting with the 202609 version, the userInfo object for the /conversionEvents endpoint supports two new optional fields for matching: hashedFirstName and hashedLastName, in addition to the existing plain text firstName and lastName fields. Before hashing, normalize the value to lowercase with no spaces or punctuation, and encode special characters as UTF-8. The result should be a SHA-256 HEX-encoded string of exactly 64 characters. A valid userInfo combination requires either firstName or hashedFirstName, together with either lastName or hashedLastName.\n\nConversions API: New 180-day attribution window option:\nThe postClickAttributionWindowSize and viewThroughAttributionWindowSize fields on the Conversion Rule schema in /conversions endpoint now support a 180-day value, in addition to the existing 365-day option, for the following conversion types: SUBMIT_APPLICATION, PURCHASE, ADD_TO_CART, QUALIFIED_LEAD, LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD. This update is available on all active versions. MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types are available starting with the 202608 version onwards.",
+      "Text": "Creatives API: New metadata field:\nStarting with the 202610 version, the /creatives endpoint supports a new read-only metadata field that returns descriptive information about a creative: adFormat, adHeadline, adIntroductionText, adLine, landingPage, and assetURL. Previously, retrieving this information required calling a different API depending on the creative\u0027s content type. The field is derived on read from the creative\u0027s underlying content and isn\u0027t stored, and fields that don\u0027t apply to the creative\u0027s ad format are omitted. metadata isn\u0027t returned by default; request it explicitly using the fields query parameter when retrieving a single creative, as described in Retrieve Creative Metadata. It isn\u0027t returned by the creatives finders. This is an additive, backward-compatible change; versions 202609 and below don\u0027t return this field.\n\nCompany Intelligence API: New jobFunction filter:\nStarting with the 202610 version, the accountIntelligence endpoint finder now supports filtering results by the optional jobFunction field under filterCriteria. Supported job-function buckets are INFORMATION_TECHNOLOGY, PRODUCT, SALES, MARKETING, OPERATIONS, FINANCE, HUMAN_RESOURCES, and OTHER. The field accepts these bucket values directly, rather than a standardized job-function URN or numeric ID. Only one of campaign, campaignGroup, objectiveType, seniority, or jobFunction can be passed in filterCriteria. The jobFunction filter is supported only with the LAST_90_DAYS lookback window. It applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead aren\u0027t broken down by job function. This field is request-only and doesn\u0027t change the response schema. Versions 202609 and below don\u0027t support this filter.\n\nCreatives API: New enriched content fields:\nStarting with the 202610 version, /creatives responses can return new read-only standardUpdateAd and videoAd members within content. standardUpdateAd includes reference and an optional contentAuthor field; videoAd includes reference, an optional contentAuthor, and an optional preRollMetadata field. Earlier API versions continue returning content.reference. Clients using 202610 should continue supporting content.reference, because it may still be returned when enriched content is unavailable. These fields are read-only and don\u0027t change Creative create requests.\n\nAds Reporting API: New memberFollows and memberProfileClicks metrics:\nStarting with the 202610 version, the /adAnalytics endpoint\u0027s metrics schema supports two new optional metrics: memberFollows, which returns the count of sponsored member profile follows, and memberProfileClicks, which returns the count of clicks on the profile of the member who owns the sponsored post. Both metrics exist only for Sponsored Updates and member follower display ads, such as Thought Leader Ads.\n\nBoost API: New Member and Company Page post boost endpoints:\nStarting with the 202610 version, four new Boost API endpoints are available for both Member and Company Page (organization) posts: Boost Init, Boost Hydrate, Boost Post, and Boost Status. These APIs enable partners to embed LinkedIn Boosting directly into their content and publishing workflows, connecting organic content to paid amplification within their platform. The endpoints are available under the existing Advertising API product.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes",
+      "SectionPath": [
+        "October 2026 - Version 202610 (Latest)",
+        "Breaking Changes"
+      ],
+      "Text": "Campaign Management API: New required surface field for publisher lists (action required):\nStarting with version 202611 (November 2026 release), publisher lists (/adPublisherRestrictions) require a surface field that sets the list\u0027s placement type: LAN (LinkedIn Audience Network) or CTV (Connected TV). Requests on version 202611 or later that create a publisher list without a valid surface will fail with a 400 error. Existing partner API accounts have a migration window that ends on December 15, 2026. After that date, campaigns (/adAccounts/{id}/adCampaigns) and account trust preferences (/adAccountTrustPreferences) can only use publisher lists whose placement type matches the campaign. Requests that don\u0027t meet this rule will fail with a 400 error on every API version. Lists already attached to campaigns will keep working. Please update your integration before December 15, 2026.",
       "Headers": [],
       "Rows": []
     },
@@ -122,7 +135,7 @@
       "Section": "Version Sunset",
       "Anchor": "version-sunset",
       "SectionPath": [
-        "September 2026 - Version 202609 (Latest)",
+        "October 2026 - Version 202610 (Latest)",
         "Version Sunset"
       ],
       "Text": "The monthly API versions below will be sunset and removed from the platform on the dates listed. For information on all the supported versions, refer to the migrations documentation. To avoid disruptions to your platform, please migrate to the latest API version launched today.",
@@ -134,7 +147,7 @@
       "Section": "Version Sunset",
       "Anchor": "version-sunset",
       "SectionPath": [
-        "September 2026 - Version 202609 (Latest)",
+        "October 2026 - Version 202610 (Latest)",
         "Version Sunset"
       ],
       "Text": "202510 - Oct 15, 2026\n202511 - Nov 16, 2026",
@@ -146,6 +159,42 @@
       "Section": "Product \u0026 Platform Announcements",
       "Anchor": "product--platform-announcements-1",
       "SectionPath": [
+        "September 2026 - Version 202609",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Company Intelligence API: New campaignGroup, objectiveType, and seniority filters:\nStarting with the 202609 version, the accountIntelligence endpoint finder now supports filtering results by the following optional fields under filterCriteria: campaignGroup, objectiveType, or member seniority, in addition to the existing campaign filter. Only one of campaign, campaignGroup, objectiveType, or seniority can be passed in the filterCriteria parameter. Organic metrics are 0 when campaign, campaignGroup or objectiveType filter is used. The seniority filter is supported only with LAST_90_DAYS lookback window and when campaign, campaignGroup, and objectiveType aren\u0027t used in the filterCriteria. These fields are request-only and do not change the response schema. Versions 202608 and below do not support these filters.\n\nAds Reporting API: New MEMBER_DESIGNATED_MARKET_AREA pivot:\nStarting with the 202609 version, in the adAnalytics endpoint\u0027s analytics finder, pivot.value parameter now supports MEMBER_DESIGNATED_MARKET_AREA, letting partners request analytics reports grouped by Nielsen Designated Market Area (DMA), consistent with other member demographic pivots such as MEMBER_REGION_V2. Pivot items are returned as urn:li:geo:{id} URNs. You may use the /adTargetingEntities resource to resolve these geo URNs to DMA region names.\nWhen displaying results grouped by this pivot, you must display a \u0022circle R\u0022 notice of registration immediately following each display of the DMA marks (that is, DMA\u00AE) and the statement \u0022DMA\u00AE is a registered service mark of The Nielsen Company.\u0022\n\nConversions API: New hashedFirstName and hashedLastName fields:\nStarting with the 202609 version, the userInfo object for the /conversionEvents endpoint supports two new optional fields for matching: hashedFirstName and hashedLastName, in addition to the existing plain text firstName and lastName fields. Before hashing, normalize the value to lowercase with no spaces or punctuation, and encode special characters as UTF-8. The result should be a SHA-256 HEX-encoded string of exactly 64 characters. A valid userInfo combination requires either firstName or hashedFirstName, together with either lastName or hashedLastName.\n\nConversions API: New 180-day attribution window option:\nThe postClickAttributionWindowSize and viewThroughAttributionWindowSize fields on the Conversion Rule schema in /conversions endpoint now support a 180-day value, in addition to the existing 365-day option, for the following conversion types: SUBMIT_APPLICATION, PURCHASE, ADD_TO_CART, QUALIFIED_LEAD, LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD. This update is available on all active versions. MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types are available starting with the 202608 version onwards.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version Sunset",
+      "Anchor": "version-sunset-1",
+      "SectionPath": [
+        "September 2026 - Version 202609",
+        "Version Sunset"
+      ],
+      "Text": "The monthly API versions below will be sunset and removed from the platform on the dates listed. For information on all the supported versions, refer to the migrations documentation. To avoid disruptions to your platform, please migrate to the latest API version launched today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version Sunset",
+      "Anchor": "version-sunset-1",
+      "SectionPath": [
+        "September 2026 - Version 202609",
+        "Version Sunset"
+      ],
+      "Text": "202510 - Oct 15, 2026\n202511 - Nov 16, 2026",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-2",
+      "SectionPath": [
         "August 2026 - Version 202608",
         "Product \u0026 Platform Announcements"
       ],
@@ -156,7 +205,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-1",
+      "Anchor": "version-sunset-2",
       "SectionPath": [
         "August 2026 - Version 202608",
         "Version Sunset"
@@ -168,7 +217,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-1",
+      "Anchor": "version-sunset-2",
       "SectionPath": [
         "August 2026 - Version 202608",
         "Version Sunset"
@@ -204,7 +253,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-2",
+      "Anchor": "product--platform-announcements-3",
       "SectionPath": [
         "July 2026 - Version 202607",
         "Product \u0026 Platform Announcements"
@@ -216,7 +265,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-2",
+      "Anchor": "version-sunset-3",
       "SectionPath": [
         "July 2026 - Version 202607",
         "Version Sunset"
@@ -228,7 +277,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-2",
+      "Anchor": "version-sunset-3",
       "SectionPath": [
         "July 2026 - Version 202607",
         "Version Sunset"
@@ -240,7 +289,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-3",
+      "Anchor": "product--platform-announcements-4",
       "SectionPath": [
         "June 2026 - Version 202606",
         "Product \u0026 Platform Announcements"
@@ -252,7 +301,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-3",
+      "Anchor": "version-sunset-4",
       "SectionPath": [
         "June 2026 - Version 202606",
         "Version Sunset"
@@ -264,7 +313,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-3",
+      "Anchor": "version-sunset-4",
       "SectionPath": [
         "June 2026 - Version 202606",
         "Version Sunset"
@@ -288,7 +337,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-4",
+      "Anchor": "product--platform-announcements-5",
       "SectionPath": [
         "May 2026 - Version 202605",
         "Product \u0026 Platform Announcements"
@@ -300,7 +349,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes",
+      "Anchor": "breaking-changes-1",
       "SectionPath": [
         "May 2026 - Version 202605",
         "Breaking Changes"
@@ -312,7 +361,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-4",
+      "Anchor": "version-sunset-5",
       "SectionPath": [
         "May 2026 - Version 202605",
         "Version Sunset"
@@ -324,7 +373,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-4",
+      "Anchor": "version-sunset-5",
       "SectionPath": [
         "May 2026 - Version 202605",
         "Version Sunset"
@@ -348,7 +397,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-5",
+      "Anchor": "product--platform-announcements-6",
       "SectionPath": [
         "April 2026 - Version 202604",
         "Product \u0026 Platform Announcements"
@@ -360,7 +409,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-1",
+      "Anchor": "breaking-changes-2",
       "SectionPath": [
         "April 2026 - Version 202604",
         "Breaking Changes"
@@ -372,7 +421,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-1",
+      "Anchor": "breaking-changes-2",
       "SectionPath": [
         "April 2026 - Version 202604",
         "Breaking Changes"
@@ -384,7 +433,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-6",
+      "Anchor": "product--platform-announcements-7",
       "SectionPath": [
         "March 2026 - Version 202603",
         "Product \u0026 Platform Announcements"
@@ -420,7 +469,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-2",
+      "Anchor": "breaking-changes-3",
       "SectionPath": [
         "March 2026 - Version 202603",
         "Breaking Changes"
@@ -432,7 +481,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-2",
+      "Anchor": "breaking-changes-3",
       "SectionPath": [
         "March 2026 - Version 202603",
         "Breaking Changes"
@@ -444,7 +493,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-7",
+      "Anchor": "product--platform-announcements-8",
       "SectionPath": [
         "February 2026 - Version 202602",
         "Product \u0026 Platform Announcements"
@@ -456,7 +505,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-3",
+      "Anchor": "breaking-changes-4",
       "SectionPath": [
         "February 2026 - Version 202602",
         "Breaking Changes"
@@ -468,7 +517,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-3",
+      "Anchor": "breaking-changes-4",
       "SectionPath": [
         "February 2026 - Version 202602",
         "Breaking Changes"
@@ -480,7 +529,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-8",
+      "Anchor": "product--platform-announcements-9",
       "SectionPath": [
         "January 2026 - Version 202601",
         "Product \u0026 Platform Announcements"
@@ -492,7 +541,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-4",
+      "Anchor": "breaking-changes-5",
       "SectionPath": [
         "January 2026 - Version 202601",
         "Breaking Changes"
@@ -504,7 +553,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-4",
+      "Anchor": "breaking-changes-5",
       "SectionPath": [
         "January 2026 - Version 202601",
         "Breaking Changes"
@@ -516,7 +565,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-9",
+      "Anchor": "product--platform-announcements-10",
       "SectionPath": [
         "November 2025 - Version 202511",
         "Product \u0026 Platform Announcements"
@@ -528,7 +577,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-5",
+      "Anchor": "breaking-changes-6",
       "SectionPath": [
         "November 2025 - Version 202511",
         "Breaking Changes"
@@ -540,7 +589,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-5",
+      "Anchor": "breaking-changes-6",
       "SectionPath": [
         "November 2025 - Version 202511",
         "Breaking Changes"
@@ -552,7 +601,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-10",
+      "Anchor": "product--platform-announcements-11",
       "SectionPath": [
         "October 2025 - Version 202510",
         "Product \u0026 Platform Announcements"
@@ -564,7 +613,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-6",
+      "Anchor": "breaking-changes-7",
       "SectionPath": [
         "October 2025 - Version 202510",
         "Breaking Changes"
@@ -576,7 +625,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-6",
+      "Anchor": "breaking-changes-7",
       "SectionPath": [
         "October 2025 - Version 202510",
         "Breaking Changes"
@@ -588,7 +637,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-11",
+      "Anchor": "product--platform-announcements-12",
       "SectionPath": [
         "September 2025 - Version 202509",
         "Product \u0026 Platform Announcements"
@@ -600,7 +649,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-7",
+      "Anchor": "breaking-changes-8",
       "SectionPath": [
         "September 2025 - Version 202509",
         "Breaking Changes"
@@ -612,7 +661,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-7",
+      "Anchor": "breaking-changes-8",
       "SectionPath": [
         "September 2025 - Version 202509",
         "Breaking Changes"
@@ -636,7 +685,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-12",
+      "Anchor": "product--platform-announcements-13",
       "SectionPath": [
         "August 2025 - Version 202508",
         "Product \u0026 Platform Announcements"
@@ -648,7 +697,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-8",
+      "Anchor": "breaking-changes-9",
       "SectionPath": [
         "August 2025 - Version 202508",
         "Breaking Changes"
@@ -660,7 +709,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-8",
+      "Anchor": "breaking-changes-9",
       "SectionPath": [
         "August 2025 - Version 202508",
         "Breaking Changes"
@@ -684,7 +733,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-13",
+      "Anchor": "product--platform-announcements-14",
       "SectionPath": [
         "July 2025 - Version 202507",
         "Product \u0026 Platform Announcements"
@@ -696,7 +745,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-9",
+      "Anchor": "breaking-changes-10",
       "SectionPath": [
         "July 2025 - Version 202507",
         "Breaking Changes"
@@ -708,7 +757,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-9",
+      "Anchor": "breaking-changes-10",
       "SectionPath": [
         "July 2025 - Version 202507",
         "Breaking Changes"
@@ -732,7 +781,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-14",
+      "Anchor": "product--platform-announcements-15",
       "SectionPath": [
         "June 2025 - Version 202506",
         "Product \u0026 Platform Announcements"
@@ -744,7 +793,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-10",
+      "Anchor": "breaking-changes-11",
       "SectionPath": [
         "June 2025 - Version 202506",
         "Breaking Changes"
@@ -756,7 +805,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-10",
+      "Anchor": "breaking-changes-11",
       "SectionPath": [
         "June 2025 - Version 202506",
         "Breaking Changes"
@@ -780,7 +829,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-15",
+      "Anchor": "product--platform-announcements-16",
       "SectionPath": [
         "May 2025 - Version 202505",
         "Product \u0026 Platform Announcements"
@@ -792,7 +841,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-11",
+      "Anchor": "breaking-changes-12",
       "SectionPath": [
         "May 2025 - Version 202505",
         "Breaking Changes"
@@ -804,7 +853,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-11",
+      "Anchor": "breaking-changes-12",
       "SectionPath": [
         "May 2025 - Version 202505",
         "Breaking Changes"
@@ -828,7 +877,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-16",
+      "Anchor": "product--platform-announcements-17",
       "SectionPath": [
         "April 2025 - Version 202504",
         "Product \u0026 Platform Announcements"
@@ -840,7 +889,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-12",
+      "Anchor": "breaking-changes-13",
       "SectionPath": [
         "April 2025 - Version 202504",
         "Breaking Changes"
@@ -852,7 +901,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-12",
+      "Anchor": "breaking-changes-13",
       "SectionPath": [
         "April 2025 - Version 202504",
         "Breaking Changes"
@@ -876,7 +925,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-17",
+      "Anchor": "product--platform-announcements-18",
       "SectionPath": [
         "March 2025 - Version 202503",
         "Product \u0026 Platform Announcements"
@@ -888,7 +937,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-13",
+      "Anchor": "breaking-changes-14",
       "SectionPath": [
         "March 2025 - Version 202503",
         "Breaking Changes"
@@ -900,7 +949,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-13",
+      "Anchor": "breaking-changes-14",
       "SectionPath": [
         "March 2025 - Version 202503",
         "Breaking Changes"
@@ -924,7 +973,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-18",
+      "Anchor": "product--platform-announcements-19",
       "SectionPath": [
         "February 2025 - Version 202502",
         "Product \u0026 Platform Announcements"
@@ -936,7 +985,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-14",
+      "Anchor": "breaking-changes-15",
       "SectionPath": [
         "February 2025 - Version 202502",
         "Breaking Changes"
@@ -948,7 +997,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-14",
+      "Anchor": "breaking-changes-15",
       "SectionPath": [
         "February 2025 - Version 202502",
         "Breaking Changes"
@@ -972,7 +1021,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-19",
+      "Anchor": "product--platform-announcements-20",
       "SectionPath": [
         "January 2025 - Version 202501",
         "Product \u0026 Platform Announcements"
@@ -984,7 +1033,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-15",
+      "Anchor": "breaking-changes-16",
       "SectionPath": [
         "January 2025 - Version 202501",
         "Breaking Changes"
@@ -996,7 +1045,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-15",
+      "Anchor": "breaking-changes-16",
       "SectionPath": [
         "January 2025 - Version 202501",
         "Breaking Changes"
@@ -1032,7 +1081,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-20",
+      "Anchor": "product--platform-announcements-21",
       "SectionPath": [
         "November 2024 - Version 202411",
         "Product \u0026 Platform Announcements"
@@ -1044,7 +1093,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-16",
+      "Anchor": "breaking-changes-17",
       "SectionPath": [
         "November 2024 - Version 202411",
         "Breaking Changes"
@@ -1056,7 +1105,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-16",
+      "Anchor": "breaking-changes-17",
       "SectionPath": [
         "November 2024 - Version 202411",
         "Breaking Changes"
@@ -1080,7 +1129,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-21",
+      "Anchor": "product--platform-announcements-22",
       "SectionPath": [
         "October 2024 - Version 202410",
         "Product \u0026 Platform Announcements"
@@ -1092,7 +1141,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-17",
+      "Anchor": "breaking-changes-18",
       "SectionPath": [
         "October 2024 - Version 202410",
         "Breaking Changes"
@@ -1104,7 +1153,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-17",
+      "Anchor": "breaking-changes-18",
       "SectionPath": [
         "October 2024 - Version 202410",
         "Breaking Changes"
@@ -1128,7 +1177,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-22",
+      "Anchor": "product--platform-announcements-23",
       "SectionPath": [
         "September 2024 - Version 202409",
         "Product \u0026 Platform Announcements"
@@ -1140,7 +1189,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-18",
+      "Anchor": "breaking-changes-19",
       "SectionPath": [
         "September 2024 - Version 202409",
         "Breaking Changes"
@@ -1152,7 +1201,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-18",
+      "Anchor": "breaking-changes-19",
       "SectionPath": [
         "September 2024 - Version 202409",
         "Breaking Changes"
@@ -1176,7 +1225,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-23",
+      "Anchor": "product--platform-announcements-24",
       "SectionPath": [
         "August 2024 - Version 202408",
         "Product \u0026 Platform Announcements"
@@ -1188,7 +1237,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-19",
+      "Anchor": "breaking-changes-20",
       "SectionPath": [
         "August 2024 - Version 202408",
         "Breaking Changes"
@@ -1200,7 +1249,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-19",
+      "Anchor": "breaking-changes-20",
       "SectionPath": [
         "August 2024 - Version 202408",
         "Breaking Changes"
@@ -1224,7 +1273,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-24",
+      "Anchor": "product--platform-announcements-25",
       "SectionPath": [
         "July 2024 - Version 202407",
         "Product \u0026 Platform Announcements"
@@ -1236,7 +1285,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-20",
+      "Anchor": "breaking-changes-21",
       "SectionPath": [
         "July 2024 - Version 202407",
         "Breaking Changes"
@@ -1248,7 +1297,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-20",
+      "Anchor": "breaking-changes-21",
       "SectionPath": [
         "July 2024 - Version 202407",
         "Breaking Changes"
@@ -1272,7 +1321,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-25",
+      "Anchor": "product--platform-announcements-26",
       "SectionPath": [
         "June 2024 - Version 202406",
         "Product \u0026 Platform Announcements"
@@ -1284,7 +1333,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-21",
+      "Anchor": "breaking-changes-22",
       "SectionPath": [
         "June 2024 - Version 202406",
         "Breaking Changes"
@@ -1296,7 +1345,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-21",
+      "Anchor": "breaking-changes-22",
       "SectionPath": [
         "June 2024 - Version 202406",
         "Breaking Changes"
@@ -1320,7 +1369,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-26",
+      "Anchor": "product--platform-announcements-27",
       "SectionPath": [
         "May 2024 - Version 202405",
         "Product \u0026 Platform Announcements"
@@ -1332,7 +1381,7 @@
     {
       "Kind": "table",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-26",
+      "Anchor": "product--platform-announcements-27",
       "SectionPath": [
         "May 2024 - Version 202405",
         "Product \u0026 Platform Announcements"
@@ -1372,7 +1421,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-26",
+      "Anchor": "product--platform-announcements-27",
       "SectionPath": [
         "May 2024 - Version 202405",
         "Product \u0026 Platform Announcements"
@@ -1384,7 +1433,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-26",
+      "Anchor": "product--platform-announcements-27",
       "SectionPath": [
         "May 2024 - Version 202405",
         "Product \u0026 Platform Announcements"
@@ -1396,7 +1445,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-22",
+      "Anchor": "breaking-changes-23",
       "SectionPath": [
         "May 2024 - Version 202405",
         "Breaking Changes"
@@ -1408,7 +1457,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-22",
+      "Anchor": "breaking-changes-23",
       "SectionPath": [
         "May 2024 - Version 202405",
         "Breaking Changes"
@@ -1444,7 +1493,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-27",
+      "Anchor": "product--platform-announcements-28",
       "SectionPath": [
         "April 2024 - Version 202404",
         "Product \u0026 Platform Announcements"
@@ -1456,7 +1505,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-23",
+      "Anchor": "breaking-changes-24",
       "SectionPath": [
         "April 2024 - Version 202404",
         "Breaking Changes"
@@ -1468,7 +1517,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-23",
+      "Anchor": "breaking-changes-24",
       "SectionPath": [
         "April 2024 - Version 202404",
         "Breaking Changes"
@@ -1516,7 +1565,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-28",
+      "Anchor": "product--platform-announcements-29",
       "SectionPath": [
         "March 2024 - Version 202403",
         "Product \u0026 Platform Announcements"
@@ -1528,7 +1577,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-28",
+      "Anchor": "product--platform-announcements-29",
       "SectionPath": [
         "March 2024 - Version 202403",
         "Product \u0026 Platform Announcements"
@@ -1540,7 +1589,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-28",
+      "Anchor": "product--platform-announcements-29",
       "SectionPath": [
         "March 2024 - Version 202403",
         "Product \u0026 Platform Announcements"
@@ -1552,7 +1601,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-28",
+      "Anchor": "product--platform-announcements-29",
       "SectionPath": [
         "March 2024 - Version 202403",
         "Product \u0026 Platform Announcements"
@@ -1564,7 +1613,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-24",
+      "Anchor": "breaking-changes-25",
       "SectionPath": [
         "March 2024 - Version 202403",
         "Breaking Changes"
@@ -1576,7 +1625,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-24",
+      "Anchor": "breaking-changes-25",
       "SectionPath": [
         "March 2024 - Version 202403",
         "Breaking Changes"
@@ -1636,7 +1685,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-29",
+      "Anchor": "product--platform-announcements-30",
       "SectionPath": [
         "February 2024 - Version 202402",
         "Product \u0026 Platform Announcements"
@@ -1648,7 +1697,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-29",
+      "Anchor": "product--platform-announcements-30",
       "SectionPath": [
         "February 2024 - Version 202402",
         "Product \u0026 Platform Announcements"
@@ -1660,7 +1709,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-25",
+      "Anchor": "breaking-changes-26",
       "SectionPath": [
         "February 2024 - Version 202402",
         "Breaking Changes"
@@ -1672,7 +1721,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-25",
+      "Anchor": "breaking-changes-26",
       "SectionPath": [
         "February 2024 - Version 202402",
         "Breaking Changes"
@@ -1744,7 +1793,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1756,7 +1805,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1768,7 +1817,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1780,7 +1829,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1792,7 +1841,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1804,7 +1853,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1816,7 +1865,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1828,7 +1877,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1840,7 +1889,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1852,7 +1901,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1864,7 +1913,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-30",
+      "Anchor": "product--platform-announcements-31",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Product \u0026 Platform Announcements"
@@ -1876,7 +1925,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-26",
+      "Anchor": "breaking-changes-27",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Breaking Changes"
@@ -1888,7 +1937,7 @@
     {
       "Kind": "text",
       "Section": "Breaking Changes",
-      "Anchor": "breaking-changes-26",
+      "Anchor": "breaking-changes-27",
       "SectionPath": [
         "January 2024 - Version 202401",
         "Breaking Changes"

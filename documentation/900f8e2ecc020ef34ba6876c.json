@@ -5,7 +5,6 @@
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
@@ -30,7 +29,7 @@
       "Section": "Company Intelligence API",
       "Anchor": "company-intelligence-api",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -58,6 +57,15 @@
       "Anchor": "company-intelligence-api",
       "SectionPath": [],
       "Text": "The Company Intelligence API delivers company (target account)-level data for all companies engaged through LinkedIn. It provides metrics such as engagement score, paid impressions, paid clicks, leads, paid qualified leads, conversions, paid video views, cost per paid qualified lead (CPQL), organic impressions, and organic engagements, along with firmographic attributes such as company size, industry, and headquarters country/region. You can filter results by campaign, campaign group, objective type, or member seniority. Designed to support attribution tools, the API offers accurate company-level data. Use it to gain insights, improve targeting, and measure how companies across your ad accounts interact with your brand on LinkedIn effectively.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "The Company Intelligence API delivers company (target account)-level data for all companies engaged through LinkedIn. It provides metrics such as engagement score, paid impressions, paid clicks, leads, paid qualified leads, conversions, paid video views, cost per paid qualified lead (CPQL), organic impressions, and organic engagements, along with firmographic attributes such as company size, industry, and headquarters country/region. You can filter results by campaign, campaign group, objective type, member seniority, or job-function bucket. Designed to support attribution tools, the API offers accurate company-level data. Use it to gain insights, improve targeting, and measure how companies across your ad accounts interact with your brand on LinkedIn effectively.",
       "Headers": [],
       "Rows": []
     },
@@ -112,6 +120,24 @@
       "Anchor": "company-intelligence-api",
       "SectionPath": [],
       "Text": "Metrics such as paid qualified leads and conversions are only supported for API versions starting from March 2026 and later.\nThe paidVideoViews metric is only supported for API versions starting from May 2026 and later.\nThe companySize, industry, countryCode, and costInLocalCurrencyPerPaidQualifiedLead fields, along with the LAST_365_DAYS lookback window option, are only supported for API versions starting from June 2026 and later.\nThe campaignGroup, objectiveType, and seniority filter fields are only supported for API versions starting from September 2026 and later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Metrics such as paid qualified leads and conversions are only supported for API versions starting from March 2026 and later.\nThe paidVideoViews metric is only supported for API versions starting from May 2026 and later.\nThe companySize, industry, countryCode, and costInLocalCurrencyPerPaidQualifiedLead fields, along with the LAST_365_DAYS lookback window option, are only supported for API versions starting from June 2026 and later.\nThe campaignGroup, objectiveType, and seniority filter fields are only supported for API versions starting from September 2026 and later.\nThe jobFunction filter field is only supported for API versions starting from October 2026 and later.",
       "Headers": [],
       "Rows": []
     },
@@ -659,10 +685,8 @@
             "Values": []
           },
           {
-            "Text": "You can provide none or one campaign objective type to filter results.Example: BRAND_AWARENESS.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the objective type filter is used. See list of objectiveType here.",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations?view=li-lms-2026-09#objective-type-descriptions"
-            ],
+            "Text": "You can provide none or one campaign objective type to filter results.Example: BRAND_AWARENESS.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the objective type filter is used.",
+            "Links": [],
             "Values": []
           },
           {
@@ -691,6 +715,185 @@
           },
           {
             "Text": "No (defaults to all seniorities)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Intelligence Filter Criteria",
+      "Anchor": "company-intelligence-filter-criteria",
+      "SectionPath": [
+        "Schema",
+        "Request Schema",
+        "Company Intelligence Filter Criteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lookbackWindow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LAST_365_DAYS, LAST_180_DAYS, LAST_90_DAYS, LAST_60_DAYS, LAST_30_DAYS, LAST_7_DAYS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive lookback window in days to filter results. Engagement events are included only if they fall within this lookback range from the day the results are calculated. The lookback window starts approximately 2 days prior to the current date and extends backward 365, 180, 90, 60, 30, or 7 days. The range is rounded to the start of day (00:00 UTC) for the beginning and to the end of day (23:00 UTC) for the end.For example, for a LAST_7_DAYS request sent on 5/21, response data will be from 5/12 00:00 UTC to 5/19 23:00 UTC.If this field is not provided, a default lookback of 90 days is applied. Note: Pass lookbackWindow:LAST_365_DAYS in the filterCriteria parameter of the accountIntelligence finder query to retrieve a full year of engagement history. When no lookback window is specified, the default of 90 days continues to apply.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to last 90 days)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[Ad Segment URN]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all ad segments)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign filter is used.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all campaigns)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignGroup",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign Group URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign group URN to filter results. Multiple campaign groups are not supported.Example: urn:li:sponsoredCampaignGroup:1234.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign group filter is used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all campaign groups)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign objective type to filter results.Example: BRAND_AWARENESS.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the objective type filter is used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all objective types)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seniority",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (numeric ID)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one standardized seniority ID. The Standardized Seniorities API returns id as a number; pass its decimal representation as a string in this field.Example: standardized seniority ID 4 (Senior) is passed as string value \u00224\u0022. In Rest.li finder syntax, scalar string values within a complex query parameter are not enclosed in quotation marks, so the request uses seniority:4.The seniority filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, objectiveType, and jobFunction are not provided. Other combinations return no results. The seniority filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by seniority.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09#get_all"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all seniorities)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobFunction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INFORMATION_TECHNOLOGY, PRODUCT, SALES, MARKETING, OPERATIONS, FINANCE, HUMAN_RESOURCES, OTHER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one job-function bucket to filter results.Example: SALES.This field accepts a coarse bucket value; don\u0027t pass a standardized-data job function URN or numeric job function ID.The job-function filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, objectiveType, and seniority are not provided. Other combinations return no results. The job-function filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by job function.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all job functions)",
             "Links": [],
             "Values": []
           }
@@ -1316,6 +1519,66 @@
         "Seniority Filter"
       ],
       "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,seniority:4)\u0027 \\\n  -H \u0027Authorization: ******\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job function filter",
+      "Anchor": "",
+      "SectionPath": [
+        "Sample Requests",
+        "Job function filter"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job function filter",
+      "Anchor": "",
+      "SectionPath": [
+        "Sample Requests",
+        "Job function filter"
+      ],
+      "Text": "Pass one of the supported job-function bucket values directly: INFORMATION_TECHNOLOGY, PRODUCT, SALES, MARKETING, OPERATIONS, FINANCE, HUMAN_RESOURCES, or OTHER. Don\u0027t pass a standardized-data job function URN or numeric job function ID. Use this filter only with LAST_90_DAYS and without campaign, campaignGroup, objectiveType, or seniority.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job function filter",
+      "Anchor": "",
+      "SectionPath": [
+        "Sample Requests",
+        "Job function filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Job function filter",
+      "Anchor": "",
+      "SectionPath": [
+        "Sample Requests",
+        "Job function filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,jobFunction:SALES)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Job function filter",
+      "Anchor": "",
+      "SectionPath": [
+        "Sample Requests",
+        "Job function filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,jobFunction:SALES)\u0027 \\\n  -H \u0027Authorization: ******\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
       "Headers": [],
       "Rows": []
     },

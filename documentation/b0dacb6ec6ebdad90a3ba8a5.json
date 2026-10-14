@@ -18,7 +18,6 @@
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
-    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
   ],
@@ -226,334 +225,6 @@
       ]
     },
     {
-      "Kind": "text",
-      "Section": "Choose Your Tier",
-      "Anchor": "choose-your-tier",
-      "SectionPath": [
-        "Choose Your Tier"
-      ],
-      "Text": "LinkedIn offers three tiers of the Verified on LinkedIn API, each designed for different use cases and stages of development.",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "table",
-      "Section": "Choose Your Tier",
-      "Anchor": "choose-your-tier",
-      "SectionPath": [
-        "Choose Your Tier"
-      ],
-      "Text": "",
-      "Headers": [
-        "Tier",
-        "Best For",
-        "Access",
-        "Cost",
-        "Rate Limits",
-        "Get Started"
-      ],
-      "Rows": [
-        [
-          {
-            "Text": "Development",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Testing \u0026 prototyping",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Developer app admins only",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Free",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "5,000/day",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Development Tier Quickstart (10 min)",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart"
-            ],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Lite",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "SMBs \u0026 startups",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "All LinkedIn members",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Free",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "5,000/day",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Lite Tier Quickstart",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier"
-            ],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Plus",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Enterprise partners",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "All LinkedIn members \u002B enhanced data",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Contact us",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Custom",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Plus Tier Quickstart",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart"
-            ],
-            "Values": []
-          }
-        ]
-      ]
-    },
-    {
-      "Kind": "table",
-      "Section": "Detailed Tier Comparison",
-      "Anchor": "detailed-tier-comparison",
-      "SectionPath": [
-        "Choose Your Tier",
-        "Detailed Tier Comparison"
-      ],
-      "Text": "",
-      "Headers": [
-        "Feature",
-        "Development",
-        "Lite",
-        "Plus"
-      ],
-      "Rows": [
-        [
-          {
-            "Text": "Access Type",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Self-serve (automatic)",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Application review",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Business Development approval",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Member Data Access",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Developer app admins only",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "All LinkedIn members",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "All LinkedIn members",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Production Ready",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u274C Testing only",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u2705 Yes",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u2705 Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Profile Data",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Basic profile info",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Basic profile info",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Basic profile info \u002B Current experience \u002B Recent education",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Verification Details",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Verified categories only",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Verified categories only",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Verified Categories \u002B Details \u002B Timestamps",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Bulk Validation API",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u274C",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u274C",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Validate if the member data has changed and needs to be refreshed",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Push Notifications",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u274C",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u274C",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Get push notification events when a member data has changed",
-            "Links": [],
-            "Values": []
-          }
-        ]
-      ]
-    },
-    {
-      "Kind": "text",
-      "Section": "Detailed Tier Comparison",
-      "Anchor": "detailed-tier-comparison",
-      "SectionPath": [
-        "Choose Your Tier",
-        "Detailed Tier Comparison"
-      ],
-      "Text": "Note",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "text",
-      "Section": "Detailed Tier Comparison",
-      "Anchor": "detailed-tier-comparison",
-      "SectionPath": [
-        "Choose Your Tier",
-        "Detailed Tier Comparison"
-      ],
-      "Text": "For Plus tier pricing and partnership inquiries, contact LinkedIn Business Development.",
-      "Headers": [],
-      "Rows": []
-    },
-    {
       "Kind": "table",
       "Section": "Verification Types",
       "Anchor": "verification-types",
@@ -661,9 +332,9 @@
             "Values": []
           },
           {
-            "Text": "Use Cases \u2192 Tier comparison (above) \u2192 Pick a quickstart",
+            "Text": "Quickstart (Development Tier)",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview#use-cases"
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart"
             ],
             "Values": []
           }
@@ -709,20 +380,6 @@
             "Text": "Quickstart (Development Tier) - 10 minutes",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart"
-            ],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Launch in production",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Upgrade to Lite Tier",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier"
             ],
             "Values": []
           }
@@ -792,7 +449,7 @@
       "SectionPath": [
         "API Reference"
       ],
-      "Text": "All tiers use the same API endpoints with different access levels:",
+      "Text": "Both tiers use the same API endpoints with different access levels:",
       "Headers": [],
       "Rows": []
     },
@@ -808,7 +465,6 @@
         "API",
         "Purpose",
         "Development",
-        "Lite",
         "Plus"
       ],
       "Rows": [
@@ -822,11 +478,6 @@
           },
           {
             "Text": "Profile data",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Basic profile",
             "Links": [],
             "Values": []
           },
@@ -860,11 +511,6 @@
             "Values": []
           },
           {
-            "Text": "Categories only",
-            "Links": [],
-            "Values": []
-          },
-          {
             "Text": "Categories \u002B Verification details",
             "Links": [],
             "Values": []
@@ -880,11 +526,6 @@
           },
           {
             "Text": "Bulk validation",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "\u274C",
             "Links": [],
             "Values": []
           },
@@ -914,35 +555,23 @@
     },
     {
       "Kind": "text",
-      "Section": "Step 1: Choose Your Tier",
-      "Anchor": "step-1-choose-your-tier",
+      "Section": "Step 1: Follow the Quickstart",
+      "Anchor": "step-1-follow-the-quickstart",
       "SectionPath": [
         "Getting Started",
-        "Step 1: Choose Your Tier"
+        "Step 1: Follow the Quickstart"
       ],
-      "Text": "Review the tier comparison table above to find the right tier for your needs.",
+      "Text": "Quickstart (Development Tier) - Test with developer app admins (10 min)\nPlus Tier Quickstart - Enterprise features",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "Step 2: Follow the Quickstart",
-      "Anchor": "step-2-follow-the-quickstart",
+      "Section": "Step 2: Implement \u0026 Launch",
+      "Anchor": "step-2-implement--launch",
       "SectionPath": [
         "Getting Started",
-        "Step 2: Follow the Quickstart"
-      ],
-      "Text": "Quickstart (Development Tier) - Test with developer app admins (10 min)\nUpgrade to Lite Tier - Production for SMBs\nPlus Tier Quickstart - Enterprise features",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "text",
-      "Section": "Step 3: Implement \u0026 Launch",
-      "Anchor": "step-3-implement--launch",
-      "SectionPath": [
-        "Getting Started",
-        "Step 3: Implement \u0026 Launch"
+        "Step 2: Implement \u0026 Launch"
       ],
       "Text": "Follow the Implementation Guide for API Integration, OAuth, testing, and production best practices.\nReview Branding Guidelines\nCheck our FAQ for common questions",
       "Headers": [],

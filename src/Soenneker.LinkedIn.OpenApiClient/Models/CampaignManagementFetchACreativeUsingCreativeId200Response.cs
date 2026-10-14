@@ -88,6 +88,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseLeadgenCallToAction LeadgenCallToAction { get; set; }
 #endif
+        /// <summary>Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative&apos;s underlying content. It&apos;s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.Documented type: CreativeMetadataRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseMetadata Metadata { get; set; }
+#endif
         /// <summary>The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,10 +115,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The servingHoldReasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ServingHoldReasons { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseServingHoldReasons? ServingHoldReasons { get; set; }
 #nullable restore
 #else
-        public List<string> ServingHoldReasons { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseServingHoldReasons ServingHoldReasons { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200Response"/> and sets the default values.
@@ -150,9 +158,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "leadgenCallToAction", n => { LeadgenCallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseLeadgenCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseLeadgenCallToAction.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseReview.CreateFromDiscriminatorValue); } },
-                { "servingHoldReasons", n => { ServingHoldReasons = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseServingHoldReasons>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseServingHoldReasons.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -174,8 +183,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseLeadgenCallToAction>("leadgenCallToAction", LeadgenCallToAction);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("servingHoldReasons", ServingHoldReasons);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseServingHoldReasons>("servingHoldReasons", ServingHoldReasons);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

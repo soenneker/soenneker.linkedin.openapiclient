@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseCampaignGroupInfo CampaignGroupInfo { get; set; }
 #endif
-        /// <summary>Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they’re creating a CTV campaign. Not specifying the boolean can be considered false. When &apos;connectedTelevisionOnly = true&apos;, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.Documented type: Boolean Optional, default=&quot;False&quot;Requirement: False</summary>
+        /// <summary>Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they’re creating a CTV campaign. Not specifying the boolean can be considered false. When &apos;connectedTelevisionOnly = true&apos;, offsiteDeliveryEnabled should be set to true.Documented type: Boolean Optional, default=&quot;False&quot;Requirement: False</summary>
         public bool? ConnectedTelevisionOnly { get; set; }
         /// <summary>CPM- Cost per thousand advertising impressions. If type=SPONSORED_INMAILS; cost per send(CPS) is measured as CPM x 1000. CPC- Cost per individual click on the associated link. CPV- Cost per view for video ads.Documented type: CostTypeRequirement: True</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseCostType? CostType { get; set; }
@@ -114,7 +114,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOffsitePreferences OffsitePreferences { get; set; }
 #endif
-        /// <summary>Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.Documented type: UnionRequirement: False</summary>
+        /// <summary>Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.Documented type: UnionRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationPreference? OptimizationPreference { get; set; }
@@ -130,7 +130,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationTargetType OptimizationTargetType { get; set; }
 #endif
-        /// <summary>Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.Documented type: stringRequirement: False</summary>
+        /// <summary>Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.Documented type: stringRequirement: False</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponsePacingStrategy? PacingStrategy { get; set; }
         /// <summary>Enum indicating whether a campaign is categorized as a political campaign. This allows advertisers to declare whether their ad constitutes political advertising. This field can be updated when the targeting of campaign changes. The possible values are: POLITICAL: Campaign is political advertising. NOT_POLITICAL: Campaign is not a political advertising. NOT_DECLARED: Indicates that the campaign&apos;s political intent hasn&apos;t been specified.Documented type: stringRequirement: True</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponsePoliticalIntent? PoliticalIntent { get; set; }

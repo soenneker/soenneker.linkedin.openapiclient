@@ -10835,11 +10835,46 @@
             "description": "The inclusive lookback window in days to filter results. Engagement events are included only if they fall within this lookback range from the day the results are calculated. The lookback window starts approximately 2 days prior to the current date and extends backward 365, 180, 90, 60, 30, or 7 days. The range is rounded to the start of day (00:00 UTC) for the beginning and to the end of day (23:00 UTC) for the end.For example, for a LAST_7_DAYS request sent on 5/21, response data will be from 5/12 00:00 UTC to 5/19 23:00 UTC.If this field is not provided, a default lookback of 90 days is applied. Note: Pass lookbackWindow:LAST_365_DAYS in the filterCriteria parameter of the accountIntelligence finder query to retrieve a full year of engagement history. When no lookback window is specified, the default of 90 days continues to apply.\n\nDocumented type: LAST_365_DAYS, LAST_180_DAYS, LAST_90_DAYS, LAST_60_DAYS, LAST_30_DAYS, LAST_7_DAYS\n\nRequirement: No (defaults to last 90 days)"
           },
           "objectiveType": {
-            "description": "You can provide none or one campaign objective type to filter results.Example: BRAND_AWARENESS.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the objective type filter is used. See list of objectiveType here.\n\nDocumented type: string\n\nRequirement: No (defaults to all objective types)",
+            "description": "You can provide none or one campaign objective type to filter results.Example: BRAND_AWARENESS.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the objective type filter is used.\n\nDocumented type: string\n\nRequirement: No (defaults to all objective types)",
             "type": "string"
           },
           "seniority": {
             "description": "You can provide none or one standardized seniority ID. The Standardized Seniorities API returns id as a number; pass its decimal representation as a string in this field.Example: standardized seniority ID 4 (Senior) is passed as string value \u00224\u0022. In Rest.li finder syntax, scalar string values within a complex query parameter are not enclosed in quotation marks, so the request uses seniority:4.The seniority filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, and objectiveType are not provided. Other combinations return no results. The seniority filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by seniority.\n\nDocumented type: string (numeric ID)\n\nRequirement: No (defaults to all seniorities)",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api#company-intelligence-filter-criteria"
+      },
+      "Learn_marketing_account_intel_account_intel_api_company_intelligence_filter_criteria_421": {
+        "properties": {
+          "adSegments": {
+            "description": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.\n\nDocumented type: Array[Ad Segment URN]\n\nRequirement: No (defaults to all ad segments)",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "campaign": {
+            "description": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign filter is used.\n\nDocumented type: Sponsored Campaign URN\n\nRequirement: No (defaults to all campaigns)",
+            "type": "string"
+          },
+          "campaignGroup": {
+            "description": "You can provide none or one campaign group URN to filter results. Multiple campaign groups are not supported.Example: urn:li:sponsoredCampaignGroup:1234.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign group filter is used.\n\nDocumented type: Sponsored Campaign Group URN\n\nRequirement: No (defaults to all campaign groups)",
+            "type": "string"
+          },
+          "jobFunction": {
+            "description": "You can provide none or one job-function bucket to filter results.Example: SALES.This field accepts a coarse bucket value; don\u0027t pass a standardized-data job function URN or numeric job function ID.The job-function filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, objectiveType, and seniority are not provided. Other combinations return no results. The job-function filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by job function.\n\nDocumented type: INFORMATION_TECHNOLOGY, PRODUCT, SALES, MARKETING, OPERATIONS, FINANCE, HUMAN_RESOURCES, OTHER\n\nRequirement: No (defaults to all job functions)"
+          },
+          "lookbackWindow": {
+            "description": "The inclusive lookback window in days to filter results. Engagement events are included only if they fall within this lookback range from the day the results are calculated. The lookback window starts approximately 2 days prior to the current date and extends backward 365, 180, 90, 60, 30, or 7 days. The range is rounded to the start of day (00:00 UTC) for the beginning and to the end of day (23:00 UTC) for the end.For example, for a LAST_7_DAYS request sent on 5/21, response data will be from 5/12 00:00 UTC to 5/19 23:00 UTC.If this field is not provided, a default lookback of 90 days is applied. Note: Pass lookbackWindow:LAST_365_DAYS in the filterCriteria parameter of the accountIntelligence finder query to retrieve a full year of engagement history. When no lookback window is specified, the default of 90 days continues to apply.\n\nDocumented type: LAST_365_DAYS, LAST_180_DAYS, LAST_90_DAYS, LAST_60_DAYS, LAST_30_DAYS, LAST_7_DAYS\n\nRequirement: No (defaults to last 90 days)"
+          },
+          "objectiveType": {
+            "description": "You can provide none or one campaign objective type to filter results.Example: BRAND_AWARENESS.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the objective type filter is used.\n\nDocumented type: string\n\nRequirement: No (defaults to all objective types)",
+            "type": "string"
+          },
+          "seniority": {
+            "description": "You can provide none or one standardized seniority ID. The Standardized Seniorities API returns id as a number; pass its decimal representation as a string in this field.Example: standardized seniority ID 4 (Senior) is passed as string value \u00224\u0022. In Rest.li finder syntax, scalar string values within a complex query parameter are not enclosed in quotation marks, so the request uses seniority:4.The seniority filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, objectiveType, and jobFunction are not provided. Other combinations return no results. The seniority filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by seniority.\n\nDocumented type: string (numeric ID)\n\nRequirement: No (defaults to all seniorities)",
             "type": "string"
           }
         },
@@ -10953,6 +10988,996 @@
         },
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api#response-schema"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_ineligible_reason_values": {
+        "enum": [
+          "POST_NOT_FOUND",
+          "POST_TYPE_NOT_SUPPORTED",
+          "POST_NOT_PUBLIC",
+          "ALREADY_BOOSTED",
+          "INSUFFICIENT_PERMISSIONS",
+          "UNKNOWN"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#ineligible-reason-values"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_moneyamount_object_schema": {
+        "properties": {
+          "amount": {
+            "description": "Decimal string representing the spend amount.\n\nDocumented type: String (decimal)\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "currencyCode": {
+            "description": "ISO currency code. The current response value is USD.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "currencyCode"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#moneyamount-object-schema"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_query_parameters": {
+        "properties": {
+          "q": {
+            "description": "Finder name. Value must be boostStatus.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetPosts": {
+            "description": "The post URNs to evaluate. Supported entity types are ugcPost and share. Provide between 1 and 50 values.\n\nDocumented type: Array of URNs.For example, List(urn%3Ali%3AugcPost%3A1234567890, urn%3Ali%3Ashare%3A9876543210)\n\nRequirement: Yes",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "q",
+          "targetPosts"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#query-parameters"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_query_parameters_1": {
+        "properties": {
+          "q": {
+            "description": "Finder name. Value must be boostAnalytics.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetPosts": {
+            "description": "List of boosted post URNs to retrieve analytics for. The API accepts between 1 and 50 URNs. Supported URN entity types are ugcPost and share.\n\nDocumented type: REST.li list of URNs.Example: List(urn%3Ali%3Ashare%3A7325786486870552578, urn%3Ali%3AugcPost%3A7325786486870552579)\n\nRequirement: Yes",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "q",
+          "targetPosts"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#query-parameters-1"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_request_body": {
+        "properties": {
+          "accountUrn": {
+            "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "campaignUrn": {
+            "description": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "The post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "targetPost"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_request_body_fields": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "goal": {
+            "description": "Advertiser objective for the hypothetical boost. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "productDescription": {
+            "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "runSchedule": {
+            "description": "Campaign schedule to preview. Use the defaultRunSchedule returned by init.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "end": {
+                "description": "End time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start time, in epoch milliseconds.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "targetingCriteria": {
+            "description": "Audience to preview, such as a suggested audience returned by an earlier hydrate call.\n\nDocumented type: Object\n\nRequirement: No",
+            "type": "object"
+          },
+          "totalBudget": {
+            "description": "Total budget to preview. Omit it to receive suggested budgets only.\n\nDocumented type: Object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "Three-letter ISO 4217 currency code for the budget.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "account",
+          "goal",
+          "runSchedule",
+          "productDescription"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-fields"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_request_body_schema": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "callToActionLabel": {
+            "properties": {
+              "value": {
+                "description": "Optional call-to-action label for the creative. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "callToActionTarget": {
+            "description": "Destination URL for the call to action. Provide this only when callToActionLabel is present.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "goal": {
+            "properties": {
+              "value": {
+                "description": "Boost objective. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: enum string\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "runSchedule": {
+            "properties": {
+              "end": {
+                "description": "Campaign end time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Campaign start time, in epoch milliseconds. Use the defaultRunSchedule returned by init.\n\nDocumented type: long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "targetPost": {
+            "description": "Target post to boost. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetingCriteria": {
+            "description": "Audience for the boost, such as the suggested audience returned by hydrate.\n\nDocumented type: object\n\nRequirement: Yes",
+            "type": "object"
+          },
+          "totalBudget": {
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount, for example 50.00.\n\nDocumented type: string\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO currency code for the budget, for example USD.\n\nDocumented type: string\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "targetPost",
+          "account",
+          "targetingCriteria"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-schema"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_request_parameters": {
+        "properties": {
+          "account": {
+            "description": "The sponsored account URN associated with the campaign.\n\nDocumented type: URL-encoded URN.For example, urn%3Ali%3AsponsoredAccount%3A987654321\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "campaignId": {
+            "description": "The ID of the boost campaign to delete, passed in the resource path.\n\nDocumented type: Long\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "campaignId",
+          "account"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-parameters"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_response_body_fields": {
+        "properties": {
+          "paging": {
+            "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "count": {
+                "description": "Number of elements requested for the page.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start index of the returned collection.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "paging"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_response_body_fields_1": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "Echoed sponsored account URN for the preview.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "audienceCount": {
+                "description": "Estimated audience size for the preview, when available.\n\nDocumented type: Long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              },
+              "consumerPrice": {
+                "description": "Simplified consumer-facing pricing summary, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "campaignTotalBudget": {
+                    "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "totalConsumerPrice": {
+                    "description": "Total consumer price after applicable credits.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "forecast": {
+                "description": "Forecasted delivery estimates, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "clicks": {
+                    "description": "Forecasted clicks range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "impressions": {
+                    "description": "Forecasted impressions range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "spend": {
+                    "description": "Forecasted spend range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "videoViews": {
+                    "description": "Forecasted video views range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "Maximum total budget allowed for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Maximum allowed decimal amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Maximum budget currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "minDailyBudget": {
+                "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "productDescription": {
+                "description": "Echoed product description.\n\nDocumented type: String\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "suggestedTotalBudgets": {
+                "description": "Suggested total budget options, when available.\n\nDocumented type: Array\n\nRequirement: No",
+                "items": {},
+                "type": "array"
+              },
+              "targetingCriteria": {
+                "description": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "totalBudget": {
+                "description": "Echoed total budget. Returned only when the request includes totalBudget.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Echoed decimal budget amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Echoed ISO 4217 currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields-1"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_response_body_fields_2": {
+        "properties": {
+          "paging": {
+            "description": "Pagination metadata for the response, including count, start, and links.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "type": "object"
+          }
+        },
+        "required": [
+          "paging"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields-2"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_response_schema": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "availableObjectiveTypes": {
+                "description": "Boost objectives available for the post and boost context.\n\nDocumented type: array[string]\n\nRequirement: No",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "billingConfigured": {
+                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+                "type": "boolean"
+              },
+              "campaignUrn": {
+                "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultObjectiveType": {
+                "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultRunSchedule": {
+                "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "end": {
+                    "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "start": {
+                    "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "status": {
+                "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "targetPost": {
+                "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_response_schema_1": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account used for billing.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "callToActionLabel": {
+            "description": "Call-to-action label applied to the creative.\n\nDocumented type: enum string",
+            "type": "string"
+          },
+          "callToActionTarget": {
+            "description": "Call-to-action destination URL.\n\nDocumented type: string",
+            "type": "string"
+          },
+          "campaign": {
+            "description": "Newly created sponsored campaign URN.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "campaignGroup": {
+            "description": "Newly created sponsored campaign group URN.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "creative": {
+            "description": "Newly created sponsored creative URN.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "goal": {
+            "description": "Objective used to create the boost.\n\nDocumented type: enum string",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "Post that was boosted.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "totalBudget": {
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount applied to the boost.\n\nDocumented type: string",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO currency code for the budget.\n\nDocumented type: string",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-1"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_ineligible_reason_values": {
+        "enum": [
+          "POST_NOT_FOUND",
+          "POST_TYPE_NOT_SUPPORTED",
+          "POST_NOT_PUBLIC",
+          "ALREADY_BOOSTED",
+          "INSUFFICIENT_PERMISSIONS",
+          "UNKNOWN"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#ineligible-reason-values"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_query_parameters": {
+        "properties": {
+          "organization": {
+            "description": "The sponsoring organization URN for the Company Page Boost context.\n\nDocumented type: URN.For example, urn%3Ali%3Aorganization%3A2414183\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "q": {
+            "description": "Finder name. Value must be boostStatus.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetPosts": {
+            "description": "The post URNs to evaluate. Supported entity types are ugcPost and share. Provide between 1 and 50 values.\n\nDocumented type: Array of URNs.For example, List(urn%3Ali%3AugcPost%3A1234567890, urn%3Ali%3Ashare%3A9876543210)\n\nRequirement: Yes",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "q",
+          "targetPosts",
+          "organization"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#query-parameters"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_request_body": {
+        "properties": {
+          "accountUrn": {
+            "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "campaignUrn": {
+            "description": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "organization": {
+            "description": "The sponsoring organization for the boost. The URN format is urn:li:organization:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "The Company Page post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "targetPost",
+          "organization"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_request_body_fields": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "goal": {
+            "description": "Advertiser objective for the hypothetical boost. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "organization": {
+            "description": "Organization URN for the sponsoring Company Page Boost context. Use urn:li:organization:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "productDescription": {
+            "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "runSchedule": {
+            "description": "Campaign schedule to preview. Use the defaultRunSchedule returned by init.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "end": {
+                "description": "End time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start time, in epoch milliseconds.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "targetingCriteria": {
+            "description": "Audience to preview, such as a suggested audience returned by an earlier hydrate call.\n\nDocumented type: Object\n\nRequirement: No",
+            "type": "object"
+          },
+          "totalBudget": {
+            "description": "Total budget to preview. Omit it to receive suggested budgets only.\n\nDocumented type: Object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "Three-letter ISO 4217 currency code for the budget.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "account",
+          "goal",
+          "runSchedule",
+          "productDescription",
+          "organization"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-fields"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_request_body_schema": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "callToActionLabel": {
+            "properties": {
+              "value": {
+                "description": "Optional call-to-action label for the creative. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "callToActionTarget": {
+            "description": "Destination URL for the call to action. Provide this only when callToActionLabel is present.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "goal": {
+            "properties": {
+              "value": {
+                "description": "Boost objective. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: enum string\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "organization": {
+            "description": "Organization that owns the Company Page boost context. Use the format urn:li:organization:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "runSchedule": {
+            "properties": {
+              "end": {
+                "description": "Campaign end time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Campaign start time, in epoch milliseconds. Use the defaultRunSchedule returned by init.\n\nDocumented type: long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "targetPost": {
+            "description": "Target post to boost. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetingCriteria": {
+            "description": "Audience for the boost, such as the suggested audience returned by hydrate.\n\nDocumented type: object\n\nRequirement: Yes",
+            "type": "object"
+          },
+          "totalBudget": {
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount, for example 50.00.\n\nDocumented type: string\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO currency code for the budget, for example USD.\n\nDocumented type: string\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "targetPost",
+          "account",
+          "organization",
+          "targetingCriteria"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-schema"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_request_parameters": {
+        "properties": {
+          "account": {
+            "description": "The sponsored account URN associated with the campaign.\n\nDocumented type: URL-encoded URN.For example, urn%3Ali%3AsponsoredAccount%3A987654321\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "campaignId": {
+            "description": "The ID of the boost campaign to delete, passed in the resource path.\n\nDocumented type: Long\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "campaignId",
+          "account"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-parameters"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_response_body_fields": {
+        "properties": {
+          "paging": {
+            "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "count": {
+                "description": "Number of elements requested for the page.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start index of the returned collection.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "paging"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-body-fields"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_response_body_fields_1": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "Echoed sponsored account URN for the preview.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "audienceCount": {
+                "description": "Estimated audience size for the preview, when available.\n\nDocumented type: Long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              },
+              "consumerPrice": {
+                "description": "Simplified consumer-facing pricing summary, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "campaignTotalBudget": {
+                    "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "totalConsumerPrice": {
+                    "description": "Total consumer price after applicable credits.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "forecast": {
+                "description": "Forecasted delivery estimates, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "clicks": {
+                    "description": "Forecasted clicks range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "impressions": {
+                    "description": "Forecasted impressions range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "spend": {
+                    "description": "Forecasted spend range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "videoViews": {
+                    "description": "Forecasted video views range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "Maximum total budget allowed for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Maximum allowed decimal amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Maximum budget currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "minDailyBudget": {
+                "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "organization": {
+                "description": "Echoed organization URN for the Company Page Boost context.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "productDescription": {
+                "description": "Echoed product description.\n\nDocumented type: String\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "suggestedTotalBudgets": {
+                "description": "Suggested total budget options, when available.\n\nDocumented type: Array\n\nRequirement: No",
+                "items": {},
+                "type": "array"
+              },
+              "targetingCriteria": {
+                "description": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "totalBudget": {
+                "description": "Echoed total budget. Returned only when the request includes totalBudget.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Echoed decimal budget amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Echoed ISO 4217 currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-body-fields-1"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_response_schema": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "availableObjectiveTypes": {
+                "description": "Boost objectives available for the post and boost context.\n\nDocumented type: array[string]\n\nRequirement: No",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "billingConfigured": {
+                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+                "type": "boolean"
+              },
+              "campaignUrn": {
+                "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultObjectiveType": {
+                "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultRunSchedule": {
+                "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "end": {
+                    "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "start": {
+                    "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "status": {
+                "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "targetPost": {
+                "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_response_schema_1": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account used for billing.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "callToActionLabel": {
+            "description": "Call-to-action label applied to the creative.\n\nDocumented type: enum string",
+            "type": "string"
+          },
+          "callToActionTarget": {
+            "description": "Call-to-action destination URL.\n\nDocumented type: string",
+            "type": "string"
+          },
+          "campaign": {
+            "description": "Newly created sponsored campaign URN.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "campaignGroup": {
+            "description": "Newly created sponsored campaign group URN.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "creative": {
+            "description": "Newly created sponsored creative URN.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "goal": {
+            "description": "Objective used to create the boost.\n\nDocumented type: enum string",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "Post that was boosted.\n\nDocumented type: URN string",
+            "type": "string"
+          },
+          "totalBudget": {
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount applied to the boost.\n\nDocumented type: string",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO currency code for the budget.\n\nDocumented type: string",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema-1"
       },
       "Learn_marketing_community_management_members_follower_statistics_parameters": {
         "properties": {
@@ -11173,7 +12198,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#query-parameters-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_query_parameters_1_429": {
+      "Learn_marketing_community_management_members_post_statistics_query_parameters_1_453": {
         "properties": {
           "aggregation": {
             "description": "Type of aggregation.\n\nDocumented type: String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note: DAILY aggregation is not supported for MEMBERS_REACHED, LINK_CLICKS, FOLLOWER_GAINED_FROM_CONTENT or PROFILE_VIEW_FROM_CONTENT. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.\n\nRequirement: Yes",
@@ -11203,7 +12228,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#query-parameters-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_query_parameters_424": {
+      "Learn_marketing_community_management_members_post_statistics_query_parameters_448": {
         "properties": {
           "aggregation": {
             "description": "Type of aggregation.\n\nDocumented type: String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note: DAILY aggregation is not supported for MEMBERS_REACHED, LINK_CLICKS, FOLLOWER_GAINED_FROM_CONTENT or PROFILE_VIEW_FROM_CONTENT. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.\n\nRequirement: Yes",
@@ -11289,7 +12314,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#response-body-fields-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_response_body_fields_1_431": {
+      "Learn_marketing_community_management_members_post_statistics_response_body_fields_1_455": {
         "properties": {
           "count": {
             "description": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.\n\nDocumented type: Long\n\nRequirement: Yes",
@@ -11312,7 +12337,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#response-body-fields-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_response_body_fields_426": {
+      "Learn_marketing_community_management_members_post_statistics_response_body_fields_450": {
         "properties": {
           "count": {
             "description": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.\n\nDocumented type: Long\n\nRequirement: Yes",
@@ -14634,7 +15659,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events#events-1"
       },
-      "Learn_marketing_event_management_events_events_1_519": {
+      "Learn_marketing_event_management_events_events_1_543": {
         "properties": {
           "hasDarkUgc": {
             "description": "When true, the event is backed only by a dark UGC post created through sponsored ad workflows. The event has no LinkedIn Events Detail Page and is suppressed from all organic surfaces regardless of discoveryMode. Default: false.\n\nDocumented type: Boolean",
@@ -15196,7 +16221,7 @@
             "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
           },
           "connectedTelevisionOnly": {
-            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
             "type": "boolean"
           },
           "costType": {
@@ -15273,13 +16298,13 @@
             "description": "Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferences\n\nDocumented type: OffsitePreferences\n\nRequirement: False"
           },
           "optimizationPreference": {
-            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False"
+            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False"
           },
           "optimizationTargetType": {
             "description": "Determines how this campaign is optimized for spending. If this is not set, there\u0027s no optimization. Refer to the documentation here.\n\nDocumented type: default=\u0022NONE\u0022\n\nRequirement: False"
           },
           "pacingStrategy": {
-            "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+            "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
             "enum": [
               "LIFETIME",
               "ACCELERATED"
@@ -15587,6 +16612,36 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#ad-creative-rejection-reasons"
       },
+      "Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata": {
+        "properties": {
+          "adFormat": {
+            "description": "The ad format of the creative, for example TEXT_AD, SPOTLIGHT_V2, or SPONSORED_VIDEO.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "adHeadline": {
+            "description": "Headline of the ad. Depending on the ad format, this is the title, a custom string, or the title of the underlying content.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "adIntroductionText": {
+            "description": "Introductory text of the ad. Depending on the ad format, this is the commentary, forum name, call to action, or company name.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "adLine": {
+            "description": "Supporting body text of the ad. Populated for TEXT_AD (body text) and SPOTLIGHT_V2 (description).\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "assetURL": {
+            "description": "URL of the primary visual asset of the ad.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "landingPage": {
+            "description": "The destination URL a member is taken to when they click the ad.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#creativemetadata"
+      },
       "Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativereview": {
         "properties": {
           "rejectionReasons": {
@@ -15668,6 +16723,19 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#leadgencreativecalltoaction"
       },
+      "Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_prerollmetadata": {
+        "properties": {
+          "preRollMediaAsset": {
+            "description": "URN identifying the pre-roll video media asset.\n\nDocumented type: DigitalmediaAssetUrn\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "preRollMediaAsset"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#prerollmetadata"
+      },
       "Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_schema": {
         "properties": {
           "account": {
@@ -15679,7 +16747,7 @@
             "type": "string"
           },
           "content": {
-            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
             "type": "string"
           },
           "createdAt": {
@@ -15733,6 +16801,14 @@
             ],
             "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
           },
+          "metadata": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+              }
+            ],
+            "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
+          },
           "name": {
             "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
             "type": "string"
@@ -15755,6 +16831,48 @@
         ],
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#schema"
+      },
+      "Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_standardupdatead": {
+        "properties": {
+          "contentAuthor": {
+            "description": "Author of the content.\n\nDocumented type: Person URN or Organization URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "reference": {
+            "description": "URN identifying the sponsored post.\n\nDocumented type: Share URN or UgcPost URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reference"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#standardupdatead"
+      },
+      "Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_videoad": {
+        "properties": {
+          "contentAuthor": {
+            "description": "Author of the content.\n\nDocumented type: Person URN or Organization URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "preRollMetadata": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_prerollmetadata"
+              }
+            ],
+            "description": "Pre-roll information returned for an In-Stream video creative.\n\nDocumented type: PreRollMetadata\n\nRequirement: No"
+          },
+          "reference": {
+            "description": "URN identifying the sponsored video post.\n\nDocumented type: Share URN or UgcPost URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reference"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#videoad"
       },
       "Learn_marketing_integrations_ads_advertising_targeting_ad_supply_forecasts_parameters": {
         "properties": {
@@ -15803,7 +16921,7 @@
             "type": "object"
           },
           "connectedTelevisionOnly": {
-            "description": "Generate forecasting for connected television campaigns. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean\n\nRequirement: Optional,default=false",
+            "description": "Generate forecasting for connected television campaigns.\n\nDocumented type: Boolean\n\nRequirement: Optional,default=false",
             "type": "boolean"
           },
           "costCap": {
@@ -17904,7 +19022,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema#metrics-available"
       },
-      "Learn_marketing_integrations_ads_reporting_ads_reporting_schema_metrics_available_529": {
+      "Learn_marketing_integrations_ads_reporting_ads_reporting_schema_metrics_available_553": {
         "properties": {
           "actionClicks": {
             "description": "The count of clicks on the action button of the Sponsored Messaging ad.\n\nDocumented type: long",
@@ -18129,6 +19247,16 @@
           },
           "likes": {
             "description": "The count of likes. Sponsored Content only.\n\nDocumented type: long",
+            "format": "int64",
+            "type": "integer"
+          },
+          "memberFollows": {
+            "description": "The count of sponsored member profile follows. This optional metric exists only for Sponsored Updates and member follower display ads, such as Thought Leader Ads. Note: The memberFollows field is only supported from API version 202610 onwards.\n\nDocumented type: optional long",
+            "format": "int64",
+            "type": "integer"
+          },
+          "memberProfileClicks": {
+            "description": "The count of clicks on the profile of the member who owns the post sponsored in the ad. This optional metric exists only for Sponsored Updates, such as Thought Leader Ads. Note: The memberProfileClicks field is only supported from API version 202610 onwards.\n\nDocumented type: optional long",
             "format": "int64",
             "type": "integer"
           },
@@ -19471,103 +20599,6 @@
             "type": "integer"
           },
           "liftEntity": {
-            "description": "Union representing the possible entities a lift test can operate on. The selected entity determines which campaigns are included in the lift test. For example, account includes all campaigns in an account, while campaignGroup includes only campaigns within a specific campaign group.\n\nDocumented type: union[ account: SponsoredAccountUrn, campaignGroup: SponsoredCampaignGroupUrn ] (e.g. \u0022liftEntity\u0022: { account\u0022: \u0022urn:li:sponsoredAccount:123\u0022}, \u0022liftEntity\u0022: { campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:124\u0022})",
-            "type": "string"
-          },
-          "name": {
-            "description": "Required The name of the Ad Lift Test set by the advertiser. Not visible to members.\n\nDocumented type: string (e.g. \u0022Brand1 Lift Oct 2021\u0022)",
-            "type": "string"
-          },
-          "reviewInfo": {
-            "description": "Optional Information about the content review of this lift test. This field is present only if the test has been reviewed by the Ads Review team. Note: Applicable only for API versions 202510 and later.\n\nDocumented type: reviewInfo[ reviewStatus: ReviewStatus, lastReviewed: AuditStamp, rejectionReasons: RejectionReasonArray ] (e.g. \u0022reviewInfo\u0022: {\u0022reviewStatus\u0022: \u0022REJECTED\u0022,\u0022rejectionReasons\u0022: [\u0022OFFER_NOT_FOUND\u0022],\u0022lastReviewed\u0022: {\u0022actor\u0022: \u0022urn:li:member:1\u0022,\u0022time\u0022: 1604793600000})",
-            "type": "string"
-          },
-          "schedule": {
-            "properties": {
-              "end": {
-                "description": "Required Lift test end time as suggested by the user (in UTC epoch milliseconds). The end time should be at least two weeks after the start time. The lift test cannot be set to run for more than 90 days (end time minus start time must be less than or equal to 90 days) and may be terminated earlier due to errors or issues with the campaign group or account. For example, if the advertiser\u0027s account is canceled, the lift test will also be canceled. The end time must be UTC 23:45 to pass validation.\n\nDocumented type: long",
-                "format": "int64",
-                "type": "integer"
-              },
-              "start": {
-                "description": "Required Lift test start time as configured by the user (in UTC epoch milliseconds). The start time must be UTC 00:00 to pass validation.\n\nDocumented type: long",
-                "format": "int64",
-                "type": "integer"
-              }
-            },
-            "type": "object"
-          },
-          "userState": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/Learn_marketing_integrations_experimentation_brand_lift_testing_ad_lift_tests_user_state_schema"
-              }
-            ],
-            "description": "Required State used by the advertiser to control the Ad Lift Test. For example, if userState is READY, the advertiser is ready to launch the test as scheduled. This field helps determine the execution state, which represents the actual behavior the Ad Lift Test is currently in. See User State Schema for details.\n\nDocumented type: Enum of DRAFTREADYCANCELED"
-          }
-        },
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests#adlifttest-schema"
-      },
-      "Learn_marketing_integrations_experimentation_brand_lift_testing_ad_lift_tests_adlifttest_schema_643": {
-        "properties": {
-          "account": {
-            "description": "Required The advertising account that owns the Ad Lift Test and its results.\n\nDocumented type: SponsoredAccountUrn (e.g. urn:li:sponsoredAccount:123)",
-            "type": "string"
-          },
-          "brandName": {
-            "description": "Required Brand names to be used when surveying users. The brand name will be reviewed and must align with the Advertising Guidelines and LinkedIn Ads Agreement. Provide the preferred internationalized brand name for the test\u2019s chosen language. Many advertisers use different brand names in different languages.\n\nDocumented type: string (e.g. \u0022My New Brand\u0022)",
-            "type": "string"
-          },
-          "brandNameLocale": {
-            "properties": {
-              "country": {
-                "description": "Required An uppercase two-letter country/region code as defined by ISO-3166. The country/region and language combination must match one of the supported locales.\n\nDocumented type: string (e.g. \u0022US\u0022)",
-                "type": "string"
-              },
-              "language": {
-                "description": "Required The language in which the brand name must be provided. Only one language is allowed per lift test; the brand name and all campaigns within the lift test must use this language. Specify a lowercase two-letter language code as defined by ISO-639. The country/region and language combination must match one of the supported locales.\n\nDocumented type: string (e.g. \u0022en\u0022)",
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "contentReviewVersion": {
-            "description": "Optional A long value representing the content version reviewed in accordance with LinkedIn content policies. Use this value as versionTag to fetch the review status using the Ads Review API.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "description": {
-            "description": "A memo describing this Lift Test. Advertisers use this field to store information about the test for later reference. Not visible to members.\n\nDocumented type: string (e.g. \u0022Brand 22 Lift Test from May 2034\u0022)",
-            "type": "string"
-          },
-          "endReason": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/Learn_marketing_integrations_experimentation_brand_lift_testing_ad_lift_tests_test_end_reason_schema"
-              }
-            ],
-            "description": "A message explaining the reason for the end of the Ad Lift Test. This enum describes erroneous conditions or termination of the Ad Lift Test. For example, if the account that owns the Lift Test is deleted or archived during the test, the Lift Test is terminated. If the Lift Test runs to completion, it is marked accordingly. See Test End Reason Schema for details.\n\nDocumented type: Enum of USER_CANCELEDEND_DATE_REACHEDCAMPAIGN_GROUP_NOT_RECOVERABLEACCOUNT_NOT_RECOVERABLE"
-          },
-          "endedAt": {
-            "description": "Lift test actual end time (when executionState is set to ENDED). The system may terminate the lift test before the scheduled end time. Lift tests that have not ended will not have this field populated.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "executionState": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/Learn_marketing_integrations_experimentation_brand_lift_testing_ad_lift_tests_execution_state_schema"
-              }
-            ],
-            "description": "Overall Ad Lift Test execution state describing its behavior. This field is read-only and is derived from the user state and the internal state of the LinkedIn platform. For example, if userState is READY but the system is waiting to run the experiment because the user scheduled it to begin in a week (using the schedule field), the executionState would be CREATED. See Execution State Schema and Lift Test Workflows for details.\n\nDocumented type: Enum of CREATEDSCHEDULEDSTARTEDENDED_RESUMABLEENDED"
-          },
-          "id": {
-            "description": "The ID that uniquely identifies the Ad Lift Test. This field is read-only and is generated when the Ad Lift Test is created. Provide -1 for this field when validating entity fields using the validation endpoint.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "liftEntity": {
             "description": "Union representing the possible entities a lift test can operate on. The selected entity determines which campaigns are included in the lift test. For example, account includes all campaigns in an account, while campaignGroups includes only campaigns within a set of campaign groups.\n\nDocumented type: union[ account: SponsoredAccountUrn, campaignGroups: array[SponsoredCampaignGroupUrn] ] (e.g. \u0022liftEntity\u0022: { \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022} or \u0022liftEntity\u0022: { \u0022campaignGroups\u0022: [\u0022urn:li:sponsoredCampaignGroup:124\u0022, \u0022urn:li:sponsoredCampaignGroup:567\u0022]})",
             "items": {
               "type": "string"
@@ -20374,7 +21405,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema#multiplechoicequestiondetails-sub-object"
       },
-      "Learn_marketing_lead_sync_lead_sync_schema_multiplechoicequestiondetails_sub_object_662": {
+      "Learn_marketing_lead_sync_lead_sync_schema_multiplechoicequestiondetails_sub_object_689": {
         "properties": {
           "id": {
             "description": "The identifier for a MultipleChoiceQuestionOption within the context of a MultipleChoiceQuestion. This be unique only under the scope of a MultipleChoiceQuestion.\n\nDocumented type: int",
@@ -22273,7 +23304,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/article-migration#background"
       },
-      "Learn_shared_references_migrations_article_migration_background_752": {
+      "Learn_shared_references_migrations_article_migration_background_779": {
         "properties": {
           "ugcPost": {
             "description": "The ugcPost (urn:li:ugcPost:{id}) created when the article is initially published. This field only applies to articles created after migration, and is only valid for published articles\n\nDocumented type: optional ugcPost URN",
@@ -24194,7 +25225,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields#apply-connect---required-fields"
       },
-      "Learn_talent_apply_connect_apply_connect_required_fields_apply_connect___required_fields_804": {
+      "Learn_talent_apply_connect_apply_connect_required_fields_apply_connect___required_fields_831": {
         "properties": {
           "action": {
             "description": "The action taken on the given job application. Possible enum values: APPLICATION_VIEWED, RESUME_DOWNLOADED, or APPLICATION_REJECTED.\n\nDocumented type: Enum\n\nRequirement: Yes",
@@ -27341,14 +28372,14 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-headers-1"
       },
-      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_1_938": {
+      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_1_965": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-headers-1"
       },
-      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_934": {
+      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_961": {
         "enum": [
           "batch_partial_update",
           "Bearer {accessToken}"
@@ -27384,7 +28415,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
       },
-      "Learn_talent_crm_connect_crm_customer_configuration_api_request_body_fields_936": {
+      "Learn_talent_crm_connect_crm_customer_configuration_api_request_body_fields_963": {
         "properties": {
           "dataProvider": {
             "description": "Use \u0022ATS\u0022 as the value for data provider\n\nDocumented type: string\n\nRequirement: Yes",
@@ -27671,7 +28702,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-stub-profiles#response-body-fields"
       },
-      "Learn_talent_crm_connect_crm_inmail_stub_profiles_response_body_fields_944": {
+      "Learn_talent_crm_connect_crm_inmail_stub_profiles_response_body_fields_971": {
         "properties": {
           "createdAt": {
             "description": "Created timestamp\n\nDocumented type: Epoch in Milliseconds (UTC)\n\nRequirement: Yes",
@@ -27769,7 +28800,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recruiter-seatholders#"
       },
-      "Learn_talent_crm_connect_crm_recruiter_seatholders__950": {
+      "Learn_talent_crm_connect_crm_recruiter_seatholders__977": {
         "properties": {
           "actor": {
             "description": "The actor in format of urn:li:enterpriseProfile:xxx\n\nDocumented type: String\n\nRequirement: Required",
@@ -27947,7 +28978,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates#response-body-fields"
       },
-      "Learn_talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_954": {
+      "Learn_talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_981": {
         "properties": {
           "candidate": {
             "description": "LinkedIn stub profile of the candidate being exported.\n\nDocumented type: StubProfile\n\nRequirement: Required"
@@ -28062,7 +29093,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages#sync-candidate-pipeline-stages-api-request-body-fields"
       },
-      "Learn_talent_crm_connect_sync_crm_candidate_pipeline_stages_sync_candidate_pipeline_stages_api_request_body_fields_961": {
+      "Learn_talent_crm_connect_sync_crm_candidate_pipeline_stages_sync_candidate_pipeline_stages_api_request_body_fields_988": {
         "properties": {
           "externalCandidateId": {
             "description": "The unique identifier of the candidate within external system.\n\nDocumented type: String\n\nRequirement: Required",
@@ -28157,7 +29188,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines#sync-candidate-pipelines-api-request-body-fields"
       },
-      "Learn_talent_crm_connect_sync_crm_candidate_pipelines_sync_candidate_pipelines_api_request_body_fields_963": {
+      "Learn_talent_crm_connect_sync_crm_candidate_pipelines_sync_candidate_pipelines_api_request_body_fields_990": {
         "properties": {
           "dispositionReason": {
             "description": "The reason for the disposition of the candidate in this pipeline.\n\nDocumented type: String\n\nRequirement: Optional",
@@ -28340,7 +29371,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
       },
-      "Learn_talent_crm_connect_sync_crm_candidates__967": {
+      "Learn_talent_crm_connect_sync_crm_candidates__994": {
         "properties": {
           "city": {
             "description": "Address city.\n\nDocumented type: String\n\nRequirement: Optional",
@@ -28385,7 +29416,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
       },
-      "Learn_talent_crm_connect_sync_crm_candidates__968": {
+      "Learn_talent_crm_connect_sync_crm_candidates__995": {
         "properties": {
           "latitude": {
             "description": "Latitude in decimal degrees\n\nDocumented type: Float\n\nRequirement: Optional",
@@ -28399,7 +29430,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
       },
-      "Learn_talent_crm_connect_sync_crm_candidates__969": {
+      "Learn_talent_crm_connect_sync_crm_candidates__996": {
         "properties": {
           "countryCode": {
             "description": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.\n\nDocumented type: String\n\nRequirement: Optional",
@@ -28420,7 +29451,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
       },
-      "Learn_talent_crm_connect_sync_crm_candidates__970": {
+      "Learn_talent_crm_connect_sync_crm_candidates__997": {
         "properties": {
           "sourceCategory": {
             "description": "Category of the candidate\u0027s source. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER\n\nDocumented type: Enum\n\nRequirement: Required",
@@ -29283,7 +30314,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema"
       },
-      "Learn_talent_job_postings_api_job_posting_api_schema_foundation_schema_987": {
+      "Learn_talent_job_postings_api_job_posting_api_schema_foundation_schema_1014": {
         "properties": {
           "alternateLocations": {
             "description": "Represents alternate locations for a job with multiple locations. This field takes the locations as input (including the one set in the location field). This field is null if the job has only one location. Maximum up to seven alternate locations are allowed. US locations - City Non-US locations - City, Country/Region (for example, \u201CLondon, United Kingdom\u201D) NOTE: Alternate locations are not supported for RSC and CRM Connect\n\nDocumented type: String Array\n\nRequirement: Optional",
@@ -29922,7 +30953,7 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#securable-entity-types"
       },
-      "Learn_talent_middleware_platform_sync_acls_securable_entity_types_1013": {
+      "Learn_talent_middleware_platform_sync_acls_securable_entity_types_1040": {
         "enum": [
           "JOB_REQUISITION"
         ],
@@ -29941,7 +30972,7 @@
             "items": {
               "allOf": [
                 {
-                  "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1018"
+                  "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1045"
                 }
               ]
             },
@@ -29957,7 +30988,7 @@
           "interviewer": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1017"
+                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1044"
               }
             ],
             "description": "The person who interviewed the candidate and wrote this evaluation.\n\nDocumented type: Actor\n\nRequirement: No"
@@ -29966,7 +30997,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback#"
       },
-      "Learn_talent_middleware_platform_sync_application_interview_feedback__1017": {
+      "Learn_talent_middleware_platform_sync_application_interview_feedback__1044": {
         "properties": {
           "firstName": {
             "description": "The first name of the actor.\n\nDocumented type: String\n\nRequirement: Required",
@@ -29984,7 +31015,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback#"
       },
-      "Learn_talent_middleware_platform_sync_application_interview_feedback__1018": {
+      "Learn_talent_middleware_platform_sync_application_interview_feedback__1045": {
         "properties": {
           "attribute": {
             "description": "The descriptive name about the qualification the candidate was evaluated for, for example \u0022Verbal Communication\u0022, \u0022Technical Qualifications\u0022.\n\nDocumented type: String\n\nRequirement: Required",
@@ -30028,7 +31059,7 @@
           "interviewer": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1017"
+                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1044"
               }
             ],
             "description": "The person who interviewed the candidate and wrote the evaluation.\n\nDocumented type: Actor\n\nRequirement: No"
@@ -30061,7 +31092,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes#"
       },
-      "Learn_talent_middleware_platform_sync_application_notes__1021": {
+      "Learn_talent_middleware_platform_sync_application_notes__1048": {
         "properties": {
           "firstName": {
             "description": "The first name of the actor.\n\nDocumented type: String\n\nRequirement: Required",
@@ -30210,7 +31241,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#"
       },
-      "Learn_talent_middleware_platform_sync_applications__1030": {
+      "Learn_talent_middleware_platform_sync_applications__1057": {
         "properties": {
           "atsCreatedAt": {
             "description": "Date record was created in your ATS\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
@@ -30285,7 +31316,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#api-request-body-fields"
       },
-      "Learn_talent_middleware_platform_sync_applications_api_request_body_fields_1027": {
+      "Learn_talent_middleware_platform_sync_applications_api_request_body_fields_1054": {
         "properties": {
           "accessRestricted": {
             "description": "Flag indicating whether the application is restricted by ACL. If true, the application is only accessible to a set of Recruiter users specified via ACLs. If false, the application is accessible to all Recruiter users. (Default value: false). NOTE: This field is not applicable from October 2025 version and above.\n\nDocumented type: boolean\n\nRequirement: Optional",
@@ -30393,7 +31424,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes#"
       },
-      "Learn_talent_middleware_platform_sync_candidate_notes__1032": {
+      "Learn_talent_middleware_platform_sync_candidate_notes__1059": {
         "properties": {
           "firstName": {
             "description": "The first name of the actor.\n\nDocumented type: String\n\nRequirement: Required",
@@ -30553,7 +31584,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
       },
-      "Learn_talent_middleware_platform_sync_candidates__1036": {
+      "Learn_talent_middleware_platform_sync_candidates__1063": {
         "properties": {
           "city": {
             "description": "The city of the candidate\u0027s address.\n\nDocumented type: String\n\nRequirement: No",
@@ -30595,7 +31626,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
       },
-      "Learn_talent_middleware_platform_sync_candidates__1037": {
+      "Learn_talent_middleware_platform_sync_candidates__1064": {
         "properties": {
           "countryCode": {
             "description": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.\n\nDocumented type: String\n\nRequirement: Optional",
@@ -30616,7 +31647,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
       },
-      "Learn_talent_middleware_platform_sync_candidates__1038": {
+      "Learn_talent_middleware_platform_sync_candidates__1065": {
         "properties": {
           "sourceCategory": {
             "description": "Category of where the candidate originated from. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER\n\nDocumented type: Enum\n\nRequirement: Required",
@@ -31052,7 +32083,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#api-request-body-fields"
       },
-      "Learn_talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1049": {
+      "Learn_talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1076": {
         "properties": {
           "accessRestricted": {
             "description": "Flag indicating whether the job requisition is ACL-protected or not.When set to false\u2014all recruiters can view the job requisitions in the 1CE dropdown list.When set to true\u2014if access group settings exist, only recruiters in the access group (ACL group) can view and search job requisitions in the 1CE dropdown list. If no access group settings exist, no recruiter can view or search job requisitions in the 1CE dropdown list.Note (version 202510 and later): The job owner can view all job requisitions regardless of the ACL settings.\n\nDocumented type: Boolean\n\nRequirement: Required",
@@ -31317,7 +32348,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#owner-schema"
       },
-      "Learn_talent_middleware_platform_sync_job_requisitions_owner_schema_1056": {
+      "Learn_talent_middleware_platform_sync_job_requisitions_owner_schema_1083": {
         "properties": {
           "emailAddress": {
             "description": "Email address of the owner. This is mandatory.\n\nDocumented type: String\n\nRequirement: Yes",
@@ -31590,7 +32621,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting/job-posting-field-schema#job-posting-field-api-schema"
       },
-      "Learn_talent_premium_job_posting_job_posting_field_schema_job_posting_field_api_schema_1063": {
+      "Learn_talent_premium_job_posting_job_posting_field_schema_job_posting_field_api_schema_1090": {
         "properties": {
           "alternateLocationGeoIds": {
             "description": "Location IDs for Bing Geo location entities\n\nDocumented type: Long[]\n\nRequirement: No",
@@ -31883,7 +32914,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles#response-body-fields"
       },
-      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_inmail_stub_profiles_response_body_fields_1070": {
+      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_inmail_stub_profiles_response_body_fields_1097": {
         "properties": {
           "createdAt": {
             "description": "Created timestamp\n\nDocumented type: Epoch in Milliseconds (UTC)\n\nRequirement: Yes",
@@ -32016,7 +33047,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders#"
       },
-      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_recruiter_seatholders__1077": {
+      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_recruiter_seatholders__1104": {
         "properties": {
           "actor": {
             "description": "The actor in format of urn:li:enterpriseProfile:xxx\n\nDocumented type: String\n\nRequirement: Required",
@@ -32306,7 +33337,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields#job-requisitions-with-stages"
       },
-      "Learn_talent_recruiter_system_connect_required_fields_job_requisitions_with_stages_1082": {
+      "Learn_talent_recruiter_system_connect_required_fields_job_requisitions_with_stages_1109": {
         "properties": {
           "atsCreatedAt": {
             "description": "Date stage record was created in your ATS\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
@@ -32544,7 +33575,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1090": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1117": {
         "properties": {
           "timeRange": {
             "properties": {
@@ -32565,7 +33596,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1092": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1119": {
         "properties": {
           "candidate": {
             "description": "The LinkedIn stub profile of the candidate being exported.\n\nDocumented type: StubProfile\n\nRequirement: Yes"
@@ -32861,7 +33892,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#stubprofile-fields"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_stubprofile_fields_1096": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_stubprofile_fields_1123": {
         "properties": {
           "currentEmployerNames": {
             "description": "The names of the member\u0027s current employers. This field remains empty if none are listed.\n\nDocumented type: string[]\n\nRequirement: Yes",
@@ -32985,28 +34016,28 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1106": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1133": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1109": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1136": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1111": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1138": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1113": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1140": {
         "enum": [
           "Bearer {accessToken}"
         ],
@@ -33049,7 +34080,7 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-13"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1105": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1132": {
         "enum": [
           "Bearer {accessToken}",
           "202603"
@@ -63139,7 +64170,7 @@
         "tags": [
           "Use Cases / Account structure / Creative Management"
         ],
-        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-9",
+        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-10",
         "x-postman-variants": [
           {
             "effectiveAuth": {
@@ -63431,6 +64462,14 @@
                             ],
                             "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
                           },
+                          "metadata": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                              }
+                            ],
+                            "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
+                          },
                           "name": {
                             "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
                             "type": "string"
@@ -63498,7 +64537,7 @@
                             "type": "string"
                           },
                           "content": {
-                            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                             "type": "string"
                           },
                           "createdAt": {
@@ -63551,6 +64590,14 @@
                               }
                             ],
                             "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
+                          },
+                          "metadata": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                              }
+                            ],
+                            "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
                           },
                           "name": {
                             "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
@@ -63767,7 +64814,7 @@
         "tags": [
           "Use Cases / Account structure / Creative Management"
         ],
-        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-3",
+        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-4",
         "x-postman-variants": [
           {
             "effectiveAuth": {
@@ -64542,7 +65589,7 @@
         "tags": [
           "Use Cases / Account structure / Creative Management"
         ],
-        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-6",
+        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-7",
         "x-postman-variants": [
           {
             "effectiveAuth": {
@@ -69259,7 +70306,7 @@
                       "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                     },
                     "connectedTelevisionOnly": {
-                      "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                      "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                       "type": "boolean"
                     },
                     "costType": {
@@ -69336,13 +70383,13 @@
                       "description": "Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferences\n\nDocumented type: OffsitePreferences\n\nRequirement: False"
                     },
                     "optimizationPreference": {
-                      "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False"
+                      "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False"
                     },
                     "optimizationTargetType": {
                       "description": "Determines how this campaign is optimized for spending. If this is not set, there\u0027s no optimization. Refer to the documentation here.\n\nDocumented type: default=\u0022NONE\u0022\n\nRequirement: False"
                     },
                     "pacingStrategy": {
-                      "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                      "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                       "enum": [
                         "LIFETIME",
                         "ACCELERATED"
@@ -74911,7 +75958,7 @@
                             "type": "object"
                           },
                           "connectedTelevisionOnly": {
-                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                             "type": "boolean"
                           },
                           "costType": {
@@ -75054,7 +76101,7 @@
                             "type": "string"
                           },
                           "pacingStrategy": {
-                            "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                            "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                             "enum": [
                               "LIFETIME",
                               "ACCELERATED"
@@ -75310,7 +76357,7 @@
                             "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                           },
                           "connectedTelevisionOnly": {
-                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                             "type": "boolean"
                           },
                           "costType": {
@@ -75387,10 +76434,10 @@
                             "description": "Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferences\n\nDocumented type: OffsitePreferences\n\nRequirement: False"
                           },
                           "optimizationPreference": {
-                            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False"
+                            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False"
                           },
                           "pacingStrategy": {
-                            "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                            "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                             "enum": [
                               "LIFETIME",
                               "ACCELERATED"
@@ -76306,7 +77353,7 @@
                     "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                   },
                   "connectedTelevisionOnly": {
-                    "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                    "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                     "type": "boolean"
                   },
                   "costType": {
@@ -76383,7 +77430,7 @@
                           "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                         },
                         "connectedTelevisionOnly": {
-                          "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                          "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                           "type": "boolean"
                         },
                         "costType": {
@@ -76494,7 +77541,7 @@
                           "description": "Determines how this campaign is optimized for spending. If this is not set, there\u0027s no optimization. Refer to the documentation here.\n\nDocumented type: default=\u0022NONE\u0022\n\nRequirement: False"
                         },
                         "pacingStrategy": {
-                          "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                          "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                           "enum": [
                             "LIFETIME",
                             "ACCELERATED"
@@ -76726,7 +77773,7 @@
                   "optimizationPreference": {
                     "anyOf": [
                       {
-                        "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False",
+                        "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False",
                         "properties": {
                           "frequencyOptimizationPreference": {
                             "properties": {
@@ -76757,7 +77804,7 @@
                         "x-linkedin-inferred-from-example": true
                       },
                       {
-                        "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False"
+                        "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False"
                       }
                     ]
                   },
@@ -76774,7 +77821,7 @@
                     ]
                   },
                   "pacingStrategy": {
-                    "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                    "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                     "enum": [
                       "LIFETIME",
                       "ACCELERATED"
@@ -76963,7 +78010,7 @@
                       "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                     },
                     "connectedTelevisionOnly": {
-                      "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                      "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                       "type": "boolean"
                     },
                     "costType": {
@@ -77040,13 +78087,13 @@
                       "description": "Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferences\n\nDocumented type: OffsitePreferences\n\nRequirement: False"
                     },
                     "optimizationPreference": {
-                      "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False"
+                      "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False"
                     },
                     "optimizationTargetType": {
                       "description": "Determines how this campaign is optimized for spending. If this is not set, there\u0027s no optimization. Refer to the documentation here.\n\nDocumented type: default=\u0022NONE\u0022\n\nRequirement: False"
                     },
                     "pacingStrategy": {
-                      "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                      "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                       "enum": [
                         "LIFETIME",
                         "ACCELERATED"
@@ -79061,6 +80108,14 @@
                       ],
                       "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
                     },
+                    "metadata": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                        }
+                      ],
+                      "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
+                    },
                     "name": {
                       "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
                       "type": "string"
@@ -79081,6 +80136,20 @@
                       "type": "object"
                     },
                     "servingHoldReasons": {
+                      "anyOf": [
+                        {
+                          "description": "Array that contains all the reasons why the creative is not serving. In the case a creative is being served, this field will be null and not present in the response.\n\nDocumented type: servingHoldReasons\n\nRequirement: No",
+                          "items": {
+                            "type": "string",
+                            "x-linkedin-inferred-from-example": true
+                          },
+                          "type": "array",
+                          "x-linkedin-inferred-from-example": true
+                        },
+                        {
+                          "description": "Array that contains all the reasons why the creative is not serving. In the case a creative is being served, this field will be null and not present in the response.\n\nDocumented type: servingHoldReasons\n\nRequirement: No"
+                        }
+                      ],
                       "items": {
                         "type": "string"
                       },
@@ -79683,7 +80752,7 @@
         "tags": [
           "Use Cases / Account structure / Creative Management"
         ],
-        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-5",
+        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-6",
         "x-postman-variants": [
           {
             "effectiveAuth": {
@@ -99861,7 +100930,7 @@
                             "type": "object"
                           },
                           "connectedTelevisionOnly": {
-                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                             "type": "boolean"
                           },
                           "costType": {
@@ -99986,7 +101055,7 @@
                             "type": "string"
                           },
                           "pacingStrategy": {
-                            "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                            "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                             "enum": [
                               "LIFETIME",
                               "ACCELERATED"
@@ -100233,7 +101302,7 @@
                             "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                           },
                           "connectedTelevisionOnly": {
-                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                             "type": "boolean"
                           },
                           "costType": {
@@ -100310,10 +101379,10 @@
                             "description": "Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferences\n\nDocumented type: OffsitePreferences\n\nRequirement: False"
                           },
                           "optimizationPreference": {
-                            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False"
+                            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False"
                           },
                           "pacingStrategy": {
-                            "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                            "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                             "enum": [
                               "LIFETIME",
                               "ACCELERATED"
@@ -102196,7 +103265,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                        "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                         "type": "string"
                       },
                       "createdAt": {
@@ -102307,6 +103376,14 @@
                         ],
                         "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
                       },
+                      "metadata": {
+                        "allOf": [
+                          {
+                            "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                          }
+                        ],
+                        "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
+                      },
                       "name": {
                         "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
                         "type": "string"
@@ -102340,7 +103417,7 @@
                           "type": "string"
                         },
                         "content": {
-                          "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                          "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                           "type": "string"
                         },
                         "createdAt": {
@@ -102393,6 +103470,14 @@
                             }
                           ],
                           "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
+                        },
+                        "metadata": {
+                          "allOf": [
+                            {
+                              "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                            }
+                          ],
+                          "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
                         },
                         "name": {
                           "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
@@ -102459,6 +103544,14 @@
                     ],
                     "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
                   },
+                  "metadata": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                      }
+                    ],
+                    "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
+                  },
                   "name": {
                     "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
                     "type": "string"
@@ -102523,7 +103616,7 @@
                       "type": "string"
                     },
                     "content": {
-                      "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                      "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                       "type": "string"
                     },
                     "createdAt": {
@@ -102546,7 +103639,7 @@
                           "type": "string"
                         },
                         "content": {
-                          "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                          "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                           "type": "string"
                         },
                         "createdAt": {
@@ -102634,6 +103727,14 @@
                             }
                           ],
                           "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
+                        },
+                        "metadata": {
+                          "allOf": [
+                            {
+                              "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                            }
+                          ],
+                          "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
                         },
                         "name": {
                           "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
@@ -102884,6 +103985,14 @@
                         }
                       ],
                       "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
+                    },
+                    "metadata": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                        }
+                      ],
+                      "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
                     },
                     "name": {
                       "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
@@ -113094,7 +114203,7 @@
                             "type": "string"
                           },
                           "content": {
-                            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                             "type": "string"
                           },
                           "createdAt": {
@@ -113147,6 +114256,14 @@
                               }
                             ],
                             "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
+                          },
+                          "metadata": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                              }
+                            ],
+                            "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
                           },
                           "name": {
                             "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
@@ -113203,7 +114320,7 @@
                             "type": "string"
                           },
                           "content": {
-                            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                            "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                             "type": "string"
                           },
                           "createdAt": {
@@ -113256,6 +114373,14 @@
                               }
                             ],
                             "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
+                          },
+                          "metadata": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                              }
+                            ],
+                            "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
                           },
                           "name": {
                             "description": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.\n\nDocumented type: string\n\nRequirement: No",
@@ -113466,7 +114591,7 @@
         "tags": [
           "Use Cases / Creatives"
         ],
-        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-3",
+        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives#sample-request-4",
         "x-postman-variants": [
           {
             "effectiveAuth": {
@@ -114188,7 +115313,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
+                    "description": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.\n\nDocumented type: Underlying content URN\n\nRequirement: No",
                     "type": "string"
                   },
                   "createdAt": {
@@ -114291,6 +115416,14 @@
                       }
                     ],
                     "description": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.\n\nDocumented type: LeadgenCreativeCallToAction\n\nRequirement: Required if campaign objective is LEAD_GENERATION"
+                  },
+                  "metadata": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_creatives_creativemetadata"
+                      }
+                    ],
+                    "description": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.\n\nDocumented type: CreativeMetadata\n\nRequirement: No"
                   },
                   "name": {
                     "anyOf": [
@@ -117650,7 +118783,7 @@
                             "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                           },
                           "connectedTelevisionOnly": {
-                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                             "type": "boolean"
                           },
                           "costType": {
@@ -117760,7 +118893,7 @@
                             "type": "object"
                           },
                           "pacingStrategy": {
-                            "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                            "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                             "enum": [
                               "LIFETIME",
                               "ACCELERATED"
@@ -117933,7 +119066,7 @@
                             "description": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.\n\nDocumented type: CampaignGroup\n\nRequirement: False"
                           },
                           "connectedTelevisionOnly": {
-                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
+                            "description": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.\n\nDocumented type: Boolean Optional, default=\u0022False\u0022\n\nRequirement: False",
                             "type": "boolean"
                           },
                           "costType": {
@@ -118010,10 +119143,10 @@
                             "description": "Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferences\n\nDocumented type: OffsitePreferences\n\nRequirement: False"
                           },
                           "optimizationPreference": {
-                            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.\n\nDocumented type: Union\n\nRequirement: False"
+                            "description": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.\n\nDocumented type: Union\n\nRequirement: False"
                           },
                           "pacingStrategy": {
-                            "description": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.\n\nDocumented type: string\n\nRequirement: False",
+                            "description": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.\n\nDocumented type: string\n\nRequirement: False",
                             "enum": [
                               "LIFETIME",
                               "ACCELERATED"
@@ -140094,20 +141227,7 @@
                 "properties": {
                   "announcementImage": {
                     "properties": {
-                      "description": {
-                        "description": "Provide a short description for your image or article.\n\nDocumented type: string\n\nRequirement: No",
-                        "type": "string"
-                      },
                       "media": {
-                        "description": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No",
-                        "type": "string"
-                      },
-                      "originalUrl": {
-                        "description": "Provide the URL of the article you would like to share here.\n\nDocumented type: string\n\nRequirement: No",
-                        "type": "string"
-                      },
-                      "status": {
-                        "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes",
                         "type": "string"
                       },
                       "title": {
@@ -140122,12 +141242,7 @@
                         "type": "object"
                       }
                     },
-                    "required": [
-                      "status"
-                    ],
-                    "type": "object",
-                    "x-linkedin-schema": "consumer_integrations_self_serve_share_on_linkedin_share_media",
-                    "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-media"
+                    "type": "object"
                   },
                   "author": {
                     "properties": {
@@ -140149,8 +141264,7 @@
                   }
                 },
                 "type": "object"
-              },
-              "x-linkedin-learn-schema": true
+              }
             }
           }
         },
@@ -141841,6 +142955,14 @@
                         },
                         "type": "object",
                         "x-linkedin-inferred-from-example": true
+                      },
+                      {
+                        "allOf": [
+                          {
+                            "$ref": "#/components/schemas/Learn_consumer_integrations_live_video__share_content"
+                          }
+                        ],
+                        "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
                       },
                       {
                         "allOf": [
@@ -233570,35 +234692,17 @@
                         "errors": {
                           "additionalProperties": {
                             "properties": {
-                              "code": {
-                                "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string",
-                                "type": "string"
-                              },
-                              "errorDetailType": {
-                                "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string",
-                                "type": "string"
-                              },
-                              "errorDetails": {
-                                "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
-                              },
                               "message": {
-                                "description": "A description of the error.\n\nDocumented type: string",
-                                "type": "string"
-                              },
-                              "serviceErrorCode": {
-                                "description": "A subcode that further classifies the error.\n\nDocumented type: int",
-                                "format": "int32",
-                                "type": "integer"
+                                "type": "string",
+                                "x-linkedin-inferred-from-example": true
                               },
                               "status": {
-                                "description": "The HTTP status code.\n\nDocumented type: int",
-                                "format": "int32",
-                                "type": "integer"
+                                "type": "integer",
+                                "x-linkedin-inferred-from-example": true
                               }
                             },
                             "type": "object",
-                            "x-linkedin-schema": "dma_error_responses_error_response",
-                            "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response"
+                            "x-linkedin-inferred-from-example": true
                           },
                           "type": "object",
                           "x-linkedin-inferred-from-example": true
@@ -296101,7 +297205,7 @@
                           "source"
                         ],
                         "type": "object",
-                        "x-linkedin-schema": "talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_954",
+                        "x-linkedin-schema": "talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_981",
                         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates#response-body-fields"
                       },
                       "type": "array"
@@ -299615,7 +300719,7 @@
                               "numberOfOpenings"
                             ],
                             "type": "object",
-                            "x-linkedin-schema": "talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1049",
+                            "x-linkedin-schema": "talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1076",
                             "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#api-request-body-fields"
                           }
                         },
@@ -301309,7 +302413,7 @@
                           }
                         },
                         "type": "object",
-                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_936",
+                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_963",
                         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
                       },
                       "type": "array"
@@ -305003,7 +306107,7 @@
                           }
                         },
                         "type": "object",
-                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_936",
+                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_963",
                         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
                       },
                       "type": "array"

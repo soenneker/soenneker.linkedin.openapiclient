@@ -1,0 +1,3945 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
+  "Title": "Member Post Boost",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Member Post Boost",
+      "Anchor": "member-post-boost",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Boost",
+      "Anchor": "member-post-boost",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Boost",
+      "Anchor": "member-post-boost",
+      "SectionPath": [],
+      "Text": "Member Boost lets the authenticated member turn one of their own eligible UGC posts or shares into a sponsored ad. This page documents the full Member Boost workflow: checking boost status, initializing boost setup, previewing targeting and pricing, creating the boost, and retrieving boost analytics. For the equivalent Company Page workflow, see Organization Post Boost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Boost",
+      "Anchor": "member-post-boost",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Boost",
+      "Anchor": "member-post-boost",
+      "SectionPath": [],
+      "Text": "Member Post Boosting is gradually being released. Not all members have access to it at this time, and some functionality might change over time. For more information, see About boosting posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Boost",
+      "Anchor": "member-post-boost",
+      "SectionPath": [],
+      "Text": "All requests use the versioned REST base URL https://api.linkedin.com/rest/, require a member access token, and must include the Linkedin-Version header set to 202610 or a higher available version, and the X-Restli-Protocol-Version: 2.0.0 header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve boost status and analytics for the authenticated member\u0027s posts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initialize boost setup, preview a boost, and create boosts for the authenticated member\u0027s posts, including retrieving boost status and analytics.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve boost status",
+      "Anchor": "retrieve-boost-status",
+      "SectionPath": [
+        "Retrieve boost status"
+      ],
+      "Text": "The memberBoostStatus API returns boost status for up to 50 posts owned by the authenticated member. Use this finder to determine whether each target post can currently be boosted and, when it cannot, why it is ineligible.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Query parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be boostStatus.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetPosts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post URNs to evaluate. Supported entity types are ugcPost and share. Provide between 1 and 50 values.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of URNs.For example, List(urn%3Ali%3AugcPost%3A1234567890, urn%3Ali%3Ashare%3A9876543210)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Response body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "elements[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of objects",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One result per requested target post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The target post URN. Supported entity types are ugcPost and share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the post is currently eligible to be boosted. Values: ELIGIBLE, INELIGIBLE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].ineligibleReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reason the post is ineligible for boosting. Present only when status is INELIGIBLE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paging",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standard paging metadata for the collection response.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paging.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start index of the returned collection.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paging.count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of elements requested for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paging.links[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paging links.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Ineligible reason values",
+      "Anchor": "ineligible-reason-values",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Ineligible reason values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "POST_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested post could not be found.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "POST_TYPE_NOT_SUPPORTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post type is not supported for boosting.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "POST_NOT_PUBLIC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post is not public and cannot be boosted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ALREADY_BOOSTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post is already boosted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INSUFFICIENT_PERMISSIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller does not have sufficient permissions to boost the post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNKNOWN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reason is unknown or not yet mapped from the backend.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Sample request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberBoostStatus?q=boostStatus\u0026targetPosts=List(urn%3Ali%3AugcPost%3A1234567890,urn%3Ali%3Ashare%3A9876543210)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Sample request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberBoostStatus?q=boostStatus\u0026targetPosts=List(urn%3Ali%3AugcPost%3A1234567890,urn%3Ali%3Ashare%3A9876543210)\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n      \u0022status\u0022: \u0022ELIGIBLE\u0022\n    },\n    {\n      \u0022targetPost\u0022: \u0022urn:li:share:9876543210\u0022,\n      \u0022status\u0022: \u0022INELIGIBLE\u0022,\n      \u0022ineligibleReason\u0022: \u0022ALREADY_BOOSTED\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Retrieve boost status",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status code",
+        "Error message",
+        "Error description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetPosts must contain at least 1 post URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request provided an empty targetPosts list.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include at least one target post URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetPosts exceeds maximum allowed size of 50",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request included more than 50 target post URNs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reduce the list to 50 or fewer target posts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported URN entity type for boost status: {entityType}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more targetPosts values were not ugcPost or share URNs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Send only ugcPost or share URNs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token is missing, expired, or invalid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Generate a valid access token and retry the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forbidden",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller is not authorized to retrieve boost status for the requested post in this context.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the caller has the required r_member_boost (or rw_member_boost) permission and is querying posts they can boost.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too Many Requests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller exceeded the memberBoostStatus rate limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Back off and retry the request later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal Server Error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn could not retrieve boost status from the backend service.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If the problem persists, contact LinkedIn support.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize a boost",
+      "Anchor": "initialize-a-boost",
+      "SectionPath": [
+        "Initialize a boost"
+      ],
+      "Text": "The memberBoostInit API initializes boost setup for a member-owned post. It returns the post\u0027s boost eligibility and lifecycle state, the sponsored account that will be billed, whether billing is already configured for that account, and an optional maximum total budget. This action can create a sponsored account or billing configuration as a side effect when one does not already exist.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Initialize a boost",
+        "Request body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Initialize a boost",
+        "Response schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value.targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post this boost setup applies to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.billingConfigured",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the sponsored account already has a payment method configured.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.maxTotalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum total budget allowed for the boost, when available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.maxTotalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "decimal string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The budget amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, when maxTotalBudget is present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.maxTotalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO 4217 currency code for maxTotalBudget.amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, when maxTotalBudget is present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.campaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored campaign URN, when the boost backend returns one.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.availableObjectiveTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[string]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boost objectives available for the post and boost context.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.defaultObjectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The initially selected objective. This value can fall outside availableObjectiveTypes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.defaultRunSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.defaultRunSchedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Default start time, in epoch milliseconds. Omitted when unavailable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.defaultRunSchedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Default end time, in epoch milliseconds. Omitted when unavailable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/memberBoostInit?action=init",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostInit?action=init\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n    \u0022billingConfigured\u0022: true,\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022defaultObjectiveType\u0022: \u0022ENGAGEMENT\u0022,\n    \u0022defaultRunSchedule\u0022: {\n      \u0022start\u0022: 1791111100002,\n      \u0022end\u0022: 1791543100002\n    },\n    \u0022availableObjectiveTypes\u0022: [\n      \u0022ENGAGEMENT\u0022,\n      \u0022BRAND_AWARENESS\u0022\n    ],\n    \u0022maxTotalBudget\u0022: {\n      \u0022amount\u0022: \u0022500.00\u0022,\n      \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample response"
+      ],
+      "Text": "When billingConfigured is false, the sponsored account does not yet have a payment method on file. Direct the member to add a payment method in LinkedIn Campaign Manager before calling boostPost \u2014 this API does not return a billing-setup redirect URL. Once billing is configured, subsequent boost initialization calls for the same account return billingConfigured: true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status code",
+        "Error message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The targetPost value is missing, malformed, or uses an unsupported URN entity type. Only ugcPost and share URNs are accepted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Send a valid urn:li:ugcPost:{id} or urn:li:share:{id} value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is missing an access token or uses an expired token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller does not have the required rw_member_boost permission.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request the rw_member_boost scope and retry with a properly provisioned application and token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller exceeded the memberBoostInit rate limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Back off and retry the request later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The upstream boost service failed, or it returned an invalid response such as no sponsored account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry later. If the issue persists, contact LinkedIn Developer Support with the request details.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Preview a boost",
+      "Anchor": "preview-a-boost",
+      "SectionPath": [
+        "Preview a boost"
+      ],
+      "Text": "The memberBoostHydrate action previews targeting, forecast, and pricing for a hypothetical boost campaign in the Member Boost context. This is a read-only preview endpoint: it does not create sponsored entities, and it returns the echoed request inputs together with any available targeting, forecast, budget suggestion, and pricing data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Preview a boost",
+        "Request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertiser objective for the hypothetical boost. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total budget to preview. Omit it to receive suggested budgets only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Decimal budget amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, when totalBudget is present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Three-letter ISO 4217 currency code for the budget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, when totalBudget is present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign schedule to preview. Use the defaultRunSchedule returned by init.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start time, in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "End time, in epoch milliseconds. Must be after runSchedule.start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audience to preview, such as a suggested audience returned by an earlier hydrate call.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Short description of the post or product being boosted. The backend uses this to compute the preview.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields-1",
+      "SectionPath": [
+        "Preview a boost",
+        "Response body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value.account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Echoed sponsored account URN for the preview.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.totalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Echoed total budget. Returned only when the request includes totalBudget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.totalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Echoed decimal budget amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.totalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Echoed ISO 4217 currency code.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.productDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Echoed product description.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-09\u0026tabs=http#targeting-criteria-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.audienceCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Estimated audience size for the preview, when available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.forecast",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasted delivery estimates, when available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.forecast.spend",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasted spend range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.forecast.videoViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasted video views range, when applicable to the selected goal.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.forecast.impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasted impressions range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.forecast.clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasted clicks range, when applicable to the selected goal.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.forecast.*.lowEnd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lower bound of a forecast range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.forecast.*.highEnd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Upper bound of a forecast range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.suggestedTotalBudgets",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Suggested total budget options, when available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.suggestedTotalBudgets[].amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Suggested budget amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.suggestedTotalBudgets[].amount.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Suggested decimal amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.suggestedTotalBudgets[].amount.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Suggested amount currency code.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.suggestedTotalBudgets[].isRecommendedBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the suggestion is the recommended budget option.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.consumerPrice",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified consumer-facing pricing summary, when available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.consumerPrice.campaignTotalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requested campaign total budget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.consumerPrice.totalConsumerPrice",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total consumer price after applicable credits.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.maxTotalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum total budget allowed for the preview, when available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.maxTotalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum allowed decimal amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.maxTotalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum budget currency code.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.minDailyBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Minimum daily budget for the preview, when available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting criteria object",
+      "Anchor": "targeting-criteria-object",
+      "SectionPath": [
+        "Preview a boost",
+        "Targeting criteria object"
+      ],
+      "Text": "The suggested audience in the hydrate response contains only the fields needed to display the audience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Targeting criteria object",
+      "Anchor": "targeting-criteria-object",
+      "SectionPath": [
+        "Preview a boost",
+        "Targeting criteria object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id, name, type, audienceCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audience identifier, name, type, and estimated size.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "include, exclude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeting groups to include and exclude. Every group and segment is returned, in order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Facets",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Each facet contains only urn and name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Each segment contains only urn, name, subLine, and imageUrl.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate\nLinkedin-Version: 202610\nX-Restli-Protocol-Version: 2.0.0\nAuthorization: Bearer {access_token}\nContent-Type: application/json",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample request"
+      ],
+      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n  \u0022goal\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n  \u0022goal\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n    \u0022totalBudget\u0022: {\n      \u0022amount\u0022: \u002250.00\u0022,\n      \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022,\n    \u0022targetingCriteria\u0022: {\n      \u0022id\u0022: 987654321,\n      \u0022name\u0022: \u0022Suggested audience\u0022,\n      \u0022audienceCount\u0022: 125000\n    },\n    \u0022audienceCount\u0022: 125000,\n    \u0022forecast\u0022: {\n      \u0022spend\u0022: {\n        \u0022lowEnd\u0022: 4500,\n        \u0022highEnd\u0022: 5000\n      },\n      \u0022impressions\u0022: {\n        \u0022lowEnd\u0022: 18000,\n        \u0022highEnd\u0022: 42000\n      },\n      \u0022clicks\u0022: {\n        \u0022lowEnd\u0022: 110,\n        \u0022highEnd\u0022: 340\n      }\n    },\n    \u0022suggestedTotalBudgets\u0022: [\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002230.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: false\n      },\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002250.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: true\n      },\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002275.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: false\n      }\n    ],\n    \u0022consumerPrice\u0022: {\n      \u0022campaignTotalBudget\u0022: {\n        \u0022amount\u0022: \u002250.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022totalConsumerPrice\u0022: {\n        \u0022amount\u0022: \u002250.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      }\n    },\n    \u0022maxTotalBudget\u0022: {\n      \u0022amount\u0022: \u0022500.00\u0022,\n      \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details-2",
+      "SectionPath": [
+        "Preview a boost",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status",
+        "Scenario",
+        "Details"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid account URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service rejects non-sponsored-account URNs with account must be a sponsoredAccount URN: {value}.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported goal value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service rejects unsupported objectives with Unsupported goal: {goal}.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing or malformed required input",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REST.li rejects requests that omit required action parameters or provide malformed body shapes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid runSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Both runSchedule.start and runSchedule.end are required, and end must be after start. The schedule must cover at least 2 UTC days, counted inclusively. For Member Boost, start can\u0027t be later than the current UTC day.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid or missing access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller is not authenticated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing permission scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller does not have the required rw_member_boost permission for Member Boost preview access.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate limit exceeded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller exceeded the memberBoostHydrate rate limit. Back off and retry later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn could not complete the preview request.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a boost",
+      "Anchor": "create-a-boost",
+      "SectionPath": [
+        "Create a boost"
+      ],
+      "Text": "The memberBoostPost API creates a boost for an eligible member-owned UGC post or share. This write action creates a sponsored campaign group, sponsored campaign, and sponsored creative, and returns the URNs of the newly created ads entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a boost",
+      "Anchor": "create-a-boost",
+      "SectionPath": [
+        "Create a boost"
+      ],
+      "Text": "Use the account returned by a prior boost initialization call for the same post. This endpoint externalizes the target post, sponsored account, objective, total budget, and optional call-to-action settings; other campaign settings rely on server-side defaults.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Create a boost",
+        "Request body schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target post to boost. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "goal.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boost objective. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Decimal budget amount, for example 50.00.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code for the budget, for example USD.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign start time, in epoch milliseconds. Use the defaultRunSchedule returned by init.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign end time, in epoch milliseconds. Must be after runSchedule.start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audience for the boost, such as the suggested audience returned by hydrate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToActionLabel.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional call-to-action label for the creative. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToActionTarget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Destination URL for the call to action. Provide this only when callToActionLabel is present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response schema",
+      "Anchor": "response-schema-1",
+      "SectionPath": [
+        "Create a boost",
+        "Response schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Returned"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post that was boosted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored account used for billing.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Objective used to create the boost.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Decimal budget amount applied to the boost.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code for the budget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToActionLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call-to-action label applied to the creative.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When provided in the request",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToActionTarget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call-to-action destination URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When provided in the request",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignGroup",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Newly created sponsored campaign group URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Newly created sponsored campaign URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Newly created sponsored creative URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/memberBoostPost?action=post\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202610\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022id\u0022: 987654321\n  },\n  \u0022callToActionLabel\u0022: {\n    \u0022value\u0022: \u0022LEARN_MORE\u0022\n  },\n  \u0022callToActionTarget\u0022: \u0022https://www.example.com/learn-more\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostPost?action=post\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-d \u0027{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022id\u0022: 987654321\n  },\n  \u0022callToActionLabel\u0022: {\n    \u0022value\u0022: \u0022LEARN_MORE\u0022\n  },\n  \u0022callToActionTarget\u0022: \u0022https://www.example.com/learn-more\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Create a boost",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022callToActionLabel\u0022: \u0022LEARN_MORE\u0022,\n  \u0022callToActionTarget\u0022: \u0022https://www.example.com/learn-more\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:111111111\u0022,\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:222222222\u0022,\n  \u0022creative\u0022: \u0022urn:li:sponsoredCreative:333333333\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details-3",
+      "SectionPath": [
+        "Create a boost",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status code",
+        "Error message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "account must be a sponsoredAccount URN: {account}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The account parameter is not a sponsored account URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass a urn:li:sponsoredAccount:{id} value, typically from an earlier Boost initialization flow for the same post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported goal: {goal}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The supplied objective is not one of the supported objective values.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use one of the documented goal.value enum values.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported callToActionLabel: {callToActionLabel}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The supplied call-to-action label is not supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use one of the documented callToActionLabel.value enum values.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The runSchedule is missing a start or end, end is not after start, the schedule covers fewer than 2 UTC days (counted inclusively), or a Member Boost start is later than the current UTC day.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Send a valid runSchedule, for example the defaultRunSchedule returned by init.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token is missing, invalid, or expired.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Generate a valid member access token and resend the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application or member does not have permission to create Boost campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify that your application has rw_member_boost and that the authenticated member can boost the target post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller exceeded the memberBoostPost rate limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Back off and retry the request later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn could not complete the boost creation request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If the issue persists, contact LinkedIn support with the request details.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a boost campaign",
+      "Anchor": "delete-a-boost-campaign",
+      "SectionPath": [
+        "Delete a boost campaign"
+      ],
+      "Text": "The memberBoostCampaign resource deletes an existing Member Boost campaign. This action deletes the campaign; it doesn\u0027t pause it. Campaign authorization and deletion restrictions are enforced by the boost service.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a boost campaign",
+      "Anchor": "delete-a-boost-campaign",
+      "SectionPath": [
+        "Delete a boost campaign"
+      ],
+      "Text": "Requires the rw_member_boost permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters",
+      "SectionPath": [
+        "Delete a boost campaign",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "campaignId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the boost campaign to delete, passed in the resource path.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account URN associated with the campaign.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL-encoded URN.For example, urn%3Ali%3AsponsoredAccount%3A987654321",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete a boost campaign",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete a boost campaign",
+        "Sample request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/memberBoostCampaign/123456789?account=urn%3Ali%3AsponsoredAccount%3A987654321",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete a boost campaign",
+        "Sample request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/memberBoostCampaign/123456789?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Delete a boost campaign",
+        "Sample response"
+      ],
+      "Text": "A successful request returns 204 No Content with no response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details-4",
+      "SectionPath": [
+        "Delete a boost campaign",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status code",
+        "Error message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "account must be a sponsoredAccount URN: {account}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The account parameter isn\u0027t a sponsored account URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass a urn:li:sponsoredAccount:{id} value.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve boost analytics",
+      "Anchor": "retrieve-boost-analytics",
+      "SectionPath": [
+        "Retrieve boost analytics"
+      ],
+      "Text": "The memberBoostAnalytics API returns Boost performance analytics for boosted posts owned by the authenticated member. The response externalizes a curated set of sponsored metrics shown on the boosted post in the LinkedIn flagship app: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, spend, and approximateMemberReach.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve boost analytics",
+      "Anchor": "retrieve-boost-analytics",
+      "SectionPath": [
+        "Retrieve boost analytics"
+      ],
+      "Text": "Call memberBoostAnalytics with q=boostAnalytics to retrieve one analytics record per requested target post. The response returns records in the same order as the targetPosts request list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Query parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be boostAnalytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetPosts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of boosted post URNs to retrieve analytics for. The API accepts between 1 and 50 URNs. Supported URN entity types are ugcPost and share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REST.li list of URNs.Example: List(urn%3Ali%3Ashare%3A7325786486870552578, urn%3Ali%3AugcPost%3A7325786486870552579)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields-2",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "elements[].targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The boosted post URN that these analytics apply to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of ad impressions the boosted post received.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of chargeable clicks the boosted post received.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].clickThroughRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Click-through rate for the boosted post, calculated as clicks / impressions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].reactions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of reactions on the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].comments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of comments on the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].shares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of shares (reshares) of the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].follows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of new followers attributed to the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].spend",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object (MoneyAmount)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-09\u0026tabs=http#moneyamount-object-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Total amount spent on the boost so far. The current response uses USD.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].approximateMemberReach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Approximate number of unique members reached by the boost. This field is omitted for boosts spanning more than 92 days.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paging",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pagination metadata for the response, including count, start, and links.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MoneyAmount object schema",
+      "Anchor": "moneyamount-object-schema",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "MoneyAmount object schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (decimal)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Decimal string representing the spend amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code. The current response value is USD.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberBoostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberBoostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:share:7325786486870552578\u0022,\n      \u0022impressions\u0022: 12845,\n      \u0022clicks\u0022: 326,\n      \u0022clickThroughRate\u0022: 0.0254,\n      \u0022reactions\u0022: 41,\n      \u0022comments\u0022: 9,\n      \u0022shares\u0022: 7,\n      \u0022follows\u0022: 12,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002237.42\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 11890\n    },\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:7325786486870552579\u0022,\n      \u0022impressions\u0022: 7540,\n      \u0022clicks\u0022: 188,\n      \u0022clickThroughRate\u0022: 0.0249,\n      \u0022reactions\u0022: 23,\n      \u0022comments\u0022: 4,\n      \u0022shares\u0022: 3,\n      \u0022follows\u0022: 6,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002221.15\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 7012\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details-5",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status code",
+        "Error message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is malformed, contains no targetPosts, contains more than 50 targetPosts, or includes an unsupported URN entity type.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide 1 to 50 boosted post URNs and use only urn:li:ugcPost:{id} or urn:li:share:{id} values.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is missing a valid OAuth access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include a valid member access token in the Authorization header.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application or member token does not have the required permission to read Boost analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request the r_member_boost (or rw_member_boost) scope and retry with an authorized member token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller exceeded the memberBoostAnalytics rate limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Back off and retry the request later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn couldn\u0027t process the analytics request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If the issue persists, contact LinkedIn Developer Support.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

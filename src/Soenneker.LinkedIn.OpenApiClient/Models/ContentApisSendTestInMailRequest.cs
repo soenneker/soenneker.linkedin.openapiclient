@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Campaign { get; set; }
 #endif
-        /// <summary>Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.Documented type: Underlying content URNRequirement: No</summary>
+        /// <summary>Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.Documented type: Underlying content URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
@@ -113,6 +113,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction LeadgenCallToAction { get; set; }
+#endif
+        /// <summary>Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative&apos;s underlying content. It&apos;s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.Documented type: CreativeMetadataRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata Metadata { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -201,6 +209,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy.CreateFromDiscriminatorValue); } },
                 { "leadgenCallToAction", n => { LeadgenCallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName.CreateFromDiscriminatorValue); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestReview.CreateFromDiscriminatorValue); } },
                 { "sender", n => { Sender = n.GetStringValue(); } },
@@ -230,6 +239,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt>("lastModifiedAt", LastModifiedAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy>("lastModifiedBy", LastModifiedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction>("leadgenCallToAction", LeadgenCallToAction);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName>("name", Name);
             writer.WriteStringValue("sender", Sender);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestServingHoldReasons>("servingHoldReasons", ServingHoldReasons);

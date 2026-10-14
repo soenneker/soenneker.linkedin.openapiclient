@@ -45,7 +45,7 @@
       "Section": "Quickstart on Development Tier",
       "Anchor": "quickstart-on-development-tier",
       "SectionPath": [],
-      "Text": "Development tier is for testing only.\nIt can access only LinkedIn members who are application administrators.\nUpgrade to Lite tier to access all LinkedIn members. Lite tier reviews typically complete within a week.",
+      "Text": "This version of the API is not available to request. New access and upgrade\noptions will be announced soon. All Developers currently using this tier\nwill continue to have access until further notice.",
       "Headers": [],
       "Rows": []
     },
@@ -1176,6 +1176,30 @@
         "\u0022Product not assigned\u0022 Error"
       ],
       "Text": "\uD83C\uDF89 Congratulations! You\u0027re now testing Verified on LinkedIn APIs. When you\u0027re ready for production, upgrade to Lite tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation",
+      "Anchor": "documentation",
+      "SectionPath": [
+        "Support \u0026 Resources",
+        "Documentation"
+      ],
+      "Text": "Common FAQ - Frequently asked questions\nRelease Notes - API updates and changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Tools",
+      "Anchor": "tools",
+      "SectionPath": [
+        "Support \u0026 Resources",
+        "Tools"
+      ],
+      "Text": "Sample App - Test OAuth flow and API calls\nDeveloper Portal - Manage your applications\nOAuth Tool - Generate test tokens",
       "Headers": [],
       "Rows": []
     }

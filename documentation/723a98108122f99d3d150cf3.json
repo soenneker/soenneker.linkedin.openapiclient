@@ -48,7 +48,7 @@
       "Section": "Create and Manage Campaigns",
       "Anchor": "create-and-manage-campaigns",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -210,7 +210,7 @@
             "Values": []
           },
           {
-            "Text": "LinkedIn Event Ads are a type of Sponsored Content that allow advertisers to promote events directly in the LinkedIn feed. This ad type allows advertisers to seamlessly promote a LinkedIn event to a defined audience before, during, and after the event. Available from version 202501 and above.",
+            "Text": "LinkedIn Event Ads are a type of Sponsored Content that allow advertisers to promote events directly in the LinkedIn feed. This ad type allows advertisers to seamlessly promote a LinkedIn event to a defined audience before, during, and after the event.",
             "Links": [],
             "Values": []
           },
@@ -227,10 +227,8 @@
             "Values": []
           },
           {
-            "Text": "This format is only available for managed accounts and cannot be managed through the API or Campaign Manager. For more information, refer to Dynamic ads advertising specifications.",
-            "Links": [
-              "https://www.linkedin.com/help/linkedin/answer/68893/advertising-specifications-for-dynamic-ads?lang=en"
-            ],
+            "Text": "This format is only available for managed accounts and cannot be managed through the API or Campaign Manager.",
+            "Links": [],
             "Values": []
           },
           {
@@ -1178,14 +1176,14 @@
             "Values": []
           },
           {
-            "Text": "Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.",
+            "Text": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#lifetime-pacing",
               "https://www.linkedin.com/help/lms/answer/a6598492"
             ],
             "Values": [
               "LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime.",
-              "ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above."
+              "ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible."
             ]
           },
           {
@@ -1279,7 +1277,7 @@
             "Values": []
           },
           {
-            "Text": "Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.",
+            "Text": "Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they\u2019re creating a CTV campaign. Not specifying the boolean can be considered false. When \u0027connectedTelevisionOnly = true\u0027, offsiteDeliveryEnabled should be set to true.",
             "Links": [],
             "Values": []
           },
@@ -1306,7 +1304,7 @@
             "Values": []
           },
           {
-            "Text": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.",
+            "Text": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#frequency-optimization-preference"
             ],

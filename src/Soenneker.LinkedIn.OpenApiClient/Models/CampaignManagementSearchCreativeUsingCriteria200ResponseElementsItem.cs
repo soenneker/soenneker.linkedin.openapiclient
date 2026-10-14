@@ -88,6 +88,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemLeadgenCallToAction LeadgenCallToAction { get; set; }
 #endif
+        /// <summary>Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative&apos;s underlying content. It&apos;s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.Documented type: CreativeMetadataRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemMetadata Metadata { get; set; }
+#endif
         /// <summary>The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +158,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "leadgenCallToAction", n => { LeadgenCallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemLeadgenCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemLeadgenCallToAction.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemReview.CreateFromDiscriminatorValue); } },
                 { "servingHoldReasons", n => { ServingHoldReasons = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -174,6 +183,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemLeadgenCallToAction>("leadgenCallToAction", LeadgenCallToAction);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("servingHoldReasons", ServingHoldReasons);
             writer.WriteAdditionalData(AdditionalData);

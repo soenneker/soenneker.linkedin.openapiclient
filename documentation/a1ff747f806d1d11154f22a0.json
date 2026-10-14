@@ -40,7 +40,7 @@
       "Section": "Ad Supply Forecasts",
       "Anchor": "ad-supply-forecasts",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -853,7 +853,7 @@
             "Values": []
           },
           {
-            "Text": "Generate forecasting for connected television campaigns. Note: Applicable only from versions 202408 and above.",
+            "Text": "Generate forecasting for connected television campaigns.",
             "Links": [],
             "Values": []
           },
@@ -1292,7 +1292,7 @@
             "Values": []
           },
           {
-            "Text": "CTV campaigns require LAN to be enabled for forecasting. Note: Applicable only from versions 202408 and above.",
+            "Text": "CTV campaigns require LAN to be enabled for forecasting.",
             "Links": [],
             "Values": []
           }
@@ -1309,7 +1309,7 @@
             "Values": []
           },
           {
-            "Text": "Currently only SPONSORED_UPDATES campaign type is supported for Forecasting with CTV campaign. Note: Applicable only from versions 202408 and above.",
+            "Text": "Currently only SPONSORED_UPDATES campaign type is supported for forecasting with CTV campaigns.",
             "Links": [],
             "Values": []
           }

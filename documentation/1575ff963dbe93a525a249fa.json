@@ -6,12 +6,15 @@
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/integration-requirements-company-intel",
     "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
     "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
     "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
   ],
@@ -30,7 +33,7 @@
       "Section": "Company Intelligence - Overview",
       "Anchor": "company-intelligence---overview",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },

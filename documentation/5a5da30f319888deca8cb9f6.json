@@ -1,0 +1,340 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+  "Title": "Boost - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Boost - Overview",
+      "Anchor": "boost---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost - Overview",
+      "Anchor": "boost---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost - Overview",
+      "Anchor": "boost---overview",
+      "SectionPath": [],
+      "Text": "Boost lets a member or a Company Page turn an existing, eligible post into a sponsored ad without leaving the native post-boosting flow. The Boost APIs support two separate identity contexts:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost - Overview",
+      "Anchor": "boost---overview",
+      "SectionPath": [],
+      "Text": "Member Boost - Boosts a post owned by the authenticated member. See Member Post Boost.\nCompany Page Boost - Boosts a post on behalf of an organization the authenticated member can manage. See Organization Post Boost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost - Overview",
+      "Anchor": "boost---overview",
+      "SectionPath": [],
+      "Text": "Each context exposes a parallel set of REST.li actions and finders. Member Boost endpoints are prefixed member (for example, memberBoostInit) and Company Page Boost endpoints are prefixed organization (for example, organizationBoostInit).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Your developer application must be approved for the Advertising API product for the relevant Boost permissions to call these endpoints.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For fetching member posts, your application must have created the posts with the w_member_social permission and saved their post IDs from the response. Fetching member posts is restricted with the r_member_social permission under the \u0022Member Posts Management API\u0022 product, which has closed access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Context",
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Member Posts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your posts, comments, reactions, and other engagement data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member Boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve boost status and analytics for the authenticated member\u0027s posts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member Boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initialize, preview, and create boosts for the authenticated member\u0027s posts, including retrieving boost status and analytics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company Page Posts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u0027s posts, comments, reactions, and other engagement data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company Page Boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_organization_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve boost status for posts in the specified sponsoring organization\u0027s context.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company Page Boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_organization_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initialize, preview, and create boosts for a sponsoring organization\u0027s posts, including retrieving boost status.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "All Boost requests require the Linkedin-Version header set to 202610 or a higher available version, and the X-Restli-Protocol-Version: 2.0.0 header. For more information, see Versioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "Applications must be authorized and authenticated before they can fetch data from LinkedIn or get access to LinkedIn member data. To learn more about the OAuth flows, see Authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost workflow",
+      "Anchor": "boost-workflow",
+      "SectionPath": [
+        "Boost workflow"
+      ],
+      "Text": "A typical Boost integration calls the following endpoints in sequence for a given post:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost workflow",
+      "Anchor": "boost-workflow",
+      "SectionPath": [
+        "Boost workflow"
+      ],
+      "Text": "Status - Call memberBoostStatus or organizationBoostStatus to confirm the post is eligible to be boosted and to learn why it is ineligible if not.\nInit - Call memberBoostInit or organizationBoostInit to resolve or create the sponsored account and billing configuration that will fund the boost.\nHydrate - Call memberBoostHydrate or organizationBoostHydrate to preview targeting, forecast, and pricing for a hypothetical budget and objective before committing.\nPost - Call memberBoostPost or organizationBoostPost to create the sponsored campaign group, campaign, and creative that make up the boost.\nAnalytics - Call memberBoostAnalytics to retrieve performance metrics for member posts that have already been boosted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost workflow",
+      "Anchor": "boost-workflow",
+      "SectionPath": [
+        "Boost workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost workflow",
+      "Anchor": "boost-workflow",
+      "SectionPath": [
+        "Boost workflow"
+      ],
+      "Text": "Company Page Boost analytics aren\u0027t supported yet. It will be available in a future version. Use the Ad Analytics API for Company Page boost reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comparison with native boost experience",
+      "Anchor": "comparison-with-native-boost-experience",
+      "SectionPath": [
+        "Comparison with native boost experience"
+      ],
+      "Text": "The following screenshots show where each Boost endpoint maps to an action in the native boost experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check boost status on a Company Page",
+      "Anchor": "check-boost-status-on-a-company-page",
+      "SectionPath": [
+        "Comparison with native boost experience",
+        "Check boost status on a Company Page"
+      ],
+      "Text": "The Boost button on the Page posts tab reflects the status returned by organizationBoostStatus. A disabled button indicates the post can\u0027t be boosted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure and create a boost",
+      "Anchor": "configure-and-create-a-boost",
+      "SectionPath": [
+        "Comparison with native boost experience",
+        "Configure and create a boost"
+      ],
+      "Text": "Selecting Boost opens the boost creation flow. Selecting a goal calls the init endpoint, changing the audience, budget, or schedule calls the hydrate endpoint to refresh the preview, and selecting Boost calls the post endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "View boost analytics",
+      "Anchor": "view-boost-analytics",
+      "SectionPath": [
+        "Comparison with native boost experience",
+        "View boost analytics"
+      ],
+      "Text": "After a post is boosted, the Boost tab on the post analytics page shows the performance data returned by memberBoostAnalytics.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

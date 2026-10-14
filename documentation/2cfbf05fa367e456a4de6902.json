@@ -51,7 +51,7 @@
       "Section": "Create and Manage Creatives",
       "Anchor": "create-and-manage-creatives",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -317,7 +317,7 @@
             "Values": []
           },
           {
-            "Text": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.",
+            "Text": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads?view=li-lms-2026-09",
               "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations?view=li-lms-2026-09",
@@ -331,7 +331,9 @@
               "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09",
               "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#eventad",
               "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#standardupdatead",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#videoad"
             ],
             "Values": []
           }
@@ -546,6 +548,32 @@
         ],
         [
           {
+            "Text": "metadata",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#creativemetadata"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CreativeMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#retrieve-creative-metadata"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
             "Text": "review",
             "Links": [],
             "Values": []
@@ -608,6 +636,413 @@
           },
           {
             "Text": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "StandardUpdateAd",
+      "Anchor": "standardupdatead",
+      "SectionPath": [
+        "Schema",
+        "StandardUpdateAd"
+      ],
+      "Text": "Starting with API version 202610, Creative read responses can return standardUpdateAd for creatives associated with the STANDARD_UPDATE campaign format. This member is read-only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "StandardUpdateAd",
+      "Anchor": "standardupdatead",
+      "SectionPath": [
+        "Schema",
+        "StandardUpdateAd"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Read Only",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share URN or UgcPost URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the sponsored post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentAuthor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN or Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Author of the content.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "VideoAd",
+      "Anchor": "videoad",
+      "SectionPath": [
+        "Schema",
+        "VideoAd"
+      ],
+      "Text": "Starting with API version 202610, Creative read responses can return videoAd for creatives associated with the SINGLE_VIDEO campaign format. This member is read-only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "VideoAd",
+      "Anchor": "videoad",
+      "SectionPath": [
+        "Schema",
+        "VideoAd"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Read Only",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share URN or UgcPost URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the sponsored video post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentAuthor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN or Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Author of the content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preRollMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PreRollMetadata",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#prerollmetadata"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Pre-roll information returned for an In-Stream video creative.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PreRollMetadata",
+      "Anchor": "prerollmetadata",
+      "SectionPath": [
+        "Schema",
+        "PreRollMetadata"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Read Only",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "preRollMediaAsset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalmediaAssetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the pre-roll video media asset.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "CreativeMetadata",
+      "Anchor": "creativemetadata",
+      "SectionPath": [
+        "Schema",
+        "CreativeMetadata"
+      ],
+      "Text": "Available in API versions 202610 and later. The metadata field is derived on read from the creative\u0027s underlying content (such as a UGC post, job posting, event, or InMail) and isn\u0027t stored. It\u0027s read-only and can\u0027t be set or updated. Fields that don\u0027t apply to the creative\u0027s ad format are omitted from the response. The field is returned only when explicitly requested using the fields query parameter on a single-creative GET, as described in Retrieve creative metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "CreativeMetadata",
+      "Anchor": "creativemetadata",
+      "SectionPath": [
+        "Schema",
+        "CreativeMetadata"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adFormat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad format of the creative, for example TEXT_AD, SPOTLIGHT_V2, or SPONSORED_VIDEO.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adHeadline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Headline of the ad. Depending on the ad format, this is the title, a custom string, or the title of the underlying content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adIntroductionText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Introductory text of the ad. Depending on the ad format, this is the commentary, forum name, call to action, or company name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLine",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supporting body text of the ad. Populated for TEXT_AD (body text) and SPOTLIGHT_V2 (description).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetURL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL of the primary visual asset of the ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The destination URL a member is taken to when they click the ad.",
             "Links": [],
             "Values": []
           }
@@ -1156,6 +1591,42 @@
           },
           {
             "Text": "Call To Action button on the creative shows \u0027Unlock Full Document\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SHOP_NOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Shop Now\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BUY_NOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Buy Now\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SEE_MORE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027See More\u0027.",
             "Links": [],
             "Values": []
           }
@@ -1751,6 +2222,155 @@
     },
     {
       "Kind": "text",
+      "Section": "Retrieve creative metadata",
+      "Anchor": "retrieve-creative-metadata",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata"
+      ],
+      "Text": "Available in API versions 202610 and later. The metadata field returns human-readable descriptive information about a creative, such as its ad format, headline, introduction text, ad line, landing page, and asset URL. Without it, you have to call a different API depending on the creative\u0027s content type to assemble the same information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve creative metadata",
+      "Anchor": "retrieve-creative-metadata",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata"
+      ],
+      "Text": "metadata isn\u0027t returned by default. To retrieve it, request it explicitly with the fields query parameter on a single-creative GET.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve creative metadata",
+      "Anchor": "retrieve-creative-metadata",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata"
+      ],
+      "Text": "On version 202610 and later, metadata is returned only by the single-creative GET. Batch Get Ad Creatives and the Search For Creatives finders don\u0027t return it; requesting it in fields on those operations is ignored and the field is omitted from the response without an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve creative metadata",
+      "Anchor": "retrieve-creative-metadata",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve creative metadata",
+      "Anchor": "retrieve-creative-metadata",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata"
+      ],
+      "Text": "The top-level metadata object in a finder response is the paging envelope that contains nextPageToken. It\u0027s unrelated to the creative metadata field described here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve creative metadata",
+      "Anchor": "retrieve-creative-metadata",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve creative metadata",
+      "Anchor": "retrieve-creative-metadata",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata"
+      ],
+      "Text": "Don\u0027t request metadata in fields on an API version earlier than 202610, on any operation. The field doesn\u0027t exist in the creative schema for those versions, so it can\u0027t be projected. On a single-creative GET, the request fails with a 400 error rather than omitting the field. Requests that don\u0027t project metadata are unaffected and continue to work on every version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/520866471/creatives/urn%3Ali%3AsponsoredCreative%3A120491345?fields=id,intendedStatus,metadata",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/520866471/creatives/urn%3Ali%3AsponsoredCreative%3A120491345?fields=id,intendedStatus,metadata\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022urn:li:sponsoredCreative:120491345\u0022,\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n  \u0022metadata\u0022: {\n    \u0022adFormat\u0022: \u0022TEXT_AD\u0022,\n    \u0022adHeadline\u0022: \u0022Hire faster with LinkedIn\u0022,\n    \u0022adLine\u0022: \u0022Find qualified candidates in half the time.\u0022,\n    \u0022landingPage\u0022: \u0022https://business.linkedin.com/talent-solutions\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Get a Creative",
+        "Retrieve creative metadata",
+        "Sample Response"
+      ],
+      "Text": "Fields that don\u0027t apply to the creative\u0027s ad format are omitted from the metadata object. In the preceding TEXT_AD example, adIntroductionText and assetURL aren\u0027t returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "Search For Creatives",
       "Anchor": "search-for-creatives",
       "SectionPath": [
@@ -1810,7 +2430,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-3",
+      "Anchor": "sample-request-4",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -1823,7 +2443,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-3",
+      "Anchor": "sample-request-4",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -1836,7 +2456,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-3",
+      "Anchor": "sample-request-4",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2020,7 +2640,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2033,7 +2653,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2046,7 +2666,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2059,7 +2679,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2072,7 +2692,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2085,7 +2705,7 @@
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-4",
+      "Anchor": "sample-response-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2098,7 +2718,7 @@
     {
       "Kind": "text",
       "Section": "Sample Response",
-      "Anchor": "sample-response-4",
+      "Anchor": "sample-response-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2111,7 +2731,7 @@
     {
       "Kind": "text",
       "Section": "Sample Response",
-      "Anchor": "sample-response-4",
+      "Anchor": "sample-response-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2124,7 +2744,7 @@
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-4",
+      "Anchor": "sample-response-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2137,7 +2757,7 @@
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-4",
+      "Anchor": "sample-response-5",
       "SectionPath": [
         "Search For Creatives",
         "Cursor based Pagination for search APIs",
@@ -2172,7 +2792,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2184,7 +2804,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2196,7 +2816,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2208,7 +2828,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2220,7 +2840,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2232,7 +2852,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2244,7 +2864,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2256,7 +2876,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2268,7 +2888,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-5",
+      "Anchor": "sample-request-6",
       "SectionPath": [
         "Update a Creative",
         "Sample Request"
@@ -2313,7 +2933,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2325,7 +2945,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2337,7 +2957,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2349,7 +2969,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2361,7 +2981,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2373,7 +2993,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2385,7 +3005,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2397,7 +3017,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2409,7 +3029,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2421,7 +3041,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-6",
+      "Anchor": "sample-request-7",
       "SectionPath": [
         "Delete a Creative",
         "Sample Request"
@@ -2515,7 +3135,7 @@
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-5",
+      "Anchor": "sample-response-6",
       "SectionPath": [
         "Batch Operations",
         "Batch Create Ad Creatives",
@@ -2551,8 +3171,32 @@
     },
     {
       "Kind": "text",
+      "Section": "Batch Get Ad Creatives",
+      "Anchor": "batch-get-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Ad Creatives",
+      "Anchor": "batch-get-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives"
+      ],
+      "Text": "The metadata field isn\u0027t returned by this operation. On version 202610 and later, requesting it in fields is ignored and the field is omitted from each result without an error. On earlier versions the field doesn\u0027t exist in the creative schema, so don\u0027t project it at all. To retrieve it, use the single-creative GET described in Retrieve creative metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-7",
+      "Anchor": "sample-request-8",
       "SectionPath": [
         "Batch Operations",
         "Batch Get Ad Creatives",
@@ -2565,7 +3209,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-7",
+      "Anchor": "sample-request-8",
       "SectionPath": [
         "Batch Operations",
         "Batch Get Ad Creatives",
@@ -2578,7 +3222,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-7",
+      "Anchor": "sample-request-8",
       "SectionPath": [
         "Batch Operations",
         "Batch Get Ad Creatives",
@@ -2591,7 +3235,7 @@
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-6",
+      "Anchor": "sample-response-7",
       "SectionPath": [
         "Batch Operations",
         "Batch Get Ad Creatives",
@@ -2616,7 +3260,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-8",
+      "Anchor": "sample-request-9",
       "SectionPath": [
         "Batch Operations",
         "Batch Partial Update Ad Creatives",
@@ -2629,7 +3273,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-8",
+      "Anchor": "sample-request-9",
       "SectionPath": [
         "Batch Operations",
         "Batch Partial Update Ad Creatives",
@@ -2642,7 +3286,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-8",
+      "Anchor": "sample-request-9",
       "SectionPath": [
         "Batch Operations",
         "Batch Partial Update Ad Creatives",
@@ -2655,7 +3299,7 @@
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-7",
+      "Anchor": "sample-response-8",
       "SectionPath": [
         "Batch Operations",
         "Batch Partial Update Ad Creatives",
@@ -2692,7 +3336,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2705,7 +3349,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2718,7 +3362,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2731,7 +3375,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2744,7 +3388,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2757,7 +3401,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2770,7 +3414,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2783,7 +3427,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2796,7 +3440,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2809,7 +3453,7 @@
     {
       "Kind": "text",
       "Section": "Sample Request",
-      "Anchor": "sample-request-9",
+      "Anchor": "sample-request-10",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2822,7 +3466,7 @@
     {
       "Kind": "text",
       "Section": "Sample Response",
-      "Anchor": "sample-response-8",
+      "Anchor": "sample-response-9",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -2835,7 +3479,7 @@
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-8",
+      "Anchor": "sample-response-9",
       "SectionPath": [
         "Batch Operations",
         "Batch Delete Ad Creatives",
@@ -5185,7 +5829,7 @@
             "Values": []
           },
           {
-            "Text": "CTV video bitrate value {value} must be greater than {minBitRate}. Note: Applicable only from versions 202408 and above.",
+            "Text": "CTV video bitrate value {value} must be greater than {minBitRate}.",
             "Links": [],
             "Values": []
           }

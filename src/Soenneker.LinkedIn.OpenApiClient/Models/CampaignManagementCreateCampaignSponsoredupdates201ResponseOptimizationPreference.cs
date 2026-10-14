@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now. Note: Applicable only from versions 202408 and above.Documented type: UnionRequirement: False
+    /// Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.Documented type: UnionRequirement: False
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CampaignManagementCreateCampaignSponsoredupdates201ResponseOptimizationPreference : IAdditionalDataHolder, IParsable

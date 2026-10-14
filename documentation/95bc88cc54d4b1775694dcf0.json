@@ -533,7 +533,7 @@
         "When verificationUrl Appears",
         "Example 3: Previously Verified Member Requiring Re-verification"
       ],
-      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verifiedWithinDays=15\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027",
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verifiedWithinDays=15\u0027 \\\n  -H \u0027LinkedIn-Version: 202607\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -910,7 +910,7 @@
         "Redirecting the Member to LinkedIn",
         "Example 2: Redirect URI With State"
       ],
-      "Text": "redirectUri=https%3A%2F%2Fwww.example.com%2Fredirect%3Fstate%3Dabc123",
+      "Text": "https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=https%3A%2F%2Fwww.linkedin.com%2Fverify%3FentryPoint%3Dfederation_external_api%26partnerId%3D...%26redirectUri%3Dhttps%3A%2F%2Fwww.example.com%2Fredirect%3Fstate%3Dabc123",
       "Headers": [],
       "Rows": []
     },

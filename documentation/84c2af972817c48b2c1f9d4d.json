@@ -2677,6 +2677,40 @@
         ],
         [
           {
+            "Text": "memberFollows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of sponsored member profile follows. This optional metric exists only for Sponsored Updates and member follower display ads, such as Thought Leader Ads. Note: The memberFollows field is only supported from API version 202610 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberProfileClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on the profile of the member who owns the post sponsored in the ad. This optional metric exists only for Sponsored Updates, such as Thought Leader Ads. Note: The memberProfileClicks field is only supported from API version 202610 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
             "Text": "oneClickLeadFormOpens",
             "Links": [],
             "Values": []

@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Campaign { get; set; }
 #endif
-        /// <summary>Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.Documented type: Underlying content URNRequirement: No</summary>
+        /// <summary>Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.Documented type: Underlying content URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
@@ -110,6 +110,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseLeadgenCallToAction LeadgenCallToAction { get; set; }
 #endif
+        /// <summary>Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative&apos;s underlying content. It&apos;s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.Documented type: CreativeMetadataRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseMetadata Metadata { get; set; }
+#endif
         /// <summary>The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +182,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "leadgenCallToAction", n => { LeadgenCallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseLeadgenCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseLeadgenCallToAction.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseReview.CreateFromDiscriminatorValue); } },
                 { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseServingHoldReasons>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseServingHoldReasons.CreateFromDiscriminatorValue); } },
@@ -200,6 +209,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseLeadgenCallToAction>("leadgenCallToAction", LeadgenCallToAction);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseServingHoldReasons>("servingHoldReasons", ServingHoldReasons);
             writer.WriteAdditionalData(AdditionalData);
