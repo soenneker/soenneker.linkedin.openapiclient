@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema",
   "Title": "Post Schema",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
@@ -63,8 +63,8 @@
           {
             "Text": "Author of the post (can be either posted as member or their company page). For Person URN, refer Retrieve Current Member\u0027s Profile API to fetch their id and construct a Person URN in the format of urn:li:person:{id}. For Organization URN, refer Find a Member\u0027s Organization API to fetch their organization and validate their organization access role.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api?view=li-lms-2026-09#retrieve-current-members-profile",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role?view=li-lms-2026-09#find-a-members-organization-access-control-information"
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api?view=li-lms-2026-10#retrieve-current-members-profile",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role?view=li-lms-2026-10#find-a-members-organization-access-control-information"
             ],
             "Values": [
               "For Person URN, refer Retrieve Current Member\u0027s Profile API to fetch their id and construct a Person URN in the format of urn:li:person:{id}.",
@@ -86,7 +86,7 @@
           {
             "Text": "adContext type",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#adcontext"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#adcontext"
             ],
             "Values": []
           },
@@ -110,7 +110,7 @@
           {
             "Text": "little text",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -156,7 +156,7 @@
           {
             "Text": "content type",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#content"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#content"
             ],
             "Values": []
           },
@@ -260,7 +260,7 @@
           {
             "Text": "distribution Type",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#distribution"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#distribution"
             ],
             "Values": []
           },
@@ -377,7 +377,7 @@
           {
             "Text": "optional lifecycleStateInfo",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#lifecyclestateinfo"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#lifecyclestateinfo"
             ],
             "Values": []
           },
@@ -520,7 +520,7 @@
           {
             "Text": "dscAdType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#dscadtype"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#dscadtype"
             ],
             "Values": []
           },
@@ -566,7 +566,7 @@
           {
             "Text": "dscStatus",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#dscstatus"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#dscstatus"
             ],
             "Values": []
           },
@@ -787,7 +787,7 @@
           {
             "Text": "media",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#media"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#media"
             ],
             "Values": []
           },
@@ -806,7 +806,7 @@
           {
             "Text": "poll",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -825,7 +825,7 @@
           {
             "Text": "multiImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -844,7 +844,7 @@
           {
             "Text": "article",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -863,7 +863,7 @@
           {
             "Text": "carousel",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -882,7 +882,7 @@
           {
             "Text": "celebration",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -901,7 +901,7 @@
           {
             "Text": "reference",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#reference"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#reference"
             ],
             "Values": []
           },
@@ -1059,7 +1059,7 @@
           {
             "Text": "targetEntities",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#targetentities"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#targetentities"
             ],
             "Values": []
           },
@@ -1150,7 +1150,7 @@
           {
             "Text": "Array of Degree URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -1174,7 +1174,7 @@
           {
             "Text": "Array of FieldOfStudy URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -1198,7 +1198,7 @@
           {
             "Text": "Array of Industry URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industrytaxonomyversions?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industrytaxonomyversions?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -1222,7 +1222,7 @@
           {
             "Text": "Array of Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#locale"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#locale"
             ],
             "Values": []
           }
@@ -1246,7 +1246,7 @@
           {
             "Text": "Array of Function URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -1270,7 +1270,7 @@
           {
             "Text": "Array of Location URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -1294,7 +1294,7 @@
           {
             "Text": "Array of Geo URN Learn more",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -1335,7 +1335,7 @@
           {
             "Text": "School organizations for targeting. Retrieve a school organization URN using the Organization Lookup API",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09#retrieve-organizations"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10#retrieve-organizations"
             ],
             "Values": []
           },
@@ -1364,7 +1364,7 @@
           {
             "Text": "Array of Seniority URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }

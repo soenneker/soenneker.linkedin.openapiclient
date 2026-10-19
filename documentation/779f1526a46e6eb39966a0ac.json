@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
   "Title": "Increasing Access",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/integration-requirements-company-intel",
@@ -120,12 +120,12 @@
           {
             "Text": "Apply to Advertising API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-1-apply-for-api-access"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-10#step-1-apply-for-api-access"
             ],
             "Values": []
           },
           {
-            "Text": "r_1st_connections_size r_ads_reportingr_basicprofiler_organization_adminr_organization_socialr_adsrw_adsrw_organization_adminw_member_socialw_organization_social",
+            "Text": "r_1st_connections_size r_ads_reportingr_basicprofiler_organization_adminr_organization_socialr_adsrw_adsrw_organization_adminw_member_socialw_organization_socialr_member_boostrw_member_boostr_organization_boostrw_organization_boost",
             "Links": [],
             "Values": [
               "r_1st_connections_size",
@@ -137,7 +137,11 @@
               "rw_ads",
               "rw_organization_admin",
               "w_member_social",
-              "w_organization_social"
+              "w_organization_social",
+              "r_member_boost",
+              "rw_member_boost",
+              "r_organization_boost",
+              "rw_organization_boost"
             ]
           }
         ],
@@ -155,14 +159,16 @@
           {
             "Text": "Apply to Matched Audiences API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences?view=li-lms-2026-10"
             ],
             "Values": []
           },
           {
             "Text": "rw_dmp_segments",
             "Links": [],
-            "Values": []
+            "Values": [
+              "rw_dmp_segments"
+            ]
           }
         ],
         [
@@ -210,7 +216,9 @@
           {
             "Text": "Developer application is assigned the Media Planning permission. Additional member permission is not required unless you need to save and retrieve created media plans.rw_media_plans",
             "Links": [],
-            "Values": []
+            "Values": [
+              "rw_media_plans"
+            ]
           }
         ],
         [
@@ -227,7 +235,7 @@
           {
             "Text": "Apply to Lead Sync API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -257,7 +265,7 @@
           {
             "Text": "Apply to Conversions API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -285,12 +293,12 @@
           {
             "Text": "Apply for Community Management API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-1-apply-for-api-access"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-10#step-1-apply-for-api-access"
             ],
             "Values": []
           },
           {
-            "Text": "r_1st_connections_sizer_basicprofiler_organization_followersr_organization_socialr_organization_social_feedrw_organization_adminw_member_socialw_member_social_feedw_organization_socialw_organization_social_feedr_member_profileAnalytics(supported only in API versions starting from 202504)r_member_postAnalytics(supported only in API versions starting from 202506)",
+            "Text": "r_1st_connections_sizer_basicprofiler_organization_followersr_organization_socialr_organization_social_feedrw_organization_adminw_member_socialw_member_social_feedw_organization_socialw_organization_social_feedr_member_profileAnalyticsr_member_postAnalytics",
             "Links": [],
             "Values": [
               "r_1st_connections_size",
@@ -303,8 +311,8 @@
               "w_member_social_feed",
               "w_organization_social",
               "w_organization_social_feed",
-              "r_member_profileAnalytics(supported only in API versions starting from 202504)",
-              "r_member_postAnalytics(supported only in API versions starting from 202506)"
+              "r_member_profileAnalytics",
+              "r_member_postAnalytics"
             ]
           }
         ],
@@ -322,7 +330,7 @@
           {
             "Text": "Apply to Events Management API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-1-apply-for-api-access"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-10#step-1-apply-for-api-access"
             ],
             "Values": []
           },
@@ -458,7 +466,7 @@
           {
             "Text": "Apply for access to Advertising API",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -525,7 +533,7 @@
           {
             "Text": "Apply for access to Community Management API Development tier",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -554,7 +562,7 @@
           {
             "Text": "Apply for Standard tier",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -1073,6 +1081,94 @@
         ],
         [
           {
+            "Text": "r_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve boost status and analytics for the authenticated member\u0027s posts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initialize, preview, and create boosts for the authenticated member\u0027s posts, including retrieving boost status and analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve boost status and analytics for posts in the specified sponsoring organization\u0027s context.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_organization_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initialize, preview, and create boosts for a sponsoring organization\u0027s posts, including retrieving boost status and analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
             "Text": "r_member_postAnalytics",
             "Links": [],
             "Values": []
@@ -1088,7 +1184,7 @@
             "Values": []
           },
           {
-            "Text": "Community Management API (in API versions starting from 202506).",
+            "Text": "Community Management API.",
             "Links": [],
             "Values": []
           }
@@ -1110,12 +1206,34 @@
             "Values": []
           },
           {
-            "Text": "Community Management API (in API versions starting from 202504).",
+            "Text": "Community Management API.",
             "Links": [],
             "Values": []
           }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Products and Permissions",
+      "Anchor": "api-products-and-permissions",
+      "SectionPath": [
+        "API Products and Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Products and Permissions",
+      "Anchor": "api-products-and-permissions",
+      "SectionPath": [
+        "API Products and Permissions"
+      ],
+      "Text": "The r_member_boost, rw_member_boost, r_organization_boost, and rw_organization_boost permissions are available from API version 202610 onwards.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "text",

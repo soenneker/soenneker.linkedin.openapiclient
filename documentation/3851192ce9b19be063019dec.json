@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/campaign-formats",
   "Title": "Campaign Formats",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives",
@@ -189,8 +189,8 @@
           {
             "Text": "Corresponds to all legacy creative types that are unsupported as of the time that campaign format was introduced. This includes both the explicit UNSUPPORTED creative type as well as the V1 dynamic creative types. This value shouldn\u0027t be passed as an input.NOTE: campaignFormat is a required field when campaign.type=DYNAMIC.This restricts the types of creatives (creativeType) that may be added to this campaign.For example, Carousel campaigns can only have creativeType=SPONSORED_UPDATE_CAROUSEL,and SINGLE_VIDEO can only have creatives with SPONSORED_VIDEO type. Refer to the validation documentation Validations by Campaign Format and Campaign Objectives",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#validations-based-on-objective-type",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#validations-based-on-objective-type",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives?view=li-lms-2026-10"
             ],
             "Values": []
           }

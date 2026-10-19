@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark",
   "Title": "Ad Lift Test Benchmark",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -175,7 +175,7 @@
           {
             "Text": "Metric array (relativeLift, absoluteLift, etc.) for each existing AdLiftKeyMetric type (advertiser-specific questionsfor measuring results such as AWARENESS, RECALL, etc.) Only advertiser specified questions provide returnable benchmark metrics. See Lift Test Benchmark Metrics Schema for details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark?view=li-lms-2026-09#adlifttestbenchmarkmetrics-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark?view=li-lms-2026-10#adlifttestbenchmarkmetrics-schema"
             ],
             "Values": []
           },
@@ -202,7 +202,7 @@
           {
             "Text": "Peer group type used for aggregating benchmarking results (e.g., all lift tests identified for the same industry/geographic locale). See Peer Group Type Schema for details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark?view=li-lms-2026-09#adlifttestbenchmarkpeergrouptype-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark?view=li-lms-2026-10#adlifttestbenchmarkpeergrouptype-schema"
             ],
             "Values": []
           },
@@ -244,7 +244,7 @@
           {
             "Text": "Specific region and industry benchmark metrics. Aligned with the result metrics for lift test measurement. For metric definitions refer to Lift Test metrics schema.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results?view=li-lms-2026-09#adliftresultmetrics-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results?view=li-lms-2026-10#adliftresultmetrics-schema"
             ],
             "Values": []
           },
@@ -268,7 +268,7 @@
           {
             "Text": "The measured lift key metric type using surveys described in lift test key metrics definition.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#available-key-metrics"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-10#available-key-metrics"
             ],
             "Values": []
           },

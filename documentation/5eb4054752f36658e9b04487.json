@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
   "Title": "Organization Lookup",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
@@ -1347,7 +1347,7 @@
           {
             "Text": "LocaleString []",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#localestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#localestring"
             ],
             "Values": []
           },
@@ -1371,7 +1371,7 @@
           {
             "Text": "CroppedImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#croppedimage"
             ],
             "Values": []
           },
@@ -1395,7 +1395,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#locale"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#locale"
             ],
             "Values": []
           },
@@ -1441,7 +1441,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#multilocalestring"
             ],
             "Values": []
           },
@@ -1465,7 +1465,7 @@
           {
             "Text": "Date",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#date"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#date"
             ],
             "Values": []
           },
@@ -1665,7 +1665,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#multilocalestring"
             ],
             "Values": []
           },
@@ -1828,7 +1828,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#multilocalestring"
             ],
             "Values": []
           },
@@ -1884,7 +1884,7 @@
           {
             "Text": "SchoolAttributes",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#schoolattributes"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#schoolattributes"
             ],
             "Values": []
           },
@@ -1908,7 +1908,7 @@
           {
             "Text": "CroppedImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#croppedimage"
             ],
             "Values": []
           },
@@ -1932,14 +1932,14 @@
           {
             "Text": "CroppedImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#croppedimage"
             ],
             "Values": []
           },
           {
             "Text": "The entity\u2019s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly. For more information, see GET a single image",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-09#get-a-single-image"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-10#get-a-single-image"
             ],
             "Values": []
           },
@@ -2061,7 +2061,7 @@
           {
             "Text": "LocaleString []",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#localestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#localestring"
             ],
             "Values": []
           },
@@ -2085,7 +2085,7 @@
           {
             "Text": "CroppedImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#croppedimage"
             ],
             "Values": []
           },
@@ -2109,7 +2109,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#locale"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#locale"
             ],
             "Values": []
           },
@@ -2133,7 +2133,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#multilocalestring"
             ],
             "Values": []
           },
@@ -2157,7 +2157,7 @@
           {
             "Text": "Date",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#date"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#date"
             ],
             "Values": []
           },
@@ -2313,7 +2313,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#multilocalestring"
             ],
             "Values": []
           },
@@ -2425,7 +2425,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#multilocalestring"
             ],
             "Values": []
           },
@@ -2449,14 +2449,14 @@
           {
             "Text": "CroppedImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#croppedimage"
             ],
             "Values": []
           },
           {
             "Text": "The entity\u2019s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly. For more information, see GET a single image",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-09#get-a-single-image"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-10#get-a-single-image"
             ],
             "Values": []
           },
@@ -2774,7 +2774,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#locale"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10\u0026tabs=http#locale"
             ],
             "Values": []
           },

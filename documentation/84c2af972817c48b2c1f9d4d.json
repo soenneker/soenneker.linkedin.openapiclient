@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema",
   "Title": "Metrics Available",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
@@ -716,7 +716,7 @@
           {
             "Text": "The value of the pivots for a specific record returned. For example, supplying pivots of CREATIVE and CONVERSION results in a list of records, one for each creative/conversion combination. The pivotValues contain serialized URNs for the specific creative and conversion for a record. To resolve these URNs to their corresponding entities, refer to LinkedIn Marketing API URN Resolution.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -883,7 +883,7 @@
           {
             "Text": "RevenueAttributionMetrics",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-09#revenue-attribution-metrics"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-10#revenue-attribution-metrics"
             ],
             "Values": []
           },
@@ -2791,7 +2791,7 @@
           {
             "Text": "The value of the pivots for a specific record returned. For example, supplying pivots of CREATIVE and CONVERSION results in a list of records, one for each creative/conversion combination. The pivotValues contain serialized URNs for the specific creative and conversion for a record. To resolve these URNs to their corresponding entities, refer to LinkedIn Marketing API URN Resolution.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -2958,7 +2958,7 @@
           {
             "Text": "RevenueAttributionMetrics",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-09#revenue-attribution-metrics"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-10#revenue-attribution-metrics"
             ],
             "Values": []
           },
@@ -3951,7 +3951,7 @@
           {
             "Text": "Pivot of results, by which each report data point is grouped. The following enum values are supported: COMPANY - Group results by advertiser\u0027s company. ACCOUNT - Group results by account. SHARE - Group results by sponsored share. CAMPAIGN - Group results by campaign. CREATIVE - Group results by creative. CAMPAIGN_GROUP - Group results by campaign group. CONVERSION - Group results by conversion. CONVERSATION_NODE - The element row in the conversation is the information for each individual node of the conversation tree.CONVERSATION_NODE_OPTION_INDEX - Used actionClicks are deaggregated and reported at the Node Button level. The second value of the pivot_values is the index of the button in the node.SERVING_LOCATION - Group results by serving location, onsite or offsite. UNKNOWN means the serving location can\u0027t be determined, which can result from metrics produced by machine learning models. CARD_INDEX - Group results by the index of where a card appears in a carousel ad creative. Metrics are based on the index of the card at the time when the user\u0027s action (impression, click, etc.) happened on the creative (Carousel creatives only). MEMBER_COMPANY_SIZE - Group results by member company size. MEMBER_INDUSTRY - Group results by member industry. MEMBER_SENIORITY - Group results by member seniority. MEMBER_JOB_TITLE - Group results by member job title. MEMBER_JOB_FUNCTION - Group results by member job function. MEMBER_COUNTRY_V2 - Group results by member country/region. MEMBER_REGION_V2 - Group results by member region. MEMBER_COMPANY - Group results by member company. MEMBER_DESIGNATED_MARKET_AREA - Group results by member Nielsen Designated Market Area (DMA). Pivot items are returned as urn:li:geo:{id} URNs. Use the Ad Targeting Entities resource (q=urns) to resolve these geo URNs to their DMA region names. When displaying results grouped by the MEMBER_DESIGNATED_MARKET_AREA pivot, you must display a \u0022circle R\u0022 notice of registration immediately following each display of the DMA marks (that is, DMA\u00AE) and the following statement: \u0022DMA\u00AE is a registered service mark of The Nielsen Company.\u0022 Note: Available starting with the 202609 version. PLACEMENT_NAME - Group results by placement. UNKNOWN means the placement can\u0027t be determined, which can result from metrics produced by machine learning models. IMPRESSION_DEVICE_TYPE - Group results by the device type the ad made an impression on. Reach metrics and conversion metrics are not available when this pivot is used. More details can be found here. EVENT_STAGE - Organize results based on the stage of the live event. (PRE_LIVE, LIVE, POST_LIVE).",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext",
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext",
               "https://www.linkedin.com/help/lms/answer/a1509104"
             ],
             "Values": [
@@ -4005,7 +4005,7 @@
           {
             "Text": "Date object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#date"
             ],
             "Values": []
           },
@@ -4029,7 +4029,7 @@
           {
             "Text": "Date object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#date"
             ],
             "Values": []
           },
@@ -4124,7 +4124,7 @@
           {
             "Text": "Array of Sponsored Campaign URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -4148,7 +4148,7 @@
           {
             "Text": "Array of Campaign Group URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -4172,7 +4172,7 @@
           {
             "Text": "Array of Account URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -4196,7 +4196,7 @@
           {
             "Text": "Array of Organization URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -4270,7 +4270,7 @@
           {
             "Text": "The list of metric fields that you can fetch by passing the required fields. Refer to the Supported fields from the metrics available table.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-09#metrics-available"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-10#metrics-available"
             ],
             "Values": []
           },
@@ -4378,7 +4378,7 @@
           {
             "Text": "Date object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#date"
             ],
             "Values": []
           },
@@ -4402,7 +4402,7 @@
           {
             "Text": "Date object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#date"
             ],
             "Values": []
           },
@@ -4512,7 +4512,7 @@
           {
             "Text": "Array of Share URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -4536,7 +4536,7 @@
           {
             "Text": "Array of Sponsored Campaign URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -4560,7 +4560,7 @@
           {
             "Text": "Array of Campaign Group URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -4584,7 +4584,7 @@
           {
             "Text": "Array of Account URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -4608,7 +4608,7 @@
           {
             "Text": "Array of Organization URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10"
             ],
             "Values": []
           },

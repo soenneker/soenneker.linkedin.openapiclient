@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
   "Title": "Comments API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
@@ -514,7 +514,7 @@
           {
             "Text": "Occurs when using Restli 2.0 and the query parameters are not encoded properly. See Protocol Version for more on Restli 2.0 encoding. Calls with Postman and some other HTTP clients can trigger this error. Try using curl or another client when testing.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version?view=li-lms-2026-10"
             ],
             "Values": []
           }

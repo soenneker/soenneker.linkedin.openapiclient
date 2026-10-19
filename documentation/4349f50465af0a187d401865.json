@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
   "Title": "Data Storage Requirements",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
@@ -102,7 +102,7 @@
           {
             "Text": "Basic Profile Information for a LinkedIn member (e.g. organization page admin or advertising account manager) who has authenticated into your application",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -138,7 +138,7 @@
           {
             "Text": "Basic Profile Information retrieved for a LinkedIn member, other than in connection with the member authenticating into your application or completing a lead gen form. For example, profile information for a LinkedIn member who has taken a social action (e.g. like, comment) on an organization post managed by your application. For clarity, nothing in these requirements or the LI MDP Terms shall permit you to cache this data in excess of 24 hours or store this data.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -276,7 +276,7 @@
           {
             "Text": "LinkedIn\u0027s Standardized Lists of industries, job functions, degrees, skills, locations, etc.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },

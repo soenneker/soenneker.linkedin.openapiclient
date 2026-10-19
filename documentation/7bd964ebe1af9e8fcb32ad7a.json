@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
   "Title": "Ad Lift Tests",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -278,7 +278,7 @@
           {
             "Text": "Required The language in which the brand name must be provided. Only one language is allowed per lift test; the brand name and all campaigns within the lift test must use this language. Specify a lowercase two-letter language code as defined by ISO-639. The country/region and language combination must match one of the supported locales.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -302,7 +302,7 @@
           {
             "Text": "Required An uppercase two-letter country/region code as defined by ISO-3166. The country/region and language combination must match one of the supported locales.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -418,7 +418,7 @@
           {
             "Text": "Required State used by the advertiser to control the Ad Lift Test. For example, if userState is READY, the advertiser is ready to launch the test as scheduled. This field helps determine the execution state, which represents the actual behavior the Ad Lift Test is currently in. See User State Schema for details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#user-state-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#user-state-schema"
             ],
             "Values": []
           },
@@ -448,8 +448,8 @@
           {
             "Text": "Overall Ad Lift Test execution state describing its behavior. This field is read-only and is derived from the user state and the internal state of the LinkedIn platform. For example, if userState is READY but the system is waiting to run the experiment because the user scheduled it to begin in a week (using the schedule field), the executionState would be CREATED. See Execution State Schema and Lift Test Workflows for details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#execution-state-schema",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing?view=li-lms-2026-09#workflows"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#execution-state-schema",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing?view=li-lms-2026-10#workflows"
             ],
             "Values": []
           },
@@ -478,7 +478,7 @@
           {
             "Text": "A message explaining the reason for the end of the Ad Lift Test. This enum describes erroneous conditions or termination of the Ad Lift Test. For example, if the account that owns the Lift Test is deleted or archived during the test, the Lift Test is terminated. If the Lift Test runs to completion, it is marked accordingly. See Test End Reason Schema for details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#test-end-reason-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#test-end-reason-schema"
             ],
             "Values": []
           },
@@ -1182,7 +1182,7 @@
           {
             "Text": "Multiple errors occurred during the input validation. For more information, refer to API Error Details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#api-error-details"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#api-error-details"
             ],
             "Values": []
           }
@@ -1532,7 +1532,7 @@
           {
             "Text": "Multiple errors occurred during the input validation. For more information, refer to API Error Details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#api-error-details"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#api-error-details"
             ],
             "Values": []
           }
@@ -2679,7 +2679,7 @@
           {
             "Text": "optional AdLiftTestExecutionState",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#execution-state-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#execution-state-schema"
             ],
             "Values": []
           },
@@ -2900,7 +2900,7 @@
           {
             "Text": "Required Language we expect the brand name to be provided in. We only allow one language per lift test; the brand name and all campaigns within the lift test must have content created on this language. A lowercase two-letter language code as defined by ISO-639. The country/region and language combination must match one of the supported locales",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -2924,7 +2924,7 @@
           {
             "Text": "Required An uppercase two-letter country/region code as defined by ISO-3166. The country/region and language combination must match one of the supported locales",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -3018,7 +3018,7 @@
           {
             "Text": "Required State used by the advertiser to control the Ad Lift Test. For example, if userState is READY, then the advertiser is ready to launch the test as scheduled. This field is used to help determine the Execution State, which represents the actual behavior the Ad Lift Test is currently in. See User State Schema for details",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#user-state-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#user-state-schema"
             ],
             "Values": []
           },
@@ -3122,7 +3122,7 @@
           {
             "Text": "Enum of AdLiftTestValidationResultCode",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#validation-errors"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#validation-errors"
             ],
             "Values": []
           },
@@ -3771,7 +3771,7 @@
           {
             "Text": "Array of AdLiftTestBudgetRequiredForKeyMetrics",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#adlifttestbudgetrequiredforkeymetrics-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#adlifttestbudgetrequiredforkeymetrics-schema"
             ],
             "Values": []
           },

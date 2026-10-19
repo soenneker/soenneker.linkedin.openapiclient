@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
   "Title": "Create and Manage Campaign Groups",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
@@ -219,14 +219,14 @@
           {
             "Text": "Account",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09#schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-10#schema"
             ],
             "Values": []
           },
           {
             "Text": "Information about the advertising account associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -514,7 +514,7 @@
           {
             "Text": "Campaign Group Objective type values. This field is optional and immutable. Campaigns in this group will automatically have the same objective type. Click here for Objective descriptions BRAND_AWARENESSENGAGEMENTJOB_APPLICANTSLEAD_GENERATIONWEBSITE_CONVERSIONSWEBSITE_VISITVIDEO_VIEWS",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations?view=li-lms-2026-10"
             ],
             "Values": [
               "BRAND_AWARENESS",
@@ -613,7 +613,7 @@
           {
             "Text": "BeneficiaryReference",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?view=li-lms-2026-09\u0026tabs=http#beneficiaryreference"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?view=li-lms-2026-10\u0026tabs=http#beneficiaryreference"
             ],
             "Values": []
           },

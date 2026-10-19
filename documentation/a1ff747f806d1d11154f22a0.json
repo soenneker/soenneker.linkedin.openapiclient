@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
   "Title": "Ad Supply Forecasts",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -562,7 +562,7 @@
           {
             "Text": "targetingCriteria object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -608,7 +608,7 @@
           {
             "Text": "objectiveType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -748,7 +748,7 @@
           {
             "Text": "Optimization Target Type",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#optimization-of-campaigns"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#optimization-of-campaigns"
             ],
             "Values": []
           },

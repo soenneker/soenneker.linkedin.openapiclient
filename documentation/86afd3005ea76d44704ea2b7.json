@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
   "Title": "Updated Marketing API Error Responses",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
@@ -262,7 +262,7 @@
           {
             "Text": "Additional error details. Please see this section for schema. This field may be absent in certain cases.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#errordetails-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-10#errordetails-schema"
             ],
             "Values": []
           }
@@ -298,7 +298,7 @@
           {
             "Text": "The constant error code that defines the category of the error. Please see this section for all possible error codes.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#error-codes"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-10#error-codes"
             ],
             "Values": []
           }
@@ -355,7 +355,7 @@
           {
             "Text": "InputError[]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#inputerror-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-10#inputerror-schema"
             ],
             "Values": []
           },
@@ -374,7 +374,7 @@
           {
             "Text": "ConditionalInputError[]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#conditionalinputerror-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-10#conditionalinputerror-schema"
             ],
             "Values": []
           },
@@ -441,7 +441,7 @@
           {
             "Text": "Input",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#input-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-10#input-schema"
             ],
             "Values": []
           },
@@ -644,7 +644,7 @@
           {
             "Text": "Input[]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#input-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-10#input-schema"
             ],
             "Values": []
           },

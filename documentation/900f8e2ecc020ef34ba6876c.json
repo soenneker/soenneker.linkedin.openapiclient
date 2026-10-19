@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
   "Title": "Company Intelligence API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
@@ -243,7 +243,7 @@
           {
             "Text": "Ad Account URN of the advertiser requesting the account intelligence data. The format is urn:li:sponsoredAccount:1234. The authenticated user must have a valid role on this ad account. For more information, see Find Ad Accounts by Authenticated User API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-09#find-ad-account-users-by-accounts"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-10#find-ad-account-users-by-accounts"
             ],
             "Values": []
           },
@@ -267,7 +267,7 @@
           {
             "Text": "Contains filters to apply to the request as described in Company Intelligence Filter Criteria.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api?view=li-lms-2026-09\u0026tabs=http#company-intelligence-filter-criteria"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api?view=li-lms-2026-10\u0026tabs=http#company-intelligence-filter-criteria"
             ],
             "Values": []
           },
@@ -354,7 +354,7 @@
           {
             "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-10#find-dmp-segments-by-account"
             ],
             "Values": []
           },
@@ -378,7 +378,7 @@
           {
             "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Note: Organic metrics will be 0 when the campaign filter is used.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#search-for-campaigns"
             ],
             "Values": []
           },
@@ -443,7 +443,7 @@
           {
             "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-10#find-dmp-segments-by-account"
             ],
             "Values": []
           },
@@ -467,7 +467,7 @@
           {
             "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Note: Organic metrics will be 0 when the campaign filter is used.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#search-for-campaigns"
             ],
             "Values": []
           },
@@ -532,7 +532,7 @@
           {
             "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-10#find-dmp-segments-by-account"
             ],
             "Values": []
           },
@@ -556,7 +556,7 @@
           {
             "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Note: Organic metrics will be 0 when the campaign filter is used.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#search-for-campaigns"
             ],
             "Values": []
           },
@@ -621,7 +621,7 @@
           {
             "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-10#find-dmp-segments-by-account"
             ],
             "Values": []
           },
@@ -645,7 +645,7 @@
           {
             "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign filter is used.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#search-for-campaigns"
             ],
             "Values": []
           },
@@ -713,7 +713,7 @@
           {
             "Text": "You can provide none or one standardized seniority ID. The Standardized Seniorities API returns id as a number; pass its decimal representation as a string in this field.Example: standardized seniority ID 4 (Senior) is passed as string value \u00224\u0022. In Rest.li finder syntax, scalar string values within a complex query parameter are not enclosed in quotation marks, so the request uses seniority:4.The seniority filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, and objectiveType are not provided. Other combinations return no results. The seniority filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by seniority.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09#get_all"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-10#get_all"
             ],
             "Values": []
           },
@@ -778,7 +778,7 @@
           {
             "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-10#find-dmp-segments-by-account"
             ],
             "Values": []
           },
@@ -802,7 +802,7 @@
           {
             "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign filter is used.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#search-for-campaigns"
             ],
             "Values": []
           },
@@ -870,7 +870,7 @@
           {
             "Text": "You can provide none or one standardized seniority ID. The Standardized Seniorities API returns id as a number; pass its decimal representation as a string in this field.Example: standardized seniority ID 4 (Senior) is passed as string value \u00224\u0022. In Rest.li finder syntax, scalar string values within a complex query parameter are not enclosed in quotation marks, so the request uses seniority:4.The seniority filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, objectiveType, and jobFunction are not provided. Other combinations return no results. The seniority filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by seniority.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09#get_all"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-10#get_all"
             ],
             "Values": []
           },
@@ -1529,7 +1529,7 @@
     {
       "Kind": "text",
       "Section": "Job function filter",
-      "Anchor": "",
+      "Anchor": "job-function-filter",
       "SectionPath": [
         "Sample Requests",
         "Job function filter"
@@ -1541,7 +1541,7 @@
     {
       "Kind": "text",
       "Section": "Job function filter",
-      "Anchor": "",
+      "Anchor": "job-function-filter",
       "SectionPath": [
         "Sample Requests",
         "Job function filter"
@@ -1553,7 +1553,7 @@
     {
       "Kind": "text",
       "Section": "Job function filter",
-      "Anchor": "",
+      "Anchor": "job-function-filter",
       "SectionPath": [
         "Sample Requests",
         "Job function filter"
@@ -1565,7 +1565,7 @@
     {
       "Kind": "code",
       "Section": "Job function filter",
-      "Anchor": "",
+      "Anchor": "job-function-filter",
       "SectionPath": [
         "Sample Requests",
         "Job function filter"
@@ -1577,7 +1577,7 @@
     {
       "Kind": "code",
       "Section": "Job function filter",
-      "Anchor": "",
+      "Anchor": "job-function-filter",
       "SectionPath": [
         "Sample Requests",
         "Job function filter"

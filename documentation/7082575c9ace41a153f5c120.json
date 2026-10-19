@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
   "Title": "Event Ads API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
@@ -139,7 +139,7 @@
           {
             "Text": "An event created solely to back a sponsored ad campaign, without a LinkedIn Events Detail Page. Supported for external online (type.online.format.external) and in-person (type.inPerson) events that include an external URL. Create the event with hasDarkUgc: true. The event is not visible on organic surfaces and the ad always redirects to the external URL. See Create an Off-Platform Event Ad without a LinkedIn Events Detail Page.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations?view=li-lms-2026-09\u0026tabs=http#create-an-off-platform-event-ad-without-a-linkedin-events-detail-page"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations?view=li-lms-2026-10\u0026tabs=http#create-an-off-platform-event-ad-without-a-linkedin-events-detail-page"
             ],
             "Values": []
           }

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
   "Title": "Media Planning",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -146,7 +146,7 @@
           {
             "Text": "request Object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#request-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#request-object"
             ],
             "Values": []
           },
@@ -210,7 +210,7 @@
           {
             "Text": "targetingCriteria Object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#targetingcriteria-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#targetingcriteria-object"
             ],
             "Values": []
           },
@@ -261,7 +261,7 @@
           {
             "Text": "The objective of your marketing campaign. Refer objectivetype.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -302,7 +302,7 @@
           {
             "Text": "Date",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-09#date"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-10#date"
             ],
             "Values": []
           },
@@ -326,7 +326,7 @@
           {
             "Text": "Date",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-09#date"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-10#date"
             ],
             "Values": []
           },
@@ -687,7 +687,7 @@
           {
             "Text": "ForecastMetrics",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -706,7 +706,7 @@
           {
             "Text": "ForecastMetrics object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -725,7 +725,7 @@
           {
             "Text": "ForecastMetrics object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -744,7 +744,7 @@
           {
             "Text": "ForecastMetrics object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -763,7 +763,7 @@
           {
             "Text": "ForecastMetrics object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -782,7 +782,7 @@
           {
             "Text": "ForecastMetrics object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -801,7 +801,7 @@
           {
             "Text": "ForecastMetrics object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -820,7 +820,7 @@
           {
             "Text": "ForecastMetrics object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#forecastmetrics-object"
             ],
             "Values": []
           },
@@ -856,7 +856,7 @@
           {
             "Text": "array [MediaPlanningForecastDataPoint]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#mediaplanningforecastdatapoint-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#mediaplanningforecastdatapoint-object"
             ],
             "Values": []
           },
@@ -875,7 +875,7 @@
           {
             "Text": "array [MediaPlanningForecastDataPoint]]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#mediaplanningforecastdatapoint-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-10\u0026tabs=http#mediaplanningforecastdatapoint-object"
             ],
             "Values": []
           },

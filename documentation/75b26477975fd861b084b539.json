@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-usecase",
   "Title": "Use Cases - Event Management",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/consumer/",
@@ -175,7 +175,7 @@
           {
             "Text": "Map a custom audience list to LinkedIn member profiles. This creates a DMP segment that can be targeted in an ad campaign using the Matched Audiences API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -189,7 +189,7 @@
           {
             "Text": "Create retargeting audience via Engagement Retargeting endpoint.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -203,7 +203,7 @@
           {
             "Text": "Step 1: Leverage Matched Audiences API to create a targetable audience segment.Step 2: Using the matched audience DMP segment as a seed, leverage Predictive Audiences in Campaign Manager to develop an expanded audience list.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-10",
               "https://www.linkedin.com/help/lms/answer/a1631056"
             ],
             "Values": []
@@ -218,7 +218,7 @@
           {
             "Text": "Step 1: Use the Matched Audiences API to upload a list of people who have already registered for an event (list will dynamically update as more people register).Step 2: Run ad campaigns and exclude the DMP segment created via Matched Audiences API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -248,8 +248,8 @@
           {
             "Text": "Note: LinkedIn lead gen forms offer pre-fill from member profile, work email validation, custom fields/questions, clear consent capture, etc.Step 1: Create a custom registration form via the Advertising API.Step 2: Attach a registration form to the event during event creation using the Event Management API.Note: Lead generation objective is not yet available for Event ads via the Event Ads API (coming soon).",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-2-get-started-with-the-advertising-api",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-10#step-2-get-started-with-the-advertising-api",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -263,7 +263,7 @@
           {
             "Text": "Integrate with the Lead Sync API and accept leadType = Event.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -293,7 +293,7 @@
           {
             "Text": "Leverage Live Events API to ingest Real-Time Messaging Protocol content and stream to LinkedIn.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -307,8 +307,8 @@
           {
             "Text": "Leverage Live Events API and Scheduled Live endpoint to create the event page on LinkedIn via API and stream to the event page.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -322,7 +322,7 @@
           {
             "Text": "Use Comments API to post comments as the Company Page, delete attendee comments, get / read comments.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -352,8 +352,8 @@
           {
             "Text": "Leverage the Videos API to upload video-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To promote the video, use the Video Ads API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -367,8 +367,8 @@
           {
             "Text": "Leverage the Videos API to upload video-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To post the video organically to the Company / Organization page, use the Posts API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -382,8 +382,8 @@
           {
             "Text": "Leverage the Videos API to upload video-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To post the video organically to the Company / Organization page, use the Posts API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -397,9 +397,9 @@
           {
             "Text": "Leverage the Documents API to upload document-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To post the document organically to the Company / Organization page, use the Posts API.To promote the document as a Document Ad, leverage the Document Ads API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -413,7 +413,7 @@
           {
             "Text": "Leverage the Advertising API to create various ad campaigns to promote different types of content.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-10"
             ],
             "Values": []
           }

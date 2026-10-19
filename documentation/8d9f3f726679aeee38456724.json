@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
   "Title": "Engagement Retargeting",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
@@ -1226,7 +1226,7 @@
           {
             "Text": "The action that users can take on the source. This could be viewed (2s, 25%, etc), visited, clicked, etc. E.g. urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE). See more details at Get Engagement Trigger",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting?view=li-lms-2026-09\u0026tabs=http#get-engagement-trigger"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting?view=li-lms-2026-10\u0026tabs=http#get-engagement-trigger"
             ],
             "Values": []
           }

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
   "Title": "UGC Post API (Legacy)",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
@@ -357,7 +357,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
             ],
             "Values": []
           },
@@ -381,7 +381,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
             ],
             "Values": []
           },
@@ -405,7 +405,7 @@
           {
             "Text": "Distribution",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#distribution"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#distribution"
             ],
             "Values": []
           },
@@ -473,7 +473,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
             ],
             "Values": []
           },
@@ -527,7 +527,7 @@
           {
             "Text": "ResponseContext",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#responsecontext"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#responsecontext"
             ],
             "Values": []
           },
@@ -551,7 +551,7 @@
           {
             "Text": "ShareContent",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#sharecontent"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#sharecontent"
             ],
             "Values": []
           },
@@ -575,7 +575,7 @@
           {
             "Text": "TargetAudience",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#targetaudience"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#targetaudience"
             ],
             "Values": []
           },
@@ -858,7 +858,7 @@
           {
             "Text": "Array of ShareMedia",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#sharemedia"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#sharemedia"
             ],
             "Values": []
           },
@@ -941,7 +941,7 @@
           {
             "Text": "Array of Attribute",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#attribute"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#attribute"
             ],
             "Values": []
           },
@@ -1113,7 +1113,7 @@
           {
             "Text": "Array of Attribute",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#attribute"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#attribute"
             ],
             "Values": []
           },
@@ -1613,7 +1613,7 @@
           {
             "Text": "Array of Attribute",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#attribute"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#attribute"
             ],
             "Values": []
           },
@@ -1798,7 +1798,7 @@
           {
             "Text": "Contains a company/school field that points to a company/school organization URN. Retrieve company/school organization Urn using Organization Lookup API",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09#retrieve-organizations"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10#retrieve-organizations"
             ],
             "Values": []
           },
@@ -1890,7 +1890,7 @@
           {
             "Text": "Array of Degree URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -1914,7 +1914,7 @@
           {
             "Text": "Array of FieldOfStudy URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -1938,7 +1938,7 @@
           {
             "Text": "Array of Industry URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -1962,7 +1962,7 @@
           {
             "Text": "Array of Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#locale"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#locale"
             ],
             "Values": []
           }
@@ -1986,7 +1986,7 @@
           {
             "Text": "Array of Function URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -2010,7 +2010,7 @@
           {
             "Text": "Array of Location URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -2034,7 +2034,7 @@
           {
             "Text": "Array of Geo URN. Learn more",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -2075,7 +2075,7 @@
           {
             "Text": "School Organizations to be targeted. Retrieve school organization URN using Organization Lookup API",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09#retrieve-organizations"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-10#retrieve-organizations"
             ],
             "Values": []
           },
@@ -2104,7 +2104,7 @@
           {
             "Text": "Array of Seniority URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -2772,9 +2772,9 @@
           {
             "Text": "Describes the type of entity being mentioned. Possible values are: com.linkedin.common.CompanyAttributedEntity com.linkedin.common.MemberAttributedEntity This field accepts an object containing the referenced entity. See CompanyAttributedEntity, MemberAttributedEntity, and the sample request body for more information.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#companyattributedentity",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#memberattributedentity",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#sample-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#companyattributedentity",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#memberattributedentity",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#sample-object"
             ],
             "Values": [
               "com.linkedin.common.CompanyAttributedEntity",
@@ -2784,8 +2784,8 @@
           {
             "Text": "Union CompanyAttributedEntity, MemberAttributedEntity ]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#companyattributedentity",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#memberattributedentity"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#companyattributedentity",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#memberattributedentity"
             ],
             "Values": []
           }
@@ -3023,7 +3023,7 @@
           {
             "Text": "Indicates the targetedEntities field has more than 1 targeting object. See Create Targeted Organic UGC Posts for the correct structure.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#create-targeted-organic-ugc-posts"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#create-targeted-organic-ugc-posts"
             ],
             "Values": []
           }
@@ -3042,7 +3042,7 @@
           {
             "Text": "Indicates the targeted audience is too small to target. Audiences must have at least 300 members to be targeted. See Create Targeted Organic UGC Posts for how to calculate audience counts upfront.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#create-targeted-organic-ugc-posts"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#create-targeted-organic-ugc-posts"
             ],
             "Values": []
           }
@@ -3960,7 +3960,7 @@
           {
             "Text": "Occurs when using Restli 2.0 and the query parameters are not encoded properly. See Protocol Version for more on Restli 2.0 encoding. Calls with Postman and some other HTTP clients can trigger this error. Try using curl or another client when testing.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -3996,7 +3996,7 @@
           {
             "Text": "Indicates token used in the call hasn\u0027t been authorized with r_organization_social. Refer to Permissions for more information.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#permissions"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-10\u0026tabs=http#permissions"
             ],
             "Values": []
           }

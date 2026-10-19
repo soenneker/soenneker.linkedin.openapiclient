@@ -1,0 +1,695 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
+  "Title": "Boost Analytics",
+  "Version": "li-lms-2026-10",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Boost Analytics",
+      "Anchor": "boost-analytics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost Analytics",
+      "Anchor": "boost-analytics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost Analytics",
+      "Anchor": "boost-analytics",
+      "SectionPath": [],
+      "Text": "All requests use the versioned REST base URL https://api.linkedin.com/rest/, require a member access token, and must include the Linkedin-Version header set to 202610 or a higher available version, and the X-Restli-Protocol-Version: 2.0.0 header. For the full boost workflows, see Member Post Boost and Organization Post Boost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve boost status and analytics for the authenticated member\u0027s posts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initialize boost setup, preview a boost, and create boosts for the authenticated member\u0027s posts, including retrieving boost status and analytics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve boost status and analytics for posts in the specified sponsoring organization\u0027s context.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_organization_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initialize, preview, and create boosts for a sponsoring organization\u0027s posts, including retrieving boost status and analytics.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve boost analytics",
+      "Anchor": "retrieve-boost-analytics",
+      "SectionPath": [
+        "Retrieve boost analytics"
+      ],
+      "Text": "The boostAnalytics API returns Boost performance analytics for boosted posts owned by the authenticated member or by a sponsoring organization. The response externalizes a curated set of sponsored metrics shown on the boosted post in the LinkedIn flagship app: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, spend, and approximateMemberReach.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve boost analytics",
+      "Anchor": "retrieve-boost-analytics",
+      "SectionPath": [
+        "Retrieve boost analytics"
+      ],
+      "Text": "Call boostAnalytics with q=boostAnalytics to retrieve one analytics record per requested target post. The response returns records in the same order as the targetPosts request list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Query parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be boostAnalytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetPosts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of boosted post URNs to retrieve analytics for. The API accepts between 1 and 50 URNs. Supported URN entity types are ugcPost and share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REST.li list of URNs.Example: List(urn%3Ali%3Ashare%3A7325786486870552578, urn%3Ali%3AugcPost%3A7325786486870552579)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "elements[].targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The boosted post URN that these analytics apply to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of ad impressions the boosted post received.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of chargeable clicks the boosted post received.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].clickThroughRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Click-through rate for the boosted post, calculated as clicks / impressions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].reactions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of reactions on the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].comments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of comments on the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].shares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of shares (reshares) of the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].follows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of new followers attributed to the boosted post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].spend",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object (MoneyAmount)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics?view=li-lms-2026-10\u0026tabs=http#moneyamount-object-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Total amount spent on the boost so far. The current response uses USD.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].approximateMemberReach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Approximate number of unique members reached by the boost. This field is omitted for boosts spanning more than 92 days.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paging",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pagination metadata for the response, including count, start, and links.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MoneyAmount object schema",
+      "Anchor": "moneyamount-object-schema",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "MoneyAmount object schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (decimal)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Decimal string representing the spend amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code. The current response value is USD.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:share:7325786486870552578\u0022,\n      \u0022impressions\u0022: 12845,\n      \u0022clicks\u0022: 326,\n      \u0022clickThroughRate\u0022: 0.0254,\n      \u0022reactions\u0022: 41,\n      \u0022comments\u0022: 9,\n      \u0022shares\u0022: 7,\n      \u0022follows\u0022: 12,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002237.42\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 11890\n    },\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:7325786486870552579\u0022,\n      \u0022impressions\u0022: 7540,\n      \u0022clicks\u0022: 188,\n      \u0022clickThroughRate\u0022: 0.0249,\n      \u0022reactions\u0022: 23,\n      \u0022comments\u0022: 4,\n      \u0022shares\u0022: 3,\n      \u0022follows\u0022: 6,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002221.15\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 7012\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status code",
+        "Error message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is malformed, contains no targetPosts, contains more than 50 targetPosts, or includes an unsupported URN entity type.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide 1 to 50 boosted post URNs and use only urn:li:ugcPost:{id} or urn:li:share:{id} values.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is missing a valid OAuth access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include a valid member access token in the Authorization header.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application or member token does not have the required permission to read Boost analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request the r_member_boost or rw_member_boost scope for member posts, or the r_organization_boost or rw_organization_boost scope for organization posts, and retry with an authorized member token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller exceeded the boostAnalytics rate limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Back off and retry the request later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn couldn\u0027t process the analytics request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If the issue persists, contact LinkedIn Developer Support.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

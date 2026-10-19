@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
   "Title": "Conversions API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
@@ -450,7 +450,7 @@
           {
             "Text": "Associates campaigns whose campaign objective maps to the conversion rule type. The 200-campaign limit doesn\u0027t apply to OBJECTIVE_BASED. For the complete mapping, see Objective-based auto-association mapping.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#objective-based-auto-association-mapping"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-10#objective-based-auto-association-mapping"
             ],
             "Values": []
           }

@@ -1,13 +1,15 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
   "Title": "Boost - Overview",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
     "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
@@ -188,7 +190,7 @@
             "Values": []
           },
           {
-            "Text": "Retrieve boost status for posts in the specified sponsoring organization\u0027s context.",
+            "Text": "Retrieve boost status and analytics for posts in the specified sponsoring organization\u0027s context.",
             "Links": [],
             "Values": []
           }
@@ -205,7 +207,7 @@
             "Values": []
           },
           {
-            "Text": "Initialize, preview, and create boosts for a sponsoring organization\u0027s posts, including retrieving boost status.",
+            "Text": "Initialize, preview, and create boosts for a sponsoring organization\u0027s posts, including retrieving boost status and analytics.",
             "Links": [],
             "Values": []
           }
@@ -263,16 +265,16 @@
       "SectionPath": [
         "Boost workflow"
       ],
-      "Text": "Status - Call memberBoostStatus or organizationBoostStatus to confirm the post is eligible to be boosted and to learn why it is ineligible if not.\nInit - Call memberBoostInit or organizationBoostInit to resolve or create the sponsored account and billing configuration that will fund the boost.\nHydrate - Call memberBoostHydrate or organizationBoostHydrate to preview targeting, forecast, and pricing for a hypothetical budget and objective before committing.\nPost - Call memberBoostPost or organizationBoostPost to create the sponsored campaign group, campaign, and creative that make up the boost.\nAnalytics - Call memberBoostAnalytics to retrieve performance metrics for member posts that have already been boosted.",
+      "Text": "Status - Call memberBoostStatus or organizationBoostStatus to confirm the post is eligible to be boosted and to learn why it is ineligible if not.\nInit - Call memberBoostInit or organizationBoostInit to resolve or create the sponsored account and billing configuration that will fund the boost.\nHydrate - Call memberBoostHydrate or organizationBoostHydrate to preview targeting, forecast, and pricing for a hypothetical budget and objective before committing.\nPost - Call memberBoostPost or organizationBoostPost to create the sponsored campaign group, campaign, and creative that make up the boost.\nAnalytics - Call boostAnalytics (see Boost Analytics) to retrieve performance metrics for member and organization posts that have already been boosted.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "Boost workflow",
-      "Anchor": "boost-workflow",
+      "Section": "How to call the APIs",
+      "Anchor": "how-to-call-the-apis",
       "SectionPath": [
-        "Boost workflow"
+        "How to call the APIs"
       ],
       "Text": "Note",
       "Headers": [],
@@ -280,12 +282,84 @@
     },
     {
       "Kind": "text",
-      "Section": "Boost workflow",
-      "Anchor": "boost-workflow",
+      "Section": "How to call the APIs",
+      "Anchor": "how-to-call-the-apis",
       "SectionPath": [
-        "Boost workflow"
+        "How to call the APIs"
       ],
-      "Text": "Company Page Boost analytics aren\u0027t supported yet. It will be available in a future version. Use the Ad Analytics API for Company Page boost reporting.",
+      "Text": "The advertiser doesn\u0027t need a payment method on file before you start. Init returns billingConfigured: false when billing setup is needed. Redirect the advertiser to https://www.linkedin.com/campaignmanager/boost/billing/{account_id}?origin=partner, replacing {account_id} with the numeric ID from the account URN that init returned. After the advertiser finishes billing setup, call init again and continue only when it returns billingConfigured: true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Boost flow",
+      "Anchor": "member-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Member Boost flow"
+      ],
+      "Text": "The user is the authenticated member boosting their own post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Boost flow",
+      "Anchor": "member-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Member Boost flow"
+      ],
+      "Text": "Authenticate. Obtain a 3-legged OAuth token for the member with r_member_boost and rw_member_boost.\nCheck eligibility. GET /rest/memberBoostStatus?q=boostStatus\u0026targetPosts=List({postUrn}).\nInitialize the boost. POST /rest/memberBoostInit. If the response returns billingConfigured: false, redirect the member to the billing setup page, then call init again before continuing.\nMake the first hydrate call to get the suggested configuration. POST /rest/memberBoostHydrate.\n\nUse the values from the init response in this first request.\nDon\u0027t set totalBudget in the first hydrate request.\nAfter the first hydrate call returns, the member can change only the objective, run schedule, and budget. Call hydrate each time one of these changes to get the latest forecast. Pass the suggested targetingCriteria into each later hydrate call, and stay within the boost limits (minimum spend) returned by the first hydrate call.\n\n\nCreate and launch the boost. POST /rest/memberBoostPost. Set callToActionLabel.value and callToActionTarget only when the goal is LEAD_GENERATION.\nRetrieve analytics. GET /rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List({postUrn}).\nManage the ad. Use this flow when a member wants to review or stop a boost they already started:\n\nFind the boost. Call GET /rest/memberBoostStatus for the post. If the post has a current or past boost, the status is CURRENTLY_BOOSTED, IN_REVIEW, SCHEDULED, or PREVIOUSLY_BOOSTED, and the response includes the campaign URN and account URN for that boost. You need both URNs for the next steps.\nLoad the boost details. Pass the campaign URN and account URN to POST /rest/memberBoostInit. The response contains the campaign\u0027s objective and run schedule, so you can show the member those settings.\nEnd the boost. When the member confirms they want to stop the boost, call DELETE /rest/memberBoostCampaign with the same campaign and account URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Boost flow",
+      "Anchor": "member-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Member Boost flow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Boost flow",
+      "Anchor": "member-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Member Boost flow"
+      ],
+      "Text": "memberBoostPost (at creation) and memberBoostInit also return the campaign and account URNs, so you can reuse them from an earlier step. memberBoostStatus is the most reliable way to look them up for any post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Page Boost flow",
+      "Anchor": "company-page-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Company Page Boost flow"
+      ],
+      "Text": "The user is a Company Page admin boosting a page post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Page Boost flow",
+      "Anchor": "company-page-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Company Page Boost flow"
+      ],
+      "Text": "Authenticate. Obtain a 3-legged OAuth token for the page admin with r_organization_boost and rw_organization_boost.\nCheck eligibility. GET /rest/organizationBoostStatus?q=boostStatus\u0026organization={organizationUrn}\u0026targetPosts=List({postUrn}).\nInitialize the boost. POST /rest/organizationBoostInit. If the response returns billingConfigured: false, redirect the admin to the billing setup page, then call init again before continuing.\nMake the first hydrate call to get the suggested configuration. POST /rest/organizationBoostHydrate.\n\nUse the values from the init response in this first request.\nDon\u0027t set totalBudget in the first hydrate request.\nAfter the first hydrate call returns, the admin can change only the objective, run schedule, and budget. Call hydrate each time one of these changes. Pass the suggested targetingCriteria into each later hydrate call, and stay within the boost limits (minimum spend) returned by the first hydrate call.\n\n\nCreate and launch the boost. POST /rest/organizationBoostPost. Set callToActionLabel.value and callToActionTarget only when the goal is LEAD_GENERATION.\nRetrieve analytics. GET /rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List({postUrn}).\nManage the ad. Follow the same steps as the member flow, using the organization endpoints (organizationBoostStatus, organizationBoostInit, and organizationBoostCampaign).",
       "Headers": [],
       "Rows": []
     },
@@ -332,7 +406,7 @@
         "Comparison with native boost experience",
         "View boost analytics"
       ],
-      "Text": "After a post is boosted, the Boost tab on the post analytics page shows the performance data returned by memberBoostAnalytics.",
+      "Text": "After a post is boosted, the Boost tab on the post analytics page shows the performance data returned by boostAnalytics.",
       "Headers": [],
       "Rows": []
     }

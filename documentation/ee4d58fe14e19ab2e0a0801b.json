@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema",
   "Title": "Lead Sync Schema",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
@@ -164,7 +164,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#locale-datatype"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#locale-datatype"
             ],
             "Values": []
           },
@@ -262,7 +262,7 @@
           {
             "Text": "DisplayContent",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#displaycontent-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#displaycontent-object"
             ],
             "Values": []
           },
@@ -296,7 +296,7 @@
           {
             "Text": "HiddenField[]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#hiddenfield-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#hiddenfield-sub-object"
             ],
             "Values": []
           },
@@ -330,7 +330,7 @@
           {
             "Text": "LeadGenLifecycleState",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenlifecyclestate-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadgenlifecyclestate-sub-object"
             ],
             "Values": []
           },
@@ -364,7 +364,7 @@
           {
             "Text": "LeadGenReviewInfo",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenreviewinfo-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadgenreviewinfo-sub-object"
             ],
             "Values": []
           },
@@ -622,7 +622,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multilocalestring-datatype"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#multilocalestring-datatype"
             ],
             "Values": []
           },
@@ -656,7 +656,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multilocalestring-datatype"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#multilocalestring-datatype"
             ],
             "Values": []
           },
@@ -690,7 +690,7 @@
           {
             "Text": "LeadGenFormQuestion[]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformquestion-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadgenformquestion-sub-object"
             ],
             "Values": []
           },
@@ -724,7 +724,7 @@
           {
             "Text": "LeadGenFormLegalInfo",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformlegalinfo-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadgenformlegalinfo-sub-object"
             ],
             "Values": []
           },
@@ -758,7 +758,7 @@
           {
             "Text": "PostSubmissionInfo",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#postsubmissioninfo-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#postsubmissioninfo-sub-object"
             ],
             "Values": []
           },
@@ -1016,7 +1016,7 @@
           {
             "Text": "PredefinedField",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#predefinedfield-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#predefinedfield-sub-object"
             ],
             "Values": []
           },
@@ -1114,8 +1114,8 @@
           {
             "Text": "Union of TextQuestionDetails, MultipleChoiceQuestionDetails",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#textquestiondetails-sub-object",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multiplechoicequestiondetails-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#textquestiondetails-sub-object",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#multiplechoicequestiondetails-sub-object"
             ],
             "Values": []
           },
@@ -1149,7 +1149,7 @@
           {
             "Text": "Union of WorkEmailSubmissionCriteria",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#workemailsubmissioncriteria-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#workemailsubmissioncriteria-sub-object"
             ],
             "Values": []
           },
@@ -1653,7 +1653,7 @@
           {
             "Text": "MultipleChoiceQuestionOption",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multiplechoicequestionoption-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#multiplechoicequestionoption-sub-object"
             ],
             "Values": []
           },
@@ -2043,7 +2043,7 @@
           {
             "Text": "LeadGenFormConsent[]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformconsent-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadgenformconsent-sub-object"
             ],
             "Values": []
           },
@@ -2749,7 +2749,7 @@
           {
             "Text": "LeadGenFormReviewStatus",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformreviewstatus-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadgenformreviewstatus-sub-object"
             ],
             "Values": []
           },
@@ -2998,7 +2998,7 @@
           {
             "Text": "LeadType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadtype-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadtype-sub-object"
             ],
             "Values": []
           },
@@ -3022,7 +3022,7 @@
           {
             "Text": "LeadGenForm",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09#lead-form-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-10#lead-form-schema"
             ],
             "Values": []
           },
@@ -3068,7 +3068,7 @@
           {
             "Text": "(optional) LeadGenFormResponseOwnerInfo",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformresponseownerinfo-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadgenformresponseownerinfo-sub-object"
             ],
             "Values": []
           },
@@ -3114,7 +3114,7 @@
           {
             "Text": "(optional) Union of SponsoredLeadMetadataInfo",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#sponsoredleadmetadatainfo-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#sponsoredleadmetadatainfo-sub-object"
             ],
             "Values": []
           },
@@ -3248,7 +3248,7 @@
           {
             "Text": "FormResponse",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#formresponse-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#formresponse-sub-object"
             ],
             "Values": []
           },
@@ -4035,7 +4035,7 @@
           {
             "Text": "LeadType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadtype-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadtype-sub-object"
             ],
             "Values": []
           },

@@ -10989,19 +10989,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api#response-schema"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_ineligible_reason_values": {
-        "enum": [
-          "POST_NOT_FOUND",
-          "POST_TYPE_NOT_SUPPORTED",
-          "POST_NOT_PUBLIC",
-          "ALREADY_BOOSTED",
-          "INSUFFICIENT_PERMISSIONS",
-          "UNKNOWN"
-        ],
-        "type": "string",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#ineligible-reason-values"
-      },
-      "Learn_marketing_community_management_boost_member_post_boost_moneyamount_object_schema": {
+      "Learn_marketing_community_management_boost_boost_analytics_moneyamount_object_schema": {
         "properties": {
           "amount": {
             "description": "Decimal string representing the spend amount.\n\nDocumented type: String (decimal)\n\nRequirement: Yes",
@@ -11017,7 +11005,53 @@
           "currencyCode"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#moneyamount-object-schema"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#moneyamount-object-schema"
+      },
+      "Learn_marketing_community_management_boost_boost_analytics_query_parameters": {
+        "properties": {
+          "q": {
+            "description": "Finder name. Value must be boostAnalytics.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetPosts": {
+            "description": "List of boosted post URNs to retrieve analytics for. The API accepts between 1 and 50 URNs. Supported URN entity types are ugcPost and share.\n\nDocumented type: REST.li list of URNs.Example: List(urn%3Ali%3Ashare%3A7325786486870552578, urn%3Ali%3AugcPost%3A7325786486870552579)\n\nRequirement: Yes",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "q",
+          "targetPosts"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#query-parameters"
+      },
+      "Learn_marketing_community_management_boost_boost_analytics_response_body_fields": {
+        "properties": {
+          "paging": {
+            "description": "Pagination metadata for the response, including count, start, and links.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "type": "object"
+          }
+        },
+        "required": [
+          "paging"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#response-body-fields"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_ineligible_reason_values": {
+        "enum": [
+          "POST_NOT_FOUND",
+          "POST_TYPE_NOT_SUPPORTED",
+          "POST_NOT_PUBLIC",
+          "ALREADY_BOOSTED",
+          "INSUFFICIENT_PERMISSIONS",
+          "UNKNOWN"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#ineligible-reason-values"
       },
       "Learn_marketing_community_management_boost_member_post_boost_query_parameters": {
         "properties": {
@@ -11039,27 +11073,6 @@
         ],
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#query-parameters"
-      },
-      "Learn_marketing_community_management_boost_member_post_boost_query_parameters_1": {
-        "properties": {
-          "q": {
-            "description": "Finder name. Value must be boostAnalytics.\n\nDocumented type: String\n\nRequirement: Yes",
-            "type": "string"
-          },
-          "targetPosts": {
-            "description": "List of boosted post URNs to retrieve analytics for. The API accepts between 1 and 50 URNs. Supported URN entity types are ugcPost and share.\n\nDocumented type: REST.li list of URNs.Example: List(urn%3Ali%3Ashare%3A7325786486870552578, urn%3Ali%3AugcPost%3A7325786486870552579)\n\nRequirement: Yes",
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          }
-        },
-        "required": [
-          "q",
-          "targetPosts"
-        ],
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#query-parameters-1"
       },
       "Learn_marketing_community_management_boost_member_post_boost_request_body": {
         "properties": {
@@ -11089,7 +11102,7 @@
             "type": "string"
           },
           "goal": {
-            "description": "Advertiser objective for the hypothetical boost. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: String\n\nRequirement: Yes",
+            "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes",
             "type": "string"
           },
           "productDescription": {
@@ -11113,7 +11126,7 @@
             "type": "object"
           },
           "targetingCriteria": {
-            "description": "Audience to preview, such as a suggested audience returned by an earlier hydrate call.\n\nDocumented type: Object\n\nRequirement: No",
+            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
             "type": "object"
           },
           "totalBudget": {
@@ -11149,20 +11162,20 @@
           "callToActionLabel": {
             "properties": {
               "value": {
-                "description": "Optional call-to-action label for the creative. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
+                "description": "Call-to-action label for the creative. Set this field only when goal.value is LEAD_GENERATION; omit it for all other goals. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
                 "type": "string"
               }
             },
             "type": "object"
           },
           "callToActionTarget": {
-            "description": "Destination URL for the call to action. Provide this only when callToActionLabel is present.\n\nDocumented type: string\n\nRequirement: No",
+            "description": "Destination URL for the call to action. Set this field only when goal.value is LEAD_GENERATION, together with callToActionLabel.\n\nDocumented type: string\n\nRequirement: No",
             "type": "string"
           },
           "goal": {
             "properties": {
               "value": {
-                "description": "Boost objective. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: enum string\n\nRequirement: Yes",
+                "description": "Boost objective. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: enum string\n\nRequirement: Yes",
                 "type": "string"
               }
             },
@@ -11188,7 +11201,7 @@
             "type": "string"
           },
           "targetingCriteria": {
-            "description": "Audience for the boost, such as the suggested audience returned by hydrate.\n\nDocumented type: object\n\nRequirement: Yes",
+            "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
             "type": "object"
           },
           "totalBudget": {
@@ -11358,19 +11371,6 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields-1"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_response_body_fields_2": {
-        "properties": {
-          "paging": {
-            "description": "Pagination metadata for the response, including count, start, and links.\n\nDocumented type: Object\n\nRequirement: Yes",
-            "type": "object"
-          }
-        },
-        "required": [
-          "paging"
-        ],
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields-2"
-      },
       "Learn_marketing_community_management_boost_member_post_boost_response_schema": {
         "properties": {
           "value": {
@@ -11380,7 +11380,7 @@
                 "type": "string"
               },
               "availableObjectiveTypes": {
-                "description": "Boost objectives available for the post and boost context.\n\nDocumented type: array[string]\n\nRequirement: No",
+                "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
                 "items": {
                   "type": "string"
                 },
@@ -11569,7 +11569,7 @@
             "type": "string"
           },
           "goal": {
-            "description": "Advertiser objective for the hypothetical boost. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: String\n\nRequirement: Yes",
+            "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes",
             "type": "string"
           },
           "organization": {
@@ -11597,7 +11597,7 @@
             "type": "object"
           },
           "targetingCriteria": {
-            "description": "Audience to preview, such as a suggested audience returned by an earlier hydrate call.\n\nDocumented type: Object\n\nRequirement: No",
+            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
             "type": "object"
           },
           "totalBudget": {
@@ -11634,20 +11634,20 @@
           "callToActionLabel": {
             "properties": {
               "value": {
-                "description": "Optional call-to-action label for the creative. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
+                "description": "Call-to-action label for the creative. Set this field only when goal.value is LEAD_GENERATION; omit it for all other goals. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
                 "type": "string"
               }
             },
             "type": "object"
           },
           "callToActionTarget": {
-            "description": "Destination URL for the call to action. Provide this only when callToActionLabel is present.\n\nDocumented type: string\n\nRequirement: No",
+            "description": "Destination URL for the call to action. Set this field only when goal.value is LEAD_GENERATION, together with callToActionLabel.\n\nDocumented type: string\n\nRequirement: No",
             "type": "string"
           },
           "goal": {
             "properties": {
               "value": {
-                "description": "Boost objective. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.\n\nDocumented type: enum string\n\nRequirement: Yes",
+                "description": "Boost objective. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: enum string\n\nRequirement: Yes",
                 "type": "string"
               }
             },
@@ -11677,7 +11677,7 @@
             "type": "string"
           },
           "targetingCriteria": {
-            "description": "Audience for the boost, such as the suggested audience returned by hydrate.\n\nDocumented type: object\n\nRequirement: Yes",
+            "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
             "type": "object"
           },
           "totalBudget": {
@@ -11861,7 +11861,7 @@
                 "type": "string"
               },
               "availableObjectiveTypes": {
-                "description": "Boost objectives available for the post and boost context.\n\nDocumented type: array[string]\n\nRequirement: No",
+                "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
                 "items": {
                   "type": "string"
                 },
@@ -54545,7 +54545,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -89939,7 +89939,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -91411,7 +91411,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -123498,7 +123498,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -123933,7 +123933,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -124286,7 +124286,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -165527,7 +165527,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -167902,7 +167902,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -168374,7 +168374,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202609",
+              "default": "202610",
               "type": "string"
             }
           },
@@ -518000,7 +518000,7 @@
   ],
   "x-documentation-versions": [
     "li-dma-data-portability-2026-08",
-    "li-lms-2026-09",
+    "li-lms-2026-10",
     "li-lts-2026-04",
     "li-lts-unversioned"
   ],

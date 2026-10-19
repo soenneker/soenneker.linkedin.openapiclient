@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
   "Title": "Ad Lift Tests Surveys",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -409,7 +409,7 @@
           {
             "Text": "Array of AdLiftTestSurveyAnswerMetadata",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#adlifttestsurveyanswermetadata-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-10#adlifttestsurveyanswermetadata-schema"
             ],
             "Values": []
           },
@@ -461,7 +461,7 @@
           {
             "Text": "AdLiftSurveyAnswer enum",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#possible-survey-answers"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-10#possible-survey-answers"
             ],
             "Values": []
           },

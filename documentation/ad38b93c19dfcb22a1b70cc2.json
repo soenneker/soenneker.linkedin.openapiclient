@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
   "Title": "Poll API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
@@ -259,7 +259,7 @@
           {
             "Text": "PollSettings type",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api?view=li-lms-2026-09\u0026tabs=http#pollsettings"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api?view=li-lms-2026-10\u0026tabs=http#pollsettings"
             ],
             "Values": []
           },
@@ -283,7 +283,7 @@
           {
             "Text": "array of PollOptions",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api?view=li-lms-2026-09\u0026tabs=http#polloption"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api?view=li-lms-2026-10\u0026tabs=http#polloption"
             ],
             "Values": []
           },

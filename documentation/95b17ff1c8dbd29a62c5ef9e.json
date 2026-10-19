@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
   "Title": "Lead Forms",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
@@ -1161,7 +1161,7 @@
           {
             "Text": "LeadType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadtype-sub-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-10#leadtype-sub-object"
             ],
             "Values": []
           },
@@ -2461,7 +2461,7 @@
           {
             "Text": "Check whether the right Permissions are present to manage forms.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-10\u0026tabs=http#permissions"
             ],
             "Values": []
           }
@@ -2485,7 +2485,7 @@
           {
             "Text": "Check whether the right Permissions are present to manage forms.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-10\u0026tabs=http#permissions"
             ],
             "Values": []
           }
@@ -2509,7 +2509,7 @@
           {
             "Text": "Check whether the right Permissions are present to manage forms.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-10\u0026tabs=http#permissions"
             ],
             "Values": []
           }
@@ -2533,7 +2533,7 @@
           {
             "Text": "Check whether the right Permissions are present to fetch leads.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-10\u0026tabs=http#permissions"
             ],
             "Values": []
           }
@@ -2557,7 +2557,7 @@
           {
             "Text": "Please make sure the request payload is as per the schema.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#lead-form-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-10\u0026tabs=http#lead-form-schema"
             ],
             "Values": []
           }
@@ -2625,7 +2625,7 @@
           {
             "Text": "Check whether the right Permissions are present to manage lead notification subscriptions.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-10\u0026tabs=http#permissions"
             ],
             "Values": []
           }

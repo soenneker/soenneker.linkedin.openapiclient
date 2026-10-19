@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
   "Title": "Insight Tag Conversion Tracking",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
@@ -1861,7 +1861,7 @@
           {
             "Text": "Identifying code for currency type. See currency codes for the valid codes.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           }
@@ -2535,7 +2535,7 @@
           {
             "Text": "Associates campaigns whose campaign objective maps to the conversion rule type. The 200-campaign limit doesn\u0027t apply to OBJECTIVE_BASED. For the complete mapping, see Objective-based auto-association mapping.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#objective-based-auto-association-mapping"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-10#objective-based-auto-association-mapping"
             ],
             "Values": []
           }

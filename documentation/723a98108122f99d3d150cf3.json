@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
   "Title": "Create and Manage Campaigns",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
@@ -360,14 +360,14 @@
           {
             "Text": "Account",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09#schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-10#schema"
             ],
             "Values": []
           },
           {
             "Text": "Information about the advertising account associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -423,9 +423,9 @@
           {
             "Text": "Information about the associatedEntity. If the entity is an organization, an OrganizationInfo object is returned. If the entity is a person, a PersonInfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#organizationinfo",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#personinfo",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#organizationinfo",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#personinfo",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -503,14 +503,14 @@
           {
             "Text": "CampaignGroup",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?view=li-lms-2026-09#schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?view=li-lms-2026-10#schema"
             ],
             "Values": []
           },
           {
             "Text": "Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -654,7 +654,7 @@
           {
             "Text": "Locale of the campaign. An uppercase two-letter country code as defined by ISO-3166. The country and language combination must match one of the supported locales.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -683,7 +683,7 @@
           {
             "Text": "Locale of the campaign. A lowercase two-letter language code as defined by ISO-639. The country and language combination must match one of the supported locales.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -739,7 +739,7 @@
           {
             "Text": "Campaign Objective type values. Click here for Campaign Objective descriptions. BRAND_AWARENESSENGAGEMENTJOB_APPLICANTSLEAD_GENERATIONWEBSITE_CONVERSIONSWEBSITE_VISITSVIDEO_VIEWS",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations?view=li-lms-2026-10"
             ],
             "Values": [
               "BRAND_AWARENESS",
@@ -798,14 +798,14 @@
           {
             "Text": "OffsitePreferences",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#offsite-preferences"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#offsite-preferences"
             ],
             "Values": []
           },
           {
             "Text": "Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferences",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#offsite-preferences"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#offsite-preferences"
             ],
             "Values": []
           },
@@ -883,7 +883,7 @@
           {
             "Text": "targetingCriteria",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -1120,7 +1120,7 @@
           {
             "Text": "Determines how this campaign is optimized for spending. If this is not set, there\u0027s no optimization. Refer to the documentation here.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#optimization-of-campaigns"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#optimization-of-campaigns"
             ],
             "Values": []
           },
@@ -1149,7 +1149,7 @@
           {
             "Text": "The ad format on campaign level.For more information, refer to: Ad Formats",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/campaign-formats?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/campaign-formats?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -1178,7 +1178,7 @@
           {
             "Text": "Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign\u0027s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#lifetime-pacing",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10#lifetime-pacing",
               "https://www.linkedin.com/help/lms/answer/a6598492"
             ],
             "Values": [
@@ -1306,7 +1306,7 @@
           {
             "Text": "Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#frequency-optimization-preference"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#frequency-optimization-preference"
             ],
             "Values": []
           },
@@ -1417,7 +1417,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10#multilocalestring"
             ],
             "Values": []
           },
@@ -1470,7 +1470,7 @@
           {
             "Text": "CroppedImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09#croppedimage"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10#croppedimage"
             ],
             "Values": []
           },
@@ -1581,15 +1581,15 @@
           {
             "Text": "optional IABCategories",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#iab-categories"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#iab-categories"
             ],
             "Values": []
           },
           {
             "Text": "The set of IAB (Interactive Advertising Bureau) categories that this campaign can be served/excluded from, based on where the ad request is from. Mobile Applications, Mobile Web, and Desktop Inventory are all classified into one or more of these categories. For more details, refer to LinkedIn Audience Network, Manage Audience Restrictions, and OpenRTB API Specification Version 2.3.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions?view=li-lms-2026-10",
               "https://www.iab.com/wp-content/uploads/2015/06/OpenRTB-API-Specification-Version-2-3.pdf"
             ],
             "Values": []
@@ -1604,7 +1604,7 @@
           {
             "Text": "optional PublisherRestrictionFiles",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#publisher-restriction-files"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#publisher-restriction-files"
             ],
             "Values": []
           },
@@ -1841,7 +1841,7 @@
           {
             "Text": "TimeSpan",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09\u0026tabs=http#time-span"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#time-span"
             ],
             "Values": []
           },

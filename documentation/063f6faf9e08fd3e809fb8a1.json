@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
   "Title": "Video Analytics API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
@@ -215,7 +215,7 @@
           {
             "Text": "The time range that the analytics will be fetched for. If missing, it will return analytics for the lifetime of the video. This parameter is optional. It is an object with fields start and end holding start and end timestamp. The time range is inclusive of the start and exclusive on the end. The start and end fields are both optional. Timestamps are in epoch format. See the sample below for how to pass this field through the API. If the video has more than ten days/weeks records, and no timeRange being passed into the API call, the aggregate_DAY and aggregate_WEEK calls will return the default 10 results.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api?view=li-lms-2026-09\u0026tabs=http#retrieve-analytics-data-for-a-video-entity"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api?view=li-lms-2026-10\u0026tabs=http#retrieve-analytics-data-for-a-video-entity"
             ],
             "Values": []
           }

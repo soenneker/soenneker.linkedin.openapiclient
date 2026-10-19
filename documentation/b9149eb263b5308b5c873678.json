@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
   "Title": "Ad Accounts",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
@@ -190,7 +190,7 @@
           {
             "Text": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/supported-currencies?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/supported-currencies?view=li-lms-2026-10",
               "https://www.linkedin.com/help/linkedin/answer/41250"
             ],
             "Values": []
@@ -494,9 +494,9 @@
           {
             "Text": "Information about the entity associated with the reference. If the entity is an organization, an Organizationinfo object is returned. If the entity is a person, a Personinfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09\u0026tabs=http#organizationinfo",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09\u0026tabs=http#personinfo",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-10\u0026tabs=http#organizationinfo",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-10\u0026tabs=http#personinfo",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -679,7 +679,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10#multilocalestring"
             ],
             "Values": []
           },
@@ -732,7 +732,7 @@
           {
             "Text": "CroppedImage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09#croppedimage"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10#croppedimage"
             ],
             "Values": []
           },

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
   "Title": "Create and Manage Creatives",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
@@ -319,21 +319,21 @@
           {
             "Text": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#eventad",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api?view=li-lms-2026-09",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#standardupdatead",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#videoad"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#eventad",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api?view=li-lms-2026-10",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#standardupdatead",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#videoad"
             ],
             "Values": []
           }
@@ -526,7 +526,7 @@
           {
             "Text": "leadgenCallToAction",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#leadgencreativecalltoaction"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#leadgencreativecalltoaction"
             ],
             "Values": []
           },
@@ -550,7 +550,7 @@
           {
             "Text": "metadata",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#creativemetadata"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#creativemetadata"
             ],
             "Values": []
           },
@@ -567,7 +567,7 @@
           {
             "Text": "Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative\u0027s underlying content. It\u0027s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#retrieve-creative-metadata"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#retrieve-creative-metadata"
             ],
             "Values": []
           }
@@ -598,7 +598,7 @@
           {
             "Text": "servingHoldReasons",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#servingholdreasons"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#servingholdreasons"
             ],
             "Values": []
           },
@@ -829,7 +829,7 @@
           {
             "Text": "PreRollMetadata",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#prerollmetadata"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#prerollmetadata"
             ],
             "Values": []
           },
@@ -1111,7 +1111,7 @@
           {
             "Text": "An array of reasons for rejecting creatives. For more details, refer to the RejectionReason list.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#ad-creative-rejection-reasons"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-10\u0026tabs=http#ad-creative-rejection-reasons"
             ],
             "Values": []
           }

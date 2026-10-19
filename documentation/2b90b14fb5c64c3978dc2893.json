@@ -1,12 +1,15 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
   "Title": "Member Post Boost",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
     "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
@@ -37,7 +40,7 @@
       "Section": "Member Post Boost",
       "Anchor": "member-post-boost",
       "SectionPath": [],
-      "Text": "Member Boost lets the authenticated member turn one of their own eligible UGC posts or shares into a sponsored ad. This page documents the full Member Boost workflow: checking boost status, initializing boost setup, previewing targeting and pricing, creating the boost, and retrieving boost analytics. For the equivalent Company Page workflow, see Organization Post Boost.",
+      "Text": "Member Boost lets the authenticated member turn one of their own eligible UGC posts or shares into a sponsored ad. This page documents the full Member Boost workflow: checking boost status, initializing boost setup, previewing targeting and pricing, and creating the boost. To retrieve boost analytics, see Boost Analytics. For the equivalent Company Page workflow, see Organization Post Boost.",
       "Headers": [],
       "Rows": []
     },
@@ -114,7 +117,7 @@
       "SectionPath": [
         "Retrieve boost status"
       ],
-      "Text": "The memberBoostStatus API returns boost status for up to 50 posts owned by the authenticated member. Use this finder to determine whether each target post can currently be boosted and, when it cannot, why it is ineligible.",
+      "Text": "The memberBoostStatus API returns boost status for up to 50 posts owned by the authenticated member. Use this finder to determine whether each target post can currently be boosted and, when it cannot, why it is ineligible. For a post that already has a boost, it also returns the boost status and the campaign and account URNs that you need to manage the boost.",
       "Headers": [],
       "Rows": []
     },
@@ -252,8 +255,10 @@
             "Values": []
           },
           {
-            "Text": "Whether the post is currently eligible to be boosted. Values: ELIGIBLE, INELIGIBLE.",
-            "Links": [],
+            "Text": "The post\u0027s current boost status. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, SCHEDULED, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED. See Boost status lifecycle.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-10\u0026tabs=http#boost-status-lifecycle"
+            ],
             "Values": []
           },
           {
@@ -275,6 +280,50 @@
           },
           {
             "Text": "The reason the post is ineligible for boosting. Present only when status is INELIGIBLE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].campaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored campaign created for the post. Returned only when status is IN_REVIEW, CURRENTLY_BOOSTED, SCHEDULED, or PREVIOUSLY_BOOSTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].accountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account used for the post. Returned only when status is IN_REVIEW, CURRENTLY_BOOSTED, SCHEDULED, or PREVIOUSLY_BOOSTED.",
             "Links": [],
             "Values": []
           },
@@ -368,6 +417,106 @@
           },
           {
             "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost status lifecycle",
+      "Anchor": "boost-status-lifecycle",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Boost status lifecycle"
+      ],
+      "Text": "A boost normally moves from ELIGIBLE to IN_REVIEW, then to SCHEDULED or CURRENTLY_BOOSTED, and finally to PREVIOUSLY_BOOSTED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Boost status lifecycle",
+      "Anchor": "boost-status-lifecycle",
+      "SectionPath": [
+        "Retrieve boost status",
+        "Boost status lifecycle"
+      ],
+      "Text": "",
+      "Headers": [
+        "Status",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ELIGIBLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post can be boosted. Continue to init.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INELIGIBLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post can\u0027t be boosted. Check ineligibleReason for the cause.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IN_REVIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A boost was created and is being reviewed before it runs. Many ads are auto-approved and begin serving immediately. Manual checks typically pass review within 24 hours. If a review is escalated to Policy or Legal, expect 5 to 7 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEDULED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The boost starts at its scheduled start time. Member Boost can\u0027t schedule a future start, so this status applies only to Company Page Boost.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CURRENTLY_BOOSTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The boost is running.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PREVIOUSLY_BOOSTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The boost has ended or was canceled.",
             "Links": [],
             "Values": []
           }
@@ -1003,7 +1152,7 @@
             "Values": []
           },
           {
-            "Text": "Boost objectives available for the post and boost context.",
+            "Text": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.",
             "Links": [],
             "Values": []
           },
@@ -1183,7 +1332,19 @@
         "Initialize a boost",
         "Sample response"
       ],
-      "Text": "When billingConfigured is false, the sponsored account does not yet have a payment method on file. Direct the member to add a payment method in LinkedIn Campaign Manager before calling boostPost \u2014 this API does not return a billing-setup redirect URL. Once billing is configured, subsequent boost initialization calls for the same account return billingConfigured: true.",
+      "Text": "When billingConfigured is false, the sponsored account doesn\u0027t have a payment method on file, and boostPost fails until billing is set up. This API doesn\u0027t return a billing URL. Billing is set up directly on LinkedIn; your application never collects payment details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample response"
+      ],
+      "Text": "Redirect the member to https://www.linkedin.com/campaignmanager/boost/billing/{account_id}?origin=partner. Replace {account_id} with the numeric ID at the end of the value.account URN that init returned. For example, for urn:li:sponsoredAccount:525337437, use 525337437.\nAfter billing setup, call init again with the same request.\nContinue to hydrate and post only after the new response returns billingConfigured: true.",
       "Headers": [],
       "Rows": []
     },
@@ -1376,7 +1537,7 @@
             "Values": []
           },
           {
-            "Text": "Advertiser objective for the hypothetical boost. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.",
+            "Text": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.",
             "Links": [],
             "Values": []
           },
@@ -1530,8 +1691,10 @@
             "Values": []
           },
           {
-            "Text": "Audience to preview, such as a suggested audience returned by an earlier hydrate call.",
-            "Links": [],
+            "Text": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-10\u0026tabs=http#targeting-criteria-object"
+            ],
             "Values": []
           },
           {
@@ -1704,7 +1867,7 @@
           {
             "Text": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-09\u0026tabs=http#targeting-criteria-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-10\u0026tabs=http#targeting-criteria-object"
             ],
             "Values": []
           },
@@ -2164,7 +2327,7 @@
         "Preview a boost",
         "Targeting criteria object"
       ],
-      "Text": "The suggested audience in the hydrate response contains only the fields needed to display the audience.",
+      "Text": "targetingCriteria is a named audience that LinkedIn generates. Don\u0027t build or modify it. Pass the object returned by your first hydrate call back unchanged in every later hydrate call and in the create boost call.",
       "Headers": [],
       "Rows": []
     },
@@ -2184,53 +2347,101 @@
       "Rows": [
         [
           {
-            "Text": "id, name, type, audienceCount",
+            "Text": "name",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Audience identifier, name, type, and estimated size.",
+            "Text": "Human-readable audience name, for example Suggested audience.",
             "Links": [],
             "Values": []
           }
         ],
         [
           {
-            "Text": "include, exclude",
+            "Text": "type",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Targeting groups to include and exclude. Every group and segment is returned, in order.",
+            "Text": "How the audience was created. For Boost, this is SUGGESTED_AUDIENCE.",
             "Links": [],
             "Values": []
           }
         ],
         [
           {
-            "Text": "Facets",
+            "Text": "audienceCount",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Each facet contains only urn and name.",
+            "Text": "Estimated number of LinkedIn members the audience could reach.",
             "Links": [],
             "Values": []
           }
         ],
         [
           {
-            "Text": "Segments",
+            "Text": "include",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Each segment contains only urn, name, subLine, and imageUrl.",
+            "Text": "Match rules. Members must meet these rules to be targeted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "exclude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional rules. Members who match these rules are excluded.",
             "Links": [],
             "Values": []
           }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting criteria object",
+      "Anchor": "targeting-criteria-object",
+      "SectionPath": [
+        "Preview a boost",
+        "Targeting criteria object"
+      ],
+      "Text": "Each facet in include or exclude contains urn and name. Each segment contains urn and name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting criteria object",
+      "Anchor": "targeting-criteria-object",
+      "SectionPath": [
+        "Preview a boost",
+        "Targeting criteria object"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting criteria object",
+      "Anchor": "targeting-criteria-object",
+      "SectionPath": [
+        "Preview a boost",
+        "Targeting criteria object"
+      ],
+      "Text": "Custom targeting isn\u0027t supported. Members can change only the objective, run schedule, and budget.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "text",
@@ -2288,7 +2499,7 @@
         "Preview a boost",
         "Sample response"
       ],
-      "Text": "{\n  \u0022value\u0022: {\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n    \u0022totalBudget\u0022: {\n      \u0022amount\u0022: \u002250.00\u0022,\n      \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022,\n    \u0022targetingCriteria\u0022: {\n      \u0022id\u0022: 987654321,\n      \u0022name\u0022: \u0022Suggested audience\u0022,\n      \u0022audienceCount\u0022: 125000\n    },\n    \u0022audienceCount\u0022: 125000,\n    \u0022forecast\u0022: {\n      \u0022spend\u0022: {\n        \u0022lowEnd\u0022: 4500,\n        \u0022highEnd\u0022: 5000\n      },\n      \u0022impressions\u0022: {\n        \u0022lowEnd\u0022: 18000,\n        \u0022highEnd\u0022: 42000\n      },\n      \u0022clicks\u0022: {\n        \u0022lowEnd\u0022: 110,\n        \u0022highEnd\u0022: 340\n      }\n    },\n    \u0022suggestedTotalBudgets\u0022: [\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002230.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: false\n      },\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002250.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: true\n      },\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002275.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: false\n      }\n    ],\n    \u0022consumerPrice\u0022: {\n      \u0022campaignTotalBudget\u0022: {\n        \u0022amount\u0022: \u002250.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022totalConsumerPrice\u0022: {\n        \u0022amount\u0022: \u002250.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      }\n    },\n    \u0022maxTotalBudget\u0022: {\n      \u0022amount\u0022: \u0022500.00\u0022,\n      \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n  }\n}",
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n    \u0022totalBudget\u0022: {\n      \u0022amount\u0022: \u002250.00\u0022,\n      \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022,\n    \u0022targetingCriteria\u0022: {\n      \u0022name\u0022: \u0022Suggested audience\u0022,\n      \u0022type\u0022: \u0022SUGGESTED_AUDIENCE\u0022,\n      \u0022audienceCount\u0022: 125000,\n      \u0022include\u0022: {\n        \u0022and\u0022: [\n          {\n            \u0022or\u0022: [\n              {\n                \u0022facet\u0022: {\n                  \u0022urn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n                  \u0022name\u0022: \u0022Interface Locales\u0022\n                },\n                \u0022segments\u0022: [\n                  {\n                    \u0022urn\u0022: \u0022urn:li:locale:en_US\u0022,\n                    \u0022name\u0022: \u0022English\u0022\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \u0022or\u0022: [\n              {\n                \u0022facet\u0022: {\n                  \u0022urn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n                  \u0022name\u0022: \u0022Locations\u0022\n                },\n                \u0022segments\u0022: [\n                  {\n                    \u0022urn\u0022: \u0022urn:li:geo:103644278\u0022,\n                    \u0022name\u0022: \u0022United States\u0022\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    },\n    \u0022audienceCount\u0022: 125000,\n    \u0022forecast\u0022: {\n      \u0022spend\u0022: {\n        \u0022lowEnd\u0022: 4500,\n        \u0022highEnd\u0022: 5000\n      },\n      \u0022impressions\u0022: {\n        \u0022lowEnd\u0022: 18000,\n        \u0022highEnd\u0022: 42000\n      },\n      \u0022clicks\u0022: {\n        \u0022lowEnd\u0022: 110,\n        \u0022highEnd\u0022: 340\n      }\n    },\n    \u0022suggestedTotalBudgets\u0022: [\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002230.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: false\n      },\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002250.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: true\n      },\n      {\n        \u0022amount\u0022: {\n          \u0022amount\u0022: \u002275.00\u0022,\n          \u0022currencyCode\u0022: \u0022USD\u0022\n        },\n        \u0022isRecommendedBudget\u0022: false\n      }\n    ],\n    \u0022consumerPrice\u0022: {\n      \u0022campaignTotalBudget\u0022: {\n        \u0022amount\u0022: \u002250.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022totalConsumerPrice\u0022: {\n        \u0022amount\u0022: \u002250.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      }\n    },\n    \u0022maxTotalBudget\u0022: {\n      \u0022amount\u0022: \u0022500.00\u0022,\n      \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n  }\n}",
       "Headers": [],
       "Rows": []
     },
@@ -2463,7 +2674,7 @@
       "SectionPath": [
         "Create a boost"
       ],
-      "Text": "Use the account returned by a prior boost initialization call for the same post. This endpoint externalizes the target post, sponsored account, objective, total budget, and optional call-to-action settings; other campaign settings rely on server-side defaults.",
+      "Text": "Use the account returned by a prior boost initialization call for the same post. This endpoint externalizes the target post, sponsored account, objective, total budget, targeting, run schedule, and, for LEAD_GENERATION boosts, call-to-action settings; other campaign settings rely on server-side defaults.",
       "Headers": [],
       "Rows": []
     },
@@ -2539,7 +2750,7 @@
             "Values": []
           },
           {
-            "Text": "Boost objective. Supported values: CREATIVE_ENGAGEMENT, WEBSITE_TRAFFIC, LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, ENGAGEMENT, JOB_APPLICANT, TALENT_LEAD, CONVERSATION_STARTER.",
+            "Text": "Boost objective. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.",
             "Links": [],
             "Values": []
           },
@@ -2649,8 +2860,10 @@
             "Values": []
           },
           {
-            "Text": "Audience for the boost, such as the suggested audience returned by hydrate.",
-            "Links": [],
+            "Text": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-10\u0026tabs=http#targeting-criteria-object"
+            ],
             "Values": []
           },
           {
@@ -2671,7 +2884,7 @@
             "Values": []
           },
           {
-            "Text": "Optional call-to-action label for the creative. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.",
+            "Text": "Call-to-action label for the creative. Set this field only when goal.value is LEAD_GENERATION; omit it for all other goals. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.",
             "Links": [],
             "Values": []
           },
@@ -2693,7 +2906,7 @@
             "Values": []
           },
           {
-            "Text": "Destination URL for the call to action. Provide this only when callToActionLabel is present.",
+            "Text": "Destination URL for the call to action. Set this field only when goal.value is LEAD_GENERATION, together with callToActionLabel.",
             "Links": [],
             "Values": []
           },
@@ -2848,7 +3061,7 @@
             "Values": []
           },
           {
-            "Text": "When provided in the request",
+            "Text": "When provided in the request (LEAD_GENERATION goal only)",
             "Links": [],
             "Values": []
           }
@@ -2870,7 +3083,7 @@
             "Values": []
           },
           {
-            "Text": "When provided in the request",
+            "Text": "When provided in the request (LEAD_GENERATION goal only)",
             "Links": [],
             "Values": []
           }
@@ -2963,7 +3176,7 @@
         "Create a boost",
         "Sample request"
       ],
-      "Text": "POST https://api.linkedin.com/rest/memberBoostPost?action=post\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202610\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022id\u0022: 987654321\n  },\n  \u0022callToActionLabel\u0022: {\n    \u0022value\u0022: \u0022LEARN_MORE\u0022\n  },\n  \u0022callToActionTarget\u0022: \u0022https://www.example.com/learn-more\u0022\n}",
+      "Text": "POST https://api.linkedin.com/rest/memberBoostPost?action=post\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202610\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022name\u0022: \u0022Suggested audience\u0022,\n    \u0022type\u0022: \u0022SUGGESTED_AUDIENCE\u0022,\n    \u0022audienceCount\u0022: 150000,\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n                \u0022name\u0022: \u0022Interface Locales\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:locale:en_US\u0022,\n                  \u0022name\u0022: \u0022English\u0022\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n                \u0022name\u0022: \u0022Locations\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:geo:103644278\u0022,\n                  \u0022name\u0022: \u0022United States\u0022\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  }\n}",
       "Headers": [],
       "Rows": []
     },
@@ -2975,7 +3188,7 @@
         "Create a boost",
         "Sample request"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostPost?action=post\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-d \u0027{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022id\u0022: 987654321\n  },\n  \u0022callToActionLabel\u0022: {\n    \u0022value\u0022: \u0022LEARN_MORE\u0022\n  },\n  \u0022callToActionTarget\u0022: \u0022https://www.example.com/learn-more\u0022\n}\u0027",
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostPost?action=post\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-d \u0027{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022name\u0022: \u0022Suggested audience\u0022,\n    \u0022type\u0022: \u0022SUGGESTED_AUDIENCE\u0022,\n    \u0022audienceCount\u0022: 150000,\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n                \u0022name\u0022: \u0022Interface Locales\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:locale:en_US\u0022,\n                  \u0022name\u0022: \u0022English\u0022\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n                \u0022name\u0022: \u0022Locations\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:geo:103644278\u0022,\n                  \u0022name\u0022: \u0022United States\u0022\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  }\n}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -2987,7 +3200,7 @@
         "Create a boost",
         "Sample response"
       ],
-      "Text": "{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022callToActionLabel\u0022: \u0022LEARN_MORE\u0022,\n  \u0022callToActionTarget\u0022: \u0022https://www.example.com/learn-more\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:111111111\u0022,\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:222222222\u0022,\n  \u0022creative\u0022: \u0022urn:li:sponsoredCreative:333333333\u0022\n}",
+      "Text": "{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:111111111\u0022,\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:222222222\u0022,\n  \u0022creative\u0022: \u0022urn:li:sponsoredCreative:333333333\u0022\n}",
       "Headers": [],
       "Rows": []
     },
@@ -3351,590 +3564,6 @@
           },
           {
             "Text": "Pass a urn:li:sponsoredAccount:{id} value.",
-            "Links": [],
-            "Values": []
-          }
-        ]
-      ]
-    },
-    {
-      "Kind": "text",
-      "Section": "Retrieve boost analytics",
-      "Anchor": "retrieve-boost-analytics",
-      "SectionPath": [
-        "Retrieve boost analytics"
-      ],
-      "Text": "The memberBoostAnalytics API returns Boost performance analytics for boosted posts owned by the authenticated member. The response externalizes a curated set of sponsored metrics shown on the boosted post in the LinkedIn flagship app: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, spend, and approximateMemberReach.",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "text",
-      "Section": "Retrieve boost analytics",
-      "Anchor": "retrieve-boost-analytics",
-      "SectionPath": [
-        "Retrieve boost analytics"
-      ],
-      "Text": "Call memberBoostAnalytics with q=boostAnalytics to retrieve one analytics record per requested target post. The response returns records in the same order as the targetPosts request list.",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "table",
-      "Section": "Query parameters",
-      "Anchor": "query-parameters-1",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "Query parameters"
-      ],
-      "Text": "",
-      "Headers": [
-        "Name",
-        "Description",
-        "Format",
-        "Required"
-      ],
-      "Rows": [
-        [
-          {
-            "Text": "q",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Finder name. Value must be boostAnalytics.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "String",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "targetPosts",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "List of boosted post URNs to retrieve analytics for. The API accepts between 1 and 50 URNs. Supported URN entity types are ugcPost and share.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "REST.li list of URNs.Example: List(urn%3Ali%3Ashare%3A7325786486870552578, urn%3Ali%3AugcPost%3A7325786486870552579)",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ]
-      ]
-    },
-    {
-      "Kind": "table",
-      "Section": "Response body fields",
-      "Anchor": "response-body-fields-2",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "Response body fields"
-      ],
-      "Text": "",
-      "Headers": [
-        "Field name",
-        "Type",
-        "Description",
-        "Required"
-      ],
-      "Rows": [
-        [
-          {
-            "Text": "elements[].targetPost",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "URN",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The boosted post URN that these analytics apply to.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].impressions",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Long",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Number of ad impressions the boosted post received.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].clicks",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Long",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Number of chargeable clicks the boosted post received.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].clickThroughRate",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Double",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Click-through rate for the boosted post, calculated as clicks / impressions.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].reactions",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Long",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Number of reactions on the boosted post.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].comments",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Long",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Number of comments on the boosted post.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].shares",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Long",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Number of shares (reshares) of the boosted post.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].follows",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Long",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Number of new followers attributed to the boosted post.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].spend",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Object (MoneyAmount)",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost?view=li-lms-2026-09\u0026tabs=http#moneyamount-object-schema"
-            ],
-            "Values": []
-          },
-          {
-            "Text": "Total amount spent on the boost so far. The current response uses USD.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "elements[].approximateMemberReach",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Long",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Approximate number of unique members reached by the boost. This field is omitted for boosts spanning more than 92 days.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "No",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "paging",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Object",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Pagination metadata for the response, including count, start, and links.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ]
-      ]
-    },
-    {
-      "Kind": "table",
-      "Section": "MoneyAmount object schema",
-      "Anchor": "moneyamount-object-schema",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "MoneyAmount object schema"
-      ],
-      "Text": "",
-      "Headers": [
-        "Field name",
-        "Type",
-        "Description",
-        "Required"
-      ],
-      "Rows": [
-        [
-          {
-            "Text": "amount",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "String (decimal)",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Decimal string representing the spend amount.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "currencyCode",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "String",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "ISO currency code. The current response value is USD.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Yes",
-            "Links": [],
-            "Values": []
-          }
-        ]
-      ]
-    },
-    {
-      "Kind": "text",
-      "Section": "Sample request",
-      "Anchor": "sample-request-5",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "Sample request"
-      ],
-      "Text": "http\n\n\ncurl",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
-      "Section": "Sample request",
-      "Anchor": "sample-request-5",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "Sample request"
-      ],
-      "Text": "GET https://api.linkedin.com/rest/memberBoostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
-      "Section": "Sample request",
-      "Anchor": "sample-request-5",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "Sample request"
-      ],
-      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberBoostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
-      "Section": "Sample response",
-      "Anchor": "sample-response-5",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "Sample response"
-      ],
-      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:share:7325786486870552578\u0022,\n      \u0022impressions\u0022: 12845,\n      \u0022clicks\u0022: 326,\n      \u0022clickThroughRate\u0022: 0.0254,\n      \u0022reactions\u0022: 41,\n      \u0022comments\u0022: 9,\n      \u0022shares\u0022: 7,\n      \u0022follows\u0022: 12,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002237.42\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 11890\n    },\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:7325786486870552579\u0022,\n      \u0022impressions\u0022: 7540,\n      \u0022clicks\u0022: 188,\n      \u0022clickThroughRate\u0022: 0.0249,\n      \u0022reactions\u0022: 23,\n      \u0022comments\u0022: 4,\n      \u0022shares\u0022: 3,\n      \u0022follows\u0022: 6,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002221.15\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 7012\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "table",
-      "Section": "API error details",
-      "Anchor": "api-error-details-5",
-      "SectionPath": [
-        "Retrieve boost analytics",
-        "API error details"
-      ],
-      "Text": "",
-      "Headers": [
-        "HTTP status code",
-        "Error message",
-        "Description",
-        "Resolution"
-      ],
-      "Rows": [
-        [
-          {
-            "Text": "400",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "BAD_REQUEST",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The request is malformed, contains no targetPosts, contains more than 50 targetPosts, or includes an unsupported URN entity type.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Provide 1 to 50 boosted post URNs and use only urn:li:ugcPost:{id} or urn:li:share:{id} values.",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "401",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "EMPTY_ACCESS_TOKEN",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The request is missing a valid OAuth access token.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Include a valid member access token in the Authorization header.",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "403",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "ACCESS_DENIED",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The application or member token does not have the required permission to read Boost analytics.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Request the r_member_boost (or rw_member_boost) scope and retry with an authorized member token.",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "429",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "TOO_MANY_REQUESTS",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The caller exceeded the memberBoostAnalytics rate limit.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Back off and retry the request later.",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "500",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "INTERNAL_SERVER_ERROR",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "LinkedIn couldn\u0027t process the analytics request.",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "Retry the request. If the issue persists, contact LinkedIn Developer Support.",
             "Links": [],
             "Values": []
           }

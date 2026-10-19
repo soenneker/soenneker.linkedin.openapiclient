@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing",
   "Title": "A/B Testing API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -362,7 +362,7 @@
           {
             "Text": "Array of AdExperimentCells",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentcell-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentcell-schema"
             ],
             "Values": []
           },
@@ -550,7 +550,7 @@
           {
             "Text": "A message explaining why the experiment was moved to an ENDED state by LinkedIn. This field is read only. Our system will automatically end experiments for the following reasons: It has been 90 days since the experiment\u2019s start date. The experiment hit an erroneous condition.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#validation-error-code"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#validation-error-code"
             ],
             "Values": [
               "It has been 90 days since the experiment\u2019s start date.",
@@ -850,7 +850,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -874,7 +874,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -898,7 +898,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -922,7 +922,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -946,7 +946,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -970,7 +970,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -994,7 +994,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1018,7 +1018,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1042,7 +1042,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1066,7 +1066,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1112,7 +1112,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1136,7 +1136,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1160,7 +1160,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1184,7 +1184,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1208,7 +1208,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1232,7 +1232,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1256,7 +1256,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1280,7 +1280,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1304,7 +1304,7 @@
           {
             "Text": "AdExperimentErrorDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimenterrordetail-schema"
             ],
             "Values": []
           }
@@ -1328,7 +1328,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1352,7 +1352,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -1434,7 +1434,7 @@
           {
             "Text": "Array of AdExperimentValidationResultItems",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationresultitem-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationresultitem-schema"
             ],
             "Values": []
           },
@@ -1492,7 +1492,7 @@
           {
             "Text": "The error code of the validation result item.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#validation-error-code"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#validation-error-code"
             ],
             "Values": []
           }
@@ -3088,7 +3088,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3112,7 +3112,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3136,7 +3136,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3160,7 +3160,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3184,7 +3184,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3208,7 +3208,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3232,7 +3232,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3300,7 +3300,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3324,7 +3324,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3348,7 +3348,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3372,7 +3372,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3396,7 +3396,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3420,7 +3420,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3444,7 +3444,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3468,7 +3468,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3492,7 +3492,7 @@
           {
             "Text": "AdExperimentErrorDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimenterrordetail-schema"
             ],
             "Values": []
           }
@@ -3516,7 +3516,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3540,7 +3540,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           }
@@ -3769,7 +3769,7 @@
           {
             "Text": "Account URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -3793,7 +3793,7 @@
           {
             "Text": "Array of Sponsored Campaign URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -3817,7 +3817,7 @@
           {
             "Text": "Campaign Group URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -4310,7 +4310,7 @@
           {
             "Text": "Array of AdExperimentCellResults",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentcellresult-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentcellresult-schema"
             ],
             "Values": []
           },
@@ -4750,7 +4750,7 @@
           {
             "Text": "Array of AdExperimentErrorDetailItem",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetailitem-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimenterrordetailitem-schema"
             ],
             "Values": []
           },
@@ -4798,7 +4798,7 @@
           {
             "Text": "AdExperimentErrorDetailCode",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetailcode-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimenterrordetailcode-schema"
             ],
             "Values": []
           },
@@ -4834,7 +4834,7 @@
           {
             "Text": "AdExperimentValidationDetail",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-10#adexperimentvalidationdetail-schema"
             ],
             "Values": []
           },

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing",
   "Title": "Brand Lift Testing",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
@@ -132,12 +132,12 @@
           {
             "Text": "Step 1. Create Lift Test Configuration in JSON format. See Lift Test Schema for details Step 2. Validate Lift Test Configuration in JSON format before save. Use validate action from Brand Lift Test API Step 3. Identify number of questions available for Lift Test Survey. Use validate budget action from Brand Lift Test API Step 4. Create Lift Test. Use create request from Brand Lift Test API Step 5. Create desired survey questions. At least 2 questions should be created. RECALL is mandatory question type. Do not exceed number of questions identified on step 3. Use create survey request from Brand Lift Test Survey API Step 6. Activate Lift Test to make it servable. Use activate request from Brand Lift Test API Step 7. Wait till schedule.start date/time reached",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#adlifttest-schema",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#validate-lift-test-setup",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#budget-requirements-validation",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#create-ad-lift-tests",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#create-ad-lift-test-survey-questions",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#activate-ad-lift-test"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#adlifttest-schema",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#validate-lift-test-setup",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#budget-requirements-validation",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#create-ad-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-10#create-ad-lift-test-survey-questions",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#activate-ad-lift-test"
             ],
             "Values": []
           },
@@ -156,8 +156,8 @@
           {
             "Text": "Step 1. Get Lift Test state to ensure that test is running or completed. Use get action from Brand Lift Test APIStep 2. Use Brand Lift Test Results API to access collected result. Results can change overtime even after test end for at most 15 days.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#get-lift-tests",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#get-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -176,8 +176,8 @@
           {
             "Text": "Step 1. Get Lift Test state to ensure that test is scheduled, running or ended but can be resumed. Use get action from Brand Lift Test APIStep 2. Use Brand Lift Test API to extend schedule.end date as desired. Tests can not run for more than 90 days.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#get-lift-tests",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#update-lift-tests"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#get-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#update-lift-tests"
             ],
             "Values": []
           },
@@ -196,8 +196,8 @@
           {
             "Text": "Step 1. Get Lift Test state to ensure that test is scheduled, running or ended but can be resumed. Use get action from Brand Lift Test APIStep 2. Use Brand Lift Test API to set user state to CANCELED. Terminated tests can not be restarted.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#get-lift-tests",
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#update-lift-tests"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#get-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-10#update-lift-tests"
             ],
             "Values": []
           },

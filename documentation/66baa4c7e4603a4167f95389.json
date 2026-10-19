@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
   "Title": "Integration Requirements for Community Management",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
@@ -322,7 +322,7 @@
           {
             "Text": "Demonstrate ability to get number of followers for an organization. For more information, see Data Storage Requirements.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -336,7 +336,7 @@
           {
             "Text": "Demonstrate ability to report on organization follower statistics. For more information, see Breaking Change Policy.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy?view=li-lms-2026-10"
             ],
             "Values": []
           }

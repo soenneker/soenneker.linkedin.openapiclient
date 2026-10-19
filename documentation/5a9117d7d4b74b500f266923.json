@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
   "Title": "Content API Migration",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
@@ -145,7 +145,7 @@
           {
             "Text": "Moved to content.carousel",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -159,7 +159,7 @@
           {
             "Text": "Removed, but a similar concept exists under content under the various content types.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#content"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#content"
             ],
             "Values": []
           }
@@ -298,7 +298,7 @@
           {
             "Text": "See Distribution table",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide?view=li-lms-2026-09#distribution-data-model"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide?view=li-lms-2026-10#distribution-data-model"
             ],
             "Values": []
           }
@@ -348,7 +348,7 @@
           {
             "Text": "Flattened to a single string field supporting little text",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -374,7 +374,7 @@
           {
             "Text": "Renamed to content and support types mentioned in content",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#content"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-10#content"
             ],
             "Values": []
           }

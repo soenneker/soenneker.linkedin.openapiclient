@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
   "Title": "Reporting",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
@@ -925,7 +925,7 @@
           {
             "Text": "Date object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#date"
             ],
             "Values": []
           },
@@ -949,7 +949,7 @@
           {
             "Text": "Date object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext#date"
             ],
             "Values": []
           },
@@ -973,7 +973,7 @@
           {
             "Text": "Account URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -997,7 +997,7 @@
           {
             "Text": "Array of Sponsored Campaign URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -1021,7 +1021,7 @@
           {
             "Text": "Array of Campaign Group URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -1565,7 +1565,7 @@
           {
             "Text": "The request URL exceeds the maximum allowed length. Use query tunneling when the list of query parameters is too long.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration?view=li-lms-2026-10"
             ],
             "Values": []
           }

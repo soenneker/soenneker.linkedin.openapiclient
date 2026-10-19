@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
   "Title": "Audience Insights",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -165,7 +165,7 @@
           {
             "Text": "request Object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#request-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-10\u0026tabs=http#request-object"
             ],
             "Values": []
           },
@@ -207,7 +207,7 @@
           {
             "Text": "requestMetaData Object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#requestmetadata-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-10\u0026tabs=http#requestmetadata-object"
             ],
             "Values": []
           },
@@ -231,7 +231,7 @@
           {
             "Text": "targetingCriteria Object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#targetingcriteria-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-10\u0026tabs=http#targetingcriteria-object"
             ],
             "Values": []
           },
@@ -255,7 +255,7 @@
           {
             "Text": "AdTargetingFacetURN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#supported-adtargetingfacets-for-groupby-field"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-10\u0026tabs=http#supported-adtargetingfacets-for-groupby-field"
             ],
             "Values": []
           },
@@ -820,7 +820,7 @@
           {
             "Text": "audienceInsight object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#audienceinsight-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-10\u0026tabs=http#audienceinsight-object"
             ],
             "Values": []
           },
@@ -873,7 +873,7 @@
           {
             "Text": "AdTargetingFacetUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#supported-adtargetingfacets-for-groupby-field"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-10\u0026tabs=http#supported-adtargetingfacets-for-groupby-field"
             ],
             "Values": []
           },
@@ -892,7 +892,7 @@
           {
             "Text": "array [segmentations object]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#segmentations-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-10\u0026tabs=http#segmentations-object"
             ],
             "Values": []
           },
@@ -962,7 +962,7 @@
           {
             "Text": "AdTargetingEntityUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities?view=li-lms-2026-10"
             ],
             "Values": []
           },

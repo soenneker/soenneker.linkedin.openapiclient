@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
   "Title": "Article Ads API",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
@@ -349,7 +349,7 @@
           {
             "Text": "Custom or saved thumbnail for the article. If empty, there\u0027s none. To retrieve the download URL , an additional request must be made to the Images API using this URN.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-10"
             ],
             "Values": []
           },

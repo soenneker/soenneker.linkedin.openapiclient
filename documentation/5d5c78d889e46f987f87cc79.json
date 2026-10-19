@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
   "Title": "DMP Segments",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
@@ -138,7 +138,7 @@
           {
             "Text": "The sponsored account urn that this DMP segment belongs to. Refer Find Ad Accounts By Authenticated User API to select an ad account.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-09#find-ad-accounts-by-authenticated-user"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-10#find-ad-accounts-by-authenticated-user"
             ],
             "Values": []
           }
@@ -169,7 +169,7 @@
           {
             "Text": "See DMP Segment Destinations",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations?view=li-lms-2026-09#create-dmp-segment-destination"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations?view=li-lms-2026-10#create-dmp-segment-destination"
             ],
             "Values": []
           },
@@ -210,7 +210,7 @@
           {
             "Text": "The platform from which profiles are imported. Pick the ENUM that fits your organization\u0027s use case: DIRECT_API (a LinkedIn advertiser using matched audiences for its own ad account(s)), AGENCY_API (an agency managing audiences on behalf of multiple clients), or PARTNER_API (a platform enabling many LinkedIn advertisers to sync audiences at scale, not an agency). For CSV list upload segments, use LIST_UPLOAD instead. See DMP Segment List Uploads for details.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -246,7 +246,7 @@
           {
             "Text": "The content type of the profiles being imported into this DMP segment. Use USER or COMPANY for streaming segments. For CSV list upload segments, use USER_LIST_UPLOAD or COMPANY_LIST_UPLOAD (with sourcePlatform set to LIST_UPLOAD) \u2014 see DMP Segment List Uploads.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads?view=li-lms-2026-10"
             ],
             "Values": []
           }

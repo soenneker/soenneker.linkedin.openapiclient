@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
   "Title": "Saved Audience Templates",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -95,7 +95,7 @@
           {
             "Text": "Facets are high-level categories of the types of targeting available. Use facets to narrow down your intended audience. To see the list of available facets and their URNs, refer to Targeting Criteria Facet URNs page.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -109,7 +109,7 @@
           {
             "Text": "Audience is a general term used to describe the Targeting Criteria filter selected to view insights. For example, an audience can be \u0022Financial Analysts in the US\u0022. Refer targetingCriteria Object to define the audience criteria.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -362,7 +362,7 @@
           {
             "Text": "URN identifying the sponsored Ad account associated with the saved targeting template; immutable. Refer to Find Ad Accounts by Authenticated User endpoint to fetch and select Ad accounts of the connected user.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-09#find-ad-accounts-by-authenticated-user"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-10#find-ad-accounts-by-authenticated-user"
             ],
             "Values": []
           },
@@ -381,7 +381,7 @@
           {
             "Text": "targetingCriteria Object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-10"
             ],
             "Values": []
           },
@@ -689,7 +689,7 @@
           {
             "Text": "targetingCriteria Object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-10"
             ],
             "Values": []
           },

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
   "Title": "Lead Sync API Migration",
-  "Version": "li-lms-2026-09",
+  "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form",
@@ -580,7 +580,7 @@
           {
             "Text": "LeadGenFormOwner: SponsoredAccountUrn for sponsored use case; OrganizationUrn for other use cases.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/pages-profiles/organizations.md?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/pages-profiles/organizations.md?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -606,7 +606,7 @@
           {
             "Text": "associatedEntity union: - SponsoredCreativeUrn for sponsored use case - OrganizationUrn for company page use case - EventUrn for event use case - StandardizedProductUrn for product page use case - OrganizationLandingPageUrn for landing page use case.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/pages-profiles/organizations.md?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/pages-profiles/organizations.md?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -1024,7 +1024,7 @@
           {
             "Text": "This is a VersionedLeadGenFormUrn instead of an AdFormUrn.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -1197,7 +1197,7 @@
           {
             "Text": "This is a VersionedLeadGenFormUrn instead of an AdFormUrn.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form?view=li-lms-2026-09"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form?view=li-lms-2026-10"
             ],
             "Values": []
           }
@@ -1641,7 +1641,7 @@
           {
             "Text": "event~.name --\u003E make an additional api call to the /events endpoint using the idevent~.id --\u003E id",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events?view=li-lms-2026-09#find-events-with-lead-gen-form-by-organizer"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events?view=li-lms-2026-10#find-events-with-lead-gen-form-by-organizer"
             ],
             "Values": []
           },
