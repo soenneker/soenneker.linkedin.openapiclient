@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>ISO currency code.Documented type: StringRequirement: Yes</summary>
+        /// <summary>The ISO currency code for the compensation amount. Refer to Supported currencies for job posting.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyCode { get; set; }

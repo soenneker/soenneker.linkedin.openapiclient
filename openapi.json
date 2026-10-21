@@ -30482,7 +30482,7 @@
             "type": "string"
           },
           "currencyCode": {
-            "description": "ISO currency code.\n\nDocumented type: String\n\nRequirement: Yes",
+            "description": "The ISO currency code for the compensation amount. Refer to Supported currencies for job posting.\n\nDocumented type: String\n\nRequirement: Yes",
             "type": "string"
           }
         },

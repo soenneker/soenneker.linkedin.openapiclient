@@ -42,6 +42,17 @@
   "Blocks": [
     {
       "Kind": "text",
+      "Section": "Supported currencies for job postings",
+      "Anchor": "supported-currencies-for-job-postings",
+      "SectionPath": [
+        "Supported currencies for job postings"
+      ],
+      "Text": "Updated the salary currency references in the XML feed schema and Job Posting API schema. Both now link to Supported currencies for job posting instead of the general currency-code table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "Documented duplicate job error (ErrorCode:2009)",
       "Anchor": "documented-duplicate-job-error-errorcode2009",
       "SectionPath": [

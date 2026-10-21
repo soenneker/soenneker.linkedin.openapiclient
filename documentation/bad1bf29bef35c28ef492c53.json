@@ -6,7 +6,6 @@
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
-    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/experience-level-codes",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-function-codes",
@@ -908,8 +907,10 @@
             "Values": []
           },
           {
-            "Text": "The currency for the higher/lower end of the range of the salary for this job posting",
-            "Links": [],
+            "Text": "The currency code for the upper or lower end of the salary range for this job posting. Refer to Supported currencies for job posting.",
+            "Links": [
+              "https://www.linkedin.com/help/recruiter/answer/a16658811"
+            ],
             "Values": []
           },
           {
@@ -918,10 +919,8 @@
             "Values": []
           },
           {
-            "Text": "String Code from Currency Codes",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes?view=li-lts-2026-04"
-            ],
+            "Text": "String",
+            "Links": [],
             "Values": []
           }
         ],
@@ -1536,7 +1535,7 @@
       "SectionPath": [
         "Referenced Links"
       ],
-      "Text": "Country Code\nIndustry Codes\nJob Function Codes\nCurrency Codes\nExperience Level Code\nJob Type Codes\nRetrieving a LinkedIn Company ID: https://www.linkedin.com/help/linkedin/answer/a415420",
+      "Text": "Country Code\nIndustry Codes\nJob Function Codes\nSupported currencies for job posting\nExperience Level Code\nJob Type Codes\nRetrieving a LinkedIn Company ID: https://www.linkedin.com/help/linkedin/answer/a415420",
       "Headers": [],
       "Rows": []
     },

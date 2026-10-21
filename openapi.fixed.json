@@ -463418,7 +463418,7 @@
           },
           "currencyCode": {
             "type": "string",
-            "description": "ISO currency code.\n\nDocumented type: String\n\nRequirement: Yes"
+            "description": "The ISO currency code for the compensation amount. Refer to Supported currencies for job posting.\n\nDocumented type: String\n\nRequirement: Yes"
           }
         },
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#money-amount-schema"
@@ -475091,7 +475091,7 @@
           },
           "currencyCode": {
             "type": "string",
-            "description": "ISO currency code.\n\nDocumented type: String\n\nRequirement: Yes"
+            "description": "The ISO currency code for the compensation amount. Refer to Supported currencies for job posting.\n\nDocumented type: String\n\nRequirement: Yes"
           }
         },
         "description": "The amount of compensation.\n\nDocumented type: MoneyAmount\n\nRequirement: No"
@@ -475157,7 +475157,7 @@
           },
           "currencyCode": {
             "type": "string",
-            "description": "ISO currency code.\n\nDocumented type: String\n\nRequirement: Yes"
+            "description": "The ISO currency code for the compensation amount. Refer to Supported currencies for job posting.\n\nDocumented type: String\n\nRequirement: Yes"
           }
         },
         "description": "Represents the inclusive (less than or equal to) value in which to end the range. This field is optional. An unset field indicates an open range; for example if start is 2 it means everything greater than or equal to 2.\n\nDocumented type: MoneyAmount\n\nRequirement: Yes"
@@ -475175,7 +475175,7 @@
           },
           "currencyCode": {
             "type": "string",
-            "description": "ISO currency code.\n\nDocumented type: String\n\nRequirement: Yes"
+            "description": "The ISO currency code for the compensation amount. Refer to Supported currencies for job posting.\n\nDocumented type: String\n\nRequirement: Yes"
           }
         },
         "description": "Represents the inclusive (greater than or equal to) value in which to start the range. This field is optional. An unset field indicates an open range; for example, if end is 5, it means everything less than or equal to 5.\n\nDocumented type: MoneyAmount\n\nRequirement: Yes"
