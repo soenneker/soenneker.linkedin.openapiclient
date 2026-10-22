@@ -1,20 +1,13 @@
 {
   "ChangedPages": [
     "https://learn.microsoft.com/en-us/linkedin/",
-    "https://learn.microsoft.com/en-us/linkedin/compliance/",
     "https://learn.microsoft.com/en-us/linkedin/consumer/",
-    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
     "https://learn.microsoft.com/en-us/linkedin/learning/",
-    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/hcm",
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
     "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile",
     "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
-    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs"
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview"
   ],
   "ChangedPostmanCollections": [],
   "PostmanFetchIssues": [
@@ -26,12 +19,6 @@
   ],
   "AddedOperations": [],
   "RemovedOperations": [],
-  "SpecificationChanges": [
-    {
-      "Pointer": "/components/schemas/Learn_talent_job_postings_api_job_posting_api_schema_money_amount_schema/properties/currencyCode/description",
-      "Before": "ISO currency code.\n\nDocumented type: String\n\nRequirement: Yes",
-      "After": "The ISO currency code for the compensation amount. Refer to Supported currencies for job posting.\n\nDocumented type: String\n\nRequirement: Yes"
-    }
-  ],
-  "SpecificationChanged": true
+  "SpecificationChanges": [],
+  "SpecificationChanged": false
 }
