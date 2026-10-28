@@ -18,18 +18,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Answers provided by the submitter.Documented type: Answer[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectAnswersItem>? Answers { get; set; }
+        public UntypedNode? Answers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectAnswersItem> Answers { get; set; }
+        public UntypedNode Answers { get; set; }
 #endif
         /// <summary>Responses to the consents that are provided by the submitter.Documented type: ConsentResponse[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectConsentResponsesItem>? ConsentResponses { get; set; }
+        public UntypedNode? ConsentResponses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectConsentResponsesItem> ConsentResponses { get; set; }
+        public UntypedNode ConsentResponses { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5FormResponse"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "answers", n => { Answers = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectAnswersItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectAnswersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "consentResponses", n => { ConsentResponses = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectConsentResponsesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectConsentResponsesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "answers", n => { Answers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "consentResponses", n => { ConsentResponses = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectAnswersItem>("answers", Answers);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaFormresponseSubObjectConsentResponsesItem>("consentResponses", ConsentResponses);
+            writer.WriteObjectValue<UntypedNode>("answers", Answers);
+            writer.WriteObjectValue<UntypedNode>("consentResponses", ConsentResponses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

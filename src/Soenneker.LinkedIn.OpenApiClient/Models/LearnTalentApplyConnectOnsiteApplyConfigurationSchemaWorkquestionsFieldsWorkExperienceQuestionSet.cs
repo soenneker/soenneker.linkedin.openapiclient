@@ -16,21 +16,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field captures whether the &quot;City&quot; question should be asked. If not specified, this field will default to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCityQuestionRequirement? CityQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCityQuestionRequirement CityQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether the &quot;Company&quot; question should be asked. If not specified, this field will default to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCompanyQuestionRequirement? CompanyQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCompanyQuestionRequirement CompanyQuestionRequirement { get; set; }
-#endif
         /// <summary>The custom questions to be included within the Work Experience section.Documented type: SimpleTalentQuestionDefinition[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,33 +28,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
 #endif
         /// <summary>This field captures whether the &quot;Description&quot; question should be asked. If not specified, this field will default to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsDescriptionQuestionRequirement? DescriptionQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsDescriptionQuestionRequirement DescriptionQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether the &quot;Employment Dates&quot; question should be asked. If not specified, this field will default to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsEmploymentDatesQuestionRequirement? EmploymentDatesQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsEmploymentDatesQuestionRequirement EmploymentDatesQuestionRequirement { get; set; }
-#endif
         /// <summary>This field requires submission of work experience. The work experience min limit can be set to 1, then at least 1 has to be provided in order to submit the subsection. If no minRequired is specified, this field will default to 0.Documented type: IntegerRequirement: No</summary>
         public int? MinRequired { get; set; }
         /// <summary>The maximum number of times this question set can be asked. For example, if the value is 1 then the question set will only appear once. For this question set, the acceptable range of values is [1, 10]. If no repeatLimit is specified, this field will default to 10.Documented type: IntegerRequirement: No</summary>
         public int? RepeatLimit { get; set; }
         /// <summary>This field captures whether the &quot;Title&quot; question should be asked. If not specified, this field will default to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsTitleQuestionRequirement? TitleQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsTitleQuestionRequirement TitleQuestionRequirement { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet"/> and sets the default values.
         /// </summary>
@@ -92,14 +62,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cityQuestionRequirement", n => { CityQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCityQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCityQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "companyQuestionRequirement", n => { CompanyQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCompanyQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCompanyQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "cityQuestionRequirement", n => { CityQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCityQuestionRequirement>(); } },
+                { "companyQuestionRequirement", n => { CompanyQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCompanyQuestionRequirement>(); } },
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "descriptionQuestionRequirement", n => { DescriptionQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsDescriptionQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsDescriptionQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "employmentDatesQuestionRequirement", n => { EmploymentDatesQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsEmploymentDatesQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsEmploymentDatesQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "descriptionQuestionRequirement", n => { DescriptionQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsDescriptionQuestionRequirement>(); } },
+                { "employmentDatesQuestionRequirement", n => { EmploymentDatesQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsEmploymentDatesQuestionRequirement>(); } },
                 { "minRequired", n => { MinRequired = n.GetIntValue(); } },
                 { "repeatLimit", n => { RepeatLimit = n.GetIntValue(); } },
-                { "titleQuestionRequirement", n => { TitleQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsTitleQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsTitleQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "titleQuestionRequirement", n => { TitleQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsTitleQuestionRequirement>(); } },
             };
         }
         /// <summary>
@@ -109,14 +79,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCityQuestionRequirement>("cityQuestionRequirement", CityQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCompanyQuestionRequirement>("companyQuestionRequirement", CompanyQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCityQuestionRequirement>("cityQuestionRequirement", CityQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsCompanyQuestionRequirement>("companyQuestionRequirement", CompanyQuestionRequirement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsDescriptionQuestionRequirement>("descriptionQuestionRequirement", DescriptionQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsEmploymentDatesQuestionRequirement>("employmentDatesQuestionRequirement", EmploymentDatesQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsDescriptionQuestionRequirement>("descriptionQuestionRequirement", DescriptionQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsEmploymentDatesQuestionRequirement>("employmentDatesQuestionRequirement", EmploymentDatesQuestionRequirement);
             writer.WriteIntValue("minRequired", MinRequired);
             writer.WriteIntValue("repeatLimit", RepeatLimit);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsTitleQuestionRequirement>("titleQuestionRequirement", TitleQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkexperiencequestionsetFieldsTitleQuestionRequirement>("titleQuestionRequirement", TitleQuestionRequirement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

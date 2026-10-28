@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns
 {
     /// <summary>
-    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccounts-id}\adCampaigns
+    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccountsId}\adCampaigns
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdCampaignsRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdCampaignsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/adCampaigns{?ids*,ids%5B0%5D*,ids%5B1%5D*,q*,search%2EcampaignGroup%2Evalues%5B0%5D*}", pathParameters)
+        public AdCampaignsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/adCampaigns{?ids*,ids%5B0%5D*,ids%5B1%5D*,q*,search%2EcampaignGroup%2Evalues%5B0%5D*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdCampaignsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/adCampaigns{?ids*,ids%5B0%5D*,ids%5B1%5D*,q*,search%2EcampaignGroup%2Evalues%5B0%5D*}", rawUrl)
+        public AdCampaignsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/adCampaigns{?ids*,ids%5B0%5D*,ids%5B1%5D*,q*,search%2EcampaignGroup%2Evalues%5B0%5D*}", rawUrl)
         {
         }
         /// <summary>

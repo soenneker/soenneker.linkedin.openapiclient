@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Description of the event as provided by the creator. Not present if no description was provided.Documented type: MultiLocaleRichText</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseDescription? Description { get; set; }
+        public UntypedNode? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseDescription Description { get; set; }
+        public UntypedNode Description { get; set; }
 #endif
         /// <summary>Unique identifier of the event.Documented type: Long</summary>
         public long? Id { get; set; }
@@ -43,10 +43,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Specifies how to attach a lead generation form to the event. Can only be set at creation — cannot be updated afterward.Documented type: LeadGenFormSpec</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseLeadGenFormSpec? LeadGenFormSpec { get; set; }
+        public UntypedNode? LeadGenFormSpec { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseLeadGenFormSpec LeadGenFormSpec { get; set; }
+        public UntypedNode LeadGenFormSpec { get; set; }
 #endif
         /// <summary>Entity responsible for organizing this event. Accepted URN types: urn:li:person:{id}, urn:li:organization:{id}. Cannot be changed after creation.Documented type: URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,10 +100,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "backgroundImage", n => { BackgroundImage = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "leadGenForm", n => { LeadGenForm = n.GetStringValue(); } },
-                { "leadGenFormSpec", n => { LeadGenFormSpec = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseLeadGenFormSpec>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseLeadGenFormSpec.CreateFromDiscriminatorValue); } },
+                { "leadGenFormSpec", n => { LeadGenFormSpec = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "organizer", n => { Organizer = n.GetStringValue(); } },
                 { "startsAt", n => { StartsAt = n.GetLongValue(); } },
                 { "ugcPost", n => { UgcPost = n.GetStringValue(); } },
@@ -118,10 +118,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("backgroundImage", BackgroundImage);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseDescription>("description", Description);
+            writer.WriteObjectValue<UntypedNode>("description", Description);
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("leadGenForm", LeadGenForm);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEvent201ResponseLeadGenFormSpec>("leadGenFormSpec", LeadGenFormSpec);
+            writer.WriteObjectValue<UntypedNode>("leadGenFormSpec", LeadGenFormSpec);
             writer.WriteStringValue("organizer", Organizer);
             writer.WriteLongValue("startsAt", StartsAt);
             writer.WriteStringValue("ugcPost", UgcPost);

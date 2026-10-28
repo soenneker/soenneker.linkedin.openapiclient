@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Represents the filter list with the same dimension type.Documented type: Array[OrganizationalPageAnalyticsDimension]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilterValuesItem>? Values { get; set; }
+        public UntypedNode? Values { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilterValuesItem> Values { get; set; }
+        public UntypedNode Values { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilter"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilterValuesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilterValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "values", n => { Values = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilterValuesItem>("values", Values);
+            writer.WriteObjectValue<UntypedNode>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

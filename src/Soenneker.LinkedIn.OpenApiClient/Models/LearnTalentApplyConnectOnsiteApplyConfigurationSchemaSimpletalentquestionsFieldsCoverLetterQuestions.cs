@@ -16,13 +16,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field captures whether a cover letter file (max 512 KB, accepted file types: &quot;doc&quot;, &quot;docx&quot;, &quot;pdf&quot;) needs to be provided. Defaults to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement? CoverLetterQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement CoverLetterQuestionRequirement { get; set; }
-#endif
         /// <summary>The custom questions to be included within the Cover Letter section.Documented type: SimpleTalentQuestionDefinition[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,13 +26,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
 #endif
         /// <summary>This field captures whether to accept a multi-line text input for a cover letter. Defaults to SKIP.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement? TextCoverLetterQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement TextCoverLetterQuestionRequirement { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions"/> and sets the default values.
         /// </summary>
@@ -64,9 +52,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coverLetterQuestionRequirement", n => { CoverLetterQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "coverLetterQuestionRequirement", n => { CoverLetterQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement>(); } },
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "textCoverLetterQuestionRequirement", n => { TextCoverLetterQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "textCoverLetterQuestionRequirement", n => { TextCoverLetterQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement>(); } },
             };
         }
         /// <summary>
@@ -76,9 +64,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement>("coverLetterQuestionRequirement", CoverLetterQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement>("coverLetterQuestionRequirement", CoverLetterQuestionRequirement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement>("textCoverLetterQuestionRequirement", TextCoverLetterQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement>("textCoverLetterQuestionRequirement", TextCoverLetterQuestionRequirement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

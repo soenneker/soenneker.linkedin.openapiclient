@@ -115,10 +115,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>List of locations for the entity.Documented type: LocationInfo[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLocationsItem>? Locations { get; set; }
+        public UntypedNode? Locations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLocationsItem> Locations { get; set; }
+        public UntypedNode Locations { get; set; }
 #endif
         /// <summary>The entity’s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly. For more information, see GET a single imageDocumented type: CroppedImage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,10 +161,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The specialties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSpecialtiesItem>? Specialties { get; set; }
+        public UntypedNode? Specialties { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSpecialtiesItem> Specialties { get; set; }
+        public UntypedNode Specialties { get; set; }
 #endif
         /// <summary>Range of the number of staff associated with this entity. Possible values: SIZE_1 SIZE_2_TO_10 SIZE_11_TO_50 SIZE_51_TO_200 SIZE_201_TO_500 SIZE_501_TO_1000 SIZE_1001_TO_5000 SIZE_5001_TO_10000 SIZE_10001_OR_MOREDocumented type: string</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseStaffCountRange? StaffCountRange { get; set; }
@@ -238,7 +238,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
                 { "localizedSpecialties", n => { LocalizedSpecialties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "localizedWebsite", n => { LocalizedWebsite = n.GetStringValue(); } },
-                { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLocationsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLocationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "locations", n => { Locations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "logoV2", n => { LogoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLogoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLogoV2.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseName>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseName.CreateFromDiscriminatorValue); } },
                 { "organizationStatus", n => { OrganizationStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseOrganizationStatus>(); } },
@@ -246,7 +246,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "overviewPhotoV2", n => { OverviewPhotoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseOverviewPhotoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseOverviewPhotoV2.CreateFromDiscriminatorValue); } },
                 { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponsePrimaryOrganizationType>(); } },
                 { "schoolAttributes", n => { SchoolAttributes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes.CreateFromDiscriminatorValue); } },
-                { "specialties", n => { Specialties = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSpecialtiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSpecialtiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "specialties", n => { Specialties = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "staffCountRange", n => { StaffCountRange = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseStaffCountRange>(); } },
                 { "$URN", n => { URN = n.GetStringValue(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
@@ -274,7 +274,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("localizedName", LocalizedName);
             writer.WriteCollectionOfPrimitiveValues<string>("localizedSpecialties", LocalizedSpecialties);
             writer.WriteStringValue("localizedWebsite", LocalizedWebsite);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLocationsItem>("locations", Locations);
+            writer.WriteObjectValue<UntypedNode>("locations", Locations);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseLogoV2>("logoV2", LogoV2);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseName>("name", Name);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseOrganizationStatus>("organizationStatus", OrganizationStatus);
@@ -282,7 +282,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseOverviewPhotoV2>("overviewPhotoV2", OverviewPhotoV2);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponsePrimaryOrganizationType>("primaryOrganizationType", PrimaryOrganizationType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes>("schoolAttributes", SchoolAttributes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSpecialtiesItem>("specialties", Specialties);
+            writer.WriteObjectValue<UntypedNode>("specialties", Specialties);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseStaffCountRange>("staffCountRange", StaffCountRange);
             writer.WriteStringValue("$URN", URN);
             writer.WriteStringValue("vanityName", VanityName);

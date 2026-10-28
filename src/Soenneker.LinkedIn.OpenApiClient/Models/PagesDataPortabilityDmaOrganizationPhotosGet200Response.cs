@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Admin/uploader can specify a caption for each uploaded image.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCaption? Caption { get; set; }
+        public UntypedNode? Caption { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCaption Caption { get; set; }
+        public UntypedNode Caption { get; set; }
 #endif
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>AuditStamp that records the deletion of this resource, association, or sub-resource. The deleted timestamp must be later than the creation timestamp. Note: It may or may not match the lastModified timestamp, depending on the semantics of the resource, association, or sub-resource.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseDeleted? Deleted { get; set; }
+        public UntypedNode? Deleted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseDeleted Deleted { get; set; }
+        public UntypedNode Deleted { get; set; }
 #endif
         /// <summary>Unique identifier for this uploaded photo.Documented type: OrganizationPhotoUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +65,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Names of current published target audiences this photo was used in, such as US Engineering, Designers, etc. These names are customized by organization.Documented type: Array of stringsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseTargetAudienceNamesItem>? TargetAudienceNames { get; set; }
+        public UntypedNode? TargetAudienceNames { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseTargetAudienceNamesItem> TargetAudienceNames { get; set; }
+        public UntypedNode TargetAudienceNames { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200Response"/> and sets the default values.
@@ -95,13 +95,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "caption", n => { Caption = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCaption>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCaption.CreateFromDiscriminatorValue); } },
+                { "caption", n => { Caption = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCreated.CreateFromDiscriminatorValue); } },
-                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseDeleted.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseLastModified.CreateFromDiscriminatorValue); } },
                 { "photoAsset", n => { PhotoAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponsePhotoAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponsePhotoAsset.CreateFromDiscriminatorValue); } },
-                { "targetAudienceNames", n => { TargetAudienceNames = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseTargetAudienceNamesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseTargetAudienceNamesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "targetAudienceNames", n => { TargetAudienceNames = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -111,13 +111,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCaption>("caption", Caption);
+            writer.WriteObjectValue<UntypedNode>("caption", Caption);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseCreated>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseDeleted>("deleted", Deleted);
+            writer.WriteObjectValue<UntypedNode>("deleted", Deleted);
             writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseLastModified>("lastModified", LastModified);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponsePhotoAsset>("photoAsset", PhotoAsset);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosGet200ResponseTargetAudienceNamesItem>("targetAudienceNames", TargetAudienceNames);
+            writer.WriteObjectValue<UntypedNode>("targetAudienceNames", TargetAudienceNames);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

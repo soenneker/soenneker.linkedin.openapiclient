@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf3"/>, List&lt;int&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecruiterSystemConnectUpsertEntityAclRequest : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type List&lt;int&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? Integer { get; set; }
+#nullable restore
+#else
+        public List<int?> Integer { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,14 +37,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf3 RecruiterSystemConnectUpsertEntityAclRequestAnyOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestBranch1? RecruiterSystemConnectUpsertEntityAclRequestBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestBranch1 RecruiterSystemConnectUpsertEntityAclRequestBranch1 { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,9 +46,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequest();
-            result.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2();
-            result.RecruiterSystemConnectUpsertEntityAclRequestAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf3();
-            result.RecruiterSystemConnectUpsertEntityAclRequestBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestBranch1();
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<int?>()?.AsList() is List<int?> integerValue)
+            {
+                result.Integer = integerValue;
+            }
+            else {
+                result.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2();
+                result.RecruiterSystemConnectUpsertEntityAclRequestAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf3();
+            }
             return result;
         }
         /// <summary>
@@ -57,9 +62,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecruiterSystemConnectUpsertEntityAclRequestAnyOf2 != null || RecruiterSystemConnectUpsertEntityAclRequestAnyOf3 != null || RecruiterSystemConnectUpsertEntityAclRequestBranch1 != null)
+            if(RecruiterSystemConnectUpsertEntityAclRequestAnyOf2 != null || RecruiterSystemConnectUpsertEntityAclRequestAnyOf3 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectUpsertEntityAclRequestAnyOf2, RecruiterSystemConnectUpsertEntityAclRequestAnyOf3, RecruiterSystemConnectUpsertEntityAclRequestBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectUpsertEntityAclRequestAnyOf2, RecruiterSystemConnectUpsertEntityAclRequestAnyOf3);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +75,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2>(null, RecruiterSystemConnectUpsertEntityAclRequestAnyOf2, RecruiterSystemConnectUpsertEntityAclRequestAnyOf3, RecruiterSystemConnectUpsertEntityAclRequestBranch1);
+            if(Integer != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<int?>(null, Integer);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2>(null, RecruiterSystemConnectUpsertEntityAclRequestAnyOf2, RecruiterSystemConnectUpsertEntityAclRequestAnyOf3);
+            }
         }
     }
 }

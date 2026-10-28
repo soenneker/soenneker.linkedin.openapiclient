@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The candidateInterestModuleVisble property</summary>
+        /// <summary>Indicates if the candidate interest module is On. When true, candidate interest module is On. Members will see the CTA (Call To Action) to express interest in the organization. When false, candidate interest module is Off. Members will not see the CTA (Call To Action) to express interest in the organization.Documented type: booleanRequirement: No</summary>
         public bool? CandidateInterestModuleVisble { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest"/> and sets the default values.

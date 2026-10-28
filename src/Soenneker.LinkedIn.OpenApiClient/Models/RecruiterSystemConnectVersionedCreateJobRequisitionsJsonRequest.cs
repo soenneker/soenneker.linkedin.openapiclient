@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6"/>, List&lt;global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item&gt;, List&lt;int&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequest : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type List&lt;int&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? Integer { get; set; }
+#nullable restore
+#else
+        public List<int?> Integer { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,13 +37,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3 RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper"/></summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper? RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item>? RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item> RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,14 +61,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6 RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1? RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1 RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1 { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,12 +70,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequest();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1();
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item> recruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4ItemValue)
+            {
+                result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item = recruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4ItemValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<int?>()?.AsList() is List<int?> integerValue)
+            {
+                result.Integer = integerValue;
+            }
+            else {
+                result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2();
+                result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3();
+                result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5();
+                result.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6();
+            }
             return result;
         }
         /// <summary>
@@ -84,9 +92,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2 != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3 != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5 != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6 != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1 != null)
+            if(RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2 != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3 != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5 != null || RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -97,7 +105,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2>(null, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Wrapper, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestBranch1);
+            if(RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item>(null, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item);
+            }
+            else if(Integer != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<int?>(null, Integer);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2>(null, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf3, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf5, RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6);
+            }
         }
     }
 }

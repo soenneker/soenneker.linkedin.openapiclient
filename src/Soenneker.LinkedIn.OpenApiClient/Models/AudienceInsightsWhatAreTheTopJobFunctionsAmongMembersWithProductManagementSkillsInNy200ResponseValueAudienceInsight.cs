@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The groupedBy property</summary>
+        /// <summary>The ad facet for which the audience is sliced by. This field contains the ad facet urn; the same as the urn of the AdTargetingEntity element of the facets array.Documented type: AdTargetingFacetUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupedBy { get; set; }
@@ -26,10 +26,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The segmentations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsItem>? Segmentations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item>? Segmentations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsItem> Segmentations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item> Segmentations { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "groupedBy", n => { GroupedBy = n.GetStringValue(); } },
-                { "segmentations", n => { Segmentations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "segmentations", n => { Segmentations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("groupedBy", GroupedBy);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsItem>("segmentations", Segmentations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item>("segmentations", Segmentations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives
 {
     /// <summary>
-    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccounts-id}\creatives
+    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccountsId}\creatives
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreativesRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreativesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives{?campaigns*,ids*,pageSize*,q*}", pathParameters)
+        public CreativesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/creatives{?campaigns*,ids*,pageSize*,q*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreativesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives{?campaigns*,ids*,pageSize*,q*}", rawUrl)
+        public CreativesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/creatives{?campaigns*,ids*,pageSize*,q*}", rawUrl)
         {
         }
         /// <summary>

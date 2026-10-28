@@ -17,18 +17,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>This value is used as one of the following: amount to bid (for manual bidding), amount which is the target cost (for target cost bidding) per click, impression, or other event depending on the pricing model, or cost cap (for cost cap bidding). The amount of money as a real number string. The amount should be non-negative if the bidding strategy is manual, target cost, or cost cap bidding. The default is 0 with the currency code set to match that of the associated account.Documented type: BigDecimal, default=0Requirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostAmount? Amount { get; set; }
+        public UntypedNode? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostAmount Amount { get; set; }
+        public UntypedNode Amount { get; set; }
 #endif
         /// <summary>Amount to bid per click, impression, or other event depending on the pricing model. The default is 0 with the currency code set to match that of the associated account. ISO currency code.Documented type: Currencydefault is set to match the associated accountRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostCurrencyCode? CurrencyCode { get; set; }
+        public UntypedNode? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostCurrencyCode CurrencyCode { get; set; }
+        public UntypedNode CurrencyCode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostAmount>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostAmount.CreateFromDiscriminatorValue); } },
-                { "currencyCode", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostCurrencyCode>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "currencyCode", n => { CurrencyCode = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostAmount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCostCurrencyCode>("currencyCode", CurrencyCode);
+            writer.WriteObjectValue<UntypedNode>("amount", Amount);
+            writer.WriteObjectValue<UntypedNode>("currencyCode", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

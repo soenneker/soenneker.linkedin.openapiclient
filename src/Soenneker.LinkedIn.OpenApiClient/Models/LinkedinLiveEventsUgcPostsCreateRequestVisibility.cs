@@ -8,11 +8,13 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkedinLiveEventsUgcPostsCreateRequestVisibility : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1"/></summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1? LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,22 +31,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1? LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1 LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4? LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4 LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4"/></summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4? LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,10 +42,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibility();
-            result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2();
-            result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3();
-            result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1();
-            result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4();
+            if(parseNode.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1>() is global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1Value)
+            {
+                result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 = linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1Value;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4>() is global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4Value)
+            {
+                result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 = linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4Value;
+            }
+            else {
+                result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2();
+                result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3();
+            }
             return result;
         }
         /// <summary>
@@ -66,9 +62,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 != null || LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 != null || LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1 != null || LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4 != null)
+            if(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 != null || LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1, LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,7 +75,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2>(null, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch1, LinkedinLiveEventsUgcPostsCreateRequestVisibilityBranch4);
+            if(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1>(null, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1);
+            }
+            else if(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4>(null, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2>(null, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3);
+            }
         }
     }
 }

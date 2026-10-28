@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.Urn3Ali3AsponsoredCreative3A1138847954
 {
     /// <summary>
-    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccounts-id}\creatives\urn%3Ali%3AsponsoredCreative%3A1138847954
+    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccountsId}\creatives\urn%3Ali%3AsponsoredCreative%3A1138847954
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Urn3Ali3AsponsoredCreative3A1138847954RequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Urn3Ali3AsponsoredCreative3A1138847954RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives/urn%3Ali%3AsponsoredCreative%3A1138847954", pathParameters)
+        public Urn3Ali3AsponsoredCreative3A1138847954RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/creatives/urn%3Ali%3AsponsoredCreative%3A1138847954", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Urn3Ali3AsponsoredCreative3A1138847954RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives/urn%3Ali%3AsponsoredCreative%3A1138847954", rawUrl)
+        public Urn3Ali3AsponsoredCreative3A1138847954RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/creatives/urn%3Ali%3AsponsoredCreative%3A1138847954", rawUrl)
         {
         }
         /// <summary>

@@ -17,18 +17,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The callToAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoCallToAction? CallToAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_callToAction? CallToAction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoCallToAction CallToAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_callToAction CallToAction { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoMessage? Message { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_message? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoMessage Message { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_message Message { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callToAction", n => { CallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoCallToAction.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoMessage>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoMessage.CreateFromDiscriminatorValue); } },
+                { "callToAction", n => { CallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_callToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_callToAction.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_message>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_message.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoCallToAction>("callToAction", CallToAction);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfoMessage>("message", Message);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_callToAction>("callToAction", CallToAction);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo_message>("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

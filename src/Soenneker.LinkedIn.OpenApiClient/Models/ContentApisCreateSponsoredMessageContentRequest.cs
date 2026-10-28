@@ -41,10 +41,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Indicates whether this message’s next action is another message or an array of optionsDocumented type: SponsoredMessageContentUrn or SponsoredMessageOption[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem>? NextAction { get; set; }
+        public UntypedNode? NextAction { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem> NextAction { get; set; }
+        public UntypedNode NextAction { get; set; }
 #endif
         /// <summary>The conversation to which this message belongsDocumented type: SponsoredConversationUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "bodySource", n => { BodySource = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestBodySource>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestBodySource.CreateFromDiscriminatorValue); } },
                 { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "nextAction", n => { NextAction = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "nextAction", n => { NextAction = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "sponsoredConversation", n => { SponsoredConversation = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestBodySource>("bodySource", BodySource);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem>("elements", Elements);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem>("nextAction", NextAction);
+            writer.WriteObjectValue<UntypedNode>("nextAction", NextAction);
             writer.WriteStringValue("sponsoredConversation", SponsoredConversation);
             writer.WriteAdditionalData(AdditionalData);
         }

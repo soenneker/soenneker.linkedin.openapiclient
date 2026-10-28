@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The contents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetContentsItem>? Contents { get; set; }
+        public UntypedNode? Contents { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetContentsItem> Contents { get; set; }
+        public UntypedNode Contents { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contents", n => { Contents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetContentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetContentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "contents", n => { Contents = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetTitle.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "urn", n => { Urn = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetContentsItem>("contents", Contents);
+            writer.WriteObjectValue<UntypedNode>("contents", Contents);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7AssetTitle>("title", Title);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("urn", Urn);

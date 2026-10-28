@@ -16,23 +16,23 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The lastUpdated property</summary>
-        public long? LastUpdated { get; set; }
-        /// <summary>The rejectionReasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoRejectionReasonsItem>? RejectionReasons { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoLastUpdated? LastUpdated { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoRejectionReasonsItem> RejectionReasons { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoLastUpdated LastUpdated { get; set; }
 #endif
-        /// <summary>The reviewStatus property</summary>
+        /// <summary>An array of rejection reasons for the Lead Form. It&apos;s Non-empty if the review status is REJECTED in the latest review.Documented type: RejectionReason</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewStatus { get; set; }
+        public UntypedNode? RejectionReasons { get; set; }
 #nullable restore
 #else
-        public string ReviewStatus { get; set; }
+        public UntypedNode RejectionReasons { get; set; }
 #endif
+        /// <summary>Indicate the state of review for the Lead Form.Documented type: LeadGenFormReviewStatus</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoReviewStatus? ReviewStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfo"/> and sets the default values.
         /// </summary>
@@ -58,9 +58,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lastUpdated", n => { LastUpdated = n.GetLongValue(); } },
-                { "rejectionReasons", n => { RejectionReasons = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoRejectionReasonsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoRejectionReasonsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "reviewStatus", n => { ReviewStatus = n.GetStringValue(); } },
+                { "lastUpdated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoLastUpdated>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoLastUpdated.CreateFromDiscriminatorValue); } },
+                { "rejectionReasons", n => { RejectionReasons = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "reviewStatus", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoReviewStatus>(); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("lastUpdated", LastUpdated);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoRejectionReasonsItem>("rejectionReasons", RejectionReasons);
-            writer.WriteStringValue("reviewStatus", ReviewStatus);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoLastUpdated>("lastUpdated", LastUpdated);
+            writer.WriteObjectValue<UntypedNode>("rejectionReasons", RejectionReasons);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfoReviewStatus>("reviewStatus", ReviewStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Featured members.Documented type: Array of [PersonUrn]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersFeaturedMembersItem>? FeaturedMembers { get; set; }
+        public UntypedNode? FeaturedMembers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersFeaturedMembersItem> FeaturedMembers { get; set; }
+        public UntypedNode FeaturedMembers { get; set; }
 #endif
         /// <summary>Title for a featured members section.Documented type: SectionTitleRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "featuredMembers", n => { FeaturedMembers = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersFeaturedMembersItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersFeaturedMembersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "featuredMembers", n => { FeaturedMembers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "sectionTitle", n => { SectionTitle = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersSectionTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersSectionTitle.CreateFromDiscriminatorValue); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersFeaturedMembersItem>("featuredMembers", FeaturedMembers);
+            writer.WriteObjectValue<UntypedNode>("featuredMembers", FeaturedMembers);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentfeaturedmembersSectionTitle>("sectionTitle", SectionTitle);
             writer.WriteBoolValue("visible", Visible);
             writer.WriteAdditionalData(AdditionalData);

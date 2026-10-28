@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Union of possible MediaOverlay model, could be media frame, stickers etc.Documented type: MediaFrame object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaMediaOverlayOverlay? Overlay { get; set; }
+        public UntypedNode? Overlay { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaMediaOverlayOverlay Overlay { get; set; }
+        public UntypedNode Overlay { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaMediaOverlay"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "overlay", n => { Overlay = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaMediaOverlayOverlay>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaMediaOverlayOverlay.CreateFromDiscriminatorValue); } },
+                { "overlay", n => { Overlay = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaMediaOverlayOverlay>("overlay", Overlay);
+            writer.WriteObjectValue<UntypedNode>("overlay", Overlay);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

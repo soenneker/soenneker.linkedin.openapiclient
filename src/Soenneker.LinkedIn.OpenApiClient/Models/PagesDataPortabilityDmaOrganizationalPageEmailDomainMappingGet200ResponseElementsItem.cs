@@ -15,10 +15,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>AuditStamp field corresponding to when the email domain is made active and who activated it.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated? Activated { get; set; }
+        public UntypedNode? Activated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated Activated { get; set; }
+        public UntypedNode Activated { get; set; }
 #endif
         /// <summary>Represents the time at which this email domain will be active.Documented type: longRequirement: No</summary>
         public long? ActiveAt { get; set; }
@@ -35,10 +35,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Timestamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted? Deleted { get; set; }
+        public UntypedNode? Deleted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted Deleted { get; set; }
+        public UntypedNode Deleted { get; set; }
 #endif
         /// <summary>The time to live for emails of this domain in milliseconds.Documented type: longRequirement: No</summary>
         public long? EmailVerificationDuration { get; set; }
@@ -85,10 +85,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activated", n => { Activated = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated.CreateFromDiscriminatorValue); } },
+                { "activated", n => { Activated = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "activeAt", n => { ActiveAt = n.GetLongValue(); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
-                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "emailVerificationDuration", n => { EmailVerificationDuration = n.GetLongValue(); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey.CreateFromDiscriminatorValue); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
@@ -102,10 +102,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated>("activated", Activated);
+            writer.WriteObjectValue<UntypedNode>("activated", Activated);
             writer.WriteLongValue("activeAt", ActiveAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemCreated>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted>("deleted", Deleted);
+            writer.WriteObjectValue<UntypedNode>("deleted", Deleted);
             writer.WriteLongValue("emailVerificationDuration", EmailVerificationDuration);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey>("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemLastModified>("lastModified", LastModified);

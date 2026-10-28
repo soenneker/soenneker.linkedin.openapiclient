@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The photos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionPhotosItem>? Photos { get; set; }
+        public UntypedNode? Photos { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionPhotosItem> Photos { get; set; }
+        public UntypedNode Photos { get; set; }
 #endif
         /// <summary>The sectionTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionSectionTitle SectionTitle { get; set; }
 #endif
-        /// <summary>The visible property</summary>
+        /// <summary>Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it&apos;s still a work in progress. Default true.Documented type: booleanRequirement: No</summary>
         public bool? Visible { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSection"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "photos", n => { Photos = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionPhotosItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionPhotosItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "photos", n => { Photos = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "sectionTitle", n => { SectionTitle = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionSectionTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionSectionTitle.CreateFromDiscriminatorValue); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionPhotosItem>("photos", Photos);
+            writer.WriteObjectValue<UntypedNode>("photos", Photos);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSectionSectionTitle>("sectionTitle", SectionTitle);
             writer.WriteBoolValue("visible", Visible);
             writer.WriteAdditionalData(AdditionalData);

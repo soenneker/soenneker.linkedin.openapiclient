@@ -17,22 +17,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The consents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoConsentsItem>? Consents { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_consents? Consents { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoConsentsItem> Consents { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_consents Consents { get; set; }
 #endif
         /// <summary>The legalDisclaimer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoLegalDisclaimer? LegalDisclaimer { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalDisclaimer? LegalDisclaimer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoLegalDisclaimer LegalDisclaimer { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalDisclaimer LegalDisclaimer { get; set; }
 #endif
         /// <summary>The legalInfoId property</summary>
-        public long? LegalInfoId { get; set; }
-        /// <summary>The privacyPolicyUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalInfoId? LegalInfoId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalInfoId LegalInfoId { get; set; }
+#endif
+        /// <summary>(Optional) The URL of the privacy policy that covers any data passed to the owner of the form. Optional since it is not required to be present for all the use cases.Documented type: URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivacyPolicyUrl { get; set; }
@@ -65,9 +71,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consents", n => { Consents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoConsentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoConsentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "legalDisclaimer", n => { LegalDisclaimer = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoLegalDisclaimer>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoLegalDisclaimer.CreateFromDiscriminatorValue); } },
-                { "legalInfoId", n => { LegalInfoId = n.GetLongValue(); } },
+                { "consents", n => { Consents = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_consents>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_consents.CreateFromDiscriminatorValue); } },
+                { "legalDisclaimer", n => { LegalDisclaimer = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalDisclaimer>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalDisclaimer.CreateFromDiscriminatorValue); } },
+                { "legalInfoId", n => { LegalInfoId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalInfoId>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalInfoId.CreateFromDiscriminatorValue); } },
                 { "privacyPolicyUrl", n => { PrivacyPolicyUrl = n.GetStringValue(); } },
             };
         }
@@ -78,9 +84,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoConsentsItem>("consents", Consents);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfoLegalDisclaimer>("legalDisclaimer", LegalDisclaimer);
-            writer.WriteLongValue("legalInfoId", LegalInfoId);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_consents>("consents", Consents);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalDisclaimer>("legalDisclaimer", LegalDisclaimer);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo_legalInfoId>("legalInfoId", LegalInfoId);
             writer.WriteStringValue("privacyPolicyUrl", PrivacyPolicyUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

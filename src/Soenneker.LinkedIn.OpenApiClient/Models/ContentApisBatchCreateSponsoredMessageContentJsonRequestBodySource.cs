@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySource : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1 ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2? ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2 ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySource();
-            result.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1();
-            result.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +53,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1 != null || ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2 != null)
+            if(ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1, ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +66,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1>(null, ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1, ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceBranch2);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1>(null, ContentApisBatchCreateSponsoredMessageContentJsonRequestBodySourceAnyOf1);
+            }
         }
     }
 }

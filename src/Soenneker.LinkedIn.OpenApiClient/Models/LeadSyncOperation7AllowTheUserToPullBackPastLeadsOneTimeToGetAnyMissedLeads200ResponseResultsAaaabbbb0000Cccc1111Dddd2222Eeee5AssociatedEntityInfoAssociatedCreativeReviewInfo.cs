@@ -20,19 +20,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>An array of rejection reasons for the Lead Form. It&apos;s Non-empty if the review status is REJECTED in the latest review.Documented type: RejectionReason</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfoRejectionReasons? RejectionReasons { get; set; }
+        public UntypedNode? RejectionReasons { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfoRejectionReasons RejectionReasons { get; set; }
+        public UntypedNode RejectionReasons { get; set; }
 #endif
         /// <summary>Indicate the state of review for the Lead Form.Documented type: LeadGenFormReviewStatus</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus? ReviewStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus ReviewStatus { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfo"/> and sets the default values.
         /// </summary>
@@ -59,8 +53,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lastUpdated", n => { LastUpdated = n.GetLongValue(); } },
-                { "rejectionReasons", n => { RejectionReasons = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfoRejectionReasons>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfoRejectionReasons.CreateFromDiscriminatorValue); } },
-                { "reviewStatus", n => { ReviewStatus = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus.CreateFromDiscriminatorValue); } },
+                { "rejectionReasons", n => { RejectionReasons = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "reviewStatus", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus>(); } },
             };
         }
         /// <summary>
@@ -71,8 +65,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("lastUpdated", LastUpdated);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfoRejectionReasons>("rejectionReasons", RejectionReasons);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus>("reviewStatus", ReviewStatus);
+            writer.WriteObjectValue<UntypedNode>("rejectionReasons", RejectionReasons);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus>("reviewStatus", ReviewStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -51,10 +51,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Detailed verification metadata for completed verificationsDocumented type: array[object]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponseVerifiedDetailsItem>? VerifiedDetails { get; set; }
+        public UntypedNode? VerifiedDetails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponseVerifiedDetailsItem> VerifiedDetails { get; set; }
+        public UntypedNode VerifiedDetails { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponse"/> and sets the default values.
@@ -86,7 +86,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "verificationUrl", n => { VerificationUrl = n.GetStringValue(); } },
                 { "verifications", n => { Verifications = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "verifiedDetails", n => { VerifiedDetails = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponseVerifiedDetailsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponseVerifiedDetailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "verifiedDetails", n => { VerifiedDetails = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("userId", UserId);
             writer.WriteCollectionOfPrimitiveValues<string>("verifications", Verifications);
             writer.WriteStringValue("verificationUrl", VerificationUrl);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponseVerifiedDetailsItem>("verifiedDetails", VerifiedDetails);
+            writer.WriteObjectValue<UntypedNode>("verifiedDetails", VerifiedDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

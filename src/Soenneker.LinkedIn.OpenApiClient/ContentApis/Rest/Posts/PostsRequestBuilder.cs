@@ -104,7 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Posts
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, (UrlTemplate.Contains("{?", global::System.StringComparison.Ordinal) ? UrlTemplate.Insert(UrlTemplate.IndexOf("{?", global::System.StringComparison.Ordinal), "/") : UrlTemplate + "/"), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;

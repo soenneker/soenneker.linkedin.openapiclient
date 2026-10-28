@@ -18,13 +18,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The duration the time span represents.Documented type: LongRequirement: Yes</summary>
         public long? Duration { get; set; }
         /// <summary>The unit of time the duration refers to.Documented type: TimeUnitRequirement: Yes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsTimespanUnit? Unit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsTimespanUnit Unit { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete"/> and sets the default values.
         /// </summary>
@@ -51,7 +45,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "duration", n => { Duration = n.GetLongValue(); } },
-                { "unit", n => { Unit = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsTimespanUnit>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsTimespanUnit.CreateFromDiscriminatorValue); } },
+                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsTimespanUnit>(); } },
             };
         }
         /// <summary>
@@ -62,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("duration", Duration);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsTimespanUnit>("unit", Unit);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsTimespanUnit>("unit", Unit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

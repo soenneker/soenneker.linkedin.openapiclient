@@ -16,8 +16,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration property</summary>
-        public long? Duration { get; set; }
-        /// <summary>The unit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration? Duration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration Duration { get; set; }
+#endif
+        /// <summary>Represents the unit of the duration of time. Allowed Unit: DAY.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; set; }
@@ -50,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "duration", n => { Duration = n.GetLongValue(); } },
+                { "duration", n => { Duration = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration>(global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration.CreateFromDiscriminatorValue); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
             };
         }
@@ -61,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("duration", Duration);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration>("duration", Duration);
             writer.WriteStringValue("unit", Unit);
             writer.WriteAdditionalData(AdditionalData);
         }

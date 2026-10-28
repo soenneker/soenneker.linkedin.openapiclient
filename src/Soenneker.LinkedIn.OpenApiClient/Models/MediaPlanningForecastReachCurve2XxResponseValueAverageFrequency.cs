@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The metricCurve property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencyMetricCurveItem>? MetricCurve { get; set; }
+        public UntypedNode? MetricCurve { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencyMetricCurveItem> MetricCurve { get; set; }
+        public UntypedNode MetricCurve { get; set; }
 #endif
         /// <summary>The singlePointMetric property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "metricCurve", n => { MetricCurve = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencyMetricCurveItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencyMetricCurveItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metricCurve", n => { MetricCurve = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "singlePointMetric", n => { SinglePointMetric = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencySinglePointMetric>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencySinglePointMetric.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencyMetricCurveItem>("metricCurve", MetricCurve);
+            writer.WriteObjectValue<UntypedNode>("metricCurve", MetricCurve);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequencySinglePointMetric>("singlePointMetric", SinglePointMetric);
             writer.WriteAdditionalData(AdditionalData);
         }

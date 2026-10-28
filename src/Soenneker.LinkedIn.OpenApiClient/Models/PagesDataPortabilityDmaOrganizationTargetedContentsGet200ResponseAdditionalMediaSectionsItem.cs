@@ -17,34 +17,34 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Body of this media section&apos;s text segment.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemBody? Body { get; set; }
+        public UntypedNode? Body { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemBody Body { get; set; }
+        public UntypedNode Body { get; set; }
 #endif
         /// <summary>Headline of this media section&apos;s text segment.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemHeadline? Headline { get; set; }
+        public UntypedNode? Headline { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemHeadline Headline { get; set; }
+        public UntypedNode Headline { get; set; }
 #endif
         /// <summary>Links at the end of this media section&apos;s text segment.Documented type: Array of [Hyperlink]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionLinksItem>? Links { get; set; }
+        public UntypedNode? Links { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionLinksItem> Links { get; set; }
+        public UntypedNode Links { get; set; }
 #endif
         /// <summary>Media uploaded for the section. Can be a cropped image or video.Documented type: Union of [OrganizationCroppedImage, TalentBrandVideoRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemMedia? Media { get; set; }
+        public UntypedNode? Media { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemMedia Media { get; set; }
+        public UntypedNode Media { get; set; }
 #endif
         /// <summary>Image used for display in the media section.Documented type: OrganizationCroppedImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "body", n => { Body = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemBody>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemBody.CreateFromDiscriminatorValue); } },
-                { "headline", n => { Headline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemHeadline>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemHeadline.CreateFromDiscriminatorValue); } },
-                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "media", n => { Media = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemMedia.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "headline", n => { Headline = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "photoAsset", n => { PhotoAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAsset.CreateFromDiscriminatorValue); } },
                 { "sectionTitle", n => { SectionTitle = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitle.CreateFromDiscriminatorValue); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
@@ -105,10 +105,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemBody>("body", Body);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemHeadline>("headline", Headline);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionLinksItem>("links", Links);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItemMedia>("media", Media);
+            writer.WriteObjectValue<UntypedNode>("body", Body);
+            writer.WriteObjectValue<UntypedNode>("headline", Headline);
+            writer.WriteObjectValue<UntypedNode>("links", Links);
+            writer.WriteObjectValue<UntypedNode>("media", Media);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAsset>("photoAsset", PhotoAsset);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitle>("sectionTitle", SectionTitle);
             writer.WriteBoolValue("visible", Visible);

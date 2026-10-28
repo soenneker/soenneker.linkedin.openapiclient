@@ -79,7 +79,7 @@
         "New Version Header",
         "Example Request with Version Header"
       ],
-      "Text": "GET /rest/someEndpoint HTTP/1.1\nHost: api.linkedin.com\nLinkedin-Version: 20240101",
+      "Text": "GET /rest/someEndpoint HTTP/1.1\nHost: api.linkedin.com\nLinkedIn-Version: 20240101",
       "Headers": [],
       "Rows": []
     },

@@ -26,10 +26,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Label for the CallToAction button.Documented type: CallToActionLabelRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToActionLabel? Label { get; set; }
+        public UntypedNode? Label { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToActionLabel Label { get; set; }
+        public UntypedNode Label { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToAction"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination", n => { Destination = n.GetStringValue(); } },
-                { "label", n => { Label = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToActionLabel>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToActionLabel.CreateFromDiscriminatorValue); } },
+                { "label", n => { Label = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destination", Destination);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToActionLabel>("label", Label);
+            writer.WriteObjectValue<UntypedNode>("label", Label);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

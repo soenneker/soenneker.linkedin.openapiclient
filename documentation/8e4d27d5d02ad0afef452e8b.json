@@ -642,6 +642,19 @@
         "Step 1: Creating Custom Reports in Workday",
         "Organizational Talent Architecture Data Mapping Guide"
       ],
+      "Text": "Note: LinkedIn Learning Career Hub combines jobSummary and jobDescription into the Role Description field. The combined text is limited to 5,000 characters. Any text beyond this limit is cut off.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Talent Architecture Data Mapping Guide",
+      "Anchor": "organizational-talent-architecture-data-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Organizational Talent Architecture Data Mapping Guide"
+      ],
       "Text": "Note: Employee-level data upload is optional. We won\u2019t leverage this data until later in the year, but uploading it now will help streamline future integrations, so manual updates to the integration won\u2019t be needed down the line.",
       "Headers": [],
       "Rows": []

@@ -59,10 +59,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Inline content sponsored in the creative such as ugcPost in order to reduce the number of user calls.Documented type: PostRequirement: Required if action is createInline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemInlineContent? InlineContent { get; set; }
+        public UntypedNode? InlineContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemInlineContent InlineContent { get; set; }
+        public UntypedNode InlineContent { get; set; }
 #endif
         /// <summary>Creative user intended status. The creative intended status is set independently from parent entity status, but parent entity status overrides creative intended status in effect. For example, parent entity status may be PAUSED while creative status is ACTIVE, in which case the creative&apos;s effective status is PAUSED, and not served.ACTIVE - Creative development is complete and the creative is available for review and can be served. PAUSED - Creative development is complete and the creative is current, but should temporarily not be served.DRAFT - Creative development is incomplete and may still be edited.ARCHIVED - Creative development is complete, but creative shouldn&apos;t be served and should be separated from non-archived creatives in any UI.CANCELED - The creative will be hidden when querying all creatives under a campaign and canceled creatives will be retrievable if the underlying posts are still valid/available. PENDING_DELETION - Denotes that the creative has been requested to be deleted that&apos;s currently pending.REMOVED - Denotes that the creative was deleted, but must remain fetchable due to the existence of performance data.Documented type: ENUMRequirement: No</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemIntendedStatus? IntendedStatus { get; set; }
@@ -141,7 +141,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "inlineContent", n => { InlineContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemInlineContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemInlineContent.CreateFromDiscriminatorValue); } },
+                { "inlineContent", n => { InlineContent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "intendedStatus", n => { IntendedStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemIntendedStatus>(); } },
                 { "isServing", n => { IsServing = n.GetBoolValue(); } },
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
@@ -164,7 +164,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdBy", CreatedBy);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemInlineContent>("inlineContent", InlineContent);
+            writer.WriteObjectValue<UntypedNode>("inlineContent", InlineContent);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItemIntendedStatus>("intendedStatus", IntendedStatus);
             writer.WriteBoolValue("isServing", IsServing);
             writer.WriteLongValue("lastModifiedAt", LastModifiedAt);

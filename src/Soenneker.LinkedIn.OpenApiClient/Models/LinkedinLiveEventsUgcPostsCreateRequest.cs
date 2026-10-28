@@ -49,18 +49,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>An AuditStamp corresponding to the creation of this resource.Documented type: AuditStampRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestCreated? Created { get; set; }
+        public UntypedNode? Created { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestCreated Created { get; set; }
+        public UntypedNode Created { get; set; }
 #endif
         /// <summary>An AuditStamp corresponding to the deletion of this resource.Documented type: AuditStampRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDeleted? Deleted { get; set; }
+        public UntypedNode? Deleted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDeleted Deleted { get; set; }
+        public UntypedNode Deleted { get; set; }
 #endif
         /// <summary>The distribution property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,10 +83,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>An AuditStamp corresponding to the last modification of this resource.Documented type: AuditStampRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLastModified? LastModified { get; set; }
+        public UntypedNode? LastModified { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLastModified LastModified { get; set; }
+        public UntypedNode LastModified { get; set; }
 #endif
         /// <summary>The lifecycleState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,12 +165,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "clientApplication", n => { ClientApplication = n.GetStringValue(); } },
                 { "containerEntity", n => { ContainerEntity = n.GetStringValue(); } },
                 { "contentCertificationRecord", n => { ContentCertificationRecord = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestCreated.CreateFromDiscriminatorValue); } },
-                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDeleted.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "distribution", n => { Distribution = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDistribution>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDistribution.CreateFromDiscriminatorValue); } },
                 { "firstPublishedAt", n => { FirstPublishedAt = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLastModified.CreateFromDiscriminatorValue); } },
+                { "lastModified", n => { LastModified = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "lifecycleState", n => { LifecycleState = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLifecycleState>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLifecycleState.CreateFromDiscriminatorValue); } },
                 { "responseContext", n => { ResponseContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestResponseContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestResponseContext.CreateFromDiscriminatorValue); } },
                 { "specificContent", n => { SpecificContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContent.CreateFromDiscriminatorValue); } },
@@ -190,12 +190,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("clientApplication", ClientApplication);
             writer.WriteStringValue("containerEntity", ContainerEntity);
             writer.WriteStringValue("contentCertificationRecord", ContentCertificationRecord);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestCreated>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDeleted>("deleted", Deleted);
+            writer.WriteObjectValue<UntypedNode>("created", Created);
+            writer.WriteObjectValue<UntypedNode>("deleted", Deleted);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDistribution>("distribution", Distribution);
             writer.WriteLongValue("firstPublishedAt", FirstPublishedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLastModified>("lastModified", LastModified);
+            writer.WriteObjectValue<UntypedNode>("lastModified", LastModified);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestLifecycleState>("lifecycleState", LifecycleState);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestResponseContext>("responseContext", ResponseContext);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContent>("specificContent", SpecificContent);

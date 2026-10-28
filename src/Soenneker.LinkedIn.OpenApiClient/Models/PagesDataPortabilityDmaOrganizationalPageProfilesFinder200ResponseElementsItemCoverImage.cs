@@ -42,10 +42,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The percentage-based focal point for the vector image, with reference to the original center of the media.Documented type: PercentageOffsetPointRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint? FocalPoint { get; set; }
+        public UntypedNode? FocalPoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint FocalPoint { get; set; }
+        public UntypedNode FocalPoint { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "artifacts", n => { Artifacts = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "attribution", n => { Attribution = n.GetStringValue(); } },
                 { "digitalmediaAsset", n => { DigitalmediaAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageDigitalmediaAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageDigitalmediaAsset.CreateFromDiscriminatorValue); } },
-                { "focalPoint", n => { FocalPoint = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint.CreateFromDiscriminatorValue); } },
+                { "focalPoint", n => { FocalPoint = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact>("artifacts", Artifacts);
             writer.WriteStringValue("attribution", Attribution);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageDigitalmediaAsset>("digitalmediaAsset", DigitalmediaAsset);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint>("focalPoint", FocalPoint);
+            writer.WriteObjectValue<UntypedNode>("focalPoint", FocalPoint);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

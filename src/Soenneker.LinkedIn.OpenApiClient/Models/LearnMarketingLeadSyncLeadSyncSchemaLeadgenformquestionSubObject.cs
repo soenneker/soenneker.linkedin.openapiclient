@@ -31,20 +31,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>(Optional) The predefined field that the question is requesting. This field is used for specifying viewer specific fields (e.g. First name, City, School, etc.) that should be used to prefill the question response. Customized questions don&apos;t request a predefined field and leave this field empty.Documented type: PredefinedField</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField? PredefinedField { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField PredefinedField { get; set; }
-#endif
         /// <summary>The question prompt, shown to the viewer.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestion? Question { get; set; }
+        public UntypedNode? Question { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestion Question { get; set; }
+        public UntypedNode Question { get; set; }
 #endif
         /// <summary>The specific details of the question including default answer, answer restrictions etc. We allow text and selection questions.Documented type: Union of TextQuestionDetails, MultipleChoiceQuestionDetails</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,10 +65,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>(Optional) The description or hint of the question, shown to the viewer. Empty if no hint is provided.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectTextPrompt? TextPrompt { get; set; }
+        public UntypedNode? TextPrompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectTextPrompt TextPrompt { get; set; }
+        public UntypedNode TextPrompt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject"/> and sets the default values.
@@ -103,14 +97,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "predefinedField", n => { PredefinedField = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField.CreateFromDiscriminatorValue); } },
-                { "question", n => { Question = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestion>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestion.CreateFromDiscriminatorValue); } },
+                { "predefinedField", n => { PredefinedField = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField>(); } },
+                { "question", n => { Question = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "questionDetails", n => { QuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails.CreateFromDiscriminatorValue); } },
                 { "questionId", n => { QuestionId = n.GetLongValue(); } },
                 { "questionSubmissionCriteria", n => { QuestionSubmissionCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria.CreateFromDiscriminatorValue); } },
                 { "responseEditable", n => { ResponseEditable = n.GetBoolValue(); } },
                 { "responseRequired", n => { ResponseRequired = n.GetBoolValue(); } },
-                { "textPrompt", n => { TextPrompt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectTextPrompt>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectTextPrompt.CreateFromDiscriminatorValue); } },
+                { "textPrompt", n => { TextPrompt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,14 +116,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField>("predefinedField", PredefinedField);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestion>("question", Question);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField>("predefinedField", PredefinedField);
+            writer.WriteObjectValue<UntypedNode>("question", Question);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails>("questionDetails", QuestionDetails);
             writer.WriteLongValue("questionId", QuestionId);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria>("questionSubmissionCriteria", QuestionSubmissionCriteria);
             writer.WriteBoolValue("responseEditable", ResponseEditable);
             writer.WriteBoolValue("responseRequired", ResponseRequired);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectTextPrompt>("textPrompt", TextPrompt);
+            writer.WriteObjectValue<UntypedNode>("textPrompt", TextPrompt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>ProductCategory name in various localesDocumented type: MultiLocaleStringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchemaName? Name { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchemaName Name { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchema"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchemaName>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchemaName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchemaName>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

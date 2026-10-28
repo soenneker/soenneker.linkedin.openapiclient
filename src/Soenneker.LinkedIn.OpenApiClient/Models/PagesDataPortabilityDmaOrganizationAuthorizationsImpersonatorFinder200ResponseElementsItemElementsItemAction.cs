@@ -16,10 +16,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>A type of action a user can take on an organization on behalf of a Business Manager. Value enums include:ORGANIZATION_CLAIM (Action denoting a user wants to claim an organization on behalf of a Business Manager)Documented type: BusinessManagerAuthorizationActionTypeRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType? ActionType { get; set; }
+        public UntypedNode? ActionType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType ActionType { get; set; }
+        public UntypedNode ActionType { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionType", n => { ActionType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType.CreateFromDiscriminatorValue); } },
+                { "actionType", n => { ActionType = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "organizationRoleAuthorizationAction", n => { OrganizationRoleAuthorizationAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType>("actionType", ActionType);
+            writer.WriteObjectValue<UntypedNode>("actionType", ActionType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction>("organizationRoleAuthorizationAction", OrganizationRoleAuthorizationAction);
             writer.WriteAdditionalData(AdditionalData);
         }

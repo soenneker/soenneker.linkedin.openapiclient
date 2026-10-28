@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Additional details about the event venue.Documented type: MultiLocaleRichText</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestTypeInPersonVenueDetails? VenueDetails { get; set; }
+        public UntypedNode? VenueDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestTypeInPersonVenueDetails VenueDetails { get; set; }
+        public UntypedNode VenueDetails { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestTypeInPerson"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "endsAt", n => { EndsAt = n.GetLongValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "venueDetails", n => { VenueDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestTypeInPersonVenueDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestTypeInPersonVenueDetails.CreateFromDiscriminatorValue); } },
+                { "venueDetails", n => { VenueDetails = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("endsAt", EndsAt);
             writer.WriteStringValue("url", Url);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestTypeInPersonVenueDetails>("venueDetails", VenueDetails);
+            writer.WriteObjectValue<UntypedNode>("venueDetails", VenueDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

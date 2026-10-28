@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The userIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsItem>? UserIds { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsAllOf1Item>? UserIds { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsItem> UserIds { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsAllOf1Item> UserIds { get; set; }
 #endif
         /// <summary>The userInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "userIds", n => { UserIds = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "userIds", n => { UserIds = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsAllOf1Item>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsAllOf1Item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userInfo", n => { UserInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserInfo.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsItem>("userIds", UserIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserIdsAllOf1Item>("userIds", UserIds);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUserUserInfo>("userInfo", UserInfo);
             writer.WriteAdditionalData(AdditionalData);
         }

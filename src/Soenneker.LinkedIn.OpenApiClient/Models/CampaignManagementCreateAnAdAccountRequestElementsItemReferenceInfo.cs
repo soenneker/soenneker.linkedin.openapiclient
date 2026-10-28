@@ -28,18 +28,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The organization’s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly.Documented type: CroppedImage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoLogo? Logo { get; set; }
+        public UntypedNode? Logo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoLogo Logo { get; set; }
+        public UntypedNode Logo { get; set; }
 #endif
         /// <summary>Name of the organization.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoName? Name { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoName Name { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>Name of the organization present in the URLs.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,8 +76,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
-                { "logo", n => { Logo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoLogo>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoLogo.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoName>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoName.CreateFromDiscriminatorValue); } },
+                { "logo", n => { Logo = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
             };
         }
@@ -90,8 +90,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("localizedName", LocalizedName);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoLogo>("logo", Logo);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateAnAdAccountRequestElementsItemReferenceInfoName>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("logo", Logo);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteAdditionalData(AdditionalData);
         }

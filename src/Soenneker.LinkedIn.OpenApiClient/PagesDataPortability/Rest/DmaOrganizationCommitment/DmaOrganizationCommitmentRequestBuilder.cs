@@ -18,6 +18,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DmaOrganizationCommitmentRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The EmptyPathSegment property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.EmptyPathSegmentRequestBuilder EmptyPathSegment
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The urn3Ali3AorganizationCommitment3A28urn3Ali3Aorganization3A38117622C529 property</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.Urn3Ali3AorganizationCommitment3A28urn3Ali3Aorganization3A38117622C529.Urn3Ali3AorganizationCommitment3A28urn3Ali3Aorganization3A38117622C529RequestBuilder Urn3Ali3AorganizationCommitment3A28urn3Ali3Aorganization3A38117622C529
         {

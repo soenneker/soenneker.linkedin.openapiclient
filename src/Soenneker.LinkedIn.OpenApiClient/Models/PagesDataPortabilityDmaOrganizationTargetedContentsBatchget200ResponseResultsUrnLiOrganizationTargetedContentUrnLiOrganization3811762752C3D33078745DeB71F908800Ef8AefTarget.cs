@@ -17,18 +17,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The geoLocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetGeoLocationsItem>? GeoLocations { get; set; }
+        public UntypedNode? GeoLocations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetGeoLocationsItem> GeoLocations { get; set; }
+        public UntypedNode GeoLocations { get; set; }
 #endif
         /// <summary>The industries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetIndustriesItem>? Industries { get; set; }
+        public UntypedNode? Industries { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetIndustriesItem> Industries { get; set; }
+        public UntypedNode Industries { get; set; }
 #endif
         /// <summary>The interfaceLocales property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,34 +41,34 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The jobFunctions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetJobFunctionsItem>? JobFunctions { get; set; }
+        public UntypedNode? JobFunctions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetJobFunctionsItem> JobFunctions { get; set; }
+        public UntypedNode JobFunctions { get; set; }
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetLocationsItem>? Locations { get; set; }
+        public UntypedNode? Locations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetLocationsItem> Locations { get; set; }
+        public UntypedNode Locations { get; set; }
 #endif
         /// <summary>The seniorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetSenioritiesItem>? Seniorities { get; set; }
+        public UntypedNode? Seniorities { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetSenioritiesItem> Seniorities { get; set; }
+        public UntypedNode Seniorities { get; set; }
 #endif
         /// <summary>The staffCountRanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetStaffCountRangesItem>? StaffCountRanges { get; set; }
+        public UntypedNode? StaffCountRanges { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetStaffCountRangesItem> StaffCountRanges { get; set; }
+        public UntypedNode StaffCountRanges { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTarget"/> and sets the default values.
@@ -95,13 +95,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "geoLocations", n => { GeoLocations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetGeoLocationsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetGeoLocationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "industries", n => { Industries = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetIndustriesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetIndustriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "geoLocations", n => { GeoLocations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "industries", n => { Industries = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "interfaceLocales", n => { InterfaceLocales = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetInterfaceLocalesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetInterfaceLocalesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "jobFunctions", n => { JobFunctions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetJobFunctionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetJobFunctionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetLocationsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetLocationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "seniorities", n => { Seniorities = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetSenioritiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetSenioritiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "staffCountRanges", n => { StaffCountRanges = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetStaffCountRangesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetStaffCountRangesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "jobFunctions", n => { JobFunctions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "locations", n => { Locations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "seniorities", n => { Seniorities = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "staffCountRanges", n => { StaffCountRanges = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -111,13 +111,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetGeoLocationsItem>("geoLocations", GeoLocations);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetIndustriesItem>("industries", Industries);
+            writer.WriteObjectValue<UntypedNode>("geoLocations", GeoLocations);
+            writer.WriteObjectValue<UntypedNode>("industries", Industries);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetInterfaceLocalesItem>("interfaceLocales", InterfaceLocales);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetJobFunctionsItem>("jobFunctions", JobFunctions);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetLocationsItem>("locations", Locations);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetSenioritiesItem>("seniorities", Seniorities);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsBatchget200ResponseResultsUrnLiOrganizationTargetedContentUrnLiOrganization3811762752C3D33078745DeB71F908800Ef8AefTargetStaffCountRangesItem>("staffCountRanges", StaffCountRanges);
+            writer.WriteObjectValue<UntypedNode>("jobFunctions", JobFunctions);
+            writer.WriteObjectValue<UntypedNode>("locations", Locations);
+            writer.WriteObjectValue<UntypedNode>("seniorities", Seniorities);
+            writer.WriteObjectValue<UntypedNode>("staffCountRanges", StaffCountRanges);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

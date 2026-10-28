@@ -23,14 +23,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?> RejectionReasons { get; set; }
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        /// <summary>PENDING - Creative is pending review and not serving. APPROVED - Creative is approved for serving. It includes Creative that has been preapproved or auto approved by content model. REJECTED - Creative is rejected. It includes the Creative that has been auto rejected by content model. NEEDS_REVIEW - Creative has been rejected by content model or policy checker or returned by fallback case that auto approval didn&apos;t make any decision.Documented type: ENUMRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseReviewStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseReview"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "rejectionReasons", n => { RejectionReasons = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons>()?.AsList(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseReviewStatus>(); } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons>("rejectionReasons", RejectionReasons);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACreativeUsingCreativeId200ResponseReviewStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

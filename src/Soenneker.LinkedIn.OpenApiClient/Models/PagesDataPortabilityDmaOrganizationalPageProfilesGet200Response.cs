@@ -41,10 +41,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDeleted? Deleted { get; set; }
+        public UntypedNode? Deleted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDeleted Deleted { get; set; }
+        public UntypedNode Deleted { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,7 +170,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "coverImage", n => { CoverImage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage.CreateFromDiscriminatorValue); } },
                 { "coverImageCropMetadata", n => { CoverImageCropMetadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated.CreateFromDiscriminatorValue); } },
-                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDeleted.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription.CreateFromDiscriminatorValue); } },
                 { "entityUrn", n => { EntityUrn = n.GetStringValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified.CreateFromDiscriminatorValue); } },
@@ -195,7 +195,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage>("coverImage", CoverImage);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata>("coverImageCropMetadata", CoverImageCropMetadata);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDeleted>("deleted", Deleted);
+            writer.WriteObjectValue<UntypedNode>("deleted", Deleted);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription>("description", Description);
             writer.WriteStringValue("entityUrn", EntityUrn);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified>("lastModified", LastModified);

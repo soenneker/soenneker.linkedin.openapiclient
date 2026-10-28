@@ -265,7 +265,7 @@
         "Expiration Date Rules",
         "API Header"
       ],
-      "Text": "Authorization: Bearer {access token}\nX-restli-method: batch_create\nLinkedin-Version: YYYYMM",
+      "Text": "Authorization: Bearer {access token}\nX-restli-method: batch_create\nLinkedIn-Version: YYYYMM",
       "Headers": [],
       "Rows": []
     },

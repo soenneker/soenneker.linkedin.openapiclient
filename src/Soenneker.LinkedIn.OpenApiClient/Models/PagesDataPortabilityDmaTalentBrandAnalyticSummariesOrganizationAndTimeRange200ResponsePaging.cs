@@ -35,10 +35,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponsePagingLinksItem>? Links { get; set; }
+        public UntypedNode? Links { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponsePagingLinksItem> Links { get; set; }
+        public UntypedNode Links { get; set; }
 #endif
         /// <summary>The index of the first item you want results for. Defaults to 0.Documented type: IntegerRequirement: No</summary>
         public int? Start { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "authorizationActions", n => { AuthorizationActions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bq", n => { Bq = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponsePagingLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponsePagingLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetIntValue(); } },
                 { "total", n => { Total = n.GetLongValue(); } },
             };
@@ -87,7 +87,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria>("authorizationActions", AuthorizationActions);
             writer.WriteStringValue("bq", Bq);
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponsePagingLinksItem>("links", Links);
+            writer.WriteObjectValue<UntypedNode>("links", Links);
             writer.WriteIntValue("start", Start);
             writer.WriteLongValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.ListUploads
 {
     /// <summary>
-    /// Builds and executes requests for operations under \audiences\dmpSegments\{companySegment-id}\listUploads
+    /// Builds and executes requests for operations under \audiences\dmpSegments\{companySegmentId}\listUploads
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListUploadsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.ListUpload
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListUploadsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegment%2Did}/listUploads", pathParameters)
+        public ListUploadsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegmentId}/listUploads", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.ListUpload
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListUploadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegment%2Did}/listUploads", rawUrl)
+        public ListUploadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegmentId}/listUploads", rawUrl)
         {
         }
         /// <summary>

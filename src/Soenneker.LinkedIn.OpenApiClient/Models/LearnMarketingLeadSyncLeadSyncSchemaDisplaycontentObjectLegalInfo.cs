@@ -26,10 +26,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>(Optional) Owner&apos;s legal disclaimer to accompany this form. This field is optional since the owner can use other fields (for example, privacyPolicyUrl or consents) to display the privacy policy. If this field is used, the value must be 1 to 2,000 characters. Don&apos;t set this field to an empty string.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfoLegalDisclaimer? LegalDisclaimer { get; set; }
+        public UntypedNode? LegalDisclaimer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfoLegalDisclaimer LegalDisclaimer { get; set; }
+        public UntypedNode LegalDisclaimer { get; set; }
 #endif
         /// <summary>Unique identifier of the LeadGenFormLegalInfo.Documented type: long</summary>
         public long? LegalInfoId { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "consents", n => { Consents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "legalDisclaimer", n => { LegalDisclaimer = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfoLegalDisclaimer>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfoLegalDisclaimer.CreateFromDiscriminatorValue); } },
+                { "legalDisclaimer", n => { LegalDisclaimer = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "legalInfoId", n => { LegalInfoId = n.GetLongValue(); } },
                 { "privacyPolicyUrl", n => { PrivacyPolicyUrl = n.GetStringValue(); } },
             };
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject>("consents", Consents);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfoLegalDisclaimer>("legalDisclaimer", LegalDisclaimer);
+            writer.WriteObjectValue<UntypedNode>("legalDisclaimer", LegalDisclaimer);
             writer.WriteLongValue("legalInfoId", LegalInfoId);
             writer.WriteStringValue("privacyPolicyUrl", PrivacyPolicyUrl);
             writer.WriteAdditionalData(AdditionalData);

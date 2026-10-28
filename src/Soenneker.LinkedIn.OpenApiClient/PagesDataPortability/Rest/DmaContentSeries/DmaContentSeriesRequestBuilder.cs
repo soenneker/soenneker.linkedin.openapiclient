@@ -18,6 +18,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentS
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DmaContentSeriesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The EmptyPathSegment property</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.EmptyPathSegmentRequestBuilder EmptyPathSegment
+        {
+            get => new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.pagesDataPortability.rest.dmaContentSeries.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaContentSeries.Item.WithNewsletterUrnItemRequestBuilder"/></returns>

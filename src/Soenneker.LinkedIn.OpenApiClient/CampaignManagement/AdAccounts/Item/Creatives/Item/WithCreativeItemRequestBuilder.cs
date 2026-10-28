@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Creatives.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccounts-id}\creatives\{creativeId1}
+    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccountsId}\creatives\{creativeId1}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithCreativeItemRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCreativeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives/{creativeId1}", pathParameters)
+        public WithCreativeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/creatives/{creativeId1}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Cr
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCreativeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/creatives/{creativeId1}", rawUrl)
+        public WithCreativeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/creatives/{creativeId1}", rawUrl)
         {
         }
         /// <summary>

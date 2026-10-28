@@ -14,13 +14,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The exclude property</summary>
+        /// <summary>Excluded list of IAB categories. Example: If an advertiser specifies {urn:li:iabCategory:IAB20, urn:li:iabCategory:IAB22}, this would block this campaign from serving on Travel and Shopping related apps/websites. Note that exclude takes precedence over include in conflicted cases.Documented type: IABCategoryUrn[], default=&quot;[]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem>? Exclude { get; set; }
+        public UntypedNode? Exclude { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem> Exclude { get; set; }
+        public UntypedNode Exclude { get; set; }
+#endif
+        /// <summary>Included list of IAB categories. Example: If an advertiser specifies {urn:li:iabCategory:IAB5, urn:li:iabCategory:IAB12}, this would serve this campaign on Education and News related apps/websites only. Note that exclude takes precedence over include in conflicted cases.Documented type: IABCategoryUrn[], default=&quot;[]&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Include { get; set; }
+#nullable restore
+#else
+        public UntypedNode Include { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories"/> and sets the default values.
@@ -47,7 +55,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "exclude", n => { Exclude = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "include", n => { Include = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +66,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem>("exclude", Exclude);
+            writer.WriteObjectValue<UntypedNode>("exclude", Exclude);
+            writer.WriteObjectValue<UntypedNode>("include", Include);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

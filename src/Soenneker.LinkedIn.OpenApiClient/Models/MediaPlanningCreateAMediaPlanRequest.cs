@@ -49,10 +49,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The timestamp when the media plan was created.Documented type: timestampRequirement: read-only Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt? CreatedAt { get; set; }
+        public UntypedNode? CreatedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt CreatedAt { get; set; }
+        public UntypedNode CreatedAt { get; set; }
 #endif
         /// <summary>The URN of the creator of the media plan.Documented type: URNRequirement: read-only Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -203,7 +203,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "costPerLead", n => { CostPerLead = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead.CreateFromDiscriminatorValue); } },
                 { "costPerReach", n => { CostPerReach = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach.CreateFromDiscriminatorValue); } },
                 { "costPerThousandImpressions", n => { CostPerThousandImpressions = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions.CreateFromDiscriminatorValue); } },
-                { "createdAt", n => { CreatedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "ctvOnly", n => { CtvOnly = n.GetBoolValue(); } },
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
@@ -235,7 +235,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead>("costPerLead", CostPerLead);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach>("costPerReach", CostPerReach);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions>("costPerThousandImpressions", CostPerThousandImpressions);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt>("createdAt", CreatedAt);
+            writer.WriteObjectValue<UntypedNode>("createdAt", CreatedAt);
             writer.WriteStringValue("creator", Creator);
             writer.WriteBoolValue("ctvOnly", CtvOnly);
             writer.WriteStringValue("currencyCode", CurrencyCode);

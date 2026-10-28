@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Media uploaded for the featuredContent.Documented type: Union[uploadedMediaContent: FeaturedUploadedMediaContent,linkedMediaContent: FeaturedLinkedMediaContent]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseContentArticleMediaContent? MediaContent { get; set; }
+        public UntypedNode? MediaContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseContentArticleMediaContent MediaContent { get; set; }
+        public UntypedNode MediaContent { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseContentArticle"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mediaContent", n => { MediaContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseContentArticleMediaContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseContentArticleMediaContent.CreateFromDiscriminatorValue); } },
+                { "mediaContent", n => { MediaContent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseContentArticleMediaContent>("mediaContent", MediaContent);
+            writer.WriteObjectValue<UntypedNode>("mediaContent", MediaContent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

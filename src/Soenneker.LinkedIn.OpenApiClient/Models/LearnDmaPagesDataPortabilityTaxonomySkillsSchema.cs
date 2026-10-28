@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The optional locale the standardized name is in.Documented type: LocaleRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchemaLocale? Locale { get; set; }
+        public UntypedNode? Locale { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchemaLocale Locale { get; set; }
+        public UntypedNode Locale { get; set; }
 #endif
         /// <summary>The standardized name for this skill.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchemaLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchemaLocale.CreateFromDiscriminatorValue); } },
+                { "locale", n => { Locale = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "standardizedName", n => { StandardizedName = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchemaLocale>("locale", Locale);
+            writer.WriteObjectValue<UntypedNode>("locale", Locale);
             writer.WriteStringValue("standardizedName", StandardizedName);
             writer.WriteAdditionalData(AdditionalData);
         }

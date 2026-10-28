@@ -267,7 +267,7 @@
         "Job Posting Status Request",
         "Sample Request with Query Tunneling"
       ],
-      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/jobPostingStatus?ids={external_job_posting_id_1}\u0026ids={external_job_posting_id_2}\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027Linkedin-Version: 202603\u0027 \\",
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/jobPostingStatus?ids={external_job_posting_id_1}\u0026ids={external_job_posting_id_2}\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\",
       "Headers": [],
       "Rows": []
     },
@@ -279,7 +279,7 @@
         "Job Posting Status Request",
         "Sample Request with Query Tunneling"
       ],
-      "Text": "curl --location --request POST \u0027https://api.linkedin.com/v2/jobPostingStatus\u0027 \\\n--header \u0027X-HTTP-Method-Override: GET\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027Linkedin-Version: 202603\u0027 \\\n--data-urlencode \u0027ids={external_job_posting_id_1}\u0027 \\\n--data-urlencode \u0027ids={external_job_posting_id_2}\u0027",
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/v2/jobPostingStatus\u0027 \\\n--header \u0027X-HTTP-Method-Override: GET\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--data-urlencode \u0027ids={external_job_posting_id_1}\u0027 \\\n--data-urlencode \u0027ids={external_job_posting_id_2}\u0027",
       "Headers": [],
       "Rows": []
     },

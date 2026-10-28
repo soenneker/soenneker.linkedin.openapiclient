@@ -50,10 +50,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The questions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsItem>? Questions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1Item>? Questions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsItem> Questions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1Item> Questions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContent"/> and sets the default values.
@@ -84,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "headline", n => { Headline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentHeadline>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentHeadline.CreateFromDiscriminatorValue); } },
                 { "legalInfo", n => { LegalInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo.CreateFromDiscriminatorValue); } },
                 { "postSubmissionInfo", n => { PostSubmissionInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo.CreateFromDiscriminatorValue); } },
-                { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1Item>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1Item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentHeadline>("headline", Headline);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentLegalInfo>("legalInfo", LegalInfo);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentPostSubmissionInfo>("postSubmissionInfo", PostSubmissionInfo);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsItem>("questions", Questions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1Item>("questions", Questions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

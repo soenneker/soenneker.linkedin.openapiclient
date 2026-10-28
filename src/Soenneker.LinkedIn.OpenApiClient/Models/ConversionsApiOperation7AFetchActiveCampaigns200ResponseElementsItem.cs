@@ -81,10 +81,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The ad format on campaign level.For more information, refer to: Ad FormatsDocumented type: campaignFormatRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat? Format { get; set; }
+        public UntypedNode? Format { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat Format { get; set; }
+        public UntypedNode Format { get; set; }
 #endif
         /// <summary>The id property</summary>
         public long? Id { get; set; }
@@ -204,7 +204,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "costType", n => { CostType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType>(); } },
                 { "creativeSelection", n => { CreativeSelection = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection>(); } },
                 { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -242,7 +242,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType>("costType", CostType);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection>("creativeSelection", CreativeSelection);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget>("dailyBudget", DailyBudget);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat>("format", Format);
+            writer.WriteObjectValue<UntypedNode>("format", Format);
             writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);

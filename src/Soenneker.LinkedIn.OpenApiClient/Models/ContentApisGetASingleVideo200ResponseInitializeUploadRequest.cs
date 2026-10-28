@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests. When this field is present, the uploaded asset will also be registered in the account&apos;s media library.Documented type: MediaLibraryMetadataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequestMediaLibraryMetadata? MediaLibraryMetadata { get; set; }
+        public UntypedNode? MediaLibraryMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequestMediaLibraryMetadata MediaLibraryMetadata { get; set; }
+        public UntypedNode MediaLibraryMetadata { get; set; }
 #endif
         /// <summary>URN of the entity that owns this asset. Can be a person(urn:li:person:123), or organization(urn:li:organization:123) URNDocumented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "fileSizeBytes", n => { FileSizeBytes = n.GetLongValue(); } },
                 { "linkbackContext", n => { LinkbackContext = n.GetStringValue(); } },
-                { "mediaLibraryMetadata", n => { MediaLibraryMetadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequestMediaLibraryMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequestMediaLibraryMetadata.CreateFromDiscriminatorValue); } },
+                { "mediaLibraryMetadata", n => { MediaLibraryMetadata = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "templateName", n => { TemplateName = n.GetStringValue(); } },
                 { "uploadCaptions", n => { UploadCaptions = n.GetBoolValue(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("fileSizeBytes", FileSizeBytes);
             writer.WriteStringValue("linkbackContext", LinkbackContext);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequestMediaLibraryMetadata>("mediaLibraryMetadata", MediaLibraryMetadata);
+            writer.WriteObjectValue<UntypedNode>("mediaLibraryMetadata", MediaLibraryMetadata);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("templateName", TemplateName);
             writer.WriteBoolValue("uploadCaptions", UploadCaptions);

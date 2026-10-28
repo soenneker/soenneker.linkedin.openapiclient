@@ -16,11 +16,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day property</summary>
-        public long? Day { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnDay? Day { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnDay Day { get; set; }
+#endif
         /// <summary>The month property</summary>
-        public long? Month { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnMonth? Month { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnMonth Month { get; set; }
+#endif
         /// <summary>The year property</summary>
-        public long? Year { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnYear? Year { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnYear Year { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOn"/> and sets the default values.
         /// </summary>
@@ -46,9 +64,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "day", n => { Day = n.GetLongValue(); } },
-                { "month", n => { Month = n.GetLongValue(); } },
-                { "year", n => { Year = n.GetLongValue(); } },
+                { "day", n => { Day = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnDay>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnDay.CreateFromDiscriminatorValue); } },
+                { "month", n => { Month = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnMonth>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnMonth.CreateFromDiscriminatorValue); } },
+                { "year", n => { Year = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnYear>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnYear.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,9 +76,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("day", Day);
-            writer.WriteLongValue("month", Month);
-            writer.WriteLongValue("year", Year);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnDay>("day", Day);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnMonth>("month", Month);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOnYear>("year", Year);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

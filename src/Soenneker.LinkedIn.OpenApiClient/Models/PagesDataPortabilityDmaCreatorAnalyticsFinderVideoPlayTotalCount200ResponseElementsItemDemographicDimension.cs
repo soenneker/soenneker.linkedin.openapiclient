@@ -15,22 +15,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dimensionType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DimensionType { get; set; }
-#nullable restore
-#else
-        public string DimensionType { get; set; }
-#endif
-        /// <summary>The dimensionValue property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DimensionValue { get; set; }
-#nullable restore
-#else
-        public string DimensionValue { get; set; }
-#endif
+        /// <summary>Represents the type of demographic dimension. Possible values are ORGANIZATIONINDUSTRYSENIORITYREGIONORGANIZATION_STAFF_COUNT_RANGEDocumented type: enumRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType? DimensionType { get; set; }
+        /// <summary>Represents the URN value of the demographic dimension. The URN type is determined by the dimension type.ORGANIZATION: OrganizationUrnINDUSTRY: IndustryUrnTITLE: TitleUrn or SuperTitleUrnSENIORITY: SeniorityUrnREGION: GeoUrnORGANIZATION_STAFF_COUNT_RANGE: StaffCountRangeUrnDocumented type: URNRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue? DimensionValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension"/> and sets the default values.
         /// </summary>
@@ -56,8 +44,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dimensionType", n => { DimensionType = n.GetStringValue(); } },
-                { "dimensionValue", n => { DimensionValue = n.GetStringValue(); } },
+                { "dimensionType", n => { DimensionType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType>(); } },
+                { "dimensionValue", n => { DimensionValue = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue>(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("dimensionType", DimensionType);
-            writer.WriteStringValue("dimensionValue", DimensionValue);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType>("dimensionType", DimensionType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue>("dimensionValue", DimensionValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests. When this field is present, the uploaded asset will also be registered in the account&apos;s media library.Documented type: MediaLibraryMetadataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequestMediaLibraryMetadata? MediaLibraryMetadata { get; set; }
+        public UntypedNode? MediaLibraryMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequestMediaLibraryMetadata MediaLibraryMetadata { get; set; }
+        public UntypedNode MediaLibraryMetadata { get; set; }
 #endif
         /// <summary>URN of the entity that owns this asset. Can be a person(urn:li:person:123), or organization(urn:li:organization:123) URNDocumented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mediaLibraryMetadata", n => { MediaLibraryMetadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequestMediaLibraryMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequestMediaLibraryMetadata.CreateFromDiscriminatorValue); } },
+                { "mediaLibraryMetadata", n => { MediaLibraryMetadata = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequestMediaLibraryMetadata>("mediaLibraryMetadata", MediaLibraryMetadata);
+            writer.WriteObjectValue<UntypedNode>("mediaLibraryMetadata", MediaLibraryMetadata);
             writer.WriteStringValue("owner", Owner);
             writer.WriteAdditionalData(AdditionalData);
         }

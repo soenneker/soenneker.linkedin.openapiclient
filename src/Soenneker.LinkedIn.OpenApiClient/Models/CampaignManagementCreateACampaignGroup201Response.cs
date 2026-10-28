@@ -81,10 +81,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The ad format on campaign level.For more information, refer to: Ad FormatsDocumented type: campaignFormatRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseFormat? Format { get; set; }
+        public UntypedNode? Format { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseFormat Format { get; set; }
+        public UntypedNode Format { get; set; }
 #endif
         /// <summary>The locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,18 +117,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Allows granular optimization customization on this campaign on top of optimizationTargetType. FrequencyOptimizationPreference is the first type of optimizationPreference we support now.Documented type: UnionRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationPreference? OptimizationPreference { get; set; }
+        public UntypedNode? OptimizationPreference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationPreference OptimizationPreference { get; set; }
+        public UntypedNode OptimizationPreference { get; set; }
 #endif
         /// <summary>Determines how this campaign is optimized for spending. If this is not set, there&apos;s no optimization. Refer to the documentation here.Documented type: default=&quot;NONE&quot;Requirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationTargetType? OptimizationTargetType { get; set; }
+        public UntypedNode? OptimizationTargetType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationTargetType OptimizationTargetType { get; set; }
+        public UntypedNode OptimizationTargetType { get; set; }
 #endif
         /// <summary>Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.Documented type: stringRequirement: False</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponsePacingStrategy? PacingStrategy { get; set; }
@@ -149,10 +149,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Specifies targeting criteria that the member should match. This is a more advanced boolean expression than the previous targeting field. It provides a generic AND/OR construct to include and exclude different targeting facets when defining audiences for campaigns.Documented type: targetingCriteriaRequirement: True, unless targeting provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTargetingCriteria? TargetingCriteria { get; set; }
+        public UntypedNode? TargetingCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTargetingCriteria TargetingCriteria { get; set; }
+        public UntypedNode TargetingCriteria { get; set; }
 #endif
         /// <summary>Flag showing whether this campaign is a test campaign, i.e., belongs to a test account. This is a read-only and immutable field that is set implicitly during creation based on whether the account is a Test Account or not.Documented type: boolean, default=&quot;False&quot;Requirement: False</summary>
         public bool? Test { get; set; }
@@ -218,20 +218,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "costType", n => { CostType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseCostType>(); } },
                 { "creativeSelection", n => { CreativeSelection = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseCreativeSelection>(); } },
                 { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseDailyBudget.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseFormat>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseFormat.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectiveType", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseObjectiveType>(); } },
                 { "offsiteDeliveryEnabled", n => { OffsiteDeliveryEnabled = n.GetBoolValue(); } },
                 { "offsitePreferences", n => { OffsitePreferences = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOffsitePreferences>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOffsitePreferences.CreateFromDiscriminatorValue); } },
-                { "optimizationPreference", n => { OptimizationPreference = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationPreference>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationPreference.CreateFromDiscriminatorValue); } },
-                { "optimizationTargetType", n => { OptimizationTargetType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationTargetType>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationTargetType.CreateFromDiscriminatorValue); } },
+                { "optimizationPreference", n => { OptimizationPreference = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "optimizationTargetType", n => { OptimizationTargetType = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "pacingStrategy", n => { PacingStrategy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponsePacingStrategy>(); } },
                 { "politicalIntent", n => { PoliticalIntent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponsePoliticalIntent>(); } },
                 { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseRunSchedule.CreateFromDiscriminatorValue); } },
                 { "servingStatuses", n => { ServingStatuses = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseServingStatuses>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseStatus>(); } },
-                { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTargetingCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTargetingCriteria.CreateFromDiscriminatorValue); } },
+                { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "test", n => { Test = n.GetBoolValue(); } },
                 { "totalBudget", n => { TotalBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTotalBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTotalBudget.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseType>(); } },
@@ -257,20 +257,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseCostType>("costType", CostType);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseCreativeSelection>("creativeSelection", CreativeSelection);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseDailyBudget>("dailyBudget", DailyBudget);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseFormat>("format", Format);
+            writer.WriteObjectValue<UntypedNode>("format", Format);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseObjectiveType>("objectiveType", ObjectiveType);
             writer.WriteBoolValue("offsiteDeliveryEnabled", OffsiteDeliveryEnabled);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOffsitePreferences>("offsitePreferences", OffsitePreferences);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationPreference>("optimizationPreference", OptimizationPreference);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseOptimizationTargetType>("optimizationTargetType", OptimizationTargetType);
+            writer.WriteObjectValue<UntypedNode>("optimizationPreference", OptimizationPreference);
+            writer.WriteObjectValue<UntypedNode>("optimizationTargetType", OptimizationTargetType);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponsePacingStrategy>("pacingStrategy", PacingStrategy);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponsePoliticalIntent>("politicalIntent", PoliticalIntent);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseRunSchedule>("runSchedule", RunSchedule);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseServingStatuses>("servingStatuses", ServingStatuses);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTargetingCriteria>("targetingCriteria", TargetingCriteria);
+            writer.WriteObjectValue<UntypedNode>("targetingCriteria", TargetingCriteria);
             writer.WriteBoolValue("test", Test);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseTotalBudget>("totalBudget", TotalBudget);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201ResponseType>("type", Type);

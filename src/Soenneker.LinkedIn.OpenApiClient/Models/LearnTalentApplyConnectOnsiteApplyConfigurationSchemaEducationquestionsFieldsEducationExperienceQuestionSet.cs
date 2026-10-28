@@ -16,13 +16,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field captures whether the &quot;City&quot; question should be asked. If not specified, this field will default to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsCityQuestionRequirement? CityQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsCityQuestionRequirement CityQuestionRequirement { get; set; }
-#endif
         /// <summary>The additional repeatable custom questions to be included within the Education Experience question set.Documented type: SimpleTalentQuestionDefinition[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,41 +26,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
 #endif
         /// <summary>This field captures whether the &quot;Dates Attended&quot; question should be asked. If not specified, this field will default to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDatesAttendedQuestionRequirement? DatesAttendedQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDatesAttendedQuestionRequirement DatesAttendedQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether the &quot;Degree&quot; question should be asked. If not specified, this field will default to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDegreeQuestionRequirement? DegreeQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDegreeQuestionRequirement DegreeQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether the &quot;Field of Study&quot; question should be asked. If not specified, this field will default to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsFieldOfStudyQuestionRequirement? FieldOfStudyQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsFieldOfStudyQuestionRequirement FieldOfStudyQuestionRequirement { get; set; }
-#endif
         /// <summary>This field requires submission of education experience. The education experience min limit can be set to 1, then at least 1 has to be provided in order to submit the subsection. If no minRequired is specified, this field will default to 0.Documented type: IntegerRequirement: No</summary>
         public int? MinRequired { get; set; }
         /// <summary>The maximum number of times this question set can be asked. For example, if the value is 1 then the question set will only appear once. For this question set, the acceptable range of values is [1, 3]. If no repeatLimit is specified, this field will default to 3.Documented type: IntegerRequirement: No</summary>
         public int? RepeatLimit { get; set; }
         /// <summary>This field captures whether the &quot;School&quot; question should be asked. If not specified, this field will default to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsSchoolQuestionRequirement? SchoolQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsSchoolQuestionRequirement SchoolQuestionRequirement { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationquestionsFieldsEducationExperienceQuestionSet"/> and sets the default values.
         /// </summary>
@@ -92,14 +62,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cityQuestionRequirement", n => { CityQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsCityQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsCityQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "cityQuestionRequirement", n => { CityQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsCityQuestionRequirement>(); } },
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "datesAttendedQuestionRequirement", n => { DatesAttendedQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDatesAttendedQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDatesAttendedQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "degreeQuestionRequirement", n => { DegreeQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDegreeQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDegreeQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "fieldOfStudyQuestionRequirement", n => { FieldOfStudyQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsFieldOfStudyQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsFieldOfStudyQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "datesAttendedQuestionRequirement", n => { DatesAttendedQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDatesAttendedQuestionRequirement>(); } },
+                { "degreeQuestionRequirement", n => { DegreeQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDegreeQuestionRequirement>(); } },
+                { "fieldOfStudyQuestionRequirement", n => { FieldOfStudyQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsFieldOfStudyQuestionRequirement>(); } },
                 { "minRequired", n => { MinRequired = n.GetIntValue(); } },
                 { "repeatLimit", n => { RepeatLimit = n.GetIntValue(); } },
-                { "schoolQuestionRequirement", n => { SchoolQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsSchoolQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsSchoolQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "schoolQuestionRequirement", n => { SchoolQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsSchoolQuestionRequirement>(); } },
             };
         }
         /// <summary>
@@ -109,14 +79,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsCityQuestionRequirement>("cityQuestionRequirement", CityQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsCityQuestionRequirement>("cityQuestionRequirement", CityQuestionRequirement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDatesAttendedQuestionRequirement>("datesAttendedQuestionRequirement", DatesAttendedQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDegreeQuestionRequirement>("degreeQuestionRequirement", DegreeQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsFieldOfStudyQuestionRequirement>("fieldOfStudyQuestionRequirement", FieldOfStudyQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDatesAttendedQuestionRequirement>("datesAttendedQuestionRequirement", DatesAttendedQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsDegreeQuestionRequirement>("degreeQuestionRequirement", DegreeQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsFieldOfStudyQuestionRequirement>("fieldOfStudyQuestionRequirement", FieldOfStudyQuestionRequirement);
             writer.WriteIntValue("minRequired", MinRequired);
             writer.WriteIntValue("repeatLimit", RepeatLimit);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsSchoolQuestionRequirement>("schoolQuestionRequirement", SchoolQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaEducationexperiencequestionsetFieldsSchoolQuestionRequirement>("schoolQuestionRequirement", SchoolQuestionRequirement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

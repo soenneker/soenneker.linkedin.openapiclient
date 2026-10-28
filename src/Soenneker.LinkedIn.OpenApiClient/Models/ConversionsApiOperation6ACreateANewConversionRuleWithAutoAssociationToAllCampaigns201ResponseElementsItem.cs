@@ -33,20 +33,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The event for which the third party tracking tag should be used. Possible values are IMPRESSION, CLICK.Documented type: ThirdPartyTrackingEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemEvent? Event { get; set; }
+        public UntypedNode? Event { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemEvent Event { get; set; }
+        public UntypedNode Event { get; set; }
 #endif
         /// <summary>Read-only numerical identifier for the third party tracking tag; synthetic key that should be omitted during creation.Documented type: long</summary>
         public long? Id { get; set; }
         /// <summary>The third party tracking platform for this tag. Possible value is DOUBLECLICKDocumented type: ThirdParty Tracking Platform</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemPlatform? Platform { get; set; }
+        public UntypedNode? Platform { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemPlatform Platform { get; set; }
+        public UntypedNode Platform { get; set; }
 #endif
         /// <summary>The third-party tracking URL.Documented type: URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,9 +83,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "account", n => { Account = n.GetStringValue(); } },
                 { "entity", n => { Entity = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemEvent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemEvent.CreateFromDiscriminatorValue); } },
+                { "event", n => { Event = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetLongValue(); } },
-                { "platform", n => { Platform = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemPlatform>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemPlatform.CreateFromDiscriminatorValue); } },
+                { "platform", n => { Platform = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "trackingUrl", n => { TrackingUrl = n.GetStringValue(); } },
             };
         }
@@ -98,9 +98,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
             writer.WriteStringValue("entity", Entity);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemEvent>("event", Event);
+            writer.WriteObjectValue<UntypedNode>("event", Event);
             writer.WriteLongValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItemPlatform>("platform", Platform);
+            writer.WriteObjectValue<UntypedNode>("platform", Platform);
             writer.WriteStringValue("trackingUrl", TrackingUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

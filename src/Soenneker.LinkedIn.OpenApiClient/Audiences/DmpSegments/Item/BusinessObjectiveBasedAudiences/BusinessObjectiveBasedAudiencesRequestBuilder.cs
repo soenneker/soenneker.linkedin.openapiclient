@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.BusinessObjectiveBasedAudiences
 {
     /// <summary>
-    /// Builds and executes requests for operations under \audiences\dmpSegments\{companySegment-id}\businessObjectiveBasedAudiences
+    /// Builds and executes requests for operations under \audiences\dmpSegments\{companySegmentId}\businessObjectiveBasedAudiences
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessObjectiveBasedAudiencesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.BusinessOb
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessObjectiveBasedAudiencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegment%2Did}/businessObjectiveBasedAudiences", pathParameters)
+        public BusinessObjectiveBasedAudiencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegmentId}/businessObjectiveBasedAudiences", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.BusinessOb
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessObjectiveBasedAudiencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegment%2Did}/businessObjectiveBasedAudiences", rawUrl)
+        public BusinessObjectiveBasedAudiencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegmentId}/businessObjectiveBasedAudiences", rawUrl)
         {
         }
         /// <summary>

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearningContentLearningAssetsByCriteriaFinder200Response : IComposedTypeWrapper, IParsable
@@ -77,13 +77,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2? LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMember1? LearningContentLearningAssetsByCriteriaFinder200ResponseMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMember1 LearningContentLearningAssetsByCriteriaFinder200ResponseMember1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,7 +102,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7();
             result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8();
             result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9();
-            result.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseMember1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMember1();
             return result;
         }
         /// <summary>
@@ -111,9 +111,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 != null)
+            if(LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9, LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9, LearningContentLearningAssetsByCriteriaFinder200ResponseMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -124,7 +124,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1>(null, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9, LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1>(null, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9, LearningContentLearningAssetsByCriteriaFinder200ResponseMember1);
         }
     }
 }

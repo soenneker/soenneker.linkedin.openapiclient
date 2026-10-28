@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaigns.NineZeroZeroOneFiveFiveSevenSevenFour
 {
     /// <summary>
-    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccounts-id}\adCampaigns\900155774
+    /// Builds and executes requests for operations under \campaign-management\adAccounts\{adAccountsId}\adCampaigns\900155774
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NineZeroZeroOneFiveFiveSevenSevenFourRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NineZeroZeroOneFiveFiveSevenSevenFourRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/adCampaigns/900155774", pathParameters)
+        public NineZeroZeroOneFiveFiveSevenSevenFourRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/adCampaigns/900155774", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NineZeroZeroOneFiveFiveSevenSevenFourRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccounts%2Did}/adCampaigns/900155774", rawUrl)
+        public NineZeroZeroOneFiveFiveSevenSevenFourRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/campaign-management/adAccounts/{adAccountsId}/adCampaigns/900155774", rawUrl)
         {
         }
         /// <summary>

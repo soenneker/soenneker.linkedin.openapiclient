@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemDeleted? Deleted { get; set; }
+        public UntypedNode? Deleted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemDeleted Deleted { get; set; }
+        public UntypedNode Deleted { get; set; }
 #endif
         /// <summary>This field will be set to false if this access control was created and stored normally, and set to true if it&apos;s been derived from the roleAssignee&apos;s other permissions.Documented type: booleanRequirement: No</summary>
         public bool? Derived { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
-                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemDeleted.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "derived", n => { Derived = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemKey.CreateFromDiscriminatorValue); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
@@ -91,7 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemCreated>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemDeleted>("deleted", Deleted);
+            writer.WriteObjectValue<UntypedNode>("deleted", Deleted);
             writer.WriteBoolValue("derived", Derived);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemKey>("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAclsFinderOrganization200ResponseElementsItemLastModified>("lastModified", LastModified);

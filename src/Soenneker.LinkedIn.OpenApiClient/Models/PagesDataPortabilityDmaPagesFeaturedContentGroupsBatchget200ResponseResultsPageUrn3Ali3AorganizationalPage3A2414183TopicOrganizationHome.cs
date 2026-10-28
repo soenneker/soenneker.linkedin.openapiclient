@@ -17,18 +17,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeDeleted? Deleted { get; set; }
+        public UntypedNode? Deleted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeDeleted Deleted { get; set; }
+        public UntypedNode Deleted { get; set; }
 #endif
         /// <summary>Ordered list of PagesFeaturedContents that represents the content to be featured.Documented type: array[PagesFeaturedContent]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeFeaturedContentsItem>? FeaturedContents { get; set; }
+        public UntypedNode? FeaturedContents { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeFeaturedContentsItem> FeaturedContents { get; set; }
+        public UntypedNode FeaturedContents { get; set; }
 #endif
         /// <summary>The key for FeaturedContentGroup.Documented type: PagesFeaturedContentGroupKeyRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +63,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeDeleted.CreateFromDiscriminatorValue); } },
-                { "featuredContents", n => { FeaturedContents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeFeaturedContentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeFeaturedContentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "featuredContents", n => { FeaturedContents = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeKey.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,8 +75,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeDeleted>("deleted", Deleted);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeFeaturedContentsItem>("featuredContents", FeaturedContents);
+            writer.WriteObjectValue<UntypedNode>("deleted", Deleted);
+            writer.WriteObjectValue<UntypedNode>("featuredContents", FeaturedContents);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHomeKey>("key", Key);
             writer.WriteAdditionalData(AdditionalData);
         }

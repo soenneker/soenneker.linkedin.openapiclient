@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The captions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoCaptionsItem>? Captions { get; set; }
+        public UntypedNode? Captions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoCaptionsItem> Captions { get; set; }
+        public UntypedNode Captions { get; set; }
 #endif
         /// <summary>The downloadUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The thumbnails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoThumbnailsItem>? Thumbnails { get; set; }
+        public UntypedNode? Thumbnails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoThumbnailsItem> Thumbnails { get; set; }
+        public UntypedNode Thumbnails { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideo"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "captions", n => { Captions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoCaptionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoCaptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "captions", n => { Captions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "thumbnails", n => { Thumbnails = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoThumbnailsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoThumbnailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "thumbnails", n => { Thumbnails = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoCaptionsItem>("captions", Captions);
+            writer.WriteObjectValue<UntypedNode>("captions", Captions);
             writer.WriteStringValue("downloadUrl", DownloadUrl);
             writer.WriteStringValue("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItemVideoThumbnailsItem>("thumbnails", Thumbnails);
+            writer.WriteObjectValue<UntypedNode>("thumbnails", Thumbnails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

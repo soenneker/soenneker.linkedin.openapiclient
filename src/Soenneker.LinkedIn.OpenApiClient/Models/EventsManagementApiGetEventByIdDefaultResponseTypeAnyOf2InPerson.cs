@@ -35,10 +35,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Additional details about the event venue.Documented type: MultiLocaleRichText</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonVenueDetails? VenueDetails { get; set; }
+        public UntypedNode? VenueDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonVenueDetails VenueDetails { get; set; }
+        public UntypedNode VenueDetails { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPerson"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonAddress>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonAddress.CreateFromDiscriminatorValue); } },
                 { "endsAt", n => { EndsAt = n.GetLongValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "venueDetails", n => { VenueDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonVenueDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonVenueDetails.CreateFromDiscriminatorValue); } },
+                { "venueDetails", n => { VenueDetails = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonAddress>("address", Address);
             writer.WriteLongValue("endsAt", EndsAt);
             writer.WriteStringValue("url", Url);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2InPersonVenueDetails>("venueDetails", VenueDetails);
+            writer.WriteObjectValue<UntypedNode>("venueDetails", VenueDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

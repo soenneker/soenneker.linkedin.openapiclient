@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>User generated attributes in the textDocumented type: array[Attribute]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem>? Attributes { get; set; }
+        public UntypedNode? Attributes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem> Attributes { get; set; }
+        public UntypedNode Attributes { get; set; }
 #endif
         /// <summary>The locale that may have be inferred for this text. This value would be null if the local inference was not possible or successfulDocumented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "inferredLocale", n => { InferredLocale = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem>("attributes", Attributes);
+            writer.WriteObjectValue<UntypedNode>("attributes", Attributes);
             writer.WriteStringValue("inferredLocale", InferredLocale);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);

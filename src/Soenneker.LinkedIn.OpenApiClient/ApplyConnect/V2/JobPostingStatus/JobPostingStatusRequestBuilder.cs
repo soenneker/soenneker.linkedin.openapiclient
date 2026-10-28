@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ApplyConnect.V2.JobPostingStatus
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/x-www-form-urlencoded", body);
+            global::Soenneker.OpenApi.Generated.OpenApiFormSerializer.SetContent(requestInfo, body, "{\"ids\":{\"style\":\"form\",\"explode\":true}}");
             return requestInfo;
         }
         /// <summary>

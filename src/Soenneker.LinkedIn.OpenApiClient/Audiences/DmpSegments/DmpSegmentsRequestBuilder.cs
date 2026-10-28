@@ -20,14 +20,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments
     {
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.audiences.dmpSegments.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.CompanySegmentItemRequestBuilder"/></returns>
-        public global::Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.CompanySegmentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.WithCompanySegmentItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.WithCompanySegmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("companySegment%2Did", position);
-                return new global::Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.CompanySegmentItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("companySegmentId", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.WithCompanySegmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

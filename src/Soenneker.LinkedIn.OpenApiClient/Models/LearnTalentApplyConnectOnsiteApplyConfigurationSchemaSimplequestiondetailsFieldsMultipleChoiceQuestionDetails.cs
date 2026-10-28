@@ -40,13 +40,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer FavorableMultipleChoiceAnswer { get; set; }
 #endif
         /// <summary>This field indicates whether a set of radio buttons, a dropdown, and so on should be used to display this question.Documented type: FormComponentRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent? PreferredFormComponent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent PreferredFormComponent { get; set; }
-#endif
         /// <summary>This field indicates whether the applicant is allowed to select more than one option when FormComponent is CHECKBOXES. Defaults to false.Documented type: BooleanRequirement: No</summary>
         public bool? SelectMultiple { get; set; }
         /// <summary>
@@ -77,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "choices", n => { Choices = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "defaultValueSymbolicName", n => { DefaultValueSymbolicName = n.GetStringValue(); } },
                 { "favorableMultipleChoiceAnswer", n => { FavorableMultipleChoiceAnswer = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer.CreateFromDiscriminatorValue); } },
-                { "preferredFormComponent", n => { PreferredFormComponent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent.CreateFromDiscriminatorValue); } },
+                { "preferredFormComponent", n => { PreferredFormComponent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent>(); } },
                 { "selectMultiple", n => { SelectMultiple = n.GetBoolValue(); } },
             };
         }
@@ -91,7 +85,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields>("choices", Choices);
             writer.WriteStringValue("defaultValueSymbolicName", DefaultValueSymbolicName);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer>("favorableMultipleChoiceAnswer", FavorableMultipleChoiceAnswer);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent>("preferredFormComponent", PreferredFormComponent);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent>("preferredFormComponent", PreferredFormComponent);
             writer.WriteBoolValue("selectMultiple", SelectMultiple);
             writer.WriteAdditionalData(AdditionalData);
         }

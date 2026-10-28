@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePicture : IComposedTypeWrapper, IParsable
@@ -37,13 +37,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4 RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1? RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1 RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,10 +54,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePicture();
-            result.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2();
-            result.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3();
-            result.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4();
-            result.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2();
+                result.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3();
+                result.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4();
+            }
             return result;
         }
         /// <summary>
@@ -66,9 +71,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2 != null || RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3 != null || RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4 != null || RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1 != null)
+            if(RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2 != null || RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3 != null || RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,7 +84,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2>(null, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureBranch1);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2>(null, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf2, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf3, RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4);
+            }
         }
     }
 }

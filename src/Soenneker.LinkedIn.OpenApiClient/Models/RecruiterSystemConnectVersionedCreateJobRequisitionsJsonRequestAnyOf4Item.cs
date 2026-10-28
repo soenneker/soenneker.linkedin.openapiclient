@@ -14,30 +14,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>will be the standardized location in format of urn:li:geo:12345. GeoUrns can be looked up using jobPostingGeoLocations externalized API. Please send the geoUrn whenever possible.Documented type: StringRequirement: Provide locationGeoUrn if locationName can not be provided.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LocationGeoUrn { get; set; }
-#nullable restore
-#else
-        public string LocationGeoUrn { get; set; }
-#endif
-        /// <summary>The actual location, e.g. &quot;San Francisco, California&quot;, &quot;Los Angeles, California, United States&quot;Documented type: StringRequirement: Provide locationName if locationGeoUrn can not be provided.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LocationName { get; set; }
-#nullable restore
-#else
-        public string LocationName { get; set; }
-#endif
-        /// <summary>The type of location. Available options are: UNKNOWN, PRIMARY, ALTERNATEDocumented type: StringRequirement: Yes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LocationType { get; set; }
-#nullable restore
-#else
-        public string LocationType { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf4Item"/> and sets the default values.
         /// </summary>
@@ -63,9 +39,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "locationGeoUrn", n => { LocationGeoUrn = n.GetStringValue(); } },
-                { "locationName", n => { LocationName = n.GetStringValue(); } },
-                { "locationType", n => { LocationType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +48,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("locationGeoUrn", LocationGeoUrn);
-            writer.WriteStringValue("locationName", LocationName);
-            writer.WriteStringValue("locationType", LocationType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

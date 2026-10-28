@@ -179,7 +179,7 @@
       "SectionPath": [
         "Sample Request for Premium Jobs"
       ],
-      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedin-Version: 202603",
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedIn-Version: 202603",
       "Headers": [],
       "Rows": []
     },

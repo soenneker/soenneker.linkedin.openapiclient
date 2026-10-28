@@ -24,13 +24,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
 #endif
         /// <summary>This field captures whether a resume file (max 2 MB, accepted file types: “doc”, “docx”, “pdf”) needs to be provided. Defaults to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaResumequestionsFieldsResumeQuestionRequirement? ResumeQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaResumequestionsFieldsResumeQuestionRequirement ResumeQuestionRequirement { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "resumeQuestionRequirement", n => { ResumeQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaResumequestionsFieldsResumeQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaResumequestionsFieldsResumeQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "resumeQuestionRequirement", n => { ResumeQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaResumequestionsFieldsResumeQuestionRequirement>(); } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaResumequestionsFieldsResumeQuestionRequirement>("resumeQuestionRequirement", ResumeQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaResumequestionsFieldsResumeQuestionRequirement>("resumeQuestionRequirement", ResumeQuestionRequirement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

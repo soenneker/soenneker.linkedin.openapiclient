@@ -33,10 +33,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The thirdPartyDistributionChannels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionThirdPartyDistributionChannelsItem>? ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode? ThirdPartyDistributionChannels { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionThirdPartyDistributionChannelsItem> ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode ThirdPartyDistributionChannels { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistribution"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "feedDistribution", n => { FeedDistribution = n.GetStringValue(); } },
                 { "targetEntities", n => { TargetEntities = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "thirdPartyDistributionChannels", n => { ThirdPartyDistributionChannels = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionThirdPartyDistributionChannelsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionThirdPartyDistributionChannelsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "thirdPartyDistributionChannels", n => { ThirdPartyDistributionChannels = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("feedDistribution", FeedDistribution);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionTargetEntitiesItem>("targetEntities", TargetEntities);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateImageContentRequestDistributionThirdPartyDistributionChannelsItem>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
+            writer.WriteObjectValue<UntypedNode>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

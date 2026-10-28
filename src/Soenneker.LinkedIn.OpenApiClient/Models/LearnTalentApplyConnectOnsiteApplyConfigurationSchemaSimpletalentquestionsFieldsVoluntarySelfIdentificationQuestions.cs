@@ -24,37 +24,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
 #endif
         /// <summary>This field captures whether the Equal Employment Opportunity Commission (EEOC) Disability question should be asked. Defaults to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsDisabilityQuestionRequirement? DisabilityQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsDisabilityQuestionRequirement DisabilityQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether the Equal Employment Opportunity Commission (EEOC) Gender question should be asked. Defaults to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsGenderQuestionRequirement? GenderQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsGenderQuestionRequirement GenderQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether the Equal Employment Opportunity Commission (EEOC) Race question should be asked. Defaults to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsRaceQuestionRequirement? RaceQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsRaceQuestionRequirement RaceQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether the Equal Employment Opportunity Commission (EEOC) Veteran Status question should be asked. Defaults to REQUIRED.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsVeteranStatusQuestionRequirement? VeteranStatusQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsVeteranStatusQuestionRequirement VeteranStatusQuestionRequirement { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions"/> and sets the default values.
         /// </summary>
@@ -81,10 +57,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "disabilityQuestionRequirement", n => { DisabilityQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsDisabilityQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsDisabilityQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "genderQuestionRequirement", n => { GenderQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsGenderQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsGenderQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "raceQuestionRequirement", n => { RaceQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsRaceQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsRaceQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "veteranStatusQuestionRequirement", n => { VeteranStatusQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsVeteranStatusQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsVeteranStatusQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "disabilityQuestionRequirement", n => { DisabilityQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsDisabilityQuestionRequirement>(); } },
+                { "genderQuestionRequirement", n => { GenderQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsGenderQuestionRequirement>(); } },
+                { "raceQuestionRequirement", n => { RaceQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsRaceQuestionRequirement>(); } },
+                { "veteranStatusQuestionRequirement", n => { VeteranStatusQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsVeteranStatusQuestionRequirement>(); } },
             };
         }
         /// <summary>
@@ -95,10 +71,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsDisabilityQuestionRequirement>("disabilityQuestionRequirement", DisabilityQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsGenderQuestionRequirement>("genderQuestionRequirement", GenderQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsRaceQuestionRequirement>("raceQuestionRequirement", RaceQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsVeteranStatusQuestionRequirement>("veteranStatusQuestionRequirement", VeteranStatusQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsDisabilityQuestionRequirement>("disabilityQuestionRequirement", DisabilityQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsGenderQuestionRequirement>("genderQuestionRequirement", GenderQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsRaceQuestionRequirement>("raceQuestionRequirement", RaceQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaVoluntaryselfidentificationquestionsFieldsVeteranStatusQuestionRequirement>("veteranStatusQuestionRequirement", VeteranStatusQuestionRequirement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2CropInfo CropInfo { get; set; }
 #endif
-        /// <summary>The cropped property</summary>
+        /// <summary>Location of the cropped imageDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cropped { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #endif
         /// <summary>Height of the imageDocumented type: int</summary>
         public int? Height { get; set; }
-        /// <summary>The original property</summary>
+        /// <summary>Location of the original imageDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Original { get; set; }

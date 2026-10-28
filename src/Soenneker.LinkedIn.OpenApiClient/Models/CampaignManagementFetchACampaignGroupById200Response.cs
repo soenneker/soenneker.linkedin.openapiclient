@@ -85,10 +85,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Daily budget for the campaign group and will be shared among all campaigns within the campaign group. This field is optional and mutable. It can only be used if budgetOptimization.budgetOptimizationStrategy is DYNAMIC Note: This field applies to API Versions starting from 202504 and later.Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget? DailyBudget { get; set; }
+        public UntypedNode? DailyBudget { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget DailyBudget { get; set; }
+        public UntypedNode DailyBudget { get; set; }
 #endif
         /// <summary>Numerical identifier for the campaign group. This is a read-only field set by the system.Documented type: long</summary>
         public long? Id { get; set; }
@@ -165,7 +165,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "budgetOptimization", n => { BudgetOptimization = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization.CreateFromDiscriminatorValue); } },
                 { "buyingType", n => { BuyingType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBuyingType>(); } },
                 { "changeAuditStamps", n => { ChangeAuditStamps = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseChangeAuditStamps>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseChangeAuditStamps.CreateFromDiscriminatorValue); } },
-                { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget.CreateFromDiscriminatorValue); } },
+                { "dailyBudget", n => { DailyBudget = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectiveType", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseObjectiveType>(); } },
@@ -193,7 +193,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization>("budgetOptimization", BudgetOptimization);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBuyingType>("buyingType", BuyingType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseChangeAuditStamps>("changeAuditStamps", ChangeAuditStamps);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget>("dailyBudget", DailyBudget);
+            writer.WriteObjectValue<UntypedNode>("dailyBudget", DailyBudget);
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseObjectiveType>("objectiveType", ObjectiveType);

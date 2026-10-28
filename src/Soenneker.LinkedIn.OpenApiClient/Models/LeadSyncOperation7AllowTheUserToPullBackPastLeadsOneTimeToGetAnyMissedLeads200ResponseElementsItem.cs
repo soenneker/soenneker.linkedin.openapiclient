@@ -83,10 +83,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The unique identifier for the form response generated in the front-end when a submitter submits the response.Documented type: TrackingId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId? ResponseId { get; set; }
+        public UntypedNode? ResponseId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId ResponseId { get; set; }
+        public UntypedNode ResponseId { get; set; }
 #endif
         /// <summary>An epoch timestamp that records when the form response was submitted.Documented type: Time</summary>
         public long? SubmittedAt { get; set; }
@@ -142,7 +142,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "leadType", n => { LeadType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType>(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner.CreateFromDiscriminatorValue); } },
                 { "ownerInfo", n => { OwnerInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo.CreateFromDiscriminatorValue); } },
-                { "responseId", n => { ResponseId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId.CreateFromDiscriminatorValue); } },
+                { "responseId", n => { ResponseId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "submittedAt", n => { SubmittedAt = n.GetLongValue(); } },
                 { "submitter", n => { Submitter = n.GetStringValue(); } },
                 { "testLead", n => { TestLead = n.GetBoolValue(); } },
@@ -165,7 +165,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType>("leadType", LeadType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner>("owner", Owner);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo>("ownerInfo", OwnerInfo);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId>("responseId", ResponseId);
+            writer.WriteObjectValue<UntypedNode>("responseId", ResponseId);
             writer.WriteLongValue("submittedAt", SubmittedAt);
             writer.WriteStringValue("submitter", Submitter);
             writer.WriteBoolValue("testLead", TestLead);

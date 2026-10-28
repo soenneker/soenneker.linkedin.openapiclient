@@ -20,13 +20,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The minimum text length for the answer. Defaults to 0.Documented type: IntegerRequirement: No</summary>
         public int? MinLength { get; set; }
         /// <summary>This field indicates whether a one-line or multi-line text input should be used. The value should be TEXT or MULTILINE_TEXT.Documented type: FormComponentRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent? PreferredFormComponent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent PreferredFormComponent { get; set; }
-#endif
         /// <summary>The suggested answer that is prefilled for the applicant being asked the question.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "maxLength", n => { MaxLength = n.GetIntValue(); } },
                 { "minLength", n => { MinLength = n.GetIntValue(); } },
-                { "preferredFormComponent", n => { PreferredFormComponent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent.CreateFromDiscriminatorValue); } },
+                { "preferredFormComponent", n => { PreferredFormComponent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent>(); } },
                 { "suggestedValue", n => { SuggestedValue = n.GetStringValue(); } },
             };
         }
@@ -75,7 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maxLength", MaxLength);
             writer.WriteIntValue("minLength", MinLength);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent>("preferredFormComponent", PreferredFormComponent);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent>("preferredFormComponent", PreferredFormComponent);
             writer.WriteStringValue("suggestedValue", SuggestedValue);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -89,10 +89,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestFormat? Format { get; set; }
+        public string? Format { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestFormat Format { get; set; }
+        public string Format { get; set; }
 #endif
         /// <summary>The locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,18 +131,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The optimizationPreference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreference? OptimizationPreference { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreferenceAnyOf1? OptimizationPreference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreference OptimizationPreference { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreferenceAnyOf1 OptimizationPreference { get; set; }
 #endif
         /// <summary>The optimizationTargetType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationTargetType? OptimizationTargetType { get; set; }
+        public string? OptimizationTargetType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationTargetType OptimizationTargetType { get; set; }
+        public string OptimizationTargetType { get; set; }
 #endif
         /// <summary>Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.Documented type: stringRequirement: False</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestPacingStrategy? PacingStrategy { get; set; }
@@ -233,14 +233,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "creativeSelection", n => { CreativeSelection = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestCreativeSelection>(); } },
                 { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestDailyBudget.CreateFromDiscriminatorValue); } },
                 { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "format", n => { Format = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestFormat>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestFormat.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetStringValue(); } },
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectiveType", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestObjectiveType>(); } },
                 { "offsiteDeliveryEnabled", n => { OffsiteDeliveryEnabled = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsiteDeliveryEnabled>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsiteDeliveryEnabled.CreateFromDiscriminatorValue); } },
                 { "offsitePreferences", n => { OffsitePreferences = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferences>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferences.CreateFromDiscriminatorValue); } },
-                { "optimizationPreference", n => { OptimizationPreference = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreference>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreference.CreateFromDiscriminatorValue); } },
-                { "optimizationTargetType", n => { OptimizationTargetType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationTargetType>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationTargetType.CreateFromDiscriminatorValue); } },
+                { "optimizationPreference", n => { OptimizationPreference = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreferenceAnyOf1>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreferenceAnyOf1.CreateFromDiscriminatorValue); } },
+                { "optimizationTargetType", n => { OptimizationTargetType = n.GetStringValue(); } },
                 { "pacingStrategy", n => { PacingStrategy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestPacingStrategy>(); } },
                 { "politicalIntent", n => { PoliticalIntent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestPoliticalIntent>(); } },
                 { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestRunSchedule.CreateFromDiscriminatorValue); } },
@@ -273,14 +273,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestCreativeSelection>("creativeSelection", CreativeSelection);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestDailyBudget>("dailyBudget", DailyBudget);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItem>("elements", Elements);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestFormat>("format", Format);
+            writer.WriteStringValue("format", Format);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestObjectiveType>("objectiveType", ObjectiveType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsiteDeliveryEnabled>("offsiteDeliveryEnabled", OffsiteDeliveryEnabled);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferences>("offsitePreferences", OffsitePreferences);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreference>("optimizationPreference", OptimizationPreference);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationTargetType>("optimizationTargetType", OptimizationTargetType);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOptimizationPreferenceAnyOf1>("optimizationPreference", OptimizationPreference);
+            writer.WriteStringValue("optimizationTargetType", OptimizationTargetType);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestPacingStrategy>("pacingStrategy", PacingStrategy);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestPoliticalIntent>("politicalIntent", PoliticalIntent);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestRunSchedule>("runSchedule", RunSchedule);

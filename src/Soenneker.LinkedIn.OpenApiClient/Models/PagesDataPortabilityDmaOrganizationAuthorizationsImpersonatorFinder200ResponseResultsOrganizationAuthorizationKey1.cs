@@ -23,10 +23,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The entity on whose behalf the impersonator is publicly acting. It is of type urn:li:organization:{ID}.Documented type: OrganizationUrn](../pages-profiles/organizations.md)Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Actor? Actor { get; set; }
+        public UntypedNode? Actor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Actor Actor { get; set; }
+        public UntypedNode Actor { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action.CreateFromDiscriminatorValue); } },
-                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Actor>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Actor.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "impersonation", n => { Impersonation = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation.CreateFromDiscriminatorValue); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Actor>("actor", Actor);
+            writer.WriteObjectValue<UntypedNode>("actor", Actor);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation>("impersonation", Impersonation);
             writer.WriteAdditionalData(AdditionalData);
         }

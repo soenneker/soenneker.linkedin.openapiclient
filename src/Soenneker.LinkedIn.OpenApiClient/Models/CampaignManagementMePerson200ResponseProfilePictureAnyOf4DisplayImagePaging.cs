@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImagePagingLinksItem>? Links { get; set; }
+        public UntypedNode? Links { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImagePagingLinksItem> Links { get; set; }
+        public UntypedNode Links { get; set; }
 #endif
         /// <summary>The start property</summary>
         public int? Start { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImagePagingLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImagePagingLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetIntValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImagePagingLinksItem>("links", Links);
+            writer.WriteObjectValue<UntypedNode>("links", Links);
             writer.WriteIntValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }

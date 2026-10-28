@@ -7,20 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Media uploaded for the section. Can be a cropped image or video.Documented type: Union of [OrganizationCroppedImage, TalentBrandVideoRequirement: Yes
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMedia : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaVideo? Video { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaAllOf1Video? Video { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaVideo Video { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaAllOf1Video Video { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMedia"/> and sets the default values.
@@ -47,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "video", n => { Video = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaVideo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaVideo.CreateFromDiscriminatorValue); } },
+                { "video", n => { Video = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaAllOf1Video>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaAllOf1Video.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaVideo>("video", Video);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMediaAllOf1Video>("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

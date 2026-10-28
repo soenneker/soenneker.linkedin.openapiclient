@@ -25,18 +25,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The learning classification the learning asset is tagged with.Documented type: ClassificationRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssociatedClassification? AssociatedClassification { get; set; }
+        public UntypedNode? AssociatedClassification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssociatedClassification AssociatedClassification { get; set; }
+        public UntypedNode AssociatedClassification { get; set; }
 #endif
         /// <summary>The parent learning classifications of the associated learning classification.Documented type: Classification []Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationPathItem>? Path { get; set; }
+        public UntypedNode? Path { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationPathItem> Path { get; set; }
+        public UntypedNode Path { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification"/> and sets the default values.
@@ -64,8 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assigner", n => { Assigner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner.CreateFromDiscriminatorValue); } },
-                { "associatedClassification", n => { AssociatedClassification = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssociatedClassification>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssociatedClassification.CreateFromDiscriminatorValue); } },
-                { "path", n => { Path = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationPathItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationPathItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "associatedClassification", n => { AssociatedClassification = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "path", n => { Path = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner>("assigner", Assigner);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssociatedClassification>("associatedClassification", AssociatedClassification);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationPathItem>("path", Path);
+            writer.WriteObjectValue<UntypedNode>("associatedClassification", AssociatedClassification);
+            writer.WriteObjectValue<UntypedNode>("path", Path);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

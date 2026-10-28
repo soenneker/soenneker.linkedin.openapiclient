@@ -309,7 +309,7 @@
         "Step 3: Make API Requests",
         "Sample Request"
       ],
-      "Text": "GET https://api.linkedin.com/rest/simpleJobPostings\n\nConnection: Keep-Alive\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202603",
+      "Text": "GET https://api.linkedin.com/rest/simpleJobPostings\n\nConnection: Keep-Alive\nAuthorization: Bearer {access_token}\nLinkedIn-Version: 202603",
       "Headers": [],
       "Rows": []
     },

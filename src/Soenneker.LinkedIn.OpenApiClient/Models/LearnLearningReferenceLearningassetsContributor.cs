@@ -15,13 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of contribution the contributor made to the learning asset.Documented type: ContributionTypeRequirement: Yes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorContributionType? ContributionType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorContributionType ContributionType { get; set; }
-#endif
         /// <summary>The name of the contributor, localized if available.Documented type: LocaleStringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contributionType", n => { ContributionType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorContributionType>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorContributionType.CreateFromDiscriminatorValue); } },
+                { "contributionType", n => { ContributionType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorContributionType>(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorName>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorName.CreateFromDiscriminatorValue); } },
                 { "urn", n => { Urn = n.GetStringValue(); } },
             };
@@ -75,7 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorContributionType>("contributionType", ContributionType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorContributionType>("contributionType", ContributionType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributorName>("name", Name);
             writer.WriteStringValue("urn", Urn);
             writer.WriteAdditionalData(AdditionalData);

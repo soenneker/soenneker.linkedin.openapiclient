@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The auditStamp including actor and the timestamp corresponding to the creation of this record.Documented type: AuditStampRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemCreatedAt? CreatedAt { get; set; }
+        public UntypedNode? CreatedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemCreatedAt CreatedAt { get; set; }
+        public UntypedNode CreatedAt { get; set; }
 #endif
         /// <summary>The primary email to be used with the seat.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The contract-level roles assigned to the seat.Documented type: array of rolesRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemSeatRolesItem>? SeatRoles { get; set; }
+        public UntypedNode? SeatRoles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemSeatRolesItem> SeatRoles { get; set; }
+        public UntypedNode SeatRoles { get; set; }
 #endif
         /// <summary>The state of the seat.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,13 +106,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "contract", n => { Contract = n.GetStringValue(); } },
-                { "createdAt", n => { CreatedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemCreatedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemCreatedAt.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "member", n => { Member = n.GetStringValue(); } },
                 { "seatId", n => { SeatId = n.GetLongValue(); } },
-                { "seatRoles", n => { SeatRoles = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemSeatRolesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemSeatRolesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "seatRoles", n => { SeatRoles = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
             };
         }
@@ -124,13 +124,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("contract", Contract);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemCreatedAt>("createdAt", CreatedAt);
+            writer.WriteObjectValue<UntypedNode>("createdAt", CreatedAt);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("member", Member);
             writer.WriteLongValue("seatId", SeatId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveRecruiterSeatholdersDefaultResponseElementsItemSeatRolesItem>("seatRoles", SeatRoles);
+            writer.WriteObjectValue<UntypedNode>("seatRoles", SeatRoles);
             writer.WriteStringValue("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

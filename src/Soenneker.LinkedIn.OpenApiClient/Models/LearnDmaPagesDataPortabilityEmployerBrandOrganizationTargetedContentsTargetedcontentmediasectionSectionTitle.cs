@@ -18,18 +18,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Sub-title of this section.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleSubTitle? SubTitle { get; set; }
+        public UntypedNode? SubTitle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleSubTitle SubTitle { get; set; }
+        public UntypedNode SubTitle { get; set; }
 #endif
         /// <summary>Title of this section.Documented type: MultiLocaleStringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleTitle? Title { get; set; }
+        public UntypedNode? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleTitle Title { get; set; }
+        public UntypedNode Title { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitle"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "subTitle", n => { SubTitle = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleSubTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleSubTitle.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleTitle.CreateFromDiscriminatorValue); } },
+                { "subTitle", n => { SubTitle = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleSubTitle>("subTitle", SubTitle);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionSectionTitleTitle>("title", Title);
+            writer.WriteObjectValue<UntypedNode>("subTitle", SubTitle);
+            writer.WriteObjectValue<UntypedNode>("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

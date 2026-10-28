@@ -16,13 +16,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field captures whether cell phone number should be collected. Defaults to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement? CellphoneNumberQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement CellphoneNumberQuestionRequirement { get; set; }
-#endif
         /// <summary>The custom questions to be included within the Contact Information section.Documented type: SimpleTalentQuestionDefinition[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,21 +26,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
 #endif
         /// <summary>This field captures whether location should be collected. Defaults to SKIP.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsLocationQuestionRequirement? LocationQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsLocationQuestionRequirement LocationQuestionRequirement { get; set; }
-#endif
         /// <summary>This field captures whether middle name should be collected. Defaults to SKIP.Documented type: QuestionRequirementRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsMiddleNameQuestionRequirement? MiddleNameQuestionRequirement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsMiddleNameQuestionRequirement MiddleNameQuestionRequirement { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions"/> and sets the default values.
         /// </summary>
@@ -72,10 +54,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cellphoneNumberQuestionRequirement", n => { CellphoneNumberQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "cellphoneNumberQuestionRequirement", n => { CellphoneNumberQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement>(); } },
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "locationQuestionRequirement", n => { LocationQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsLocationQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsLocationQuestionRequirement.CreateFromDiscriminatorValue); } },
-                { "middleNameQuestionRequirement", n => { MiddleNameQuestionRequirement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsMiddleNameQuestionRequirement>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsMiddleNameQuestionRequirement.CreateFromDiscriminatorValue); } },
+                { "locationQuestionRequirement", n => { LocationQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsLocationQuestionRequirement>(); } },
+                { "middleNameQuestionRequirement", n => { MiddleNameQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsMiddleNameQuestionRequirement>(); } },
             };
         }
         /// <summary>
@@ -85,10 +67,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement>("cellphoneNumberQuestionRequirement", CellphoneNumberQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement>("cellphoneNumberQuestionRequirement", CellphoneNumberQuestionRequirement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsLocationQuestionRequirement>("locationQuestionRequirement", LocationQuestionRequirement);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsMiddleNameQuestionRequirement>("middleNameQuestionRequirement", MiddleNameQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsLocationQuestionRequirement>("locationQuestionRequirement", LocationQuestionRequirement);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsMiddleNameQuestionRequirement>("middleNameQuestionRequirement", MiddleNameQuestionRequirement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

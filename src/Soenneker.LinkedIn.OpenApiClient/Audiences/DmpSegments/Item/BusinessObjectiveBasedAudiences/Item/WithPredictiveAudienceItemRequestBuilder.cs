@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.BusinessObjectiveBasedAudiences.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \audiences\dmpSegments\{companySegment-id}\businessObjectiveBasedAudiences\{predictiveAudienceId}
+    /// Builds and executes requests for operations under \audiences\dmpSegments\{companySegmentId}\businessObjectiveBasedAudiences\{predictiveAudienceId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPredictiveAudienceItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.BusinessOb
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPredictiveAudienceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegment%2Did}/businessObjectiveBasedAudiences/{predictiveAudienceId}", pathParameters)
+        public WithPredictiveAudienceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegmentId}/businessObjectiveBasedAudiences/{predictiveAudienceId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Audiences.DmpSegments.Item.BusinessOb
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPredictiveAudienceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegment%2Did}/businessObjectiveBasedAudiences/{predictiveAudienceId}", rawUrl)
+        public WithPredictiveAudienceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/audiences/dmpSegments/{companySegmentId}/businessObjectiveBasedAudiences/{predictiveAudienceId}", rawUrl)
         {
         }
         /// <summary>

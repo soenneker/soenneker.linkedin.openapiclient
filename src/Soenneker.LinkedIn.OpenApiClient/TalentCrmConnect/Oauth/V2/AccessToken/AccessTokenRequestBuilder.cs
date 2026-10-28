@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.TalentCrmConnect.Oauth.V2.AccessToken
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/x-www-form-urlencoded", body);
+            global::Soenneker.OpenApi.Generated.OpenApiFormSerializer.SetContent(requestInfo, body, "{\"client_id\":{\"style\":\"form\",\"explode\":true},\"client_secret\":{\"style\":\"form\",\"explode\":true},\"grant_type\":{\"style\":\"form\",\"explode\":true}}");
             return requestInfo;
         }
         /// <summary>

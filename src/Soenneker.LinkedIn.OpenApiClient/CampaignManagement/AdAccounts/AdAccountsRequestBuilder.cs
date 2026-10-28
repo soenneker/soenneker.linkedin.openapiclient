@@ -26,14 +26,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts
         }
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.campaignManagement.adAccounts.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdAccountsItemRequestBuilder"/></returns>
-        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdAccountsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.WithAdAccountsItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.WithAdAccountsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("adAccounts%2Did", position);
-                return new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdAccountsItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("adAccountsId", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.WithAdAccountsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

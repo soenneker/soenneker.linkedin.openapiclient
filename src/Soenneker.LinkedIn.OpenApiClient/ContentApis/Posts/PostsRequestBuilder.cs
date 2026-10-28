@@ -26,14 +26,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
         }
         /// <summary>Gets an item from the Soenneker.LinkedIn.OpenApiClient.contentApis.posts.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.ImageShareItemRequestBuilder"/></returns>
-        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.ImageShareItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.WithImageShareItemRequestBuilder"/></returns>
+        public global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.WithImageShareItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("imageShare%2Did", position);
-                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.ImageShareItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("imageShareId", position);
+                return new global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.WithImageShareItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

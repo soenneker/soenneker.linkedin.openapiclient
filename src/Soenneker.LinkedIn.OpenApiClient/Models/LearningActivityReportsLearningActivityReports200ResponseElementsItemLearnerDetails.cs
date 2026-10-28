@@ -34,10 +34,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>A list of groups that the enterprise profile belongs to.Documented type: ArrayRequirement: Yes (default=[])</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem>? EnterpriseGroups { get; set; }
+        public UntypedNode? EnterpriseGroups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem> EnterpriseGroups { get; set; }
+        public UntypedNode EnterpriseGroups { get; set; }
 #endif
         /// <summary>The entity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "customAttributes", n => { CustomAttributes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "enterpriseGroups", n => { EnterpriseGroups = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "enterpriseGroups", n => { EnterpriseGroups = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "entity", n => { Entity = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "uniqueUserId", n => { UniqueUserId = n.GetStringValue(); } },
@@ -105,7 +105,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes>("customAttributes", CustomAttributes);
             writer.WriteStringValue("email", Email);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem>("enterpriseGroups", EnterpriseGroups);
+            writer.WriteObjectValue<UntypedNode>("enterpriseGroups", EnterpriseGroups);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity>("entity", Entity);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("uniqueUserId", UniqueUserId);

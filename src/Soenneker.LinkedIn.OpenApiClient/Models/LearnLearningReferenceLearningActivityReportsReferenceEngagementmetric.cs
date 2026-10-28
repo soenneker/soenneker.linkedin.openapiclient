@@ -15,21 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of asset for the content whose report is generated. Supported values include: COURSEVIDEODocumented type: AssetTypeRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType? AssetType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType AssetType { get; set; }
-#endif
         /// <summary>An engagement type metric by which the results should be sorted. Supported values include: SECONDS_VIEWEDCOMPLETIONSDAYS_ACTIVEMARKED_AS_DONEPROGRESS_PERCENTAGEVIEWSENGAGED_LEARNERSDocumented type: EngagementMetricTypeRequirement: Yes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType? EngagementType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType EngagementType { get; set; }
-#endif
         /// <summary>Value of the engagement for the engagement type. For example, number of seconds views or course completions.Documented type: LongRequirement: No</summary>
         public long? EngagementValue { get; set; }
         /// <summary>The time when the content was last engaged. For example, the date the content was last viewed or completed. For COMPLETIONS this is the time when the content was completed.Documented type: TimeRequirement: No</summary>
@@ -59,8 +47,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assetType", n => { AssetType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType.CreateFromDiscriminatorValue); } },
-                { "engagementType", n => { EngagementType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType.CreateFromDiscriminatorValue); } },
+                { "assetType", n => { AssetType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType>(); } },
+                { "engagementType", n => { EngagementType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>(); } },
                 { "engagementValue", n => { EngagementValue = n.GetLongValue(); } },
                 { "lastEngagedAt", n => { LastEngagedAt = n.GetLongValue(); } },
             };
@@ -72,8 +60,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType>("assetType", AssetType);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>("engagementType", EngagementType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType>("assetType", AssetType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>("engagementType", EngagementType);
             writer.WriteLongValue("engagementValue", EngagementValue);
             writer.WriteLongValue("lastEngagedAt", LastEngagedAt);
             writer.WriteAdditionalData(AdditionalData);

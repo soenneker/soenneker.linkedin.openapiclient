@@ -113,10 +113,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Array that contains all the reasons why the creative is not serving. In the case a creative is being served, this field will be null and not present in the response.Documented type: servingHoldReasonsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeServingHoldReasons? ServingHoldReasons { get; set; }
+        public UntypedNode? ServingHoldReasons { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeServingHoldReasons ServingHoldReasons { get; set; }
+        public UntypedNode ServingHoldReasons { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative"/> and sets the default values.
@@ -158,7 +158,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeReview.CreateFromDiscriminatorValue); } },
-                { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeServingHoldReasons>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeServingHoldReasons.CreateFromDiscriminatorValue); } },
+                { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -181,7 +181,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeLeadgenCallToAction>("leadgenCallToAction", LeadgenCallToAction);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeServingHoldReasons>("servingHoldReasons", ServingHoldReasons);
+            writer.WriteObjectValue<UntypedNode>("servingHoldReasons", ServingHoldReasons);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

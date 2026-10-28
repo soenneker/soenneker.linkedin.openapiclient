@@ -7,54 +7,60 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class LinkedinLiveEventsUgcPostsCreateRequestSpecificContent : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class LinkedinLiveEventsUgcPostsCreateRequestSpecificContent : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comLinkedinUgcShareContent property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentComLinkedinUgcShareContent? ComLinkedinUgcShareContent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1? LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentComLinkedinUgcShareContent ComLinkedinUgcShareContent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1 { get; set; }
 #endif
-        /// <summary>The media shared in this share. Can be videos, images, or articles.Documented type: Array of ShareMediaRequirement: Yes</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemedia>? Media { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2? LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemedia> Media { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 { get; set; }
 #endif
-        /// <summary>The main landing page URL of the share. Maximum length is 2000 characters.Documented type: StringRequirement: Optional</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryLandingPageUrl { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3? LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 { get; set; }
 #nullable restore
 #else
-        public string PrimaryLandingPageUrl { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 { get; set; }
 #endif
-        /// <summary>The message content of this share.Documented type: </summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareCommentary? ShareCommentary { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4? LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareCommentary ShareCommentary { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 { get; set; }
 #endif
-        /// <summary>The type of media contained within the media field of this object. Can be the following enum values: ARTICLE - Content containing articles IMAGE - Content containing images NONE - Content containing media RICH - Content containing rich media VIDEO - Content containing videos LEARNING_COURSE - Content containing learning courses JOB - Content contains jobs QUESTION - Content containing questa questions ANSWER - Content containing questa answers. CAROUSEL - Various types of content rendered in carousel format TOPIC - Content containing topics NATIVE_DOCUMENT - Content file types that are uploaded natively URN_REFERENCE - Media URN for the content category; except when URN type is digital media asset. Use mediaType in ShareMedia when disambiguation is required LIVE_VIDEO - Video content streamed live - ugcPost may be consumed during recording. The resource serving the media is the source of truth for whether the video is currently live.Documented type: Enum stringRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareMediaCategory? ShareMediaCategory { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContent"/> and sets the default values.
-        /// </summary>
-        public LinkedinLiveEventsUgcPostsCreateRequestSpecificContent()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5? LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6? LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,7 +69,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContent();
+            var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContent();
+            result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1();
+            result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2();
+            result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3();
+            result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4();
+            result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5();
+            result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,14 +84,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 != null)
             {
-                { "com.linkedin.ugc.ShareContent", n => { ComLinkedinUgcShareContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentComLinkedinUgcShareContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentComLinkedinUgcShareContent.CreateFromDiscriminatorValue); } },
-                { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemedia.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "primaryLandingPageUrl", n => { PrimaryLandingPageUrl = n.GetStringValue(); } },
-                { "shareCommentary", n => { ShareCommentary = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareCommentary>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareCommentary.CreateFromDiscriminatorValue); } },
-                { "shareMediaCategory", n => { ShareMediaCategory = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareMediaCategory>(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -87,12 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentComLinkedinUgcShareContent>("com.linkedin.ugc.ShareContent", ComLinkedinUgcShareContent);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemedia>("media", Media);
-            writer.WriteStringValue("primaryLandingPageUrl", PrimaryLandingPageUrl);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareCommentary>("shareCommentary", ShareCommentary);
-            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharecontentShareMediaCategory>("shareMediaCategory", ShareMediaCategory);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1>(null, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6);
         }
     }
 }

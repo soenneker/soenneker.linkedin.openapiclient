@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Title name in various locales.Documented type: MultiLocaleStringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchemaName? Name { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchemaName Name { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>The superTitle URN that this Title belongs to.Documented type: URN Must be of format urn:li:superTitle:{ID}Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "function", n => { Function = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchemaName>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchemaName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "superTitle", n => { SuperTitle = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("function", Function);
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchemaName>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteStringValue("superTitle", SuperTitle);
             writer.WriteAdditionalData(AdditionalData);
         }

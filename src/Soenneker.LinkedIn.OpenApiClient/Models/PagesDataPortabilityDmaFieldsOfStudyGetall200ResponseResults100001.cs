@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The rollupIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem>? RollupIds { get; set; }
+        public UntypedNode? RollupIds { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem> RollupIds { get; set; }
+        public UntypedNode RollupIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001Name.CreateFromDiscriminatorValue); } },
-                { "rollupIds", n => { RollupIds = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rollupIds", n => { RollupIds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001Name>("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem>("rollupIds", RollupIds);
+            writer.WriteObjectValue<UntypedNode>("rollupIds", RollupIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

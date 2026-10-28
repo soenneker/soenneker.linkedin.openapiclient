@@ -16,11 +16,23 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
-        public long? Count { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount? Count { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount Count { get; set; }
+#endif
         /// <summary>The percentChange property</summary>
         public long? PercentChange { get; set; }
         /// <summary>The previousCount property</summary>
-        public long? PreviousCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount? PreviousCount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount PreviousCount { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg"/> and sets the default values.
         /// </summary>
@@ -46,9 +58,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetLongValue(); } },
+                { "count", n => { Count = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount.CreateFromDiscriminatorValue); } },
                 { "percentChange", n => { PercentChange = n.GetLongValue(); } },
-                { "previousCount", n => { PreviousCount = n.GetLongValue(); } },
+                { "previousCount", n => { PreviousCount = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,9 +70,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("count", Count);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount>("count", Count);
             writer.WriteLongValue("percentChange", PercentChange);
-            writer.WriteLongValue("previousCount", PreviousCount);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount>("previousCount", PreviousCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

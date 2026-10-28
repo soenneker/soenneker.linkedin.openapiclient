@@ -33,10 +33,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The Lead Gen Form associated to the lead.Documented type: LeadGenForm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5Form? Form { get; set; }
+        public UntypedNode? Form { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5Form Form { get; set; }
+        public UntypedNode Form { get; set; }
 #endif
         /// <summary>Answers provided by the form submitter.Documented type: FormResponse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,10 +83,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The unique identifier for the form response generated in the front-end when a submitter submits the response.Documented type: TrackingId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5ResponseId? ResponseId { get; set; }
+        public UntypedNode? ResponseId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5ResponseId ResponseId { get; set; }
+        public UntypedNode ResponseId { get; set; }
 #endif
         /// <summary>An epoch timestamp that records when the form response was submitted.Documented type: Time</summary>
         public long? SubmittedAt { get; set; }
@@ -127,14 +127,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "associatedEntity", n => { AssociatedEntity = n.GetStringValue(); } },
                 { "associatedEntityInfo", n => { AssociatedEntityInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfo.CreateFromDiscriminatorValue); } },
-                { "form", n => { Form = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5Form>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5Form.CreateFromDiscriminatorValue); } },
+                { "form", n => { Form = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "formResponse", n => { FormResponse = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5FormResponse>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5FormResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadMetadataInfo", n => { LeadMetadataInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5LeadMetadataInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5LeadMetadataInfo.CreateFromDiscriminatorValue); } },
                 { "leadType", n => { LeadType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5LeadType>(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "ownerInfo", n => { OwnerInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5OwnerInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5OwnerInfo.CreateFromDiscriminatorValue); } },
-                { "responseId", n => { ResponseId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5ResponseId>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5ResponseId.CreateFromDiscriminatorValue); } },
+                { "responseId", n => { ResponseId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "submittedAt", n => { SubmittedAt = n.GetLongValue(); } },
                 { "submitter", n => { Submitter = n.GetStringValue(); } },
                 { "testLead", n => { TestLead = n.GetBoolValue(); } },
@@ -149,14 +149,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("associatedEntity", AssociatedEntity);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfo>("associatedEntityInfo", AssociatedEntityInfo);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5Form>("form", Form);
+            writer.WriteObjectValue<UntypedNode>("form", Form);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5FormResponse>("formResponse", FormResponse);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5LeadMetadataInfo>("leadMetadataInfo", LeadMetadataInfo);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5LeadType>("leadType", LeadType);
             writer.WriteStringValue("owner", Owner);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5OwnerInfo>("ownerInfo", OwnerInfo);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5ResponseId>("responseId", ResponseId);
+            writer.WriteObjectValue<UntypedNode>("responseId", ResponseId);
             writer.WriteLongValue("submittedAt", SubmittedAt);
             writer.WriteStringValue("submitter", Submitter);
             writer.WriteBoolValue("testLead", TestLead);

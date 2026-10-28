@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The certificationsAndPledges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374CertificationsAndPledgesItem>? CertificationsAndPledges { get; set; }
+        public UntypedNode? CertificationsAndPledges { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374CertificationsAndPledgesItem> CertificationsAndPledges { get; set; }
+        public UntypedNode CertificationsAndPledges { get; set; }
 #endif
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,10 +69,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The perksAndBenefits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374PerksAndBenefitsItem>? PerksAndBenefits { get; set; }
+        public UntypedNode? PerksAndBenefits { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374PerksAndBenefitsItem> PerksAndBenefits { get; set; }
+        public UntypedNode PerksAndBenefits { get; set; }
 #endif
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,14 +108,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
-                { "certificationsAndPledges", n => { CertificationsAndPledges = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374CertificationsAndPledgesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374CertificationsAndPledgesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "certificationsAndPledges", n => { CertificationsAndPledges = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Created>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Created.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Description>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Description.CreateFromDiscriminatorValue); } },
                 { "featuredCredential", n => { FeaturedCredential = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374FeaturedCredential>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374FeaturedCredential.CreateFromDiscriminatorValue); } },
                 { "isQuality", n => { IsQuality = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Key>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Key.CreateFromDiscriminatorValue); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374LastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374LastModified.CreateFromDiscriminatorValue); } },
-                { "perksAndBenefits", n => { PerksAndBenefits = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374PerksAndBenefitsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374PerksAndBenefitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "perksAndBenefits", n => { PerksAndBenefits = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374ResourcesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374ResourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -127,14 +127,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374CertificationsAndPledgesItem>("certificationsAndPledges", CertificationsAndPledges);
+            writer.WriteObjectValue<UntypedNode>("certificationsAndPledges", CertificationsAndPledges);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Created>("created", Created);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Description>("description", Description);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374FeaturedCredential>("featuredCredential", FeaturedCredential);
             writer.WriteBoolValue("isQuality", IsQuality);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374Key>("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374LastModified>("lastModified", LastModified);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374PerksAndBenefitsItem>("perksAndBenefits", PerksAndBenefits);
+            writer.WriteObjectValue<UntypedNode>("perksAndBenefits", PerksAndBenefits);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374ResourcesItem>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);
         }

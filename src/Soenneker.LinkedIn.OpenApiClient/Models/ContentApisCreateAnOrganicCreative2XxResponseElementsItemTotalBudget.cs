@@ -17,18 +17,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>If budgetOptimization.budgetOptimizationStrategy is DYNAMIC, the total budget of the campaign group will be shared among all campaigns within the same campaign group. Otherwise, it represents the maximum amount to be spent across all associated campaigns and creatives for the duration of the campaign group.Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetAmount? Amount { get; set; }
+        public UntypedNode? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetAmount Amount { get; set; }
+        public UntypedNode Amount { get; set; }
 #endif
         /// <summary>Indicates the currencyCode of the campaign group&apos;s total budget. Note: The currency must match the ISO currency code of the account.Documented type: Currency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetCurrencyCode? CurrencyCode { get; set; }
+        public UntypedNode? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetCurrencyCode CurrencyCode { get; set; }
+        public UntypedNode CurrencyCode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudget"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetAmount>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetAmount.CreateFromDiscriminatorValue); } },
-                { "currencyCode", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetCurrencyCode>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "currencyCode", n => { CurrencyCode = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetAmount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseElementsItemTotalBudgetCurrencyCode>("currencyCode", CurrencyCode);
+            writer.WriteObjectValue<UntypedNode>("amount", Amount);
+            writer.WriteObjectValue<UntypedNode>("currencyCode", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

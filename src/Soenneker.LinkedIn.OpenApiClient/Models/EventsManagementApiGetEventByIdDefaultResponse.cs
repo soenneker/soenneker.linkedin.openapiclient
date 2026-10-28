@@ -26,18 +26,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Description of the event as provided by the creator. Not present if no description was provided.Documented type: MultiLocaleRichText</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDescription? Description { get; set; }
+        public UntypedNode? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDescription Description { get; set; }
+        public UntypedNode Description { get; set; }
 #endif
         /// <summary>The discoveryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDiscoveryMode? DiscoveryMode { get; set; }
+        public string? DiscoveryMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDiscoveryMode DiscoveryMode { get; set; }
+        public string DiscoveryMode { get; set; }
 #endif
         /// <summary>Unique identifier of the event.Documented type: Long</summary>
         public long? Id { get; set; }
@@ -52,10 +52,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Specifies how to attach a lead generation form to the event. Can only be set at creation — cannot be updated afterward.Documented type: LeadGenFormSpec</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseLeadGenFormSpec? LeadGenFormSpec { get; set; }
+        public UntypedNode? LeadGenFormSpec { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseLeadGenFormSpec LeadGenFormSpec { get; set; }
+        public UntypedNode LeadGenFormSpec { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
@@ -72,10 +72,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseType? Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseType Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2 Type { get; set; }
 #endif
         /// <summary>URN of the LinkedIn post associated with this event. Set automatically when the event is posted.Documented type: UserGeneratedContentPostUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,14 +119,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "backgroundImage", n => { BackgroundImage = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDescription.CreateFromDiscriminatorValue); } },
-                { "discoveryMode", n => { DiscoveryMode = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDiscoveryMode>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDiscoveryMode.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "discoveryMode", n => { DiscoveryMode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "leadGenForm", n => { LeadGenForm = n.GetStringValue(); } },
-                { "leadGenFormSpec", n => { LeadGenFormSpec = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseLeadGenFormSpec>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseLeadGenFormSpec.CreateFromDiscriminatorValue); } },
+                { "leadGenFormSpec", n => { LeadGenFormSpec = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "organizer", n => { Organizer = n.GetStringValue(); } },
                 { "startsAt", n => { StartsAt = n.GetLongValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseType>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2.CreateFromDiscriminatorValue); } },
                 { "ugcPost", n => { UgcPost = n.GetStringValue(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
             };
@@ -139,14 +139,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("backgroundImage", BackgroundImage);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseDiscoveryMode>("discoveryMode", DiscoveryMode);
+            writer.WriteObjectValue<UntypedNode>("description", Description);
+            writer.WriteStringValue("discoveryMode", DiscoveryMode);
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("leadGenForm", LeadGenForm);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseLeadGenFormSpec>("leadGenFormSpec", LeadGenFormSpec);
+            writer.WriteObjectValue<UntypedNode>("leadGenFormSpec", LeadGenFormSpec);
             writer.WriteStringValue("organizer", Organizer);
             writer.WriteLongValue("startsAt", StartsAt);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiGetEventByIdDefaultResponseTypeAnyOf2>("type", Type);
             writer.WriteStringValue("ugcPost", UgcPost);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteAdditionalData(AdditionalData);

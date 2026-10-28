@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Client organization who states the testimonial. Organization looking to hire through staffing companies.Documented type: OrganizationUrn](../pages-profiles/organizations.md)Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItemOrganization? Organization { get; set; }
+        public UntypedNode? Organization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItemOrganization Organization { get; set; }
+        public UntypedNode Organization { get; set; }
 #endif
         /// <summary>Testimonial of the client.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clientTitle", n => { ClientTitle = n.GetStringValue(); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItemOrganization>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItemOrganization.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "testimonial", n => { Testimonial = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientTitle", ClientTitle);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItemOrganization>("organization", Organization);
+            writer.WriteObjectValue<UntypedNode>("organization", Organization);
             writer.WriteStringValue("testimonial", Testimonial);
             writer.WriteAdditionalData(AdditionalData);
         }

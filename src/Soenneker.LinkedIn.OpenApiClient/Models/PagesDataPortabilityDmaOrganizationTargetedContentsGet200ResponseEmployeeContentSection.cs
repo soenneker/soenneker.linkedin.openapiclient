@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Hashtags used to select content posted by organization employees so it can be featured on the life page.Documented type: Array of stringsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentemployeecontentsectionHashtagsItem>? Hashtags { get; set; }
+        public UntypedNode? Hashtags { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentemployeecontentsectionHashtagsItem> Hashtags { get; set; }
+        public UntypedNode Hashtags { get; set; }
 #endif
         /// <summary>If true, show employee content tagged with the hashtags on the life page.Documented type: booleanRequirement: Yes</summary>
         public bool? Visible { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hashtags", n => { Hashtags = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentemployeecontentsectionHashtagsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentemployeecontentsectionHashtagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "hashtags", n => { Hashtags = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentemployeecontentsectionHashtagsItem>("hashtags", Hashtags);
+            writer.WriteObjectValue<UntypedNode>("hashtags", Hashtags);
             writer.WriteBoolValue("visible", Visible);
             writer.WriteAdditionalData(AdditionalData);
         }

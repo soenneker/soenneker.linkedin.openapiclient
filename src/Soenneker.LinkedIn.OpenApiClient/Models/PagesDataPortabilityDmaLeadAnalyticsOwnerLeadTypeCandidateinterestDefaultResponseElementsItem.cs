@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The pivot values for a specific record in the response. Example: OWNER returns a list of records, one for each organization owner.Documented type: LeadAnalyticsPivotValue[]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItemPivotValuesItem>? PivotValues { get; set; }
+        public UntypedNode? PivotValues { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItemPivotValuesItem> PivotValues { get; set; }
+        public UntypedNode PivotValues { get; set; }
 #endif
         /// <summary>The count of test leads for the specific pivotValue. Test leads are leads submitted for testing purposes.Documented type: longRequirement: Yes</summary>
         public long? TestLeadCount { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "nonTestLeadCount", n => { NonTestLeadCount = n.GetLongValue(); } },
-                { "pivotValues", n => { PivotValues = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItemPivotValuesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItemPivotValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pivotValues", n => { PivotValues = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "testLeadCount", n => { TestLeadCount = n.GetLongValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("nonTestLeadCount", NonTestLeadCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItemPivotValuesItem>("pivotValues", PivotValues);
+            writer.WriteObjectValue<UntypedNode>("pivotValues", PivotValues);
             writer.WriteLongValue("testLeadCount", TestLeadCount);
             writer.WriteAdditionalData(AdditionalData);
         }

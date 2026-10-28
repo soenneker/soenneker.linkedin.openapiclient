@@ -16,13 +16,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The availability of the learning asset.Documented type: AvailabilityRequirement: Yes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability? Availability { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability Availability { get; set; }
-#endif
         /// <summary>The locales the learning asset is available in.Documented type: Locale []Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,22 +70,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The epoch time in milliseconds indicating when the learning asset was last updated.Documented type: TimeRequirement: Yes</summary>
         public long? LastUpdatedAt { get; set; }
         /// <summary>If present, the difficulty level of the learning asset.Documented type: DifficultyLevelRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel? Level { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel Level { get; set; }
-#endif
         /// <summary>The epoch time in milliseconds indicating when the learning asset was published.Documented type: TimeRequirement: Yes</summary>
         public long? PublishedAt { get; set; }
         /// <summary>The value of this field is currently always an empty array. Future versions of the API may use this field to indicate relationships the learning asset has to other learning assets.Documented type: ArrayRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsRelationshipsItem>? Relationships { get; set; }
+        public UntypedNode? Relationships { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsRelationshipsItem> Relationships { get; set; }
+        public UntypedNode Relationships { get; set; }
 #endif
         /// <summary>If present, the epoch time in milliseconds indicating when the learning asset was retired.Documented type: TimeRequirement: No</summary>
         public long? RetiredAt { get; set; }
@@ -144,7 +132,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "availability", n => { Availability = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability.CreateFromDiscriminatorValue); } },
+                { "availability", n => { Availability = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability>(); } },
                 { "availableLocales", n => { AvailableLocales = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "classifications", n => { Classifications = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contributors", n => { Contributors = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -153,9 +141,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "descriptionIncludingHtml", n => { DescriptionIncludingHtml = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml.CreateFromDiscriminatorValue); } },
                 { "images", n => { Images = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages.CreateFromDiscriminatorValue); } },
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetLongValue(); } },
-                { "level", n => { Level = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel.CreateFromDiscriminatorValue); } },
+                { "level", n => { Level = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel>(); } },
                 { "publishedAt", n => { PublishedAt = n.GetLongValue(); } },
-                { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsRelationshipsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsRelationshipsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "relationships", n => { Relationships = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "retiredAt", n => { RetiredAt = n.GetLongValue(); } },
                 { "shortDescription", n => { ShortDescription = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription.CreateFromDiscriminatorValue); } },
                 { "timeToComplete", n => { TimeToComplete = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete.CreateFromDiscriminatorValue); } },
@@ -169,7 +157,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability>("availability", Availability);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability>("availability", Availability);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale>("availableLocales", AvailableLocales);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification>("classifications", Classifications);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor>("contributors", Contributors);
@@ -178,9 +166,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml>("descriptionIncludingHtml", DescriptionIncludingHtml);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages>("images", Images);
             writer.WriteLongValue("lastUpdatedAt", LastUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel>("level", Level);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel>("level", Level);
             writer.WriteLongValue("publishedAt", PublishedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsRelationshipsItem>("relationships", Relationships);
+            writer.WriteObjectValue<UntypedNode>("relationships", Relationships);
             writer.WriteLongValue("retiredAt", RetiredAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription>("shortDescription", ShortDescription);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete>("timeToComplete", TimeToComplete);

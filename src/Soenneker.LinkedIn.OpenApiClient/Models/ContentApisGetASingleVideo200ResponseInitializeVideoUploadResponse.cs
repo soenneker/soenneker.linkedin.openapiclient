@@ -33,10 +33,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Instructions for parts of multi-part video upload. Each entry in the array represents one part of the multi-part upload. It is never be empty. Parts are sorted by non-overlapping byte-range. The first entry is byte range: 0 - 4194303, the next one with 4194304 - 8388607 and so on.firstByte long First byte (inclusive) in the byte range to upload in this part.lastByte long The last byte (inclusive) in the range to upload in this part. uploadUrl URL HTTP upload URL that you&apos;ll use to make HTTP PUT request.Documented type: VideoPartUploadInstruction arrayRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponseUploadInstructionsItem>? UploadInstructions { get; set; }
+        public UntypedNode? UploadInstructions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponseUploadInstructionsItem> UploadInstructions { get; set; }
+        public UntypedNode UploadInstructions { get; set; }
 #endif
         /// <summary>Identifier for an upload session. You need to pass this in the finalize step to link video parts together.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "captionsUploadUrl", n => { CaptionsUploadUrl = n.GetStringValue(); } },
                 { "thumbnailUploadUrl", n => { ThumbnailUploadUrl = n.GetStringValue(); } },
-                { "uploadInstructions", n => { UploadInstructions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponseUploadInstructionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponseUploadInstructionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "uploadInstructions", n => { UploadInstructions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "uploadToken", n => { UploadToken = n.GetStringValue(); } },
                 { "uploadUrlsExpireAt", n => { UploadUrlsExpireAt = n.GetLongValue(); } },
                 { "video", n => { Video = n.GetStringValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("captionsUploadUrl", CaptionsUploadUrl);
             writer.WriteStringValue("thumbnailUploadUrl", ThumbnailUploadUrl);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponseUploadInstructionsItem>("uploadInstructions", UploadInstructions);
+            writer.WriteObjectValue<UntypedNode>("uploadInstructions", UploadInstructions);
             writer.WriteStringValue("uploadToken", UploadToken);
             writer.WriteLongValue("uploadUrlsExpireAt", UploadUrlsExpireAt);
             writer.WriteStringValue("video", Video);

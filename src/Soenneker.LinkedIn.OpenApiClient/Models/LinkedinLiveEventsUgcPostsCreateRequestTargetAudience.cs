@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class LinkedinLiveEventsUgcPostsCreateRequestTargetAudience : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class LinkedinLiveEventsUgcPostsCreateRequestTargetAudience : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The entities targeted for distribution. Structured as an object containing multiple arrays of targeting entity URNs that functions like a series of OR conditionals.Documented type: Array of Targets (see below)</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience_targetedEntities? TargetedEntities { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1? LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience_targetedEntities TargetedEntities { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1 LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience"/> and sets the default values.
-        /// </summary>
-        public LinkedinLiveEventsUgcPostsCreateRequestTargetAudience()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2? LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2 LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience();
+            var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience();
+            result.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1();
+            result.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +48,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1 != null || LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2 != null)
             {
-                { "targetedEntities", n => { TargetedEntities = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience_targetedEntities>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience_targetedEntities.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudience_targetedEntities>("targetedEntities", TargetedEntities);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1>(null, LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf2);
         }
     }
 }

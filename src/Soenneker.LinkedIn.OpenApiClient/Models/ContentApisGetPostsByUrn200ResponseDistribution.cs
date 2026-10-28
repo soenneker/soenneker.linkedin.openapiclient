@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The thirdPartyDistributionChannels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetPostsByUrn200ResponseDistributionThirdPartyDistributionChannelsItem>? ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode? ThirdPartyDistributionChannels { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetPostsByUrn200ResponseDistributionThirdPartyDistributionChannelsItem> ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode ThirdPartyDistributionChannels { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetPostsByUrn200ResponseDistribution"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "feedDistribution", n => { FeedDistribution = n.GetStringValue(); } },
-                { "thirdPartyDistributionChannels", n => { ThirdPartyDistributionChannels = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetPostsByUrn200ResponseDistributionThirdPartyDistributionChannelsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetPostsByUrn200ResponseDistributionThirdPartyDistributionChannelsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "thirdPartyDistributionChannels", n => { ThirdPartyDistributionChannels = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("feedDistribution", FeedDistribution);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetPostsByUrn200ResponseDistributionThirdPartyDistributionChannelsItem>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
+            writer.WriteObjectValue<UntypedNode>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

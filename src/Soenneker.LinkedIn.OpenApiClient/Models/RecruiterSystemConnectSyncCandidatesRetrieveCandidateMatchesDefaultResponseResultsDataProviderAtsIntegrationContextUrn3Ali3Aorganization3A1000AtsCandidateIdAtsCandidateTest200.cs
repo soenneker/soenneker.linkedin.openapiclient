@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>A list of personal addresses of the candidate. All fields are optional but must comply with the following rules: Address.Line1 is required if Line 2 or Line3 or Line4 are provided.Address.Line2 is required if Line3 or Line4 are provided.Address.Line3 is required if Line4 is provided.Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.At most 30 addresses can be provided.. May be an empty array.Documented type: Address[]Requirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200AddressesItem>? Addresses { get; set; }
+        public UntypedNode? Addresses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200AddressesItem> Addresses { get; set; }
+        public UntypedNode Addresses { get; set; }
 #endif
         /// <summary>The timestamp when the content was created within external CRM, in milliseconds since Unix Epoch. Value must be greater than zero. Value cannot be more than atsLastModifiedAt.Documented type: TimeRequirement: Required</summary>
         public long? AtsCreatedAt { get; set; }
@@ -111,10 +111,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>A list of phone numbers of the candidate. Format must follow com.google.i18n.phonenumbers standard. At most 30 phone numbers can be provided. May be an empty array.Documented type: PhoneNumber[]Requirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200PhoneNumbersItem>? PhoneNumbers { get; set; }
+        public UntypedNode? PhoneNumbers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200PhoneNumbersItem> PhoneNumbers { get; set; }
+        public UntypedNode PhoneNumbers { get; set; }
 #endif
         /// <summary>The prefix name of the candidate, i.e. Mr, Mrs, etc.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,10 +135,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>List of Candidate&apos;s source.Documented type: Source[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200SourcesItem>? Sources { get; set; }
+        public UntypedNode? Sources { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200SourcesItem> Sources { get; set; }
+        public UntypedNode Sources { get; set; }
 #endif
         /// <summary>The suffix name of the candidate, i.e. Eng, MD, etc.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200AddressesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200AddressesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "addresses", n => { Addresses = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "atsCreatedAt", n => { AtsCreatedAt = n.GetLongValue(); } },
                 { "atsLastModifiedAt", n => { AtsLastModifiedAt = n.GetLongValue(); } },
                 { "currentCompanyName", n => { CurrentCompanyName = n.GetStringValue(); } },
@@ -195,10 +195,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "manualMatchedMember", n => { ManualMatchedMember = n.GetStringValue(); } },
                 { "matchedMembers", n => { MatchedMembers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "middleInitial", n => { MiddleInitial = n.GetStringValue(); } },
-                { "phoneNumbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200PhoneNumbersItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200PhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "phoneNumbers", n => { PhoneNumbers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200SourcesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200SourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sources", n => { Sources = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "suffix", n => { Suffix = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -210,7 +210,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200AddressesItem>("addresses", Addresses);
+            writer.WriteObjectValue<UntypedNode>("addresses", Addresses);
             writer.WriteLongValue("atsCreatedAt", AtsCreatedAt);
             writer.WriteLongValue("atsLastModifiedAt", AtsLastModifiedAt);
             writer.WriteStringValue("currentCompanyName", CurrentCompanyName);
@@ -224,10 +224,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("manualMatchedMember", ManualMatchedMember);
             writer.WriteCollectionOfPrimitiveValues<string>("matchedMembers", MatchedMembers);
             writer.WriteStringValue("middleInitial", MiddleInitial);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200PhoneNumbersItem>("phoneNumbers", PhoneNumbers);
+            writer.WriteObjectValue<UntypedNode>("phoneNumbers", PhoneNumbers);
             writer.WriteStringValue("prefix", Prefix);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsDataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000AtsCandidateIdAtsCandidateTest200SourcesItem>("sources", Sources);
+            writer.WriteObjectValue<UntypedNode>("sources", Sources);
             writer.WriteStringValue("suffix", Suffix);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);

@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAllAdAccountsOfTheAuthenticatedUser200ResponsePagingLinksItem>? Links { get; set; }
+        public UntypedNode? Links { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAllAdAccountsOfTheAuthenticatedUser200ResponsePagingLinksItem> Links { get; set; }
+        public UntypedNode Links { get; set; }
 #endif
         /// <summary>The start property</summary>
         public long? Start { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetLongValue(); } },
-                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAllAdAccountsOfTheAuthenticatedUser200ResponsePagingLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAllAdAccountsOfTheAuthenticatedUser200ResponsePagingLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetLongValue(); } },
                 { "total", n => { Total = n.GetLongValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAllAdAccountsOfTheAuthenticatedUser200ResponsePagingLinksItem>("links", Links);
+            writer.WriteObjectValue<UntypedNode>("links", Links);
             writer.WriteLongValue("start", Start);
             writer.WriteLongValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);

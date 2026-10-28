@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6"/>, List&lt;int&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequest : IComposedTypeWrapper, IParsable
@@ -53,13 +53,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6 ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1"/></summary>
+        /// <summary>Composed type representation for type List&lt;int&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1? ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1 { get; set; }
+        public List<int?>? Integer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1 ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1 { get; set; }
+        public List<int?> Integer { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,12 +70,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequest();
-            result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2();
-            result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3();
-            result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4();
-            result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5();
-            result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6();
-            result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1();
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<int?>()?.AsList() is List<int?> integerValue)
+            {
+                result.Integer = integerValue;
+            }
+            else {
+                result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2();
+                result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3();
+                result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4();
+                result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5();
+                result.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6();
+            }
             return result;
         }
         /// <summary>
@@ -84,9 +89,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1 != null)
+            if(ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5 != null || ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -97,7 +102,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2>(null, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestBranch1);
+            if(Integer != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<int?>(null, Integer);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2>(null, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf2, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf3, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf4, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf5, ApplyWithLinkedinV3UpdateCustomerAtsIntegrationApplywithlinkedinRequestAnyOf6);
+            }
         }
     }
 }

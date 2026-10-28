@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2"/>, List&lt;int&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequest : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type List&lt;int&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? Integer { get; set; }
+#nullable restore
+#else
+        public List<int?> Integer { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +28,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2 RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1? RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1 RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequest();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2();
-            result.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1();
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<int?>()?.AsList() is List<int?> integerValue)
+            {
+                result.Integer = integerValue;
+            }
+            else {
+                result.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +53,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2 != null || RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1 != null)
+            if(RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2, RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +66,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2>(null, RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2, RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestBranch1);
+            if(Integer != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<int?>(null, Integer);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2>(null, RecruiterSystemConnectVersionedCreateJobRequisitionStagesJsonRequestAnyOf2);
+            }
         }
     }
 }

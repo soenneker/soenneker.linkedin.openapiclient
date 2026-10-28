@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The postDescription property</summary>
+        /// <summary>Page admins of companies that opted-in to automatic job post creation can provide a custom post description. If this field is null, default post description will be used.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostDescription { get; set; }
@@ -23,14 +23,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string PostDescription { get; set; }
 #endif
-        /// <summary>The postSchedule property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PostSchedule { get; set; }
-#nullable restore
-#else
-        public string PostSchedule { get; set; }
-#endif
+        /// <summary>Enum representing all the different scheduling choices for an organization that opted-in to automatic job post creation.Documented type: PostScheduleRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule? PostSchedule { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "postDescription", n => { PostDescription = n.GetStringValue(); } },
-                { "postSchedule", n => { PostSchedule = n.GetStringValue(); } },
+                { "postSchedule", n => { PostSchedule = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule>(); } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("postDescription", PostDescription);
-            writer.WriteStringValue("postSchedule", PostSchedule);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule>("postSchedule", PostSchedule);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

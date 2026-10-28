@@ -49,10 +49,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The ugcPost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemUgcPost? UgcPost { get; set; }
+        public string? UgcPost { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemUgcPost UgcPost { get; set; }
+        public string UgcPost { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItem"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "share", n => { Share = n.GetStringValue(); } },
                 { "timeRange", n => { TimeRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange.CreateFromDiscriminatorValue); } },
                 { "totalShareStatistics", n => { TotalShareStatistics = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics.CreateFromDiscriminatorValue); } },
-                { "ugcPost", n => { UgcPost = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemUgcPost>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemUgcPost.CreateFromDiscriminatorValue); } },
+                { "ugcPost", n => { UgcPost = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("share", Share);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange>("timeRange", TimeRange);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics>("totalShareStatistics", TotalShareStatistics);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemUgcPost>("ugcPost", UgcPost);
+            writer.WriteStringValue("ugcPost", UgcPost);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

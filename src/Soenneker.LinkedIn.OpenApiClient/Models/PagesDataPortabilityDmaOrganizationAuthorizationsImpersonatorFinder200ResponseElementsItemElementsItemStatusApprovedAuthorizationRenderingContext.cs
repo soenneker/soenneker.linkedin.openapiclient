@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The disallowedEntryPoints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemStatusApprovedAuthorizationRenderingContextDisallowedEntryPointsItem>? DisallowedEntryPoints { get; set; }
+        public UntypedNode? DisallowedEntryPoints { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemStatusApprovedAuthorizationRenderingContextDisallowedEntryPointsItem> DisallowedEntryPoints { get; set; }
+        public UntypedNode DisallowedEntryPoints { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemStatusApprovedAuthorizationRenderingContext"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disallowedEntryPoints", n => { DisallowedEntryPoints = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemStatusApprovedAuthorizationRenderingContextDisallowedEntryPointsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemStatusApprovedAuthorizationRenderingContextDisallowedEntryPointsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "disallowedEntryPoints", n => { DisallowedEntryPoints = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemStatusApprovedAuthorizationRenderingContextDisallowedEntryPointsItem>("disallowedEntryPoints", DisallowedEntryPoints);
+            writer.WriteObjectValue<UntypedNode>("disallowedEntryPoints", DisallowedEntryPoints);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

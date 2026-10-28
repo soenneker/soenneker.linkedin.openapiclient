@@ -17,18 +17,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Maximum amount to spend over the life of the campaign. The amount of money as a real number string. Deprecated for campaigns not using lifetime pacing.Documented type: BigDecimalRequirement: True, unless dailyBudget is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetAmount? Amount { get; set; }
+        public UntypedNode? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetAmount Amount { get; set; }
+        public UntypedNode Amount { get; set; }
 #endif
         /// <summary>ISO currency code. The currency must match that of the account. Deprecated for campaigns not using lifetime pacing.Documented type: CurrencyRequirement: True, unless dailyBudget is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetCurrencyCode? CurrencyCode { get; set; }
+        public UntypedNode? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetCurrencyCode CurrencyCode { get; set; }
+        public UntypedNode CurrencyCode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudget"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetAmount>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetAmount.CreateFromDiscriminatorValue); } },
-                { "currencyCode", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetCurrencyCode>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "currencyCode", n => { CurrencyCode = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetAmount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemTotalBudgetCurrencyCode>("currencyCode", CurrencyCode);
+            writer.WriteObjectValue<UntypedNode>("amount", Amount);
+            writer.WriteObjectValue<UntypedNode>("currencyCode", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

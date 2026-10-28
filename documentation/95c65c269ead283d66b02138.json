@@ -291,7 +291,7 @@
         "Location finder schema",
         "API Header"
       ],
-      "Text": "The header for making the request is Linkedin-Version: 202411.",
+      "Text": "The header for making the request is LinkedIn-Version: 202411.",
       "Headers": [],
       "Rows": []
     },
@@ -303,7 +303,7 @@
         "Location finder schema",
         "API Header"
       ],
-      "Text": "Authorization: Bearer {token}\nLinkedin-Version: YYYYMM",
+      "Text": "Authorization: Bearer {token}\nLinkedIn-Version: YYYYMM",
       "Headers": [],
       "Rows": []
     },
@@ -431,7 +431,7 @@
         "Sample Location finder Response",
         "API Header"
       ],
-      "Text": "The header for making the request is Linkedin-Version: 202603.",
+      "Text": "The header for making the request is LinkedIn-Version: 202603.",
       "Headers": [],
       "Rows": []
     },
@@ -443,7 +443,7 @@
         "Sample Location finder Response",
         "API Header"
       ],
-      "Text": "Authorization: Bearer {token}\nLinkedin-Version: YYYYMM",
+      "Text": "Authorization: Bearer {token}\nLinkedIn-Version: YYYYMM",
       "Headers": [],
       "Rows": []
     },

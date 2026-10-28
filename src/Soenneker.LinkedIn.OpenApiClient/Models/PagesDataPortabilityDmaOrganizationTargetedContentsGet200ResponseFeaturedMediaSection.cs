@@ -18,28 +18,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Body of this media section&apos;s text segment.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionBody? Body { get; set; }
+        public UntypedNode? Body { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionBody Body { get; set; }
+        public UntypedNode Body { get; set; }
 #endif
         /// <summary>Headline of this media section&apos;s text segment.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionHeadline? Headline { get; set; }
+        public UntypedNode? Headline { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionHeadline Headline { get; set; }
+        public UntypedNode Headline { get; set; }
 #endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionLinksItem>? Links { get; set; }
+        public UntypedNode? Links { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionLinksItem> Links { get; set; }
+        public UntypedNode Links { get; set; }
 #endif
-        /// <summary>The media property</summary>
+        /// <summary>Media uploaded for the section. Can be a cropped image or video.Documented type: Union of [OrganizationCroppedImage, TalentBrandVideoRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMedia? Media { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionSectionTitle SectionTitle { get; set; }
 #endif
-        /// <summary>The visible property</summary>
+        /// <summary>Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it&apos;s still a work in progress. Default true.Documented type: booleanRequirement: No</summary>
         public bool? Visible { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSection"/> and sets the default values.
@@ -90,9 +90,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "body", n => { Body = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionBody>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionBody.CreateFromDiscriminatorValue); } },
-                { "headline", n => { Headline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionHeadline>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionHeadline.CreateFromDiscriminatorValue); } },
-                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "body", n => { Body = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "headline", n => { Headline = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMedia.CreateFromDiscriminatorValue); } },
                 { "photoAsset", n => { PhotoAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAsset.CreateFromDiscriminatorValue); } },
                 { "sectionTitle", n => { SectionTitle = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionSectionTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionSectionTitle.CreateFromDiscriminatorValue); } },
@@ -106,9 +106,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionBody>("body", Body);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionHeadline>("headline", Headline);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionLinksItem>("links", Links);
+            writer.WriteObjectValue<UntypedNode>("body", Body);
+            writer.WriteObjectValue<UntypedNode>("headline", Headline);
+            writer.WriteObjectValue<UntypedNode>("links", Links);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionMedia>("media", Media);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAsset>("photoAsset", PhotoAsset);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSectionSectionTitle>("sectionTitle", SectionTitle);

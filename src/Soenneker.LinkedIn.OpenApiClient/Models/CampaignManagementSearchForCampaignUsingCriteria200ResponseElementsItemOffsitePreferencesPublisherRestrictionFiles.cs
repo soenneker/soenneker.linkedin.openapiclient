@@ -22,13 +22,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> Exclude { get; set; }
 #endif
-        /// <summary>The include property</summary>
+        /// <summary>List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.Documented type: AdPublisherFileUrn[], default=&quot;[]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFilesIncludeItem>? Include { get; set; }
+        public UntypedNode? Include { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFilesIncludeItem> Include { get; set; }
+        public UntypedNode Include { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFilesIncludeItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFilesIncludeItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "include", n => { Include = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("exclude", Exclude);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFilesIncludeItem>("include", Include);
+            writer.WriteObjectValue<UntypedNode>("include", Include);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

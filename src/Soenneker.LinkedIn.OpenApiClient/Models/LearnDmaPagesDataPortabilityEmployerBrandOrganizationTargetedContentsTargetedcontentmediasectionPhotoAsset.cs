@@ -18,26 +18,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The cropping information defined by a rectangle in which the specified corner is the upper-left corner of the crop areaDocumented type: RectangleRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropInfo? CropInfo { get; set; }
+        public UntypedNode? CropInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropInfo CropInfo { get; set; }
+        public UntypedNode CropInfo { get; set; }
 #endif
         /// <summary>The cropped Image.Documented type: ImageRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropped? Cropped { get; set; }
+        public UntypedNode? Cropped { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropped Cropped { get; set; }
+        public UntypedNode Cropped { get; set; }
 #endif
         /// <summary>The original Image.Documented type: ImageRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetOriginal? Original { get; set; }
+        public UntypedNode? Original { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetOriginal Original { get; set; }
+        public UntypedNode Original { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAsset"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cropInfo", n => { CropInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropInfo.CreateFromDiscriminatorValue); } },
-                { "cropped", n => { Cropped = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropped>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropped.CreateFromDiscriminatorValue); } },
-                { "original", n => { Original = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetOriginal>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetOriginal.CreateFromDiscriminatorValue); } },
+                { "cropInfo", n => { CropInfo = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "cropped", n => { Cropped = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "original", n => { Original = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropInfo>("cropInfo", CropInfo);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetCropped>("cropped", Cropped);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentmediasectionPhotoAssetOriginal>("original", Original);
+            writer.WriteObjectValue<UntypedNode>("cropInfo", CropInfo);
+            writer.WriteObjectValue<UntypedNode>("cropped", Cropped);
+            writer.WriteObjectValue<UntypedNode>("original", Original);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

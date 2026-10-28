@@ -81,10 +81,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Inline content sponsored in the creative such as ugcPost in order to reduce the number of user calls.Documented type: PostRequirement: Required if action is createInline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestInlineContent? InlineContent { get; set; }
+        public UntypedNode? InlineContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestInlineContent InlineContent { get; set; }
+        public UntypedNode InlineContent { get; set; }
 #endif
         /// <summary>Creative user intended status. The creative intended status is set independently from parent entity status, but parent entity status overrides creative intended status in effect. For example, parent entity status may be PAUSED while creative status is ACTIVE, in which case the creative&apos;s effective status is PAUSED, and not served.ACTIVE - Creative development is complete and the creative is available for review and can be served. PAUSED - Creative development is complete and the creative is current, but should temporarily not be served.DRAFT - Creative development is incomplete and may still be edited.ARCHIVED - Creative development is complete, but creative shouldn&apos;t be served and should be separated from non-archived creatives in any UI.CANCELED - The creative will be hidden when querying all creatives under a campaign and canceled creatives will be retrievable if the underlying posts are still valid/available. PENDING_DELETION - Denotes that the creative has been requested to be deleted that&apos;s currently pending.REMOVED - Denotes that the creative was deleted, but must remain fetchable due to the existence of performance data.Documented type: ENUMRequirement: No</summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus? IntendedStatus { get; set; }
@@ -149,10 +149,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Array that contains all the reasons why the creative is not serving. In the case a creative is being served, this field will be null and not present in the response.Documented type: servingHoldReasonsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestServingHoldReasons? ServingHoldReasons { get; set; }
+        public UntypedNode? ServingHoldReasons { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestServingHoldReasons ServingHoldReasons { get; set; }
+        public UntypedNode ServingHoldReasons { get; set; }
 #endif
         /// <summary>Documented type: AdInMailRegularSubContent, AdInMailGuidedRepliesSubContent, or AdInMailFormSubContent,Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -203,7 +203,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "customFooter", n => { CustomFooter = n.GetStringValue(); } },
                 { "htmlBody", n => { HtmlBody = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId.CreateFromDiscriminatorValue); } },
-                { "inlineContent", n => { InlineContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestInlineContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestInlineContent.CreateFromDiscriminatorValue); } },
+                { "inlineContent", n => { InlineContent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "intendedStatus", n => { IntendedStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus>(); } },
                 { "isServing", n => { IsServing = n.GetBoolValue(); } },
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt.CreateFromDiscriminatorValue); } },
@@ -213,7 +213,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName.CreateFromDiscriminatorValue); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestReview.CreateFromDiscriminatorValue); } },
                 { "sender", n => { Sender = n.GetStringValue(); } },
-                { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestServingHoldReasons>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestServingHoldReasons.CreateFromDiscriminatorValue); } },
+                { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "subContent", n => { SubContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent.CreateFromDiscriminatorValue); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
             };
@@ -233,7 +233,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("customFooter", CustomFooter);
             writer.WriteStringValue("htmlBody", HtmlBody);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestInlineContent>("inlineContent", InlineContent);
+            writer.WriteObjectValue<UntypedNode>("inlineContent", InlineContent);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus>("intendedStatus", IntendedStatus);
             writer.WriteBoolValue("isServing", IsServing);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt>("lastModifiedAt", LastModifiedAt);
@@ -242,7 +242,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName>("name", Name);
             writer.WriteStringValue("sender", Sender);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestServingHoldReasons>("servingHoldReasons", ServingHoldReasons);
+            writer.WriteObjectValue<UntypedNode>("servingHoldReasons", ServingHoldReasons);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent>("subContent", SubContent);
             writer.WriteStringValue("subject", Subject);
             writer.WriteAdditionalData(AdditionalData);

@@ -19,10 +19,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The custom text that appears next to the checkbox, informing the member of what use of data they&apos;re consenting to.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObjectConsent? Consent { get; set; }
+        public UntypedNode? Consent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObjectConsent Consent { get; set; }
+        public UntypedNode Consent { get; set; }
 #endif
         /// <summary>The id of the consent, unique within LeadgenFormLegalInfo object.Documented type: int</summary>
         public int? Id { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkRequired", n => { CheckRequired = n.GetBoolValue(); } },
-                { "consent", n => { Consent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObjectConsent>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObjectConsent.CreateFromDiscriminatorValue); } },
+                { "consent", n => { Consent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("checkRequired", CheckRequired);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObjectConsent>("consent", Consent);
+            writer.WriteObjectValue<UntypedNode>("consent", Consent);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("label", Label);
             writer.WriteAdditionalData(AdditionalData);

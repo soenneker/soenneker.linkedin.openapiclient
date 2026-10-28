@@ -34,10 +34,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>List of job functions that viewer can contact (e.g. engineering, marketing, etc.) regarding interest.Documented type: Array of [FunctionUrn]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentcontactsectionFunctionsItem>? Functions { get; set; }
+        public UntypedNode? Functions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentcontactsectionFunctionsItem> Functions { get; set; }
+        public UntypedNode Functions { get; set; }
 #endif
         /// <summary>Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it&apos;s still a work in progress.Documented type: booleanRequirement: No</summary>
         public bool? Visible { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "functions", n => { Functions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentcontactsectionFunctionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentcontactsectionFunctionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "functions", n => { Functions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("email", Email);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityEmployerBrandOrganizationTargetedContentsTargetedcontentcontactsectionFunctionsItem>("functions", Functions);
+            writer.WriteObjectValue<UntypedNode>("functions", Functions);
             writer.WriteBoolValue("visible", Visible);
             writer.WriteAdditionalData(AdditionalData);
         }

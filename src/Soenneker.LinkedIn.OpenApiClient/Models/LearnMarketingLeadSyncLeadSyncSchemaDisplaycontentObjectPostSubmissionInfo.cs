@@ -18,18 +18,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Call to action shown after the Lead Form submission.Documented type: LeadGenFormCallToAction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoCallToAction? CallToAction { get; set; }
+        public UntypedNode? CallToAction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoCallToAction CallToAction { get; set; }
+        public UntypedNode CallToAction { get; set; }
 #endif
         /// <summary>The message displayed to a member after the Lead Form is submitted.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoMessage? Message { get; set; }
+        public UntypedNode? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoMessage Message { get; set; }
+        public UntypedNode Message { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfo"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callToAction", n => { CallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoCallToAction.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoMessage>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoMessage.CreateFromDiscriminatorValue); } },
+                { "callToAction", n => { CallToAction = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoCallToAction>("callToAction", CallToAction);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfoMessage>("message", Message);
+            writer.WriteObjectValue<UntypedNode>("callToAction", CallToAction);
+            writer.WriteObjectValue<UntypedNode>("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

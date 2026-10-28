@@ -15,13 +15,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comparedTo property</summary>
+        /// <summary>Represents what the percentage change value is calculated against. Possible values are PREVIOUS_PERIOD: indicates the percentage is calculated against the previous period of the date range in CreatorAnalyticsDataPoint. For example, if the dateRange in the CreatorAnalyticsDataPoint is 7 days from 2020-01-08 to 2020-01-14, the percentage is calculated against the previous period with the same number of days: 2020-01-01 to 2020-01-07Documented type: enumRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComparedTo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo? ComparedTo { get; set; }
 #nullable restore
 #else
-        public string ComparedTo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo ComparedTo { get; set; }
 #endif
         /// <summary>The percentage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comparedTo", n => { ComparedTo = n.GetStringValue(); } },
+                { "comparedTo", n => { ComparedTo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo.CreateFromDiscriminatorValue); } },
                 { "percentage", n => { Percentage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangePercentage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangePercentage.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comparedTo", ComparedTo);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo>("comparedTo", ComparedTo);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangePercentage>("percentage", Percentage);
             writer.WriteAdditionalData(AdditionalData);
         }

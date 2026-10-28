@@ -63,10 +63,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Latest information about the content review of the form. It will not be present if the form has not been reviewed by the review pipeline.Documented type: LeadGenReviewInfoRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseReviewInfo? ReviewInfo { get; set; }
+        public UntypedNode? ReviewInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseReviewInfo ReviewInfo { get; set; }
+        public UntypedNode ReviewInfo { get; set; }
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModified", n => { LastModified = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "reviewInfo", n => { ReviewInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseReviewInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseReviewInfo.CreateFromDiscriminatorValue); } },
+                { "reviewInfo", n => { ReviewInfo = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "versionId", n => { VersionId = n.GetIntValue(); } },
                 { "versionTag", n => { VersionTag = n.GetStringValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("lastModified", LastModified);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseReviewInfo>("reviewInfo", ReviewInfo);
+            writer.WriteObjectValue<UntypedNode>("reviewInfo", ReviewInfo);
             writer.WriteStringValue("state", State);
             writer.WriteIntValue("versionId", VersionId);
             writer.WriteStringValue("versionTag", VersionTag);

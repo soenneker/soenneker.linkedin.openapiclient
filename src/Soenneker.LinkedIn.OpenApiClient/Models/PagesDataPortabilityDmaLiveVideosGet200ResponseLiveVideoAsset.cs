@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The captions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem>? Captions { get; set; }
+        public UntypedNode? Captions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem> Captions { get; set; }
+        public UntypedNode Captions { get; set; }
 #endif
         /// <summary>The downloadUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "captions", n => { Captions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "captions", n => { Captions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
                 { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -87,7 +87,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem>("captions", Captions);
+            writer.WriteObjectValue<UntypedNode>("captions", Captions);
             writer.WriteStringValue("downloadUrl", DownloadUrl);
             writer.WriteLongValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
             writer.WriteStringValue("status", Status);

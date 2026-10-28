@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The representation of a question where a date must be provided as the answer. If this field is present, all other fields must be null.Documented type: DateQuestionDetailsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetailsDateQuestionDetails? DateQuestionDetails { get; set; }
+        public UntypedNode? DateQuestionDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetailsDateQuestionDetails DateQuestionDetails { get; set; }
+        public UntypedNode DateQuestionDetails { get; set; }
 #endif
         /// <summary>The representation of a question where a date range must be provided as the answer. If this field is present, all other fields must be null.Documented type: DateRangeQuestionDetailsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dateQuestionDetails", n => { DateQuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetailsDateQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetailsDateQuestionDetails.CreateFromDiscriminatorValue); } },
+                { "dateQuestionDetails", n => { DateQuestionDetails = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "dateRangeQuestionDetails", n => { DateRangeQuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails.CreateFromDiscriminatorValue); } },
                 { "documentQuestionDetails", n => { DocumentQuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails.CreateFromDiscriminatorValue); } },
                 { "multipleChoiceQuestionDetails", n => { MultipleChoiceQuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails.CreateFromDiscriminatorValue); } },
@@ -103,7 +103,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetailsDateQuestionDetails>("dateQuestionDetails", DateQuestionDetails);
+            writer.WriteObjectValue<UntypedNode>("dateQuestionDetails", DateQuestionDetails);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails>("dateRangeQuestionDetails", DateRangeQuestionDetails);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails>("documentQuestionDetails", DocumentQuestionDetails);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails>("multipleChoiceQuestionDetails", MultipleChoiceQuestionDetails);
