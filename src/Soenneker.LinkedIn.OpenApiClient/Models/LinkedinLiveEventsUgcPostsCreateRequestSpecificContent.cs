@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkedinLiveEventsUgcPostsCreateRequestSpecificContent : IComposedTypeWrapper, IParsable
@@ -53,14 +53,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6? LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,7 +67,6 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3();
             result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4();
             result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5();
-            result.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6();
             return result;
         }
         /// <summary>
@@ -84,9 +75,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6 != null)
+            if(LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4 != null || LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -97,7 +88,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1>(null, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1>(null, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf1, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf3, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf4, LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5);
         }
     }
 }

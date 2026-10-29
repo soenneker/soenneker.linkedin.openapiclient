@@ -18,10 +18,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Use the Asset URN returned from registering the live event.Documented type: ShareMedia[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoShareMedia>? Media { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia>? Media { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoShareMedia> Media { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia> Media { get; set; }
 #endif
         /// <summary>Provides the primary content for the share.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoShareMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoShareMedia.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "shareCommentary", n => { ShareCommentary = n.GetStringValue(); } },
                 { "shareMediaCategory", n => { ShareMediaCategory = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoShareMedia>("media", Media);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia>("media", Media);
             writer.WriteStringValue("shareCommentary", ShareCommentary);
             writer.WriteStringValue("shareMediaCategory", ShareMediaCategory);
             writer.WriteAdditionalData(AdditionalData);

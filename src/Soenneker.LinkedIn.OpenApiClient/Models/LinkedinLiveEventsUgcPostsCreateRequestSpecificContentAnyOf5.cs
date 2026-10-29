@@ -15,13 +15,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Use the Asset URN returned from registering the live event.Documented type: ShareMedia[]Requirement: No</summary>
+        /// <summary>If the shareMediaCategory is ARTICLE or IMAGE, define those media assets here.Documented type: ShareMedia[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia>? Media { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareMedia>? Media { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia> Media { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareMedia> Media { get; set; }
 #endif
         /// <summary>Provides the primary content for the share.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,14 +31,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string ShareCommentary { get; set; }
 #endif
-        /// <summary>Represents the media assets attached to the share. Possible values include: LIVE_VIDEO - The share contains live event content.Documented type: stringRequirement: Yes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ShareMediaCategory { get; set; }
-#nullable restore
-#else
-        public string ShareMediaCategory { get; set; }
-#endif
+        /// <summary>Represents the media assets attached to the share. Possible values include: NONE - The share does not contain any media, and will only consist of text. ARTICLE - The share contains a URL. IMAGE - The Share contains an image.Documented type: stringRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareContentShareMediaCategory? ShareMediaCategory { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5"/> and sets the default values.
         /// </summary>
@@ -64,9 +58,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareMedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "shareCommentary", n => { ShareCommentary = n.GetStringValue(); } },
-                { "shareMediaCategory", n => { ShareMediaCategory = n.GetStringValue(); } },
+                { "shareMediaCategory", n => { ShareMediaCategory = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareContentShareMediaCategory>(); } },
             };
         }
         /// <summary>
@@ -76,9 +70,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia>("media", Media);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareMedia>("media", Media);
             writer.WriteStringValue("shareCommentary", ShareCommentary);
-            writer.WriteStringValue("shareMediaCategory", ShareMediaCategory);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnConsumerIntegrationsSelfServeShareOnLinkedinShareContentShareMediaCategory>("shareMediaCategory", ShareMediaCategory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

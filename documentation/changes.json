@@ -1,34 +1,17 @@
 {
   "ChangedPages": [
     "https://learn.microsoft.com/en-us/linkedin/",
-    "https://learn.microsoft.com/en-us/linkedin/compliance/",
-    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-activityurn",
-    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live",
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
-    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
     "https://learn.microsoft.com/en-us/linkedin/learning/",
-    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/hcm",
-    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-benchmarking",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
     "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
-    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
-    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/marketplace-platform-opportunity",
-    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/close-jobs",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-%26-location-lookup",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-premium-api-jobs",
-    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs",
-    "https://learn.microsoft.com/en-us/linkedin/talent/versioning-announcement"
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview"
   ],
   "ChangedPostmanCollections": [],
   "PostmanFetchIssues": [
@@ -43,54 +26,54 @@
   "SpecificationChanges": [
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/description",
-      "Before": {
-        "description": "Provide a short description for your image or article.\n\nDocumented type: string\n\nRequirement: No",
-        "type": "string"
-      },
-      "After": null
+      "Before": null,
+      "After": {
+        "type": "string",
+        "description": "Provide a short description for your image or article.\n\nDocumented type: string\n\nRequirement: No"
+      }
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/media/description",
-      "Before": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No",
-      "After": null
+      "Before": null,
+      "After": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No"
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/originalUrl",
-      "Before": {
-        "description": "Provide the URL of the article you would like to share here.\n\nDocumented type: string\n\nRequirement: No",
-        "type": "string"
-      },
-      "After": null
+      "Before": null,
+      "After": {
+        "type": "string",
+        "description": "Provide the URL of the article you would like to share here.\n\nDocumented type: string\n\nRequirement: No"
+      }
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/properties/status",
-      "Before": {
-        "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes",
-        "type": "string"
-      },
-      "After": null
+      "Before": null,
+      "After": {
+        "type": "string",
+        "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes"
+      }
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/required",
-      "Before": [
+      "Before": null,
+      "After": [
         "status"
-      ],
-      "After": null
+      ]
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/x-linkedin-schema",
-      "Before": "consumer_integrations_self_serve_share_on_linkedin_share_media",
-      "After": null
+      "Before": null,
+      "After": "consumer_integrations_self_serve_share_on_linkedin_share_media"
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/schema/properties/announcementImage/x-source-url",
-      "Before": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-media",
-      "After": null
+      "Before": null,
+      "After": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-media"
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1liveVideos/post/requestBody/content/application~1json/x-linkedin-learn-schema",
-      "Before": true,
-      "After": null
+      "Before": null,
+      "After": true
     },
     {
       "Pointer": "/paths/~1linkedin-live-events~1v2~1ugcPosts/post/requestBody/content/application~1json/schema/properties/specificContent/anyOf",
@@ -159,6 +142,14 @@
           },
           "type": "object",
           "x-linkedin-inferred-from-example": true
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Learn_consumer_integrations_live_video__share_content"
+            }
+          ],
+          "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
         },
         {
           "allOf": [
@@ -242,14 +233,6 @@
             }
           },
           "x-linkedin-inferred-from-example": true
-        },
-        {
-          "allOf": [
-            {
-              "$ref": "#/components/schemas/Learn_consumer_integrations_live_video__share_content"
-            }
-          ],
-          "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
         },
         {
           "allOf": [
@@ -372,35 +355,17 @@
             "errors": {
               "additionalProperties": {
                 "properties": {
-                  "code": {
-                    "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string",
-                    "type": "string"
-                  },
-                  "errorDetailType": {
-                    "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string",
-                    "type": "string"
-                  },
-                  "errorDetails": {
-                    "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
-                  },
                   "message": {
-                    "description": "A description of the error.\n\nDocumented type: string",
-                    "type": "string"
-                  },
-                  "serviceErrorCode": {
-                    "description": "A subcode that further classifies the error.\n\nDocumented type: int",
-                    "format": "int32",
-                    "type": "integer"
+                    "type": "string",
+                    "x-linkedin-inferred-from-example": true
                   },
                   "status": {
-                    "description": "The HTTP status code.\n\nDocumented type: int",
-                    "format": "int32",
-                    "type": "integer"
+                    "type": "integer",
+                    "x-linkedin-inferred-from-example": true
                   }
                 },
                 "type": "object",
-                "x-linkedin-schema": "dma_error_responses_error_response",
-                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response"
+                "x-linkedin-inferred-from-example": true
               },
               "type": "object",
               "x-linkedin-inferred-from-example": true
@@ -619,14 +584,32 @@
                 "properties": {
                   "message": {
                     "type": "string",
-                    "x-linkedin-inferred-from-example": true
+                    "description": "A description of the error.\n\nDocumented type: string"
+                  },
+                  "serviceErrorCode": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "A subcode that further classifies the error.\n\nDocumented type: int"
                   },
                   "status": {
                     "type": "integer",
-                    "x-linkedin-inferred-from-example": true
+                    "format": "int32",
+                    "description": "The HTTP status code.\n\nDocumented type: int"
+                  },
+                  "errorDetails": {
+                    "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
+                  },
+                  "errorDetailType": {
+                    "type": "string",
+                    "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string"
                   }
                 },
-                "x-linkedin-inferred-from-example": true
+                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response",
+                "x-linkedin-schema": "dma_error_responses_error_response"
               },
               "x-linkedin-inferred-from-example": true
             },
