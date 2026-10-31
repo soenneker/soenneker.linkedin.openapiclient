@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("employee") is null) { _explicitNullValueEmployee = default!; _explicitNullProperties?.Remove("employee"); }
+            else if (parseNode.GetChildNode("employee") is { } nullNodeEmployee && nullNodeEmployee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employee = null;
+            if (parseNode.GetChildNode("testimonial") is null) { _explicitNullValueTestimonial = default!; _explicitNullProperties?.Remove("testimonial"); }
+            else if (parseNode.GetChildNode("testimonial") is { } nullNodeTestimonial && nullNodeTestimonial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Testimonial = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Employee or candidate (people looking for jobs through staffing companies) who states the testimonial.Documented type: PersonUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Employee { get; set; }
+        public string? Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; AdditionalData?.Remove("employee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
+        private string? _explicitNullValueEmployee = default!;
 #nullable restore
 #else
-        public string Employee { get; set; }
+        public string Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; AdditionalData?.Remove("employee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
+        private string _explicitNullValueEmployee = default!;
 #endif
         /// <summary>Testimonial of the employee or candidate.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Testimonial { get; set; }
+        public string? Testimonial { get => _explicitNullValueTestimonial; set { _explicitNullValueTestimonial = value; AdditionalData?.Remove("testimonial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testimonial"); else _explicitNullProperties?.Remove("testimonial"); } }
+        private string? _explicitNullValueTestimonial = default!;
 #nullable restore
 #else
-        public string Testimonial { get; set; }
+        public string Testimonial { get => _explicitNullValueTestimonial; set { _explicitNullValueTestimonial = value; AdditionalData?.Remove("testimonial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testimonial"); else _explicitNullProperties?.Remove("testimonial"); } }
+        private string _explicitNullValueTestimonial = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("employee", Employee);
             writer.WriteStringValue("testimonial", Testimonial);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

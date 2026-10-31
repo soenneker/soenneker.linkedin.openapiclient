@@ -11,34 +11,56 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("artifact") is null) { _explicitNullValueArtifact = default!; _explicitNullProperties?.Remove("artifact"); }
+            else if (parseNode.GetChildNode("artifact") is { } nullNodeArtifact && nullNodeArtifact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Artifact = null;
+            if (parseNode.GetChildNode("authorizationMethod") is null) { _explicitNullValueAuthorizationMethod = default!; _explicitNullProperties?.Remove("authorizationMethod"); }
+            else if (parseNode.GetChildNode("authorizationMethod") is { } nullNodeAuthorizationMethod && nullNodeAuthorizationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationMethod = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("identifiers") is null) { _explicitNullValueIdentifiers = default!; _explicitNullProperties?.Remove("identifiers"); }
+            else if (parseNode.GetChildNode("identifiers") is { } nullNodeIdentifiers && nullNodeIdentifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifiers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the artifact this record is related to.Documented type: URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Artifact { get; set; }
+        public string? Artifact { get => _explicitNullValueArtifact; set { _explicitNullValueArtifact = value; AdditionalData?.Remove("artifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifact"); else _explicitNullProperties?.Remove("artifact"); } }
+        private string? _explicitNullValueArtifact = default!;
 #nullable restore
 #else
-        public string Artifact { get; set; }
+        public string Artifact { get => _explicitNullValueArtifact; set { _explicitNullValueArtifact = value; AdditionalData?.Remove("artifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifact"); else _explicitNullProperties?.Remove("artifact"); } }
+        private string _explicitNullValueArtifact = default!;
 #endif
         /// <summary>The authorization method for this artifact. Can be the following enums: NONE - The artifact can not be served to users. PUBLIC - The artifact is public and no authorization is needed to serve. INTERNAL - The artifact is only accessible internally to other systems in the hosting or processing infrastructure. PRIVATE - The artifact is private and only an authorized user can access it.Documented type: String</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemAuthorizationMethod? AuthorizationMethod { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemAuthorizationMethod? AuthorizationMethod { get => _explicitNullValueAuthorizationMethod; set { _explicitNullValueAuthorizationMethod = value; AdditionalData?.Remove("authorizationMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorizationMethod"); else _explicitNullProperties?.Remove("authorizationMethod"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemAuthorizationMethod? _explicitNullValueAuthorizationMethod = default!;
         /// <summary>Data about this artifact.Documented type: optional Object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData? Data { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData Data { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData _explicitNullValueData = default!;
 #endif
         /// <summary>List of file identifiers related to this artifact. Represented as an array.Documented type: </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem>? Identifiers { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem>? Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; AdditionalData?.Remove("identifiers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem>? _explicitNullValueIdentifiers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem> Identifiers { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem> Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; AdditionalData?.Remove("identifiers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem> _explicitNullValueIdentifiers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItem"/> and sets the default values.
@@ -55,7 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +88,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "artifact", n => { Artifact = n.GetStringValue(); } },
-                { "authorizationMethod", n => { AuthorizationMethod = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemAuthorizationMethod>(); } },
+                { "authorizationMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemAuthorizationMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthorizationMethod = default; _explicitNullProperties?.Remove("authorizationMethod"); AdditionalData["authorizationMethod"] = unknown; } else { AuthorizationMethod = parsed; AdditionalData.Remove("authorizationMethod"); } } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData.CreateFromDiscriminatorValue); } },
                 { "identifiers", n => { Identifiers = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -82,6 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemAuthorizationMethod>("authorizationMethod", AuthorizationMethod);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemData>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemIdentifiersItem>("identifiers", Identifiers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

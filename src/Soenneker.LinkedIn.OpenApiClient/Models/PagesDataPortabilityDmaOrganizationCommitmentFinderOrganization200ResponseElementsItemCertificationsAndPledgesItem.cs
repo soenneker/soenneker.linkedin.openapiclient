@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contentUrl") is null) { _explicitNullValueContentUrl = default!; _explicitNullProperties?.Remove("contentUrl"); }
+            else if (parseNode.GetChildNode("contentUrl") is { } nullNodeContentUrl && nullNodeContentUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentUrl = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("ingestedContent") is null) { _explicitNullValueIngestedContent = default!; _explicitNullProperties?.Remove("ingestedContent"); }
+            else if (parseNode.GetChildNode("ingestedContent") is { } nullNodeIngestedContent && nullNodeIngestedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IngestedContent = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Url of the external content provided by the organization. The contentUrl is editable by admin user. Ex: bcorp.net/yourorganizationDocumented type: UrlRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentUrl { get; set; }
+        public string? ContentUrl { get => _explicitNullValueContentUrl; set { _explicitNullValueContentUrl = value; AdditionalData?.Remove("contentUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentUrl"); else _explicitNullProperties?.Remove("contentUrl"); } }
+        private string? _explicitNullValueContentUrl = default!;
 #nullable restore
 #else
-        public string ContentUrl { get; set; }
+        public string ContentUrl { get => _explicitNullValueContentUrl; set { _explicitNullValueContentUrl = value; AdditionalData?.Remove("contentUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentUrl"); else _explicitNullProperties?.Remove("contentUrl"); } }
+        private string _explicitNullValueContentUrl = default!;
 #endif
         /// <summary>Name of the URL or description of the proof explicitly provided by the organization Ex: Oustia&apos;s Green SealDocumented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Description { get; set; }
+        public UntypedNode? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private UntypedNode? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public UntypedNode Description { get; set; }
+        public UntypedNode Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private UntypedNode _explicitNullValueDescription = default!;
 #endif
         /// <summary>This field represents a stored ingested content record for an URL. This field is present if the URL content was successfully ingested. ingestedContent is editable only by an internal system.Documented type: URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IngestedContent { get; set; }
+        public string? IngestedContent { get => _explicitNullValueIngestedContent; set { _explicitNullValueIngestedContent = value; AdditionalData?.Remove("ingestedContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestedContent"); else _explicitNullProperties?.Remove("ingestedContent"); } }
+        private string? _explicitNullValueIngestedContent = default!;
 #nullable restore
 #else
-        public string IngestedContent { get; set; }
+        public string IngestedContent { get => _explicitNullValueIngestedContent; set { _explicitNullValueIngestedContent = value; AdditionalData?.Remove("ingestedContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestedContent"); else _explicitNullProperties?.Remove("ingestedContent"); } }
+        private string _explicitNullValueIngestedContent = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("contentUrl", ContentUrl);
             writer.WriteObjectValue<UntypedNode>("description", Description);
             writer.WriteStringValue("ingestedContent", IngestedContent);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

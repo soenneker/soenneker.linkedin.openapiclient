@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementCreateACampaignGroupRequestEntities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("{{campaigngroup_id1}}") is null) { _explicitNullValueCampaigngroupId1 = default!; _explicitNullProperties?.Remove("{{campaigngroup_id1}}"); }
+            else if (parseNode.GetChildNode("{{campaigngroup_id1}}") is { } nullNodeCampaigngroupId1 && nullNodeCampaigngroupId1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaigngroupId1 = null;
+            if (parseNode.GetChildNode("{{campaigngroup_id2}}") is null) { _explicitNullValueCampaigngroupId2 = default!; _explicitNullProperties?.Remove("{{campaigngroup_id2}}"); }
+            else if (parseNode.GetChildNode("{{campaigngroup_id2}}") is { } nullNodeCampaigngroupId2 && nullNodeCampaigngroupId2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaigngroupId2 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Campaigngroup_id1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1? CampaigngroupId1 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1? CampaigngroupId1 { get => _explicitNullValueCampaigngroupId1; set { _explicitNullValueCampaigngroupId1 = value; AdditionalData?.Remove("{{campaigngroup_id1}}"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("{{campaigngroup_id1}}"); else _explicitNullProperties?.Remove("{{campaigngroup_id1}}"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1? _explicitNullValueCampaigngroupId1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1 CampaigngroupId1 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1 CampaigngroupId1 { get => _explicitNullValueCampaigngroupId1; set { _explicitNullValueCampaigngroupId1 = value; AdditionalData?.Remove("{{campaigngroup_id1}}"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("{{campaigngroup_id1}}"); else _explicitNullProperties?.Remove("{{campaigngroup_id1}}"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1 _explicitNullValueCampaigngroupId1 = default!;
 #endif
         /// <summary>The Campaigngroup_id2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId2? CampaigngroupId2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId2? CampaigngroupId2 { get => _explicitNullValueCampaigngroupId2; set { _explicitNullValueCampaigngroupId2 = value; AdditionalData?.Remove("{{campaigngroup_id2}}"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("{{campaigngroup_id2}}"); else _explicitNullProperties?.Remove("{{campaigngroup_id2}}"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId2? _explicitNullValueCampaigngroupId2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId2 CampaigngroupId2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId2 CampaigngroupId2 { get => _explicitNullValueCampaigngroupId2; set { _explicitNullValueCampaigngroupId2 = value; AdditionalData?.Remove("{{campaigngroup_id2}}"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("{{campaigngroup_id2}}"); else _explicitNullProperties?.Remove("{{campaigngroup_id2}}"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId2 _explicitNullValueCampaigngroupId2 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntities"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1>("{{campaigngroup_id1}}", CampaigngroupId1);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId2>("{{campaigngroup_id2}}", CampaigngroupId2);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

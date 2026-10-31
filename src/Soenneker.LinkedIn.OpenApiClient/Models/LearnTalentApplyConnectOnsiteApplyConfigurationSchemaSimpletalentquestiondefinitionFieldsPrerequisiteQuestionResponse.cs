@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("prerequisiteQuestion") is null) { _explicitNullValuePrerequisiteQuestion = default!; _explicitNullProperties?.Remove("prerequisiteQuestion"); }
+            else if (parseNode.GetChildNode("prerequisiteQuestion") is { } nullNodePrerequisiteQuestion && nullNodePrerequisiteQuestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrerequisiteQuestion = null;
+            if (parseNode.GetChildNode("prerequisiteResponse") is null) { _explicitNullValuePrerequisiteResponse = default!; _explicitNullProperties?.Remove("prerequisiteResponse"); }
+            else if (parseNode.GetChildNode("prerequisiteResponse") is { } nullNodePrerequisiteResponse && nullNodePrerequisiteResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrerequisiteResponse = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The prerequisite question that triggers the display of this question. The prerequisite question must be a multiple choice question with RADIO_BUTTONS as form component.Documented type: PrerequisiteQuestionIdentifierRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion? PrerequisiteQuestion { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion? PrerequisiteQuestion { get => _explicitNullValuePrerequisiteQuestion; set { _explicitNullValuePrerequisiteQuestion = value; AdditionalData?.Remove("prerequisiteQuestion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteQuestion"); else _explicitNullProperties?.Remove("prerequisiteQuestion"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion? _explicitNullValuePrerequisiteQuestion = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion PrerequisiteQuestion { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion PrerequisiteQuestion { get => _explicitNullValuePrerequisiteQuestion; set { _explicitNullValuePrerequisiteQuestion = value; AdditionalData?.Remove("prerequisiteQuestion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteQuestion"); else _explicitNullProperties?.Remove("prerequisiteQuestion"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion _explicitNullValuePrerequisiteQuestion = default!;
 #endif
         /// <summary>The required response to the prerequisite question that triggers the display of this question.Documented type: PrerequisiteAnswerValueRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteResponse? PrerequisiteResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteResponse? PrerequisiteResponse { get => _explicitNullValuePrerequisiteResponse; set { _explicitNullValuePrerequisiteResponse = value; AdditionalData?.Remove("prerequisiteResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteResponse"); else _explicitNullProperties?.Remove("prerequisiteResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteResponse? _explicitNullValuePrerequisiteResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteResponse PrerequisiteResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteResponse PrerequisiteResponse { get => _explicitNullValuePrerequisiteResponse; set { _explicitNullValuePrerequisiteResponse = value; AdditionalData?.Remove("prerequisiteResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteResponse"); else _explicitNullProperties?.Remove("prerequisiteResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteResponse _explicitNullValuePrerequisiteResponse = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion>("prerequisiteQuestion", PrerequisiteQuestion);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteResponse>("prerequisiteResponse", PrerequisiteResponse);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

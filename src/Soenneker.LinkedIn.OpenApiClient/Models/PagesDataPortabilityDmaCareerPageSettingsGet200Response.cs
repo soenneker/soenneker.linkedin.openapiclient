@@ -11,31 +11,55 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaCareerPageSettingsGet200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("automaticJobPostingSettings") is null) { _explicitNullValueAutomaticJobPostingSettings = default!; _explicitNullProperties?.Remove("automaticJobPostingSettings"); }
+            else if (parseNode.GetChildNode("automaticJobPostingSettings") is { } nullNodeAutomaticJobPostingSettings && nullNodeAutomaticJobPostingSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticJobPostingSettings = null;
+            if (parseNode.GetChildNode("candidateInterest") is null) { _explicitNullValueCandidateInterest = default!; _explicitNullProperties?.Remove("candidateInterest"); }
+            else if (parseNode.GetChildNode("candidateInterest") is { } nullNodeCandidateInterest && nullNodeCandidateInterest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CandidateInterest = null;
+            if (parseNode.GetChildNode("employeesYouShouldReachOutToVisible") is null) { _explicitNullValueEmployeesYouShouldReachOutToVisible = default!; _explicitNullProperties?.Remove("employeesYouShouldReachOutToVisible"); }
+            else if (parseNode.GetChildNode("employeesYouShouldReachOutToVisible") is { } nullNodeEmployeesYouShouldReachOutToVisible && nullNodeEmployeesYouShouldReachOutToVisible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeesYouShouldReachOutToVisible = null;
+            if (parseNode.GetChildNode("jobCulturalInsightsVisible") is null) { _explicitNullValueJobCulturalInsightsVisible = default!; _explicitNullProperties?.Remove("jobCulturalInsightsVisible"); }
+            else if (parseNode.GetChildNode("jobCulturalInsightsVisible") is { } nullNodeJobCulturalInsightsVisible && nullNodeJobCulturalInsightsVisible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobCulturalInsightsVisible = null;
+            if (parseNode.GetChildNode("meetTheTeamVisible") is null) { _explicitNullValueMeetTheTeamVisible = default!; _explicitNullProperties?.Remove("meetTheTeamVisible"); }
+            else if (parseNode.GetChildNode("meetTheTeamVisible") is { } nullNodeMeetTheTeamVisible && nullNodeMeetTheTeamVisible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeetTheTeamVisible = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Page admins can opt-in to automatic job post creation. If this field is null the page is not opted-in for automatic job post creation.Documented type: AutomaticJobPostingSettingsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings? AutomaticJobPostingSettings { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings? AutomaticJobPostingSettings { get => _explicitNullValueAutomaticJobPostingSettings; set { _explicitNullValueAutomaticJobPostingSettings = value; AdditionalData?.Remove("automaticJobPostingSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticJobPostingSettings"); else _explicitNullProperties?.Remove("automaticJobPostingSettings"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings? _explicitNullValueAutomaticJobPostingSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings AutomaticJobPostingSettings { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings AutomaticJobPostingSettings { get => _explicitNullValueAutomaticJobPostingSettings; set { _explicitNullValueAutomaticJobPostingSettings = value; AdditionalData?.Remove("automaticJobPostingSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticJobPostingSettings"); else _explicitNullProperties?.Remove("automaticJobPostingSettings"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings _explicitNullValueAutomaticJobPostingSettings = default!;
 #endif
         /// <summary>Candidate interest module settings for an organization.Documented type: CandidateInterestRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest? CandidateInterest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest? CandidateInterest { get => _explicitNullValueCandidateInterest; set { _explicitNullValueCandidateInterest = value; AdditionalData?.Remove("candidateInterest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidateInterest"); else _explicitNullProperties?.Remove("candidateInterest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest? _explicitNullValueCandidateInterest = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest CandidateInterest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest CandidateInterest { get => _explicitNullValueCandidateInterest; set { _explicitNullValueCandidateInterest = value; AdditionalData?.Remove("candidateInterest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidateInterest"); else _explicitNullProperties?.Remove("candidateInterest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest _explicitNullValueCandidateInterest = default!;
 #endif
         /// <summary>If true, show the &quot;Employees You Should Reach Out To&quot; module. Module displaying list of employees whose titles match the titles of recommended jobs.Documented type: booleanRequirement: No</summary>
-        public bool? EmployeesYouShouldReachOutToVisible { get; set; }
+        public bool? EmployeesYouShouldReachOutToVisible { get => _explicitNullValueEmployeesYouShouldReachOutToVisible; set { _explicitNullValueEmployeesYouShouldReachOutToVisible = value; AdditionalData?.Remove("employeesYouShouldReachOutToVisible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeesYouShouldReachOutToVisible"); else _explicitNullProperties?.Remove("employeesYouShouldReachOutToVisible"); } }
+        private bool? _explicitNullValueEmployeesYouShouldReachOutToVisible = default!;
         /// <summary>If true, show the jobs related cultural insights module. Example insights here include distributions of employee seniorities, skills, work location, etc.Documented type: booleanRequirement: No</summary>
-        public bool? JobCulturalInsightsVisible { get; set; }
+        public bool? JobCulturalInsightsVisible { get => _explicitNullValueJobCulturalInsightsVisible; set { _explicitNullValueJobCulturalInsightsVisible = value; AdditionalData?.Remove("jobCulturalInsightsVisible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobCulturalInsightsVisible"); else _explicitNullProperties?.Remove("jobCulturalInsightsVisible"); } }
+        private bool? _explicitNullValueJobCulturalInsightsVisible = default!;
         /// <summary>If true, show the meet the team module. Module displaying list of employees who closely match the visitor&apos;s profile.Documented type: booleanRequirement: No</summary>
-        public bool? MeetTheTeamVisible { get; set; }
+        public bool? MeetTheTeamVisible { get => _explicitNullValueMeetTheTeamVisible; set { _explicitNullValueMeetTheTeamVisible = value; AdditionalData?.Remove("meetTheTeamVisible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meetTheTeamVisible"); else _explicitNullProperties?.Remove("meetTheTeamVisible"); } }
+        private bool? _explicitNullValueMeetTheTeamVisible = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200Response"/> and sets the default values.
         /// </summary>
@@ -51,7 +75,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteBoolValue("employeesYouShouldReachOutToVisible", EmployeesYouShouldReachOutToVisible);
             writer.WriteBoolValue("jobCulturalInsightsVisible", JobCulturalInsightsVisible);
             writer.WriteBoolValue("meetTheTeamVisible", MeetTheTeamVisible);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

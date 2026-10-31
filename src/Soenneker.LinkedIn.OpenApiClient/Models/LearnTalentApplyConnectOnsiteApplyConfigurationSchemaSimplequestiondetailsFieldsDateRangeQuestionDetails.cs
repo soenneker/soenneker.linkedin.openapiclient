@@ -12,32 +12,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("endLabel") is null) { _explicitNullValueEndLabel = default!; _explicitNullProperties?.Remove("endLabel"); }
+            else if (parseNode.GetChildNode("endLabel") is { } nullNodeEndLabel && nullNodeEndLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndLabel = null;
+            if (parseNode.GetChildNode("hideEndDateLabel") is null) { _explicitNullValueHideEndDateLabel = default!; _explicitNullProperties?.Remove("hideEndDateLabel"); }
+            else if (parseNode.GetChildNode("hideEndDateLabel") is { } nullNodeHideEndDateLabel && nullNodeHideEndDateLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideEndDateLabel = null;
+            if (parseNode.GetChildNode("startLabel") is null) { _explicitNullValueStartLabel = default!; _explicitNullProperties?.Remove("startLabel"); }
+            else if (parseNode.GetChildNode("startLabel") is { } nullNodeStartLabel && nullNodeStartLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartLabel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The text that will be used to describe the end date input. Defaults to &quot;To&quot;.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndLabel { get; set; }
+        public string? EndLabel { get => _explicitNullValueEndLabel; set { _explicitNullValueEndLabel = value; AdditionalData?.Remove("endLabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endLabel"); else _explicitNullProperties?.Remove("endLabel"); } }
+        private string? _explicitNullValueEndLabel = default!;
 #nullable restore
 #else
-        public string EndLabel { get; set; }
+        public string EndLabel { get => _explicitNullValueEndLabel; set { _explicitNullValueEndLabel = value; AdditionalData?.Remove("endLabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endLabel"); else _explicitNullProperties?.Remove("endLabel"); } }
+        private string _explicitNullValueEndLabel = default!;
 #endif
         /// <summary>The text that will be used to describe the input that will control whether or not the end date question is shown. For example, for employment dates this might be displayed as a checkbox with a label of &quot;I currently work here&quot;. Checking the checkbox would unset and hide the end date question regardless of the content of the label.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HideEndDateLabel { get; set; }
+        public string? HideEndDateLabel { get => _explicitNullValueHideEndDateLabel; set { _explicitNullValueHideEndDateLabel = value; AdditionalData?.Remove("hideEndDateLabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideEndDateLabel"); else _explicitNullProperties?.Remove("hideEndDateLabel"); } }
+        private string? _explicitNullValueHideEndDateLabel = default!;
 #nullable restore
 #else
-        public string HideEndDateLabel { get; set; }
+        public string HideEndDateLabel { get => _explicitNullValueHideEndDateLabel; set { _explicitNullValueHideEndDateLabel = value; AdditionalData?.Remove("hideEndDateLabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideEndDateLabel"); else _explicitNullProperties?.Remove("hideEndDateLabel"); } }
+        private string _explicitNullValueHideEndDateLabel = default!;
 #endif
         /// <summary>The text that will be used to describe the start date input. Defaults to &quot;From&quot;.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartLabel { get; set; }
+        public string? StartLabel { get => _explicitNullValueStartLabel; set { _explicitNullValueStartLabel = value; AdditionalData?.Remove("startLabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startLabel"); else _explicitNullProperties?.Remove("startLabel"); } }
+        private string? _explicitNullValueStartLabel = default!;
 #nullable restore
 #else
-        public string StartLabel { get; set; }
+        public string StartLabel { get => _explicitNullValueStartLabel; set { _explicitNullValueStartLabel = value; AdditionalData?.Remove("startLabel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startLabel"); else _explicitNullProperties?.Remove("startLabel"); } }
+        private string _explicitNullValueStartLabel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDateRangeQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("endLabel", EndLabel);
             writer.WriteStringValue("hideEndDateLabel", HideEndDateLabel);
             writer.WriteStringValue("startLabel", StartLabel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

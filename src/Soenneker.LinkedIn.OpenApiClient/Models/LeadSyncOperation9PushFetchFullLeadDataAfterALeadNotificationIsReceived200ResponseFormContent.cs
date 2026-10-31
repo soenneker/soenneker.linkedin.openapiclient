@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("headline") is null) { _explicitNullValueHeadline = default!; _explicitNullProperties?.Remove("headline"); }
+            else if (parseNode.GetChildNode("headline") is { } nullNodeHeadline && nullNodeHeadline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headline = null;
+            if (parseNode.GetChildNode("legalInfo") is null) { _explicitNullValueLegalInfo = default!; _explicitNullProperties?.Remove("legalInfo"); }
+            else if (parseNode.GetChildNode("legalInfo") is { } nullNodeLegalInfo && nullNodeLegalInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalInfo = null;
+            if (parseNode.GetChildNode("questions") is null) { _explicitNullValueQuestions = default!; _explicitNullProperties?.Remove("questions"); }
+            else if (parseNode.GetChildNode("questions") is { } nullNodeQuestions && nullNodeQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Questions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentDescription? Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentDescription? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentDescription Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentDescription _explicitNullValueDescription = default!;
 #endif
         /// <summary>The headline property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentHeadline? Headline { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentHeadline? Headline { get => _explicitNullValueHeadline; set { _explicitNullValueHeadline = value; AdditionalData?.Remove("headline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headline"); else _explicitNullProperties?.Remove("headline"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentHeadline? _explicitNullValueHeadline = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentHeadline Headline { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentHeadline Headline { get => _explicitNullValueHeadline; set { _explicitNullValueHeadline = value; AdditionalData?.Remove("headline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headline"); else _explicitNullProperties?.Remove("headline"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentHeadline _explicitNullValueHeadline = default!;
 #endif
         /// <summary>The legalInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentLegalInfo? LegalInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentLegalInfo? LegalInfo { get => _explicitNullValueLegalInfo; set { _explicitNullValueLegalInfo = value; AdditionalData?.Remove("legalInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalInfo"); else _explicitNullProperties?.Remove("legalInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentLegalInfo? _explicitNullValueLegalInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentLegalInfo LegalInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentLegalInfo LegalInfo { get => _explicitNullValueLegalInfo; set { _explicitNullValueLegalInfo = value; AdditionalData?.Remove("legalInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalInfo"); else _explicitNullProperties?.Remove("legalInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentLegalInfo _explicitNullValueLegalInfo = default!;
 #endif
         /// <summary>The questions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentQuestionsItem>? Questions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentQuestionsItem>? Questions { get => _explicitNullValueQuestions; set { _explicitNullValueQuestions = value; AdditionalData?.Remove("questions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questions"); else _explicitNullProperties?.Remove("questions"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentQuestionsItem>? _explicitNullValueQuestions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentQuestionsItem> Questions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentQuestionsItem> Questions { get => _explicitNullValueQuestions; set { _explicitNullValueQuestions = value; AdditionalData?.Remove("questions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questions"); else _explicitNullProperties?.Remove("questions"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentQuestionsItem> _explicitNullValueQuestions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentHeadline>("headline", Headline);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentLegalInfo>("legalInfo", LegalInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContentQuestionsItem>("questions", Questions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

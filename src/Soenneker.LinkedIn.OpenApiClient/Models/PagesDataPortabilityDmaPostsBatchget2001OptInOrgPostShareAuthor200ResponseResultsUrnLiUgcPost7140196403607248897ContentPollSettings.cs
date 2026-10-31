@@ -11,26 +11,44 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
+            else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("isVoterVisibleToAuthor") is null) { _explicitNullValueIsVoterVisibleToAuthor = default!; _explicitNullProperties?.Remove("isVoterVisibleToAuthor"); }
+            else if (parseNode.GetChildNode("isVoterVisibleToAuthor") is { } nullNodeIsVoterVisibleToAuthor && nullNodeIsVoterVisibleToAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsVoterVisibleToAuthor = null;
+            if (parseNode.GetChildNode("voteSelectionType") is null) { _explicitNullValueVoteSelectionType = default!; _explicitNullProperties?.Remove("voteSelectionType"); }
+            else if (parseNode.GetChildNode("voteSelectionType") is { } nullNodeVoteSelectionType && nullNodeVoteSelectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoteSelectionType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Duration { get; set; }
+        public string? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private string? _explicitNullValueDuration = default!;
 #nullable restore
 #else
-        public string Duration { get; set; }
+        public string Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private string _explicitNullValueDuration = default!;
 #endif
         /// <summary>The isVoterVisibleToAuthor property</summary>
-        public bool? IsVoterVisibleToAuthor { get; set; }
+        public bool? IsVoterVisibleToAuthor { get => _explicitNullValueIsVoterVisibleToAuthor; set { _explicitNullValueIsVoterVisibleToAuthor = value; AdditionalData?.Remove("isVoterVisibleToAuthor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isVoterVisibleToAuthor"); else _explicitNullProperties?.Remove("isVoterVisibleToAuthor"); } }
+        private bool? _explicitNullValueIsVoterVisibleToAuthor = default!;
         /// <summary>The voteSelectionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoteSelectionType { get; set; }
+        public string? VoteSelectionType { get => _explicitNullValueVoteSelectionType; set { _explicitNullValueVoteSelectionType = value; AdditionalData?.Remove("voteSelectionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voteSelectionType"); else _explicitNullProperties?.Remove("voteSelectionType"); } }
+        private string? _explicitNullValueVoteSelectionType = default!;
 #nullable restore
 #else
-        public string VoteSelectionType { get; set; }
+        public string VoteSelectionType { get => _explicitNullValueVoteSelectionType; set { _explicitNullValueVoteSelectionType = value; AdditionalData?.Remove("voteSelectionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voteSelectionType"); else _explicitNullProperties?.Remove("voteSelectionType"); } }
+        private string _explicitNullValueVoteSelectionType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings"/> and sets the default values.
@@ -47,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("duration", Duration);
             writer.WriteBoolValue("isVoterVisibleToAuthor", IsVoterVisibleToAuthor);
             writer.WriteStringValue("voteSelectionType", VoteSelectionType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

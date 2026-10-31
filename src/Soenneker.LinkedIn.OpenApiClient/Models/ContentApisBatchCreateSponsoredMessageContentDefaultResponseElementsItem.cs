@@ -11,62 +11,102 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("altText") is null) { _explicitNullValueAltText = default!; _explicitNullProperties?.Remove("altText"); }
+            else if (parseNode.GetChildNode("altText") is { } nullNodeAltText && nullNodeAltText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AltText = null;
+            if (parseNode.GetChildNode("aspectRatioHeight") is null) { _explicitNullValueAspectRatioHeight = default!; _explicitNullProperties?.Remove("aspectRatioHeight"); }
+            else if (parseNode.GetChildNode("aspectRatioHeight") is { } nullNodeAspectRatioHeight && nullNodeAspectRatioHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspectRatioHeight = null;
+            if (parseNode.GetChildNode("aspectRatioWidth") is null) { _explicitNullValueAspectRatioWidth = default!; _explicitNullProperties?.Remove("aspectRatioWidth"); }
+            else if (parseNode.GetChildNode("aspectRatioWidth") is { } nullNodeAspectRatioWidth && nullNodeAspectRatioWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspectRatioWidth = null;
+            if (parseNode.GetChildNode("downloadUrl") is null) { _explicitNullValueDownloadUrl = default!; _explicitNullProperties?.Remove("downloadUrl"); }
+            else if (parseNode.GetChildNode("downloadUrl") is { } nullNodeDownloadUrl && nullNodeDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadUrl = null;
+            if (parseNode.GetChildNode("downloadUrlExpiresAt") is null) { _explicitNullValueDownloadUrlExpiresAt = default!; _explicitNullProperties?.Remove("downloadUrlExpiresAt"); }
+            else if (parseNode.GetChildNode("downloadUrlExpiresAt") is { } nullNodeDownloadUrlExpiresAt && nullNodeDownloadUrlExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadUrlExpiresAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("initializeUploadRequest") is null) { _explicitNullValueInitializeUploadRequest = default!; _explicitNullProperties?.Remove("initializeUploadRequest"); }
+            else if (parseNode.GetChildNode("initializeUploadRequest") is { } nullNodeInitializeUploadRequest && nullNodeInitializeUploadRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitializeUploadRequest = null;
+            if (parseNode.GetChildNode("mediaLibraryMetadata") is null) { _explicitNullValueMediaLibraryMetadata = default!; _explicitNullProperties?.Remove("mediaLibraryMetadata"); }
+            else if (parseNode.GetChildNode("mediaLibraryMetadata") is { } nullNodeMediaLibraryMetadata && nullNodeMediaLibraryMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaLibraryMetadata = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alternate text of this thumbnail. Used for screen reader accessibility. Maximum length is 4,086 characters, recommended length is less than 120 characters.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AltText { get; set; }
+        public string? AltText { get => _explicitNullValueAltText; set { _explicitNullValueAltText = value; AdditionalData?.Remove("altText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("altText"); else _explicitNullProperties?.Remove("altText"); } }
+        private string? _explicitNullValueAltText = default!;
 #nullable restore
 #else
-        public string AltText { get; set; }
+        public string AltText { get => _explicitNullValueAltText; set { _explicitNullValueAltText = value; AdditionalData?.Remove("altText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("altText"); else _explicitNullProperties?.Remove("altText"); } }
+        private string _explicitNullValueAltText = default!;
 #endif
         /// <summary>The aspect ratio height of the media. For a 16:9 media, this will be 9. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. Empty if the media asset isn&apos;t available, failed processing, etc.Documented type: floatRequirement: No</summary>
-        public double? AspectRatioHeight { get; set; }
+        public double? AspectRatioHeight { get => _explicitNullValueAspectRatioHeight; set { _explicitNullValueAspectRatioHeight = value; AdditionalData?.Remove("aspectRatioHeight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspectRatioHeight"); else _explicitNullProperties?.Remove("aspectRatioHeight"); } }
+        private double? _explicitNullValueAspectRatioHeight = default!;
         /// <summary>The aspect ratio width of the media. For a 16:9 media, this will be 16. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. Empty if the media asset isn&apos;t available, failed processing, etc.Documented type: floatRequirement: No</summary>
-        public double? AspectRatioWidth { get; set; }
+        public double? AspectRatioWidth { get => _explicitNullValueAspectRatioWidth; set { _explicitNullValueAspectRatioWidth = value; AdditionalData?.Remove("aspectRatioWidth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspectRatioWidth"); else _explicitNullProperties?.Remove("aspectRatioWidth"); } }
+        private double? _explicitNullValueAspectRatioWidth = default!;
         /// <summary>Public URL to download/view the media asset. Is empty if the media asset isn&apos;t available, failed processing, etc.Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DownloadUrl { get; set; }
+        public string? DownloadUrl { get => _explicitNullValueDownloadUrl; set { _explicitNullValueDownloadUrl = value; AdditionalData?.Remove("downloadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadUrl"); else _explicitNullProperties?.Remove("downloadUrl"); } }
+        private string? _explicitNullValueDownloadUrl = default!;
 #nullable restore
 #else
-        public string DownloadUrl { get; set; }
+        public string DownloadUrl { get => _explicitNullValueDownloadUrl; set { _explicitNullValueDownloadUrl = value; AdditionalData?.Remove("downloadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadUrl"); else _explicitNullProperties?.Remove("downloadUrl"); } }
+        private string _explicitNullValueDownloadUrl = default!;
 #endif
         /// <summary>Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires. If not present, it might never expire but there&apos;s no guarantee. Unless the use case has a security+legal exception, all URLs have an expiration time. If they don&apos;t, they can still expire because URLs are signed, and the sign keys might be rotated. If a non expiring URL was signed with a key that gets invalidated, it essentially expires.Documented type: TimeRequirement: No</summary>
-        public long? DownloadUrlExpiresAt { get; set; }
+        public long? DownloadUrlExpiresAt { get => _explicitNullValueDownloadUrlExpiresAt; set { _explicitNullValueDownloadUrlExpiresAt = value; AdditionalData?.Remove("downloadUrlExpiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadUrlExpiresAt"); else _explicitNullProperties?.Remove("downloadUrlExpiresAt"); } }
+        private long? _explicitNullValueDownloadUrlExpiresAt = default!;
         /// <summary>Unique URN for an Image. Synthetic key that shouldn&apos;t be allowed during the creation of an Image. The field is read only and derived to be populated internally.Documented type: ImageurnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The initializeUploadRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequest? InitializeUploadRequest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequest? InitializeUploadRequest { get => _explicitNullValueInitializeUploadRequest; set { _explicitNullValueInitializeUploadRequest = value; AdditionalData?.Remove("initializeUploadRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializeUploadRequest"); else _explicitNullProperties?.Remove("initializeUploadRequest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequest? _explicitNullValueInitializeUploadRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequest InitializeUploadRequest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequest InitializeUploadRequest { get => _explicitNullValueInitializeUploadRequest; set { _explicitNullValueInitializeUploadRequest = value; AdditionalData?.Remove("initializeUploadRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializeUploadRequest"); else _explicitNullProperties?.Remove("initializeUploadRequest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequest _explicitNullValueInitializeUploadRequest = default!;
 #endif
         /// <summary>Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests.Documented type: MediaLibraryMetadataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemMediaLibraryMetadata? MediaLibraryMetadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemMediaLibraryMetadata? MediaLibraryMetadata { get => _explicitNullValueMediaLibraryMetadata; set { _explicitNullValueMediaLibraryMetadata = value; AdditionalData?.Remove("mediaLibraryMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaLibraryMetadata"); else _explicitNullProperties?.Remove("mediaLibraryMetadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemMediaLibraryMetadata? _explicitNullValueMediaLibraryMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemMediaLibraryMetadata MediaLibraryMetadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemMediaLibraryMetadata MediaLibraryMetadata { get => _explicitNullValueMediaLibraryMetadata; set { _explicitNullValueMediaLibraryMetadata = value; AdditionalData?.Remove("mediaLibraryMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaLibraryMetadata"); else _explicitNullProperties?.Remove("mediaLibraryMetadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemMediaLibraryMetadata _explicitNullValueMediaLibraryMetadata = default!;
 #endif
         /// <summary>The URN of the entity that owns this asset. It can be a person(urn:li:person:123), organization(urn:li:organization:123) or sponsoredAccount(urn:li:sponsoredAccount:123) URNDocumented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItem"/> and sets the default values.
@@ -83,7 +123,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +160,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemInitializeUploadRequest>("initializeUploadRequest", InitializeUploadRequest);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponseElementsItemMediaLibraryMetadata>("mediaLibraryMetadata", MediaLibraryMetadata);
             writer.WriteStringValue("owner", Owner);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

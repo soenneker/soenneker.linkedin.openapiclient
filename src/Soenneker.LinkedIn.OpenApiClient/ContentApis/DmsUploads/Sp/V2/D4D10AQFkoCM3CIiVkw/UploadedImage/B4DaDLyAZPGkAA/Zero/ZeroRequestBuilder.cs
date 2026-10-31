@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.DmsUploads.Sp.V2.D4D10AQF
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This is a generic Upload URL call without init.
@@ -63,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.DmsUploads.Sp.V2.D4D10AQF
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.DmsUploads.Sp.V2.D4D10AQFkoCM3CIiVkw.UploadedImage.B4DaDLyAZPGkAA.Zero.ZeroRequestBuilder.ZeroRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://www.linkedin.com", "/content-apis/dms-uploads/sp/v2/D4D10AQFkoCM3CIiVkw/uploaded-image/B4DaDLyAZPGkAA-/0", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

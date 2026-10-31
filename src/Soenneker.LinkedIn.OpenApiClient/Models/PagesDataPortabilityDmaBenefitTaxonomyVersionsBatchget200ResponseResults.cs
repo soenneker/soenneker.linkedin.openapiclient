@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("4") is null) { _explicitNullValueFour = default!; _explicitNullProperties?.Remove("4"); }
+            else if (parseNode.GetChildNode("4") is { } nullNodeFour && nullNodeFour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Four = null;
+            if (parseNode.GetChildNode("6") is null) { _explicitNullValueSix = default!; _explicitNullProperties?.Remove("6"); }
+            else if (parseNode.GetChildNode("6") is { } nullNodeSix && nullNodeSix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Six = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Four property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults4? Four { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults4? Four { get => _explicitNullValueFour; set { _explicitNullValueFour = value; AdditionalData?.Remove("4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("4"); else _explicitNullProperties?.Remove("4"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults4? _explicitNullValueFour = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults4 Four { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults4 Four { get => _explicitNullValueFour; set { _explicitNullValueFour = value; AdditionalData?.Remove("4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("4"); else _explicitNullProperties?.Remove("4"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults4 _explicitNullValueFour = default!;
 #endif
         /// <summary>The Six property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults6? Six { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults6? Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; AdditionalData?.Remove("6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults6? _explicitNullValueSix = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults6 Six { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults6 Six { get => _explicitNullValueSix; set { _explicitNullValueSix = value; AdditionalData?.Remove("6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6"); else _explicitNullProperties?.Remove("6"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults6 _explicitNullValueSix = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults4>("4", Four);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaBenefitTaxonomyVersionsBatchget200ResponseResults6>("6", Six);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

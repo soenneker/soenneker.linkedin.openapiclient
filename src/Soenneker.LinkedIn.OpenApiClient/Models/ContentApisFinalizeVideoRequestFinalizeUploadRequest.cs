@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisFinalizeVideoRequestFinalizeUploadRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("uploadedPartIds") is null) { _explicitNullValueUploadedPartIds = default!; _explicitNullProperties?.Remove("uploadedPartIds"); }
+            else if (parseNode.GetChildNode("uploadedPartIds") is { } nullNodeUploadedPartIds && nullNodeUploadedPartIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedPartIds = null;
+            if (parseNode.GetChildNode("uploadToken") is null) { _explicitNullValueUploadToken = default!; _explicitNullProperties?.Remove("uploadToken"); }
+            else if (parseNode.GetChildNode("uploadToken") is { } nullNodeUploadToken && nullNodeUploadToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadToken = null;
+            if (parseNode.GetChildNode("video") is null) { _explicitNullValueVideo = default!; _explicitNullProperties?.Remove("video"); }
+            else if (parseNode.GetChildNode("video") is { } nullNodeVideo && nullNodeVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Video = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The uploadedPartIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UploadedPartIds { get; set; }
+        public List<string>? UploadedPartIds { get => _explicitNullValueUploadedPartIds; set { _explicitNullValueUploadedPartIds = value; AdditionalData?.Remove("uploadedPartIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadedPartIds"); else _explicitNullProperties?.Remove("uploadedPartIds"); } }
+        private List<string>? _explicitNullValueUploadedPartIds = default!;
 #nullable restore
 #else
-        public List<string> UploadedPartIds { get; set; }
+        public List<string> UploadedPartIds { get => _explicitNullValueUploadedPartIds; set { _explicitNullValueUploadedPartIds = value; AdditionalData?.Remove("uploadedPartIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadedPartIds"); else _explicitNullProperties?.Remove("uploadedPartIds"); } }
+        private List<string> _explicitNullValueUploadedPartIds = default!;
 #endif
         /// <summary>The uploadToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadToken { get; set; }
+        public string? UploadToken { get => _explicitNullValueUploadToken; set { _explicitNullValueUploadToken = value; AdditionalData?.Remove("uploadToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadToken"); else _explicitNullProperties?.Remove("uploadToken"); } }
+        private string? _explicitNullValueUploadToken = default!;
 #nullable restore
 #else
-        public string UploadToken { get; set; }
+        public string UploadToken { get => _explicitNullValueUploadToken; set { _explicitNullValueUploadToken = value; AdditionalData?.Remove("uploadToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadToken"); else _explicitNullProperties?.Remove("uploadToken"); } }
+        private string _explicitNullValueUploadToken = default!;
 #endif
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Video { get; set; }
+        public string? Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; AdditionalData?.Remove("video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private string? _explicitNullValueVideo = default!;
 #nullable restore
 #else
-        public string Video { get; set; }
+        public string Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; AdditionalData?.Remove("video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private string _explicitNullValueVideo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisFinalizeVideoRequestFinalizeUploadRequest"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisFinalizeVideoRequestFinalizeUploadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisFinalizeVideoRequestFinalizeUploadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisFinalizeVideoRequestFinalizeUploadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("uploadedPartIds", UploadedPartIds);
             writer.WriteStringValue("uploadToken", UploadToken);
             writer.WriteStringValue("video", Video);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

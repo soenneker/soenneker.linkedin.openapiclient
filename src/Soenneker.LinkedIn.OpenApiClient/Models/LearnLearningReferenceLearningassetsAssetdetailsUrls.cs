@@ -12,32 +12,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnLearningReferenceLearningassetsAssetdetailsUrls : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aiccLaunch") is null) { _explicitNullValueAiccLaunch = default!; _explicitNullProperties?.Remove("aiccLaunch"); }
+            else if (parseNode.GetChildNode("aiccLaunch") is { } nullNodeAiccLaunch && nullNodeAiccLaunch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiccLaunch = null;
+            if (parseNode.GetChildNode("ssoLaunch") is null) { _explicitNullValueSsoLaunch = default!; _explicitNullProperties?.Remove("ssoLaunch"); }
+            else if (parseNode.GetChildNode("ssoLaunch") is { } nullNodeSsoLaunch && nullNodeSsoLaunch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoLaunch = null;
+            if (parseNode.GetChildNode("webLaunch") is null) { _explicitNullValueWebLaunch = default!; _explicitNullProperties?.Remove("webLaunch"); }
+            else if (parseNode.GetChildNode("webLaunch") is { } nullNodeWebLaunch && nullNodeWebLaunch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebLaunch = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If present, the AICC launch URL of the learning asset. This value is used to initiate course completion tracking in AICC-compliant systems. The value is only included in the response when the requestor has AICC enabled in their LinkedIn Learning admin settings.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AiccLaunch { get; set; }
+        public string? AiccLaunch { get => _explicitNullValueAiccLaunch; set { _explicitNullValueAiccLaunch = value; AdditionalData?.Remove("aiccLaunch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiccLaunch"); else _explicitNullProperties?.Remove("aiccLaunch"); } }
+        private string? _explicitNullValueAiccLaunch = default!;
 #nullable restore
 #else
-        public string AiccLaunch { get; set; }
+        public string AiccLaunch { get => _explicitNullValueAiccLaunch; set { _explicitNullValueAiccLaunch = value; AdditionalData?.Remove("aiccLaunch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiccLaunch"); else _explicitNullProperties?.Remove("aiccLaunch"); } }
+        private string _explicitNullValueAiccLaunch = default!;
 #endif
         /// <summary>If present, the single sign-on launch URL of the learning asset. The value is only included in the response when the requestor has configured an active SSO connection in their LinkedIn Learning admin settings.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SsoLaunch { get; set; }
+        public string? SsoLaunch { get => _explicitNullValueSsoLaunch; set { _explicitNullValueSsoLaunch = value; AdditionalData?.Remove("ssoLaunch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoLaunch"); else _explicitNullProperties?.Remove("ssoLaunch"); } }
+        private string? _explicitNullValueSsoLaunch = default!;
 #nullable restore
 #else
-        public string SsoLaunch { get; set; }
+        public string SsoLaunch { get => _explicitNullValueSsoLaunch; set { _explicitNullValueSsoLaunch = value; AdditionalData?.Remove("ssoLaunch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssoLaunch"); else _explicitNullProperties?.Remove("ssoLaunch"); } }
+        private string _explicitNullValueSsoLaunch = default!;
 #endif
         /// <summary>If present, the launch URL of the learning asset in the LinkedIn Learning web application.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebLaunch { get; set; }
+        public string? WebLaunch { get => _explicitNullValueWebLaunch; set { _explicitNullValueWebLaunch = value; AdditionalData?.Remove("webLaunch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webLaunch"); else _explicitNullProperties?.Remove("webLaunch"); } }
+        private string? _explicitNullValueWebLaunch = default!;
 #nullable restore
 #else
-        public string WebLaunch { get; set; }
+        public string WebLaunch { get => _explicitNullValueWebLaunch; set { _explicitNullValueWebLaunch = value; AdditionalData?.Remove("webLaunch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webLaunch"); else _explicitNullProperties?.Remove("webLaunch"); } }
+        private string _explicitNullValueWebLaunch = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("aiccLaunch", AiccLaunch);
             writer.WriteStringValue("ssoLaunch", SsoLaunch);
             writer.WriteStringValue("webLaunch", WebLaunch);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

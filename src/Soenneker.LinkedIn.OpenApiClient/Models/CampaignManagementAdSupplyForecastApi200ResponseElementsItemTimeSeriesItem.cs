@@ -11,21 +11,38 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adForecastRange") is null) { _explicitNullValueAdForecastRange = default!; _explicitNullProperties?.Remove("adForecastRange"); }
+            else if (parseNode.GetChildNode("adForecastRange") is { } nullNodeAdForecastRange && nullNodeAdForecastRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdForecastRange = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The adForecastRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange? AdForecastRange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange? AdForecastRange { get => _explicitNullValueAdForecastRange; set { _explicitNullValueAdForecastRange = value; AdditionalData?.Remove("adForecastRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adForecastRange"); else _explicitNullProperties?.Remove("adForecastRange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange? _explicitNullValueAdForecastRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange AdForecastRange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange AdForecastRange { get => _explicitNullValueAdForecastRange; set { _explicitNullValueAdForecastRange = value; AdditionalData?.Remove("adForecastRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adForecastRange"); else _explicitNullProperties?.Remove("adForecastRange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange _explicitNullValueAdForecastRange = default!;
 #endif
         /// <summary>The timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private long? _explicitNullValueTimestamp = default!;
         /// <summary>The value property</summary>
-        public long? Value { get; set; }
+        public long? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private long? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItem"/> and sets the default values.
         /// </summary>
@@ -41,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange>("adForecastRange", AdForecastRange);
             writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteLongValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

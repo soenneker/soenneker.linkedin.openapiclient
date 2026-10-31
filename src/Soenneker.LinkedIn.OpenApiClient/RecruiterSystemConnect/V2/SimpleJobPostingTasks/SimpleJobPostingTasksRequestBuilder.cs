@@ -48,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.SimpleJobPo
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// /SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)To test and view the Jobs that you successfully posted , use https://www.linkedin.com/jobs/view/ { jobPosting ID }jobPosting ID can be get from the response of /SimpleJobpostingtaskeg:https://www.linkedin.com/jobs/view/2635675045/SimpleJobPostingTasks used to track the Status of Jobs. To learn more please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus)Customers can check Private Jobs from One-Click export dropdown in Recruiter as Private Jobs won&apos;t shows up in UI

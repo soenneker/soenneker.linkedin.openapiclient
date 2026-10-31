@@ -12,42 +12,65 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetSponsoredMessageContentDefaultResponse : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bodySource") is null) { _explicitNullValueBodySource = default!; _explicitNullProperties?.Remove("bodySource"); }
+            else if (parseNode.GetChildNode("bodySource") is { } nullNodeBodySource && nullNodeBodySource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodySource = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("nextAction") is null) { _explicitNullValueNextAction = default!; _explicitNullProperties?.Remove("nextAction"); }
+            else if (parseNode.GetChildNode("nextAction") is { } nullNodeNextAction && nullNodeNextAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextAction = null;
+            if (parseNode.GetChildNode("sponsoredConversation") is null) { _explicitNullValueSponsoredConversation = default!; _explicitNullProperties?.Remove("sponsoredConversation"); }
+            else if (parseNode.GetChildNode("sponsoredConversation") is { } nullNodeSponsoredConversation && nullNodeSponsoredConversation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SponsoredConversation = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A message can consist of either simple text, or a lead generation form, or an image attachment with an optional attachment textDocumented type: Either a text string, an AdFormUrn, or a mediaAttachment consisting of an ImageUrn and an optional text stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BodySource { get; set; }
+        public string? BodySource { get => _explicitNullValueBodySource; set { _explicitNullValueBodySource = value; AdditionalData?.Remove("bodySource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bodySource"); else _explicitNullProperties?.Remove("bodySource"); } }
+        private string? _explicitNullValueBodySource = default!;
 #nullable restore
 #else
-        public string BodySource { get; set; }
+        public string BodySource { get => _explicitNullValueBodySource; set { _explicitNullValueBodySource = value; AdditionalData?.Remove("bodySource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bodySource"); else _explicitNullProperties?.Remove("bodySource"); } }
+        private string _explicitNullValueBodySource = default!;
 #endif
         /// <summary>(read-only) The ID key for this messageDocumented type: SponsoredMessageContentUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>Indicates whether this message’s next action is another message or an array of optionsDocumented type: SponsoredMessageContentUrn or SponsoredMessageOption[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? NextAction { get; set; }
+        public UntypedNode? NextAction { get => _explicitNullValueNextAction; set { _explicitNullValueNextAction = value; AdditionalData?.Remove("nextAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextAction"); else _explicitNullProperties?.Remove("nextAction"); } }
+        private UntypedNode? _explicitNullValueNextAction = default!;
 #nullable restore
 #else
-        public UntypedNode NextAction { get; set; }
+        public UntypedNode NextAction { get => _explicitNullValueNextAction; set { _explicitNullValueNextAction = value; AdditionalData?.Remove("nextAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextAction"); else _explicitNullProperties?.Remove("nextAction"); } }
+        private UntypedNode _explicitNullValueNextAction = default!;
 #endif
         /// <summary>The conversation to which this message belongsDocumented type: SponsoredConversationUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SponsoredConversation { get; set; }
+        public string? SponsoredConversation { get => _explicitNullValueSponsoredConversation; set { _explicitNullValueSponsoredConversation = value; AdditionalData?.Remove("sponsoredConversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredConversation"); else _explicitNullProperties?.Remove("sponsoredConversation"); } }
+        private string? _explicitNullValueSponsoredConversation = default!;
 #nullable restore
 #else
-        public string SponsoredConversation { get; set; }
+        public string SponsoredConversation { get => _explicitNullValueSponsoredConversation; set { _explicitNullValueSponsoredConversation = value; AdditionalData?.Remove("sponsoredConversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredConversation"); else _explicitNullProperties?.Remove("sponsoredConversation"); } }
+        private string _explicitNullValueSponsoredConversation = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetSponsoredMessageContentDefaultResponse"/> and sets the default values.
@@ -64,7 +87,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetSponsoredMessageContentDefaultResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetSponsoredMessageContentDefaultResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetSponsoredMessageContentDefaultResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,6 +114,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<UntypedNode>("nextAction", NextAction);
             writer.WriteStringValue("sponsoredConversation", SponsoredConversation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

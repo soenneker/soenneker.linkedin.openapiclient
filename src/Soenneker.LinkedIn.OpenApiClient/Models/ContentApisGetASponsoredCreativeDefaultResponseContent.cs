@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetASponsoredCreativeDefaultResponseContent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("spotlight") is null) { _explicitNullValueSpotlight = default!; _explicitNullProperties?.Remove("spotlight"); }
+            else if (parseNode.GetChildNode("spotlight") is { } nullNodeSpotlight && nullNodeSpotlight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spotlight = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The spotlight property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContentSpotlight? Spotlight { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContentSpotlight? Spotlight { get => _explicitNullValueSpotlight; set { _explicitNullValueSpotlight = value; AdditionalData?.Remove("spotlight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spotlight"); else _explicitNullProperties?.Remove("spotlight"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContentSpotlight? _explicitNullValueSpotlight = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContentSpotlight Spotlight { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContentSpotlight Spotlight { get => _explicitNullValueSpotlight; set { _explicitNullValueSpotlight = value; AdditionalData?.Remove("spotlight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spotlight"); else _explicitNullProperties?.Remove("spotlight"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContentSpotlight _explicitNullValueSpotlight = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContent"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponseContentSpotlight>("spotlight", Spotlight);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

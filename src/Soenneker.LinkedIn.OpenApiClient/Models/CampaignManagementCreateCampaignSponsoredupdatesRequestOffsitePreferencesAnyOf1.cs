@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferencesAnyOf1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("iabCategories") is null) { _explicitNullValueIabCategories = default!; _explicitNullProperties?.Remove("iabCategories"); }
+            else if (parseNode.GetChildNode("iabCategories") is { } nullNodeIabCategories && nullNodeIabCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IabCategories = null;
+            if (parseNode.GetChildNode("publisherRestrictionFiles") is null) { _explicitNullValuePublisherRestrictionFiles = default!; _explicitNullProperties?.Remove("publisherRestrictionFiles"); }
+            else if (parseNode.GetChildNode("publisherRestrictionFiles") is { } nullNodePublisherRestrictionFiles && nullNodePublisherRestrictionFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublisherRestrictionFiles = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The set of IAB (Interactive Advertising Bureau) categories that this campaign can be served/excluded from, based on where the ad request is from. Mobile Applications, Mobile Web, and Desktop Inventory are all classified into one or more of these categories. For more details, refer to LinkedIn Audience Network, Manage Audience Restrictions, and OpenRTB API Specification Version 2.3.Documented type: optional IABCategories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesIabCategories? IabCategories { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesIabCategories? IabCategories { get => _explicitNullValueIabCategories; set { _explicitNullValueIabCategories = value; AdditionalData?.Remove("iabCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iabCategories"); else _explicitNullProperties?.Remove("iabCategories"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesIabCategories? _explicitNullValueIabCategories = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesIabCategories IabCategories { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesIabCategories IabCategories { get => _explicitNullValueIabCategories; set { _explicitNullValueIabCategories = value; AdditionalData?.Remove("iabCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iabCategories"); else _explicitNullProperties?.Remove("iabCategories"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesIabCategories _explicitNullValueIabCategories = default!;
 #endif
         /// <summary>This field contains one or more files that have been uploaded by an advertiser. Each file contains a list of web domains/app store URLs. The advertiser can choose if they want to include or exclude this particular campaign from serving on those apps/websites. The API accepts only allowlists under include field and blocklists under exclude field.Documented type: optional PublisherRestrictionFiles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles? PublisherRestrictionFiles { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles? PublisherRestrictionFiles { get => _explicitNullValuePublisherRestrictionFiles; set { _explicitNullValuePublisherRestrictionFiles = value; AdditionalData?.Remove("publisherRestrictionFiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisherRestrictionFiles"); else _explicitNullProperties?.Remove("publisherRestrictionFiles"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles? _explicitNullValuePublisherRestrictionFiles = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles PublisherRestrictionFiles { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles PublisherRestrictionFiles { get => _explicitNullValuePublisherRestrictionFiles; set { _explicitNullValuePublisherRestrictionFiles = value; AdditionalData?.Remove("publisherRestrictionFiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisherRestrictionFiles"); else _explicitNullProperties?.Remove("publisherRestrictionFiles"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles _explicitNullValuePublisherRestrictionFiles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferencesAnyOf1"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferencesAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferencesAnyOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestOffsitePreferencesAnyOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesIabCategories>("iabCategories", IabCategories);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles>("publisherRestrictionFiles", PublisherRestrictionFiles);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,48 +11,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ParentApplicationManagementGetChildApplication200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("oauth2AuthorizedCallbackUrls") is null) { _explicitNullValueOauth2AuthorizedCallbackUrls = default!; _explicitNullProperties?.Remove("oauth2AuthorizedCallbackUrls"); }
+            else if (parseNode.GetChildNode("oauth2AuthorizedCallbackUrls") is { } nullNodeOauth2AuthorizedCallbackUrls && nullNodeOauth2AuthorizedCallbackUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth2AuthorizedCallbackUrls = null;
+            if (parseNode.GetChildNode("uniqueForeignId") is null) { _explicitNullValueUniqueForeignId = default!; _explicitNullProperties?.Remove("uniqueForeignId"); }
+            else if (parseNode.GetChildNode("uniqueForeignId") is { } nullNodeUniqueForeignId && nullNodeUniqueForeignId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueForeignId = null;
+            if (parseNode.GetChildNode("validJsSdkDomains") is null) { _explicitNullValueValidJsSdkDomains = default!; _explicitNullProperties?.Remove("validJsSdkDomains"); }
+            else if (parseNode.GetChildNode("validJsSdkDomains") is { } nullNodeValidJsSdkDomains && nullNodeValidJsSdkDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidJsSdkDomains = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A brief description of the child application. This value is only used by LinkedIn administration and is not shown to end-users of the application.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Display name of the child application. This value will be shown to users in the OAuth 2.0 authorization dialog for 3-legged scenarios. Additionally, it will be used by LinkedIn as a reference value. Note: Usage of &quot;LinkedIn&quot; in name is no supported.Documented type: String (max 50 chars) Format: &quot;{ATS Name} - {Customer Name}&quot;Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>List of fully qualified OAuth 2.0 redirect URLs to allow.Documented type: String[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Oauth2AuthorizedCallbackUrls { get; set; }
+        public List<string>? Oauth2AuthorizedCallbackUrls { get => _explicitNullValueOauth2AuthorizedCallbackUrls; set { _explicitNullValueOauth2AuthorizedCallbackUrls = value; AdditionalData?.Remove("oauth2AuthorizedCallbackUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2AuthorizedCallbackUrls"); else _explicitNullProperties?.Remove("oauth2AuthorizedCallbackUrls"); } }
+        private List<string>? _explicitNullValueOauth2AuthorizedCallbackUrls = default!;
 #nullable restore
 #else
-        public List<string> Oauth2AuthorizedCallbackUrls { get; set; }
+        public List<string> Oauth2AuthorizedCallbackUrls { get => _explicitNullValueOauth2AuthorizedCallbackUrls; set { _explicitNullValueOauth2AuthorizedCallbackUrls = value; AdditionalData?.Remove("oauth2AuthorizedCallbackUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2AuthorizedCallbackUrls"); else _explicitNullProperties?.Remove("oauth2AuthorizedCallbackUrls"); } }
+        private List<string> _explicitNullValueOauth2AuthorizedCallbackUrls = default!;
 #endif
         /// <summary>A unique ID that represents the child application being created, as seen from the parent/calling application. This value must be unique across all child applications that belong to the parent application. Attempting to create more than one child with the same uniqueForeignId value will result in a conflict error. Use your customer identifier for this value.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueForeignId { get; set; }
+        public string? UniqueForeignId { get => _explicitNullValueUniqueForeignId; set { _explicitNullValueUniqueForeignId = value; AdditionalData?.Remove("uniqueForeignId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueForeignId"); else _explicitNullProperties?.Remove("uniqueForeignId"); } }
+        private string? _explicitNullValueUniqueForeignId = default!;
 #nullable restore
 #else
-        public string UniqueForeignId { get; set; }
+        public string UniqueForeignId { get => _explicitNullValueUniqueForeignId; set { _explicitNullValueUniqueForeignId = value; AdditionalData?.Remove("uniqueForeignId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueForeignId"); else _explicitNullProperties?.Remove("uniqueForeignId"); } }
+        private string _explicitNullValueUniqueForeignId = default!;
 #endif
         /// <summary>List of fully qualified JavaScript SDK domain names.Documented type: String[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ValidJsSdkDomains { get; set; }
+        public List<string>? ValidJsSdkDomains { get => _explicitNullValueValidJsSdkDomains; set { _explicitNullValueValidJsSdkDomains = value; AdditionalData?.Remove("validJsSdkDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validJsSdkDomains"); else _explicitNullProperties?.Remove("validJsSdkDomains"); } }
+        private List<string>? _explicitNullValueValidJsSdkDomains = default!;
 #nullable restore
 #else
-        public List<string> ValidJsSdkDomains { get; set; }
+        public List<string> ValidJsSdkDomains { get => _explicitNullValueValidJsSdkDomains; set { _explicitNullValueValidJsSdkDomains = value; AdditionalData?.Remove("validJsSdkDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validJsSdkDomains"); else _explicitNullProperties?.Remove("validJsSdkDomains"); } }
+        private List<string> _explicitNullValueValidJsSdkDomains = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200ResponseElementsItem"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +125,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("oauth2AuthorizedCallbackUrls", Oauth2AuthorizedCallbackUrls);
             writer.WriteStringValue("uniqueForeignId", UniqueForeignId);
             writer.WriteCollectionOfPrimitiveValues<string>("validJsSdkDomains", ValidJsSdkDomains);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

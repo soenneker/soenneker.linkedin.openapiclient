@@ -11,34 +11,56 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TalentCrmConnectSyncTcrmCandidatePipelineStagesRequestEntitiesTcrmCandidatePipelineStageIdTcrmCandidate100TcrmStageId01DataProviderPartnerIntegrationContextUrnLiOrganization1234567890 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tcrmCandidateId") is null) { _explicitNullValueTcrmCandidateId = default!; _explicitNullProperties?.Remove("tcrmCandidateId"); }
+            else if (parseNode.GetChildNode("tcrmCandidateId") is { } nullNodeTcrmCandidateId && nullNodeTcrmCandidateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcrmCandidateId = null;
+            if (parseNode.GetChildNode("tcrmCreatedAt") is null) { _explicitNullValueTcrmCreatedAt = default!; _explicitNullProperties?.Remove("tcrmCreatedAt"); }
+            else if (parseNode.GetChildNode("tcrmCreatedAt") is { } nullNodeTcrmCreatedAt && nullNodeTcrmCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcrmCreatedAt = null;
+            if (parseNode.GetChildNode("tcrmPipelineId") is null) { _explicitNullValueTcrmPipelineId = default!; _explicitNullProperties?.Remove("tcrmPipelineId"); }
+            else if (parseNode.GetChildNode("tcrmPipelineId") is { } nullNodeTcrmPipelineId && nullNodeTcrmPipelineId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcrmPipelineId = null;
+            if (parseNode.GetChildNode("tcrmStageId") is null) { _explicitNullValueTcrmStageId = default!; _explicitNullProperties?.Remove("tcrmStageId"); }
+            else if (parseNode.GetChildNode("tcrmStageId") is { } nullNodeTcrmStageId && nullNodeTcrmStageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcrmStageId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The candidate identifier within external Talent CRM.Documented type: StringRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TcrmCandidateId { get; set; }
+        public string? TcrmCandidateId { get => _explicitNullValueTcrmCandidateId; set { _explicitNullValueTcrmCandidateId = value; AdditionalData?.Remove("tcrmCandidateId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmCandidateId"); else _explicitNullProperties?.Remove("tcrmCandidateId"); } }
+        private string? _explicitNullValueTcrmCandidateId = default!;
 #nullable restore
 #else
-        public string TcrmCandidateId { get; set; }
+        public string TcrmCandidateId { get => _explicitNullValueTcrmCandidateId; set { _explicitNullValueTcrmCandidateId = value; AdditionalData?.Remove("tcrmCandidateId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmCandidateId"); else _explicitNullProperties?.Remove("tcrmCandidateId"); } }
+        private string _explicitNullValueTcrmCandidateId = default!;
 #endif
         /// <summary>The time when this candidate was put in this pipeline within external CRM.Documented type: TimeRequirement: Required</summary>
-        public long? TcrmCreatedAt { get; set; }
+        public long? TcrmCreatedAt { get => _explicitNullValueTcrmCreatedAt; set { _explicitNullValueTcrmCreatedAt = value; AdditionalData?.Remove("tcrmCreatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmCreatedAt"); else _explicitNullProperties?.Remove("tcrmCreatedAt"); } }
+        private long? _explicitNullValueTcrmCreatedAt = default!;
         /// <summary>The pipeline identifier within external Talent CRM.Documented type: StringRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TcrmPipelineId { get; set; }
+        public string? TcrmPipelineId { get => _explicitNullValueTcrmPipelineId; set { _explicitNullValueTcrmPipelineId = value; AdditionalData?.Remove("tcrmPipelineId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmPipelineId"); else _explicitNullProperties?.Remove("tcrmPipelineId"); } }
+        private string? _explicitNullValueTcrmPipelineId = default!;
 #nullable restore
 #else
-        public string TcrmPipelineId { get; set; }
+        public string TcrmPipelineId { get => _explicitNullValueTcrmPipelineId; set { _explicitNullValueTcrmPipelineId = value; AdditionalData?.Remove("tcrmPipelineId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmPipelineId"); else _explicitNullProperties?.Remove("tcrmPipelineId"); } }
+        private string _explicitNullValueTcrmPipelineId = default!;
 #endif
         /// <summary>The unique identifier of the candidate&apos;s stage in the pipeline. Maps to stage id submitted via Pipeline Stages API.Documented type: StringRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TcrmStageId { get; set; }
+        public string? TcrmStageId { get => _explicitNullValueTcrmStageId; set { _explicitNullValueTcrmStageId = value; AdditionalData?.Remove("tcrmStageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmStageId"); else _explicitNullProperties?.Remove("tcrmStageId"); } }
+        private string? _explicitNullValueTcrmStageId = default!;
 #nullable restore
 #else
-        public string TcrmStageId { get; set; }
+        public string TcrmStageId { get => _explicitNullValueTcrmStageId; set { _explicitNullValueTcrmStageId = value; AdditionalData?.Remove("tcrmStageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmStageId"); else _explicitNullProperties?.Remove("tcrmStageId"); } }
+        private string _explicitNullValueTcrmStageId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelineStagesRequestEntitiesTcrmCandidatePipelineStageIdTcrmCandidate100TcrmStageId01DataProviderPartnerIntegrationContextUrnLiOrganization1234567890"/> and sets the default values.
@@ -55,7 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelineStagesRequestEntitiesTcrmCandidatePipelineStageIdTcrmCandidate100TcrmStageId01DataProviderPartnerIntegrationContextUrnLiOrganization1234567890 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelineStagesRequestEntitiesTcrmCandidatePipelineStageIdTcrmCandidate100TcrmStageId01DataProviderPartnerIntegrationContextUrnLiOrganization1234567890();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelineStagesRequestEntitiesTcrmCandidatePipelineStageIdTcrmCandidate100TcrmStageId01DataProviderPartnerIntegrationContextUrnLiOrganization1234567890(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("tcrmCreatedAt", TcrmCreatedAt);
             writer.WriteStringValue("tcrmPipelineId", TcrmPipelineId);
             writer.WriteStringValue("tcrmStageId", TcrmStageId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

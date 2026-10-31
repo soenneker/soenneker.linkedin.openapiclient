@@ -11,136 +11,207 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageProfilesGet200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("coverImage") is null) { _explicitNullValueCoverImage = default!; _explicitNullProperties?.Remove("coverImage"); }
+            else if (parseNode.GetChildNode("coverImage") is { } nullNodeCoverImage && nullNodeCoverImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverImage = null;
+            if (parseNode.GetChildNode("coverImageCropMetadata") is null) { _explicitNullValueCoverImageCropMetadata = default!; _explicitNullProperties?.Remove("coverImageCropMetadata"); }
+            else if (parseNode.GetChildNode("coverImageCropMetadata") is { } nullNodeCoverImageCropMetadata && nullNodeCoverImageCropMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverImageCropMetadata = null;
+            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
+            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("deleted") is null) { _explicitNullValueDeleted = default!; _explicitNullProperties?.Remove("deleted"); }
+            else if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("entityUrn") is null) { _explicitNullValueEntityUrn = default!; _explicitNullProperties?.Remove("entityUrn"); }
+            else if (parseNode.GetChildNode("entityUrn") is { } nullNodeEntityUrn && nullNodeEntityUrn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityUrn = null;
+            if (parseNode.GetChildNode("lastModified") is null) { _explicitNullValueLastModified = default!; _explicitNullProperties?.Remove("lastModified"); }
+            else if (parseNode.GetChildNode("lastModified") is { } nullNodeLastModified && nullNodeLastModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModified = null;
+            if (parseNode.GetChildNode("localizedDescription") is null) { _explicitNullValueLocalizedDescription = default!; _explicitNullProperties?.Remove("localizedDescription"); }
+            else if (parseNode.GetChildNode("localizedDescription") is { } nullNodeLocalizedDescription && nullNodeLocalizedDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalizedDescription = null;
+            if (parseNode.GetChildNode("localizedName") is null) { _explicitNullValueLocalizedName = default!; _explicitNullProperties?.Remove("localizedName"); }
+            else if (parseNode.GetChildNode("localizedName") is { } nullNodeLocalizedName && nullNodeLocalizedName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalizedName = null;
+            if (parseNode.GetChildNode("logo") is null) { _explicitNullValueLogo = default!; _explicitNullProperties?.Remove("logo"); }
+            else if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pageProfileEntity") is null) { _explicitNullValuePageProfileEntity = default!; _explicitNullProperties?.Remove("pageProfileEntity"); }
+            else if (parseNode.GetChildNode("pageProfileEntity") is { } nullNodePageProfileEntity && nullNodePageProfileEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageProfileEntity = null;
+            if (parseNode.GetChildNode("pageUrl") is null) { _explicitNullValuePageUrl = default!; _explicitNullProperties?.Remove("pageUrl"); }
+            else if (parseNode.GetChildNode("pageUrl") is { } nullNodePageUrl && nullNodePageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageUrl = null;
+            if (parseNode.GetChildNode("parentOrganizationEntity") is null) { _explicitNullValueParentOrganizationEntity = default!; _explicitNullProperties?.Remove("parentOrganizationEntity"); }
+            else if (parseNode.GetChildNode("parentOrganizationEntity") is { } nullNodeParentOrganizationEntity && nullNodeParentOrganizationEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentOrganizationEntity = null;
+            if (parseNode.GetChildNode("primaryPageEntity") is null) { _explicitNullValuePrimaryPageEntity = default!; _explicitNullProperties?.Remove("primaryPageEntity"); }
+            else if (parseNode.GetChildNode("primaryPageEntity") is { } nullNodePrimaryPageEntity && nullNodePrimaryPageEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryPageEntity = null;
+            if (parseNode.GetChildNode("vanityName") is null) { _explicitNullValueVanityName = default!; _explicitNullProperties?.Remove("vanityName"); }
+            else if (parseNode.GetChildNode("vanityName") is { } nullNodeVanityName && nullNodeVanityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VanityName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organizational page&apos;s cover image. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or if there is no cover image for a particular organizational page.Documented type: OrganizationVectorImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage? CoverImage { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage? CoverImage { get => _explicitNullValueCoverImage; set { _explicitNullValueCoverImage = value; AdditionalData?.Remove("coverImage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverImage"); else _explicitNullProperties?.Remove("coverImage"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage? _explicitNullValueCoverImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage CoverImage { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage CoverImage { get => _explicitNullValueCoverImage; set { _explicitNullValueCoverImage = value; AdditionalData?.Remove("coverImage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverImage"); else _explicitNullProperties?.Remove("coverImage"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage _explicitNullValueCoverImage = default!;
 #endif
         /// <summary>Cropped image metadata used for positioning the organizational page cover image. This will only be present if the organizational page doesn&apos;t have a cropped cover image vector asset and only has the original size.Documented type: RectangleRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata? CoverImageCropMetadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata? CoverImageCropMetadata { get => _explicitNullValueCoverImageCropMetadata; set { _explicitNullValueCoverImageCropMetadata = value; AdditionalData?.Remove("coverImageCropMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverImageCropMetadata"); else _explicitNullProperties?.Remove("coverImageCropMetadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata? _explicitNullValueCoverImageCropMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata CoverImageCropMetadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata CoverImageCropMetadata { get => _explicitNullValueCoverImageCropMetadata; set { _explicitNullValueCoverImageCropMetadata = value; AdditionalData?.Remove("coverImageCropMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverImageCropMetadata"); else _explicitNullProperties?.Remove("coverImageCropMetadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata _explicitNullValueCoverImageCropMetadata = default!;
 #endif
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated? Created { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated? _explicitNullValueCreated = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated Created { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCreated _explicitNullValueCreated = default!;
 #endif
         /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Deleted { get; set; }
+        public UntypedNode? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private UntypedNode? _explicitNullValueDeleted = default!;
 #nullable restore
 #else
-        public UntypedNode Deleted { get; set; }
+        public UntypedNode Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private UntypedNode _explicitNullValueDeleted = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription? Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescription _explicitNullValueDescription = default!;
 #endif
         /// <summary>Unique identifier of the organizational page.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityUrn { get; set; }
+        public string? EntityUrn { get => _explicitNullValueEntityUrn; set { _explicitNullValueEntityUrn = value; AdditionalData?.Remove("entityUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityUrn"); else _explicitNullProperties?.Remove("entityUrn"); } }
+        private string? _explicitNullValueEntityUrn = default!;
 #nullable restore
 #else
-        public string EntityUrn { get; set; }
+        public string EntityUrn { get => _explicitNullValueEntityUrn; set { _explicitNullValueEntityUrn = value; AdditionalData?.Remove("entityUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityUrn"); else _explicitNullProperties?.Remove("entityUrn"); } }
+        private string _explicitNullValueEntityUrn = default!;
 #endif
         /// <summary>The lastModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified? LastModified { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified? LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; AdditionalData?.Remove("lastModified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified? _explicitNullValueLastModified = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified LastModified { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; AdditionalData?.Remove("lastModified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLastModified _explicitNullValueLastModified = default!;
 #endif
         /// <summary>Localized description of the organizational page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalizedDescription { get; set; }
+        public string? LocalizedDescription { get => _explicitNullValueLocalizedDescription; set { _explicitNullValueLocalizedDescription = value; AdditionalData?.Remove("localizedDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedDescription"); else _explicitNullProperties?.Remove("localizedDescription"); } }
+        private string? _explicitNullValueLocalizedDescription = default!;
 #nullable restore
 #else
-        public string LocalizedDescription { get; set; }
+        public string LocalizedDescription { get => _explicitNullValueLocalizedDescription; set { _explicitNullValueLocalizedDescription = value; AdditionalData?.Remove("localizedDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedDescription"); else _explicitNullProperties?.Remove("localizedDescription"); } }
+        private string _explicitNullValueLocalizedDescription = default!;
 #endif
         /// <summary>Localized name of the organizational page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalizedName { get; set; }
+        public string? LocalizedName { get => _explicitNullValueLocalizedName; set { _explicitNullValueLocalizedName = value; AdditionalData?.Remove("localizedName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedName"); else _explicitNullProperties?.Remove("localizedName"); } }
+        private string? _explicitNullValueLocalizedName = default!;
 #nullable restore
 #else
-        public string LocalizedName { get; set; }
+        public string LocalizedName { get => _explicitNullValueLocalizedName; set { _explicitNullValueLocalizedName = value; AdditionalData?.Remove("localizedName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedName"); else _explicitNullProperties?.Remove("localizedName"); } }
+        private string _explicitNullValueLocalizedName = default!;
 #endif
         /// <summary>The organizational page&apos;s logo. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or if there is no logo for a particular organizational page.Documented type: OrganizationVectorImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLogo? Logo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLogo? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLogo? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLogo Logo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLogo Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseLogo _explicitNullValueLogo = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseName? Name { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseName? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseName Name { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseName _explicitNullValueName = default!;
 #endif
         /// <summary>The pageProfileEntity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntity? PageProfileEntity { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntity? PageProfileEntity { get => _explicitNullValuePageProfileEntity; set { _explicitNullValuePageProfileEntity = value; AdditionalData?.Remove("pageProfileEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageProfileEntity"); else _explicitNullProperties?.Remove("pageProfileEntity"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntity? _explicitNullValuePageProfileEntity = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntity PageProfileEntity { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntity PageProfileEntity { get => _explicitNullValuePageProfileEntity; set { _explicitNullValuePageProfileEntity = value; AdditionalData?.Remove("pageProfileEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageProfileEntity"); else _explicitNullProperties?.Remove("pageProfileEntity"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntity _explicitNullValuePageProfileEntity = default!;
 #endif
         /// <summary>The URL of the organizational page within the LinkedIn application. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PageUrl { get; set; }
+        public string? PageUrl { get => _explicitNullValuePageUrl; set { _explicitNullValuePageUrl = value; AdditionalData?.Remove("pageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageUrl"); else _explicitNullProperties?.Remove("pageUrl"); } }
+        private string? _explicitNullValuePageUrl = default!;
 #nullable restore
 #else
-        public string PageUrl { get; set; }
+        public string PageUrl { get => _explicitNullValuePageUrl; set { _explicitNullValuePageUrl = value; AdditionalData?.Remove("pageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageUrl"); else _explicitNullProperties?.Remove("pageUrl"); } }
+        private string _explicitNullValuePageUrl = default!;
 #endif
         /// <summary>Represents parent page organization associated with the organizational page. This will be present in the case there is a parent organization for a given organizational page.Documented type: OrganizationalPageUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentOrganizationEntity { get; set; }
+        public string? ParentOrganizationEntity { get => _explicitNullValueParentOrganizationEntity; set { _explicitNullValueParentOrganizationEntity = value; AdditionalData?.Remove("parentOrganizationEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentOrganizationEntity"); else _explicitNullProperties?.Remove("parentOrganizationEntity"); } }
+        private string? _explicitNullValueParentOrganizationEntity = default!;
 #nullable restore
 #else
-        public string ParentOrganizationEntity { get; set; }
+        public string ParentOrganizationEntity { get => _explicitNullValueParentOrganizationEntity; set { _explicitNullValueParentOrganizationEntity = value; AdditionalData?.Remove("parentOrganizationEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentOrganizationEntity"); else _explicitNullProperties?.Remove("parentOrganizationEntity"); } }
+        private string _explicitNullValueParentOrganizationEntity = default!;
 #endif
         /// <summary>The primaryPageEntity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePrimaryPageEntity? PrimaryPageEntity { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePrimaryPageEntity? PrimaryPageEntity { get => _explicitNullValuePrimaryPageEntity; set { _explicitNullValuePrimaryPageEntity = value; AdditionalData?.Remove("primaryPageEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryPageEntity"); else _explicitNullProperties?.Remove("primaryPageEntity"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePrimaryPageEntity? _explicitNullValuePrimaryPageEntity = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePrimaryPageEntity PrimaryPageEntity { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePrimaryPageEntity PrimaryPageEntity { get => _explicitNullValuePrimaryPageEntity; set { _explicitNullValuePrimaryPageEntity = value; AdditionalData?.Remove("primaryPageEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryPageEntity"); else _explicitNullProperties?.Remove("primaryPageEntity"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePrimaryPageEntity _explicitNullValuePrimaryPageEntity = default!;
 #endif
         /// <summary>The organizational page&apos;s unique name used in URLs scoped to their specific underlying entities. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or the underlying organizational page entities do not support vanity name functionality.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VanityName { get; set; }
+        public string? VanityName { get => _explicitNullValueVanityName; set { _explicitNullValueVanityName = value; AdditionalData?.Remove("vanityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanityName"); else _explicitNullProperties?.Remove("vanityName"); } }
+        private string? _explicitNullValueVanityName = default!;
 #nullable restore
 #else
-        public string VanityName { get; set; }
+        public string VanityName { get => _explicitNullValueVanityName; set { _explicitNullValueVanityName = value; AdditionalData?.Remove("vanityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanityName"); else _explicitNullProperties?.Remove("vanityName"); } }
+        private string _explicitNullValueVanityName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200Response"/> and sets the default values.
@@ -157,7 +228,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -208,6 +279,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("parentOrganizationEntity", ParentOrganizationEntity);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePrimaryPageEntity>("primaryPageEntity", PrimaryPageEntity);
             writer.WriteStringValue("vanityName", VanityName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

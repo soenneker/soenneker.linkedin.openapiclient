@@ -52,7 +52,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ComplianceEvents.V2.MemberComplianceA
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Opt out a member from being regulated on LinkedIn.**Note:** A member will not opt out of Compliance authorization due to access token expiration. The only ways an opt out can happen are:* Application invokes the DELETE API mentioned above* The regulated member removes the application&apos;s authorization through LinkedIn&apos;s Privacy Setting page. This can be found under the [Third Parties section](https://www.linkedin.com/psettings/permitted-services).To know more, please [refer](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#sample-get-response).

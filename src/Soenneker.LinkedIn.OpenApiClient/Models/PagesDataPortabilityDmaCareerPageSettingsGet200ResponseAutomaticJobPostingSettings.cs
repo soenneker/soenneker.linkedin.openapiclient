@@ -12,19 +12,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("postDescription") is null) { _explicitNullValuePostDescription = default!; _explicitNullProperties?.Remove("postDescription"); }
+            else if (parseNode.GetChildNode("postDescription") is { } nullNodePostDescription && nullNodePostDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostDescription = null;
+            if (parseNode.GetChildNode("postSchedule") is null) { _explicitNullValuePostSchedule = default!; _explicitNullProperties?.Remove("postSchedule"); }
+            else if (parseNode.GetChildNode("postSchedule") is { } nullNodePostSchedule && nullNodePostSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostSchedule = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Page admins of companies that opted-in to automatic job post creation can provide a custom post description. If this field is null, default post description will be used.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostDescription { get; set; }
+        public string? PostDescription { get => _explicitNullValuePostDescription; set { _explicitNullValuePostDescription = value; AdditionalData?.Remove("postDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postDescription"); else _explicitNullProperties?.Remove("postDescription"); } }
+        private string? _explicitNullValuePostDescription = default!;
 #nullable restore
 #else
-        public string PostDescription { get; set; }
+        public string PostDescription { get => _explicitNullValuePostDescription; set { _explicitNullValuePostDescription = value; AdditionalData?.Remove("postDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postDescription"); else _explicitNullProperties?.Remove("postDescription"); } }
+        private string _explicitNullValuePostDescription = default!;
 #endif
         /// <summary>Enum representing all the different scheduling choices for an organization that opted-in to automatic job post creation.Documented type: PostScheduleRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule? PostSchedule { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule? PostSchedule { get => _explicitNullValuePostSchedule; set { _explicitNullValuePostSchedule = value; AdditionalData?.Remove("postSchedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postSchedule"); else _explicitNullProperties?.Remove("postSchedule"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule? _explicitNullValuePostSchedule = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings"/> and sets the default values.
         /// </summary>
@@ -40,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "postDescription", n => { PostDescription = n.GetStringValue(); } },
-                { "postSchedule", n => { PostSchedule = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule>(); } },
+                { "postSchedule", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePostSchedule = default; _explicitNullProperties?.Remove("postSchedule"); AdditionalData["postSchedule"] = unknown; } else { PostSchedule = parsed; AdditionalData.Remove("postSchedule"); } } },
             };
         }
         /// <summary>
@@ -63,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("postDescription", PostDescription);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule>("postSchedule", PostSchedule);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

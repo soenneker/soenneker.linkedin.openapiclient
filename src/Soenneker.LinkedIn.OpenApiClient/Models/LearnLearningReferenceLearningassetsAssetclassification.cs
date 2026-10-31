@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearnLearningReferenceLearningassetsAssetclassification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assigner") is null) { _explicitNullValueAssigner = default!; _explicitNullProperties?.Remove("assigner"); }
+            else if (parseNode.GetChildNode("assigner") is { } nullNodeAssigner && nullNodeAssigner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Assigner = null;
+            if (parseNode.GetChildNode("associatedClassification") is null) { _explicitNullValueAssociatedClassification = default!; _explicitNullProperties?.Remove("associatedClassification"); }
+            else if (parseNode.GetChildNode("associatedClassification") is { } nullNodeAssociatedClassification && nullNodeAssociatedClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedClassification = null;
+            if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
+            else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The person or organization who tagged the learning asset with the learning classification.Documented type: NamedPartyRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner? Assigner { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner? Assigner { get => _explicitNullValueAssigner; set { _explicitNullValueAssigner = value; AdditionalData?.Remove("assigner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assigner"); else _explicitNullProperties?.Remove("assigner"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner? _explicitNullValueAssigner = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner Assigner { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner Assigner { get => _explicitNullValueAssigner; set { _explicitNullValueAssigner = value; AdditionalData?.Remove("assigner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assigner"); else _explicitNullProperties?.Remove("assigner"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner _explicitNullValueAssigner = default!;
 #endif
         /// <summary>The learning classification the learning asset is tagged with.Documented type: ClassificationRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AssociatedClassification { get; set; }
+        public UntypedNode? AssociatedClassification { get => _explicitNullValueAssociatedClassification; set { _explicitNullValueAssociatedClassification = value; AdditionalData?.Remove("associatedClassification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedClassification"); else _explicitNullProperties?.Remove("associatedClassification"); } }
+        private UntypedNode? _explicitNullValueAssociatedClassification = default!;
 #nullable restore
 #else
-        public UntypedNode AssociatedClassification { get; set; }
+        public UntypedNode AssociatedClassification { get => _explicitNullValueAssociatedClassification; set { _explicitNullValueAssociatedClassification = value; AdditionalData?.Remove("associatedClassification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedClassification"); else _explicitNullProperties?.Remove("associatedClassification"); } }
+        private UntypedNode _explicitNullValueAssociatedClassification = default!;
 #endif
         /// <summary>The parent learning classifications of the associated learning classification.Documented type: Classification []Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Path { get; set; }
+        public UntypedNode? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private UntypedNode? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public UntypedNode Path { get; set; }
+        public UntypedNode Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private UntypedNode _explicitNullValuePath = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassificationAssigner>("assigner", Assigner);
             writer.WriteObjectValue<UntypedNode>("associatedClassification", AssociatedClassification);
             writer.WriteObjectValue<UntypedNode>("path", Path);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

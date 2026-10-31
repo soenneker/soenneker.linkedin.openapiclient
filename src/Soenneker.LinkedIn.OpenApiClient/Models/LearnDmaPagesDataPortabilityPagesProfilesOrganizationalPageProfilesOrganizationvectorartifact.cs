@@ -11,23 +11,43 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
+            else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("fileIdentifyingUrlPathSegment") is null) { _explicitNullValueFileIdentifyingUrlPathSegment = default!; _explicitNullProperties?.Remove("fileIdentifyingUrlPathSegment"); }
+            else if (parseNode.GetChildNode("fileIdentifyingUrlPathSegment") is { } nullNodeFileIdentifyingUrlPathSegment && nullNodeFileIdentifyingUrlPathSegment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileIdentifyingUrlPathSegment = null;
+            if (parseNode.GetChildNode("height") is null) { _explicitNullValueHeight = default!; _explicitNullProperties?.Remove("height"); }
+            else if (parseNode.GetChildNode("height") is { } nullNodeHeight && nullNodeHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Height = null;
+            if (parseNode.GetChildNode("width") is null) { _explicitNullValueWidth = default!; _explicitNullProperties?.Remove("width"); }
+            else if (parseNode.GetChildNode("width") is { } nullNodeWidth && nullNodeWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Width = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time at which this artifact is no longer available. If not set, the artifact does not expire.Documented type: longRequirement: No</summary>
-        public long? ExpiresAt { get; set; }
+        public long? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private long? _explicitNullValueExpiresAt = default!;
         /// <summary>This contains the part of the URL which identifies file path required to retrieve an artifact.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileIdentifyingUrlPathSegment { get; set; }
+        public string? FileIdentifyingUrlPathSegment { get => _explicitNullValueFileIdentifyingUrlPathSegment; set { _explicitNullValueFileIdentifyingUrlPathSegment = value; AdditionalData?.Remove("fileIdentifyingUrlPathSegment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileIdentifyingUrlPathSegment"); else _explicitNullProperties?.Remove("fileIdentifyingUrlPathSegment"); } }
+        private string? _explicitNullValueFileIdentifyingUrlPathSegment = default!;
 #nullable restore
 #else
-        public string FileIdentifyingUrlPathSegment { get; set; }
+        public string FileIdentifyingUrlPathSegment { get => _explicitNullValueFileIdentifyingUrlPathSegment; set { _explicitNullValueFileIdentifyingUrlPathSegment = value; AdditionalData?.Remove("fileIdentifyingUrlPathSegment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileIdentifyingUrlPathSegment"); else _explicitNullProperties?.Remove("fileIdentifyingUrlPathSegment"); } }
+        private string _explicitNullValueFileIdentifyingUrlPathSegment = default!;
 #endif
         /// <summary>Height of the image.Documented type: IntegerRequirement: Yes</summary>
-        public int? Height { get; set; }
+        public int? Height { get => _explicitNullValueHeight; set { _explicitNullValueHeight = value; AdditionalData?.Remove("height"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("height"); else _explicitNullProperties?.Remove("height"); } }
+        private int? _explicitNullValueHeight = default!;
         /// <summary>Width of the image.Documented type: IntegerRequirement: Yes</summary>
-        public int? Width { get; set; }
+        public int? Width { get => _explicitNullValueWidth; set { _explicitNullValueWidth = value; AdditionalData?.Remove("width"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width"); else _explicitNullProperties?.Remove("width"); } }
+        private int? _explicitNullValueWidth = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact"/> and sets the default values.
         /// </summary>
@@ -43,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("fileIdentifyingUrlPathSegment", FileIdentifyingUrlPathSegment);
             writer.WriteIntValue("height", Height);
             writer.WriteIntValue("width", Width);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

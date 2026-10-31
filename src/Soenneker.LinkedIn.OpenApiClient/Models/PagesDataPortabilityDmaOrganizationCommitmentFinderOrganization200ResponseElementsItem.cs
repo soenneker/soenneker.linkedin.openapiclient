@@ -11,78 +11,126 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("certificationsAndPledges") is null) { _explicitNullValueCertificationsAndPledges = default!; _explicitNullProperties?.Remove("certificationsAndPledges"); }
+            else if (parseNode.GetChildNode("certificationsAndPledges") is { } nullNodeCertificationsAndPledges && nullNodeCertificationsAndPledges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificationsAndPledges = null;
+            if (parseNode.GetChildNode("deleted") is null) { _explicitNullValueDeleted = default!; _explicitNullProperties?.Remove("deleted"); }
+            else if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("displayOrder") is null) { _explicitNullValueDisplayOrder = default!; _explicitNullProperties?.Remove("displayOrder"); }
+            else if (parseNode.GetChildNode("displayOrder") is { } nullNodeDisplayOrder && nullNodeDisplayOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOrder = null;
+            if (parseNode.GetChildNode("featuredCredential") is null) { _explicitNullValueFeaturedCredential = default!; _explicitNullProperties?.Remove("featuredCredential"); }
+            else if (parseNode.GetChildNode("featuredCredential") is { } nullNodeFeaturedCredential && nullNodeFeaturedCredential.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeaturedCredential = null;
+            if (parseNode.GetChildNode("isQuality") is null) { _explicitNullValueIsQuality = default!; _explicitNullProperties?.Remove("isQuality"); }
+            else if (parseNode.GetChildNode("isQuality") is { } nullNodeIsQuality && nullNodeIsQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsQuality = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("perksAndBenefits") is null) { _explicitNullValuePerksAndBenefits = default!; _explicitNullProperties?.Remove("perksAndBenefits"); }
+            else if (parseNode.GetChildNode("perksAndBenefits") is { } nullNodePerksAndBenefits && nullNodePerksAndBenefits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerksAndBenefits = null;
+            if (parseNode.GetChildNode("programs") is null) { _explicitNullValuePrograms = default!; _explicitNullProperties?.Remove("programs"); }
+            else if (parseNode.GetChildNode("programs") is { } nullNodePrograms && nullNodePrograms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Programs = null;
+            if (parseNode.GetChildNode("resources") is null) { _explicitNullValueResources = default!; _explicitNullProperties?.Remove("resources"); }
+            else if (parseNode.GetChildNode("resources") is { } nullNodeResources && nullNodeResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resources = null;
+        }
+
         /// <summary>Indicates if this commitment is active. When active is true, commitment is visible in the member view, which means a LinkedIn member is able to see the commitments on a organization&apos;s page. When active is false, commitment is hidden from the member view. (In admin view, commitments are editable. In member view, it is read only.)Documented type: booleanRequirement: No</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Certification and pledges are proof for commitment. External or internal URLs supported. Ex: Third party credentials such as B Corp membership indicating proof of the commitment &apos;Diversity, Equity &amp; Inclusion (DEI)&apos;.Documented type: Array of ProofDetailsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem>? CertificationsAndPledges { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem>? CertificationsAndPledges { get => _explicitNullValueCertificationsAndPledges; set { _explicitNullValueCertificationsAndPledges = value; AdditionalData?.Remove("certificationsAndPledges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificationsAndPledges"); else _explicitNullProperties?.Remove("certificationsAndPledges"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem>? _explicitNullValueCertificationsAndPledges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem> CertificationsAndPledges { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem> CertificationsAndPledges { get => _explicitNullValueCertificationsAndPledges; set { _explicitNullValueCertificationsAndPledges = value; AdditionalData?.Remove("certificationsAndPledges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificationsAndPledges"); else _explicitNullProperties?.Remove("certificationsAndPledges"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemCertificationsAndPledgesItem> _explicitNullValueCertificationsAndPledges = default!;
 #endif
         /// <summary>AuditStamp that records the deletion of this resource, association, or sub-resource. The deleted timestamp must be later than the creation timestamp. Note: It may or may not match the lastModified timestamp, depending on the semantics of the resource, association, or sub-resource.Documented type: AuditStampRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Deleted { get; set; }
+        public UntypedNode? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private UntypedNode? _explicitNullValueDeleted = default!;
 #nullable restore
 #else
-        public UntypedNode Deleted { get; set; }
+        public UntypedNode Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private UntypedNode _explicitNullValueDeleted = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemDescription? Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemDescription? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemDescription Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemDescription _explicitNullValueDescription = default!;
 #endif
         /// <summary>Order in which to display the commitment. It is internally inferred/mapped number used for commitments display orderDocumented type: intRequirement: Yes</summary>
-        public int? DisplayOrder { get; set; }
+        public int? DisplayOrder { get => _explicitNullValueDisplayOrder; set { _explicitNullValueDisplayOrder = value; AdditionalData?.Remove("displayOrder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayOrder"); else _explicitNullProperties?.Remove("displayOrder"); } }
+        private int? _explicitNullValueDisplayOrder = default!;
         /// <summary>Featured credential (report or pledge) is a proof for commitment. External or internal URL is supported. Organizations can present either report or pledge as a proof (whichever available, not both)Documented type: Union of [report: ProofDetails, pledge: ProofDetails]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemFeaturedCredential? FeaturedCredential { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemFeaturedCredential? FeaturedCredential { get => _explicitNullValueFeaturedCredential; set { _explicitNullValueFeaturedCredential = value; AdditionalData?.Remove("featuredCredential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featuredCredential"); else _explicitNullProperties?.Remove("featuredCredential"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemFeaturedCredential? _explicitNullValueFeaturedCredential = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemFeaturedCredential FeaturedCredential { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemFeaturedCredential FeaturedCredential { get => _explicitNullValueFeaturedCredential; set { _explicitNullValueFeaturedCredential = value; AdditionalData?.Remove("featuredCredential"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featuredCredential"); else _explicitNullProperties?.Remove("featuredCredential"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemFeaturedCredential _explicitNullValueFeaturedCredential = default!;
 #endif
         /// <summary>Indicates whether a commitment is measured as quality by current Data Science definitions.Documented type: booleanRequirement: No</summary>
-        public bool? IsQuality { get; set; }
+        public bool? IsQuality { get => _explicitNullValueIsQuality; set { _explicitNullValueIsQuality = value; AdditionalData?.Remove("isQuality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isQuality"); else _explicitNullProperties?.Remove("isQuality"); } }
+        private bool? _explicitNullValueIsQuality = default!;
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemKey? Key { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemKey? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemKey? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemKey Key { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemKey Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemKey _explicitNullValueKey = default!;
 #endif
         /// <summary>Array of perks and benefits are proof for commitment. Subset of the existing benefits taxonomy. Ex: Work from home benefit indicating the proof to the commitment &apos;Work Life Balance&apos;.Documented type: Array of URNsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PerksAndBenefits { get; set; }
+        public UntypedNode? PerksAndBenefits { get => _explicitNullValuePerksAndBenefits; set { _explicitNullValuePerksAndBenefits = value; AdditionalData?.Remove("perksAndBenefits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perksAndBenefits"); else _explicitNullProperties?.Remove("perksAndBenefits"); } }
+        private UntypedNode? _explicitNullValuePerksAndBenefits = default!;
 #nullable restore
 #else
-        public UntypedNode PerksAndBenefits { get; set; }
+        public UntypedNode PerksAndBenefits { get => _explicitNullValuePerksAndBenefits; set { _explicitNullValuePerksAndBenefits = value; AdditionalData?.Remove("perksAndBenefits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("perksAndBenefits"); else _explicitNullProperties?.Remove("perksAndBenefits"); } }
+        private UntypedNode _explicitNullValuePerksAndBenefits = default!;
 #endif
         /// <summary>The programs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemPrograms? Programs { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemPrograms? Programs { get => _explicitNullValuePrograms; set { _explicitNullValuePrograms = value; AdditionalData?.Remove("programs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("programs"); else _explicitNullProperties?.Remove("programs"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemPrograms? _explicitNullValuePrograms = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemPrograms Programs { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemPrograms Programs { get => _explicitNullValuePrograms; set { _explicitNullValuePrograms = value; AdditionalData?.Remove("programs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("programs"); else _explicitNullProperties?.Remove("programs"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemPrograms _explicitNullValuePrograms = default!;
 #endif
         /// <summary>Resources are proof for commitment. External or internal URLs supported. Ex: articles, blog posts, organization pages, videos, podcasts,etc indicating proofs to the commitment &apos;Diversity, Equity &amp; Inclusion (DEI)&apos;.Documented type: Array of ProofDetailsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemResourcesItem>? Resources { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemResourcesItem>? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemResourcesItem>? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemResourcesItem> Resources { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemResourcesItem> Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemResourcesItem> _explicitNullValueResources = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem"/> and sets the default values.
@@ -99,7 +147,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,6 +188,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("perksAndBenefits", PerksAndBenefits);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemPrograms>("programs", Programs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200ResponseElementsItemResourcesItem>("resources", Resources);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

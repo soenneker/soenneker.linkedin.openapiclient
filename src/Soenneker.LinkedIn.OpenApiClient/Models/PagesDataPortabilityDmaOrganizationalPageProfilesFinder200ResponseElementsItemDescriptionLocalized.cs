@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescriptionLocalized : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("en_US") is null) { _explicitNullValueEnUS = default!; _explicitNullProperties?.Remove("en_US"); }
+            else if (parseNode.GetChildNode("en_US") is { } nullNodeEnUS && nullNodeEnUS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnUS = null;
+            if (parseNode.GetChildNode("fr_FR") is null) { _explicitNullValueFrFR = default!; _explicitNullProperties?.Remove("fr_FR"); }
+            else if (parseNode.GetChildNode("fr_FR") is { } nullNodeFrFR && nullNodeFrFR.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrFR = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The en_US property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnUS { get; set; }
+        public string? EnUS { get => _explicitNullValueEnUS; set { _explicitNullValueEnUS = value; AdditionalData?.Remove("en_US"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("en_US"); else _explicitNullProperties?.Remove("en_US"); } }
+        private string? _explicitNullValueEnUS = default!;
 #nullable restore
 #else
-        public string EnUS { get; set; }
+        public string EnUS { get => _explicitNullValueEnUS; set { _explicitNullValueEnUS = value; AdditionalData?.Remove("en_US"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("en_US"); else _explicitNullProperties?.Remove("en_US"); } }
+        private string _explicitNullValueEnUS = default!;
 #endif
         /// <summary>The fr_FR property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FrFR { get; set; }
+        public string? FrFR { get => _explicitNullValueFrFR; set { _explicitNullValueFrFR = value; AdditionalData?.Remove("fr_FR"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fr_FR"); else _explicitNullProperties?.Remove("fr_FR"); } }
+        private string? _explicitNullValueFrFR = default!;
 #nullable restore
 #else
-        public string FrFR { get; set; }
+        public string FrFR { get => _explicitNullValueFrFR; set { _explicitNullValueFrFR = value; AdditionalData?.Remove("fr_FR"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fr_FR"); else _explicitNullProperties?.Remove("fr_FR"); } }
+        private string _explicitNullValueFrFR = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescriptionLocalized"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescriptionLocalized CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescriptionLocalized();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescriptionLocalized(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("en_US", EnUS);
             writer.WriteStringValue("fr_FR", FrFR);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemAction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actionType") is null) { _explicitNullValueActionType = default!; _explicitNullProperties?.Remove("actionType"); }
+            else if (parseNode.GetChildNode("actionType") is { } nullNodeActionType && nullNodeActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionType = null;
+            if (parseNode.GetChildNode("organizationRoleAuthorizationAction") is null) { _explicitNullValueOrganizationRoleAuthorizationAction = default!; _explicitNullProperties?.Remove("organizationRoleAuthorizationAction"); }
+            else if (parseNode.GetChildNode("organizationRoleAuthorizationAction") is { } nullNodeOrganizationRoleAuthorizationAction && nullNodeOrganizationRoleAuthorizationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationRoleAuthorizationAction = null;
+        }
+
         /// <summary>A type of action a user can take on an organization on behalf of a Business Manager. Value enums include:ORGANIZATION_CLAIM (Action denoting a user wants to claim an organization on behalf of a Business Manager)Documented type: BusinessManagerAuthorizationActionTypeRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ActionType { get; set; }
+        public UntypedNode? ActionType { get => _explicitNullValueActionType; set { _explicitNullValueActionType = value; AdditionalData?.Remove("actionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionType"); else _explicitNullProperties?.Remove("actionType"); } }
+        private UntypedNode? _explicitNullValueActionType = default!;
 #nullable restore
 #else
-        public UntypedNode ActionType { get; set; }
+        public UntypedNode ActionType { get => _explicitNullValueActionType; set { _explicitNullValueActionType = value; AdditionalData?.Remove("actionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionType"); else _explicitNullProperties?.Remove("actionType"); } }
+        private UntypedNode _explicitNullValueActionType = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organizationRoleAuthorizationAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction? OrganizationRoleAuthorizationAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction? OrganizationRoleAuthorizationAction { get => _explicitNullValueOrganizationRoleAuthorizationAction; set { _explicitNullValueOrganizationRoleAuthorizationAction = value; AdditionalData?.Remove("organizationRoleAuthorizationAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationRoleAuthorizationAction"); else _explicitNullProperties?.Remove("organizationRoleAuthorizationAction"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction? _explicitNullValueOrganizationRoleAuthorizationAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction OrganizationRoleAuthorizationAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction OrganizationRoleAuthorizationAction { get => _explicitNullValueOrganizationRoleAuthorizationAction; set { _explicitNullValueOrganizationRoleAuthorizationAction = value; AdditionalData?.Remove("organizationRoleAuthorizationAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationRoleAuthorizationAction"); else _explicitNullProperties?.Remove("organizationRoleAuthorizationAction"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction _explicitNullValueOrganizationRoleAuthorizationAction = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemAction"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemAction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemAction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("actionType", ActionType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction>("organizationRoleAuthorizationAction", OrganizationRoleAuthorizationAction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

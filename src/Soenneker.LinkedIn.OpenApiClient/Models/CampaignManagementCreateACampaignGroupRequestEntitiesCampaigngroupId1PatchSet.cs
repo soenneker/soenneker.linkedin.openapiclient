@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSet : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("totalBudget") is null) { _explicitNullValueTotalBudget = default!; _explicitNullProperties?.Remove("totalBudget"); }
+            else if (parseNode.GetChildNode("totalBudget") is { } nullNodeTotalBudget && nullNodeTotalBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBudget = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The totalBudget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSetTotalBudget? TotalBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSetTotalBudget? TotalBudget { get => _explicitNullValueTotalBudget; set { _explicitNullValueTotalBudget = value; AdditionalData?.Remove("totalBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalBudget"); else _explicitNullProperties?.Remove("totalBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSetTotalBudget? _explicitNullValueTotalBudget = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSetTotalBudget TotalBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSetTotalBudget TotalBudget { get => _explicitNullValueTotalBudget; set { _explicitNullValueTotalBudget = value; AdditionalData?.Remove("totalBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalBudget"); else _explicitNullProperties?.Remove("totalBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSetTotalBudget _explicitNullValueTotalBudget = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSet"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSet();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSet(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequestEntitiesCampaigngroupId1PatchSetTotalBudget>("totalBudget", TotalBudget);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

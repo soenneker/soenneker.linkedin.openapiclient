@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisUpdateACreativeRequestPatchSetContentFollowHeadline : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("preApproved") is null) { _explicitNullValuePreApproved = default!; _explicitNullProperties?.Remove("preApproved"); }
+            else if (parseNode.GetChildNode("preApproved") is { } nullNodePreApproved && nullNodePreApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreApproved = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The preApproved property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreApproved { get; set; }
+        public string? PreApproved { get => _explicitNullValuePreApproved; set { _explicitNullValuePreApproved = value; AdditionalData?.Remove("preApproved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preApproved"); else _explicitNullProperties?.Remove("preApproved"); } }
+        private string? _explicitNullValuePreApproved = default!;
 #nullable restore
 #else
-        public string PreApproved { get; set; }
+        public string PreApproved { get => _explicitNullValuePreApproved; set { _explicitNullValuePreApproved = value; AdditionalData?.Remove("preApproved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preApproved"); else _explicitNullProperties?.Remove("preApproved"); } }
+        private string _explicitNullValuePreApproved = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequestPatchSetContentFollowHeadline"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequestPatchSetContentFollowHeadline CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequestPatchSetContentFollowHeadline();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequestPatchSetContentFollowHeadline(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("preApproved", PreApproved);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

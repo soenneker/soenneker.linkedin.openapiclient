@@ -11,47 +11,79 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("predefinedField") is null) { _explicitNullValuePredefinedField = default!; _explicitNullProperties?.Remove("predefinedField"); }
+            else if (parseNode.GetChildNode("predefinedField") is { } nullNodePredefinedField && nullNodePredefinedField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PredefinedField = null;
+            if (parseNode.GetChildNode("question") is null) { _explicitNullValueQuestion = default!; _explicitNullProperties?.Remove("question"); }
+            else if (parseNode.GetChildNode("question") is { } nullNodeQuestion && nullNodeQuestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Question = null;
+            if (parseNode.GetChildNode("questionDetails") is null) { _explicitNullValueQuestionDetails = default!; _explicitNullProperties?.Remove("questionDetails"); }
+            else if (parseNode.GetChildNode("questionDetails") is { } nullNodeQuestionDetails && nullNodeQuestionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionDetails = null;
+            if (parseNode.GetChildNode("questionId") is null) { _explicitNullValueQuestionId = default!; _explicitNullProperties?.Remove("questionId"); }
+            else if (parseNode.GetChildNode("questionId") is { } nullNodeQuestionId && nullNodeQuestionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionId = null;
+            if (parseNode.GetChildNode("responseEditable") is null) { _explicitNullValueResponseEditable = default!; _explicitNullProperties?.Remove("responseEditable"); }
+            else if (parseNode.GetChildNode("responseEditable") is { } nullNodeResponseEditable && nullNodeResponseEditable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseEditable = null;
+            if (parseNode.GetChildNode("responseRequired") is null) { _explicitNullValueResponseRequired = default!; _explicitNullProperties?.Remove("responseRequired"); }
+            else if (parseNode.GetChildNode("responseRequired") is { } nullNodeResponseRequired && nullNodeResponseRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseRequired = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The predefinedField property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PredefinedField { get; set; }
+        public string? PredefinedField { get => _explicitNullValuePredefinedField; set { _explicitNullValuePredefinedField = value; AdditionalData?.Remove("predefinedField"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("predefinedField"); else _explicitNullProperties?.Remove("predefinedField"); } }
+        private string? _explicitNullValuePredefinedField = default!;
 #nullable restore
 #else
-        public string PredefinedField { get; set; }
+        public string PredefinedField { get => _explicitNullValuePredefinedField; set { _explicitNullValuePredefinedField = value; AdditionalData?.Remove("predefinedField"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("predefinedField"); else _explicitNullProperties?.Remove("predefinedField"); } }
+        private string _explicitNullValuePredefinedField = default!;
 #endif
         /// <summary>The question property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion? Question { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion? Question { get => _explicitNullValueQuestion; set { _explicitNullValueQuestion = value; AdditionalData?.Remove("question"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("question"); else _explicitNullProperties?.Remove("question"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion? _explicitNullValueQuestion = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion Question { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion Question { get => _explicitNullValueQuestion; set { _explicitNullValueQuestion = value; AdditionalData?.Remove("question"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("question"); else _explicitNullProperties?.Remove("question"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion _explicitNullValueQuestion = default!;
 #endif
         /// <summary>The questionDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails? QuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails? QuestionDetails { get => _explicitNullValueQuestionDetails; set { _explicitNullValueQuestionDetails = value; AdditionalData?.Remove("questionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionDetails"); else _explicitNullProperties?.Remove("questionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails? _explicitNullValueQuestionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails QuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails QuestionDetails { get => _explicitNullValueQuestionDetails; set { _explicitNullValueQuestionDetails = value; AdditionalData?.Remove("questionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionDetails"); else _explicitNullProperties?.Remove("questionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails _explicitNullValueQuestionDetails = default!;
 #endif
         /// <summary>The questionId property</summary>
-        public long? QuestionId { get; set; }
+        public long? QuestionId { get => _explicitNullValueQuestionId; set { _explicitNullValueQuestionId = value; AdditionalData?.Remove("questionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionId"); else _explicitNullProperties?.Remove("questionId"); } }
+        private long? _explicitNullValueQuestionId = default!;
         /// <summary>The responseEditable property</summary>
-        public bool? ResponseEditable { get; set; }
+        public bool? ResponseEditable { get => _explicitNullValueResponseEditable; set { _explicitNullValueResponseEditable = value; AdditionalData?.Remove("responseEditable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseEditable"); else _explicitNullProperties?.Remove("responseEditable"); } }
+        private bool? _explicitNullValueResponseEditable = default!;
         /// <summary>The responseRequired property</summary>
-        public bool? ResponseRequired { get; set; }
+        public bool? ResponseRequired { get => _explicitNullValueResponseRequired; set { _explicitNullValueResponseRequired = value; AdditionalData?.Remove("responseRequired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseRequired"); else _explicitNullProperties?.Remove("responseRequired"); } }
+        private bool? _explicitNullValueResponseRequired = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem"/> and sets the default values.
         /// </summary>
@@ -67,7 +99,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +132,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("questionId", QuestionId);
             writer.WriteBoolValue("responseEditable", ResponseEditable);
             writer.WriteBoolValue("responseRequired", ResponseRequired);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

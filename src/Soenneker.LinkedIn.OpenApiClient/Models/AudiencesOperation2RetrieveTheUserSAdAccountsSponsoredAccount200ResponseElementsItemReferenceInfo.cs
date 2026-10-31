@@ -12,42 +12,68 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudiencesOperation2RetrieveTheUserSAdAccountsSponsoredAccount200ResponseElementsItemReferenceInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("localizedName") is null) { _explicitNullValueLocalizedName = default!; _explicitNullProperties?.Remove("localizedName"); }
+            else if (parseNode.GetChildNode("localizedName") is { } nullNodeLocalizedName && nullNodeLocalizedName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalizedName = null;
+            if (parseNode.GetChildNode("logo") is null) { _explicitNullValueLogo = default!; _explicitNullProperties?.Remove("logo"); }
+            else if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("vanityName") is null) { _explicitNullValueVanityName = default!; _explicitNullProperties?.Remove("vanityName"); }
+            else if (parseNode.GetChildNode("vanityName") is { } nullNodeVanityName && nullNodeVanityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VanityName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique ID representing the organization.Documented type: long</summary>
-        public long? Id { get; set; }
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
         /// <summary>Locale specific name of the organization.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalizedName { get; set; }
+        public string? LocalizedName { get => _explicitNullValueLocalizedName; set { _explicitNullValueLocalizedName = value; AdditionalData?.Remove("localizedName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedName"); else _explicitNullProperties?.Remove("localizedName"); } }
+        private string? _explicitNullValueLocalizedName = default!;
 #nullable restore
 #else
-        public string LocalizedName { get; set; }
+        public string LocalizedName { get => _explicitNullValueLocalizedName; set { _explicitNullValueLocalizedName = value; AdditionalData?.Remove("localizedName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedName"); else _explicitNullProperties?.Remove("localizedName"); } }
+        private string _explicitNullValueLocalizedName = default!;
 #endif
         /// <summary>The organization’s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly.Documented type: CroppedImage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Logo { get; set; }
+        public UntypedNode? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private UntypedNode? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public UntypedNode Logo { get; set; }
+        public UntypedNode Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private UntypedNode _explicitNullValueLogo = default!;
 #endif
         /// <summary>Name of the organization.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Name { get; set; }
+        public UntypedNode? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private UntypedNode? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public UntypedNode Name { get; set; }
+        public UntypedNode Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private UntypedNode _explicitNullValueName = default!;
 #endif
         /// <summary>Name of the organization present in the URLs.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VanityName { get; set; }
+        public string? VanityName { get => _explicitNullValueVanityName; set { _explicitNullValueVanityName = value; AdditionalData?.Remove("vanityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanityName"); else _explicitNullProperties?.Remove("vanityName"); } }
+        private string? _explicitNullValueVanityName = default!;
 #nullable restore
 #else
-        public string VanityName { get; set; }
+        public string VanityName { get => _explicitNullValueVanityName; set { _explicitNullValueVanityName = value; AdditionalData?.Remove("vanityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanityName"); else _explicitNullProperties?.Remove("vanityName"); } }
+        private string _explicitNullValueVanityName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation2RetrieveTheUserSAdAccountsSponsoredAccount200ResponseElementsItemReferenceInfo"/> and sets the default values.
@@ -64,7 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation2RetrieveTheUserSAdAccountsSponsoredAccount200ResponseElementsItemReferenceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation2RetrieveTheUserSAdAccountsSponsoredAccount200ResponseElementsItemReferenceInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation2RetrieveTheUserSAdAccountsSponsoredAccount200ResponseElementsItemReferenceInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +119,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("logo", Logo);
             writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteStringValue("vanityName", VanityName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -138263,7 +138263,35 @@
                     "elements": {
                       "items": {
                         "properties": {
+                          "details": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_supplementaldetail"
+                              }
+                            ],
+                            "description": "Specifies additional details for this classification\n\nDocumented type: SupplementalDetail\n\nRequirement: No"
+                          },
                           "name": {
+                            "anyOf": [
+                              {
+                                "allOf": [
+                                  {
+                                    "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_localestring"
+                                  }
+                                ],
+                                "description": "The localized name of the skill or category.\n\nDocumented type: LocaleString\n\nRequirement: Yes"
+                              },
+                              {
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "x-linkedin-inferred-from-example": true
+                                  }
+                                },
+                                "type": "object",
+                                "x-linkedin-inferred-from-example": true
+                              }
+                            ],
                             "properties": {
                               "locale": {
                                 "properties": {
@@ -138282,14 +138310,40 @@
                             },
                             "type": "object"
                           },
+                          "owner": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_namedparty"
+                              }
+                            ],
+                            "description": "Specifies which person or organization is responsible for originally creating this classification.\n\nDocumented type: NamedParty\n\nRequirement: Yes"
+                          },
                           "type": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_classificationtype"
+                              }
+                            ],
+                            "description": "Indicates which type of classification this summary represents.\n\nDocumented type: ClassificationType\n\nRequirement: Yes",
                             "type": "string"
                           },
                           "urn": {
+                            "anyOf": [
+                              {
+                                "description": "The URN of the learning classification. The URN is a unique identifier whose value should be treated as opaque.\n\nDocumented type: String\n\nRequirement: Yes",
+                                "type": "string"
+                              },
+                              {
+                                "type": "string",
+                                "x-linkedin-inferred-from-example": true
+                              }
+                            ],
                             "type": "string"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-linkedin-schema": "learning_reference_learningclassifications_response_fields",
+                        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#response-fields"
                       },
                       "type": "array"
                     },

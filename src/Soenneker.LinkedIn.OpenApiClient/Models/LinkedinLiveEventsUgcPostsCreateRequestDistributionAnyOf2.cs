@@ -12,11 +12,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkedinLiveEventsUgcPostsCreateRequestDistributionAnyOf2 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("feedDistribution") is null) { _explicitNullValueFeedDistribution = default!; _explicitNullProperties?.Remove("feedDistribution"); }
+            else if (parseNode.GetChildNode("feedDistribution") is { } nullNodeFeedDistribution && nullNodeFeedDistribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedDistribution = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the type of feed distribution. Does not distribute to feed when missing. Can be the following values: NONE- Do not distribute within LinkedIn via feed. MAIN_FEED- Distribute to the flagship feed, and container entity feed if applicable. CONTAINER_ONLY - Distribute only to the container entity feed. The container is specified in the top level containerEntity field and is only valid when containerEntity exists. An example of a container entity feed is the LinkedIn Group feed.Documented type: optional enum</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiDistributionFeedDistribution? FeedDistribution { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiDistributionFeedDistribution? FeedDistribution { get => _explicitNullValueFeedDistribution; set { _explicitNullValueFeedDistribution = value; AdditionalData?.Remove("feedDistribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedDistribution"); else _explicitNullProperties?.Remove("feedDistribution"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiDistributionFeedDistribution? _explicitNullValueFeedDistribution = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDistributionAnyOf2"/> and sets the default values.
         /// </summary>
@@ -32,7 +42,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDistributionAnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDistributionAnyOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestDistributionAnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +52,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feedDistribution", n => { FeedDistribution = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiDistributionFeedDistribution>(); } },
+                { "feedDistribution", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiDistributionFeedDistribution>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFeedDistribution = default; _explicitNullProperties?.Remove("feedDistribution"); AdditionalData["feedDistribution"] = unknown; } else { FeedDistribution = parsed; AdditionalData.Remove("feedDistribution"); } } },
             };
         }
         /// <summary>
@@ -53,6 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiDistributionFeedDistribution>("feedDistribution", FeedDistribution);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

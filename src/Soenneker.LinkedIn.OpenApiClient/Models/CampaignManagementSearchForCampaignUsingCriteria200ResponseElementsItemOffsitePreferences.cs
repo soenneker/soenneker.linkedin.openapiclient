@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferences : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("iabCategories") is null) { _explicitNullValueIabCategories = default!; _explicitNullProperties?.Remove("iabCategories"); }
+            else if (parseNode.GetChildNode("iabCategories") is { } nullNodeIabCategories && nullNodeIabCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IabCategories = null;
+            if (parseNode.GetChildNode("publisherRestrictionFiles") is null) { _explicitNullValuePublisherRestrictionFiles = default!; _explicitNullProperties?.Remove("publisherRestrictionFiles"); }
+            else if (parseNode.GetChildNode("publisherRestrictionFiles") is { } nullNodePublisherRestrictionFiles && nullNodePublisherRestrictionFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublisherRestrictionFiles = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The iabCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories? IabCategories { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories? IabCategories { get => _explicitNullValueIabCategories; set { _explicitNullValueIabCategories = value; AdditionalData?.Remove("iabCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iabCategories"); else _explicitNullProperties?.Remove("iabCategories"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories? _explicitNullValueIabCategories = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories IabCategories { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories IabCategories { get => _explicitNullValueIabCategories; set { _explicitNullValueIabCategories = value; AdditionalData?.Remove("iabCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iabCategories"); else _explicitNullProperties?.Remove("iabCategories"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories _explicitNullValueIabCategories = default!;
 #endif
         /// <summary>The publisherRestrictionFiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles? PublisherRestrictionFiles { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles? PublisherRestrictionFiles { get => _explicitNullValuePublisherRestrictionFiles; set { _explicitNullValuePublisherRestrictionFiles = value; AdditionalData?.Remove("publisherRestrictionFiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisherRestrictionFiles"); else _explicitNullProperties?.Remove("publisherRestrictionFiles"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles? _explicitNullValuePublisherRestrictionFiles = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles PublisherRestrictionFiles { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles PublisherRestrictionFiles { get => _explicitNullValuePublisherRestrictionFiles; set { _explicitNullValuePublisherRestrictionFiles = value; AdditionalData?.Remove("publisherRestrictionFiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisherRestrictionFiles"); else _explicitNullProperties?.Remove("publisherRestrictionFiles"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles _explicitNullValuePublisherRestrictionFiles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferences"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferences CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferences();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferences(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories>("iabCategories", IabCategories);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesPublisherRestrictionFiles>("publisherRestrictionFiles", PublisherRestrictionFiles);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

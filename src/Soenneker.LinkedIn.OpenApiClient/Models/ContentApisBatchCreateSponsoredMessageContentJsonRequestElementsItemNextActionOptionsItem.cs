@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisBatchCreateSponsoredMessageContentJsonRequestElementsItemNextActionOptionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("landingPage") is null) { _explicitNullValueLandingPage = default!; _explicitNullProperties?.Remove("landingPage"); }
+            else if (parseNode.GetChildNode("landingPage") is { } nullNodeLandingPage && nullNodeLandingPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPage = null;
+            if (parseNode.GetChildNode("nextContent") is null) { _explicitNullValueNextContent = default!; _explicitNullProperties?.Remove("nextContent"); }
+            else if (parseNode.GetChildNode("nextContent") is { } nullNodeNextContent && nullNodeNextContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextContent = null;
+            if (parseNode.GetChildNode("optionText") is null) { _explicitNullValueOptionText = default!; _explicitNullProperties?.Remove("optionText"); }
+            else if (parseNode.GetChildNode("optionText") is { } nullNodeOptionText && nullNodeOptionText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionText = null;
+            if (parseNode.GetChildNode("replyType") is null) { _explicitNullValueReplyType = default!; _explicitNullProperties?.Remove("replyType"); }
+            else if (parseNode.GetChildNode("replyType") is { } nullNodeReplyType && nullNodeReplyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The landingPage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LandingPage { get; set; }
+        public string? LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; AdditionalData?.Remove("landingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
+        private string? _explicitNullValueLandingPage = default!;
 #nullable restore
 #else
-        public string LandingPage { get; set; }
+        public string LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; AdditionalData?.Remove("landingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
+        private string _explicitNullValueLandingPage = default!;
 #endif
         /// <summary>The nextContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextContent { get; set; }
+        public string? NextContent { get => _explicitNullValueNextContent; set { _explicitNullValueNextContent = value; AdditionalData?.Remove("nextContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextContent"); else _explicitNullProperties?.Remove("nextContent"); } }
+        private string? _explicitNullValueNextContent = default!;
 #nullable restore
 #else
-        public string NextContent { get; set; }
+        public string NextContent { get => _explicitNullValueNextContent; set { _explicitNullValueNextContent = value; AdditionalData?.Remove("nextContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextContent"); else _explicitNullProperties?.Remove("nextContent"); } }
+        private string _explicitNullValueNextContent = default!;
 #endif
         /// <summary>The optionText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OptionText { get; set; }
+        public string? OptionText { get => _explicitNullValueOptionText; set { _explicitNullValueOptionText = value; AdditionalData?.Remove("optionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionText"); else _explicitNullProperties?.Remove("optionText"); } }
+        private string? _explicitNullValueOptionText = default!;
 #nullable restore
 #else
-        public string OptionText { get; set; }
+        public string OptionText { get => _explicitNullValueOptionText; set { _explicitNullValueOptionText = value; AdditionalData?.Remove("optionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionText"); else _explicitNullProperties?.Remove("optionText"); } }
+        private string _explicitNullValueOptionText = default!;
 #endif
         /// <summary>The replyType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplyType { get; set; }
+        public string? ReplyType { get => _explicitNullValueReplyType; set { _explicitNullValueReplyType = value; AdditionalData?.Remove("replyType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replyType"); else _explicitNullProperties?.Remove("replyType"); } }
+        private string? _explicitNullValueReplyType = default!;
 #nullable restore
 #else
-        public string ReplyType { get; set; }
+        public string ReplyType { get => _explicitNullValueReplyType; set { _explicitNullValueReplyType = value; AdditionalData?.Remove("replyType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replyType"); else _explicitNullProperties?.Remove("replyType"); } }
+        private string _explicitNullValueReplyType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestElementsItemNextActionOptionsItem"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestElementsItemNextActionOptionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestElementsItemNextActionOptionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequestElementsItemNextActionOptionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("nextContent", NextContent);
             writer.WriteStringValue("optionText", OptionText);
             writer.WriteStringValue("replyType", ReplyType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

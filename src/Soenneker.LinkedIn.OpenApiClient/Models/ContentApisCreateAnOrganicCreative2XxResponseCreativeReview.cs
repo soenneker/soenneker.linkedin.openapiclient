@@ -12,19 +12,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentApisCreateAnOrganicCreative2XxResponseCreativeReview : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("rejectionReasons") is null) { _explicitNullValueRejectionReasons = default!; _explicitNullProperties?.Remove("rejectionReasons"); }
+            else if (parseNode.GetChildNode("rejectionReasons") is { } nullNodeRejectionReasons && nullNodeRejectionReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectionReasons = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of reasons for rejecting creatives. For more details, refer to the RejectionReason list.Documented type: Array[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?>? RejectionReasons { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?>? RejectionReasons { get => _explicitNullValueRejectionReasons; set { _explicitNullValueRejectionReasons = value; AdditionalData?.Remove("rejectionReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectionReasons"); else _explicitNullProperties?.Remove("rejectionReasons"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?>? _explicitNullValueRejectionReasons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?> RejectionReasons { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?> RejectionReasons { get => _explicitNullValueRejectionReasons; set { _explicitNullValueRejectionReasons = value; AdditionalData?.Remove("rejectionReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectionReasons"); else _explicitNullProperties?.Remove("rejectionReasons"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?> _explicitNullValueRejectionReasons = default!;
 #endif
         /// <summary>PENDING - Creative is pending review and not serving. APPROVED - Creative is approved for serving. It includes Creative that has been preapproved or auto approved by content model. REJECTED - Creative is rejected. It includes the Creative that has been auto rejected by content model. NEEDS_REVIEW - Creative has been rejected by content model or policy checker or returned by fallback case that auto approval didn&apos;t make any decision.Documented type: ENUMRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesCreativereviewStatus? Status { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesCreativereviewStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesCreativereviewStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeReview"/> and sets the default values.
         /// </summary>
@@ -40,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeReview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeReview();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeReview(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "rejectionReasons", n => { RejectionReasons = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesCreativereviewStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesCreativereviewStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -63,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons>("rejectionReasons", RejectionReasons);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesCreativereviewStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
+            else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration? Duration { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration? _explicitNullValueDuration = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration Duration { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration _explicitNullValueDuration = default!;
 #endif
         /// <summary>Represents the unit of the duration of time. Allowed Unit: DAY.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private string? _explicitNullValueUnit = default!;
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private string _explicitNullValueUnit = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpanDuration>("duration", Duration);
             writer.WriteStringValue("unit", Unit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

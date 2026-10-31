@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaContentSeriesBatchget200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:contentSeries:6912796510891958272") is null) { _explicitNullValueUrnLiContentSeries6912796510891958272 = default!; _explicitNullProperties?.Remove("urn:li:contentSeries:6912796510891958272"); }
+            else if (parseNode.GetChildNode("urn:li:contentSeries:6912796510891958272") is { } nullNodeUrnLiContentSeries6912796510891958272 && nullNodeUrnLiContentSeries6912796510891958272.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiContentSeries6912796510891958272 = null;
+            if (parseNode.GetChildNode("urn:li:contentSeries:7084999622758129665") is null) { _explicitNullValueUrnLiContentSeries7084999622758129665 = default!; _explicitNullProperties?.Remove("urn:li:contentSeries:7084999622758129665"); }
+            else if (parseNode.GetChildNode("urn:li:contentSeries:7084999622758129665") is { } nullNodeUrnLiContentSeries7084999622758129665 && nullNodeUrnLiContentSeries7084999622758129665.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiContentSeries7084999622758129665 = null;
+            if (parseNode.GetChildNode("urn:li:contentSeries:7135371914721562624") is null) { _explicitNullValueUrnLiContentSeries7135371914721562624 = default!; _explicitNullProperties?.Remove("urn:li:contentSeries:7135371914721562624"); }
+            else if (parseNode.GetChildNode("urn:li:contentSeries:7135371914721562624") is { } nullNodeUrnLiContentSeries7135371914721562624 && nullNodeUrnLiContentSeries7135371914721562624.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiContentSeries7135371914721562624 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiContentSeries6912796510891958272 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries6912796510891958272? UrnLiContentSeries6912796510891958272 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries6912796510891958272? UrnLiContentSeries6912796510891958272 { get => _explicitNullValueUrnLiContentSeries6912796510891958272; set { _explicitNullValueUrnLiContentSeries6912796510891958272 = value; AdditionalData?.Remove("urn:li:contentSeries:6912796510891958272"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentSeries:6912796510891958272"); else _explicitNullProperties?.Remove("urn:li:contentSeries:6912796510891958272"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries6912796510891958272? _explicitNullValueUrnLiContentSeries6912796510891958272 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries6912796510891958272 UrnLiContentSeries6912796510891958272 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries6912796510891958272 UrnLiContentSeries6912796510891958272 { get => _explicitNullValueUrnLiContentSeries6912796510891958272; set { _explicitNullValueUrnLiContentSeries6912796510891958272 = value; AdditionalData?.Remove("urn:li:contentSeries:6912796510891958272"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentSeries:6912796510891958272"); else _explicitNullProperties?.Remove("urn:li:contentSeries:6912796510891958272"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries6912796510891958272 _explicitNullValueUrnLiContentSeries6912796510891958272 = default!;
 #endif
         /// <summary>The urnLiContentSeries7084999622758129665 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665? UrnLiContentSeries7084999622758129665 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665? UrnLiContentSeries7084999622758129665 { get => _explicitNullValueUrnLiContentSeries7084999622758129665; set { _explicitNullValueUrnLiContentSeries7084999622758129665 = value; AdditionalData?.Remove("urn:li:contentSeries:7084999622758129665"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentSeries:7084999622758129665"); else _explicitNullProperties?.Remove("urn:li:contentSeries:7084999622758129665"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665? _explicitNullValueUrnLiContentSeries7084999622758129665 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665 UrnLiContentSeries7084999622758129665 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665 UrnLiContentSeries7084999622758129665 { get => _explicitNullValueUrnLiContentSeries7084999622758129665; set { _explicitNullValueUrnLiContentSeries7084999622758129665 = value; AdditionalData?.Remove("urn:li:contentSeries:7084999622758129665"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentSeries:7084999622758129665"); else _explicitNullProperties?.Remove("urn:li:contentSeries:7084999622758129665"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665 _explicitNullValueUrnLiContentSeries7084999622758129665 = default!;
 #endif
         /// <summary>The urnLiContentSeries7135371914721562624 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624? UrnLiContentSeries7135371914721562624 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624? UrnLiContentSeries7135371914721562624 { get => _explicitNullValueUrnLiContentSeries7135371914721562624; set { _explicitNullValueUrnLiContentSeries7135371914721562624 = value; AdditionalData?.Remove("urn:li:contentSeries:7135371914721562624"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentSeries:7135371914721562624"); else _explicitNullProperties?.Remove("urn:li:contentSeries:7135371914721562624"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624? _explicitNullValueUrnLiContentSeries7135371914721562624 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624 UrnLiContentSeries7135371914721562624 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624 UrnLiContentSeries7135371914721562624 { get => _explicitNullValueUrnLiContentSeries7135371914721562624; set { _explicitNullValueUrnLiContentSeries7135371914721562624 = value; AdditionalData?.Remove("urn:li:contentSeries:7135371914721562624"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentSeries:7135371914721562624"); else _explicitNullProperties?.Remove("urn:li:contentSeries:7135371914721562624"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624 _explicitNullValueUrnLiContentSeries7135371914721562624 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResults"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries6912796510891958272>("urn:li:contentSeries:6912796510891958272", UrnLiContentSeries6912796510891958272);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7084999622758129665>("urn:li:contentSeries:7084999622758129665", UrnLiContentSeries7084999622758129665);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624>("urn:li:contentSeries:7135371914721562624", UrnLiContentSeries7135371914721562624);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

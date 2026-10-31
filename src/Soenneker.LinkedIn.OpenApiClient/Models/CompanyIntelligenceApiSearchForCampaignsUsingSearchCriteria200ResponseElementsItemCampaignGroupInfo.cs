@@ -12,116 +12,189 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemCampaignGroupInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is null) { _explicitNullValueAccount = default!; _explicitNullProperties?.Remove("account"); }
+            else if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("accountInfo") is null) { _explicitNullValueAccountInfo = default!; _explicitNullProperties?.Remove("accountInfo"); }
+            else if (parseNode.GetChildNode("accountInfo") is { } nullNodeAccountInfo && nullNodeAccountInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountInfo = null;
+            if (parseNode.GetChildNode("allowedCampaignTypes") is null) { _explicitNullValueAllowedCampaignTypes = default!; _explicitNullProperties?.Remove("allowedCampaignTypes"); }
+            else if (parseNode.GetChildNode("allowedCampaignTypes") is { } nullNodeAllowedCampaignTypes && nullNodeAllowedCampaignTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCampaignTypes = null;
+            if (parseNode.GetChildNode("backfilled") is null) { _explicitNullValueBackfilled = default!; _explicitNullProperties?.Remove("backfilled"); }
+            else if (parseNode.GetChildNode("backfilled") is { } nullNodeBackfilled && nullNodeBackfilled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Backfilled = null;
+            if (parseNode.GetChildNode("beneficiaryReference") is null) { _explicitNullValueBeneficiaryReference = default!; _explicitNullProperties?.Remove("beneficiaryReference"); }
+            else if (parseNode.GetChildNode("beneficiaryReference") is { } nullNodeBeneficiaryReference && nullNodeBeneficiaryReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeneficiaryReference = null;
+            if (parseNode.GetChildNode("billingParentReference") is null) { _explicitNullValueBillingParentReference = default!; _explicitNullProperties?.Remove("billingParentReference"); }
+            else if (parseNode.GetChildNode("billingParentReference") is { } nullNodeBillingParentReference && nullNodeBillingParentReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingParentReference = null;
+            if (parseNode.GetChildNode("billingReference") is null) { _explicitNullValueBillingReference = default!; _explicitNullProperties?.Remove("billingReference"); }
+            else if (parseNode.GetChildNode("billingReference") is { } nullNodeBillingReference && nullNodeBillingReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingReference = null;
+            if (parseNode.GetChildNode("budgetOptimization") is null) { _explicitNullValueBudgetOptimization = default!; _explicitNullProperties?.Remove("budgetOptimization"); }
+            else if (parseNode.GetChildNode("budgetOptimization") is { } nullNodeBudgetOptimization && nullNodeBudgetOptimization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BudgetOptimization = null;
+            if (parseNode.GetChildNode("buyingType") is null) { _explicitNullValueBuyingType = default!; _explicitNullProperties?.Remove("buyingType"); }
+            else if (parseNode.GetChildNode("buyingType") is { } nullNodeBuyingType && nullNodeBuyingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuyingType = null;
+            if (parseNode.GetChildNode("dailyBudget") is null) { _explicitNullValueDailyBudget = default!; _explicitNullProperties?.Remove("dailyBudget"); }
+            else if (parseNode.GetChildNode("dailyBudget") is { } nullNodeDailyBudget && nullNodeDailyBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyBudget = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("objectiveType") is null) { _explicitNullValueObjectiveType = default!; _explicitNullProperties?.Remove("objectiveType"); }
+            else if (parseNode.GetChildNode("objectiveType") is { } nullNodeObjectiveType && nullNodeObjectiveType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectiveType = null;
+            if (parseNode.GetChildNode("runSchedule") is null) { _explicitNullValueRunSchedule = default!; _explicitNullProperties?.Remove("runSchedule"); }
+            else if (parseNode.GetChildNode("runSchedule") is { } nullNodeRunSchedule && nullNodeRunSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunSchedule = null;
+            if (parseNode.GetChildNode("servingStatuses") is null) { _explicitNullValueServingStatuses = default!; _explicitNullProperties?.Remove("servingStatuses"); }
+            else if (parseNode.GetChildNode("servingStatuses") is { } nullNodeServingStatuses && nullNodeServingStatuses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServingStatuses = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("test") is null) { _explicitNullValueTest = default!; _explicitNullProperties?.Remove("test"); }
+            else if (parseNode.GetChildNode("test") is { } nullNodeTest && nullNodeTest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Test = null;
+            if (parseNode.GetChildNode("totalBudget") is null) { _explicitNullValueTotalBudget = default!; _explicitNullProperties?.Remove("totalBudget"); }
+            else if (parseNode.GetChildNode("totalBudget") is { } nullNodeTotalBudget && nullNodeTotalBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBudget = null;
+        }
+
         /// <summary>URN identifying the advertising account associated with the campaign. This value is immutable once set. For example, urn:li:SponsoredAccount:{id}.Documented type: SponsoredAccountUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get; set; }
+        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public string Account { get; set; }
+        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string _explicitNullValueAccount = default!;
 #endif
         /// <summary>Information about the advertising account associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAccountInfo? AccountInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAccountInfo? AccountInfo { get => _explicitNullValueAccountInfo; set { _explicitNullValueAccountInfo = value; AdditionalData?.Remove("accountInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountInfo"); else _explicitNullProperties?.Remove("accountInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAccountInfo? _explicitNullValueAccountInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAccountInfo AccountInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAccountInfo AccountInfo { get => _explicitNullValueAccountInfo; set { _explicitNullValueAccountInfo = value; AdditionalData?.Remove("accountInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountInfo"); else _explicitNullProperties?.Remove("accountInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAccountInfo _explicitNullValueAccountInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array of enums that indicates allowed campaign types within the specific campaign group. Possible values are:TEXT_AD - Text-based ads that show up in the right column or top of the page on LinkedIn.SPONSORED_UPDATES - Native ads that promote a company&apos;s content updates in the LinkedIn feed.SPONSORED_INMAILS - Personalized messages with a call-to-action button delivered to a LinkedIn&apos;s member inbox.DYNAMIC - Ads that are dynamically personalized. This is a read-only field.Documented type: string[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAllowedCampaignTypesItem?>? AllowedCampaignTypes { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAllowedCampaignTypesItem?>? AllowedCampaignTypes { get => _explicitNullValueAllowedCampaignTypes; set { _explicitNullValueAllowedCampaignTypes = value; AdditionalData?.Remove("allowedCampaignTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCampaignTypes"); else _explicitNullProperties?.Remove("allowedCampaignTypes"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAllowedCampaignTypesItem?>? _explicitNullValueAllowedCampaignTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAllowedCampaignTypesItem?> AllowedCampaignTypes { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAllowedCampaignTypesItem?> AllowedCampaignTypes { get => _explicitNullValueAllowedCampaignTypes; set { _explicitNullValueAllowedCampaignTypes = value; AdditionalData?.Remove("allowedCampaignTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedCampaignTypes"); else _explicitNullProperties?.Remove("allowedCampaignTypes"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaAllowedCampaignTypesItem?> _explicitNullValueAllowedCampaignTypes = default!;
 #endif
         /// <summary>Flag that denotes whether the campaign group was created organically or to backfill existing campaigns. This is a read-only field set by the system.Documented type: boolean, default=&quot;false&quot;</summary>
-        public bool? Backfilled { get; set; }
+        public bool? Backfilled { get => _explicitNullValueBackfilled; set { _explicitNullValueBackfilled = value; AdditionalData?.Remove("backfilled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backfilled"); else _explicitNullProperties?.Remove("backfilled"); } }
+        private bool? _explicitNullValueBackfilled = default!;
         /// <summary>A reference to the beneficiary of this campaign group. For a LinkedIn Marketing Solutions enterprise account, this is typically the organization (or company) entity being promoted. This field is optional and immutable once set. Note: This field applies to API Versions starting from 202608 and later.Documented type: BeneficiaryReference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBeneficiaryReference? BeneficiaryReference { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBeneficiaryReference? BeneficiaryReference { get => _explicitNullValueBeneficiaryReference; set { _explicitNullValueBeneficiaryReference = value; AdditionalData?.Remove("beneficiaryReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beneficiaryReference"); else _explicitNullProperties?.Remove("beneficiaryReference"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBeneficiaryReference? _explicitNullValueBeneficiaryReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBeneficiaryReference BeneficiaryReference { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBeneficiaryReference BeneficiaryReference { get => _explicitNullValueBeneficiaryReference; set { _explicitNullValueBeneficiaryReference = value; AdditionalData?.Remove("beneficiaryReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beneficiaryReference"); else _explicitNullProperties?.Remove("beneficiaryReference"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBeneficiaryReference _explicitNullValueBeneficiaryReference = default!;
 #endif
         /// <summary>A reference to the parent of the billing object referenced by the billingReference field. This field is optional and immutable once set, and applies to ENTERPRISE accounts only. Note: This field applies to API Versions starting from 202608 and later.Documented type: optional URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingParentReference { get; set; }
+        public string? BillingParentReference { get => _explicitNullValueBillingParentReference; set { _explicitNullValueBillingParentReference = value; AdditionalData?.Remove("billingParentReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingParentReference"); else _explicitNullProperties?.Remove("billingParentReference"); } }
+        private string? _explicitNullValueBillingParentReference = default!;
 #nullable restore
 #else
-        public string BillingParentReference { get; set; }
+        public string BillingParentReference { get => _explicitNullValueBillingParentReference; set { _explicitNullValueBillingParentReference = value; AdditionalData?.Remove("billingParentReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingParentReference"); else _explicitNullProperties?.Remove("billingParentReference"); } }
+        private string _explicitNullValueBillingParentReference = default!;
 #endif
         /// <summary>A reference to a billing object. This field is optional and immutable once set, and applies to ENTERPRISE accounts only. Note: This field applies to API Versions starting from 202608 and later.Documented type: optional URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingReference { get; set; }
+        public string? BillingReference { get => _explicitNullValueBillingReference; set { _explicitNullValueBillingReference = value; AdditionalData?.Remove("billingReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingReference"); else _explicitNullProperties?.Remove("billingReference"); } }
+        private string? _explicitNullValueBillingReference = default!;
 #nullable restore
 #else
-        public string BillingReference { get; set; }
+        public string BillingReference { get => _explicitNullValueBillingReference; set { _explicitNullValueBillingReference = value; AdditionalData?.Remove("billingReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingReference"); else _explicitNullProperties?.Remove("billingReference"); } }
+        private string _explicitNullValueBillingReference = default!;
 #endif
         /// <summary>The budgetOptimization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization? BudgetOptimization { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization? BudgetOptimization { get => _explicitNullValueBudgetOptimization; set { _explicitNullValueBudgetOptimization = value; AdditionalData?.Remove("budgetOptimization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetOptimization"); else _explicitNullProperties?.Remove("budgetOptimization"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization? _explicitNullValueBudgetOptimization = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization BudgetOptimization { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization BudgetOptimization { get => _explicitNullValueBudgetOptimization; set { _explicitNullValueBudgetOptimization = value; AdditionalData?.Remove("budgetOptimization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetOptimization"); else _explicitNullProperties?.Remove("budgetOptimization"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization _explicitNullValueBudgetOptimization = default!;
 #endif
         /// <summary>Represents whether the campaigns in the campaign group participate in an auction or have reserved inventory. This field is optional and immutable once set. Possible values are: AUCTION - Campaigns in the campaign group participate in an auction.RESERVATION - Campaigns in the campaign group have reserved inventory. Note: This field applies to API Versions starting from 202608 and later.Documented type: string</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBuyingType? BuyingType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBuyingType? BuyingType { get => _explicitNullValueBuyingType; set { _explicitNullValueBuyingType = value; AdditionalData?.Remove("buyingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buyingType"); else _explicitNullProperties?.Remove("buyingType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBuyingType? _explicitNullValueBuyingType = default!;
         /// <summary>Daily budget for the campaign group and will be shared among all campaigns within the campaign group. This field is optional and mutable. It can only be used if budgetOptimization.budgetOptimizationStrategy is DYNAMIC Note: This field applies to API Versions starting from 202504 and later.Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DailyBudget { get; set; }
+        public UntypedNode? DailyBudget { get => _explicitNullValueDailyBudget; set { _explicitNullValueDailyBudget = value; AdditionalData?.Remove("dailyBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dailyBudget"); else _explicitNullProperties?.Remove("dailyBudget"); } }
+        private UntypedNode? _explicitNullValueDailyBudget = default!;
 #nullable restore
 #else
-        public UntypedNode DailyBudget { get; set; }
+        public UntypedNode DailyBudget { get => _explicitNullValueDailyBudget; set { _explicitNullValueDailyBudget = value; AdditionalData?.Remove("dailyBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dailyBudget"); else _explicitNullProperties?.Remove("dailyBudget"); } }
+        private UntypedNode _explicitNullValueDailyBudget = default!;
 #endif
         /// <summary>Numerical identifier for the campaign group. This is a read-only field set by the system.Documented type: long</summary>
-        public long? Id { get; set; }
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
         /// <summary>The name of the campaign group used to make it easier to reference a campaign group and recall its purpose. The value of this field can&apos;t exceed 200 bytes when UTF-8 encoded.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Campaign Group Objective type values. This field is optional and immutable. Campaigns in this group will automatically have the same objective type. Click here for Objective descriptions BRAND_AWARENESSENGAGEMENTJOB_APPLICANTSLEAD_GENERATIONWEBSITE_CONVERSIONSWEBSITE_VISITVIDEO_VIEWSDocumented type: string</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaObjectiveType? ObjectiveType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaObjectiveType? ObjectiveType { get => _explicitNullValueObjectiveType; set { _explicitNullValueObjectiveType = value; AdditionalData?.Remove("objectiveType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectiveType"); else _explicitNullProperties?.Remove("objectiveType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaObjectiveType? _explicitNullValueObjectiveType = default!;
         /// <summary>The runSchedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule? RunSchedule { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule? RunSchedule { get => _explicitNullValueRunSchedule; set { _explicitNullValueRunSchedule = value; AdditionalData?.Remove("runSchedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runSchedule"); else _explicitNullProperties?.Remove("runSchedule"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule? _explicitNullValueRunSchedule = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule RunSchedule { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule RunSchedule { get => _explicitNullValueRunSchedule; set { _explicitNullValueRunSchedule = value; AdditionalData?.Remove("runSchedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runSchedule"); else _explicitNullProperties?.Remove("runSchedule"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule _explicitNullValueRunSchedule = default!;
 #endif
         /// <summary>Array of enums that determine whether or not campaigns within the campaign group may be served. Unlike status, which is user-managed, the values are controlled by the service. This is a read-only field. Possible values are: RUNNABLE Campaign group is currently active; billing information, budgetary constraints, or start and end dates are valid.STOPPED Campaign group is currently not eligible for serving for reasons other than billing information, budgetary constraints, or termination dates. For instance, a campaign group will be STOPPED if it has been canceled by the user, or it&apos;s marked as spam.BILLING_HOLD Parent account is on billing hold.ACCOUNT_TOTAL_BUDGET_HOLD Parent account total budget has been reached.ACCOUNT_END_DATE_HOLD Parent account end date has been reached.CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD Campaign group total budget has been reached.CAMPAIGN_GROUP_START_DATE_HOLD Campaign group start date is in the future.CAMPAIGN_GROUP_END_DATE_HOLD Campaign group end date has been reached.Documented type: string[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaServingStatusesItem?>? ServingStatuses { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaServingStatusesItem?>? ServingStatuses { get => _explicitNullValueServingStatuses; set { _explicitNullValueServingStatuses = value; AdditionalData?.Remove("servingStatuses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servingStatuses"); else _explicitNullProperties?.Remove("servingStatuses"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaServingStatusesItem?>? _explicitNullValueServingStatuses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaServingStatusesItem?> ServingStatuses { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaServingStatusesItem?> ServingStatuses { get => _explicitNullValueServingStatuses; set { _explicitNullValueServingStatuses = value; AdditionalData?.Remove("servingStatuses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servingStatuses"); else _explicitNullProperties?.Remove("servingStatuses"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaServingStatusesItem?> _explicitNullValueServingStatuses = default!;
 #endif
         /// <summary>Status of campaign group. Possible values are: ACTIVE - Denotes that the campaign group is capable of serving ads, subject to run date and budget limitations (as well as any other limitations at the account or campaign level).ARCHIVED - Denotes that the campaign group is presently inactive, and should mostly be hidden in the UI until un-archived. CANCELLED - Denotes that the campaign group has been permanently canceled and can&apos;t be reactivated. Not a settable status. DRAFT - Denotes that the campaign group is in a preliminary state and should temporarily not be served. PAUSED - Denotes that the campaign group meets all requirements to be served, but temporarily shouldn&apos;t be. PENDING_DELETION - Denotes that the campaign group has been requested to be deleted that&apos;s currently pending. REMOVED - Denoted that the campaign group was deleted, but must remain fetchable due to the existence of performance data.Documented type: string</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaStatus? Status { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaStatus? _explicitNullValueStatus = default!;
         /// <summary>Flag showing whether this campaign group is a test campaign group, i.e., belongs to a test account. This is a read-only and immutable field that&apos;s set implicitly during creation based on whether the account is a Test Account or not.Documented type: boolean, default=&quot;false&quot;</summary>
-        public bool? Test { get; set; }
+        public bool? Test { get => _explicitNullValueTest; set { _explicitNullValueTest = value; AdditionalData?.Remove("test"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test"); else _explicitNullProperties?.Remove("test"); } }
+        private bool? _explicitNullValueTest = default!;
         /// <summary>The totalBudget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget? TotalBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget? TotalBudget { get => _explicitNullValueTotalBudget; set { _explicitNullValueTotalBudget = value; AdditionalData?.Remove("totalBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalBudget"); else _explicitNullProperties?.Remove("totalBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget? _explicitNullValueTotalBudget = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget TotalBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget TotalBudget { get => _explicitNullValueTotalBudget; set { _explicitNullValueTotalBudget = value; AdditionalData?.Remove("totalBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalBudget"); else _explicitNullProperties?.Remove("totalBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget _explicitNullValueTotalBudget = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemCampaignGroupInfo"/> and sets the default values.
@@ -138,7 +211,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemCampaignGroupInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemCampaignGroupInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemCampaignGroupInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,14 +229,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "billingParentReference", n => { BillingParentReference = n.GetStringValue(); } },
                 { "billingReference", n => { BillingReference = n.GetStringValue(); } },
                 { "budgetOptimization", n => { BudgetOptimization = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBudgetOptimization.CreateFromDiscriminatorValue); } },
-                { "buyingType", n => { BuyingType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBuyingType>(); } },
+                { "buyingType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaBuyingType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBuyingType = default; _explicitNullProperties?.Remove("buyingType"); AdditionalData["buyingType"] = unknown; } else { BuyingType = parsed; AdditionalData.Remove("buyingType"); } } },
                 { "dailyBudget", n => { DailyBudget = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "objectiveType", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaObjectiveType>(); } },
+                { "objectiveType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaObjectiveType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueObjectiveType = default; _explicitNullProperties?.Remove("objectiveType"); AdditionalData["objectiveType"] = unknown; } else { ObjectiveType = parsed; AdditionalData.Remove("objectiveType"); } } },
                 { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaRunSchedule.CreateFromDiscriminatorValue); } },
                 { "servingStatuses", n => { ServingStatuses = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaServingStatusesItem>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "test", n => { Test = n.GetBoolValue(); } },
                 { "totalBudget", n => { TotalBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget.CreateFromDiscriminatorValue); } },
             };
@@ -193,6 +266,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaStatus>("status", Status);
             writer.WriteBoolValue("test", Test);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignGroupsSchemaTotalBudget>("totalBudget", TotalBudget);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

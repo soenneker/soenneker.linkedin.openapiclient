@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectUpsertEntityAclRequestAnyOf2Entities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345") is null) { _explicitNullValueDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 = default!; _explicitNullProperties?.Remove("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345"); }
+            else if (parseNode.GetChildNode("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345") is { } nullNodeDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 && nullNodeDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline_1243AtsEntityAclIdCrm_acl_12345 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2EntitiesDataProviderAtsIntegrationContextUrnLiOrganization2414183AtsEntityTypePipelineAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345? DataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2EntitiesDataProviderAtsIntegrationContextUrnLiOrganization2414183AtsEntityTypePipelineAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345? DataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 { get => _explicitNullValueDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345; set { _explicitNullValueDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 = value; AdditionalData?.Remove("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345"); else _explicitNullProperties?.Remove("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2EntitiesDataProviderAtsIntegrationContextUrnLiOrganization2414183AtsEntityTypePipelineAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345? _explicitNullValueDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2EntitiesDataProviderAtsIntegrationContextUrnLiOrganization2414183AtsEntityTypePipelineAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 DataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2EntitiesDataProviderAtsIntegrationContextUrnLiOrganization2414183AtsEntityTypePipelineAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 DataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 { get => _explicitNullValueDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345; set { _explicitNullValueDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 = value; AdditionalData?.Remove("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345"); else _explicitNullProperties?.Remove("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2EntitiesDataProviderAtsIntegrationContextUrnLiOrganization2414183AtsEntityTypePipelineAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 _explicitNullValueDataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2Entities"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2Entities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2Entities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2Entities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectUpsertEntityAclRequestAnyOf2EntitiesDataProviderAtsIntegrationContextUrnLiOrganization2414183AtsEntityTypePipelineAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345>("dataProvider=ATS&integrationContext=urn:li:organization:2414183&atsEntityType=PIPELINE&atsEntityId=pipeline_1243&atsEntityAclId=crm_acl_12345", DataProviderATSIntegrationContextUrnLiOrganization2414183AtsEntityTypePIPELINEAtsEntityIdPipeline1243AtsEntityAclIdCrmAcl12345);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

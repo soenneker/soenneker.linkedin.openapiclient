@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clientTitle") is null) { _explicitNullValueClientTitle = default!; _explicitNullProperties?.Remove("clientTitle"); }
+            else if (parseNode.GetChildNode("clientTitle") is { } nullNodeClientTitle && nullNodeClientTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientTitle = null;
+            if (parseNode.GetChildNode("organization") is null) { _explicitNullValueOrganization = default!; _explicitNullProperties?.Remove("organization"); }
+            else if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("testimonial") is null) { _explicitNullValueTestimonial = default!; _explicitNullProperties?.Remove("testimonial"); }
+            else if (parseNode.GetChildNode("testimonial") is { } nullNodeTestimonial && nullNodeTestimonial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Testimonial = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client name and title who states the testimonial on behalf of the client organization. This field is custom text the admin can enter, not standardized title.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientTitle { get; set; }
+        public string? ClientTitle { get => _explicitNullValueClientTitle; set { _explicitNullValueClientTitle = value; AdditionalData?.Remove("clientTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientTitle"); else _explicitNullProperties?.Remove("clientTitle"); } }
+        private string? _explicitNullValueClientTitle = default!;
 #nullable restore
 #else
-        public string ClientTitle { get; set; }
+        public string ClientTitle { get => _explicitNullValueClientTitle; set { _explicitNullValueClientTitle = value; AdditionalData?.Remove("clientTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientTitle"); else _explicitNullProperties?.Remove("clientTitle"); } }
+        private string _explicitNullValueClientTitle = default!;
 #endif
         /// <summary>Client organization who states the testimonial. Organization looking to hire through staffing companies.Documented type: OrganizationUrn](../pages-profiles/organizations.md)Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Organization { get; set; }
+        public UntypedNode? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private UntypedNode? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public UntypedNode Organization { get; set; }
+        public UntypedNode Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private UntypedNode _explicitNullValueOrganization = default!;
 #endif
         /// <summary>Testimonial of the client.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Testimonial { get; set; }
+        public string? Testimonial { get => _explicitNullValueTestimonial; set { _explicitNullValueTestimonial = value; AdditionalData?.Remove("testimonial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testimonial"); else _explicitNullProperties?.Remove("testimonial"); } }
+        private string? _explicitNullValueTestimonial = default!;
 #nullable restore
 #else
-        public string Testimonial { get; set; }
+        public string Testimonial { get => _explicitNullValueTestimonial; set { _explicitNullValueTestimonial = value; AdditionalData?.Remove("testimonial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testimonial"); else _explicitNullProperties?.Remove("testimonial"); } }
+        private string _explicitNullValueTestimonial = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("clientTitle", ClientTitle);
             writer.WriteObjectValue<UntypedNode>("organization", Organization);
             writer.WriteStringValue("testimonial", Testimonial);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

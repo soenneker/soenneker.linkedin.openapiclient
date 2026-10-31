@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("organization") is null) { _explicitNullValueOrganization = default!; _explicitNullProperties?.Remove("organization"); }
+            else if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("pageVisitorsEmployedByRelatedOrg") is null) { _explicitNullValuePageVisitorsEmployedByRelatedOrg = default!; _explicitNullProperties?.Remove("pageVisitorsEmployedByRelatedOrg"); }
+            else if (parseNode.GetChildNode("pageVisitorsEmployedByRelatedOrg") is { } nullNodePageVisitorsEmployedByRelatedOrg && nullNodePageVisitorsEmployedByRelatedOrg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageVisitorsEmployedByRelatedOrg = null;
+            if (parseNode.GetChildNode("relatedOrganization") is null) { _explicitNullValueRelatedOrganization = default!; _explicitNullProperties?.Remove("relatedOrganization"); }
+            else if (parseNode.GetChildNode("relatedOrganization") is { } nullNodeRelatedOrganization && nullNodeRelatedOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedOrganization = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URN of focus organization.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Organization { get; set; }
+        public string? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private string? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public string Organization { get; set; }
+        public string Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private string _explicitNullValueOrganization = default!;
 #endif
         /// <summary>TThe number of unique visitors to the focus organization&apos;s page who are currently employed by the related organization.Documented type: OrganizationRelationshipStatisticsDataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg? PageVisitorsEmployedByRelatedOrg { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg? PageVisitorsEmployedByRelatedOrg { get => _explicitNullValuePageVisitorsEmployedByRelatedOrg; set { _explicitNullValuePageVisitorsEmployedByRelatedOrg = value; AdditionalData?.Remove("pageVisitorsEmployedByRelatedOrg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageVisitorsEmployedByRelatedOrg"); else _explicitNullProperties?.Remove("pageVisitorsEmployedByRelatedOrg"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg? _explicitNullValuePageVisitorsEmployedByRelatedOrg = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg PageVisitorsEmployedByRelatedOrg { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg PageVisitorsEmployedByRelatedOrg { get => _explicitNullValuePageVisitorsEmployedByRelatedOrg; set { _explicitNullValuePageVisitorsEmployedByRelatedOrg = value; AdditionalData?.Remove("pageVisitorsEmployedByRelatedOrg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageVisitorsEmployedByRelatedOrg"); else _explicitNullProperties?.Remove("pageVisitorsEmployedByRelatedOrg"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg _explicitNullValuePageVisitorsEmployedByRelatedOrg = default!;
 #endif
         /// <summary>URN of the related organization whose relationship to the focus organization is being detailed.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelatedOrganization { get; set; }
+        public string? RelatedOrganization { get => _explicitNullValueRelatedOrganization; set { _explicitNullValueRelatedOrganization = value; AdditionalData?.Remove("relatedOrganization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relatedOrganization"); else _explicitNullProperties?.Remove("relatedOrganization"); } }
+        private string? _explicitNullValueRelatedOrganization = default!;
 #nullable restore
 #else
-        public string RelatedOrganization { get; set; }
+        public string RelatedOrganization { get => _explicitNullValueRelatedOrganization; set { _explicitNullValueRelatedOrganization = value; AdditionalData?.Remove("relatedOrganization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relatedOrganization"); else _explicitNullProperties?.Remove("relatedOrganization"); } }
+        private string _explicitNullValueRelatedOrganization = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItem"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("organization", Organization);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg>("pageVisitorsEmployedByRelatedOrg", PageVisitorsEmployedByRelatedOrg);
             writer.WriteStringValue("relatedOrganization", RelatedOrganization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,43 +11,69 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657Settings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attendanceMode") is null) { _explicitNullValueAttendanceMode = default!; _explicitNullProperties?.Remove("attendanceMode"); }
+            else if (parseNode.GetChildNode("attendanceMode") is { } nullNodeAttendanceMode && nullNodeAttendanceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttendanceMode = null;
+            if (parseNode.GetChildNode("discoveryMode") is null) { _explicitNullValueDiscoveryMode = default!; _explicitNullProperties?.Remove("discoveryMode"); }
+            else if (parseNode.GetChildNode("discoveryMode") is { } nullNodeDiscoveryMode && nullNodeDiscoveryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscoveryMode = null;
+            if (parseNode.GetChildNode("entryCriteria") is null) { _explicitNullValueEntryCriteria = default!; _explicitNullProperties?.Remove("entryCriteria"); }
+            else if (parseNode.GetChildNode("entryCriteria") is { } nullNodeEntryCriteria && nullNodeEntryCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryCriteria = null;
+            if (parseNode.GetChildNode("invitationSettings") is null) { _explicitNullValueInvitationSettings = default!; _explicitNullProperties?.Remove("invitationSettings"); }
+            else if (parseNode.GetChildNode("invitationSettings") is { } nullNodeInvitationSettings && nullNodeInvitationSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitationSettings = null;
+            if (parseNode.GetChildNode("mapsToSingleUgcPost") is null) { _explicitNullValueMapsToSingleUgcPost = default!; _explicitNullProperties?.Remove("mapsToSingleUgcPost"); }
+            else if (parseNode.GetChildNode("mapsToSingleUgcPost") is { } nullNodeMapsToSingleUgcPost && nullNodeMapsToSingleUgcPost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MapsToSingleUgcPost = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attendanceMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttendanceMode { get; set; }
+        public string? AttendanceMode { get => _explicitNullValueAttendanceMode; set { _explicitNullValueAttendanceMode = value; AdditionalData?.Remove("attendanceMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attendanceMode"); else _explicitNullProperties?.Remove("attendanceMode"); } }
+        private string? _explicitNullValueAttendanceMode = default!;
 #nullable restore
 #else
-        public string AttendanceMode { get; set; }
+        public string AttendanceMode { get => _explicitNullValueAttendanceMode; set { _explicitNullValueAttendanceMode = value; AdditionalData?.Remove("attendanceMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attendanceMode"); else _explicitNullProperties?.Remove("attendanceMode"); } }
+        private string _explicitNullValueAttendanceMode = default!;
 #endif
         /// <summary>The discoveryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiscoveryMode { get; set; }
+        public string? DiscoveryMode { get => _explicitNullValueDiscoveryMode; set { _explicitNullValueDiscoveryMode = value; AdditionalData?.Remove("discoveryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryMode"); else _explicitNullProperties?.Remove("discoveryMode"); } }
+        private string? _explicitNullValueDiscoveryMode = default!;
 #nullable restore
 #else
-        public string DiscoveryMode { get; set; }
+        public string DiscoveryMode { get => _explicitNullValueDiscoveryMode; set { _explicitNullValueDiscoveryMode = value; AdditionalData?.Remove("discoveryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryMode"); else _explicitNullProperties?.Remove("discoveryMode"); } }
+        private string _explicitNullValueDiscoveryMode = default!;
 #endif
         /// <summary>The entryCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntryCriteria { get; set; }
+        public string? EntryCriteria { get => _explicitNullValueEntryCriteria; set { _explicitNullValueEntryCriteria = value; AdditionalData?.Remove("entryCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryCriteria"); else _explicitNullProperties?.Remove("entryCriteria"); } }
+        private string? _explicitNullValueEntryCriteria = default!;
 #nullable restore
 #else
-        public string EntryCriteria { get; set; }
+        public string EntryCriteria { get => _explicitNullValueEntryCriteria; set { _explicitNullValueEntryCriteria = value; AdditionalData?.Remove("entryCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryCriteria"); else _explicitNullProperties?.Remove("entryCriteria"); } }
+        private string _explicitNullValueEntryCriteria = default!;
 #endif
         /// <summary>The invitationSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657SettingsInvitationSettings? InvitationSettings { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657SettingsInvitationSettings? InvitationSettings { get => _explicitNullValueInvitationSettings; set { _explicitNullValueInvitationSettings = value; AdditionalData?.Remove("invitationSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitationSettings"); else _explicitNullProperties?.Remove("invitationSettings"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657SettingsInvitationSettings? _explicitNullValueInvitationSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657SettingsInvitationSettings InvitationSettings { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657SettingsInvitationSettings InvitationSettings { get => _explicitNullValueInvitationSettings; set { _explicitNullValueInvitationSettings = value; AdditionalData?.Remove("invitationSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitationSettings"); else _explicitNullProperties?.Remove("invitationSettings"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657SettingsInvitationSettings _explicitNullValueInvitationSettings = default!;
 #endif
         /// <summary>The mapsToSingleUgcPost property</summary>
-        public bool? MapsToSingleUgcPost { get; set; }
+        public bool? MapsToSingleUgcPost { get => _explicitNullValueMapsToSingleUgcPost; set { _explicitNullValueMapsToSingleUgcPost = value; AdditionalData?.Remove("mapsToSingleUgcPost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapsToSingleUgcPost"); else _explicitNullProperties?.Remove("mapsToSingleUgcPost"); } }
+        private bool? _explicitNullValueMapsToSingleUgcPost = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657Settings"/> and sets the default values.
         /// </summary>
@@ -63,7 +89,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657Settings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657Settings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657Settings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +118,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("entryCriteria", EntryCriteria);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130604419196358657SettingsInvitationSettings>("invitationSettings", InvitationSettings);
             writer.WriteBoolValue("mapsToSingleUgcPost", MapsToSingleUgcPost);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

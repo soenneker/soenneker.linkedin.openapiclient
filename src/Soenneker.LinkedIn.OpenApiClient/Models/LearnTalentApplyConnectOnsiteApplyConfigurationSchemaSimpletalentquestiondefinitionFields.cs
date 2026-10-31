@@ -11,59 +11,93 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("expandedHelpMessage") is null) { _explicitNullValueExpandedHelpMessage = default!; _explicitNullProperties?.Remove("expandedHelpMessage"); }
+            else if (parseNode.GetChildNode("expandedHelpMessage") is { } nullNodeExpandedHelpMessage && nullNodeExpandedHelpMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpandedHelpMessage = null;
+            if (parseNode.GetChildNode("helpMessage") is null) { _explicitNullValueHelpMessage = default!; _explicitNullProperties?.Remove("helpMessage"); }
+            else if (parseNode.GetChildNode("helpMessage") is { } nullNodeHelpMessage && nullNodeHelpMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HelpMessage = null;
+            if (parseNode.GetChildNode("partnerQuestionIdentifier") is null) { _explicitNullValuePartnerQuestionIdentifier = default!; _explicitNullProperties?.Remove("partnerQuestionIdentifier"); }
+            else if (parseNode.GetChildNode("partnerQuestionIdentifier") is { } nullNodePartnerQuestionIdentifier && nullNodePartnerQuestionIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerQuestionIdentifier = null;
+            if (parseNode.GetChildNode("prerequisiteQuestionResponse") is null) { _explicitNullValuePrerequisiteQuestionResponse = default!; _explicitNullProperties?.Remove("prerequisiteQuestionResponse"); }
+            else if (parseNode.GetChildNode("prerequisiteQuestionResponse") is { } nullNodePrerequisiteQuestionResponse && nullNodePrerequisiteQuestionResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrerequisiteQuestionResponse = null;
+            if (parseNode.GetChildNode("questionDetails") is null) { _explicitNullValueQuestionDetails = default!; _explicitNullProperties?.Remove("questionDetails"); }
+            else if (parseNode.GetChildNode("questionDetails") is { } nullNodeQuestionDetails && nullNodeQuestionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionDetails = null;
+            if (parseNode.GetChildNode("questionText") is null) { _explicitNullValueQuestionText = default!; _explicitNullProperties?.Remove("questionText"); }
+            else if (parseNode.GetChildNode("questionText") is { } nullNodeQuestionText && nullNodeQuestionText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionText = null;
+            if (parseNode.GetChildNode("required") is null) { _explicitNullValueRequired = default!; _explicitNullProperties?.Remove("required"); }
+            else if (parseNode.GetChildNode("required") is { } nullNodeRequired && nullNodeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Required = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The full additional information available to the person being asked the question.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpandedHelpMessage { get; set; }
+        public string? ExpandedHelpMessage { get => _explicitNullValueExpandedHelpMessage; set { _explicitNullValueExpandedHelpMessage = value; AdditionalData?.Remove("expandedHelpMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expandedHelpMessage"); else _explicitNullProperties?.Remove("expandedHelpMessage"); } }
+        private string? _explicitNullValueExpandedHelpMessage = default!;
 #nullable restore
 #else
-        public string ExpandedHelpMessage { get; set; }
+        public string ExpandedHelpMessage { get => _explicitNullValueExpandedHelpMessage; set { _explicitNullValueExpandedHelpMessage = value; AdditionalData?.Remove("expandedHelpMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expandedHelpMessage"); else _explicitNullProperties?.Remove("expandedHelpMessage"); } }
+        private string _explicitNullValueExpandedHelpMessage = default!;
 #endif
         /// <summary>The brief additional information available to the person being asked the question.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HelpMessage { get; set; }
+        public string? HelpMessage { get => _explicitNullValueHelpMessage; set { _explicitNullValueHelpMessage = value; AdditionalData?.Remove("helpMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("helpMessage"); else _explicitNullProperties?.Remove("helpMessage"); } }
+        private string? _explicitNullValueHelpMessage = default!;
 #nullable restore
 #else
-        public string HelpMessage { get; set; }
+        public string HelpMessage { get => _explicitNullValueHelpMessage; set { _explicitNullValueHelpMessage = value; AdditionalData?.Remove("helpMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("helpMessage"); else _explicitNullProperties?.Remove("helpMessage"); } }
+        private string _explicitNullValueHelpMessage = default!;
 #endif
         /// <summary>A unique identifier for this custom question. This is intended to be used by your systems to associate the answer(s) to this question when a job application is delivered by LinkedIn.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerQuestionIdentifier { get; set; }
+        public string? PartnerQuestionIdentifier { get => _explicitNullValuePartnerQuestionIdentifier; set { _explicitNullValuePartnerQuestionIdentifier = value; AdditionalData?.Remove("partnerQuestionIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerQuestionIdentifier"); else _explicitNullProperties?.Remove("partnerQuestionIdentifier"); } }
+        private string? _explicitNullValuePartnerQuestionIdentifier = default!;
 #nullable restore
 #else
-        public string PartnerQuestionIdentifier { get; set; }
+        public string PartnerQuestionIdentifier { get => _explicitNullValuePartnerQuestionIdentifier; set { _explicitNullValuePartnerQuestionIdentifier = value; AdditionalData?.Remove("partnerQuestionIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerQuestionIdentifier"); else _explicitNullProperties?.Remove("partnerQuestionIdentifier"); } }
+        private string _explicitNullValuePartnerQuestionIdentifier = default!;
 #endif
         /// <summary>The prerequisite question response configuration. If this field is present, this question is displayed only when the prerequisite question is answered with the prerequisite response. Note that one CustomQuestionSet can only have one prerequisite question. Each answer value of the prerequisite question can be associated to one dependency question by specifying this field in the dependency question.Documented type: PrerequisiteQuestionResponseRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse? PrerequisiteQuestionResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse? PrerequisiteQuestionResponse { get => _explicitNullValuePrerequisiteQuestionResponse; set { _explicitNullValuePrerequisiteQuestionResponse = value; AdditionalData?.Remove("prerequisiteQuestionResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteQuestionResponse"); else _explicitNullProperties?.Remove("prerequisiteQuestionResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse? _explicitNullValuePrerequisiteQuestionResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse PrerequisiteQuestionResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse PrerequisiteQuestionResponse { get => _explicitNullValuePrerequisiteQuestionResponse; set { _explicitNullValuePrerequisiteQuestionResponse = value; AdditionalData?.Remove("prerequisiteQuestionResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteQuestionResponse"); else _explicitNullProperties?.Remove("prerequisiteQuestionResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsPrerequisiteQuestionResponse _explicitNullValuePrerequisiteQuestionResponse = default!;
 #endif
         /// <summary>The details needed for a member to answer a question in any form. These question details will instruct the front-end as to how to render inputs and validation for this question.Documented type: SimpleQuestionDetailsRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetails? QuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetails? QuestionDetails { get => _explicitNullValueQuestionDetails; set { _explicitNullValueQuestionDetails = value; AdditionalData?.Remove("questionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionDetails"); else _explicitNullProperties?.Remove("questionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetails? _explicitNullValueQuestionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetails QuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetails QuestionDetails { get => _explicitNullValueQuestionDetails; set { _explicitNullValueQuestionDetails = value; AdditionalData?.Remove("questionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionDetails"); else _explicitNullProperties?.Remove("questionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetails _explicitNullValueQuestionDetails = default!;
 #endif
         /// <summary>The label text to describe this question. This field supports the following formats: Unordered list &lt;ul&gt;, List item &lt;li&gt;, Bold &lt;b&gt;, Italic &lt;i&gt;, Links &lt;a&gt;, and Paragraph &lt;p&gt;.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuestionText { get; set; }
+        public string? QuestionText { get => _explicitNullValueQuestionText; set { _explicitNullValueQuestionText = value; AdditionalData?.Remove("questionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionText"); else _explicitNullProperties?.Remove("questionText"); } }
+        private string? _explicitNullValueQuestionText = default!;
 #nullable restore
 #else
-        public string QuestionText { get; set; }
+        public string QuestionText { get => _explicitNullValueQuestionText; set { _explicitNullValueQuestionText = value; AdditionalData?.Remove("questionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionText"); else _explicitNullProperties?.Remove("questionText"); } }
+        private string _explicitNullValueQuestionText = default!;
 #endif
         /// <summary>This field indicates whether the question is required to complete the job application.Documented type: BooleanRequirement: Yes</summary>
-        public bool? Required { get; set; }
+        public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; AdditionalData?.Remove("required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
+        private bool? _explicitNullValueRequired = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields"/> and sets the default values.
         /// </summary>
@@ -79,7 +113,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +146,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFieldsQuestionDetails>("questionDetails", QuestionDetails);
             writer.WriteStringValue("questionText", QuestionText);
             writer.WriteBoolValue("required", Required);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

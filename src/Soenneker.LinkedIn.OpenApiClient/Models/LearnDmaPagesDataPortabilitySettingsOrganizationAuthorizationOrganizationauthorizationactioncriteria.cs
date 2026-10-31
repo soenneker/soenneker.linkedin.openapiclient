@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorizationAction") is null) { _explicitNullValueAuthorizationAction = default!; _explicitNullProperties?.Remove("authorizationAction"); }
+            else if (parseNode.GetChildNode("authorizationAction") is { } nullNodeAuthorizationAction && nullNodeAuthorizationAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationAction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The action requested, such as &quot;Editing Post XYZ&quot;. It can be one of below values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization&apos;s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization&apos;s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization&apos;s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization&apos;s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization&apos;s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization&apos;s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization&apos;s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization&apos;s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization&apos;s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization&apos;s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization&apos;s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization&apos;s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization&apos;s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization&apos;s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization&apos;s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization&apos;s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization&apos;s services page)Documented type: OrganizationAuthorizationActionRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteriaAuthorizationAction? AuthorizationAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteriaAuthorizationAction? AuthorizationAction { get => _explicitNullValueAuthorizationAction; set { _explicitNullValueAuthorizationAction = value; AdditionalData?.Remove("authorizationAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorizationAction"); else _explicitNullProperties?.Remove("authorizationAction"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteriaAuthorizationAction? _explicitNullValueAuthorizationAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteriaAuthorizationAction AuthorizationAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteriaAuthorizationAction AuthorizationAction { get => _explicitNullValueAuthorizationAction; set { _explicitNullValueAuthorizationAction = value; AdditionalData?.Remove("authorizationAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorizationAction"); else _explicitNullProperties?.Remove("authorizationAction"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteriaAuthorizationAction _explicitNullValueAuthorizationAction = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteria(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilitySettingsOrganizationAuthorizationOrganizationauthorizationactioncriteriaAuthorizationAction>("authorizationAction", AuthorizationAction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

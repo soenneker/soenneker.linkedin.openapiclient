@@ -11,21 +11,38 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TalentCrmConnectSyncTcrmCandidatePipelinesRequestEntitiesTcrmCandidateIdTcrmCandidateId100DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmPipelineIdTcrmPipeline05 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dispositionReason") is null) { _explicitNullValueDispositionReason = default!; _explicitNullProperties?.Remove("dispositionReason"); }
+            else if (parseNode.GetChildNode("dispositionReason") is { } nullNodeDispositionReason && nullNodeDispositionReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DispositionReason = null;
+            if (parseNode.GetChildNode("tcrmCreatedAt") is null) { _explicitNullValueTcrmCreatedAt = default!; _explicitNullProperties?.Remove("tcrmCreatedAt"); }
+            else if (parseNode.GetChildNode("tcrmCreatedAt") is { } nullNodeTcrmCreatedAt && nullNodeTcrmCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcrmCreatedAt = null;
+            if (parseNode.GetChildNode("tcrmLastModifiedAt") is null) { _explicitNullValueTcrmLastModifiedAt = default!; _explicitNullProperties?.Remove("tcrmLastModifiedAt"); }
+            else if (parseNode.GetChildNode("tcrmLastModifiedAt") is { } nullNodeTcrmLastModifiedAt && nullNodeTcrmLastModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcrmLastModifiedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The reason that the candidate was removed from the pipeline (e.g., &quot;candidate declined,&quot; &quot;not a fit,&quot; etc.).Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DispositionReason { get; set; }
+        public string? DispositionReason { get => _explicitNullValueDispositionReason; set { _explicitNullValueDispositionReason = value; AdditionalData?.Remove("dispositionReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispositionReason"); else _explicitNullProperties?.Remove("dispositionReason"); } }
+        private string? _explicitNullValueDispositionReason = default!;
 #nullable restore
 #else
-        public string DispositionReason { get; set; }
+        public string DispositionReason { get => _explicitNullValueDispositionReason; set { _explicitNullValueDispositionReason = value; AdditionalData?.Remove("dispositionReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispositionReason"); else _explicitNullProperties?.Remove("dispositionReason"); } }
+        private string _explicitNullValueDispositionReason = default!;
 #endif
         /// <summary>The time when this candidate was put in this pipeline within external CRM.Documented type: TimeRequirement: Required</summary>
-        public long? TcrmCreatedAt { get; set; }
+        public long? TcrmCreatedAt { get => _explicitNullValueTcrmCreatedAt; set { _explicitNullValueTcrmCreatedAt = value; AdditionalData?.Remove("tcrmCreatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmCreatedAt"); else _explicitNullProperties?.Remove("tcrmCreatedAt"); } }
+        private long? _explicitNullValueTcrmCreatedAt = default!;
         /// <summary>The timestamp when the content was last modified within external CRM, in milliseconds since Unix Epoch.Documented type: TimeRequirement: Required</summary>
-        public long? TcrmLastModifiedAt { get; set; }
+        public long? TcrmLastModifiedAt { get => _explicitNullValueTcrmLastModifiedAt; set { _explicitNullValueTcrmLastModifiedAt = value; AdditionalData?.Remove("tcrmLastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmLastModifiedAt"); else _explicitNullProperties?.Remove("tcrmLastModifiedAt"); } }
+        private long? _explicitNullValueTcrmLastModifiedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelinesRequestEntitiesTcrmCandidateIdTcrmCandidateId100DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmPipelineIdTcrmPipeline05"/> and sets the default values.
         /// </summary>
@@ -41,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelinesRequestEntitiesTcrmCandidateIdTcrmCandidateId100DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmPipelineIdTcrmPipeline05 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelinesRequestEntitiesTcrmCandidateIdTcrmCandidateId100DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmPipelineIdTcrmPipeline05();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidatePipelinesRequestEntitiesTcrmCandidateIdTcrmCandidateId100DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmPipelineIdTcrmPipeline05(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("dispositionReason", DispositionReason);
             writer.WriteLongValue("tcrmCreatedAt", TcrmCreatedAt);
             writer.WriteLongValue("tcrmLastModifiedAt", TcrmLastModifiedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

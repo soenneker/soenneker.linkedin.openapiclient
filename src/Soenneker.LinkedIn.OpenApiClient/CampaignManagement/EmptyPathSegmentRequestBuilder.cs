@@ -48,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// #### Select an image file on your local machine in the Body for postman to use in this example call.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#upload-the-image) to understand more on this API.This API example uses `upLoadUrl` URL from the previous response (step 1) for an actual upload of an Image File.View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#upload-the-image) to understand more on this API.This API example uses the `upLoadUrl` URL from the previous Step&apos;s response for an actual upload of an Image File.

@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The following `posts` field are available to update. Refer to [Schema](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/posts-api?view=li-lms-2022-08&amp;tabs=http#post-schema) for complete field details.| Field | Description || --- | --- || commentary | String || contentCallToActionLabel | contentCallToActionLabel text || contentLandingPage | URL of the landing page || reshareContext |  || lifecycleState |  || adContext | \*   dscName: Update the name of the sponsored content&lt;br&gt;\*   dscStatus: Update the status of the sponsored content |

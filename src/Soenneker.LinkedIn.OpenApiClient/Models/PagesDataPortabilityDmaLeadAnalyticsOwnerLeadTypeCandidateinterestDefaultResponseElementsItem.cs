@@ -11,21 +11,38 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("nonTestLeadCount") is null) { _explicitNullValueNonTestLeadCount = default!; _explicitNullProperties?.Remove("nonTestLeadCount"); }
+            else if (parseNode.GetChildNode("nonTestLeadCount") is { } nullNodeNonTestLeadCount && nullNodeNonTestLeadCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonTestLeadCount = null;
+            if (parseNode.GetChildNode("pivotValues") is null) { _explicitNullValuePivotValues = default!; _explicitNullProperties?.Remove("pivotValues"); }
+            else if (parseNode.GetChildNode("pivotValues") is { } nullNodePivotValues && nullNodePivotValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PivotValues = null;
+            if (parseNode.GetChildNode("testLeadCount") is null) { _explicitNullValueTestLeadCount = default!; _explicitNullProperties?.Remove("testLeadCount"); }
+            else if (parseNode.GetChildNode("testLeadCount") is { } nullNodeTestLeadCount && nullNodeTestLeadCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestLeadCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count of non-test leads for the specific pivotValue. Non-test leads are real leads submitted by members.Documented type: longRequirement: Yes</summary>
-        public long? NonTestLeadCount { get; set; }
+        public long? NonTestLeadCount { get => _explicitNullValueNonTestLeadCount; set { _explicitNullValueNonTestLeadCount = value; AdditionalData?.Remove("nonTestLeadCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonTestLeadCount"); else _explicitNullProperties?.Remove("nonTestLeadCount"); } }
+        private long? _explicitNullValueNonTestLeadCount = default!;
         /// <summary>The pivot values for a specific record in the response. Example: OWNER returns a list of records, one for each organization owner.Documented type: LeadAnalyticsPivotValue[]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PivotValues { get; set; }
+        public UntypedNode? PivotValues { get => _explicitNullValuePivotValues; set { _explicitNullValuePivotValues = value; AdditionalData?.Remove("pivotValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivotValues"); else _explicitNullProperties?.Remove("pivotValues"); } }
+        private UntypedNode? _explicitNullValuePivotValues = default!;
 #nullable restore
 #else
-        public UntypedNode PivotValues { get; set; }
+        public UntypedNode PivotValues { get => _explicitNullValuePivotValues; set { _explicitNullValuePivotValues = value; AdditionalData?.Remove("pivotValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivotValues"); else _explicitNullProperties?.Remove("pivotValues"); } }
+        private UntypedNode _explicitNullValuePivotValues = default!;
 #endif
         /// <summary>The count of test leads for the specific pivotValue. Test leads are leads submitted for testing purposes.Documented type: longRequirement: Yes</summary>
-        public long? TestLeadCount { get; set; }
+        public long? TestLeadCount { get => _explicitNullValueTestLeadCount; set { _explicitNullValueTestLeadCount = value; AdditionalData?.Remove("testLeadCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testLeadCount"); else _explicitNullProperties?.Remove("testLeadCount"); } }
+        private long? _explicitNullValueTestLeadCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -41,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadAnalyticsOwnerLeadTypeCandidateinterestDefaultResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("nonTestLeadCount", NonTestLeadCount);
             writer.WriteObjectValue<UntypedNode>("pivotValues", PivotValues);
             writer.WriteLongValue("testLeadCount", TestLeadCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

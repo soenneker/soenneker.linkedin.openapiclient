@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entityLocation") is null) { _explicitNullValueEntityLocation = default!; _explicitNullProperties?.Remove("entityLocation"); }
+            else if (parseNode.GetChildNode("entityLocation") is { } nullNodeEntityLocation && nullNodeEntityLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityLocation = null;
+            if (parseNode.GetChildNode("thumbnails") is null) { _explicitNullValueThumbnails = default!; _explicitNullProperties?.Remove("thumbnails"); }
+            else if (parseNode.GetChildNode("thumbnails") is { } nullNodeThumbnails && nullNodeThumbnails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Thumbnails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The entityLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityLocation { get; set; }
+        public string? EntityLocation { get => _explicitNullValueEntityLocation; set { _explicitNullValueEntityLocation = value; AdditionalData?.Remove("entityLocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityLocation"); else _explicitNullProperties?.Remove("entityLocation"); } }
+        private string? _explicitNullValueEntityLocation = default!;
 #nullable restore
 #else
-        public string EntityLocation { get; set; }
+        public string EntityLocation { get => _explicitNullValueEntityLocation; set { _explicitNullValueEntityLocation = value; AdditionalData?.Remove("entityLocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityLocation"); else _explicitNullProperties?.Remove("entityLocation"); } }
+        private string _explicitNullValueEntityLocation = default!;
 #endif
         /// <summary>The thumbnails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItemThumbnailsItem>? Thumbnails { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItemThumbnailsItem>? Thumbnails { get => _explicitNullValueThumbnails; set { _explicitNullValueThumbnails = value; AdditionalData?.Remove("thumbnails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnails"); else _explicitNullProperties?.Remove("thumbnails"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItemThumbnailsItem>? _explicitNullValueThumbnails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItemThumbnailsItem> Thumbnails { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItemThumbnailsItem> Thumbnails { get => _explicitNullValueThumbnails; set { _explicitNullValueThumbnails = value; AdditionalData?.Remove("thumbnails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnails"); else _explicitNullProperties?.Remove("thumbnails"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItemThumbnailsItem> _explicitNullValueThumbnails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItem"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("entityLocation", EntityLocation);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestContentContentEntitiesItemThumbnailsItem>("thumbnails", Thumbnails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

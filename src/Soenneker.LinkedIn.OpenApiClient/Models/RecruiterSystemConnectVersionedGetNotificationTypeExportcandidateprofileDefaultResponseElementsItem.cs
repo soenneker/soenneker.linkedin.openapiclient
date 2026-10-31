@@ -11,80 +11,123 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("externalJobPostingId") is null) { _explicitNullValueExternalJobPostingId = default!; _explicitNullProperties?.Remove("externalJobPostingId"); }
+            else if (parseNode.GetChildNode("externalJobPostingId") is { } nullNodeExternalJobPostingId && nullNodeExternalJobPostingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalJobPostingId = null;
+            if (parseNode.GetChildNode("externalPipelineId") is null) { _explicitNullValueExternalPipelineId = default!; _explicitNullProperties?.Remove("externalPipelineId"); }
+            else if (parseNode.GetChildNode("externalPipelineId") is { } nullNodeExternalPipelineId && nullNodeExternalPipelineId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalPipelineId = null;
+            if (parseNode.GetChildNode("integrationContext") is null) { _explicitNullValueIntegrationContext = default!; _explicitNullProperties?.Remove("integrationContext"); }
+            else if (parseNode.GetChildNode("integrationContext") is { } nullNodeIntegrationContext && nullNodeIntegrationContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationContext = null;
+            if (parseNode.GetChildNode("notes") is null) { _explicitNullValueNotes = default!; _explicitNullProperties?.Remove("notes"); }
+            else if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
+            if (parseNode.GetChildNode("referenceEntityId") is null) { _explicitNullValueReferenceEntityId = default!; _explicitNullProperties?.Remove("referenceEntityId"); }
+            else if (parseNode.GetChildNode("referenceEntityId") is { } nullNodeReferenceEntityId && nullNodeReferenceEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceEntityId = null;
+            if (parseNode.GetChildNode("referenceEntityType") is null) { _explicitNullValueReferenceEntityType = default!; _explicitNullProperties?.Remove("referenceEntityType"); }
+            else if (parseNode.GetChildNode("referenceEntityType") is { } nullNodeReferenceEntityType && nullNodeReferenceEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceEntityType = null;
+            if (parseNode.GetChildNode("requestedAt") is null) { _explicitNullValueRequestedAt = default!; _explicitNullProperties?.Remove("requestedAt"); }
+            else if (parseNode.GetChildNode("requestedAt") is { } nullNodeRequestedAt && nullNodeRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAt = null;
+            if (parseNode.GetChildNode("requester") is null) { _explicitNullValueRequester = default!; _explicitNullProperties?.Remove("requester"); }
+            else if (parseNode.GetChildNode("requester") is { } nullNodeRequester && nullNodeRequester.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requester = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique id for the job within the applicant tracking system.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalJobPostingId { get; set; }
+        public string? ExternalJobPostingId { get => _explicitNullValueExternalJobPostingId; set { _explicitNullValueExternalJobPostingId = value; AdditionalData?.Remove("externalJobPostingId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalJobPostingId"); else _explicitNullProperties?.Remove("externalJobPostingId"); } }
+        private string? _explicitNullValueExternalJobPostingId = default!;
 #nullable restore
 #else
-        public string ExternalJobPostingId { get; set; }
+        public string ExternalJobPostingId { get => _explicitNullValueExternalJobPostingId; set { _explicitNullValueExternalJobPostingId = value; AdditionalData?.Remove("externalJobPostingId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalJobPostingId"); else _explicitNullProperties?.Remove("externalJobPostingId"); } }
+        private string _explicitNullValueExternalJobPostingId = default!;
 #endif
         /// <summary>Unique id of the pipeline within the external CRM system to which the candidate is exported.Documented type: StringRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalPipelineId { get; set; }
+        public string? ExternalPipelineId { get => _explicitNullValueExternalPipelineId; set { _explicitNullValueExternalPipelineId = value; AdditionalData?.Remove("externalPipelineId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalPipelineId"); else _explicitNullProperties?.Remove("externalPipelineId"); } }
+        private string? _explicitNullValueExternalPipelineId = default!;
 #nullable restore
 #else
-        public string ExternalPipelineId { get; set; }
+        public string ExternalPipelineId { get => _explicitNullValueExternalPipelineId; set { _explicitNullValueExternalPipelineId = value; AdditionalData?.Remove("externalPipelineId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalPipelineId"); else _explicitNullProperties?.Remove("externalPipelineId"); } }
+        private string _explicitNullValueExternalPipelineId = default!;
 #endif
-        /// <summary>The integrationContext property</summary>
+        /// <summary>The identifier of the customer who the candidate was exported on behalf of.Documented type: urn:li:organization:{ID}Requirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemIntegrationContext? IntegrationContext { get; set; }
+        public string? IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string? _explicitNullValueIntegrationContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemIntegrationContext IntegrationContext { get; set; }
+        public string IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string _explicitNullValueIntegrationContext = default!;
 #endif
-        /// <summary>The notes property</summary>
+        /// <summary>Notes entered by the recruiter for the export to the Talent CRM system.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemNotes? Notes { get; set; }
+        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string? _explicitNullValueNotes = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemNotes Notes { get; set; }
+        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string _explicitNullValueNotes = default!;
 #endif
-        /// <summary>The referenceEntityId property</summary>
+        /// <summary>The unique identifier within the CRM system associated with the export. It is used to represent the externalPipelineId or externalJobRequisitionId based on the value of referenceEntityType.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityId? ReferenceEntityId { get; set; }
+        public string? ReferenceEntityId { get => _explicitNullValueReferenceEntityId; set { _explicitNullValueReferenceEntityId = value; AdditionalData?.Remove("referenceEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceEntityId"); else _explicitNullProperties?.Remove("referenceEntityId"); } }
+        private string? _explicitNullValueReferenceEntityId = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityId ReferenceEntityId { get; set; }
+        public string ReferenceEntityId { get => _explicitNullValueReferenceEntityId; set { _explicitNullValueReferenceEntityId = value; AdditionalData?.Remove("referenceEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceEntityId"); else _explicitNullProperties?.Remove("referenceEntityId"); } }
+        private string _explicitNullValueReferenceEntityId = default!;
 #endif
-        /// <summary>The referenceEntityType property</summary>
+        /// <summary>The type of the entity associated with the export. It can be either PIPELINE or REQUISITION. This field is used to determine whether referenceEntityId is externalPipelineId or externalJobRequisitionId.Documented type: ReferenceEntityTypeRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityType? ReferenceEntityType { get; set; }
+        public string? ReferenceEntityType { get => _explicitNullValueReferenceEntityType; set { _explicitNullValueReferenceEntityType = value; AdditionalData?.Remove("referenceEntityType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceEntityType"); else _explicitNullProperties?.Remove("referenceEntityType"); } }
+        private string? _explicitNullValueReferenceEntityType = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityType ReferenceEntityType { get; set; }
+        public string ReferenceEntityType { get => _explicitNullValueReferenceEntityType; set { _explicitNullValueReferenceEntityType = value; AdditionalData?.Remove("referenceEntityType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceEntityType"); else _explicitNullProperties?.Remove("referenceEntityType"); } }
+        private string _explicitNullValueReferenceEntityType = default!;
 #endif
         /// <summary>The requestedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt? RequestedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt? RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; AdditionalData?.Remove("requestedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedAt"); else _explicitNullProperties?.Remove("requestedAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt? _explicitNullValueRequestedAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt RequestedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt RequestedAt { get => _explicitNullValueRequestedAt; set { _explicitNullValueRequestedAt = value; AdditionalData?.Remove("requestedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestedAt"); else _explicitNullProperties?.Remove("requestedAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt _explicitNullValueRequestedAt = default!;
 #endif
         /// <summary>The requester property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester? Requester { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester? Requester { get => _explicitNullValueRequester; set { _explicitNullValueRequester = value; AdditionalData?.Remove("requester"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requester"); else _explicitNullProperties?.Remove("requester"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester? _explicitNullValueRequester = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester Requester { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester Requester { get => _explicitNullValueRequester; set { _explicitNullValueRequester = value; AdditionalData?.Remove("requester"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requester"); else _explicitNullProperties?.Remove("requester"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester _explicitNullValueRequester = default!;
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>Source of the export (Always be &quot;LINKEDIN&quot;).Documented type: StringRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemSource? Source { get; set; }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemSource Source { get; set; }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItem"/> and sets the default values.
@@ -101,7 +144,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,13 +156,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "externalJobPostingId", n => { ExternalJobPostingId = n.GetStringValue(); } },
                 { "externalPipelineId", n => { ExternalPipelineId = n.GetStringValue(); } },
-                { "integrationContext", n => { IntegrationContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemIntegrationContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemIntegrationContext.CreateFromDiscriminatorValue); } },
-                { "notes", n => { Notes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemNotes>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemNotes.CreateFromDiscriminatorValue); } },
-                { "referenceEntityId", n => { ReferenceEntityId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityId>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityId.CreateFromDiscriminatorValue); } },
-                { "referenceEntityType", n => { ReferenceEntityType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityType>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityType.CreateFromDiscriminatorValue); } },
+                { "integrationContext", n => { IntegrationContext = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
+                { "referenceEntityId", n => { ReferenceEntityId = n.GetStringValue(); } },
+                { "referenceEntityType", n => { ReferenceEntityType = n.GetStringValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt.CreateFromDiscriminatorValue); } },
                 { "requester", n => { Requester = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemSource>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemSource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -131,13 +174,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("externalJobPostingId", ExternalJobPostingId);
             writer.WriteStringValue("externalPipelineId", ExternalPipelineId);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemIntegrationContext>("integrationContext", IntegrationContext);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemNotes>("notes", Notes);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityId>("referenceEntityId", ReferenceEntityId);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemReferenceEntityType>("referenceEntityType", ReferenceEntityType);
+            writer.WriteStringValue("integrationContext", IntegrationContext);
+            writer.WriteStringValue("notes", Notes);
+            writer.WriteStringValue("referenceEntityId", ReferenceEntityId);
+            writer.WriteStringValue("referenceEntityType", ReferenceEntityType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequestedAt>("requestedAt", RequestedAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemRequester>("requester", Requester);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedGetNotificationTypeExportcandidateprofileDefaultResponseElementsItemSource>("source", Source);
+            writer.WriteStringValue("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

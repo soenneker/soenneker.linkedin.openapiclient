@@ -11,26 +11,44 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadataPageActivity : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("generatedActivity") is null) { _explicitNullValueGeneratedActivity = default!; _explicitNullProperties?.Remove("generatedActivity"); }
+            else if (parseNode.GetChildNode("generatedActivity") is { } nullNodeGeneratedActivity && nullNodeGeneratedActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedActivity = null;
+            if (parseNode.GetChildNode("pageActivityNotificationId") is null) { _explicitNullValuePageActivityNotificationId = default!; _explicitNullProperties?.Remove("pageActivityNotificationId"); }
+            else if (parseNode.GetChildNode("pageActivityNotificationId") is { } nullNodePageActivityNotificationId && nullNodePageActivityNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageActivityNotificationId = null;
+            if (parseNode.GetChildNode("sourcePost") is null) { _explicitNullValueSourcePost = default!; _explicitNullProperties?.Remove("sourcePost"); }
+            else if (parseNode.GetChildNode("sourcePost") is { } nullNodeSourcePost && nullNodeSourcePost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourcePost = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The generatedActivity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeneratedActivity { get; set; }
+        public string? GeneratedActivity { get => _explicitNullValueGeneratedActivity; set { _explicitNullValueGeneratedActivity = value; AdditionalData?.Remove("generatedActivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generatedActivity"); else _explicitNullProperties?.Remove("generatedActivity"); } }
+        private string? _explicitNullValueGeneratedActivity = default!;
 #nullable restore
 #else
-        public string GeneratedActivity { get; set; }
+        public string GeneratedActivity { get => _explicitNullValueGeneratedActivity; set { _explicitNullValueGeneratedActivity = value; AdditionalData?.Remove("generatedActivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generatedActivity"); else _explicitNullProperties?.Remove("generatedActivity"); } }
+        private string _explicitNullValueGeneratedActivity = default!;
 #endif
         /// <summary>The pageActivityNotificationId property</summary>
-        public long? PageActivityNotificationId { get; set; }
+        public long? PageActivityNotificationId { get => _explicitNullValuePageActivityNotificationId; set { _explicitNullValuePageActivityNotificationId = value; AdditionalData?.Remove("pageActivityNotificationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageActivityNotificationId"); else _explicitNullProperties?.Remove("pageActivityNotificationId"); } }
+        private long? _explicitNullValuePageActivityNotificationId = default!;
         /// <summary>The sourcePost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourcePost { get; set; }
+        public string? SourcePost { get => _explicitNullValueSourcePost; set { _explicitNullValueSourcePost = value; AdditionalData?.Remove("sourcePost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourcePost"); else _explicitNullProperties?.Remove("sourcePost"); } }
+        private string? _explicitNullValueSourcePost = default!;
 #nullable restore
 #else
-        public string SourcePost { get; set; }
+        public string SourcePost { get => _explicitNullValueSourcePost; set { _explicitNullValueSourcePost = value; AdditionalData?.Remove("sourcePost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourcePost"); else _explicitNullProperties?.Remove("sourcePost"); } }
+        private string _explicitNullValueSourcePost = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadataPageActivity"/> and sets the default values.
@@ -47,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadataPageActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadataPageActivity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadataPageActivity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("generatedActivity", GeneratedActivity);
             writer.WriteLongValue("pageActivityNotificationId", PageActivityNotificationId);
             writer.WriteStringValue("sourcePost", SourcePost);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

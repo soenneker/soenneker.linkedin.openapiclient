@@ -11,80 +11,131 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetImageContent200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author") is null) { _explicitNullValueAuthor = default!; _explicitNullProperties?.Remove("author"); }
+            else if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("commentary") is null) { _explicitNullValueCommentary = default!; _explicitNullProperties?.Remove("commentary"); }
+            else if (parseNode.GetChildNode("commentary") is { } nullNodeCommentary && nullNodeCommentary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commentary = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("distribution") is null) { _explicitNullValueDistribution = default!; _explicitNullProperties?.Remove("distribution"); }
+            else if (parseNode.GetChildNode("distribution") is { } nullNodeDistribution && nullNodeDistribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distribution = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("isReshareDisabledByAuthor") is null) { _explicitNullValueIsReshareDisabledByAuthor = default!; _explicitNullProperties?.Remove("isReshareDisabledByAuthor"); }
+            else if (parseNode.GetChildNode("isReshareDisabledByAuthor") is { } nullNodeIsReshareDisabledByAuthor && nullNodeIsReshareDisabledByAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReshareDisabledByAuthor = null;
+            if (parseNode.GetChildNode("lastModifiedAt") is null) { _explicitNullValueLastModifiedAt = default!; _explicitNullProperties?.Remove("lastModifiedAt"); }
+            else if (parseNode.GetChildNode("lastModifiedAt") is { } nullNodeLastModifiedAt && nullNodeLastModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModifiedAt = null;
+            if (parseNode.GetChildNode("lifecycleState") is null) { _explicitNullValueLifecycleState = default!; _explicitNullProperties?.Remove("lifecycleState"); }
+            else if (parseNode.GetChildNode("lifecycleState") is { } nullNodeLifecycleState && nullNodeLifecycleState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LifecycleState = null;
+            if (parseNode.GetChildNode("lifecycleStateInfo") is null) { _explicitNullValueLifecycleStateInfo = default!; _explicitNullProperties?.Remove("lifecycleStateInfo"); }
+            else if (parseNode.GetChildNode("lifecycleStateInfo") is { } nullNodeLifecycleStateInfo && nullNodeLifecycleStateInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LifecycleStateInfo = null;
+            if (parseNode.GetChildNode("publishedAt") is null) { _explicitNullValuePublishedAt = default!; _explicitNullProperties?.Remove("publishedAt"); }
+            else if (parseNode.GetChildNode("publishedAt") is { } nullNodePublishedAt && nullNodePublishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishedAt = null;
+            if (parseNode.GetChildNode("visibility") is null) { _explicitNullValueVisibility = default!; _explicitNullProperties?.Remove("visibility"); }
+            else if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Author { get; set; }
+        public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public string Author { get; set; }
+        public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string _explicitNullValueAuthor = default!;
 #endif
         /// <summary>The commentary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Commentary { get; set; }
+        public string? Commentary { get => _explicitNullValueCommentary; set { _explicitNullValueCommentary = value; AdditionalData?.Remove("commentary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commentary"); else _explicitNullProperties?.Remove("commentary"); } }
+        private string? _explicitNullValueCommentary = default!;
 #nullable restore
 #else
-        public string Commentary { get; set; }
+        public string Commentary { get => _explicitNullValueCommentary; set { _explicitNullValueCommentary = value; AdditionalData?.Remove("commentary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commentary"); else _explicitNullProperties?.Remove("commentary"); } }
+        private string _explicitNullValueCommentary = default!;
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent? Content { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent Content { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent _explicitNullValueContent = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public long? CreatedAt { get; set; }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private long? _explicitNullValueCreatedAt = default!;
         /// <summary>The distribution property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution? Distribution { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution? Distribution { get => _explicitNullValueDistribution; set { _explicitNullValueDistribution = value; AdditionalData?.Remove("distribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution"); else _explicitNullProperties?.Remove("distribution"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution? _explicitNullValueDistribution = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution Distribution { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution Distribution { get => _explicitNullValueDistribution; set { _explicitNullValueDistribution = value; AdditionalData?.Remove("distribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution"); else _explicitNullProperties?.Remove("distribution"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution _explicitNullValueDistribution = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The isReshareDisabledByAuthor property</summary>
-        public bool? IsReshareDisabledByAuthor { get; set; }
+        public bool? IsReshareDisabledByAuthor { get => _explicitNullValueIsReshareDisabledByAuthor; set { _explicitNullValueIsReshareDisabledByAuthor = value; AdditionalData?.Remove("isReshareDisabledByAuthor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isReshareDisabledByAuthor"); else _explicitNullProperties?.Remove("isReshareDisabledByAuthor"); } }
+        private bool? _explicitNullValueIsReshareDisabledByAuthor = default!;
         /// <summary>The lastModifiedAt property</summary>
-        public long? LastModifiedAt { get; set; }
+        public long? LastModifiedAt { get => _explicitNullValueLastModifiedAt; set { _explicitNullValueLastModifiedAt = value; AdditionalData?.Remove("lastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModifiedAt"); else _explicitNullProperties?.Remove("lastModifiedAt"); } }
+        private long? _explicitNullValueLastModifiedAt = default!;
         /// <summary>The lifecycleState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LifecycleState { get; set; }
+        public string? LifecycleState { get => _explicitNullValueLifecycleState; set { _explicitNullValueLifecycleState = value; AdditionalData?.Remove("lifecycleState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifecycleState"); else _explicitNullProperties?.Remove("lifecycleState"); } }
+        private string? _explicitNullValueLifecycleState = default!;
 #nullable restore
 #else
-        public string LifecycleState { get; set; }
+        public string LifecycleState { get => _explicitNullValueLifecycleState; set { _explicitNullValueLifecycleState = value; AdditionalData?.Remove("lifecycleState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifecycleState"); else _explicitNullProperties?.Remove("lifecycleState"); } }
+        private string _explicitNullValueLifecycleState = default!;
 #endif
         /// <summary>The lifecycleStateInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo? LifecycleStateInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo? LifecycleStateInfo { get => _explicitNullValueLifecycleStateInfo; set { _explicitNullValueLifecycleStateInfo = value; AdditionalData?.Remove("lifecycleStateInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifecycleStateInfo"); else _explicitNullProperties?.Remove("lifecycleStateInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo? _explicitNullValueLifecycleStateInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo LifecycleStateInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo LifecycleStateInfo { get => _explicitNullValueLifecycleStateInfo; set { _explicitNullValueLifecycleStateInfo = value; AdditionalData?.Remove("lifecycleStateInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifecycleStateInfo"); else _explicitNullProperties?.Remove("lifecycleStateInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo _explicitNullValueLifecycleStateInfo = default!;
 #endif
         /// <summary>The publishedAt property</summary>
-        public long? PublishedAt { get; set; }
+        public long? PublishedAt { get => _explicitNullValuePublishedAt; set { _explicitNullValuePublishedAt = value; AdditionalData?.Remove("publishedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishedAt"); else _explicitNullProperties?.Remove("publishedAt"); } }
+        private long? _explicitNullValuePublishedAt = default!;
         /// <summary>The visibility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Visibility { get; set; }
+        public string? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private string? _explicitNullValueVisibility = default!;
 #nullable restore
 #else
-        public string Visibility { get; set; }
+        public string Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private string _explicitNullValueVisibility = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200Response"/> and sets the default values.
@@ -101,7 +152,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -144,6 +195,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo>("lifecycleStateInfo", LifecycleStateInfo);
             writer.WriteLongValue("publishedAt", PublishedAt);
             writer.WriteStringValue("visibility", Visibility);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

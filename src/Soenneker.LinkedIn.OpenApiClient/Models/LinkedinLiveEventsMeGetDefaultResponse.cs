@@ -12,84 +12,130 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LinkedinLiveEventsMeGetDefaultResponse : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("artifact") is null) { _explicitNullValueArtifact = default!; _explicitNullProperties?.Remove("artifact"); }
+            else if (parseNode.GetChildNode("artifact") is { } nullNodeArtifact && nullNodeArtifact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Artifact = null;
+            if (parseNode.GetChildNode("authorizationMethod") is null) { _explicitNullValueAuthorizationMethod = default!; _explicitNullProperties?.Remove("authorizationMethod"); }
+            else if (parseNode.GetChildNode("authorizationMethod") is { } nullNodeAuthorizationMethod && nullNodeAuthorizationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationMethod = null;
+            if (parseNode.GetChildNode("backgroundPicture") is null) { _explicitNullValueBackgroundPicture = default!; _explicitNullProperties?.Remove("backgroundPicture"); }
+            else if (parseNode.GetChildNode("backgroundPicture") is { } nullNodeBackgroundPicture && nullNodeBackgroundPicture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundPicture = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueDataEscaped = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeDataEscaped && nullNodeDataEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataEscaped = null;
+            if (parseNode.GetChildNode("firstName") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("firstName"); }
+            else if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("geoLocation") is null) { _explicitNullValueGeoLocation = default!; _explicitNullProperties?.Remove("geoLocation"); }
+            else if (parseNode.GetChildNode("geoLocation") is { } nullNodeGeoLocation && nullNodeGeoLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeoLocation = null;
+            if (parseNode.GetChildNode("ID") is null) { _explicitNullValueID = default!; _explicitNullProperties?.Remove("ID"); }
+            else if (parseNode.GetChildNode("ID") is { } nullNodeID && nullNodeID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ID = null;
+            if (parseNode.GetChildNode("lastName") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("lastName"); }
+            else if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueLinkedinLiveEventsMeGetDefaultResponseId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeLinkedinLiveEventsMeGetDefaultResponseId && nullNodeLinkedinLiveEventsMeGetDefaultResponseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedinLiveEventsMeGetDefaultResponseId = null;
+            if (parseNode.GetChildNode("profilePicture") is null) { _explicitNullValueProfilePicture = default!; _explicitNullProperties?.Remove("profilePicture"); }
+            else if (parseNode.GetChildNode("profilePicture") is { } nullNodeProfilePicture && nullNodeProfilePicture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfilePicture = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the artifact this record is related to.Documented type: URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Artifact { get; set; }
+        public string? Artifact { get => _explicitNullValueArtifact; set { _explicitNullValueArtifact = value; AdditionalData?.Remove("artifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifact"); else _explicitNullProperties?.Remove("artifact"); } }
+        private string? _explicitNullValueArtifact = default!;
 #nullable restore
 #else
-        public string Artifact { get; set; }
+        public string Artifact { get => _explicitNullValueArtifact; set { _explicitNullValueArtifact = value; AdditionalData?.Remove("artifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifact"); else _explicitNullProperties?.Remove("artifact"); } }
+        private string _explicitNullValueArtifact = default!;
 #endif
         /// <summary>The authorization method for this artifact. Can be the following enums: NONE - The artifact can not be served to users. PUBLIC - The artifact is public and no authorization is needed to serve. INTERNAL - The artifact is only accessible internally to other systems in the hosting or processing infrastructure. PRIVATE - The artifact is private and only an authorized user can access it.Documented type: String</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseAuthorizationMethod? AuthorizationMethod { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseAuthorizationMethod? AuthorizationMethod { get => _explicitNullValueAuthorizationMethod; set { _explicitNullValueAuthorizationMethod = value; AdditionalData?.Remove("authorizationMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorizationMethod"); else _explicitNullProperties?.Remove("authorizationMethod"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseAuthorizationMethod? _explicitNullValueAuthorizationMethod = default!;
         /// <summary>The backgroundPicture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture? BackgroundPicture { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture? BackgroundPicture { get => _explicitNullValueBackgroundPicture; set { _explicitNullValueBackgroundPicture = value; AdditionalData?.Remove("backgroundPicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backgroundPicture"); else _explicitNullProperties?.Remove("backgroundPicture"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture? _explicitNullValueBackgroundPicture = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture BackgroundPicture { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture BackgroundPicture { get => _explicitNullValueBackgroundPicture; set { _explicitNullValueBackgroundPicture = value; AdditionalData?.Remove("backgroundPicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backgroundPicture"); else _explicitNullProperties?.Remove("backgroundPicture"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture _explicitNullValueBackgroundPicture = default!;
 #endif
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData? DataEscaped { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData? DataEscaped { get => _explicitNullValueDataEscaped; set { _explicitNullValueDataEscaped = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData? _explicitNullValueDataEscaped = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData DataEscaped { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData DataEscaped { get => _explicitNullValueDataEscaped; set { _explicitNullValueDataEscaped = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData _explicitNullValueDataEscaped = default!;
 #endif
         /// <summary>The firstName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName? FirstName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName FirstName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName _explicitNullValueFirstName = default!;
 #endif
         /// <summary>The geoLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation? GeoLocation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation? GeoLocation { get => _explicitNullValueGeoLocation; set { _explicitNullValueGeoLocation = value; AdditionalData?.Remove("geoLocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoLocation"); else _explicitNullProperties?.Remove("geoLocation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation? _explicitNullValueGeoLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation GeoLocation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation GeoLocation { get => _explicitNullValueGeoLocation; set { _explicitNullValueGeoLocation = value; AdditionalData?.Remove("geoLocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoLocation"); else _explicitNullProperties?.Remove("geoLocation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseGeoLocation _explicitNullValueGeoLocation = default!;
 #endif
         /// <summary>The member&apos;s unique identifierDocumented type: Person URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ID { get; set; }
+        public string? ID { get => _explicitNullValueID; set { _explicitNullValueID = value; AdditionalData?.Remove("ID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ID"); else _explicitNullProperties?.Remove("ID"); } }
+        private string? _explicitNullValueID = default!;
 #nullable restore
 #else
-        public string ID { get; set; }
+        public string ID { get => _explicitNullValueID; set { _explicitNullValueID = value; AdditionalData?.Remove("ID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ID"); else _explicitNullProperties?.Remove("ID"); } }
+        private string _explicitNullValueID = default!;
 #endif
         /// <summary>The lastName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName? LastName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName LastName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName _explicitNullValueLastName = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId? LinkedinLiveEventsMeGetDefaultResponseId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId? LinkedinLiveEventsMeGetDefaultResponseId { get => _explicitNullValueLinkedinLiveEventsMeGetDefaultResponseId; set { _explicitNullValueLinkedinLiveEventsMeGetDefaultResponseId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId? _explicitNullValueLinkedinLiveEventsMeGetDefaultResponseId = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId LinkedinLiveEventsMeGetDefaultResponseId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId LinkedinLiveEventsMeGetDefaultResponseId { get => _explicitNullValueLinkedinLiveEventsMeGetDefaultResponseId; set { _explicitNullValueLinkedinLiveEventsMeGetDefaultResponseId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId _explicitNullValueLinkedinLiveEventsMeGetDefaultResponseId = default!;
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The profilePicture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture? ProfilePicture { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture? ProfilePicture { get => _explicitNullValueProfilePicture; set { _explicitNullValueProfilePicture = value; AdditionalData?.Remove("profilePicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profilePicture"); else _explicitNullProperties?.Remove("profilePicture"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture? _explicitNullValueProfilePicture = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture ProfilePicture { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture ProfilePicture { get => _explicitNullValueProfilePicture; set { _explicitNullValueProfilePicture = value; AdditionalData?.Remove("profilePicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profilePicture"); else _explicitNullProperties?.Remove("profilePicture"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture _explicitNullValueProfilePicture = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponse"/> and sets the default values.
@@ -106,7 +152,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,7 +163,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "artifact", n => { Artifact = n.GetStringValue(); } },
-                { "authorizationMethod", n => { AuthorizationMethod = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseAuthorizationMethod>(); } },
+                { "authorizationMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseAuthorizationMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthorizationMethod = default; _explicitNullProperties?.Remove("authorizationMethod"); AdditionalData["authorizationMethod"] = unknown; } else { AuthorizationMethod = parsed; AdditionalData.Remove("authorizationMethod"); } } },
                 { "backgroundPicture", n => { BackgroundPicture = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPicture.CreateFromDiscriminatorValue); } },
                 { "data", n => { DataEscaped = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseData.CreateFromDiscriminatorValue); } },
                 { "firstName", n => { FirstName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseFirstName.CreateFromDiscriminatorValue); } },
@@ -145,6 +191,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseLastName>("lastName", LastName);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseId>("id", LinkedinLiveEventsMeGetDefaultResponseId);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseProfilePicture>("profilePicture", ProfilePicture);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ApplyConnect.V2.ProvisionedApplicatio
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectGetAppByUniqueForeignId200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectGetAppByUniqueForeignId200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectGetAppByUniqueForeignId200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectGetAppByUniqueForeignId200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provision Customer Application
@@ -69,7 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ApplyConnect.V2.ProvisionedApplicatio
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectProvisionCustomerApplication201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectProvisionCustomerApplication201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectProvisionCustomerApplication201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectProvisionCustomerApplication201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get App by uniqueForeignID

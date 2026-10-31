@@ -12,19 +12,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKey : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
+            else if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("topic") is null) { _explicitNullValueTopic = default!; _explicitNullProperties?.Remove("topic"); }
+            else if (parseNode.GetChildNode("topic") is { } nullNodeTopic && nullNodeTopic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topic = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URN of the page that owns this FeaturedContentGroup. It is of type urn:li:organizationalPage:{ID}.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Page { get; set; }
+        public string? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private string? _explicitNullValuePage = default!;
 #nullable restore
 #else
-        public string Page { get; set; }
+        public string Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private string _explicitNullValuePage = default!;
 #endif
         /// <summary>The topic of the PagesFeaturedContent. Value enums include: PRODUCT_HIGHLIGHTSPRODUCT_ANNOUNCEMENTSPRODUCT_EXPERTSPRODUCT_QUESTIONS_AND_ANSWERSORGANIZATION_HOMEDocumented type: PagesFeaturedContentTopicRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKeyTopic? Topic { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKeyTopic? Topic { get => _explicitNullValueTopic; set { _explicitNullValueTopic = value; AdditionalData?.Remove("topic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic"); else _explicitNullProperties?.Remove("topic"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKeyTopic? _explicitNullValueTopic = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKey"/> and sets the default values.
         /// </summary>
@@ -40,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "page", n => { Page = n.GetStringValue(); } },
-                { "topic", n => { Topic = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKeyTopic>(); } },
+                { "topic", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKeyTopic>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTopic = default; _explicitNullProperties?.Remove("topic"); AdditionalData["topic"] = unknown; } else { Topic = parsed; AdditionalData.Remove("topic"); } } },
             };
         }
         /// <summary>
@@ -63,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("page", Page);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHomeKeyTopic>("topic", Topic);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

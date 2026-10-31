@@ -11,77 +11,138 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("notifiedOnCampaignOptimization") is null) { _explicitNullValueNotifiedOnCampaignOptimization = default!; _explicitNullProperties?.Remove("notifiedOnCampaignOptimization"); }
+            else if (parseNode.GetChildNode("notifiedOnCampaignOptimization") is { } nullNodeNotifiedOnCampaignOptimization && nullNodeNotifiedOnCampaignOptimization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifiedOnCampaignOptimization = null;
+            if (parseNode.GetChildNode("notifiedOnCreativeApproval") is null) { _explicitNullValueNotifiedOnCreativeApproval = default!; _explicitNullProperties?.Remove("notifiedOnCreativeApproval"); }
+            else if (parseNode.GetChildNode("notifiedOnCreativeApproval") is { } nullNodeNotifiedOnCreativeApproval && nullNodeNotifiedOnCreativeApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifiedOnCreativeApproval = null;
+            if (parseNode.GetChildNode("notifiedOnCreativeRejection") is null) { _explicitNullValueNotifiedOnCreativeRejection = default!; _explicitNullProperties?.Remove("notifiedOnCreativeRejection"); }
+            else if (parseNode.GetChildNode("notifiedOnCreativeRejection") is { } nullNodeNotifiedOnCreativeRejection && nullNodeNotifiedOnCreativeRejection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifiedOnCreativeRejection = null;
+            if (parseNode.GetChildNode("notifiedOnEndOfCampaign") is null) { _explicitNullValueNotifiedOnEndOfCampaign = default!; _explicitNullProperties?.Remove("notifiedOnEndOfCampaign"); }
+            else if (parseNode.GetChildNode("notifiedOnEndOfCampaign") is { } nullNodeNotifiedOnEndOfCampaign && nullNodeNotifiedOnEndOfCampaign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifiedOnEndOfCampaign = null;
+            if (parseNode.GetChildNode("notifiedOnNewFeaturesEnabled") is null) { _explicitNullValueNotifiedOnNewFeaturesEnabled = default!; _explicitNullProperties?.Remove("notifiedOnNewFeaturesEnabled"); }
+            else if (parseNode.GetChildNode("notifiedOnNewFeaturesEnabled") is { } nullNodeNotifiedOnNewFeaturesEnabled && nullNodeNotifiedOnNewFeaturesEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifiedOnNewFeaturesEnabled = null;
+            if (parseNode.GetChildNode("originatingCustomer") is null) { _explicitNullValueOriginatingCustomer = default!; _explicitNullProperties?.Remove("originatingCustomer"); }
+            else if (parseNode.GetChildNode("originatingCustomer") is { } nullNodeOriginatingCustomer && nullNodeOriginatingCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginatingCustomer = null;
+            if (parseNode.GetChildNode("productType") is null) { _explicitNullValueProductType = default!; _explicitNullProperties?.Remove("productType"); }
+            else if (parseNode.GetChildNode("productType") is { } nullNodeProductType && nullNodeProductType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductType = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("referenceInfo") is null) { _explicitNullValueReferenceInfo = default!; _explicitNullProperties?.Remove("referenceInfo"); }
+            else if (parseNode.GetChildNode("referenceInfo") is { } nullNodeReferenceInfo && nullNodeReferenceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceInfo = null;
+            if (parseNode.GetChildNode("servingStatuses") is null) { _explicitNullValueServingStatuses = default!; _explicitNullProperties?.Remove("servingStatuses"); }
+            else if (parseNode.GetChildNode("servingStatuses") is { } nullNodeServingStatuses && nullNodeServingStatuses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServingStatuses = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("test") is null) { _explicitNullValueTest = default!; _explicitNullProperties?.Remove("test"); }
+            else if (parseNode.GetChildNode("test") is { } nullNodeTest && nullNodeTest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Test = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn moreDocumented type: string, default=&quot;USD&quot;Requirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Unique internal ID representing the accountDocumented type: longRequirement: False</summary>
-        public long? Id { get; set; }
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
         /// <summary>A label for the accountDocumented type: stringRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Indicates if the campaign contact is notified about campaign optimization opportunitiesDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
-        public bool? NotifiedOnCampaignOptimization { get; set; }
+        public bool? NotifiedOnCampaignOptimization { get => _explicitNullValueNotifiedOnCampaignOptimization; set { _explicitNullValueNotifiedOnCampaignOptimization = value; AdditionalData?.Remove("notifiedOnCampaignOptimization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiedOnCampaignOptimization"); else _explicitNullProperties?.Remove("notifiedOnCampaignOptimization"); } }
+        private bool? _explicitNullValueNotifiedOnCampaignOptimization = default!;
         /// <summary>Indicates if the creative contact is notified when a creative has been reviewed and approvedDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
-        public bool? NotifiedOnCreativeApproval { get; set; }
+        public bool? NotifiedOnCreativeApproval { get => _explicitNullValueNotifiedOnCreativeApproval; set { _explicitNullValueNotifiedOnCreativeApproval = value; AdditionalData?.Remove("notifiedOnCreativeApproval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiedOnCreativeApproval"); else _explicitNullProperties?.Remove("notifiedOnCreativeApproval"); } }
+        private bool? _explicitNullValueNotifiedOnCreativeApproval = default!;
         /// <summary>Indicates if the creative contact is notified when a creative has been rejected due to contentDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
-        public bool? NotifiedOnCreativeRejection { get; set; }
+        public bool? NotifiedOnCreativeRejection { get => _explicitNullValueNotifiedOnCreativeRejection; set { _explicitNullValueNotifiedOnCreativeRejection = value; AdditionalData?.Remove("notifiedOnCreativeRejection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiedOnCreativeRejection"); else _explicitNullProperties?.Remove("notifiedOnCreativeRejection"); } }
+        private bool? _explicitNullValueNotifiedOnCreativeRejection = default!;
         /// <summary>Indicates if the campaign contact is notified when an associated campaign has been completedDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
-        public bool? NotifiedOnEndOfCampaign { get; set; }
+        public bool? NotifiedOnEndOfCampaign { get => _explicitNullValueNotifiedOnEndOfCampaign; set { _explicitNullValueNotifiedOnEndOfCampaign = value; AdditionalData?.Remove("notifiedOnEndOfCampaign"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiedOnEndOfCampaign"); else _explicitNullProperties?.Remove("notifiedOnEndOfCampaign"); } }
+        private bool? _explicitNullValueNotifiedOnEndOfCampaign = default!;
         /// <summary>Indicates if the account owner is notified about new Campaign Manager featuresDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
-        public bool? NotifiedOnNewFeaturesEnabled { get; set; }
+        public bool? NotifiedOnNewFeaturesEnabled { get => _explicitNullValueNotifiedOnNewFeaturesEnabled; set { _explicitNullValueNotifiedOnNewFeaturesEnabled = value; AdditionalData?.Remove("notifiedOnNewFeaturesEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiedOnNewFeaturesEnabled"); else _explicitNullProperties?.Remove("notifiedOnNewFeaturesEnabled"); } }
+        private bool? _explicitNullValueNotifiedOnNewFeaturesEnabled = default!;
         /// <summary>The URN of the LinkedIn customer entity (an organization or an individual) that originated the order associated with this account, in the format urn:li:customer:{id}. This field applies to ENTERPRISE accounts only and is set when the account is created. It&apos;s an immutable field. Note: This field is only supported starting from API version 202608.Documented type: optional URNRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginatingCustomer { get; set; }
+        public string? OriginatingCustomer { get => _explicitNullValueOriginatingCustomer; set { _explicitNullValueOriginatingCustomer = value; AdditionalData?.Remove("originatingCustomer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originatingCustomer"); else _explicitNullProperties?.Remove("originatingCustomer"); } }
+        private string? _explicitNullValueOriginatingCustomer = default!;
 #nullable restore
 #else
-        public string OriginatingCustomer { get; set; }
+        public string OriginatingCustomer { get => _explicitNullValueOriginatingCustomer; set { _explicitNullValueOriginatingCustomer = value; AdditionalData?.Remove("originatingCustomer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originatingCustomer"); else _explicitNullProperties?.Remove("originatingCustomer"); } }
+        private string _explicitNullValueOriginatingCustomer = default!;
 #endif
         /// <summary>Source product type of all campaigns under this account. If set, all campaigns under the account inherit this product type. This field applies to ENTERPRISE accounts only and is set when the account is created. It&apos;s an immutable field. Possible values are: MARKETING_SOLUTIONS - The account is created for LinkedIn Marketing Solutions (LMS) products.TALENT_SOLUTIONS - The account is created for LinkedIn Talent Solutions (LTS) products.LINKEDIN_ON_LINKEDIN - The account is created for LinkedIn On LinkedIn (LOL) products. Note: This field is only supported starting from API version 202608.Documented type: optional stringRequirement: False</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType? ProductType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType? ProductType { get => _explicitNullValueProductType; set { _explicitNullValueProductType = value; AdditionalData?.Remove("productType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productType"); else _explicitNullProperties?.Remove("productType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType? _explicitNullValueProductType = default!;
         /// <summary>The entity on whose behalf the account is advertised. Must either be in the format urn:li:person:{id} or urn:li:organization:{id}Documented type: optional URNRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>Information about the entity associated with the reference. If the entity is an organization, an Organizationinfo object is returned. If the entity is a person, a Personinfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: UnionRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo? ReferenceInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo? ReferenceInfo { get => _explicitNullValueReferenceInfo; set { _explicitNullValueReferenceInfo = value; AdditionalData?.Remove("referenceInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceInfo"); else _explicitNullProperties?.Remove("referenceInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo? _explicitNullValueReferenceInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo ReferenceInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo ReferenceInfo { get => _explicitNullValueReferenceInfo; set { _explicitNullValueReferenceInfo = value; AdditionalData?.Remove("referenceInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceInfo"); else _explicitNullProperties?.Remove("referenceInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo _explicitNullValueReferenceInfo = default!;
 #endif
         /// <summary>An array of enums with information about the account&apos;s system serving statuses. If an account is eligible for serving, then the array has a single element: RUNNABLE Otherwise, the array contains one or more reasons why the account is not servable: STOPPED BILLING_HOLD ACCOUNT_TOTAL_BUDGET_HOLD ACCOUNT_END_DATE_HOLD RESTRICTED_HOLD INTERNAL_HOLDDocumented type: string[], default=&quot;[]&quot;Requirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?>? ServingStatuses { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?>? ServingStatuses { get => _explicitNullValueServingStatuses; set { _explicitNullValueServingStatuses = value; AdditionalData?.Remove("servingStatuses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servingStatuses"); else _explicitNullProperties?.Remove("servingStatuses"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?>? _explicitNullValueServingStatuses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?> ServingStatuses { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?> ServingStatuses { get => _explicitNullValueServingStatuses; set { _explicitNullValueServingStatuses = value; AdditionalData?.Remove("servingStatuses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servingStatuses"); else _explicitNullProperties?.Remove("servingStatuses"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?> _explicitNullValueServingStatuses = default!;
 #endif
         /// <summary>ACTIVE - Account is active; this is the default stateCANCELED - Account has been permanently canceledDRAFT - Account is in draft status, meaning it&apos;s not yet fully set up and it&apos;s not serving PENDING_DELETION - Denotes that the account has been requested to be deleted that&apos;s currently pendingREMOVED - Denotes that the account was deleted, but must remain fetchable due to the existence of performance data.Documented type: string, default=&quot;ACTIVE&quot;Requirement: False</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus? Status { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>Flag showing whether this account is marked as a test account. An account can be marked as test only during creation. This is an immutable field.Documented type: boolean, default=&quot;false&quot;Requirement: False</summary>
-        public bool? Test { get; set; }
+        public bool? Test { get => _explicitNullValueTest; set { _explicitNullValueTest = value; AdditionalData?.Remove("test"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test"); else _explicitNullProperties?.Remove("test"); } }
+        private bool? _explicitNullValueTest = default!;
         /// <summary>BUSINESS – This is the only value allowed when creating accounts through the API. ENTERPRISE – This value can&apos;t be used to create accounts through the API and is reserved for accounts created by LinkedIn&apos;s internal ad operations systems.Documented type: stringRequirement: True</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType? Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -97,7 +158,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,13 +177,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "notifiedOnEndOfCampaign", n => { NotifiedOnEndOfCampaign = n.GetBoolValue(); } },
                 { "notifiedOnNewFeaturesEnabled", n => { NotifiedOnNewFeaturesEnabled = n.GetBoolValue(); } },
                 { "originatingCustomer", n => { OriginatingCustomer = n.GetStringValue(); } },
-                { "productType", n => { ProductType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType>(); } },
+                { "productType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProductType = default; _explicitNullProperties?.Remove("productType"); AdditionalData["productType"] = unknown; } else { ProductType = parsed; AdditionalData.Remove("productType"); } } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "referenceInfo", n => { ReferenceInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo.CreateFromDiscriminatorValue); } },
                 { "servingStatuses", n => { ServingStatuses = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "test", n => { Test = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -148,6 +209,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus>("status", Status);
             writer.WriteBoolValue("test", Test);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

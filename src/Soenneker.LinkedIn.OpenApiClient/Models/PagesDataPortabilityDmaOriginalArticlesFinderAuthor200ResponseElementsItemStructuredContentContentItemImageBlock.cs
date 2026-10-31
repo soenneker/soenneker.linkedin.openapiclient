@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("altText") is null) { _explicitNullValueAltText = default!; _explicitNullProperties?.Remove("altText"); }
+            else if (parseNode.GetChildNode("altText") is { } nullNodeAltText && nullNodeAltText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AltText = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("hyperlink") is null) { _explicitNullValueHyperlink = default!; _explicitNullProperties?.Remove("hyperlink"); }
+            else if (parseNode.GetChildNode("hyperlink") is { } nullNodeHyperlink && nullNodeHyperlink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hyperlink = null;
+            if (parseNode.GetChildNode("textWrapping") is null) { _explicitNullValueTextWrapping = default!; _explicitNullProperties?.Remove("textWrapping"); }
+            else if (parseNode.GetChildNode("textWrapping") is { } nullNodeTextWrapping && nullNodeTextWrapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextWrapping = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The altText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AltText { get; set; }
+        public string? AltText { get => _explicitNullValueAltText; set { _explicitNullValueAltText = value; AdditionalData?.Remove("altText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("altText"); else _explicitNullProperties?.Remove("altText"); } }
+        private string? _explicitNullValueAltText = default!;
 #nullable restore
 #else
-        public string AltText { get; set; }
+        public string AltText { get => _explicitNullValueAltText; set { _explicitNullValueAltText = value; AdditionalData?.Remove("altText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("altText"); else _explicitNullProperties?.Remove("altText"); } }
+        private string _explicitNullValueAltText = default!;
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlockContent? Content { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlockContent? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlockContent? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlockContent Content { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlockContent Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlockContent _explicitNullValueContent = default!;
 #endif
         /// <summary>The hyperlink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hyperlink { get; set; }
+        public string? Hyperlink { get => _explicitNullValueHyperlink; set { _explicitNullValueHyperlink = value; AdditionalData?.Remove("hyperlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hyperlink"); else _explicitNullProperties?.Remove("hyperlink"); } }
+        private string? _explicitNullValueHyperlink = default!;
 #nullable restore
 #else
-        public string Hyperlink { get; set; }
+        public string Hyperlink { get => _explicitNullValueHyperlink; set { _explicitNullValueHyperlink = value; AdditionalData?.Remove("hyperlink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hyperlink"); else _explicitNullProperties?.Remove("hyperlink"); } }
+        private string _explicitNullValueHyperlink = default!;
 #endif
         /// <summary>The textWrapping property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextWrapping { get; set; }
+        public string? TextWrapping { get => _explicitNullValueTextWrapping; set { _explicitNullValueTextWrapping = value; AdditionalData?.Remove("textWrapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textWrapping"); else _explicitNullProperties?.Remove("textWrapping"); } }
+        private string? _explicitNullValueTextWrapping = default!;
 #nullable restore
 #else
-        public string TextWrapping { get; set; }
+        public string TextWrapping { get => _explicitNullValueTextWrapping; set { _explicitNullValueTextWrapping = value; AdditionalData?.Remove("textWrapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textWrapping"); else _explicitNullProperties?.Remove("textWrapping"); } }
+        private string _explicitNullValueTextWrapping = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlockContent>("content", Content);
             writer.WriteStringValue("hyperlink", Hyperlink);
             writer.WriteStringValue("textWrapping", TextWrapping);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

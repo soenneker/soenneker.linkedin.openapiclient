@@ -12,16 +12,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("com.linkedin.digitalmedia.mediaartifact.StillImage") is null) { _explicitNullValueComLinkedinDigitalmediaMediaartifactStillImage = default!; _explicitNullProperties?.Remove("com.linkedin.digitalmedia.mediaartifact.StillImage"); }
+            else if (parseNode.GetChildNode("com.linkedin.digitalmedia.mediaartifact.StillImage") is { } nullNodeComLinkedinDigitalmediaMediaartifactStillImage && nullNodeComLinkedinDigitalmediaMediaartifactStillImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComLinkedinDigitalmediaMediaartifactStillImage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comLinkedinDigitalmediaMediaartifactStillImage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImage? ComLinkedinDigitalmediaMediaartifactStillImage { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImage? ComLinkedinDigitalmediaMediaartifactStillImage { get => _explicitNullValueComLinkedinDigitalmediaMediaartifactStillImage; set { _explicitNullValueComLinkedinDigitalmediaMediaartifactStillImage = value; AdditionalData?.Remove("com.linkedin.digitalmedia.mediaartifact.StillImage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("com.linkedin.digitalmedia.mediaartifact.StillImage"); else _explicitNullProperties?.Remove("com.linkedin.digitalmedia.mediaartifact.StillImage"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImage? _explicitNullValueComLinkedinDigitalmediaMediaartifactStillImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImage ComLinkedinDigitalmediaMediaartifactStillImage { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImage ComLinkedinDigitalmediaMediaartifactStillImage { get => _explicitNullValueComLinkedinDigitalmediaMediaartifactStillImage; set { _explicitNullValueComLinkedinDigitalmediaMediaartifactStillImage = value; AdditionalData?.Remove("com.linkedin.digitalmedia.mediaartifact.StillImage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("com.linkedin.digitalmedia.mediaartifact.StillImage"); else _explicitNullProperties?.Remove("com.linkedin.digitalmedia.mediaartifact.StillImage"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImage _explicitNullValueComLinkedinDigitalmediaMediaartifactStillImage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemData"/> and sets the default values.
@@ -38,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImage>("com.linkedin.digitalmedia.mediaartifact.StillImage", ComLinkedinDigitalmediaMediaartifactStillImage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

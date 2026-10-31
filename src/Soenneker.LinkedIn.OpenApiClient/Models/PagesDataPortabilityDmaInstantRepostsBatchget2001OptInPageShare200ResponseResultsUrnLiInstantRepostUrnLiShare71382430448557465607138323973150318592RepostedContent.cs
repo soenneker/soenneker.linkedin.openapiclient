@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592RepostedContent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("share") is null) { _explicitNullValueShare = default!; _explicitNullProperties?.Remove("share"); }
+            else if (parseNode.GetChildNode("share") is { } nullNodeShare && nullNodeShare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Share = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The share property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Share { get; set; }
+        public string? Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; AdditionalData?.Remove("share"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        private string? _explicitNullValueShare = default!;
 #nullable restore
 #else
-        public string Share { get; set; }
+        public string Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; AdditionalData?.Remove("share"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        private string _explicitNullValueShare = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592RepostedContent"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592RepostedContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592RepostedContent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592RepostedContent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("share", Share);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

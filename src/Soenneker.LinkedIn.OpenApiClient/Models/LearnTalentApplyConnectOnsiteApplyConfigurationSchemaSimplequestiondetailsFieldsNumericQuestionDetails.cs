@@ -12,32 +12,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsNumericQuestionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("decimalQuestionDetails") is null) { _explicitNullValueDecimalQuestionDetails = default!; _explicitNullProperties?.Remove("decimalQuestionDetails"); }
+            else if (parseNode.GetChildNode("decimalQuestionDetails") is { } nullNodeDecimalQuestionDetails && nullNodeDecimalQuestionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecimalQuestionDetails = null;
+            if (parseNode.GetChildNode("favorableNumericAnswer") is null) { _explicitNullValueFavorableNumericAnswer = default!; _explicitNullProperties?.Remove("favorableNumericAnswer"); }
+            else if (parseNode.GetChildNode("favorableNumericAnswer") is { } nullNodeFavorableNumericAnswer && nullNodeFavorableNumericAnswer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FavorableNumericAnswer = null;
+            if (parseNode.GetChildNode("integerQuestionDetails") is null) { _explicitNullValueIntegerQuestionDetails = default!; _explicitNullProperties?.Remove("integerQuestionDetails"); }
+            else if (parseNode.GetChildNode("integerQuestionDetails") is { } nullNodeIntegerQuestionDetails && nullNodeIntegerQuestionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegerQuestionDetails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The details for a decimal numeric question. If this field is present, the field integerQuestionDetails must be null. If this field is null, integerQuestionDetails must be present.Documented type: DecimalQuestionDetailsRequirement: Yes, if integerQuestionDetails is not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsDecimalQuestionDetails? DecimalQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsDecimalQuestionDetails? DecimalQuestionDetails { get => _explicitNullValueDecimalQuestionDetails; set { _explicitNullValueDecimalQuestionDetails = value; AdditionalData?.Remove("decimalQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimalQuestionDetails"); else _explicitNullProperties?.Remove("decimalQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsDecimalQuestionDetails? _explicitNullValueDecimalQuestionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsDecimalQuestionDetails DecimalQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsDecimalQuestionDetails DecimalQuestionDetails { get => _explicitNullValueDecimalQuestionDetails; set { _explicitNullValueDecimalQuestionDetails = value; AdditionalData?.Remove("decimalQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimalQuestionDetails"); else _explicitNullProperties?.Remove("decimalQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsDecimalQuestionDetails _explicitNullValueDecimalQuestionDetails = default!;
 #endif
         /// <summary>The field that contains the favorable numeric answer value for this question. This should only be present for numeric questions for which the question is a preferred/required qualification.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FavorableNumericAnswer { get; set; }
+        public string? FavorableNumericAnswer { get => _explicitNullValueFavorableNumericAnswer; set { _explicitNullValueFavorableNumericAnswer = value; AdditionalData?.Remove("favorableNumericAnswer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorableNumericAnswer"); else _explicitNullProperties?.Remove("favorableNumericAnswer"); } }
+        private string? _explicitNullValueFavorableNumericAnswer = default!;
 #nullable restore
 #else
-        public string FavorableNumericAnswer { get; set; }
+        public string FavorableNumericAnswer { get => _explicitNullValueFavorableNumericAnswer; set { _explicitNullValueFavorableNumericAnswer = value; AdditionalData?.Remove("favorableNumericAnswer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorableNumericAnswer"); else _explicitNullProperties?.Remove("favorableNumericAnswer"); } }
+        private string _explicitNullValueFavorableNumericAnswer = default!;
 #endif
         /// <summary>The details for an integer numeric question. If this field is present, the field decimalQuestionDetails must be null. If this field is null, decimalQuestionDetails must be present.Documented type: integerQuestionDetailsRequirement: Yes, if decimalQuestionDetails is not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails? IntegerQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails? IntegerQuestionDetails { get => _explicitNullValueIntegerQuestionDetails; set { _explicitNullValueIntegerQuestionDetails = value; AdditionalData?.Remove("integerQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integerQuestionDetails"); else _explicitNullProperties?.Remove("integerQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails? _explicitNullValueIntegerQuestionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails IntegerQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails IntegerQuestionDetails { get => _explicitNullValueIntegerQuestionDetails; set { _explicitNullValueIntegerQuestionDetails = value; AdditionalData?.Remove("integerQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integerQuestionDetails"); else _explicitNullProperties?.Remove("integerQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails _explicitNullValueIntegerQuestionDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsNumericQuestionDetails"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsNumericQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsNumericQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsNumericQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsDecimalQuestionDetails>("decimalQuestionDetails", DecimalQuestionDetails);
             writer.WriteStringValue("favorableNumericAnswer", FavorableNumericAnswer);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails>("integerQuestionDetails", IntegerQuestionDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

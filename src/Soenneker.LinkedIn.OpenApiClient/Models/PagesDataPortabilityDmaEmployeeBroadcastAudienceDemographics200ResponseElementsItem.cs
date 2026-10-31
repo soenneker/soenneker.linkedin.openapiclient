@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analyticsType") is null) { _explicitNullValueAnalyticsType = default!; _explicitNullProperties?.Remove("analyticsType"); }
+            else if (parseNode.GetChildNode("analyticsType") is { } nullNodeAnalyticsType && nullNodeAnalyticsType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsType = null;
+            if (parseNode.GetChildNode("audienceType") is null) { _explicitNullValueAudienceType = default!; _explicitNullProperties?.Remove("audienceType"); }
+            else if (parseNode.GetChildNode("audienceType") is { } nullNodeAudienceType && nullNodeAudienceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceType = null;
+            if (parseNode.GetChildNode("demographicsMetrics") is null) { _explicitNullValueDemographicsMetrics = default!; _explicitNullProperties?.Remove("demographicsMetrics"); }
+            else if (parseNode.GetChildNode("demographicsMetrics") is { } nullNodeDemographicsMetrics && nullNodeDemographicsMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DemographicsMetrics = null;
+            if (parseNode.GetChildNode("timeIntervals") is null) { _explicitNullValueTimeIntervals = default!; _explicitNullProperties?.Remove("timeIntervals"); }
+            else if (parseNode.GetChildNode("timeIntervals") is { } nullNodeTimeIntervals && nullNodeTimeIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeIntervals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The analyticsType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalyticsType { get; set; }
+        public string? AnalyticsType { get => _explicitNullValueAnalyticsType; set { _explicitNullValueAnalyticsType = value; AdditionalData?.Remove("analyticsType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsType"); else _explicitNullProperties?.Remove("analyticsType"); } }
+        private string? _explicitNullValueAnalyticsType = default!;
 #nullable restore
 #else
-        public string AnalyticsType { get; set; }
+        public string AnalyticsType { get => _explicitNullValueAnalyticsType; set { _explicitNullValueAnalyticsType = value; AdditionalData?.Remove("analyticsType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsType"); else _explicitNullProperties?.Remove("analyticsType"); } }
+        private string _explicitNullValueAnalyticsType = default!;
 #endif
         /// <summary>The audienceType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudienceType { get; set; }
+        public string? AudienceType { get => _explicitNullValueAudienceType; set { _explicitNullValueAudienceType = value; AdditionalData?.Remove("audienceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceType"); else _explicitNullProperties?.Remove("audienceType"); } }
+        private string? _explicitNullValueAudienceType = default!;
 #nullable restore
 #else
-        public string AudienceType { get; set; }
+        public string AudienceType { get => _explicitNullValueAudienceType; set { _explicitNullValueAudienceType = value; AdditionalData?.Remove("audienceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceType"); else _explicitNullProperties?.Remove("audienceType"); } }
+        private string _explicitNullValueAudienceType = default!;
 #endif
         /// <summary>The demographicsMetrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem>? DemographicsMetrics { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem>? DemographicsMetrics { get => _explicitNullValueDemographicsMetrics; set { _explicitNullValueDemographicsMetrics = value; AdditionalData?.Remove("demographicsMetrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographicsMetrics"); else _explicitNullProperties?.Remove("demographicsMetrics"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem>? _explicitNullValueDemographicsMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem> DemographicsMetrics { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem> DemographicsMetrics { get => _explicitNullValueDemographicsMetrics; set { _explicitNullValueDemographicsMetrics = value; AdditionalData?.Remove("demographicsMetrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographicsMetrics"); else _explicitNullProperties?.Remove("demographicsMetrics"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem> _explicitNullValueDemographicsMetrics = default!;
 #endif
         /// <summary>The timeIntervals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemTimeIntervals? TimeIntervals { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemTimeIntervals? TimeIntervals { get => _explicitNullValueTimeIntervals; set { _explicitNullValueTimeIntervals = value; AdditionalData?.Remove("timeIntervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeIntervals"); else _explicitNullProperties?.Remove("timeIntervals"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemTimeIntervals? _explicitNullValueTimeIntervals = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemTimeIntervals TimeIntervals { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemTimeIntervals TimeIntervals { get => _explicitNullValueTimeIntervals; set { _explicitNullValueTimeIntervals = value; AdditionalData?.Remove("timeIntervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeIntervals"); else _explicitNullProperties?.Remove("timeIntervals"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemTimeIntervals _explicitNullValueTimeIntervals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItem"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("audienceType", AudienceType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem>("demographicsMetrics", DemographicsMetrics);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemTimeIntervals>("timeIntervals", TimeIntervals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

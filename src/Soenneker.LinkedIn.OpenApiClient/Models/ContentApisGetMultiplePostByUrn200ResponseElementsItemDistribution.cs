@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetMultiplePostByUrn200ResponseElementsItemDistribution : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("feedDistribution") is null) { _explicitNullValueFeedDistribution = default!; _explicitNullProperties?.Remove("feedDistribution"); }
+            else if (parseNode.GetChildNode("feedDistribution") is { } nullNodeFeedDistribution && nullNodeFeedDistribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedDistribution = null;
+            if (parseNode.GetChildNode("thirdPartyDistributionChannels") is null) { _explicitNullValueThirdPartyDistributionChannels = default!; _explicitNullProperties?.Remove("thirdPartyDistributionChannels"); }
+            else if (parseNode.GetChildNode("thirdPartyDistributionChannels") is { } nullNodeThirdPartyDistributionChannels && nullNodeThirdPartyDistributionChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartyDistributionChannels = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The feedDistribution property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeedDistribution { get; set; }
+        public string? FeedDistribution { get => _explicitNullValueFeedDistribution; set { _explicitNullValueFeedDistribution = value; AdditionalData?.Remove("feedDistribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedDistribution"); else _explicitNullProperties?.Remove("feedDistribution"); } }
+        private string? _explicitNullValueFeedDistribution = default!;
 #nullable restore
 #else
-        public string FeedDistribution { get; set; }
+        public string FeedDistribution { get => _explicitNullValueFeedDistribution; set { _explicitNullValueFeedDistribution = value; AdditionalData?.Remove("feedDistribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedDistribution"); else _explicitNullProperties?.Remove("feedDistribution"); } }
+        private string _explicitNullValueFeedDistribution = default!;
 #endif
         /// <summary>The thirdPartyDistributionChannels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode? ThirdPartyDistributionChannels { get => _explicitNullValueThirdPartyDistributionChannels; set { _explicitNullValueThirdPartyDistributionChannels = value; AdditionalData?.Remove("thirdPartyDistributionChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thirdPartyDistributionChannels"); else _explicitNullProperties?.Remove("thirdPartyDistributionChannels"); } }
+        private UntypedNode? _explicitNullValueThirdPartyDistributionChannels = default!;
 #nullable restore
 #else
-        public UntypedNode ThirdPartyDistributionChannels { get; set; }
+        public UntypedNode ThirdPartyDistributionChannels { get => _explicitNullValueThirdPartyDistributionChannels; set { _explicitNullValueThirdPartyDistributionChannels = value; AdditionalData?.Remove("thirdPartyDistributionChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thirdPartyDistributionChannels"); else _explicitNullProperties?.Remove("thirdPartyDistributionChannels"); } }
+        private UntypedNode _explicitNullValueThirdPartyDistributionChannels = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemDistribution"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemDistribution CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemDistribution();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemDistribution(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("feedDistribution", FeedDistribution);
             writer.WriteObjectValue<UntypedNode>("thirdPartyDistributionChannels", ThirdPartyDistributionChannels);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

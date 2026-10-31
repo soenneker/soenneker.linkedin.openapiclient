@@ -11,100 +11,157 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EventsManagementApiCreateOrganizationOwnedEventRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("backgroundImage") is null) { _explicitNullValueBackgroundImage = default!; _explicitNullProperties?.Remove("backgroundImage"); }
+            else if (parseNode.GetChildNode("backgroundImage") is { } nullNodeBackgroundImage && nullNodeBackgroundImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundImage = null;
+            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
+            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("discoveryMode") is null) { _explicitNullValueDiscoveryMode = default!; _explicitNullProperties?.Remove("discoveryMode"); }
+            else if (parseNode.GetChildNode("discoveryMode") is { } nullNodeDiscoveryMode && nullNodeDiscoveryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscoveryMode = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lastModified") is null) { _explicitNullValueLastModified = default!; _explicitNullProperties?.Remove("lastModified"); }
+            else if (parseNode.GetChildNode("lastModified") is { } nullNodeLastModified && nullNodeLastModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModified = null;
+            if (parseNode.GetChildNode("leadGenForm") is null) { _explicitNullValueLeadGenForm = default!; _explicitNullProperties?.Remove("leadGenForm"); }
+            else if (parseNode.GetChildNode("leadGenForm") is { } nullNodeLeadGenForm && nullNodeLeadGenForm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadGenForm = null;
+            if (parseNode.GetChildNode("leadGenFormSpec") is null) { _explicitNullValueLeadGenFormSpec = default!; _explicitNullProperties?.Remove("leadGenFormSpec"); }
+            else if (parseNode.GetChildNode("leadGenFormSpec") is { } nullNodeLeadGenFormSpec && nullNodeLeadGenFormSpec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadGenFormSpec = null;
+            if (parseNode.GetChildNode("organizer") is null) { _explicitNullValueOrganizer = default!; _explicitNullProperties?.Remove("organizer"); }
+            else if (parseNode.GetChildNode("organizer") is { } nullNodeOrganizer && nullNodeOrganizer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organizer = null;
+            if (parseNode.GetChildNode("startsAt") is null) { _explicitNullValueStartsAt = default!; _explicitNullProperties?.Remove("startsAt"); }
+            else if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("ugcPost") is null) { _explicitNullValueUgcPost = default!; _explicitNullProperties?.Remove("ugcPost"); }
+            else if (parseNode.GetChildNode("ugcPost") is { } nullNodeUgcPost && nullNodeUgcPost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UgcPost = null;
+            if (parseNode.GetChildNode("vanityName") is null) { _explicitNullValueVanityName = default!; _explicitNullProperties?.Remove("vanityName"); }
+            else if (parseNode.GetChildNode("vanityName") is { } nullNodeVanityName && nullNodeVanityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VanityName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Background image for the event. If not provided, a default image is used.Documented type: DigitalmediaAssetUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundImage { get; set; }
+        public string? BackgroundImage { get => _explicitNullValueBackgroundImage; set { _explicitNullValueBackgroundImage = value; AdditionalData?.Remove("backgroundImage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backgroundImage"); else _explicitNullProperties?.Remove("backgroundImage"); } }
+        private string? _explicitNullValueBackgroundImage = default!;
 #nullable restore
 #else
-        public string BackgroundImage { get; set; }
+        public string BackgroundImage { get => _explicitNullValueBackgroundImage; set { _explicitNullValueBackgroundImage = value; AdditionalData?.Remove("backgroundImage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backgroundImage"); else _explicitNullProperties?.Remove("backgroundImage"); } }
+        private string _explicitNullValueBackgroundImage = default!;
 #endif
-        /// <summary>The created property</summary>
+        /// <summary>Timestamp and actor recorded when the event was created.Documented type: AuditStamp</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestCreatedAnyOf2? Created { get; set; }
+        public UntypedNode? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private UntypedNode? _explicitNullValueCreated = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestCreatedAnyOf2 Created { get; set; }
+        public UntypedNode Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private UntypedNode _explicitNullValueCreated = default!;
 #endif
         /// <summary>Description of the event as provided by the creator. Not present if no description was provided.Documented type: MultiLocaleRichText</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Description { get; set; }
+        public UntypedNode? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private UntypedNode? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public UntypedNode Description { get; set; }
+        public UntypedNode Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private UntypedNode _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The discoveryMode property</summary>
+        /// <summary>Controls how the event can be discovered on LinkedIn. Possible values: LISTED (discoverable through search, recommendations, and other LinkedIn channels), URL_ONLY (only accessible via direct URL).Documented type: EventDiscoveryMode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiscoveryMode { get; set; }
+        public UntypedNode? DiscoveryMode { get => _explicitNullValueDiscoveryMode; set { _explicitNullValueDiscoveryMode = value; AdditionalData?.Remove("discoveryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryMode"); else _explicitNullProperties?.Remove("discoveryMode"); } }
+        private UntypedNode? _explicitNullValueDiscoveryMode = default!;
 #nullable restore
 #else
-        public string DiscoveryMode { get; set; }
+        public UntypedNode DiscoveryMode { get => _explicitNullValueDiscoveryMode; set { _explicitNullValueDiscoveryMode = value; AdditionalData?.Remove("discoveryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryMode"); else _explicitNullProperties?.Remove("discoveryMode"); } }
+        private UntypedNode _explicitNullValueDiscoveryMode = default!;
 #endif
         /// <summary>Unique identifier of the event.Documented type: Long</summary>
-        public long? Id { get; set; }
-        /// <summary>The lastModified property</summary>
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
+        /// <summary>Timestamp and actor recorded when the event was last modified.Documented type: AuditStamp</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLastModifiedAnyOf2? LastModified { get; set; }
+        public UntypedNode? LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; AdditionalData?.Remove("lastModified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        private UntypedNode? _explicitNullValueLastModified = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLastModifiedAnyOf2 LastModified { get; set; }
+        public UntypedNode LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; AdditionalData?.Remove("lastModified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        private UntypedNode _explicitNullValueLastModified = default!;
 #endif
         /// <summary>The lead generation form attached to this event. System-generated from leadGenFormSpec.Documented type: VersionedLeadGenFormUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeadGenForm { get; set; }
+        public string? LeadGenForm { get => _explicitNullValueLeadGenForm; set { _explicitNullValueLeadGenForm = value; AdditionalData?.Remove("leadGenForm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadGenForm"); else _explicitNullProperties?.Remove("leadGenForm"); } }
+        private string? _explicitNullValueLeadGenForm = default!;
 #nullable restore
 #else
-        public string LeadGenForm { get; set; }
+        public string LeadGenForm { get => _explicitNullValueLeadGenForm; set { _explicitNullValueLeadGenForm = value; AdditionalData?.Remove("leadGenForm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadGenForm"); else _explicitNullProperties?.Remove("leadGenForm"); } }
+        private string _explicitNullValueLeadGenForm = default!;
 #endif
-        /// <summary>The leadGenFormSpec property</summary>
+        /// <summary>Specifies how to attach a lead generation form to the event. Can only be set at creation — cannot be updated afterward.Documented type: LeadGenFormSpec</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLeadGenFormSpecAnyOf1? LeadGenFormSpec { get; set; }
+        public UntypedNode? LeadGenFormSpec { get => _explicitNullValueLeadGenFormSpec; set { _explicitNullValueLeadGenFormSpec = value; AdditionalData?.Remove("leadGenFormSpec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadGenFormSpec"); else _explicitNullProperties?.Remove("leadGenFormSpec"); } }
+        private UntypedNode? _explicitNullValueLeadGenFormSpec = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLeadGenFormSpecAnyOf1 LeadGenFormSpec { get; set; }
+        public UntypedNode LeadGenFormSpec { get => _explicitNullValueLeadGenFormSpec; set { _explicitNullValueLeadGenFormSpec = value; AdditionalData?.Remove("leadGenFormSpec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadGenFormSpec"); else _explicitNullProperties?.Remove("leadGenFormSpec"); } }
+        private UntypedNode _explicitNullValueLeadGenFormSpec = default!;
 #endif
         /// <summary>Entity responsible for organizing this event. Accepted URN types: urn:li:person:{id}, urn:li:organization:{id}. Cannot be changed after creation.Documented type: URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Organizer { get; set; }
+        public string? Organizer { get => _explicitNullValueOrganizer; set { _explicitNullValueOrganizer = value; AdditionalData?.Remove("organizer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizer"); else _explicitNullProperties?.Remove("organizer"); } }
+        private string? _explicitNullValueOrganizer = default!;
 #nullable restore
 #else
-        public string Organizer { get; set; }
+        public string Organizer { get => _explicitNullValueOrganizer; set { _explicitNullValueOrganizer = value; AdditionalData?.Remove("organizer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizer"); else _explicitNullProperties?.Remove("organizer"); } }
+        private string _explicitNullValueOrganizer = default!;
 #endif
         /// <summary>Start time of the event in epoch millis.Documented type: Long</summary>
-        public long? StartsAt { get; set; }
+        public long? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; AdditionalData?.Remove("startsAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
+        private long? _explicitNullValueStartsAt = default!;
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType? Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType _explicitNullValueType = default!;
 #endif
         /// <summary>URN of the LinkedIn post associated with this event. Set automatically when the event is posted.Documented type: UserGeneratedContentPostUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UgcPost { get; set; }
+        public string? UgcPost { get => _explicitNullValueUgcPost; set { _explicitNullValueUgcPost = value; AdditionalData?.Remove("ugcPost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ugcPost"); else _explicitNullProperties?.Remove("ugcPost"); } }
+        private string? _explicitNullValueUgcPost = default!;
 #nullable restore
 #else
-        public string UgcPost { get; set; }
+        public string UgcPost { get => _explicitNullValueUgcPost; set { _explicitNullValueUgcPost = value; AdditionalData?.Remove("ugcPost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ugcPost"); else _explicitNullProperties?.Remove("ugcPost"); } }
+        private string _explicitNullValueUgcPost = default!;
 #endif
         /// <summary>URL-friendly identifier unique across all events, useful for SEO.Documented type: String</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VanityName { get; set; }
+        public string? VanityName { get => _explicitNullValueVanityName; set { _explicitNullValueVanityName = value; AdditionalData?.Remove("vanityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanityName"); else _explicitNullProperties?.Remove("vanityName"); } }
+        private string? _explicitNullValueVanityName = default!;
 #nullable restore
 #else
-        public string VanityName { get; set; }
+        public string VanityName { get => _explicitNullValueVanityName; set { _explicitNullValueVanityName = value; AdditionalData?.Remove("vanityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vanityName"); else _explicitNullProperties?.Remove("vanityName"); } }
+        private string _explicitNullValueVanityName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequest"/> and sets the default values.
@@ -121,7 +178,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,13 +189,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "backgroundImage", n => { BackgroundImage = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestCreatedAnyOf2>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestCreatedAnyOf2.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "discoveryMode", n => { DiscoveryMode = n.GetStringValue(); } },
+                { "discoveryMode", n => { DiscoveryMode = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetLongValue(); } },
-                { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLastModifiedAnyOf2>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLastModifiedAnyOf2.CreateFromDiscriminatorValue); } },
+                { "lastModified", n => { LastModified = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "leadGenForm", n => { LeadGenForm = n.GetStringValue(); } },
-                { "leadGenFormSpec", n => { LeadGenFormSpec = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLeadGenFormSpecAnyOf1>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLeadGenFormSpecAnyOf1.CreateFromDiscriminatorValue); } },
+                { "leadGenFormSpec", n => { LeadGenFormSpec = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "organizer", n => { Organizer = n.GetStringValue(); } },
                 { "startsAt", n => { StartsAt = n.GetLongValue(); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType>(global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType.CreateFromDiscriminatorValue); } },
@@ -154,18 +211,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("backgroundImage", BackgroundImage);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestCreatedAnyOf2>("created", Created);
+            writer.WriteObjectValue<UntypedNode>("created", Created);
             writer.WriteObjectValue<UntypedNode>("description", Description);
-            writer.WriteStringValue("discoveryMode", DiscoveryMode);
+            writer.WriteObjectValue<UntypedNode>("discoveryMode", DiscoveryMode);
             writer.WriteLongValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLastModifiedAnyOf2>("lastModified", LastModified);
+            writer.WriteObjectValue<UntypedNode>("lastModified", LastModified);
             writer.WriteStringValue("leadGenForm", LeadGenForm);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestLeadGenFormSpecAnyOf1>("leadGenFormSpec", LeadGenFormSpec);
+            writer.WriteObjectValue<UntypedNode>("leadGenFormSpec", LeadGenFormSpec);
             writer.WriteStringValue("organizer", Organizer);
             writer.WriteLongValue("startsAt", StartsAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.EventsManagementApiCreateOrganizationOwnedEventRequestType>("type", Type);
             writer.WriteStringValue("ugcPost", UgcPost);
             writer.WriteStringValue("vanityName", VanityName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

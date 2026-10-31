@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MediaPlanningForecastReachCurveDefaultResponseValue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("averageFrequency") is null) { _explicitNullValueAverageFrequency = default!; _explicitNullProperties?.Remove("averageFrequency"); }
+            else if (parseNode.GetChildNode("averageFrequency") is { } nullNodeAverageFrequency && nullNodeAverageFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageFrequency = null;
+            if (parseNode.GetChildNode("impressionCurve") is null) { _explicitNullValueImpressionCurve = default!; _explicitNullProperties?.Remove("impressionCurve"); }
+            else if (parseNode.GetChildNode("impressionCurve") is { } nullNodeImpressionCurve && nullNodeImpressionCurve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImpressionCurve = null;
+            if (parseNode.GetChildNode("reachCurve") is null) { _explicitNullValueReachCurve = default!; _explicitNullProperties?.Remove("reachCurve"); }
+            else if (parseNode.GetChildNode("reachCurve") is { } nullNodeReachCurve && nullNodeReachCurve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReachCurve = null;
+            if (parseNode.GetChildNode("reachPercentageCurve") is null) { _explicitNullValueReachPercentageCurve = default!; _explicitNullProperties?.Remove("reachPercentageCurve"); }
+            else if (parseNode.GetChildNode("reachPercentageCurve") is { } nullNodeReachPercentageCurve && nullNodeReachPercentageCurve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReachPercentageCurve = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The averageFrequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequency? AverageFrequency { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequency? AverageFrequency { get => _explicitNullValueAverageFrequency; set { _explicitNullValueAverageFrequency = value; AdditionalData?.Remove("averageFrequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageFrequency"); else _explicitNullProperties?.Remove("averageFrequency"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequency? _explicitNullValueAverageFrequency = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequency AverageFrequency { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequency AverageFrequency { get => _explicitNullValueAverageFrequency; set { _explicitNullValueAverageFrequency = value; AdditionalData?.Remove("averageFrequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageFrequency"); else _explicitNullProperties?.Remove("averageFrequency"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequency _explicitNullValueAverageFrequency = default!;
 #endif
         /// <summary>The impressionCurve property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueImpressionCurve? ImpressionCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueImpressionCurve? ImpressionCurve { get => _explicitNullValueImpressionCurve; set { _explicitNullValueImpressionCurve = value; AdditionalData?.Remove("impressionCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impressionCurve"); else _explicitNullProperties?.Remove("impressionCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueImpressionCurve? _explicitNullValueImpressionCurve = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueImpressionCurve ImpressionCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueImpressionCurve ImpressionCurve { get => _explicitNullValueImpressionCurve; set { _explicitNullValueImpressionCurve = value; AdditionalData?.Remove("impressionCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impressionCurve"); else _explicitNullProperties?.Remove("impressionCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueImpressionCurve _explicitNullValueImpressionCurve = default!;
 #endif
         /// <summary>The reachCurve property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachCurve? ReachCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachCurve? ReachCurve { get => _explicitNullValueReachCurve; set { _explicitNullValueReachCurve = value; AdditionalData?.Remove("reachCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reachCurve"); else _explicitNullProperties?.Remove("reachCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachCurve? _explicitNullValueReachCurve = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachCurve ReachCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachCurve ReachCurve { get => _explicitNullValueReachCurve; set { _explicitNullValueReachCurve = value; AdditionalData?.Remove("reachCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reachCurve"); else _explicitNullProperties?.Remove("reachCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachCurve _explicitNullValueReachCurve = default!;
 #endif
         /// <summary>The reachPercentageCurve property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachPercentageCurve? ReachPercentageCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachPercentageCurve? ReachPercentageCurve { get => _explicitNullValueReachPercentageCurve; set { _explicitNullValueReachPercentageCurve = value; AdditionalData?.Remove("reachPercentageCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reachPercentageCurve"); else _explicitNullProperties?.Remove("reachPercentageCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachPercentageCurve? _explicitNullValueReachPercentageCurve = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachPercentageCurve ReachPercentageCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachPercentageCurve ReachPercentageCurve { get => _explicitNullValueReachPercentageCurve; set { _explicitNullValueReachPercentageCurve = value; AdditionalData?.Remove("reachPercentageCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reachPercentageCurve"); else _explicitNullProperties?.Remove("reachPercentageCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachPercentageCurve _explicitNullValueReachPercentageCurve = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValue"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueImpressionCurve>("impressionCurve", ImpressionCurve);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachCurve>("reachCurve", ReachCurve);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueReachPercentageCurve>("reachPercentageCurve", ReachPercentageCurve);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

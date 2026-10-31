@@ -12,15 +12,31 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maxValue") is null) { _explicitNullValueMaxValue = default!; _explicitNullProperties?.Remove("maxValue"); }
+            else if (parseNode.GetChildNode("maxValue") is { } nullNodeMaxValue && nullNodeMaxValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxValue = null;
+            if (parseNode.GetChildNode("minValue") is null) { _explicitNullValueMinValue = default!; _explicitNullProperties?.Remove("minValue"); }
+            else if (parseNode.GetChildNode("minValue") is { } nullNodeMinValue && nullNodeMinValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinValue = null;
+            if (parseNode.GetChildNode("suggestedValue") is null) { _explicitNullValueSuggestedValue = default!; _explicitNullProperties?.Remove("suggestedValue"); }
+            else if (parseNode.GetChildNode("suggestedValue") is { } nullNodeSuggestedValue && nullNodeSuggestedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuggestedValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum value allowed for an integer answer.Documented type: IntegerRequirement: No</summary>
-        public int? MaxValue { get; set; }
+        public int? MaxValue { get => _explicitNullValueMaxValue; set { _explicitNullValueMaxValue = value; AdditionalData?.Remove("maxValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxValue"); else _explicitNullProperties?.Remove("maxValue"); } }
+        private int? _explicitNullValueMaxValue = default!;
         /// <summary>The minimum value that is allowed for a decimal answer. Defaults to “0”.Documented type: IntegerRequirement: No</summary>
-        public int? MinValue { get; set; }
+        public int? MinValue { get => _explicitNullValueMinValue; set { _explicitNullValueMinValue = value; AdditionalData?.Remove("minValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minValue"); else _explicitNullProperties?.Remove("minValue"); } }
+        private int? _explicitNullValueMinValue = default!;
         /// <summary>The suggested answer that is prefilled for the applicant being asked the question.Documented type: IntegerRequirement: No</summary>
-        public int? SuggestedValue { get; set; }
+        public int? SuggestedValue { get => _explicitNullValueSuggestedValue; set { _explicitNullValueSuggestedValue = value; AdditionalData?.Remove("suggestedValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestedValue"); else _explicitNullProperties?.Remove("suggestedValue"); } }
+        private int? _explicitNullValueSuggestedValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails"/> and sets the default values.
         /// </summary>
@@ -36,7 +52,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaNumericquestiondetailsFieldsIntegerQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteIntValue("maxValue", MaxValue);
             writer.WriteIntValue("minValue", MinValue);
             writer.WriteIntValue("suggestedValue", SuggestedValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

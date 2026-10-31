@@ -11,104 +11,167 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetASingleVideo200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aspectRatioHeight") is null) { _explicitNullValueAspectRatioHeight = default!; _explicitNullProperties?.Remove("aspectRatioHeight"); }
+            else if (parseNode.GetChildNode("aspectRatioHeight") is { } nullNodeAspectRatioHeight && nullNodeAspectRatioHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspectRatioHeight = null;
+            if (parseNode.GetChildNode("aspectRatioWidth") is null) { _explicitNullValueAspectRatioWidth = default!; _explicitNullProperties?.Remove("aspectRatioWidth"); }
+            else if (parseNode.GetChildNode("aspectRatioWidth") is { } nullNodeAspectRatioWidth && nullNodeAspectRatioWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspectRatioWidth = null;
+            if (parseNode.GetChildNode("captions") is null) { _explicitNullValueCaptions = default!; _explicitNullProperties?.Remove("captions"); }
+            else if (parseNode.GetChildNode("captions") is { } nullNodeCaptions && nullNodeCaptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Captions = null;
+            if (parseNode.GetChildNode("downloadUrl") is null) { _explicitNullValueDownloadUrl = default!; _explicitNullProperties?.Remove("downloadUrl"); }
+            else if (parseNode.GetChildNode("downloadUrl") is { } nullNodeDownloadUrl && nullNodeDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadUrl = null;
+            if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
+            else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("finalizeUploadRequest") is null) { _explicitNullValueFinalizeUploadRequest = default!; _explicitNullProperties?.Remove("finalizeUploadRequest"); }
+            else if (parseNode.GetChildNode("finalizeUploadRequest") is { } nullNodeFinalizeUploadRequest && nullNodeFinalizeUploadRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinalizeUploadRequest = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("initializeUploadRequest") is null) { _explicitNullValueInitializeUploadRequest = default!; _explicitNullProperties?.Remove("initializeUploadRequest"); }
+            else if (parseNode.GetChildNode("initializeUploadRequest") is { } nullNodeInitializeUploadRequest && nullNodeInitializeUploadRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitializeUploadRequest = null;
+            if (parseNode.GetChildNode("initializeVideoUploadResponse") is null) { _explicitNullValueInitializeVideoUploadResponse = default!; _explicitNullProperties?.Remove("initializeVideoUploadResponse"); }
+            else if (parseNode.GetChildNode("initializeVideoUploadResponse") is { } nullNodeInitializeVideoUploadResponse && nullNodeInitializeVideoUploadResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitializeVideoUploadResponse = null;
+            if (parseNode.GetChildNode("mediaLibraryMetadata") is null) { _explicitNullValueMediaLibraryMetadata = default!; _explicitNullProperties?.Remove("mediaLibraryMetadata"); }
+            else if (parseNode.GetChildNode("mediaLibraryMetadata") is { } nullNodeMediaLibraryMetadata && nullNodeMediaLibraryMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaLibraryMetadata = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("processingFailureReason") is null) { _explicitNullValueProcessingFailureReason = default!; _explicitNullProperties?.Remove("processingFailureReason"); }
+            else if (parseNode.GetChildNode("processingFailureReason") is { } nullNodeProcessingFailureReason && nullNodeProcessingFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingFailureReason = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("thumbnail") is null) { _explicitNullValueThumbnail = default!; _explicitNullProperties?.Remove("thumbnail"); }
+            else if (parseNode.GetChildNode("thumbnail") is { } nullNodeThumbnail && nullNodeThumbnail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Thumbnail = null;
+            if (parseNode.GetChildNode("uploadToken") is null) { _explicitNullValueUploadToken = default!; _explicitNullProperties?.Remove("uploadToken"); }
+            else if (parseNode.GetChildNode("uploadToken") is { } nullNodeUploadToken && nullNodeUploadToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Media aspect ratio height. For media with a 16:9 ratio, it&apos;s a 9. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. It is empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: floatRequirement: No</summary>
-        public double? AspectRatioHeight { get; set; }
+        public double? AspectRatioHeight { get => _explicitNullValueAspectRatioHeight; set { _explicitNullValueAspectRatioHeight = value; AdditionalData?.Remove("aspectRatioHeight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspectRatioHeight"); else _explicitNullProperties?.Remove("aspectRatioHeight"); } }
+        private double? _explicitNullValueAspectRatioHeight = default!;
         /// <summary>Aspect ratio width of the media. For media with a 16:9 ratio, it&apos;s 16. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. It is empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: floatRequirement: No</summary>
-        public double? AspectRatioWidth { get; set; }
+        public double? AspectRatioWidth { get => _explicitNullValueAspectRatioWidth; set { _explicitNullValueAspectRatioWidth = value; AdditionalData?.Remove("aspectRatioWidth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspectRatioWidth"); else _explicitNullProperties?.Remove("aspectRatioWidth"); } }
+        private double? _explicitNullValueAspectRatioWidth = default!;
         /// <summary>File identifier to retrieve the caption file. Present if initializeUploadRequest.uploadCaptions was true and a caption was successfully uploaded and processed.Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Captions { get; set; }
+        public string? Captions { get => _explicitNullValueCaptions; set { _explicitNullValueCaptions = value; AdditionalData?.Remove("captions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captions"); else _explicitNullProperties?.Remove("captions"); } }
+        private string? _explicitNullValueCaptions = default!;
 #nullable restore
 #else
-        public string Captions { get; set; }
+        public string Captions { get => _explicitNullValueCaptions; set { _explicitNullValueCaptions = value; AdditionalData?.Remove("captions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captions"); else _explicitNullProperties?.Remove("captions"); } }
+        private string _explicitNullValueCaptions = default!;
 #endif
         /// <summary>Public URL to download/view the media asset. It be empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DownloadUrl { get; set; }
+        public string? DownloadUrl { get => _explicitNullValueDownloadUrl; set { _explicitNullValueDownloadUrl = value; AdditionalData?.Remove("downloadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadUrl"); else _explicitNullProperties?.Remove("downloadUrl"); } }
+        private string? _explicitNullValueDownloadUrl = default!;
 #nullable restore
 #else
-        public string DownloadUrl { get; set; }
+        public string DownloadUrl { get => _explicitNullValueDownloadUrl; set { _explicitNullValueDownloadUrl = value; AdditionalData?.Remove("downloadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadUrl"); else _explicitNullProperties?.Remove("downloadUrl"); } }
+        private string _explicitNullValueDownloadUrl = default!;
 #endif
         /// <summary>The length of the video in milliseconds. It is empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: longRequirement: No</summary>
-        public long? Duration { get; set; }
+        public long? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private long? _explicitNullValueDuration = default!;
         /// <summary>The finalizeUploadRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest? FinalizeUploadRequest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest? FinalizeUploadRequest { get => _explicitNullValueFinalizeUploadRequest; set { _explicitNullValueFinalizeUploadRequest = value; AdditionalData?.Remove("finalizeUploadRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finalizeUploadRequest"); else _explicitNullProperties?.Remove("finalizeUploadRequest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest? _explicitNullValueFinalizeUploadRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest FinalizeUploadRequest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest FinalizeUploadRequest { get => _explicitNullValueFinalizeUploadRequest; set { _explicitNullValueFinalizeUploadRequest = value; AdditionalData?.Remove("finalizeUploadRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finalizeUploadRequest"); else _explicitNullProperties?.Remove("finalizeUploadRequest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest _explicitNullValueFinalizeUploadRequest = default!;
 #endif
         /// <summary>The unique video URN. This field is read only.Documented type: Video URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The initializeUploadRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest? InitializeUploadRequest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest? InitializeUploadRequest { get => _explicitNullValueInitializeUploadRequest; set { _explicitNullValueInitializeUploadRequest = value; AdditionalData?.Remove("initializeUploadRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializeUploadRequest"); else _explicitNullProperties?.Remove("initializeUploadRequest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest? _explicitNullValueInitializeUploadRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest InitializeUploadRequest { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest InitializeUploadRequest { get => _explicitNullValueInitializeUploadRequest; set { _explicitNullValueInitializeUploadRequest = value; AdditionalData?.Remove("initializeUploadRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializeUploadRequest"); else _explicitNullProperties?.Remove("initializeUploadRequest"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest _explicitNullValueInitializeUploadRequest = default!;
 #endif
         /// <summary>The initializeVideoUploadResponse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse? InitializeVideoUploadResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse? InitializeVideoUploadResponse { get => _explicitNullValueInitializeVideoUploadResponse; set { _explicitNullValueInitializeVideoUploadResponse = value; AdditionalData?.Remove("initializeVideoUploadResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializeVideoUploadResponse"); else _explicitNullProperties?.Remove("initializeVideoUploadResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse? _explicitNullValueInitializeVideoUploadResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse InitializeVideoUploadResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse InitializeVideoUploadResponse { get => _explicitNullValueInitializeVideoUploadResponse; set { _explicitNullValueInitializeVideoUploadResponse = value; AdditionalData?.Remove("initializeVideoUploadResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initializeVideoUploadResponse"); else _explicitNullProperties?.Remove("initializeVideoUploadResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse _explicitNullValueInitializeVideoUploadResponse = default!;
 #endif
         /// <summary>Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests.Documented type: MediaLibraryMetadataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata? MediaLibraryMetadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata? MediaLibraryMetadata { get => _explicitNullValueMediaLibraryMetadata; set { _explicitNullValueMediaLibraryMetadata = value; AdditionalData?.Remove("mediaLibraryMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaLibraryMetadata"); else _explicitNullProperties?.Remove("mediaLibraryMetadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata? _explicitNullValueMediaLibraryMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata MediaLibraryMetadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata MediaLibraryMetadata { get => _explicitNullValueMediaLibraryMetadata; set { _explicitNullValueMediaLibraryMetadata = value; AdditionalData?.Remove("mediaLibraryMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaLibraryMetadata"); else _explicitNullProperties?.Remove("mediaLibraryMetadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata _explicitNullValueMediaLibraryMetadata = default!;
 #endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>Reason for video processing failure. This field will only be present if video.status is PROCESSING_FAILED.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessingFailureReason { get; set; }
+        public string? ProcessingFailureReason { get => _explicitNullValueProcessingFailureReason; set { _explicitNullValueProcessingFailureReason = value; AdditionalData?.Remove("processingFailureReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingFailureReason"); else _explicitNullProperties?.Remove("processingFailureReason"); } }
+        private string? _explicitNullValueProcessingFailureReason = default!;
 #nullable restore
 #else
-        public string ProcessingFailureReason { get; set; }
+        public string ProcessingFailureReason { get => _explicitNullValueProcessingFailureReason; set { _explicitNullValueProcessingFailureReason = value; AdditionalData?.Remove("processingFailureReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingFailureReason"); else _explicitNullProperties?.Remove("processingFailureReason"); } }
+        private string _explicitNullValueProcessingFailureReason = default!;
 #endif
         /// <summary>PROCESSING Asset is processing to generate missing artifacts.PROCESSING_FAILED Processing failed due to client error such as file size too large, unsupported file format, internal error (e.g., performance issue, database error, network failure), or other issue.AVAILABLE All of the recipe&apos;s required artifacts are ready. The asset is available to be served.WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed.Documented type: StringRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus? Status { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>File identifier to retrieve the thumbnail file. Present in one of the following cases: a) initializeUploadRequest.uploadThumbnail was true and a thumbnail was successfully uploaded and processed. b) initializeUploadRequest.uploadThumbnail was false but a system generated default thumbnail is present.Documented type: URL optionalRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Thumbnail { get; set; }
+        public string? Thumbnail { get => _explicitNullValueThumbnail; set { _explicitNullValueThumbnail = value; AdditionalData?.Remove("thumbnail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail"); else _explicitNullProperties?.Remove("thumbnail"); } }
+        private string? _explicitNullValueThumbnail = default!;
 #nullable restore
 #else
-        public string Thumbnail { get; set; }
+        public string Thumbnail { get => _explicitNullValueThumbnail; set { _explicitNullValueThumbnail = value; AdditionalData?.Remove("thumbnail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail"); else _explicitNullProperties?.Remove("thumbnail"); } }
+        private string _explicitNullValueThumbnail = default!;
 #endif
         /// <summary>upload tokenDocumented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadToken { get; set; }
+        public string? UploadToken { get => _explicitNullValueUploadToken; set { _explicitNullValueUploadToken = value; AdditionalData?.Remove("uploadToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadToken"); else _explicitNullProperties?.Remove("uploadToken"); } }
+        private string? _explicitNullValueUploadToken = default!;
 #nullable restore
 #else
-        public string UploadToken { get; set; }
+        public string UploadToken { get => _explicitNullValueUploadToken; set { _explicitNullValueUploadToken = value; AdditionalData?.Remove("uploadToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadToken"); else _explicitNullProperties?.Remove("uploadToken"); } }
+        private string _explicitNullValueUploadToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200Response"/> and sets the default values.
@@ -125,7 +188,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +210,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "mediaLibraryMetadata", n => { MediaLibraryMetadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata.CreateFromDiscriminatorValue); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "processingFailureReason", n => { ProcessingFailureReason = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "thumbnail", n => { Thumbnail = n.GetStringValue(); } },
                 { "uploadToken", n => { UploadToken = n.GetStringValue(); } },
             };
@@ -174,6 +237,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus>("status", Status);
             writer.WriteStringValue("thumbnail", Thumbnail);
             writer.WriteStringValue("uploadToken", UploadToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

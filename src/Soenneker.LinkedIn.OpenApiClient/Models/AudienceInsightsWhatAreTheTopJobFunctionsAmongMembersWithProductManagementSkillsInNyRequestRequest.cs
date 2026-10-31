@@ -11,36 +11,61 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("groupBy") is null) { _explicitNullValueGroupBy = default!; _explicitNullProperties?.Remove("groupBy"); }
+            else if (parseNode.GetChildNode("groupBy") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("maxReturnCount") is null) { _explicitNullValueMaxReturnCount = default!; _explicitNullProperties?.Remove("maxReturnCount"); }
+            else if (parseNode.GetChildNode("maxReturnCount") is { } nullNodeMaxReturnCount && nullNodeMaxReturnCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxReturnCount = null;
+            if (parseNode.GetChildNode("requestMetaData") is null) { _explicitNullValueRequestMetaData = default!; _explicitNullProperties?.Remove("requestMetaData"); }
+            else if (parseNode.GetChildNode("requestMetaData") is { } nullNodeRequestMetaData && nullNodeRequestMetaData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestMetaData = null;
+            if (parseNode.GetChildNode("segmentsOrderedBy") is null) { _explicitNullValueSegmentsOrderedBy = default!; _explicitNullProperties?.Remove("segmentsOrderedBy"); }
+            else if (parseNode.GetChildNode("segmentsOrderedBy") is { } nullNodeSegmentsOrderedBy && nullNodeSegmentsOrderedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentsOrderedBy = null;
+            if (parseNode.GetChildNode("targetingCriteria") is null) { _explicitNullValueTargetingCriteria = default!; _explicitNullProperties?.Remove("targetingCriteria"); }
+            else if (parseNode.GetChildNode("targetingCriteria") is { } nullNodeTargetingCriteria && nullNodeTargetingCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetingCriteria = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad targeting facet for which the provided audience criteria should be segmented for insights in the response.Documented type: AdTargetingFacetURNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupBy { get; set; }
+        public string? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; AdditionalData?.Remove("groupBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupBy"); else _explicitNullProperties?.Remove("groupBy"); } }
+        private string? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public string GroupBy { get; set; }
+        public string GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; AdditionalData?.Remove("groupBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupBy"); else _explicitNullProperties?.Remove("groupBy"); } }
+        private string _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>The max number of segments to include in the response. Default is 5 and maximum is 100.Documented type: intRequirement: Optional (default=5)</summary>
-        public int? MaxReturnCount { get; set; }
+        public int? MaxReturnCount { get => _explicitNullValueMaxReturnCount; set { _explicitNullValueMaxReturnCount = value; AdditionalData?.Remove("maxReturnCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxReturnCount"); else _explicitNullProperties?.Remove("maxReturnCount"); } }
+        private int? _explicitNullValueMaxReturnCount = default!;
         /// <summary>requestMetaData Object with sponsoredAccountUrn to identify the sponsored ad account where the authenticated user has a valid user role. See details below.Documented type: requestMetaData ObjectRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData? RequestMetaData { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData? RequestMetaData { get => _explicitNullValueRequestMetaData; set { _explicitNullValueRequestMetaData = value; AdditionalData?.Remove("requestMetaData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestMetaData"); else _explicitNullProperties?.Remove("requestMetaData"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData? _explicitNullValueRequestMetaData = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData RequestMetaData { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData RequestMetaData { get => _explicitNullValueRequestMetaData; set { _explicitNullValueRequestMetaData = value; AdditionalData?.Remove("requestMetaData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestMetaData"); else _explicitNullProperties?.Remove("requestMetaData"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData _explicitNullValueRequestMetaData = default!;
 #endif
         /// <summary>The order in which the segments should be returned. By default, the segments will be ordered in the descending order of the audience percentage of segments. Available values are: AUDIENCE_PERCENTAGE : Based on DESC order of Audience Percentage. HIERARCHICAL : Based on the hierarchical order of urns. This is supported only for a select few low cardinality facets like YearsOfExperience, Company Size, etc.Documented type: string (Enum)Requirement: Optional (default=AUDIENCE_PERCENTAGE)</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy? SegmentsOrderedBy { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy? SegmentsOrderedBy { get => _explicitNullValueSegmentsOrderedBy; set { _explicitNullValueSegmentsOrderedBy = value; AdditionalData?.Remove("segmentsOrderedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentsOrderedBy"); else _explicitNullProperties?.Remove("segmentsOrderedBy"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy? _explicitNullValueSegmentsOrderedBy = default!;
         /// <summary>The targetingCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria? TargetingCriteria { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria? TargetingCriteria { get => _explicitNullValueTargetingCriteria; set { _explicitNullValueTargetingCriteria = value; AdditionalData?.Remove("targetingCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetingCriteria"); else _explicitNullProperties?.Remove("targetingCriteria"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria? _explicitNullValueTargetingCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria TargetingCriteria { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria TargetingCriteria { get => _explicitNullValueTargetingCriteria; set { _explicitNullValueTargetingCriteria = value; AdditionalData?.Remove("targetingCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetingCriteria"); else _explicitNullProperties?.Remove("targetingCriteria"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria _explicitNullValueTargetingCriteria = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequest"/> and sets the default values.
@@ -57,7 +82,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,7 +95,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "groupBy", n => { GroupBy = n.GetStringValue(); } },
                 { "maxReturnCount", n => { MaxReturnCount = n.GetIntValue(); } },
                 { "requestMetaData", n => { RequestMetaData = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData.CreateFromDiscriminatorValue); } },
-                { "segmentsOrderedBy", n => { SegmentsOrderedBy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy>(); } },
+                { "segmentsOrderedBy", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSegmentsOrderedBy = default; _explicitNullProperties?.Remove("segmentsOrderedBy"); AdditionalData["segmentsOrderedBy"] = unknown; } else { SegmentsOrderedBy = parsed; AdditionalData.Remove("segmentsOrderedBy"); } } },
                 { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria.CreateFromDiscriminatorValue); } },
             };
         }
@@ -86,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData>("requestMetaData", RequestMetaData);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy>("segmentsOrderedBy", SegmentsOrderedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria>("targetingCriteria", TargetingCriteria);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VerifiedOnLinkedinValidationStatusRequestValueItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("profileInformationStatus") is null) { _explicitNullValueProfileInformationStatus = default!; _explicitNullProperties?.Remove("profileInformationStatus"); }
+            else if (parseNode.GetChildNode("profileInformationStatus") is { } nullNodeProfileInformationStatus && nullNodeProfileInformationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileInformationStatus = null;
+            if (parseNode.GetChildNode("verificationStatus") is null) { _explicitNullValueVerificationStatus = default!; _explicitNullProperties?.Remove("verificationStatus"); }
+            else if (parseNode.GetChildNode("verificationStatus") is { } nullNodeVerificationStatus && nullNodeVerificationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Member identifier (same as submitted in request)Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Profile data validation statusDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileInformationStatus { get; set; }
+        public string? ProfileInformationStatus { get => _explicitNullValueProfileInformationStatus; set { _explicitNullValueProfileInformationStatus = value; AdditionalData?.Remove("profileInformationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileInformationStatus"); else _explicitNullProperties?.Remove("profileInformationStatus"); } }
+        private string? _explicitNullValueProfileInformationStatus = default!;
 #nullable restore
 #else
-        public string ProfileInformationStatus { get; set; }
+        public string ProfileInformationStatus { get => _explicitNullValueProfileInformationStatus; set { _explicitNullValueProfileInformationStatus = value; AdditionalData?.Remove("profileInformationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileInformationStatus"); else _explicitNullProperties?.Remove("profileInformationStatus"); } }
+        private string _explicitNullValueProfileInformationStatus = default!;
 #endif
         /// <summary>Identity and workplace verification statusDocumented type: object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItemVerificationStatus? VerificationStatus { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItemVerificationStatus? VerificationStatus { get => _explicitNullValueVerificationStatus; set { _explicitNullValueVerificationStatus = value; AdditionalData?.Remove("verificationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationStatus"); else _explicitNullProperties?.Remove("verificationStatus"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItemVerificationStatus? _explicitNullValueVerificationStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItemVerificationStatus VerificationStatus { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItemVerificationStatus VerificationStatus { get => _explicitNullValueVerificationStatus; set { _explicitNullValueVerificationStatus = value; AdditionalData?.Remove("verificationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationStatus"); else _explicitNullProperties?.Remove("verificationStatus"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItemVerificationStatus _explicitNullValueVerificationStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("profileInformationStatus", ProfileInformationStatus);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItemVerificationStatus>("verificationStatus", VerificationStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

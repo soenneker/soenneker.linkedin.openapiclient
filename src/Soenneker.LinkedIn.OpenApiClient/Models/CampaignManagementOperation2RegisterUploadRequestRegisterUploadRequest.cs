@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("recipes") is null) { _explicitNullValueRecipes = default!; _explicitNullProperties?.Remove("recipes"); }
+            else if (parseNode.GetChildNode("recipes") is { } nullNodeRecipes && nullNodeRecipes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipes = null;
+            if (parseNode.GetChildNode("serviceRelationships") is null) { _explicitNullValueServiceRelationships = default!; _explicitNullProperties?.Remove("serviceRelationships"); }
+            else if (parseNode.GetChildNode("serviceRelationships") is { } nullNodeServiceRelationships && nullNodeServiceRelationships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceRelationships = null;
+            if (parseNode.GetChildNode("supportedUploadMechanism") is null) { _explicitNullValueSupportedUploadMechanism = default!; _explicitNullProperties?.Remove("supportedUploadMechanism"); }
+            else if (parseNode.GetChildNode("supportedUploadMechanism") is { } nullNodeSupportedUploadMechanism && nullNodeSupportedUploadMechanism.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedUploadMechanism = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>The recipes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Recipes { get; set; }
+        public List<string>? Recipes { get => _explicitNullValueRecipes; set { _explicitNullValueRecipes = value; AdditionalData?.Remove("recipes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipes"); else _explicitNullProperties?.Remove("recipes"); } }
+        private List<string>? _explicitNullValueRecipes = default!;
 #nullable restore
 #else
-        public List<string> Recipes { get; set; }
+        public List<string> Recipes { get => _explicitNullValueRecipes; set { _explicitNullValueRecipes = value; AdditionalData?.Remove("recipes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipes"); else _explicitNullProperties?.Remove("recipes"); } }
+        private List<string> _explicitNullValueRecipes = default!;
 #endif
         /// <summary>The serviceRelationships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequestServiceRelationshipsItem>? ServiceRelationships { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequestServiceRelationshipsItem>? ServiceRelationships { get => _explicitNullValueServiceRelationships; set { _explicitNullValueServiceRelationships = value; AdditionalData?.Remove("serviceRelationships"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRelationships"); else _explicitNullProperties?.Remove("serviceRelationships"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequestServiceRelationshipsItem>? _explicitNullValueServiceRelationships = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequestServiceRelationshipsItem> ServiceRelationships { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequestServiceRelationshipsItem> ServiceRelationships { get => _explicitNullValueServiceRelationships; set { _explicitNullValueServiceRelationships = value; AdditionalData?.Remove("serviceRelationships"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRelationships"); else _explicitNullProperties?.Remove("serviceRelationships"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequestServiceRelationshipsItem> _explicitNullValueServiceRelationships = default!;
 #endif
         /// <summary>The supportedUploadMechanism property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedUploadMechanism { get; set; }
+        public List<string>? SupportedUploadMechanism { get => _explicitNullValueSupportedUploadMechanism; set { _explicitNullValueSupportedUploadMechanism = value; AdditionalData?.Remove("supportedUploadMechanism"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedUploadMechanism"); else _explicitNullProperties?.Remove("supportedUploadMechanism"); } }
+        private List<string>? _explicitNullValueSupportedUploadMechanism = default!;
 #nullable restore
 #else
-        public List<string> SupportedUploadMechanism { get; set; }
+        public List<string> SupportedUploadMechanism { get => _explicitNullValueSupportedUploadMechanism; set { _explicitNullValueSupportedUploadMechanism = value; AdditionalData?.Remove("supportedUploadMechanism"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedUploadMechanism"); else _explicitNullProperties?.Remove("supportedUploadMechanism"); } }
+        private List<string> _explicitNullValueSupportedUploadMechanism = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequest"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("recipes", Recipes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation2RegisterUploadRequestRegisterUploadRequestServiceRelationshipsItem>("serviceRelationships", ServiceRelationships);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedUploadMechanism", SupportedUploadMechanism);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

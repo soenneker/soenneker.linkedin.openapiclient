@@ -11,40 +11,71 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AudiencesOperation4RetrieveThePredictiveAudience200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created") is null) { _explicitNullValueCreated = default!; _explicitNullProperties?.Remove("created"); }
+            else if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("desiredAudienceCount") is null) { _explicitNullValueDesiredAudienceCount = default!; _explicitNullProperties?.Remove("desiredAudienceCount"); }
+            else if (parseNode.GetChildNode("desiredAudienceCount") is { } nullNodeDesiredAudienceCount && nullNodeDesiredAudienceCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesiredAudienceCount = null;
+            if (parseNode.GetChildNode("dmpSegmentId") is null) { _explicitNullValueDmpSegmentId = default!; _explicitNullProperties?.Remove("dmpSegmentId"); }
+            else if (parseNode.GetChildNode("dmpSegmentId") is { } nullNodeDmpSegmentId && nullNodeDmpSegmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmpSegmentId = null;
+            if (parseNode.GetChildNode("lastModified") is null) { _explicitNullValueLastModified = default!; _explicitNullProperties?.Remove("lastModified"); }
+            else if (parseNode.GetChildNode("lastModified") is { } nullNodeLastModified && nullNodeLastModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModified = null;
+            if (parseNode.GetChildNode("seeds") is null) { _explicitNullValueSeeds = default!; _explicitNullProperties?.Remove("seeds"); }
+            else if (parseNode.GetChildNode("seeds") is { } nullNodeSeeds && nullNodeSeeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seeds = null;
+            if (parseNode.GetChildNode("targetingFilter") is null) { _explicitNullValueTargetingFilter = default!; _explicitNullProperties?.Remove("targetingFilter"); }
+            else if (parseNode.GetChildNode("targetingFilter") is { } nullNodeTargetingFilter && nullNodeTargetingFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetingFilter = null;
+            if (parseNode.GetChildNode("versionTag") is null) { _explicitNullValueVersionTag = default!; _explicitNullProperties?.Remove("versionTag"); }
+            else if (parseNode.GetChildNode("versionTag") is { } nullNodeVersionTag && nullNodeVersionTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionTag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created property</summary>
-        public long? Created { get; set; }
+        public long? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; AdditionalData?.Remove("created"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private long? _explicitNullValueCreated = default!;
         /// <summary>The desiredAudienceCount property</summary>
-        public long? DesiredAudienceCount { get; set; }
+        public long? DesiredAudienceCount { get => _explicitNullValueDesiredAudienceCount; set { _explicitNullValueDesiredAudienceCount = value; AdditionalData?.Remove("desiredAudienceCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desiredAudienceCount"); else _explicitNullProperties?.Remove("desiredAudienceCount"); } }
+        private long? _explicitNullValueDesiredAudienceCount = default!;
         /// <summary>The dmpSegmentId property</summary>
-        public long? DmpSegmentId { get; set; }
+        public long? DmpSegmentId { get => _explicitNullValueDmpSegmentId; set { _explicitNullValueDmpSegmentId = value; AdditionalData?.Remove("dmpSegmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dmpSegmentId"); else _explicitNullProperties?.Remove("dmpSegmentId"); } }
+        private long? _explicitNullValueDmpSegmentId = default!;
         /// <summary>The lastModified property</summary>
-        public long? LastModified { get; set; }
+        public long? LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; AdditionalData?.Remove("lastModified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        private long? _explicitNullValueLastModified = default!;
         /// <summary>The seeds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Seeds { get; set; }
+        public List<string>? Seeds { get => _explicitNullValueSeeds; set { _explicitNullValueSeeds = value; AdditionalData?.Remove("seeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seeds"); else _explicitNullProperties?.Remove("seeds"); } }
+        private List<string>? _explicitNullValueSeeds = default!;
 #nullable restore
 #else
-        public List<string> Seeds { get; set; }
+        public List<string> Seeds { get => _explicitNullValueSeeds; set { _explicitNullValueSeeds = value; AdditionalData?.Remove("seeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seeds"); else _explicitNullProperties?.Remove("seeds"); } }
+        private List<string> _explicitNullValueSeeds = default!;
 #endif
         /// <summary>The targetingFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter? TargetingFilter { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter? TargetingFilter { get => _explicitNullValueTargetingFilter; set { _explicitNullValueTargetingFilter = value; AdditionalData?.Remove("targetingFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetingFilter"); else _explicitNullProperties?.Remove("targetingFilter"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter? _explicitNullValueTargetingFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter TargetingFilter { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter TargetingFilter { get => _explicitNullValueTargetingFilter; set { _explicitNullValueTargetingFilter = value; AdditionalData?.Remove("targetingFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetingFilter"); else _explicitNullProperties?.Remove("targetingFilter"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter _explicitNullValueTargetingFilter = default!;
 #endif
         /// <summary>The versionTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionTag { get; set; }
+        public string? VersionTag { get => _explicitNullValueVersionTag; set { _explicitNullValueVersionTag = value; AdditionalData?.Remove("versionTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionTag"); else _explicitNullProperties?.Remove("versionTag"); } }
+        private string? _explicitNullValueVersionTag = default!;
 #nullable restore
 #else
-        public string VersionTag { get; set; }
+        public string VersionTag { get => _explicitNullValueVersionTag; set { _explicitNullValueVersionTag = value; AdditionalData?.Remove("versionTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionTag"); else _explicitNullProperties?.Remove("versionTag"); } }
+        private string _explicitNullValueVersionTag = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200Response"/> and sets the default values.
@@ -61,7 +92,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +125,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("seeds", Seeds);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter>("targetingFilter", TargetingFilter);
             writer.WriteStringValue("versionTag", VersionTag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

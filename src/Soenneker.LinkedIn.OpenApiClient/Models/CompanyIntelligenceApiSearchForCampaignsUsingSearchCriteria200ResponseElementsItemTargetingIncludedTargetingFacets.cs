@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacets : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("employers") is null) { _explicitNullValueEmployers = default!; _explicitNullProperties?.Remove("employers"); }
+            else if (parseNode.GetChildNode("employers") is { } nullNodeEmployers && nullNodeEmployers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employers = null;
+            if (parseNode.GetChildNode("interfaceLocales") is null) { _explicitNullValueInterfaceLocales = default!; _explicitNullProperties?.Remove("interfaceLocales"); }
+            else if (parseNode.GetChildNode("interfaceLocales") is { } nullNodeInterfaceLocales && nullNodeInterfaceLocales.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceLocales = null;
+            if (parseNode.GetChildNode("locations") is null) { _explicitNullValueLocations = default!; _explicitNullProperties?.Remove("locations"); }
+            else if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The employers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Employers { get; set; }
+        public List<string>? Employers { get => _explicitNullValueEmployers; set { _explicitNullValueEmployers = value; AdditionalData?.Remove("employers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employers"); else _explicitNullProperties?.Remove("employers"); } }
+        private List<string>? _explicitNullValueEmployers = default!;
 #nullable restore
 #else
-        public List<string> Employers { get; set; }
+        public List<string> Employers { get => _explicitNullValueEmployers; set { _explicitNullValueEmployers = value; AdditionalData?.Remove("employers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employers"); else _explicitNullProperties?.Remove("employers"); } }
+        private List<string> _explicitNullValueEmployers = default!;
 #endif
         /// <summary>The interfaceLocales property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacetsInterfaceLocalesItem>? InterfaceLocales { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacetsInterfaceLocalesItem>? InterfaceLocales { get => _explicitNullValueInterfaceLocales; set { _explicitNullValueInterfaceLocales = value; AdditionalData?.Remove("interfaceLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interfaceLocales"); else _explicitNullProperties?.Remove("interfaceLocales"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacetsInterfaceLocalesItem>? _explicitNullValueInterfaceLocales = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacetsInterfaceLocalesItem> InterfaceLocales { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacetsInterfaceLocalesItem> InterfaceLocales { get => _explicitNullValueInterfaceLocales; set { _explicitNullValueInterfaceLocales = value; AdditionalData?.Remove("interfaceLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interfaceLocales"); else _explicitNullProperties?.Remove("interfaceLocales"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacetsInterfaceLocalesItem> _explicitNullValueInterfaceLocales = default!;
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Locations { get; set; }
+        public List<string>? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<string>? _explicitNullValueLocations = default!;
 #nullable restore
 #else
-        public List<string> Locations { get; set; }
+        public List<string> Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<string> _explicitNullValueLocations = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacets"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacets CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacets();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacets(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("employers", Employers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemTargetingIncludedTargetingFacetsInterfaceLocalesItem>("interfaceLocales", InterfaceLocales);
             writer.WriteCollectionOfPrimitiveValues<string>("locations", Locations);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

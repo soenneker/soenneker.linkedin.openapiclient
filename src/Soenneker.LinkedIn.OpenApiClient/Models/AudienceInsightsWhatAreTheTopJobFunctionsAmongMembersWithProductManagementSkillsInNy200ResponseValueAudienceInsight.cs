@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("groupedBy") is null) { _explicitNullValueGroupedBy = default!; _explicitNullProperties?.Remove("groupedBy"); }
+            else if (parseNode.GetChildNode("groupedBy") is { } nullNodeGroupedBy && nullNodeGroupedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupedBy = null;
+            if (parseNode.GetChildNode("segmentations") is null) { _explicitNullValueSegmentations = default!; _explicitNullProperties?.Remove("segmentations"); }
+            else if (parseNode.GetChildNode("segmentations") is { } nullNodeSegmentations && nullNodeSegmentations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segmentations = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad facet for which the audience is sliced by. This field contains the ad facet urn; the same as the urn of the AdTargetingEntity element of the facets array.Documented type: AdTargetingFacetUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupedBy { get; set; }
+        public string? GroupedBy { get => _explicitNullValueGroupedBy; set { _explicitNullValueGroupedBy = value; AdditionalData?.Remove("groupedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupedBy"); else _explicitNullProperties?.Remove("groupedBy"); } }
+        private string? _explicitNullValueGroupedBy = default!;
 #nullable restore
 #else
-        public string GroupedBy { get; set; }
+        public string GroupedBy { get => _explicitNullValueGroupedBy; set { _explicitNullValueGroupedBy = value; AdditionalData?.Remove("groupedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupedBy"); else _explicitNullProperties?.Remove("groupedBy"); } }
+        private string _explicitNullValueGroupedBy = default!;
 #endif
         /// <summary>The segmentations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item>? Segmentations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item>? Segmentations { get => _explicitNullValueSegmentations; set { _explicitNullValueSegmentations = value; AdditionalData?.Remove("segmentations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentations"); else _explicitNullProperties?.Remove("segmentations"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item>? _explicitNullValueSegmentations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item> Segmentations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item> Segmentations { get => _explicitNullValueSegmentations; set { _explicitNullValueSegmentations = value; AdditionalData?.Remove("segmentations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentations"); else _explicitNullProperties?.Remove("segmentations"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item> _explicitNullValueSegmentations = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("groupedBy", GroupedBy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsightSegmentationsAllOf1Item>("segmentations", Segmentations);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

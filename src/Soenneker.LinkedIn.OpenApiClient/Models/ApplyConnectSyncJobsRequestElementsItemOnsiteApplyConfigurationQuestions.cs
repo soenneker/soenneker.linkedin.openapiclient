@@ -12,64 +12,99 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplyConnectSyncJobsRequestElementsItemOnsiteApplyConfigurationQuestions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("additionalQuestions") is null) { _explicitNullValueAdditionalQuestions = default!; _explicitNullProperties?.Remove("additionalQuestions"); }
+            else if (parseNode.GetChildNode("additionalQuestions") is { } nullNodeAdditionalQuestions && nullNodeAdditionalQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalQuestions = null;
+            if (parseNode.GetChildNode("contactInformationQuestions") is null) { _explicitNullValueContactInformationQuestions = default!; _explicitNullProperties?.Remove("contactInformationQuestions"); }
+            else if (parseNode.GetChildNode("contactInformationQuestions") is { } nullNodeContactInformationQuestions && nullNodeContactInformationQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactInformationQuestions = null;
+            if (parseNode.GetChildNode("coverLetterQuestions") is null) { _explicitNullValueCoverLetterQuestions = default!; _explicitNullProperties?.Remove("coverLetterQuestions"); }
+            else if (parseNode.GetChildNode("coverLetterQuestions") is { } nullNodeCoverLetterQuestions && nullNodeCoverLetterQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverLetterQuestions = null;
+            if (parseNode.GetChildNode("educationQuestions") is null) { _explicitNullValueEducationQuestions = default!; _explicitNullProperties?.Remove("educationQuestions"); }
+            else if (parseNode.GetChildNode("educationQuestions") is { } nullNodeEducationQuestions && nullNodeEducationQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EducationQuestions = null;
+            if (parseNode.GetChildNode("resumeQuestions") is null) { _explicitNullValueResumeQuestions = default!; _explicitNullProperties?.Remove("resumeQuestions"); }
+            else if (parseNode.GetChildNode("resumeQuestions") is { } nullNodeResumeQuestions && nullNodeResumeQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumeQuestions = null;
+            if (parseNode.GetChildNode("voluntarySelfIdentificationQuestions") is null) { _explicitNullValueVoluntarySelfIdentificationQuestions = default!; _explicitNullProperties?.Remove("voluntarySelfIdentificationQuestions"); }
+            else if (parseNode.GetChildNode("voluntarySelfIdentificationQuestions") is { } nullNodeVoluntarySelfIdentificationQuestions && nullNodeVoluntarySelfIdentificationQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoluntarySelfIdentificationQuestions = null;
+            if (parseNode.GetChildNode("workQuestions") is null) { _explicitNullValueWorkQuestions = default!; _explicitNullProperties?.Remove("workQuestions"); }
+            else if (parseNode.GetChildNode("workQuestions") is { } nullNodeWorkQuestions && nullNodeWorkQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkQuestions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A collection of custom questions which can be added if questions don’t fit into any other question sections. Questions asked in additional Questions will be rendered in the “Additional Questions” section of the Job Application UI. If this field is null, then no Additional Questions will be asked.Documented type: AdditionalQuestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions? AdditionalQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions? AdditionalQuestions { get => _explicitNullValueAdditionalQuestions; set { _explicitNullValueAdditionalQuestions = value; AdditionalData?.Remove("additionalQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalQuestions"); else _explicitNullProperties?.Remove("additionalQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions? _explicitNullValueAdditionalQuestions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions AdditionalQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions AdditionalQuestions { get => _explicitNullValueAdditionalQuestions; set { _explicitNullValueAdditionalQuestions = value; AdditionalData?.Remove("additionalQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalQuestions"); else _explicitNullProperties?.Remove("additionalQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions _explicitNullValueAdditionalQuestions = default!;
 #endif
         /// <summary>The contact information question section. If this field is null, then only mandatory contact information questions (first name, last name, and email) will be collected.Documented type: ContactInformationQuestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions? ContactInformationQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions? ContactInformationQuestions { get => _explicitNullValueContactInformationQuestions; set { _explicitNullValueContactInformationQuestions = value; AdditionalData?.Remove("contactInformationQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactInformationQuestions"); else _explicitNullProperties?.Remove("contactInformationQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions? _explicitNullValueContactInformationQuestions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions ContactInformationQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions ContactInformationQuestions { get => _explicitNullValueContactInformationQuestions; set { _explicitNullValueContactInformationQuestions = value; AdditionalData?.Remove("contactInformationQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactInformationQuestions"); else _explicitNullProperties?.Remove("contactInformationQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions _explicitNullValueContactInformationQuestions = default!;
 #endif
         /// <summary>The cover letter question section. If this field is null, then no cover letter questions will be asked.Documented type: CoverLetterQuestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions? CoverLetterQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions? CoverLetterQuestions { get => _explicitNullValueCoverLetterQuestions; set { _explicitNullValueCoverLetterQuestions = value; AdditionalData?.Remove("coverLetterQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverLetterQuestions"); else _explicitNullProperties?.Remove("coverLetterQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions? _explicitNullValueCoverLetterQuestions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions CoverLetterQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions CoverLetterQuestions { get => _explicitNullValueCoverLetterQuestions; set { _explicitNullValueCoverLetterQuestions = value; AdditionalData?.Remove("coverLetterQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverLetterQuestions"); else _explicitNullProperties?.Remove("coverLetterQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions _explicitNullValueCoverLetterQuestions = default!;
 #endif
         /// <summary>The education question section. If this field is null, then no education questions will be asked.Documented type: EducationQuestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsEducationQuestions? EducationQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsEducationQuestions? EducationQuestions { get => _explicitNullValueEducationQuestions; set { _explicitNullValueEducationQuestions = value; AdditionalData?.Remove("educationQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("educationQuestions"); else _explicitNullProperties?.Remove("educationQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsEducationQuestions? _explicitNullValueEducationQuestions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsEducationQuestions EducationQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsEducationQuestions EducationQuestions { get => _explicitNullValueEducationQuestions; set { _explicitNullValueEducationQuestions = value; AdditionalData?.Remove("educationQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("educationQuestions"); else _explicitNullProperties?.Remove("educationQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsEducationQuestions _explicitNullValueEducationQuestions = default!;
 #endif
         /// <summary>The resume question section. If this field is null, then no resume questions will be asked.Documented type: ResumeQuestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions? ResumeQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions? ResumeQuestions { get => _explicitNullValueResumeQuestions; set { _explicitNullValueResumeQuestions = value; AdditionalData?.Remove("resumeQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resumeQuestions"); else _explicitNullProperties?.Remove("resumeQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions? _explicitNullValueResumeQuestions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions ResumeQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions ResumeQuestions { get => _explicitNullValueResumeQuestions; set { _explicitNullValueResumeQuestions = value; AdditionalData?.Remove("resumeQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resumeQuestions"); else _explicitNullProperties?.Remove("resumeQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions _explicitNullValueResumeQuestions = default!;
 #endif
         /// <summary>The voluntary self identification question section. If this field is null, then no voluntary self identification questions will be asked.Documented type: VoluntarySelfIdentificationQuestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions? VoluntarySelfIdentificationQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions? VoluntarySelfIdentificationQuestions { get => _explicitNullValueVoluntarySelfIdentificationQuestions; set { _explicitNullValueVoluntarySelfIdentificationQuestions = value; AdditionalData?.Remove("voluntarySelfIdentificationQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voluntarySelfIdentificationQuestions"); else _explicitNullProperties?.Remove("voluntarySelfIdentificationQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions? _explicitNullValueVoluntarySelfIdentificationQuestions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions VoluntarySelfIdentificationQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions VoluntarySelfIdentificationQuestions { get => _explicitNullValueVoluntarySelfIdentificationQuestions; set { _explicitNullValueVoluntarySelfIdentificationQuestions = value; AdditionalData?.Remove("voluntarySelfIdentificationQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voluntarySelfIdentificationQuestions"); else _explicitNullProperties?.Remove("voluntarySelfIdentificationQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions _explicitNullValueVoluntarySelfIdentificationQuestions = default!;
 #endif
         /// <summary>The work questions section. If this field is null, then no work questions will be asked.Documented type: WorkQuestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions? WorkQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions? WorkQuestions { get => _explicitNullValueWorkQuestions; set { _explicitNullValueWorkQuestions = value; AdditionalData?.Remove("workQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workQuestions"); else _explicitNullProperties?.Remove("workQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions? _explicitNullValueWorkQuestions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions WorkQuestions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions WorkQuestions { get => _explicitNullValueWorkQuestions; set { _explicitNullValueWorkQuestions = value; AdditionalData?.Remove("workQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workQuestions"); else _explicitNullProperties?.Remove("workQuestions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions _explicitNullValueWorkQuestions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemOnsiteApplyConfigurationQuestions"/> and sets the default values.
@@ -86,7 +121,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemOnsiteApplyConfigurationQuestions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemOnsiteApplyConfigurationQuestions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemOnsiteApplyConfigurationQuestions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +154,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsResumeQuestions>("resumeQuestions", ResumeQuestions);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsVoluntarySelfIdentificationQuestions>("voluntarySelfIdentificationQuestions", VoluntarySelfIdentificationQuestions);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions>("workQuestions", WorkQuestions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

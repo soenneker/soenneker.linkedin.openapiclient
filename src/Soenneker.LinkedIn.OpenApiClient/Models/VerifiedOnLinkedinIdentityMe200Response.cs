@@ -11,27 +11,45 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VerifiedOnLinkedinIdentityMe200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("basicInfo") is null) { _explicitNullValueBasicInfo = default!; _explicitNullProperties?.Remove("basicInfo"); }
+            else if (parseNode.GetChildNode("basicInfo") is { } nullNodeBasicInfo && nullNodeBasicInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasicInfo = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lastRefreshedAt") is null) { _explicitNullValueLastRefreshedAt = default!; _explicitNullProperties?.Remove("lastRefreshedAt"); }
+            else if (parseNode.GetChildNode("lastRefreshedAt") is { } nullNodeLastRefreshedAt && nullNodeLastRefreshedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRefreshedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains name, email, profile URL, and profile pictureDocumented type: object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo? BasicInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo? BasicInfo { get => _explicitNullValueBasicInfo; set { _explicitNullValueBasicInfo = value; AdditionalData?.Remove("basicInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basicInfo"); else _explicitNullProperties?.Remove("basicInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo? _explicitNullValueBasicInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo BasicInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo BasicInfo { get => _explicitNullValueBasicInfo; set { _explicitNullValueBasicInfo = value; AdditionalData?.Remove("basicInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basicInfo"); else _explicitNullProperties?.Remove("basicInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo _explicitNullValueBasicInfo = default!;
 #endif
         /// <summary>Unique identifier for the member scoped to your applicationDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The lastRefreshedAt property</summary>
-        public long? LastRefreshedAt { get; set; }
+        public long? LastRefreshedAt { get => _explicitNullValueLastRefreshedAt; set { _explicitNullValueLastRefreshedAt = value; AdditionalData?.Remove("lastRefreshedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastRefreshedAt"); else _explicitNullProperties?.Remove("lastRefreshedAt"); } }
+        private long? _explicitNullValueLastRefreshedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response"/> and sets the default values.
         /// </summary>
@@ -47,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo>("basicInfo", BasicInfo);
             writer.WriteStringValue("id", Id);
             writer.WriteLongValue("lastRefreshedAt", LastRefreshedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

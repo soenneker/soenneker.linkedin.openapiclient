@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AudienceCounts
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting?tabs=http&amp;view=li-lms-unversioned) to understand more on Ads Targeting APIs.Facets are high-level categories of the types of targeting available to you. Use facets to narrow down your intended audience. The adTargetingFacets API returns available targeting facets.

@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("CALLBACK_URL") is null) { _explicitNullValueCALLBACKURL = default!; _explicitNullProperties?.Remove("CALLBACK_URL"); }
+            else if (parseNode.GetChildNode("CALLBACK_URL") is { } nullNodeCALLBACKURL && nullNodeCALLBACKURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CALLBACKURL = null;
+            if (parseNode.GetChildNode("JOB_POSTING_VIEWERS") is null) { _explicitNullValueJOBPOSTINGVIEWERS = default!; _explicitNullProperties?.Remove("JOB_POSTING_VIEWERS"); }
+            else if (parseNode.GetChildNode("JOB_POSTING_VIEWERS") is { } nullNodeJOBPOSTINGVIEWERS && nullNodeJOBPOSTINGVIEWERS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JOBPOSTINGVIEWERS = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The CALLBACK_URL property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesCallbackUrl? CALLBACKURL { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesCallbackUrl? CALLBACKURL { get => _explicitNullValueCALLBACKURL; set { _explicitNullValueCALLBACKURL = value; AdditionalData?.Remove("CALLBACK_URL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CALLBACK_URL"); else _explicitNullProperties?.Remove("CALLBACK_URL"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesCallbackUrl? _explicitNullValueCALLBACKURL = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesCallbackUrl CALLBACKURL { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesCallbackUrl CALLBACKURL { get => _explicitNullValueCALLBACKURL; set { _explicitNullValueCALLBACKURL = value; AdditionalData?.Remove("CALLBACK_URL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CALLBACK_URL"); else _explicitNullProperties?.Remove("CALLBACK_URL"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesCallbackUrl _explicitNullValueCALLBACKURL = default!;
 #endif
         /// <summary>The JOB_POSTING_VIEWERS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesJobPostingViewers? JOBPOSTINGVIEWERS { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesJobPostingViewers? JOBPOSTINGVIEWERS { get => _explicitNullValueJOBPOSTINGVIEWERS; set { _explicitNullValueJOBPOSTINGVIEWERS = value; AdditionalData?.Remove("JOB_POSTING_VIEWERS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("JOB_POSTING_VIEWERS"); else _explicitNullProperties?.Remove("JOB_POSTING_VIEWERS"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesJobPostingViewers? _explicitNullValueJOBPOSTINGVIEWERS = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesJobPostingViewers JOBPOSTINGVIEWERS { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesJobPostingViewers JOBPOSTINGVIEWERS { get => _explicitNullValueJOBPOSTINGVIEWERS; set { _explicitNullValueJOBPOSTINGVIEWERS = value; AdditionalData?.Remove("JOB_POSTING_VIEWERS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("JOB_POSTING_VIEWERS"); else _explicitNullProperties?.Remove("JOB_POSTING_VIEWERS"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesJobPostingViewers _explicitNullValueJOBPOSTINGVIEWERS = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntities"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesCallbackUrl>("CALLBACK_URL", CALLBACKURL);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesJobPostingViewers>("JOB_POSTING_VIEWERS", JOBPOSTINGVIEWERS);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

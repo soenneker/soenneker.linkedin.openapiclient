@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("linkedinLearning") is null) { _explicitNullValueLinkedinLearning = default!; _explicitNullProperties?.Remove("linkedinLearning"); }
+            else if (parseNode.GetChildNode("linkedinLearning") is { } nullNodeLinkedinLearning && nullNodeLinkedinLearning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedinLearning = null;
+            if (parseNode.GetChildNode("workEmailDomain") is null) { _explicitNullValueWorkEmailDomain = default!; _explicitNullProperties?.Remove("workEmailDomain"); }
+            else if (parseNode.GetChildNode("workEmailDomain") is { } nullNodeWorkEmailDomain && nullNodeWorkEmailDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkEmailDomain = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The linkedinLearning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueLinkedinLearning? LinkedinLearning { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueLinkedinLearning? LinkedinLearning { get => _explicitNullValueLinkedinLearning; set { _explicitNullValueLinkedinLearning = value; AdditionalData?.Remove("linkedinLearning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedinLearning"); else _explicitNullProperties?.Remove("linkedinLearning"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueLinkedinLearning? _explicitNullValueLinkedinLearning = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueLinkedinLearning LinkedinLearning { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueLinkedinLearning LinkedinLearning { get => _explicitNullValueLinkedinLearning; set { _explicitNullValueLinkedinLearning = value; AdditionalData?.Remove("linkedinLearning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedinLearning"); else _explicitNullProperties?.Remove("linkedinLearning"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueLinkedinLearning _explicitNullValueLinkedinLearning = default!;
 #endif
         /// <summary>The workEmailDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueWorkEmailDomain? WorkEmailDomain { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueWorkEmailDomain? WorkEmailDomain { get => _explicitNullValueWorkEmailDomain; set { _explicitNullValueWorkEmailDomain = value; AdditionalData?.Remove("workEmailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workEmailDomain"); else _explicitNullProperties?.Remove("workEmailDomain"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueWorkEmailDomain? _explicitNullValueWorkEmailDomain = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueWorkEmailDomain WorkEmailDomain { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueWorkEmailDomain WorkEmailDomain { get => _explicitNullValueWorkEmailDomain; set { _explicitNullValueWorkEmailDomain = value; AdditionalData?.Remove("workEmailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workEmailDomain"); else _explicitNullProperties?.Remove("workEmailDomain"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueWorkEmailDomain _explicitNullValueWorkEmailDomain = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValue"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueLinkedinLearning>("linkedinLearning", LinkedinLearning);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemValueWorkEmailDomain>("workEmailDomain", WorkEmailDomain);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

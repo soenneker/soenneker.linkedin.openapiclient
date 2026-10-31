@@ -11,18 +11,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bidStrategy") is null) { _explicitNullValueBidStrategy = default!; _explicitNullProperties?.Remove("bidStrategy"); }
+            else if (parseNode.GetChildNode("bidStrategy") is { } nullNodeBidStrategy && nullNodeBidStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidStrategy = null;
+            if (parseNode.GetChildNode("budgetOptimizationStrategy") is null) { _explicitNullValueBudgetOptimizationStrategy = default!; _explicitNullProperties?.Remove("budgetOptimizationStrategy"); }
+            else if (parseNode.GetChildNode("budgetOptimizationStrategy") is { } nullNodeBudgetOptimizationStrategy && nullNodeBudgetOptimizationStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BudgetOptimizationStrategy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes the strategy used for bidding in auction. Campaigns under the campaign group must have the same bid strategy. Possible values:MAXIMUM_DELIVERYMANUALCOST_CAPDocumented type: string</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimizationBidStrategy? BidStrategy { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimizationBidStrategy? BidStrategy { get => _explicitNullValueBidStrategy; set { _explicitNullValueBidStrategy = value; AdditionalData?.Remove("bidStrategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bidStrategy"); else _explicitNullProperties?.Remove("bidStrategy"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimizationBidStrategy? _explicitNullValueBidStrategy = default!;
         /// <summary>Strategy used for campaign group budgeting to decide how to allocate budget across campaigns under the campaign group. Possible values: DYNAMICDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BudgetOptimizationStrategy { get; set; }
+        public string? BudgetOptimizationStrategy { get => _explicitNullValueBudgetOptimizationStrategy; set { _explicitNullValueBudgetOptimizationStrategy = value; AdditionalData?.Remove("budgetOptimizationStrategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetOptimizationStrategy"); else _explicitNullProperties?.Remove("budgetOptimizationStrategy"); } }
+        private string? _explicitNullValueBudgetOptimizationStrategy = default!;
 #nullable restore
 #else
-        public string BudgetOptimizationStrategy { get; set; }
+        public string BudgetOptimizationStrategy { get => _explicitNullValueBudgetOptimizationStrategy; set { _explicitNullValueBudgetOptimizationStrategy = value; AdditionalData?.Remove("budgetOptimizationStrategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetOptimizationStrategy"); else _explicitNullProperties?.Remove("budgetOptimizationStrategy"); } }
+        private string _explicitNullValueBudgetOptimizationStrategy = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization"/> and sets the default values.
@@ -39,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bidStrategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimizationBidStrategy>(); } },
+                { "bidStrategy", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimizationBidStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBidStrategy = default; _explicitNullProperties?.Remove("bidStrategy"); AdditionalData["bidStrategy"] = unknown; } else { BidStrategy = parsed; AdditionalData.Remove("bidStrategy"); } } },
                 { "budgetOptimizationStrategy", n => { BudgetOptimizationStrategy = n.GetStringValue(); } },
             };
         }
@@ -62,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimizationBidStrategy>("bidStrategy", BidStrategy);
             writer.WriteStringValue("budgetOptimizationStrategy", BudgetOptimizationStrategy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

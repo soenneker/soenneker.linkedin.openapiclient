@@ -12,23 +12,43 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hierarchyClassification") is null) { _explicitNullValueHierarchyClassification = default!; _explicitNullProperties?.Remove("hierarchyClassification"); }
+            else if (parseNode.GetChildNode("hierarchyClassification") is { } nullNodeHierarchyClassification && nullNodeHierarchyClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HierarchyClassification = null;
+            if (parseNode.GetChildNode("legacySchool") is null) { _explicitNullValueLegacySchool = default!; _explicitNullProperties?.Remove("legacySchool"); }
+            else if (parseNode.GetChildNode("legacySchool") is { } nullNodeLegacySchool && nullNodeLegacySchool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegacySchool = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("yearLevel") is null) { _explicitNullValueYearLevel = default!; _explicitNullProperties?.Remove("yearLevel"); }
+            else if (parseNode.GetChildNode("yearLevel") is { } nullNodeYearLevel && nullNodeYearLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YearLevel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The classification for school hierarchy. Possible values: CONSORTIUM_SYSTEM: A collection of schools and education providers. UNIVERSITY: A university, typically containing individual schools within it. INDEPENDENT_SCHOOL_COLLEGE_PROVIDER: Provides degrees, certs, etc., but typically doesn&apos;t contain individual schools within it. REMOTE_CAMPUS: A separate campus that&apos;s at a distance from the primary college area. DISTANCE_LEARNING: A school that provides education solely through online channels.Documented type: string</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesHierarchyClassification? HierarchyClassification { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesHierarchyClassification? HierarchyClassification { get => _explicitNullValueHierarchyClassification; set { _explicitNullValueHierarchyClassification = value; AdditionalData?.Remove("hierarchyClassification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchyClassification"); else _explicitNullProperties?.Remove("hierarchyClassification"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesHierarchyClassification? _explicitNullValueHierarchyClassification = default!;
         /// <summary>Legacy school URN for the organization.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegacySchool { get; set; }
+        public string? LegacySchool { get => _explicitNullValueLegacySchool; set { _explicitNullValueLegacySchool = value; AdditionalData?.Remove("legacySchool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacySchool"); else _explicitNullProperties?.Remove("legacySchool"); } }
+        private string? _explicitNullValueLegacySchool = default!;
 #nullable restore
 #else
-        public string LegacySchool { get; set; }
+        public string LegacySchool { get => _explicitNullValueLegacySchool; set { _explicitNullValueLegacySchool = value; AdditionalData?.Remove("legacySchool"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacySchool"); else _explicitNullProperties?.Remove("legacySchool"); } }
+        private string _explicitNullValueLegacySchool = default!;
 #endif
         /// <summary>The type of institution. Possible values: PUBLIC: A public school operated by the state, as opposed to being a private enterprise. PRIVATE: A private school, also known as independent school, non-governmental, or non-state school, not administered by a government.PROFIT: A for-profit school operated by a private, profit-seeking business.Documented type: string</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesType? Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesType? _explicitNullValueType = default!;
         /// <summary>Classification of the length of the institution&apos;s educational programs. These levels are defined by the National Center for Education Statistics (http://nces.ed.gov/pubs2015/2015097rev.pdf). Possible values: UNDER_TWO_YEAR: As defined by National Center for Education Statistics: &apos;This group includes any post-secondary institution that offers programs of less than 2 years’ duration below the baccalaureate level, as well as occupational and vocational schools with programs that don&apos;t exceed 1,800 contact hours.&apos; TWO_YEAR: As defined by the National Center for Education Statistics: &apos;: Any post-secondary institution that offers programs of at least 2 but less than 4 years’ duration, as well as occupational and vocational schools with programs of at least 1,800 hours and academic institutions with programs of less than 4 years. Does not include bachelor&apos;s-degree-granting institutions where the baccalaureate program can be completed in 3 years.&apos;FOUR_YEAR: As defined by the National Center for Education Statistics: &apos;Any post-secondary institution that offers programs of at least 4 years’ duration or one that offers programs at or above the baccalaureate level, as well as schools that offer post-baccalaureate certificates only or those that offer graduate programs only.&apos;Documented type: string</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesYearLevel? YearLevel { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesYearLevel? YearLevel { get => _explicitNullValueYearLevel; set { _explicitNullValueYearLevel = value; AdditionalData?.Remove("yearLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yearLevel"); else _explicitNullProperties?.Remove("yearLevel"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesYearLevel? _explicitNullValueYearLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes"/> and sets the default values.
         /// </summary>
@@ -44,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseSchoolAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,10 +74,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hierarchyClassification", n => { HierarchyClassification = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesHierarchyClassification>(); } },
+                { "hierarchyClassification", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesHierarchyClassification>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHierarchyClassification = default; _explicitNullProperties?.Remove("hierarchyClassification"); AdditionalData["hierarchyClassification"] = unknown; } else { HierarchyClassification = parsed; AdditionalData.Remove("hierarchyClassification"); } } },
                 { "legacySchool", n => { LegacySchool = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesType>(); } },
-                { "yearLevel", n => { YearLevel = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesYearLevel>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "yearLevel", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesYearLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueYearLevel = default; _explicitNullProperties?.Remove("yearLevel"); AdditionalData["yearLevel"] = unknown; } else { YearLevel = parsed; AdditionalData.Remove("yearLevel"); } } },
             };
         }
         /// <summary>
@@ -71,6 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("legacySchool", LegacySchool);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiSchoolattributesYearLevel>("yearLevel", YearLevel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

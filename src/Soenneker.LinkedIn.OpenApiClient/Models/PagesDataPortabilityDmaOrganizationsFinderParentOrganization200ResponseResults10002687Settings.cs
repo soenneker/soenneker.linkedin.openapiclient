@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687Settings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adSetting") is null) { _explicitNullValueAdSetting = default!; _explicitNullProperties?.Remove("adSetting"); }
+            else if (parseNode.GetChildNode("adSetting") is { } nullNodeAdSetting && nullNodeAdSetting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdSetting = null;
+            if (parseNode.GetChildNode("employeeExperienceSettingsV2") is null) { _explicitNullValueEmployeeExperienceSettingsV2 = default!; _explicitNullProperties?.Remove("employeeExperienceSettingsV2"); }
+            else if (parseNode.GetChildNode("employeeExperienceSettingsV2") is { } nullNodeEmployeeExperienceSettingsV2 && nullNodeEmployeeExperienceSettingsV2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeExperienceSettingsV2 = null;
+            if (parseNode.GetChildNode("premiumPageSettings") is null) { _explicitNullValuePremiumPageSettings = default!; _explicitNullProperties?.Remove("premiumPageSettings"); }
+            else if (parseNode.GetChildNode("premiumPageSettings") is { } nullNodePremiumPageSettings && nullNodePremiumPageSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PremiumPageSettings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The adSetting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdSetting { get; set; }
+        public string? AdSetting { get => _explicitNullValueAdSetting; set { _explicitNullValueAdSetting = value; AdditionalData?.Remove("adSetting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adSetting"); else _explicitNullProperties?.Remove("adSetting"); } }
+        private string? _explicitNullValueAdSetting = default!;
 #nullable restore
 #else
-        public string AdSetting { get; set; }
+        public string AdSetting { get => _explicitNullValueAdSetting; set { _explicitNullValueAdSetting = value; AdditionalData?.Remove("adSetting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adSetting"); else _explicitNullProperties?.Remove("adSetting"); } }
+        private string _explicitNullValueAdSetting = default!;
 #endif
         /// <summary>The employeeExperienceSettingsV2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsEmployeeExperienceSettingsV2? EmployeeExperienceSettingsV2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsEmployeeExperienceSettingsV2? EmployeeExperienceSettingsV2 { get => _explicitNullValueEmployeeExperienceSettingsV2; set { _explicitNullValueEmployeeExperienceSettingsV2 = value; AdditionalData?.Remove("employeeExperienceSettingsV2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeExperienceSettingsV2"); else _explicitNullProperties?.Remove("employeeExperienceSettingsV2"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsEmployeeExperienceSettingsV2? _explicitNullValueEmployeeExperienceSettingsV2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsEmployeeExperienceSettingsV2 EmployeeExperienceSettingsV2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsEmployeeExperienceSettingsV2 EmployeeExperienceSettingsV2 { get => _explicitNullValueEmployeeExperienceSettingsV2; set { _explicitNullValueEmployeeExperienceSettingsV2 = value; AdditionalData?.Remove("employeeExperienceSettingsV2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeExperienceSettingsV2"); else _explicitNullProperties?.Remove("employeeExperienceSettingsV2"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsEmployeeExperienceSettingsV2 _explicitNullValueEmployeeExperienceSettingsV2 = default!;
 #endif
         /// <summary>The premiumPageSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsPremiumPageSettings? PremiumPageSettings { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsPremiumPageSettings? PremiumPageSettings { get => _explicitNullValuePremiumPageSettings; set { _explicitNullValuePremiumPageSettings = value; AdditionalData?.Remove("premiumPageSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premiumPageSettings"); else _explicitNullProperties?.Remove("premiumPageSettings"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsPremiumPageSettings? _explicitNullValuePremiumPageSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsPremiumPageSettings PremiumPageSettings { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsPremiumPageSettings PremiumPageSettings { get => _explicitNullValuePremiumPageSettings; set { _explicitNullValuePremiumPageSettings = value; AdditionalData?.Remove("premiumPageSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premiumPageSettings"); else _explicitNullProperties?.Remove("premiumPageSettings"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsPremiumPageSettings _explicitNullValuePremiumPageSettings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687Settings"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687Settings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687Settings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687Settings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("adSetting", AdSetting);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsEmployeeExperienceSettingsV2>("employeeExperienceSettingsV2", EmployeeExperienceSettingsV2);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseResults10002687SettingsPremiumPageSettings>("premiumPageSettings", PremiumPageSettings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

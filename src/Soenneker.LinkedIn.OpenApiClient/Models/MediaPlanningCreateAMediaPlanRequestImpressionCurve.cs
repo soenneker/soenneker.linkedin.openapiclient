@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MediaPlanningCreateAMediaPlanRequestImpressionCurve : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("metricCurve") is null) { _explicitNullValueMetricCurve = default!; _explicitNullProperties?.Remove("metricCurve"); }
+            else if (parseNode.GetChildNode("metricCurve") is { } nullNodeMetricCurve && nullNodeMetricCurve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricCurve = null;
+            if (parseNode.GetChildNode("singlePointMetric") is null) { _explicitNullValueSinglePointMetric = default!; _explicitNullProperties?.Remove("singlePointMetric"); }
+            else if (parseNode.GetChildNode("singlePointMetric") is { } nullNodeSinglePointMetric && nullNodeSinglePointMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SinglePointMetric = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The array of points along the reach, impressions, reachPercentage or averageFrequency curve.Documented type: array [MediaPlanningForecastDataPoint]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>? MetricCurve { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>? MetricCurve { get => _explicitNullValueMetricCurve; set { _explicitNullValueMetricCurve = value; AdditionalData?.Remove("metricCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricCurve"); else _explicitNullProperties?.Remove("metricCurve"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>? _explicitNullValueMetricCurve = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject> MetricCurve { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject> MetricCurve { get => _explicitNullValueMetricCurve; set { _explicitNullValueMetricCurve = value; AdditionalData?.Remove("metricCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricCurve"); else _explicitNullProperties?.Remove("metricCurve"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject> _explicitNullValueMetricCurve = default!;
 #endif
         /// <summary>Optional metrics on a specific point (only returned when targetBudget in the request is populated).Documented type: array [MediaPlanningForecastDataPoint]]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>? SinglePointMetric { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>? SinglePointMetric { get => _explicitNullValueSinglePointMetric; set { _explicitNullValueSinglePointMetric = value; AdditionalData?.Remove("singlePointMetric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singlePointMetric"); else _explicitNullProperties?.Remove("singlePointMetric"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>? _explicitNullValueSinglePointMetric = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject> SinglePointMetric { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject> SinglePointMetric { get => _explicitNullValueSinglePointMetric; set { _explicitNullValueSinglePointMetric = value; AdditionalData?.Remove("singlePointMetric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singlePointMetric"); else _explicitNullProperties?.Remove("singlePointMetric"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject> _explicitNullValueSinglePointMetric = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>("metricCurve", MetricCurve);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingMediaPlanningMediaPlanningApiMediaplanningforecastdatapointObject>("singlePointMetric", SinglePointMetric);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

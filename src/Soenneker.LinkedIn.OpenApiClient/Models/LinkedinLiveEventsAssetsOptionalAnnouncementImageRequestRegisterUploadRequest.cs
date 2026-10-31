@@ -11,48 +11,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoCaptionLanguageTag") is null) { _explicitNullValueAutoCaptionLanguageTag = default!; _explicitNullProperties?.Remove("autoCaptionLanguageTag"); }
+            else if (parseNode.GetChildNode("autoCaptionLanguageTag") is { } nullNodeAutoCaptionLanguageTag && nullNodeAutoCaptionLanguageTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCaptionLanguageTag = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("recipes") is null) { _explicitNullValueRecipes = default!; _explicitNullProperties?.Remove("recipes"); }
+            else if (parseNode.GetChildNode("recipes") is { } nullNodeRecipes && nullNodeRecipes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipes = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("serviceRelationships") is null) { _explicitNullValueServiceRelationships = default!; _explicitNullProperties?.Remove("serviceRelationships"); }
+            else if (parseNode.GetChildNode("serviceRelationships") is { } nullNodeServiceRelationships && nullNodeServiceRelationships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceRelationships = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The BCP-47 language tag of the auto captions to generated for the live event. Use &quot;en-US&quot; for English. Remove this parameter if you do not want auto captions added.Documented type: string (optional)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutoCaptionLanguageTag { get; set; }
+        public string? AutoCaptionLanguageTag { get => _explicitNullValueAutoCaptionLanguageTag; set { _explicitNullValueAutoCaptionLanguageTag = value; AdditionalData?.Remove("autoCaptionLanguageTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCaptionLanguageTag"); else _explicitNullProperties?.Remove("autoCaptionLanguageTag"); } }
+        private string? _explicitNullValueAutoCaptionLanguageTag = default!;
 #nullable restore
 #else
-        public string AutoCaptionLanguageTag { get; set; }
+        public string AutoCaptionLanguageTag { get => _explicitNullValueAutoCaptionLanguageTag; set { _explicitNullValueAutoCaptionLanguageTag = value; AdditionalData?.Remove("autoCaptionLanguageTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCaptionLanguageTag"); else _explicitNullProperties?.Remove("autoCaptionLanguageTag"); } }
+        private string _explicitNullValueAutoCaptionLanguageTag = default!;
 #endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner? Owner { get; set; }
+        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner Owner { get; set; }
+        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>The recipes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Recipes { get; set; }
+        public List<string>? Recipes { get => _explicitNullValueRecipes; set { _explicitNullValueRecipes = value; AdditionalData?.Remove("recipes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipes"); else _explicitNullProperties?.Remove("recipes"); } }
+        private List<string>? _explicitNullValueRecipes = default!;
 #nullable restore
 #else
-        public List<string> Recipes { get; set; }
+        public List<string> Recipes { get => _explicitNullValueRecipes; set { _explicitNullValueRecipes = value; AdditionalData?.Remove("recipes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipes"); else _explicitNullProperties?.Remove("recipes"); } }
+        private List<string> _explicitNullValueRecipes = default!;
 #endif
         /// <summary>The region specifies the closest region your asset should be registered to. Possible values include: 1. WEST_US (West US)2. EAST_US_NORTH (Northeastern US)3. EAST_US_SOUTH (Southeastern US)4. CENTRAL_US (Central US)5. SOUTH_CENTRAL_US (South Central US)6. SOUTH_AMERICA (South America)7. NORTH_EUROPE (North Europe)8. WEST_EUROPE (West Europe)Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The serviceRelationships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem>? ServiceRelationships { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem>? ServiceRelationships { get => _explicitNullValueServiceRelationships; set { _explicitNullValueServiceRelationships = value; AdditionalData?.Remove("serviceRelationships"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRelationships"); else _explicitNullProperties?.Remove("serviceRelationships"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem>? _explicitNullValueServiceRelationships = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem> ServiceRelationships { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem> ServiceRelationships { get => _explicitNullValueServiceRelationships; set { _explicitNullValueServiceRelationships = value; AdditionalData?.Remove("serviceRelationships"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRelationships"); else _explicitNullProperties?.Remove("serviceRelationships"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem> _explicitNullValueServiceRelationships = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequest"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +107,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autoCaptionLanguageTag", n => { AutoCaptionLanguageTag = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
                 { "recipes", n => { Recipes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "serviceRelationships", n => { ServiceRelationships = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -94,10 +121,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("autoCaptionLanguageTag", AutoCaptionLanguageTag);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner>("owner", Owner);
+            writer.WriteStringValue("owner", Owner);
             writer.WriteCollectionOfPrimitiveValues<string>("recipes", Recipes);
             writer.WriteStringValue("region", Region);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem>("serviceRelationships", ServiceRelationships);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

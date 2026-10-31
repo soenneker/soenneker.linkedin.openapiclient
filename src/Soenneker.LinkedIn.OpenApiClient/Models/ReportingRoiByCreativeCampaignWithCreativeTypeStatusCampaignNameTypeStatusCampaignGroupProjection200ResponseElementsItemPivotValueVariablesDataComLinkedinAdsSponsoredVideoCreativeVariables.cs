@@ -11,44 +11,73 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariables : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("directSponsoredContent") is null) { _explicitNullValueDirectSponsoredContent = default!; _explicitNullProperties?.Remove("directSponsoredContent"); }
+            else if (parseNode.GetChildNode("directSponsoredContent") is { } nullNodeDirectSponsoredContent && nullNodeDirectSponsoredContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectSponsoredContent = null;
+            if (parseNode.GetChildNode("durationMicro") is null) { _explicitNullValueDurationMicro = default!; _explicitNullProperties?.Remove("durationMicro"); }
+            else if (parseNode.GetChildNode("durationMicro") is { } nullNodeDurationMicro && nullNodeDurationMicro.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMicro = null;
+            if (parseNode.GetChildNode("mediaAsset") is null) { _explicitNullValueMediaAsset = default!; _explicitNullProperties?.Remove("mediaAsset"); }
+            else if (parseNode.GetChildNode("mediaAsset") is { } nullNodeMediaAsset && nullNodeMediaAsset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaAsset = null;
+            if (parseNode.GetChildNode("mediaAsset~") is null) { _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = default!; _explicitNullProperties?.Remove("mediaAsset~"); }
+            else if (parseNode.GetChildNode("mediaAsset~") is { } nullNodeReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset && nullNodeReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = null;
+            if (parseNode.GetChildNode("userGeneratedContentPost") is null) { _explicitNullValueUserGeneratedContentPost = default!; _explicitNullProperties?.Remove("userGeneratedContentPost"); }
+            else if (parseNode.GetChildNode("userGeneratedContentPost") is { } nullNodeUserGeneratedContentPost && nullNodeUserGeneratedContentPost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserGeneratedContentPost = null;
+            if (parseNode.GetChildNode("videoAspectRatio") is null) { _explicitNullValueVideoAspectRatio = default!; _explicitNullProperties?.Remove("videoAspectRatio"); }
+            else if (parseNode.GetChildNode("videoAspectRatio") is { } nullNodeVideoAspectRatio && nullNodeVideoAspectRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoAspectRatio = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The directSponsoredContent property</summary>
-        public bool? DirectSponsoredContent { get; set; }
+        public bool? DirectSponsoredContent { get => _explicitNullValueDirectSponsoredContent; set { _explicitNullValueDirectSponsoredContent = value; AdditionalData?.Remove("directSponsoredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directSponsoredContent"); else _explicitNullProperties?.Remove("directSponsoredContent"); } }
+        private bool? _explicitNullValueDirectSponsoredContent = default!;
         /// <summary>The durationMicro property</summary>
-        public long? DurationMicro { get; set; }
+        public long? DurationMicro { get => _explicitNullValueDurationMicro; set { _explicitNullValueDurationMicro = value; AdditionalData?.Remove("durationMicro"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMicro"); else _explicitNullProperties?.Remove("durationMicro"); } }
+        private long? _explicitNullValueDurationMicro = default!;
         /// <summary>The mediaAsset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaAsset { get; set; }
+        public string? MediaAsset { get => _explicitNullValueMediaAsset; set { _explicitNullValueMediaAsset = value; AdditionalData?.Remove("mediaAsset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaAsset"); else _explicitNullProperties?.Remove("mediaAsset"); } }
+        private string? _explicitNullValueMediaAsset = default!;
 #nullable restore
 #else
-        public string MediaAsset { get; set; }
+        public string MediaAsset { get => _explicitNullValueMediaAsset; set { _explicitNullValueMediaAsset = value; AdditionalData?.Remove("mediaAsset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaAsset"); else _explicitNullProperties?.Remove("mediaAsset"); } }
+        private string _explicitNullValueMediaAsset = default!;
 #endif
         /// <summary>The mediaAsset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset? ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset? ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get => _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset; set { _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = value; AdditionalData?.Remove("mediaAsset~"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaAsset~"); else _explicitNullProperties?.Remove("mediaAsset~"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset? _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get => _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset; set { _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = value; AdditionalData?.Remove("mediaAsset~"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaAsset~"); else _explicitNullProperties?.Remove("mediaAsset~"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = default!;
 #endif
         /// <summary>The userGeneratedContentPost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserGeneratedContentPost { get; set; }
+        public string? UserGeneratedContentPost { get => _explicitNullValueUserGeneratedContentPost; set { _explicitNullValueUserGeneratedContentPost = value; AdditionalData?.Remove("userGeneratedContentPost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userGeneratedContentPost"); else _explicitNullProperties?.Remove("userGeneratedContentPost"); } }
+        private string? _explicitNullValueUserGeneratedContentPost = default!;
 #nullable restore
 #else
-        public string UserGeneratedContentPost { get; set; }
+        public string UserGeneratedContentPost { get => _explicitNullValueUserGeneratedContentPost; set { _explicitNullValueUserGeneratedContentPost = value; AdditionalData?.Remove("userGeneratedContentPost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userGeneratedContentPost"); else _explicitNullProperties?.Remove("userGeneratedContentPost"); } }
+        private string _explicitNullValueUserGeneratedContentPost = default!;
 #endif
         /// <summary>The videoAspectRatio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio? VideoAspectRatio { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio? VideoAspectRatio { get => _explicitNullValueVideoAspectRatio; set { _explicitNullValueVideoAspectRatio = value; AdditionalData?.Remove("videoAspectRatio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoAspectRatio"); else _explicitNullProperties?.Remove("videoAspectRatio"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio? _explicitNullValueVideoAspectRatio = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio VideoAspectRatio { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio VideoAspectRatio { get => _explicitNullValueVideoAspectRatio; set { _explicitNullValueVideoAspectRatio = value; AdditionalData?.Remove("videoAspectRatio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoAspectRatio"); else _explicitNullProperties?.Remove("videoAspectRatio"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio _explicitNullValueVideoAspectRatio = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariables"/> and sets the default values.
@@ -65,7 +94,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariables CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariables();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariables(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +125,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset>("mediaAsset~", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset);
             writer.WriteStringValue("userGeneratedContentPost", UserGeneratedContentPost);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio>("videoAspectRatio", VideoAspectRatio);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

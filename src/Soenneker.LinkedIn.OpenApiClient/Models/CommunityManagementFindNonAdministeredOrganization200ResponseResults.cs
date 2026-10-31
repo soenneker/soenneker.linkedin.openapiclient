@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CommunityManagementFindNonAdministeredOrganization200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("79988552") is null) { _explicitNullValueSevenNineNineEightEightFiveFiveTwo = default!; _explicitNullProperties?.Remove("79988552"); }
+            else if (parseNode.GetChildNode("79988552") is { } nullNodeSevenNineNineEightEightFiveFiveTwo && nullNodeSevenNineNineEightEightFiveFiveTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenNineNineEightEightFiveFiveTwo = null;
+            if (parseNode.GetChildNode("3803") is null) { _explicitNullValueThreeEightZeroThree = default!; _explicitNullProperties?.Remove("3803"); }
+            else if (parseNode.GetChildNode("3803") is { } nullNodeThreeEightZeroThree && nullNodeThreeEightZeroThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeEightZeroThree = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SevenNineNineEightEightFiveFiveTwo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552? SevenNineNineEightEightFiveFiveTwo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552? SevenNineNineEightEightFiveFiveTwo { get => _explicitNullValueSevenNineNineEightEightFiveFiveTwo; set { _explicitNullValueSevenNineNineEightEightFiveFiveTwo = value; AdditionalData?.Remove("79988552"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("79988552"); else _explicitNullProperties?.Remove("79988552"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552? _explicitNullValueSevenNineNineEightEightFiveFiveTwo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552 SevenNineNineEightEightFiveFiveTwo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552 SevenNineNineEightEightFiveFiveTwo { get => _explicitNullValueSevenNineNineEightEightFiveFiveTwo; set { _explicitNullValueSevenNineNineEightEightFiveFiveTwo = value; AdditionalData?.Remove("79988552"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("79988552"); else _explicitNullProperties?.Remove("79988552"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552 _explicitNullValueSevenNineNineEightEightFiveFiveTwo = default!;
 #endif
         /// <summary>The ThreeEightZeroThree property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803? ThreeEightZeroThree { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803? ThreeEightZeroThree { get => _explicitNullValueThreeEightZeroThree; set { _explicitNullValueThreeEightZeroThree = value; AdditionalData?.Remove("3803"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3803"); else _explicitNullProperties?.Remove("3803"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803? _explicitNullValueThreeEightZeroThree = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803 ThreeEightZeroThree { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803 ThreeEightZeroThree { get => _explicitNullValueThreeEightZeroThree; set { _explicitNullValueThreeEightZeroThree = value; AdditionalData?.Remove("3803"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3803"); else _explicitNullProperties?.Remove("3803"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803 _explicitNullValueThreeEightZeroThree = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552>("79988552", SevenNineNineEightEightFiveFiveTwo);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803>("3803", ThreeEightZeroThree);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

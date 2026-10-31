@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:organizationCommitment:(urn:li:organization:1337,4)") is null) { _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13374 = default!; _explicitNullProperties?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,4)"); }
+            else if (parseNode.GetChildNode("urn:li:organizationCommitment:(urn:li:organization:1337,4)") is { } nullNodeUrnLiOrganizationCommitmentUrnLiOrganization13374 && nullNodeUrnLiOrganizationCommitmentUrnLiOrganization13374.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiOrganizationCommitmentUrnLiOrganization13374 = null;
+            if (parseNode.GetChildNode("urn:li:organizationCommitment:(urn:li:organization:1337,5)") is null) { _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13375 = default!; _explicitNullProperties?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,5)"); }
+            else if (parseNode.GetChildNode("urn:li:organizationCommitment:(urn:li:organization:1337,5)") is { } nullNodeUrnLiOrganizationCommitmentUrnLiOrganization13375 && nullNodeUrnLiOrganizationCommitmentUrnLiOrganization13375.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiOrganizationCommitmentUrnLiOrganization13375 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiOrganizationCommitmentUrnLiOrganization13374 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374? UrnLiOrganizationCommitmentUrnLiOrganization13374 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374? UrnLiOrganizationCommitmentUrnLiOrganization13374 { get => _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13374; set { _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13374 = value; AdditionalData?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,4)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationCommitment:(urn:li:organization:1337,4)"); else _explicitNullProperties?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,4)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374? _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13374 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374 UrnLiOrganizationCommitmentUrnLiOrganization13374 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374 UrnLiOrganizationCommitmentUrnLiOrganization13374 { get => _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13374; set { _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13374 = value; AdditionalData?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,4)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationCommitment:(urn:li:organization:1337,4)"); else _explicitNullProperties?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,4)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374 _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13374 = default!;
 #endif
         /// <summary>The urnLiOrganizationCommitmentUrnLiOrganization13375 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13375? UrnLiOrganizationCommitmentUrnLiOrganization13375 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13375? UrnLiOrganizationCommitmentUrnLiOrganization13375 { get => _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13375; set { _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13375 = value; AdditionalData?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,5)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationCommitment:(urn:li:organization:1337,5)"); else _explicitNullProperties?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,5)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13375? _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13375 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13375 UrnLiOrganizationCommitmentUrnLiOrganization13375 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13375 UrnLiOrganizationCommitmentUrnLiOrganization13375 { get => _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13375; set { _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13375 = value; AdditionalData?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,5)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationCommitment:(urn:li:organization:1337,5)"); else _explicitNullProperties?.Remove("urn:li:organizationCommitment:(urn:li:organization:1337,5)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13375 _explicitNullValueUrnLiOrganizationCommitmentUrnLiOrganization13375 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResults"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13374>("urn:li:organizationCommitment:(urn:li:organization:1337,4)", UrnLiOrganizationCommitmentUrnLiOrganization13374);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200ResponseResultsUrnLiOrganizationCommitmentUrnLiOrganization13375>("urn:li:organizationCommitment:(urn:li:organization:1337,5)", UrnLiOrganizationCommitmentUrnLiOrganization13375);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

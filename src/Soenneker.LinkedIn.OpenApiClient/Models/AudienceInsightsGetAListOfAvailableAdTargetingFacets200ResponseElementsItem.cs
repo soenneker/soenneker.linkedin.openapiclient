@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AudienceInsightsGetAListOfAvailableAdTargetingFacets200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("availableEntityFinders") is null) { _explicitNullValueAvailableEntityFinders = default!; _explicitNullProperties?.Remove("availableEntityFinders"); }
+            else if (parseNode.GetChildNode("availableEntityFinders") is { } nullNodeAvailableEntityFinders && nullNodeAvailableEntityFinders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableEntityFinders = null;
+            if (parseNode.GetChildNode("entityTypes") is null) { _explicitNullValueEntityTypes = default!; _explicitNullProperties?.Remove("entityTypes"); }
+            else if (parseNode.GetChildNode("entityTypes") is { } nullNodeEntityTypes && nullNodeEntityTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityTypes = null;
+            if (parseNode.GetChildNode("facetName") is null) { _explicitNullValueFacetName = default!; _explicitNullProperties?.Remove("facetName"); }
+            else if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
+            if (parseNode.GetChildNode("$URN") is null) { _explicitNullValueURN = default!; _explicitNullProperties?.Remove("$URN"); }
+            else if (parseNode.GetChildNode("$URN") is { } nullNodeURN && nullNodeURN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) URN = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The availableEntityFinders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableEntityFinders { get; set; }
+        public List<string>? AvailableEntityFinders { get => _explicitNullValueAvailableEntityFinders; set { _explicitNullValueAvailableEntityFinders = value; AdditionalData?.Remove("availableEntityFinders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableEntityFinders"); else _explicitNullProperties?.Remove("availableEntityFinders"); } }
+        private List<string>? _explicitNullValueAvailableEntityFinders = default!;
 #nullable restore
 #else
-        public List<string> AvailableEntityFinders { get; set; }
+        public List<string> AvailableEntityFinders { get => _explicitNullValueAvailableEntityFinders; set { _explicitNullValueAvailableEntityFinders = value; AdditionalData?.Remove("availableEntityFinders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableEntityFinders"); else _explicitNullProperties?.Remove("availableEntityFinders"); } }
+        private List<string> _explicitNullValueAvailableEntityFinders = default!;
 #endif
         /// <summary>The entityTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntityTypes { get; set; }
+        public List<string>? EntityTypes { get => _explicitNullValueEntityTypes; set { _explicitNullValueEntityTypes = value; AdditionalData?.Remove("entityTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityTypes"); else _explicitNullProperties?.Remove("entityTypes"); } }
+        private List<string>? _explicitNullValueEntityTypes = default!;
 #nullable restore
 #else
-        public List<string> EntityTypes { get; set; }
+        public List<string> EntityTypes { get => _explicitNullValueEntityTypes; set { _explicitNullValueEntityTypes = value; AdditionalData?.Remove("entityTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityTypes"); else _explicitNullProperties?.Remove("entityTypes"); } }
+        private List<string> _explicitNullValueEntityTypes = default!;
 #endif
         /// <summary>The facetName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetName { get; set; }
+        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        private string? _explicitNullValueFacetName = default!;
 #nullable restore
 #else
-        public string FacetName { get; set; }
+        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        private string _explicitNullValueFacetName = default!;
 #endif
         /// <summary>The URN property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? URN { get; set; }
+        public string? URN { get => _explicitNullValueURN; set { _explicitNullValueURN = value; AdditionalData?.Remove("$URN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$URN"); else _explicitNullProperties?.Remove("$URN"); } }
+        private string? _explicitNullValueURN = default!;
 #nullable restore
 #else
-        public string URN { get; set; }
+        public string URN { get => _explicitNullValueURN; set { _explicitNullValueURN = value; AdditionalData?.Remove("$URN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$URN"); else _explicitNullProperties?.Remove("$URN"); } }
+        private string _explicitNullValueURN = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsGetAListOfAvailableAdTargetingFacets200ResponseElementsItem"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsGetAListOfAvailableAdTargetingFacets200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsGetAListOfAvailableAdTargetingFacets200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsGetAListOfAvailableAdTargetingFacets200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("entityTypes", EntityTypes);
             writer.WriteStringValue("facetName", FacetName);
             writer.WriteStringValue("$URN", URN);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

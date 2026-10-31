@@ -11,47 +11,79 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetASingleVideo200ResponseInitializeUploadRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fileSizeBytes") is null) { _explicitNullValueFileSizeBytes = default!; _explicitNullProperties?.Remove("fileSizeBytes"); }
+            else if (parseNode.GetChildNode("fileSizeBytes") is { } nullNodeFileSizeBytes && nullNodeFileSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSizeBytes = null;
+            if (parseNode.GetChildNode("linkbackContext") is null) { _explicitNullValueLinkbackContext = default!; _explicitNullProperties?.Remove("linkbackContext"); }
+            else if (parseNode.GetChildNode("linkbackContext") is { } nullNodeLinkbackContext && nullNodeLinkbackContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkbackContext = null;
+            if (parseNode.GetChildNode("mediaLibraryMetadata") is null) { _explicitNullValueMediaLibraryMetadata = default!; _explicitNullProperties?.Remove("mediaLibraryMetadata"); }
+            else if (parseNode.GetChildNode("mediaLibraryMetadata") is { } nullNodeMediaLibraryMetadata && nullNodeMediaLibraryMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaLibraryMetadata = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("templateName") is null) { _explicitNullValueTemplateName = default!; _explicitNullProperties?.Remove("templateName"); }
+            else if (parseNode.GetChildNode("templateName") is { } nullNodeTemplateName && nullNodeTemplateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateName = null;
+            if (parseNode.GetChildNode("uploadCaptions") is null) { _explicitNullValueUploadCaptions = default!; _explicitNullProperties?.Remove("uploadCaptions"); }
+            else if (parseNode.GetChildNode("uploadCaptions") is { } nullNodeUploadCaptions && nullNodeUploadCaptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadCaptions = null;
+            if (parseNode.GetChildNode("uploadThumbnail") is null) { _explicitNullValueUploadThumbnail = default!; _explicitNullProperties?.Remove("uploadThumbnail"); }
+            else if (parseNode.GetChildNode("uploadThumbnail") is { } nullNodeUploadThumbnail && nullNodeUploadThumbnail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadThumbnail = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>File size in bytes. This determines how many parts the video upload will be broken into. Maximum allowed Videos size is 5GB.Documented type: longRequirement: Yes</summary>
-        public long? FileSizeBytes { get; set; }
+        public long? FileSizeBytes { get => _explicitNullValueFileSizeBytes; set { _explicitNullValueFileSizeBytes = value; AdditionalData?.Remove("fileSizeBytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileSizeBytes"); else _explicitNullProperties?.Remove("fileSizeBytes"); } }
+        private long? _explicitNullValueFileSizeBytes = default!;
         /// <summary>The necessary context to link back to this attribution. When missing either no linkback is needed or no additional context is required to link back to the attribution. Note: The initializeUploadRequest.linkbackContext field is only supported from API version 202602 onwards.Documented type: string optionalRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkbackContext { get; set; }
+        public string? LinkbackContext { get => _explicitNullValueLinkbackContext; set { _explicitNullValueLinkbackContext = value; AdditionalData?.Remove("linkbackContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkbackContext"); else _explicitNullProperties?.Remove("linkbackContext"); } }
+        private string? _explicitNullValueLinkbackContext = default!;
 #nullable restore
 #else
-        public string LinkbackContext { get; set; }
+        public string LinkbackContext { get => _explicitNullValueLinkbackContext; set { _explicitNullValueLinkbackContext = value; AdditionalData?.Remove("linkbackContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkbackContext"); else _explicitNullProperties?.Remove("linkbackContext"); } }
+        private string _explicitNullValueLinkbackContext = default!;
 #endif
         /// <summary>Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests. When this field is present, the uploaded asset will also be registered in the account&apos;s media library.Documented type: MediaLibraryMetadataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? MediaLibraryMetadata { get; set; }
+        public UntypedNode? MediaLibraryMetadata { get => _explicitNullValueMediaLibraryMetadata; set { _explicitNullValueMediaLibraryMetadata = value; AdditionalData?.Remove("mediaLibraryMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaLibraryMetadata"); else _explicitNullProperties?.Remove("mediaLibraryMetadata"); } }
+        private UntypedNode? _explicitNullValueMediaLibraryMetadata = default!;
 #nullable restore
 #else
-        public UntypedNode MediaLibraryMetadata { get; set; }
+        public UntypedNode MediaLibraryMetadata { get => _explicitNullValueMediaLibraryMetadata; set { _explicitNullValueMediaLibraryMetadata = value; AdditionalData?.Remove("mediaLibraryMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaLibraryMetadata"); else _explicitNullProperties?.Remove("mediaLibraryMetadata"); } }
+        private UntypedNode _explicitNullValueMediaLibraryMetadata = default!;
 #endif
         /// <summary>URN of the entity that owns this asset. Can be a person(urn:li:person:123), or organization(urn:li:organization:123) URNDocumented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>The template name (if any) used in the creation of this video using a third-party company, organization, tool, etc. Note: The initializeUploadRequest.templateName field is only supported from API version 202602 onwards.Documented type: string optionalRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateName { get; set; }
+        public string? TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; AdditionalData?.Remove("templateName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("templateName"); else _explicitNullProperties?.Remove("templateName"); } }
+        private string? _explicitNullValueTemplateName = default!;
 #nullable restore
 #else
-        public string TemplateName { get; set; }
+        public string TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; AdditionalData?.Remove("templateName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("templateName"); else _explicitNullProperties?.Remove("templateName"); } }
+        private string _explicitNullValueTemplateName = default!;
 #endif
         /// <summary>Specify whether you want to upload captions with the video. Each video can include only one caption file, and only English-language captions are supported. If this field is set to true for an Ads Video, caption processing must succeed for the video to be eligible for serving. For a feed video, the video can still be served even if caption processing fails. This field defaults to false, as captions are optional for all videos.Documented type: boolean default=falseRequirement: No</summary>
-        public bool? UploadCaptions { get; set; }
+        public bool? UploadCaptions { get => _explicitNullValueUploadCaptions; set { _explicitNullValueUploadCaptions = value; AdditionalData?.Remove("uploadCaptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadCaptions"); else _explicitNullProperties?.Remove("uploadCaptions"); } }
+        private bool? _explicitNullValueUploadCaptions = default!;
         /// <summary>Whether you want to upload a thumbnail along with video. If the partner doesn&apos;t upload a thumbnail, a system generated thumbnail may be added to the video. If this field is set to true for an Ads Video, the processing of thumbnail must succeed for video to be servable. A feed video can serve even with failed captions. The value defaults to false as a thumbnail is optional for all videos.Documented type: boolean default=falseRequirement: No</summary>
-        public bool? UploadThumbnail { get; set; }
+        public bool? UploadThumbnail { get => _explicitNullValueUploadThumbnail; set { _explicitNullValueUploadThumbnail = value; AdditionalData?.Remove("uploadThumbnail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadThumbnail"); else _explicitNullProperties?.Remove("uploadThumbnail"); } }
+        private bool? _explicitNullValueUploadThumbnail = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest"/> and sets the default values.
         /// </summary>
@@ -67,7 +99,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +132,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("templateName", TemplateName);
             writer.WriteBoolValue("uploadCaptions", UploadCaptions);
             writer.WriteBoolValue("uploadThumbnail", UploadThumbnail);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

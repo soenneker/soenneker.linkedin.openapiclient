@@ -11,48 +11,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dataProvider") is null) { _explicitNullValueDataProvider = default!; _explicitNullProperties?.Remove("dataProvider"); }
+            else if (parseNode.GetChildNode("dataProvider") is { } nullNodeDataProvider && nullNodeDataProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataProvider = null;
+            if (parseNode.GetChildNode("integrationContext") is null) { _explicitNullValueIntegrationContext = default!; _explicitNullProperties?.Remove("integrationContext"); }
+            else if (parseNode.GetChildNode("integrationContext") is { } nullNodeIntegrationContext && nullNodeIntegrationContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationContext = null;
+            if (parseNode.GetChildNode("integrationName") is null) { _explicitNullValueIntegrationName = default!; _explicitNullProperties?.Remove("integrationName"); }
+            else if (parseNode.GetChildNode("integrationName") is { } nullNodeIntegrationName && nullNodeIntegrationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationName = null;
+            if (parseNode.GetChildNode("integrationType") is null) { _explicitNullValueIntegrationType = default!; _explicitNullProperties?.Remove("integrationType"); }
+            else if (parseNode.GetChildNode("integrationType") is { } nullNodeIntegrationType && nullNodeIntegrationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationType = null;
+            if (parseNode.GetChildNode("tenantType") is null) { _explicitNullValueTenantType = default!; _explicitNullProperties?.Remove("tenantType"); }
+            else if (parseNode.GetChildNode("tenantType") is { } nullNodeTenantType && nullNodeTenantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dataProvider property</summary>
+        /// <summary>Use &quot;ATS&quot; as the value for data providerDocumented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemDataProvider? DataProvider { get; set; }
+        public string? DataProvider { get => _explicitNullValueDataProvider; set { _explicitNullValueDataProvider = value; AdditionalData?.Remove("dataProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataProvider"); else _explicitNullProperties?.Remove("dataProvider"); } }
+        private string? _explicitNullValueDataProvider = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemDataProvider DataProvider { get; set; }
+        public string DataProvider { get => _explicitNullValueDataProvider; set { _explicitNullValueDataProvider = value; AdditionalData?.Remove("dataProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataProvider"); else _explicitNullProperties?.Remove("dataProvider"); } }
+        private string _explicitNullValueDataProvider = default!;
 #endif
-        /// <summary>The integrationContext property</summary>
+        /// <summary>Use the customer&apos;s integration context obtained in step 2. The format will be urn:li:organization:{id}Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemIntegrationContext? IntegrationContext { get; set; }
+        public string? IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string? _explicitNullValueIntegrationContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemIntegrationContext IntegrationContext { get; set; }
+        public string IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string _explicitNullValueIntegrationContext = default!;
 #endif
         /// <summary>Customer-facing name for the integration.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get; set; }
+        public string? IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        private string? _explicitNullValueIntegrationName = default!;
 #nullable restore
 #else
-        public string IntegrationName { get; set; }
+        public string IntegrationName { get => _explicitNullValueIntegrationName; set { _explicitNullValueIntegrationName = value; AdditionalData?.Remove("integrationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationName"); else _explicitNullProperties?.Remove("integrationName"); } }
+        private string _explicitNullValueIntegrationName = default!;
 #endif
         /// <summary>Use the customer&apos;s integration type obtained in step 2Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationType { get; set; }
+        public string? IntegrationType { get => _explicitNullValueIntegrationType; set { _explicitNullValueIntegrationType = value; AdditionalData?.Remove("integrationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationType"); else _explicitNullProperties?.Remove("integrationType"); } }
+        private string? _explicitNullValueIntegrationType = default!;
 #nullable restore
 #else
-        public string IntegrationType { get; set; }
+        public string IntegrationType { get => _explicitNullValueIntegrationType; set { _explicitNullValueIntegrationType = value; AdditionalData?.Remove("integrationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationType"); else _explicitNullProperties?.Remove("integrationType"); } }
+        private string _explicitNullValueIntegrationType = default!;
 #endif
         /// <summary>Use the customer&apos;s tenant type obtained in step 2Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantType { get; set; }
+        public string? TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; AdditionalData?.Remove("tenantType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenantType"); else _explicitNullProperties?.Remove("tenantType"); } }
+        private string? _explicitNullValueTenantType = default!;
 #nullable restore
 #else
-        public string TenantType { get; set; }
+        public string TenantType { get => _explicitNullValueTenantType; set { _explicitNullValueTenantType = value; AdditionalData?.Remove("tenantType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenantType"); else _explicitNullProperties?.Remove("tenantType"); } }
+        private string _explicitNullValueTenantType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItem"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,8 +106,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dataProvider", n => { DataProvider = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemDataProvider>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemDataProvider.CreateFromDiscriminatorValue); } },
-                { "integrationContext", n => { IntegrationContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemIntegrationContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemIntegrationContext.CreateFromDiscriminatorValue); } },
+                { "dataProvider", n => { DataProvider = n.GetStringValue(); } },
+                { "integrationContext", n => { IntegrationContext = n.GetStringValue(); } },
                 { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
                 { "integrationType", n => { IntegrationType = n.GetStringValue(); } },
                 { "tenantType", n => { TenantType = n.GetStringValue(); } },
@@ -93,11 +120,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemDataProvider>("dataProvider", DataProvider);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200ResponseElementsItemIntegrationContext>("integrationContext", IntegrationContext);
+            writer.WriteStringValue("dataProvider", DataProvider);
+            writer.WriteStringValue("integrationContext", IntegrationContext);
             writer.WriteStringValue("integrationName", IntegrationName);
             writer.WriteStringValue("integrationType", IntegrationType);
             writer.WriteStringValue("tenantType", TenantType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

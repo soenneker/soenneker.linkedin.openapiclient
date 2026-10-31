@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.AdAccounts.Item.Crea
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// You can search for creative content in order to get a collection of creatives matching your search parameters. The Creative API currently supports search by `creative id`, `campaign`, `account`, `content reference`, `intendedStatus`, `leadgenCreativeCallToActionDestinations` and test fields. The API supports finding creatives from multiple accounts. The values within each field are displayed with &apos;or&apos; (ORed) and values across fields are displayed with &apos;and&apos; (ANDed).

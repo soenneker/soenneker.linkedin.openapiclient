@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaLeadGenFormOwner200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)") is null) { _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = default!; _explicitNullProperties?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)"); }
+            else if (parseNode.GetChildNode("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)") is { } nullNodeUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 && nullNodeUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = null;
+            if (parseNode.GetChildNode("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)") is null) { _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = default!; _explicitNullProperties?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)"); }
+            else if (parseNode.GetChildNode("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)") is { } nullNodeUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 && nullNodeUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 { get => _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601; set { _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = value; AdditionalData?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)"); else _explicitNullProperties?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601? _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 { get => _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601; set { _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = value; AdditionalData?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)"); else _explicitNullProperties?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = default!;
 #endif
         /// <summary>The urnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 { get => _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481; set { _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = value; AdditionalData?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)"); else _explicitNullProperties?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481? _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 { get => _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481; set { _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = value; AdditionalData?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)"); else _explicitNullProperties?.Remove("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 _explicitNullValueUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResults"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601>("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)", UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481>("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)", UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

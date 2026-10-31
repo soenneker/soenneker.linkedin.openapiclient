@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("displaySize") is null) { _explicitNullValueDisplaySize = default!; _explicitNullProperties?.Remove("displaySize"); }
+            else if (parseNode.GetChildNode("displaySize") is { } nullNodeDisplaySize && nullNodeDisplaySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplaySize = null;
+            if (parseNode.GetChildNode("storageSize") is null) { _explicitNullValueStorageSize = default!; _explicitNullProperties?.Remove("storageSize"); }
+            else if (parseNode.GetChildNode("storageSize") is { } nullNodeStorageSize && nullNodeStorageSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageSize = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The displaySize property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize? DisplaySize { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize? DisplaySize { get => _explicitNullValueDisplaySize; set { _explicitNullValueDisplaySize = value; AdditionalData?.Remove("displaySize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displaySize"); else _explicitNullProperties?.Remove("displaySize"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize? _explicitNullValueDisplaySize = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize DisplaySize { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize DisplaySize { get => _explicitNullValueDisplaySize; set { _explicitNullValueDisplaySize = value; AdditionalData?.Remove("displaySize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displaySize"); else _explicitNullProperties?.Remove("displaySize"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize _explicitNullValueDisplaySize = default!;
 #endif
         /// <summary>The storageSize property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageStorageSize? StorageSize { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageStorageSize? StorageSize { get => _explicitNullValueStorageSize; set { _explicitNullValueStorageSize = value; AdditionalData?.Remove("storageSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageSize"); else _explicitNullProperties?.Remove("storageSize"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageStorageSize? _explicitNullValueStorageSize = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageStorageSize StorageSize { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageStorageSize StorageSize { get => _explicitNullValueStorageSize; set { _explicitNullValueStorageSize = value; AdditionalData?.Remove("storageSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storageSize"); else _explicitNullProperties?.Remove("storageSize"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageStorageSize _explicitNullValueStorageSize = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImage"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize>("displaySize", DisplaySize);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseDataComLinkedinDigitalmediaMediaartifactStillImageStorageSize>("storageSize", StorageSize);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

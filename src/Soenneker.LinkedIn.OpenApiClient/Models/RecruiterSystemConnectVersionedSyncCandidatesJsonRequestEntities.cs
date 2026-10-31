@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}") is null) { _explicitNullValueExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = default!; _explicitNullProperties?.Remove("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}"); }
+            else if (parseNode.GetChildNode("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}") is { } nullNodeExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId && nullNodeExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = null;
+            if (parseNode.GetChildNode("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})") is null) { _explicitNullValueParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = default!; _explicitNullProperties?.Remove("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})"); }
+            else if (parseNode.GetChildNode("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})") is { } nullNodeParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId && nullNodeParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The externalCandidateIdCandidate_idIntegrationContextUrn3Ali3Aorganization3aOrg_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId? ExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId? ExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get => _explicitNullValueExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId; set { _explicitNullValueExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = value; AdditionalData?.Remove("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}"); else _explicitNullProperties?.Remove("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId? _explicitNullValueExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId ExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId ExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get => _explicitNullValueExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId; set { _explicitNullValueExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = value; AdditionalData?.Remove("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}"); else _explicitNullProperties?.Remove("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId _explicitNullValueExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = default!;
 #endif
         /// <summary>The ParamsExternalCandidateIdCandidate_idIntegrationContextUrn3Ali3Aorganization3aOrg_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId? ParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId? ParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get => _explicitNullValueParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId; set { _explicitNullValueParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = value; AdditionalData?.Remove("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})"); else _explicitNullProperties?.Remove("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId? _explicitNullValueParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId ParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId ParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId { get => _explicitNullValueParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId; set { _explicitNullValueParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = value; AdditionalData?.Remove("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})"); else _explicitNullProperties?.Remove("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId _explicitNullValueParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntities"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId>("externalCandidateId={{candidate_id}}&integrationContext=urn%3Ali%3Aorganization%3a{{org_id}}", ExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncCandidatesJsonRequestEntitiesParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3AOrgId>("($params:(),externalCandidateId:{{candidate_id}},integrationContext:urn%3Ali%3Aorganization%3a{{org_id}})", ParamsExternalCandidateIdCandidateIdIntegrationContextUrn3Ali3Aorganization3aOrgId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentMiddlewarePlatformSyncJobRequisitionsCompensationSchemaValue : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end") is null) { _explicitNullValueEnd = default!; _explicitNullProperties?.Remove("end"); }
+            else if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("start") is null) { _explicitNullValueStart = default!; _explicitNullProperties?.Remove("start"); }
+            else if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the inclusive (less than or equal to) value in which to end the range. This field is optional. An unset field indicates an open range; For example, if end is 5, it means everything less than or equal to 5.Documented type: MoneyAmountRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaEnd? End { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaEnd? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; AdditionalData?.Remove("end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaEnd? _explicitNullValueEnd = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaEnd End { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaEnd End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; AdditionalData?.Remove("end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaEnd _explicitNullValueEnd = default!;
 #endif
         /// <summary>Represents the inclusive (greater than or equal to) value in which to start the range. This field is optional. An unset field indicates an open range; For example if start is 2 it means everything greater than or equal to 2.Documented type: MoneyAmountRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaStart? Start { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaStart? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; AdditionalData?.Remove("start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaStart? _explicitNullValueStart = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaStart Start { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaStart Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; AdditionalData?.Remove("start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaStart _explicitNullValueStart = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsCompensationSchemaValue"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsCompensationSchemaValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsCompensationSchemaValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsCompensationSchemaValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaEnd>("end", End);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsMoneyAmountRangeSchemaStart>("start", Start);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

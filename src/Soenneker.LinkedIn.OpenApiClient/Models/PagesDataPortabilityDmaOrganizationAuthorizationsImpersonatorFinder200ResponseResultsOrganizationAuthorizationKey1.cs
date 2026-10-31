@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("impersonation") is null) { _explicitNullValueImpersonation = default!; _explicitNullProperties?.Remove("impersonation"); }
+            else if (parseNode.GetChildNode("impersonation") is { } nullNodeImpersonation && nullNodeImpersonation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impersonation = null;
+        }
+
         /// <summary>The action requested, such as &quot;Editing Post XYZ&quot;. It can be one of the following values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization&apos;s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization&apos;s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization&apos;s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization&apos;s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization&apos;s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization&apos;s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization&apos;s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization&apos;s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization&apos;s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization&apos;s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization&apos;s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization&apos;s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization&apos;s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization&apos;s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization&apos;s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization&apos;s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization&apos;s services page)Documented type: OrganizationAuthorizationActionRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action? Action { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action Action { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action _explicitNullValueAction = default!;
 #endif
         /// <summary>The entity on whose behalf the impersonator is publicly acting. It is of type urn:li:organization:{ID}.Documented type: OrganizationUrn](../pages-profiles/organizations.md)Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Actor { get; set; }
+        public UntypedNode? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private UntypedNode? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public UntypedNode Actor { get; set; }
+        public UntypedNode Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private UntypedNode _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information of the impersonation which contains: The subject (person or enterprise profile) impersonating the actor.The scope within which the subject is attempting to perform the desired action on the organization.Documented type: SubjectAndScopeRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation? Impersonation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation? Impersonation { get => _explicitNullValueImpersonation; set { _explicitNullValueImpersonation = value; AdditionalData?.Remove("impersonation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impersonation"); else _explicitNullProperties?.Remove("impersonation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation? _explicitNullValueImpersonation = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation Impersonation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation Impersonation { get => _explicitNullValueImpersonation; set { _explicitNullValueImpersonation = value; AdditionalData?.Remove("impersonation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impersonation"); else _explicitNullProperties?.Remove("impersonation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation _explicitNullValueImpersonation = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Action>("action", Action);
             writer.WriteObjectValue<UntypedNode>("actor", Actor);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1Impersonation>("impersonation", Impersonation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,9 +11,40 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:organizationalPage:10002683") is null) { _explicitNullValueUrnLiOrganizationalPage10002683 = default!; _explicitNullProperties?.Remove("urn:li:organizationalPage:10002683"); }
+            else if (parseNode.GetChildNode("urn:li:organizationalPage:10002683") is { } nullNodeUrnLiOrganizationalPage10002683 && nullNodeUrnLiOrganizationalPage10002683.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiOrganizationalPage10002683 = null;
+            if (parseNode.GetChildNode("urn:li:organizationalPage:2822321") is null) { _explicitNullValueUrnLiOrganizationalPage2822321 = default!; _explicitNullProperties?.Remove("urn:li:organizationalPage:2822321"); }
+            else if (parseNode.GetChildNode("urn:li:organizationalPage:2822321") is { } nullNodeUrnLiOrganizationalPage2822321 && nullNodeUrnLiOrganizationalPage2822321.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiOrganizationalPage2822321 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The urnLiOrganizationalPage10002683 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage10002683? UrnLiOrganizationalPage10002683 { get => _explicitNullValueUrnLiOrganizationalPage10002683; set { _explicitNullValueUrnLiOrganizationalPage10002683 = value; AdditionalData?.Remove("urn:li:organizationalPage:10002683"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationalPage:10002683"); else _explicitNullProperties?.Remove("urn:li:organizationalPage:10002683"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage10002683? _explicitNullValueUrnLiOrganizationalPage10002683 = default!;
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage10002683 UrnLiOrganizationalPage10002683 { get => _explicitNullValueUrnLiOrganizationalPage10002683; set { _explicitNullValueUrnLiOrganizationalPage10002683 = value; AdditionalData?.Remove("urn:li:organizationalPage:10002683"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationalPage:10002683"); else _explicitNullProperties?.Remove("urn:li:organizationalPage:10002683"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage10002683 _explicitNullValueUrnLiOrganizationalPage10002683 = default!;
+#endif
+        /// <summary>The urnLiOrganizationalPage2822321 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage2822321? UrnLiOrganizationalPage2822321 { get => _explicitNullValueUrnLiOrganizationalPage2822321; set { _explicitNullValueUrnLiOrganizationalPage2822321 = value; AdditionalData?.Remove("urn:li:organizationalPage:2822321"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationalPage:2822321"); else _explicitNullProperties?.Remove("urn:li:organizationalPage:2822321"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage2822321? _explicitNullValueUrnLiOrganizationalPage2822321 = default!;
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage2822321 UrnLiOrganizationalPage2822321 { get => _explicitNullValueUrnLiOrganizationalPage2822321; set { _explicitNullValueUrnLiOrganizationalPage2822321 = value; AdditionalData?.Remove("urn:li:organizationalPage:2822321"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationalPage:2822321"); else _explicitNullProperties?.Remove("urn:li:organizationalPage:2822321"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage2822321 _explicitNullValueUrnLiOrganizationalPage2822321 = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1"/> and sets the default values.
         /// </summary>
@@ -29,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +70,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "urn:li:organizationalPage:10002683", n => { UrnLiOrganizationalPage10002683 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage10002683>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage10002683.CreateFromDiscriminatorValue); } },
+                { "urn:li:organizationalPage:2822321", n => { UrnLiOrganizationalPage2822321 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage2822321>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage2822321.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +81,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage10002683>("urn:li:organizationalPage:10002683", UrnLiOrganizationalPage10002683);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseResultsAnyOf1_urnLiOrganizationalPage2822321>("urn:li:organizationalPage:2822321", UrnLiOrganizationalPage2822321);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

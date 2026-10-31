@@ -11,21 +11,46 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValueTypeSpecificValueVisitorEdgeAnalyticsValue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("desktopCount") is null) { _explicitNullValueDesktopCount = default!; _explicitNullProperties?.Remove("desktopCount"); }
+            else if (parseNode.GetChildNode("desktopCount") is { } nullNodeDesktopCount && nullNodeDesktopCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesktopCount = null;
+            if (parseNode.GetChildNode("desktopCtaClickCount") is null) { _explicitNullValueDesktopCtaClickCount = default!; _explicitNullProperties?.Remove("desktopCtaClickCount"); }
+            else if (parseNode.GetChildNode("desktopCtaClickCount") is { } nullNodeDesktopCtaClickCount && nullNodeDesktopCtaClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesktopCtaClickCount = null;
+            if (parseNode.GetChildNode("guestDesktopCount") is null) { _explicitNullValueGuestDesktopCount = default!; _explicitNullProperties?.Remove("guestDesktopCount"); }
+            else if (parseNode.GetChildNode("guestDesktopCount") is { } nullNodeGuestDesktopCount && nullNodeGuestDesktopCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestDesktopCount = null;
+            if (parseNode.GetChildNode("guestMobileCount") is null) { _explicitNullValueGuestMobileCount = default!; _explicitNullProperties?.Remove("guestMobileCount"); }
+            else if (parseNode.GetChildNode("guestMobileCount") is { } nullNodeGuestMobileCount && nullNodeGuestMobileCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestMobileCount = null;
+            if (parseNode.GetChildNode("mobileCount") is null) { _explicitNullValueMobileCount = default!; _explicitNullProperties?.Remove("mobileCount"); }
+            else if (parseNode.GetChildNode("mobileCount") is { } nullNodeMobileCount && nullNodeMobileCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileCount = null;
+            if (parseNode.GetChildNode("mobileCtaClickCount") is null) { _explicitNullValueMobileCtaClickCount = default!; _explicitNullProperties?.Remove("mobileCtaClickCount"); }
+            else if (parseNode.GetChildNode("mobileCtaClickCount") is { } nullNodeMobileCtaClickCount && nullNodeMobileCtaClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileCtaClickCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The desktopCount property</summary>
-        public long? DesktopCount { get; set; }
+        public long? DesktopCount { get => _explicitNullValueDesktopCount; set { _explicitNullValueDesktopCount = value; AdditionalData?.Remove("desktopCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopCount"); else _explicitNullProperties?.Remove("desktopCount"); } }
+        private long? _explicitNullValueDesktopCount = default!;
         /// <summary>The desktopCtaClickCount property</summary>
-        public long? DesktopCtaClickCount { get; set; }
+        public long? DesktopCtaClickCount { get => _explicitNullValueDesktopCtaClickCount; set { _explicitNullValueDesktopCtaClickCount = value; AdditionalData?.Remove("desktopCtaClickCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desktopCtaClickCount"); else _explicitNullProperties?.Remove("desktopCtaClickCount"); } }
+        private long? _explicitNullValueDesktopCtaClickCount = default!;
         /// <summary>The guestDesktopCount property</summary>
-        public long? GuestDesktopCount { get; set; }
+        public long? GuestDesktopCount { get => _explicitNullValueGuestDesktopCount; set { _explicitNullValueGuestDesktopCount = value; AdditionalData?.Remove("guestDesktopCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guestDesktopCount"); else _explicitNullProperties?.Remove("guestDesktopCount"); } }
+        private long? _explicitNullValueGuestDesktopCount = default!;
         /// <summary>The guestMobileCount property</summary>
-        public long? GuestMobileCount { get; set; }
+        public long? GuestMobileCount { get => _explicitNullValueGuestMobileCount; set { _explicitNullValueGuestMobileCount = value; AdditionalData?.Remove("guestMobileCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guestMobileCount"); else _explicitNullProperties?.Remove("guestMobileCount"); } }
+        private long? _explicitNullValueGuestMobileCount = default!;
         /// <summary>The mobileCount property</summary>
-        public long? MobileCount { get; set; }
+        public long? MobileCount { get => _explicitNullValueMobileCount; set { _explicitNullValueMobileCount = value; AdditionalData?.Remove("mobileCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileCount"); else _explicitNullProperties?.Remove("mobileCount"); } }
+        private long? _explicitNullValueMobileCount = default!;
         /// <summary>The mobileCtaClickCount property</summary>
-        public long? MobileCtaClickCount { get; set; }
+        public long? MobileCtaClickCount { get => _explicitNullValueMobileCtaClickCount; set { _explicitNullValueMobileCtaClickCount = value; AdditionalData?.Remove("mobileCtaClickCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobileCtaClickCount"); else _explicitNullProperties?.Remove("mobileCtaClickCount"); } }
+        private long? _explicitNullValueMobileCtaClickCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValueTypeSpecificValueVisitorEdgeAnalyticsValue"/> and sets the default values.
         /// </summary>
@@ -41,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValueTypeSpecificValueVisitorEdgeAnalyticsValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValueTypeSpecificValueVisitorEdgeAnalyticsValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValueTypeSpecificValueVisitorEdgeAnalyticsValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("guestMobileCount", GuestMobileCount);
             writer.WriteLongValue("mobileCount", MobileCount);
             writer.WriteLongValue("mobileCtaClickCount", MobileCtaClickCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

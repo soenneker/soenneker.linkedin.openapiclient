@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisCreateAnOrganicCreativeRequestCreativeInlineContentPostAdContext : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dscAdAccount") is null) { _explicitNullValueDscAdAccount = default!; _explicitNullProperties?.Remove("dscAdAccount"); }
+            else if (parseNode.GetChildNode("dscAdAccount") is { } nullNodeDscAdAccount && nullNodeDscAdAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DscAdAccount = null;
+            if (parseNode.GetChildNode("dscStatus") is null) { _explicitNullValueDscStatus = default!; _explicitNullProperties?.Remove("dscStatus"); }
+            else if (parseNode.GetChildNode("dscStatus") is { } nullNodeDscStatus && nullNodeDscStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DscStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dscAdAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DscAdAccount { get; set; }
+        public string? DscAdAccount { get => _explicitNullValueDscAdAccount; set { _explicitNullValueDscAdAccount = value; AdditionalData?.Remove("dscAdAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscAdAccount"); else _explicitNullProperties?.Remove("dscAdAccount"); } }
+        private string? _explicitNullValueDscAdAccount = default!;
 #nullable restore
 #else
-        public string DscAdAccount { get; set; }
+        public string DscAdAccount { get => _explicitNullValueDscAdAccount; set { _explicitNullValueDscAdAccount = value; AdditionalData?.Remove("dscAdAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscAdAccount"); else _explicitNullProperties?.Remove("dscAdAccount"); } }
+        private string _explicitNullValueDscAdAccount = default!;
 #endif
         /// <summary>The dscStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DscStatus { get; set; }
+        public string? DscStatus { get => _explicitNullValueDscStatus; set { _explicitNullValueDscStatus = value; AdditionalData?.Remove("dscStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscStatus"); else _explicitNullProperties?.Remove("dscStatus"); } }
+        private string? _explicitNullValueDscStatus = default!;
 #nullable restore
 #else
-        public string DscStatus { get; set; }
+        public string DscStatus { get => _explicitNullValueDscStatus; set { _explicitNullValueDscStatus = value; AdditionalData?.Remove("dscStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscStatus"); else _explicitNullProperties?.Remove("dscStatus"); } }
+        private string _explicitNullValueDscStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeInlineContentPostAdContext"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeInlineContentPostAdContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeInlineContentPostAdContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreativeInlineContentPostAdContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dscAdAccount", DscAdAccount);
             writer.WriteStringValue("dscStatus", DscStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

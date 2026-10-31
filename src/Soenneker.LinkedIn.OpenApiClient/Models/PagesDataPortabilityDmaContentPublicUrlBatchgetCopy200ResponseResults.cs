@@ -11,48 +11,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:contentTopic:5768828") is null) { _explicitNullValueUrnLiContentTopic5768828 = default!; _explicitNullProperties?.Remove("urn:li:contentTopic:5768828"); }
+            else if (parseNode.GetChildNode("urn:li:contentTopic:5768828") is { } nullNodeUrnLiContentTopic5768828 && nullNodeUrnLiContentTopic5768828.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiContentTopic5768828 = null;
+            if (parseNode.GetChildNode("urn:li:job:3655096957") is null) { _explicitNullValueUrnLiJob3655096957 = default!; _explicitNullProperties?.Remove("urn:li:job:3655096957"); }
+            else if (parseNode.GetChildNode("urn:li:job:3655096957") is { } nullNodeUrnLiJob3655096957 && nullNodeUrnLiJob3655096957.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiJob3655096957 = null;
+            if (parseNode.GetChildNode("urn:li:jobPosting:3655096957") is null) { _explicitNullValueUrnLiJobPosting3655096957 = default!; _explicitNullProperties?.Remove("urn:li:jobPosting:3655096957"); }
+            else if (parseNode.GetChildNode("urn:li:jobPosting:3655096957") is { } nullNodeUrnLiJobPosting3655096957 && nullNodeUrnLiJobPosting3655096957.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiJobPosting3655096957 = null;
+            if (parseNode.GetChildNode("urn:li:lyndaCourse:659267") is null) { _explicitNullValueUrnLiLyndaCourse659267 = default!; _explicitNullProperties?.Remove("urn:li:lyndaCourse:659267"); }
+            else if (parseNode.GetChildNode("urn:li:lyndaCourse:659267") is { } nullNodeUrnLiLyndaCourse659267 && nullNodeUrnLiLyndaCourse659267.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiLyndaCourse659267 = null;
+            if (parseNode.GetChildNode("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)") is null) { _explicitNullValueUrnLiLyndaVideoUrnLiLyndaCourse659267734720 = default!; _explicitNullProperties?.Remove("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)"); }
+            else if (parseNode.GetChildNode("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)") is { } nullNodeUrnLiLyndaVideoUrnLiLyndaCourse659267734720 && nullNodeUrnLiLyndaVideoUrnLiLyndaCourse659267734720.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiLyndaVideoUrnLiLyndaCourse659267734720 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiContentTopic5768828 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiContentTopic5768828? UrnLiContentTopic5768828 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiContentTopic5768828? UrnLiContentTopic5768828 { get => _explicitNullValueUrnLiContentTopic5768828; set { _explicitNullValueUrnLiContentTopic5768828 = value; AdditionalData?.Remove("urn:li:contentTopic:5768828"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentTopic:5768828"); else _explicitNullProperties?.Remove("urn:li:contentTopic:5768828"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiContentTopic5768828? _explicitNullValueUrnLiContentTopic5768828 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiContentTopic5768828 UrnLiContentTopic5768828 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiContentTopic5768828 UrnLiContentTopic5768828 { get => _explicitNullValueUrnLiContentTopic5768828; set { _explicitNullValueUrnLiContentTopic5768828 = value; AdditionalData?.Remove("urn:li:contentTopic:5768828"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:contentTopic:5768828"); else _explicitNullProperties?.Remove("urn:li:contentTopic:5768828"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiContentTopic5768828 _explicitNullValueUrnLiContentTopic5768828 = default!;
 #endif
         /// <summary>The urnLiJob3655096957 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJob3655096957? UrnLiJob3655096957 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJob3655096957? UrnLiJob3655096957 { get => _explicitNullValueUrnLiJob3655096957; set { _explicitNullValueUrnLiJob3655096957 = value; AdditionalData?.Remove("urn:li:job:3655096957"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:job:3655096957"); else _explicitNullProperties?.Remove("urn:li:job:3655096957"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJob3655096957? _explicitNullValueUrnLiJob3655096957 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJob3655096957 UrnLiJob3655096957 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJob3655096957 UrnLiJob3655096957 { get => _explicitNullValueUrnLiJob3655096957; set { _explicitNullValueUrnLiJob3655096957 = value; AdditionalData?.Remove("urn:li:job:3655096957"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:job:3655096957"); else _explicitNullProperties?.Remove("urn:li:job:3655096957"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJob3655096957 _explicitNullValueUrnLiJob3655096957 = default!;
 #endif
         /// <summary>The urnLiJobPosting3655096957 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJobPosting3655096957? UrnLiJobPosting3655096957 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJobPosting3655096957? UrnLiJobPosting3655096957 { get => _explicitNullValueUrnLiJobPosting3655096957; set { _explicitNullValueUrnLiJobPosting3655096957 = value; AdditionalData?.Remove("urn:li:jobPosting:3655096957"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:jobPosting:3655096957"); else _explicitNullProperties?.Remove("urn:li:jobPosting:3655096957"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJobPosting3655096957? _explicitNullValueUrnLiJobPosting3655096957 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJobPosting3655096957 UrnLiJobPosting3655096957 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJobPosting3655096957 UrnLiJobPosting3655096957 { get => _explicitNullValueUrnLiJobPosting3655096957; set { _explicitNullValueUrnLiJobPosting3655096957 = value; AdditionalData?.Remove("urn:li:jobPosting:3655096957"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:jobPosting:3655096957"); else _explicitNullProperties?.Remove("urn:li:jobPosting:3655096957"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJobPosting3655096957 _explicitNullValueUrnLiJobPosting3655096957 = default!;
 #endif
         /// <summary>The urnLiLyndaCourse659267 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaCourse659267? UrnLiLyndaCourse659267 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaCourse659267? UrnLiLyndaCourse659267 { get => _explicitNullValueUrnLiLyndaCourse659267; set { _explicitNullValueUrnLiLyndaCourse659267 = value; AdditionalData?.Remove("urn:li:lyndaCourse:659267"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:lyndaCourse:659267"); else _explicitNullProperties?.Remove("urn:li:lyndaCourse:659267"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaCourse659267? _explicitNullValueUrnLiLyndaCourse659267 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaCourse659267 UrnLiLyndaCourse659267 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaCourse659267 UrnLiLyndaCourse659267 { get => _explicitNullValueUrnLiLyndaCourse659267; set { _explicitNullValueUrnLiLyndaCourse659267 = value; AdditionalData?.Remove("urn:li:lyndaCourse:659267"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:lyndaCourse:659267"); else _explicitNullProperties?.Remove("urn:li:lyndaCourse:659267"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaCourse659267 _explicitNullValueUrnLiLyndaCourse659267 = default!;
 #endif
         /// <summary>The urnLiLyndaVideoUrnLiLyndaCourse659267734720 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaVideoUrnLiLyndaCourse659267734720? UrnLiLyndaVideoUrnLiLyndaCourse659267734720 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaVideoUrnLiLyndaCourse659267734720? UrnLiLyndaVideoUrnLiLyndaCourse659267734720 { get => _explicitNullValueUrnLiLyndaVideoUrnLiLyndaCourse659267734720; set { _explicitNullValueUrnLiLyndaVideoUrnLiLyndaCourse659267734720 = value; AdditionalData?.Remove("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)"); else _explicitNullProperties?.Remove("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaVideoUrnLiLyndaCourse659267734720? _explicitNullValueUrnLiLyndaVideoUrnLiLyndaCourse659267734720 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaVideoUrnLiLyndaCourse659267734720 UrnLiLyndaVideoUrnLiLyndaCourse659267734720 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaVideoUrnLiLyndaCourse659267734720 UrnLiLyndaVideoUrnLiLyndaCourse659267734720 { get => _explicitNullValueUrnLiLyndaVideoUrnLiLyndaCourse659267734720; set { _explicitNullValueUrnLiLyndaVideoUrnLiLyndaCourse659267734720 = value; AdditionalData?.Remove("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)"); else _explicitNullProperties?.Remove("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaVideoUrnLiLyndaCourse659267734720 _explicitNullValueUrnLiLyndaVideoUrnLiLyndaCourse659267734720 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResults"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +125,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiJobPosting3655096957>("urn:li:jobPosting:3655096957", UrnLiJobPosting3655096957);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaCourse659267>("urn:li:lyndaCourse:659267", UrnLiLyndaCourse659267);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentPublicUrlBatchgetCopy200ResponseResultsUrnLiLyndaVideoUrnLiLyndaCourse659267734720>("urn:li:lyndaVideo:(urn:li:lyndaCourse:659267,734720)", UrnLiLyndaVideoUrnLiLyndaCourse659267734720);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

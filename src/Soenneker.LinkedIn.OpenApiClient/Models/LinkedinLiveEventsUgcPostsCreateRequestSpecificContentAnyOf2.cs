@@ -12,35 +12,57 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("media") is null) { _explicitNullValueMedia = default!; _explicitNullProperties?.Remove("media"); }
+            else if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("primaryLandingPageUrl") is null) { _explicitNullValuePrimaryLandingPageUrl = default!; _explicitNullProperties?.Remove("primaryLandingPageUrl"); }
+            else if (parseNode.GetChildNode("primaryLandingPageUrl") is { } nullNodePrimaryLandingPageUrl && nullNodePrimaryLandingPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryLandingPageUrl = null;
+            if (parseNode.GetChildNode("shareCommentary") is null) { _explicitNullValueShareCommentary = default!; _explicitNullProperties?.Remove("shareCommentary"); }
+            else if (parseNode.GetChildNode("shareCommentary") is { } nullNodeShareCommentary && nullNodeShareCommentary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareCommentary = null;
+            if (parseNode.GetChildNode("shareMediaCategory") is null) { _explicitNullValueShareMediaCategory = default!; _explicitNullProperties?.Remove("shareMediaCategory"); }
+            else if (parseNode.GetChildNode("shareMediaCategory") is { } nullNodeShareMediaCategory && nullNodeShareMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareMediaCategory = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The media shared in this share. Can be videos, images, or articles.Documented type: Array of ShareMediaRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia>? Media { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia>? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia>? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia> Media { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia> Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia> _explicitNullValueMedia = default!;
 #endif
         /// <summary>The main landing page URL of the share. Maximum length is 2000 characters.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryLandingPageUrl { get; set; }
+        public string? PrimaryLandingPageUrl { get => _explicitNullValuePrimaryLandingPageUrl; set { _explicitNullValuePrimaryLandingPageUrl = value; AdditionalData?.Remove("primaryLandingPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryLandingPageUrl"); else _explicitNullProperties?.Remove("primaryLandingPageUrl"); } }
+        private string? _explicitNullValuePrimaryLandingPageUrl = default!;
 #nullable restore
 #else
-        public string PrimaryLandingPageUrl { get; set; }
+        public string PrimaryLandingPageUrl { get => _explicitNullValuePrimaryLandingPageUrl; set { _explicitNullValuePrimaryLandingPageUrl = value; AdditionalData?.Remove("primaryLandingPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryLandingPageUrl"); else _explicitNullProperties?.Remove("primaryLandingPageUrl"); } }
+        private string _explicitNullValuePrimaryLandingPageUrl = default!;
 #endif
         /// <summary>The message content of this share.Documented type: </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary? ShareCommentary { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary? ShareCommentary { get => _explicitNullValueShareCommentary; set { _explicitNullValueShareCommentary = value; AdditionalData?.Remove("shareCommentary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareCommentary"); else _explicitNullProperties?.Remove("shareCommentary"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary? _explicitNullValueShareCommentary = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary ShareCommentary { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary ShareCommentary { get => _explicitNullValueShareCommentary; set { _explicitNullValueShareCommentary = value; AdditionalData?.Remove("shareCommentary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareCommentary"); else _explicitNullProperties?.Remove("shareCommentary"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary _explicitNullValueShareCommentary = default!;
 #endif
         /// <summary>The type of media contained within the media field of this object. Can be the following enum values: ARTICLE - Content containing articles IMAGE - Content containing images NONE - Content containing media RICH - Content containing rich media VIDEO - Content containing videos LEARNING_COURSE - Content containing learning courses JOB - Content contains jobs QUESTION - Content containing questa questions ANSWER - Content containing questa answers. CAROUSEL - Various types of content rendered in carousel format TOPIC - Content containing topics NATIVE_DOCUMENT - Content file types that are uploaded natively URN_REFERENCE - Media URN for the content category; except when URN type is digital media asset. Use mediaType in ShareMedia when disambiguation is required LIVE_VIDEO - Video content streamed live - ugcPost may be consumed during recording. The resource serving the media is the source of truth for whether the video is currently live.Documented type: Enum stringRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareMediaCategory? ShareMediaCategory { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareMediaCategory? ShareMediaCategory { get => _explicitNullValueShareMediaCategory; set { _explicitNullValueShareMediaCategory = value; AdditionalData?.Remove("shareMediaCategory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareMediaCategory"); else _explicitNullProperties?.Remove("shareMediaCategory"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareMediaCategory? _explicitNullValueShareMediaCategory = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2"/> and sets the default values.
         /// </summary>
@@ -56,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharemedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "primaryLandingPageUrl", n => { PrimaryLandingPageUrl = n.GetStringValue(); } },
                 { "shareCommentary", n => { ShareCommentary = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary.CreateFromDiscriminatorValue); } },
-                { "shareMediaCategory", n => { ShareMediaCategory = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareMediaCategory>(); } },
+                { "shareMediaCategory", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareMediaCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueShareMediaCategory = default; _explicitNullProperties?.Remove("shareMediaCategory"); AdditionalData["shareMediaCategory"] = unknown; } else { ShareMediaCategory = parsed; AdditionalData.Remove("shareMediaCategory"); } } },
             };
         }
         /// <summary>
@@ -83,6 +105,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("primaryLandingPageUrl", PrimaryLandingPageUrl);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareCommentary>("shareCommentary", ShareCommentary);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnComplianceIntegrationsSharesUgcPostApiSharecontentShareMediaCategory>("shareMediaCategory", ShareMediaCategory);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,85 +11,150 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("companyName") is null) { _explicitNullValueCompanyName = default!; _explicitNullProperties?.Remove("companyName"); }
+            else if (parseNode.GetChildNode("companyName") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
+            if (parseNode.GetChildNode("companyPageUrl") is null) { _explicitNullValueCompanyPageUrl = default!; _explicitNullProperties?.Remove("companyPageUrl"); }
+            else if (parseNode.GetChildNode("companyPageUrl") is { } nullNodeCompanyPageUrl && nullNodeCompanyPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyPageUrl = null;
+            if (parseNode.GetChildNode("companySize") is null) { _explicitNullValueCompanySize = default!; _explicitNullProperties?.Remove("companySize"); }
+            else if (parseNode.GetChildNode("companySize") is { } nullNodeCompanySize && nullNodeCompanySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanySize = null;
+            if (parseNode.GetChildNode("companyWebsite") is null) { _explicitNullValueCompanyWebsite = default!; _explicitNullProperties?.Remove("companyWebsite"); }
+            else if (parseNode.GetChildNode("companyWebsite") is { } nullNodeCompanyWebsite && nullNodeCompanyWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyWebsite = null;
+            if (parseNode.GetChildNode("conversions") is null) { _explicitNullValueConversions = default!; _explicitNullProperties?.Remove("conversions"); }
+            else if (parseNode.GetChildNode("conversions") is { } nullNodeConversions && nullNodeConversions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conversions = null;
+            if (parseNode.GetChildNode("costInLocalCurrencyPerPaidQualifiedLead") is null) { _explicitNullValueCostInLocalCurrencyPerPaidQualifiedLead = default!; _explicitNullProperties?.Remove("costInLocalCurrencyPerPaidQualifiedLead"); }
+            else if (parseNode.GetChildNode("costInLocalCurrencyPerPaidQualifiedLead") is { } nullNodeCostInLocalCurrencyPerPaidQualifiedLead && nullNodeCostInLocalCurrencyPerPaidQualifiedLead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostInLocalCurrencyPerPaidQualifiedLead = null;
+            if (parseNode.GetChildNode("countryCode") is null) { _explicitNullValueCountryCode = default!; _explicitNullProperties?.Remove("countryCode"); }
+            else if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("engagementLevel") is null) { _explicitNullValueEngagementLevel = default!; _explicitNullProperties?.Remove("engagementLevel"); }
+            else if (parseNode.GetChildNode("engagementLevel") is { } nullNodeEngagementLevel && nullNodeEngagementLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EngagementLevel = null;
+            if (parseNode.GetChildNode("industry") is null) { _explicitNullValueIndustry = default!; _explicitNullProperties?.Remove("industry"); }
+            else if (parseNode.GetChildNode("industry") is { } nullNodeIndustry && nullNodeIndustry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Industry = null;
+            if (parseNode.GetChildNode("organicEngagements") is null) { _explicitNullValueOrganicEngagements = default!; _explicitNullProperties?.Remove("organicEngagements"); }
+            else if (parseNode.GetChildNode("organicEngagements") is { } nullNodeOrganicEngagements && nullNodeOrganicEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganicEngagements = null;
+            if (parseNode.GetChildNode("organicImpressions") is null) { _explicitNullValueOrganicImpressions = default!; _explicitNullProperties?.Remove("organicImpressions"); }
+            else if (parseNode.GetChildNode("organicImpressions") is { } nullNodeOrganicImpressions && nullNodeOrganicImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganicImpressions = null;
+            if (parseNode.GetChildNode("paidClicks") is null) { _explicitNullValuePaidClicks = default!; _explicitNullProperties?.Remove("paidClicks"); }
+            else if (parseNode.GetChildNode("paidClicks") is { } nullNodePaidClicks && nullNodePaidClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidClicks = null;
+            if (parseNode.GetChildNode("paidEngagements") is null) { _explicitNullValuePaidEngagements = default!; _explicitNullProperties?.Remove("paidEngagements"); }
+            else if (parseNode.GetChildNode("paidEngagements") is { } nullNodePaidEngagements && nullNodePaidEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidEngagements = null;
+            if (parseNode.GetChildNode("paidImpressions") is null) { _explicitNullValuePaidImpressions = default!; _explicitNullProperties?.Remove("paidImpressions"); }
+            else if (parseNode.GetChildNode("paidImpressions") is { } nullNodePaidImpressions && nullNodePaidImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidImpressions = null;
+            if (parseNode.GetChildNode("paidLeads") is null) { _explicitNullValuePaidLeads = default!; _explicitNullProperties?.Remove("paidLeads"); }
+            else if (parseNode.GetChildNode("paidLeads") is { } nullNodePaidLeads && nullNodePaidLeads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidLeads = null;
+            if (parseNode.GetChildNode("paidQualifiedLeads") is null) { _explicitNullValuePaidQualifiedLeads = default!; _explicitNullProperties?.Remove("paidQualifiedLeads"); }
+            else if (parseNode.GetChildNode("paidQualifiedLeads") is { } nullNodePaidQualifiedLeads && nullNodePaidQualifiedLeads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidQualifiedLeads = null;
+            if (parseNode.GetChildNode("paidVideoViews") is null) { _explicitNullValuePaidVideoViews = default!; _explicitNullProperties?.Remove("paidVideoViews"); }
+            else if (parseNode.GetChildNode("paidVideoViews") is { } nullNodePaidVideoViews && nullNodePaidVideoViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidVideoViews = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the engaged member’s company (target company). Returns empty string if skipCompanyDecoration is set to true.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName { get; set; }
+        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("companyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        private string? _explicitNullValueCompanyName = default!;
 #nullable restore
 #else
-        public string CompanyName { get; set; }
+        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("companyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        private string _explicitNullValueCompanyName = default!;
 #endif
         /// <summary>URL of the target company&apos;s company page on linkedin.com (e.g., http://linkedin.com/company/linkedin).Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyPageUrl { get; set; }
+        public string? CompanyPageUrl { get => _explicitNullValueCompanyPageUrl; set { _explicitNullValueCompanyPageUrl = value; AdditionalData?.Remove("companyPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyPageUrl"); else _explicitNullProperties?.Remove("companyPageUrl"); } }
+        private string? _explicitNullValueCompanyPageUrl = default!;
 #nullable restore
 #else
-        public string CompanyPageUrl { get; set; }
+        public string CompanyPageUrl { get => _explicitNullValueCompanyPageUrl; set { _explicitNullValueCompanyPageUrl = value; AdditionalData?.Remove("companyPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyPageUrl"); else _explicitNullProperties?.Remove("companyPageUrl"); } }
+        private string _explicitNullValueCompanyPageUrl = default!;
 #endif
         /// <summary>The range of the number of staff employed by the target company. Possible values: SIZE_1, SIZE_2_TO_10, SIZE_11_TO_50, SIZE_51_TO_200, SIZE_201_TO_500, SIZE_501_TO_1000, SIZE_1001_TO_5000, SIZE_5001_TO_10000, SIZE_10001_OR_MORE. Note: Applicable only from API versions 202606 and later.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanySize { get; set; }
+        public string? CompanySize { get => _explicitNullValueCompanySize; set { _explicitNullValueCompanySize = value; AdditionalData?.Remove("companySize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companySize"); else _explicitNullProperties?.Remove("companySize"); } }
+        private string? _explicitNullValueCompanySize = default!;
 #nullable restore
 #else
-        public string CompanySize { get; set; }
+        public string CompanySize { get => _explicitNullValueCompanySize; set { _explicitNullValueCompanySize = value; AdditionalData?.Remove("companySize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companySize"); else _explicitNullProperties?.Remove("companySize"); } }
+        private string _explicitNullValueCompanySize = default!;
 #endif
         /// <summary>URL of the target company’s website domain (e.g., https://www.microsoft.com).Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyWebsite { get; set; }
+        public string? CompanyWebsite { get => _explicitNullValueCompanyWebsite; set { _explicitNullValueCompanyWebsite = value; AdditionalData?.Remove("companyWebsite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyWebsite"); else _explicitNullProperties?.Remove("companyWebsite"); } }
+        private string? _explicitNullValueCompanyWebsite = default!;
 #nullable restore
 #else
-        public string CompanyWebsite { get; set; }
+        public string CompanyWebsite { get => _explicitNullValueCompanyWebsite; set { _explicitNullValueCompanyWebsite = value; AdditionalData?.Remove("companyWebsite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyWebsite"); else _explicitNullProperties?.Remove("companyWebsite"); } }
+        private string _explicitNullValueCompanyWebsite = default!;
 #endif
         /// <summary>The count of conversions based on actions performed by a member after viewing or clicking on an ad. This includes Conversions API (CAPI) and insights tag conversions. Note: Applicable only from API versions 202603 and later.Documented type: long</summary>
-        public long? Conversions { get; set; }
+        public long? Conversions { get => _explicitNullValueConversions; set { _explicitNullValueConversions = value; AdditionalData?.Remove("conversions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversions"); else _explicitNullProperties?.Remove("conversions"); } }
+        private long? _explicitNullValueConversions = default!;
         /// <summary>Cost per paid qualified lead (CPQL) attributed to the target company, in the advertiser&apos;s local currency. Derived as the ratio of total ad spend over the number of paid qualified leads collected from members of the target company within the lookback window. Note: Applicable only from API versions 202606 and later.Documented type: double</summary>
-        public double? CostInLocalCurrencyPerPaidQualifiedLead { get; set; }
+        public double? CostInLocalCurrencyPerPaidQualifiedLead { get => _explicitNullValueCostInLocalCurrencyPerPaidQualifiedLead; set { _explicitNullValueCostInLocalCurrencyPerPaidQualifiedLead = value; AdditionalData?.Remove("costInLocalCurrencyPerPaidQualifiedLead"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costInLocalCurrencyPerPaidQualifiedLead"); else _explicitNullProperties?.Remove("costInLocalCurrencyPerPaidQualifiedLead"); } }
+        private double? _explicitNullValueCostInLocalCurrencyPerPaidQualifiedLead = default!;
         /// <summary>ISO country/region code of the target company&apos;s headquarters (e.g., US, GB). Note: Applicable only from API versions 202606 and later.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get; set; }
+        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        private string? _explicitNullValueCountryCode = default!;
 #nullable restore
 #else
-        public string CountryCode { get; set; }
+        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        private string _explicitNullValueCountryCode = default!;
 #endif
         /// <summary>The engagement level of the target company is calculated based on the number of paid and organic member engagements, normalized over the selected time range. The possible values are LOW, VERY_LOW, MEDIUM, HIGH, VERY_HIGH.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EngagementLevel { get; set; }
+        public string? EngagementLevel { get => _explicitNullValueEngagementLevel; set { _explicitNullValueEngagementLevel = value; AdditionalData?.Remove("engagementLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagementLevel"); else _explicitNullProperties?.Remove("engagementLevel"); } }
+        private string? _explicitNullValueEngagementLevel = default!;
 #nullable restore
 #else
-        public string EngagementLevel { get; set; }
+        public string EngagementLevel { get => _explicitNullValueEngagementLevel; set { _explicitNullValueEngagementLevel = value; AdditionalData?.Remove("engagementLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagementLevel"); else _explicitNullProperties?.Remove("engagementLevel"); } }
+        private string _explicitNullValueEngagementLevel = default!;
 #endif
         /// <summary>URN of the industry the target company is associated with, based on its primary business activities and products (e.g., urn:li:industry:1). Note: Applicable only from API versions 202606 and later.Documented type: IndustryUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Industry { get; set; }
+        public string? Industry { get => _explicitNullValueIndustry; set { _explicitNullValueIndustry = value; AdditionalData?.Remove("industry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industry"); else _explicitNullProperties?.Remove("industry"); } }
+        private string? _explicitNullValueIndustry = default!;
 #nullable restore
 #else
-        public string Industry { get; set; }
+        public string Industry { get => _explicitNullValueIndustry; set { _explicitNullValueIndustry = value; AdditionalData?.Remove("industry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industry"); else _explicitNullProperties?.Remove("industry"); } }
+        private string _explicitNullValueIndustry = default!;
 #endif
         /// <summary>Number of interactions with page posts and product pages on the advertiser&apos;s LinkedIn company page from members in the target company.Documented type: long</summary>
-        public long? OrganicEngagements { get; set; }
+        public long? OrganicEngagements { get => _explicitNullValueOrganicEngagements; set { _explicitNullValueOrganicEngagements = value; AdditionalData?.Remove("organicEngagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organicEngagements"); else _explicitNullProperties?.Remove("organicEngagements"); } }
+        private long? _explicitNullValueOrganicEngagements = default!;
         /// <summary>Number of visits to the advertiser&apos;s LinkedIn company page, feed impressions, and product page impressions from members in the target company.Documented type: long</summary>
-        public long? OrganicImpressions { get; set; }
+        public long? OrganicImpressions { get => _explicitNullValueOrganicImpressions; set { _explicitNullValueOrganicImpressions = value; AdditionalData?.Remove("organicImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organicImpressions"); else _explicitNullProperties?.Remove("organicImpressions"); } }
+        private long? _explicitNullValueOrganicImpressions = default!;
         /// <summary>Number of clicks on sponsored ads and ads virally shared from the members of the target company.Documented type: long</summary>
-        public long? PaidClicks { get; set; }
+        public long? PaidClicks { get => _explicitNullValuePaidClicks; set { _explicitNullValuePaidClicks = value; AdditionalData?.Remove("paidClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidClicks"); else _explicitNullProperties?.Remove("paidClicks"); } }
+        private long? _explicitNullValuePaidClicks = default!;
         /// <summary>Sum of all social actions, clicks to ad landing page, and clicks to LinkedIn company page (chargeable and free).Documented type: long</summary>
-        public long? PaidEngagements { get; set; }
+        public long? PaidEngagements { get => _explicitNullValuePaidEngagements; set { _explicitNullValuePaidEngagements = value; AdditionalData?.Remove("paidEngagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidEngagements"); else _explicitNullProperties?.Remove("paidEngagements"); } }
+        private long? _explicitNullValuePaidEngagements = default!;
         /// <summary>Number of times sponsored ads were shown to members from the target company.Documented type: long</summary>
-        public long? PaidImpressions { get; set; }
+        public long? PaidImpressions { get => _explicitNullValuePaidImpressions; set { _explicitNullValuePaidImpressions = value; AdditionalData?.Remove("paidImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidImpressions"); else _explicitNullProperties?.Remove("paidImpressions"); } }
+        private long? _explicitNullValuePaidImpressions = default!;
         /// <summary>Number of leads collected from the target company.Documented type: long</summary>
-        public long? PaidLeads { get; set; }
+        public long? PaidLeads { get => _explicitNullValuePaidLeads; set { _explicitNullValuePaidLeads = value; AdditionalData?.Remove("paidLeads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidLeads"); else _explicitNullProperties?.Remove("paidLeads"); } }
+        private long? _explicitNullValuePaidLeads = default!;
         /// <summary>Number of qualified leads from Conversions API (CAPI) attributed to the target company. Note: Applicable only from API versions 202603 and later.Documented type: long</summary>
-        public long? PaidQualifiedLeads { get; set; }
+        public long? PaidQualifiedLeads { get => _explicitNullValuePaidQualifiedLeads; set { _explicitNullValuePaidQualifiedLeads = value; AdditionalData?.Remove("paidQualifiedLeads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidQualifiedLeads"); else _explicitNullProperties?.Remove("paidQualifiedLeads"); } }
+        private long? _explicitNullValuePaidQualifiedLeads = default!;
         /// <summary>Number of paid video ad views from target company members within the lookback window. Note: Applicable only from API versions 202605 and later.Documented type: long</summary>
-        public long? PaidVideoViews { get; set; }
+        public long? PaidVideoViews { get => _explicitNullValuePaidVideoViews; set { _explicitNullValuePaidVideoViews = value; AdditionalData?.Remove("paidVideoViews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidVideoViews"); else _explicitNullProperties?.Remove("paidVideoViews"); } }
+        private long? _explicitNullValuePaidVideoViews = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -105,7 +170,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +223,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("paidLeads", PaidLeads);
             writer.WriteLongValue("paidQualifiedLeads", PaidQualifiedLeads);
             writer.WriteLongValue("paidVideoViews", PaidVideoViews);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearnTalentMiddlewarePlatformSyncJobRequisitionsLocationSchema : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("locationGeoUrn") is null) { _explicitNullValueLocationGeoUrn = default!; _explicitNullProperties?.Remove("locationGeoUrn"); }
+            else if (parseNode.GetChildNode("locationGeoUrn") is { } nullNodeLocationGeoUrn && nullNodeLocationGeoUrn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationGeoUrn = null;
+            if (parseNode.GetChildNode("locationName") is null) { _explicitNullValueLocationName = default!; _explicitNullProperties?.Remove("locationName"); }
+            else if (parseNode.GetChildNode("locationName") is { } nullNodeLocationName && nullNodeLocationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationName = null;
+            if (parseNode.GetChildNode("locationType") is null) { _explicitNullValueLocationType = default!; _explicitNullProperties?.Remove("locationType"); }
+            else if (parseNode.GetChildNode("locationType") is { } nullNodeLocationType && nullNodeLocationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>will be the standardized location in format of urn:li:geo:12345. GeoUrns can be looked up using jobPostingGeoLocations externalized API. Please send the geoUrn whenever possible.Documented type: StringRequirement: Provide locationGeoUrn if locationName can not be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationGeoUrn { get; set; }
+        public string? LocationGeoUrn { get => _explicitNullValueLocationGeoUrn; set { _explicitNullValueLocationGeoUrn = value; AdditionalData?.Remove("locationGeoUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationGeoUrn"); else _explicitNullProperties?.Remove("locationGeoUrn"); } }
+        private string? _explicitNullValueLocationGeoUrn = default!;
 #nullable restore
 #else
-        public string LocationGeoUrn { get; set; }
+        public string LocationGeoUrn { get => _explicitNullValueLocationGeoUrn; set { _explicitNullValueLocationGeoUrn = value; AdditionalData?.Remove("locationGeoUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationGeoUrn"); else _explicitNullProperties?.Remove("locationGeoUrn"); } }
+        private string _explicitNullValueLocationGeoUrn = default!;
 #endif
         /// <summary>The actual location, e.g. &quot;San Francisco, California&quot;, &quot;Los Angeles, California, United States&quot;Documented type: StringRequirement: Provide locationName if locationGeoUrn can not be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationName { get; set; }
+        public string? LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; AdditionalData?.Remove("locationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string? _explicitNullValueLocationName = default!;
 #nullable restore
 #else
-        public string LocationName { get; set; }
+        public string LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; AdditionalData?.Remove("locationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string _explicitNullValueLocationName = default!;
 #endif
         /// <summary>The type of location. Available options are: UNKNOWN, PRIMARY, ALTERNATEDocumented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationType { get; set; }
+        public string? LocationType { get => _explicitNullValueLocationType; set { _explicitNullValueLocationType = value; AdditionalData?.Remove("locationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationType"); else _explicitNullProperties?.Remove("locationType"); } }
+        private string? _explicitNullValueLocationType = default!;
 #nullable restore
 #else
-        public string LocationType { get; set; }
+        public string LocationType { get => _explicitNullValueLocationType; set { _explicitNullValueLocationType = value; AdditionalData?.Remove("locationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationType"); else _explicitNullProperties?.Remove("locationType"); } }
+        private string _explicitNullValueLocationType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsLocationSchema"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsLocationSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsLocationSchema();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentMiddlewarePlatformSyncJobRequisitionsLocationSchema(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("locationGeoUrn", LocationGeoUrn);
             writer.WriteStringValue("locationName", LocationName);
             writer.WriteStringValue("locationType", LocationType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

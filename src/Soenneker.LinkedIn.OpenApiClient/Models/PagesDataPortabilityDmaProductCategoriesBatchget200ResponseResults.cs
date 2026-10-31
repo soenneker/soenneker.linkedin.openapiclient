@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("1273") is null) { _explicitNullValueOneTwoSevenThree = default!; _explicitNullProperties?.Remove("1273"); }
+            else if (parseNode.GetChildNode("1273") is { } nullNodeOneTwoSevenThree && nullNodeOneTwoSevenThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneTwoSevenThree = null;
+            if (parseNode.GetChildNode("10030") is null) { _explicitNullValueOneZeroZeroThreeZero = default!; _explicitNullProperties?.Remove("10030"); }
+            else if (parseNode.GetChildNode("10030") is { } nullNodeOneZeroZeroThreeZero && nullNodeOneZeroZeroThreeZero.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroZeroThreeZero = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The OneTwoSevenThree property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults1273? OneTwoSevenThree { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults1273? OneTwoSevenThree { get => _explicitNullValueOneTwoSevenThree; set { _explicitNullValueOneTwoSevenThree = value; AdditionalData?.Remove("1273"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1273"); else _explicitNullProperties?.Remove("1273"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults1273? _explicitNullValueOneTwoSevenThree = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults1273 OneTwoSevenThree { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults1273 OneTwoSevenThree { get => _explicitNullValueOneTwoSevenThree; set { _explicitNullValueOneTwoSevenThree = value; AdditionalData?.Remove("1273"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1273"); else _explicitNullProperties?.Remove("1273"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults1273 _explicitNullValueOneTwoSevenThree = default!;
 #endif
         /// <summary>The OneZeroZeroThreeZero property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults10030? OneZeroZeroThreeZero { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults10030? OneZeroZeroThreeZero { get => _explicitNullValueOneZeroZeroThreeZero; set { _explicitNullValueOneZeroZeroThreeZero = value; AdditionalData?.Remove("10030"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("10030"); else _explicitNullProperties?.Remove("10030"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults10030? _explicitNullValueOneZeroZeroThreeZero = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults10030 OneZeroZeroThreeZero { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults10030 OneZeroZeroThreeZero { get => _explicitNullValueOneZeroZeroThreeZero; set { _explicitNullValueOneZeroZeroThreeZero = value; AdditionalData?.Remove("10030"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("10030"); else _explicitNullProperties?.Remove("10030"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults10030 _explicitNullValueOneZeroZeroThreeZero = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults1273>("1273", OneTwoSevenThree);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaProductCategoriesBatchget200ResponseResults10030>("10030", OneZeroZeroThreeZero);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

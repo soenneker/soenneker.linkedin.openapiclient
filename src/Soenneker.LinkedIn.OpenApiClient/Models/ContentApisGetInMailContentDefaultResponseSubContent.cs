@@ -12,32 +12,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentApisGetInMailContentDefaultResponseSubContent : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("callToActionLandingPage") is null) { _explicitNullValueCallToActionLandingPage = default!; _explicitNullProperties?.Remove("callToActionLandingPage"); }
+            else if (parseNode.GetChildNode("callToActionLandingPage") is { } nullNodeCallToActionLandingPage && nullNodeCallToActionLandingPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallToActionLandingPage = null;
+            if (parseNode.GetChildNode("callToActionText") is null) { _explicitNullValueCallToActionText = default!; _explicitNullProperties?.Remove("callToActionText"); }
+            else if (parseNode.GetChildNode("callToActionText") is { } nullNodeCallToActionText && nullNodeCallToActionText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallToActionText = null;
+            if (parseNode.GetChildNode("rightRailAdPicture") is null) { _explicitNullValueRightRailAdPicture = default!; _explicitNullProperties?.Remove("rightRailAdPicture"); }
+            else if (parseNode.GetChildNode("rightRailAdPicture") is { } nullNodeRightRailAdPicture && nullNodeRightRailAdPicture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RightRailAdPicture = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Documented type: URLRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallToActionLandingPage { get; set; }
+        public string? CallToActionLandingPage { get => _explicitNullValueCallToActionLandingPage; set { _explicitNullValueCallToActionLandingPage = value; AdditionalData?.Remove("callToActionLandingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callToActionLandingPage"); else _explicitNullProperties?.Remove("callToActionLandingPage"); } }
+        private string? _explicitNullValueCallToActionLandingPage = default!;
 #nullable restore
 #else
-        public string CallToActionLandingPage { get; set; }
+        public string CallToActionLandingPage { get => _explicitNullValueCallToActionLandingPage; set { _explicitNullValueCallToActionLandingPage = value; AdditionalData?.Remove("callToActionLandingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callToActionLandingPage"); else _explicitNullProperties?.Remove("callToActionLandingPage"); } }
+        private string _explicitNullValueCallToActionLandingPage = default!;
 #endif
         /// <summary>Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallToActionText { get; set; }
+        public string? CallToActionText { get => _explicitNullValueCallToActionText; set { _explicitNullValueCallToActionText = value; AdditionalData?.Remove("callToActionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callToActionText"); else _explicitNullProperties?.Remove("callToActionText"); } }
+        private string? _explicitNullValueCallToActionText = default!;
 #nullable restore
 #else
-        public string CallToActionText { get; set; }
+        public string CallToActionText { get => _explicitNullValueCallToActionText; set { _explicitNullValueCallToActionText = value; AdditionalData?.Remove("callToActionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callToActionText"); else _explicitNullProperties?.Remove("callToActionText"); } }
+        private string _explicitNullValueCallToActionText = default!;
 #endif
         /// <summary>Documented type: Image URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RightRailAdPicture { get; set; }
+        public string? RightRailAdPicture { get => _explicitNullValueRightRailAdPicture; set { _explicitNullValueRightRailAdPicture = value; AdditionalData?.Remove("rightRailAdPicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rightRailAdPicture"); else _explicitNullProperties?.Remove("rightRailAdPicture"); } }
+        private string? _explicitNullValueRightRailAdPicture = default!;
 #nullable restore
 #else
-        public string RightRailAdPicture { get; set; }
+        public string RightRailAdPicture { get => _explicitNullValueRightRailAdPicture; set { _explicitNullValueRightRailAdPicture = value; AdditionalData?.Remove("rightRailAdPicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rightRailAdPicture"); else _explicitNullProperties?.Remove("rightRailAdPicture"); } }
+        private string _explicitNullValueRightRailAdPicture = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetInMailContentDefaultResponseSubContent"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetInMailContentDefaultResponseSubContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetInMailContentDefaultResponseSubContent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetInMailContentDefaultResponseSubContent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("callToActionLandingPage", CallToActionLandingPage);
             writer.WriteStringValue("callToActionText", CallToActionText);
             writer.WriteStringValue("rightRailAdPicture", RightRailAdPicture);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

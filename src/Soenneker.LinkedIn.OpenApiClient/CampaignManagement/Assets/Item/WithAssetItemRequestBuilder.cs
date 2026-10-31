@@ -48,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Assets.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the digital media asset ID (returned in step 1). The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!View our [Public Documentation](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http&amp;view=li-lms-unversioned#check-status-of-upload) to understand more on this API.This API examples retrieves the status of the Image File uploaded in the previous step by using the asset ID. The recipe upload status must be **&apos;AVAILABLE&apos;** in order to move on to the next step!

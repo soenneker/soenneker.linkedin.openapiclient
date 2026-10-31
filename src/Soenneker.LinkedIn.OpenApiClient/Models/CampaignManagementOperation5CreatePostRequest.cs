@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementOperation5CreatePostRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author") is null) { _explicitNullValueAuthor = default!; _explicitNullProperties?.Remove("author"); }
+            else if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("lifecycleState") is null) { _explicitNullValueLifecycleState = default!; _explicitNullProperties?.Remove("lifecycleState"); }
+            else if (parseNode.GetChildNode("lifecycleState") is { } nullNodeLifecycleState && nullNodeLifecycleState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LifecycleState = null;
+            if (parseNode.GetChildNode("specificContent") is null) { _explicitNullValueSpecificContent = default!; _explicitNullProperties?.Remove("specificContent"); }
+            else if (parseNode.GetChildNode("specificContent") is { } nullNodeSpecificContent && nullNodeSpecificContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpecificContent = null;
+            if (parseNode.GetChildNode("visibility") is null) { _explicitNullValueVisibility = default!; _explicitNullProperties?.Remove("visibility"); }
+            else if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Author { get; set; }
+        public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public string Author { get; set; }
+        public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string _explicitNullValueAuthor = default!;
 #endif
         /// <summary>The lifecycleState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LifecycleState { get; set; }
+        public string? LifecycleState { get => _explicitNullValueLifecycleState; set { _explicitNullValueLifecycleState = value; AdditionalData?.Remove("lifecycleState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifecycleState"); else _explicitNullProperties?.Remove("lifecycleState"); } }
+        private string? _explicitNullValueLifecycleState = default!;
 #nullable restore
 #else
-        public string LifecycleState { get; set; }
+        public string LifecycleState { get => _explicitNullValueLifecycleState; set { _explicitNullValueLifecycleState = value; AdditionalData?.Remove("lifecycleState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lifecycleState"); else _explicitNullProperties?.Remove("lifecycleState"); } }
+        private string _explicitNullValueLifecycleState = default!;
 #endif
         /// <summary>The specificContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContent? SpecificContent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContent? SpecificContent { get => _explicitNullValueSpecificContent; set { _explicitNullValueSpecificContent = value; AdditionalData?.Remove("specificContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("specificContent"); else _explicitNullProperties?.Remove("specificContent"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContent? _explicitNullValueSpecificContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContent SpecificContent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContent SpecificContent { get => _explicitNullValueSpecificContent; set { _explicitNullValueSpecificContent = value; AdditionalData?.Remove("specificContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("specificContent"); else _explicitNullProperties?.Remove("specificContent"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContent _explicitNullValueSpecificContent = default!;
 #endif
         /// <summary>The visibility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestVisibility? Visibility { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestVisibility? _explicitNullValueVisibility = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestVisibility Visibility { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestVisibility Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestVisibility _explicitNullValueVisibility = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequest"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("lifecycleState", LifecycleState);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContent>("specificContent", SpecificContent);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestVisibility>("visibility", Visibility);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

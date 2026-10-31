@@ -11,13 +11,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseStatuses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("1612748") is null) { _explicitNullValueOneSixOneTwoSevenFourEight = default!; _explicitNullProperties?.Remove("1612748"); }
+            else if (parseNode.GetChildNode("1612748") is { } nullNodeOneSixOneTwoSevenFourEight && nullNodeOneSixOneTwoSevenFourEight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneSixOneTwoSevenFourEight = null;
+            if (parseNode.GetChildNode("10002687") is null) { _explicitNullValueOneZeroZeroZeroTwoSixEightSeven = default!; _explicitNullProperties?.Remove("10002687"); }
+            else if (parseNode.GetChildNode("10002687") is { } nullNodeOneZeroZeroZeroTwoSixEightSeven && nullNodeOneZeroZeroZeroTwoSixEightSeven.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneZeroZeroZeroTwoSixEightSeven = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The OneSixOneTwoSevenFourEight property</summary>
-        public long? OneSixOneTwoSevenFourEight { get; set; }
+        public long? OneSixOneTwoSevenFourEight { get => _explicitNullValueOneSixOneTwoSevenFourEight; set { _explicitNullValueOneSixOneTwoSevenFourEight = value; AdditionalData?.Remove("1612748"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1612748"); else _explicitNullProperties?.Remove("1612748"); } }
+        private long? _explicitNullValueOneSixOneTwoSevenFourEight = default!;
         /// <summary>The OneZeroZeroZeroTwoSixEightSeven property</summary>
-        public long? OneZeroZeroZeroTwoSixEightSeven { get; set; }
+        public long? OneZeroZeroZeroTwoSixEightSeven { get => _explicitNullValueOneZeroZeroZeroTwoSixEightSeven; set { _explicitNullValueOneZeroZeroZeroTwoSixEightSeven = value; AdditionalData?.Remove("10002687"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("10002687"); else _explicitNullProperties?.Remove("10002687"); } }
+        private long? _explicitNullValueOneZeroZeroZeroTwoSixEightSeven = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseStatuses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseStatuses();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseStatuses(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("1612748", OneSixOneTwoSevenFourEight);
             writer.WriteLongValue("10002687", OneZeroZeroZeroTwoSixEightSeven);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

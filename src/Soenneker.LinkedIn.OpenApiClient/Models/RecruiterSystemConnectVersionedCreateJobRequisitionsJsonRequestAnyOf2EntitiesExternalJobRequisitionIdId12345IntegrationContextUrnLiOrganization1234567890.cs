@@ -11,130 +11,208 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accessRestricted") is null) { _explicitNullValueAccessRestricted = default!; _explicitNullProperties?.Remove("accessRestricted"); }
+            else if (parseNode.GetChildNode("accessRestricted") is { } nullNodeAccessRestricted && nullNodeAccessRestricted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessRestricted = null;
+            if (parseNode.GetChildNode("basicSkills") is null) { _explicitNullValueBasicSkills = default!; _explicitNullProperties?.Remove("basicSkills"); }
+            else if (parseNode.GetChildNode("basicSkills") is { } nullNodeBasicSkills && nullNodeBasicSkills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasicSkills = null;
+            if (parseNode.GetChildNode("categories") is null) { _explicitNullValueCategories = default!; _explicitNullProperties?.Remove("categories"); }
+            else if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
+            if (parseNode.GetChildNode("compensation") is null) { _explicitNullValueCompensation = default!; _explicitNullProperties?.Remove("compensation"); }
+            else if (parseNode.GetChildNode("compensation") is { } nullNodeCompensation && nullNodeCompensation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compensation = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("employmentStatus") is null) { _explicitNullValueEmploymentStatus = default!; _explicitNullProperties?.Remove("employmentStatus"); }
+            else if (parseNode.GetChildNode("employmentStatus") is { } nullNodeEmploymentStatus && nullNodeEmploymentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentStatus = null;
+            if (parseNode.GetChildNode("experienceLevel") is null) { _explicitNullValueExperienceLevel = default!; _explicitNullProperties?.Remove("experienceLevel"); }
+            else if (parseNode.GetChildNode("experienceLevel") is { } nullNodeExperienceLevel && nullNodeExperienceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExperienceLevel = null;
+            if (parseNode.GetChildNode("externalCreatedAt") is null) { _explicitNullValueExternalCreatedAt = default!; _explicitNullProperties?.Remove("externalCreatedAt"); }
+            else if (parseNode.GetChildNode("externalCreatedAt") is { } nullNodeExternalCreatedAt && nullNodeExternalCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalCreatedAt = null;
+            if (parseNode.GetChildNode("externalLastModifiedAt") is null) { _explicitNullValueExternalLastModifiedAt = default!; _explicitNullProperties?.Remove("externalLastModifiedAt"); }
+            else if (parseNode.GetChildNode("externalLastModifiedAt") is { } nullNodeExternalLastModifiedAt && nullNodeExternalLastModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalLastModifiedAt = null;
+            if (parseNode.GetChildNode("industries") is null) { _explicitNullValueIndustries = default!; _explicitNullProperties?.Remove("industries"); }
+            else if (parseNode.GetChildNode("industries") is { } nullNodeIndustries && nullNodeIndustries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Industries = null;
+            if (parseNode.GetChildNode("jobRequisitionType") is null) { _explicitNullValueJobRequisitionType = default!; _explicitNullProperties?.Remove("jobRequisitionType"); }
+            else if (parseNode.GetChildNode("jobRequisitionType") is { } nullNodeJobRequisitionType && nullNodeJobRequisitionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobRequisitionType = null;
+            if (parseNode.GetChildNode("locations") is null) { _explicitNullValueLocations = default!; _explicitNullProperties?.Remove("locations"); }
+            else if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
+            if (parseNode.GetChildNode("numberOfOpenings") is null) { _explicitNullValueNumberOfOpenings = default!; _explicitNullProperties?.Remove("numberOfOpenings"); }
+            else if (parseNode.GetChildNode("numberOfOpenings") is { } nullNodeNumberOfOpenings && nullNodeNumberOfOpenings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfOpenings = null;
+            if (parseNode.GetChildNode("owners") is null) { _explicitNullValueOwners = default!; _explicitNullProperties?.Remove("owners"); }
+            else if (parseNode.GetChildNode("owners") is { } nullNodeOwners && nullNodeOwners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owners = null;
+            if (parseNode.GetChildNode("preferredSkills") is null) { _explicitNullValuePreferredSkills = default!; _explicitNullProperties?.Remove("preferredSkills"); }
+            else if (parseNode.GetChildNode("preferredSkills") is { } nullNodePreferredSkills && nullNodePreferredSkills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredSkills = null;
+            if (parseNode.GetChildNode("requisitionStatus") is null) { _explicitNullValueRequisitionStatus = default!; _explicitNullProperties?.Remove("requisitionStatus"); }
+            else if (parseNode.GetChildNode("requisitionStatus") is { } nullNodeRequisitionStatus && nullNodeRequisitionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequisitionStatus = null;
+            if (parseNode.GetChildNode("targetedStartAt") is null) { _explicitNullValueTargetedStartAt = default!; _explicitNullProperties?.Remove("targetedStartAt"); }
+            else if (parseNode.GetChildNode("targetedStartAt") is { } nullNodeTargetedStartAt && nullNodeTargetedStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetedStartAt = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("workplaceTypes") is null) { _explicitNullValueWorkplaceTypes = default!; _explicitNullProperties?.Remove("workplaceTypes"); }
+            else if (parseNode.GetChildNode("workplaceTypes") is { } nullNodeWorkplaceTypes && nullNodeWorkplaceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkplaceTypes = null;
+        }
+
         /// <summary>The accessRestricted property</summary>
-        public bool? AccessRestricted { get; set; }
+        public bool? AccessRestricted { get => _explicitNullValueAccessRestricted; set { _explicitNullValueAccessRestricted = value; AdditionalData?.Remove("accessRestricted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessRestricted"); else _explicitNullProperties?.Remove("accessRestricted"); } }
+        private bool? _explicitNullValueAccessRestricted = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The basicSkills property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BasicSkills { get; set; }
+        public List<string>? BasicSkills { get => _explicitNullValueBasicSkills; set { _explicitNullValueBasicSkills = value; AdditionalData?.Remove("basicSkills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basicSkills"); else _explicitNullProperties?.Remove("basicSkills"); } }
+        private List<string>? _explicitNullValueBasicSkills = default!;
 #nullable restore
 #else
-        public List<string> BasicSkills { get; set; }
+        public List<string> BasicSkills { get => _explicitNullValueBasicSkills; set { _explicitNullValueBasicSkills = value; AdditionalData?.Remove("basicSkills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basicSkills"); else _explicitNullProperties?.Remove("basicSkills"); } }
+        private List<string> _explicitNullValueBasicSkills = default!;
 #endif
         /// <summary>The categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories { get; set; }
+        public List<string>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string>? _explicitNullValueCategories = default!;
 #nullable restore
 #else
-        public List<string> Categories { get; set; }
+        public List<string> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string> _explicitNullValueCategories = default!;
 #endif
         /// <summary>The compensation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890Compensation? Compensation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890Compensation? Compensation { get => _explicitNullValueCompensation; set { _explicitNullValueCompensation = value; AdditionalData?.Remove("compensation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compensation"); else _explicitNullProperties?.Remove("compensation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890Compensation? _explicitNullValueCompensation = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890Compensation Compensation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890Compensation Compensation { get => _explicitNullValueCompensation; set { _explicitNullValueCompensation = value; AdditionalData?.Remove("compensation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compensation"); else _explicitNullProperties?.Remove("compensation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890Compensation _explicitNullValueCompensation = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The employmentStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmploymentStatus { get; set; }
+        public string? EmploymentStatus { get => _explicitNullValueEmploymentStatus; set { _explicitNullValueEmploymentStatus = value; AdditionalData?.Remove("employmentStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employmentStatus"); else _explicitNullProperties?.Remove("employmentStatus"); } }
+        private string? _explicitNullValueEmploymentStatus = default!;
 #nullable restore
 #else
-        public string EmploymentStatus { get; set; }
+        public string EmploymentStatus { get => _explicitNullValueEmploymentStatus; set { _explicitNullValueEmploymentStatus = value; AdditionalData?.Remove("employmentStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employmentStatus"); else _explicitNullProperties?.Remove("employmentStatus"); } }
+        private string _explicitNullValueEmploymentStatus = default!;
 #endif
         /// <summary>The experienceLevel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExperienceLevel { get; set; }
+        public string? ExperienceLevel { get => _explicitNullValueExperienceLevel; set { _explicitNullValueExperienceLevel = value; AdditionalData?.Remove("experienceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experienceLevel"); else _explicitNullProperties?.Remove("experienceLevel"); } }
+        private string? _explicitNullValueExperienceLevel = default!;
 #nullable restore
 #else
-        public string ExperienceLevel { get; set; }
+        public string ExperienceLevel { get => _explicitNullValueExperienceLevel; set { _explicitNullValueExperienceLevel = value; AdditionalData?.Remove("experienceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experienceLevel"); else _explicitNullProperties?.Remove("experienceLevel"); } }
+        private string _explicitNullValueExperienceLevel = default!;
 #endif
         /// <summary>The externalCreatedAt property</summary>
-        public int? ExternalCreatedAt { get; set; }
+        public int? ExternalCreatedAt { get => _explicitNullValueExternalCreatedAt; set { _explicitNullValueExternalCreatedAt = value; AdditionalData?.Remove("externalCreatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalCreatedAt"); else _explicitNullProperties?.Remove("externalCreatedAt"); } }
+        private int? _explicitNullValueExternalCreatedAt = default!;
         /// <summary>The externalLastModifiedAt property</summary>
-        public int? ExternalLastModifiedAt { get; set; }
+        public int? ExternalLastModifiedAt { get => _explicitNullValueExternalLastModifiedAt; set { _explicitNullValueExternalLastModifiedAt = value; AdditionalData?.Remove("externalLastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalLastModifiedAt"); else _explicitNullProperties?.Remove("externalLastModifiedAt"); } }
+        private int? _explicitNullValueExternalLastModifiedAt = default!;
         /// <summary>The industries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Industries { get; set; }
+        public List<string>? Industries { get => _explicitNullValueIndustries; set { _explicitNullValueIndustries = value; AdditionalData?.Remove("industries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industries"); else _explicitNullProperties?.Remove("industries"); } }
+        private List<string>? _explicitNullValueIndustries = default!;
 #nullable restore
 #else
-        public List<string> Industries { get; set; }
+        public List<string> Industries { get => _explicitNullValueIndustries; set { _explicitNullValueIndustries = value; AdditionalData?.Remove("industries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industries"); else _explicitNullProperties?.Remove("industries"); } }
+        private List<string> _explicitNullValueIndustries = default!;
 #endif
         /// <summary>The jobRequisitionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobRequisitionType { get; set; }
+        public string? JobRequisitionType { get => _explicitNullValueJobRequisitionType; set { _explicitNullValueJobRequisitionType = value; AdditionalData?.Remove("jobRequisitionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRequisitionType"); else _explicitNullProperties?.Remove("jobRequisitionType"); } }
+        private string? _explicitNullValueJobRequisitionType = default!;
 #nullable restore
 #else
-        public string JobRequisitionType { get; set; }
+        public string JobRequisitionType { get => _explicitNullValueJobRequisitionType; set { _explicitNullValueJobRequisitionType = value; AdditionalData?.Remove("jobRequisitionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobRequisitionType"); else _explicitNullProperties?.Remove("jobRequisitionType"); } }
+        private string _explicitNullValueJobRequisitionType = default!;
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890LocationsItem>? Locations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890LocationsItem>? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890LocationsItem>? _explicitNullValueLocations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890LocationsItem> Locations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890LocationsItem> Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890LocationsItem> _explicitNullValueLocations = default!;
 #endif
         /// <summary>The numberOfOpenings property</summary>
-        public int? NumberOfOpenings { get; set; }
+        public int? NumberOfOpenings { get => _explicitNullValueNumberOfOpenings; set { _explicitNullValueNumberOfOpenings = value; AdditionalData?.Remove("numberOfOpenings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberOfOpenings"); else _explicitNullProperties?.Remove("numberOfOpenings"); } }
+        private int? _explicitNullValueNumberOfOpenings = default!;
         /// <summary>The owners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890OwnersItem>? Owners { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890OwnersItem>? Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; AdditionalData?.Remove("owners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890OwnersItem>? _explicitNullValueOwners = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890OwnersItem> Owners { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890OwnersItem> Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; AdditionalData?.Remove("owners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890OwnersItem> _explicitNullValueOwners = default!;
 #endif
         /// <summary>The preferredSkills property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreferredSkills { get; set; }
+        public List<string>? PreferredSkills { get => _explicitNullValuePreferredSkills; set { _explicitNullValuePreferredSkills = value; AdditionalData?.Remove("preferredSkills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredSkills"); else _explicitNullProperties?.Remove("preferredSkills"); } }
+        private List<string>? _explicitNullValuePreferredSkills = default!;
 #nullable restore
 #else
-        public List<string> PreferredSkills { get; set; }
+        public List<string> PreferredSkills { get => _explicitNullValuePreferredSkills; set { _explicitNullValuePreferredSkills = value; AdditionalData?.Remove("preferredSkills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredSkills"); else _explicitNullProperties?.Remove("preferredSkills"); } }
+        private List<string> _explicitNullValuePreferredSkills = default!;
 #endif
         /// <summary>The requisitionStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequisitionStatus { get; set; }
+        public string? RequisitionStatus { get => _explicitNullValueRequisitionStatus; set { _explicitNullValueRequisitionStatus = value; AdditionalData?.Remove("requisitionStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requisitionStatus"); else _explicitNullProperties?.Remove("requisitionStatus"); } }
+        private string? _explicitNullValueRequisitionStatus = default!;
 #nullable restore
 #else
-        public string RequisitionStatus { get; set; }
+        public string RequisitionStatus { get => _explicitNullValueRequisitionStatus; set { _explicitNullValueRequisitionStatus = value; AdditionalData?.Remove("requisitionStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requisitionStatus"); else _explicitNullProperties?.Remove("requisitionStatus"); } }
+        private string _explicitNullValueRequisitionStatus = default!;
 #endif
         /// <summary>The targetedStartAt property</summary>
-        public int? TargetedStartAt { get; set; }
+        public int? TargetedStartAt { get => _explicitNullValueTargetedStartAt; set { _explicitNullValueTargetedStartAt = value; AdditionalData?.Remove("targetedStartAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetedStartAt"); else _explicitNullProperties?.Remove("targetedStartAt"); } }
+        private int? _explicitNullValueTargetedStartAt = default!;
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The workplaceTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WorkplaceTypes { get; set; }
+        public List<string>? WorkplaceTypes { get => _explicitNullValueWorkplaceTypes; set { _explicitNullValueWorkplaceTypes = value; AdditionalData?.Remove("workplaceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workplaceTypes"); else _explicitNullProperties?.Remove("workplaceTypes"); } }
+        private List<string>? _explicitNullValueWorkplaceTypes = default!;
 #nullable restore
 #else
-        public List<string> WorkplaceTypes { get; set; }
+        public List<string> WorkplaceTypes { get => _explicitNullValueWorkplaceTypes; set { _explicitNullValueWorkplaceTypes = value; AdditionalData?.Remove("workplaceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workplaceTypes"); else _explicitNullProperties?.Remove("workplaceTypes"); } }
+        private List<string> _explicitNullValueWorkplaceTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890"/> and sets the default values.
@@ -151,7 +229,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf2EntitiesExternalJobRequisitionIdId12345IntegrationContextUrnLiOrganization1234567890(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -208,6 +286,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteIntValue("targetedStartAt", TargetedStartAt);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfPrimitiveValues<string>("workplaceTypes", WorkplaceTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

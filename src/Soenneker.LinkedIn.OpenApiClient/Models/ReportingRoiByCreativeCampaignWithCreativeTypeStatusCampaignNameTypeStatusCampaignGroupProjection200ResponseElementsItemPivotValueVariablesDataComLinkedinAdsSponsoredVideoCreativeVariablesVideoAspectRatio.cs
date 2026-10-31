@@ -11,13 +11,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("heightAspect") is null) { _explicitNullValueHeightAspect = default!; _explicitNullProperties?.Remove("heightAspect"); }
+            else if (parseNode.GetChildNode("heightAspect") is { } nullNodeHeightAspect && nullNodeHeightAspect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeightAspect = null;
+            if (parseNode.GetChildNode("widthAspect") is null) { _explicitNullValueWidthAspect = default!; _explicitNullProperties?.Remove("widthAspect"); }
+            else if (parseNode.GetChildNode("widthAspect") is { } nullNodeWidthAspect && nullNodeWidthAspect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WidthAspect = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The heightAspect property</summary>
-        public double? HeightAspect { get; set; }
+        public double? HeightAspect { get => _explicitNullValueHeightAspect; set { _explicitNullValueHeightAspect = value; AdditionalData?.Remove("heightAspect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("heightAspect"); else _explicitNullProperties?.Remove("heightAspect"); } }
+        private double? _explicitNullValueHeightAspect = default!;
         /// <summary>The widthAspect property</summary>
-        public long? WidthAspect { get; set; }
+        public long? WidthAspect { get => _explicitNullValueWidthAspect; set { _explicitNullValueWidthAspect = value; AdditionalData?.Remove("widthAspect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widthAspect"); else _explicitNullProperties?.Remove("widthAspect"); } }
+        private long? _explicitNullValueWidthAspect = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("heightAspect", HeightAspect);
             writer.WriteLongValue("widthAspect", WidthAspect);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

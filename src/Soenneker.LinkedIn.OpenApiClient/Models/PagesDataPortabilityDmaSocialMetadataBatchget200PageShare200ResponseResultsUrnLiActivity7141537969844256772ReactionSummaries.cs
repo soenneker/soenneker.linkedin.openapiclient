@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummaries : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("EMPATHY") is null) { _explicitNullValueEMPATHY = default!; _explicitNullProperties?.Remove("EMPATHY"); }
+            else if (parseNode.GetChildNode("EMPATHY") is { } nullNodeEMPATHY && nullNodeEMPATHY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EMPATHY = null;
+            if (parseNode.GetChildNode("ENTERTAINMENT") is null) { _explicitNullValueENTERTAINMENT = default!; _explicitNullProperties?.Remove("ENTERTAINMENT"); }
+            else if (parseNode.GetChildNode("ENTERTAINMENT") is { } nullNodeENTERTAINMENT && nullNodeENTERTAINMENT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ENTERTAINMENT = null;
+            if (parseNode.GetChildNode("LIKE") is null) { _explicitNullValueLIKE = default!; _explicitNullProperties?.Remove("LIKE"); }
+            else if (parseNode.GetChildNode("LIKE") is { } nullNodeLIKE && nullNodeLIKE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LIKE = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The EMPATHY property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEmpathy? EMPATHY { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEmpathy? EMPATHY { get => _explicitNullValueEMPATHY; set { _explicitNullValueEMPATHY = value; AdditionalData?.Remove("EMPATHY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EMPATHY"); else _explicitNullProperties?.Remove("EMPATHY"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEmpathy? _explicitNullValueEMPATHY = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEmpathy EMPATHY { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEmpathy EMPATHY { get => _explicitNullValueEMPATHY; set { _explicitNullValueEMPATHY = value; AdditionalData?.Remove("EMPATHY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EMPATHY"); else _explicitNullProperties?.Remove("EMPATHY"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEmpathy _explicitNullValueEMPATHY = default!;
 #endif
         /// <summary>The ENTERTAINMENT property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEntertainment? ENTERTAINMENT { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEntertainment? ENTERTAINMENT { get => _explicitNullValueENTERTAINMENT; set { _explicitNullValueENTERTAINMENT = value; AdditionalData?.Remove("ENTERTAINMENT"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ENTERTAINMENT"); else _explicitNullProperties?.Remove("ENTERTAINMENT"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEntertainment? _explicitNullValueENTERTAINMENT = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEntertainment ENTERTAINMENT { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEntertainment ENTERTAINMENT { get => _explicitNullValueENTERTAINMENT; set { _explicitNullValueENTERTAINMENT = value; AdditionalData?.Remove("ENTERTAINMENT"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ENTERTAINMENT"); else _explicitNullProperties?.Remove("ENTERTAINMENT"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEntertainment _explicitNullValueENTERTAINMENT = default!;
 #endif
         /// <summary>The LIKE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesLike? LIKE { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesLike? LIKE { get => _explicitNullValueLIKE; set { _explicitNullValueLIKE = value; AdditionalData?.Remove("LIKE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LIKE"); else _explicitNullProperties?.Remove("LIKE"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesLike? _explicitNullValueLIKE = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesLike LIKE { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesLike LIKE { get => _explicitNullValueLIKE; set { _explicitNullValueLIKE = value; AdditionalData?.Remove("LIKE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LIKE"); else _explicitNullProperties?.Remove("LIKE"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesLike _explicitNullValueLIKE = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummaries"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummaries CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummaries();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummaries(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEmpathy>("EMPATHY", EMPATHY);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesEntertainment>("ENTERTAINMENT", ENTERTAINMENT);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772ReactionSummariesLike>("LIKE", LIKE);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

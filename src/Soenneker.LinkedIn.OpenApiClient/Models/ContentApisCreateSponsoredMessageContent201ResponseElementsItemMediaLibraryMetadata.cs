@@ -12,27 +12,45 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assetName") is null) { _explicitNullValueAssetName = default!; _explicitNullProperties?.Remove("assetName"); }
+            else if (parseNode.GetChildNode("assetName") is { } nullNodeAssetName && nullNodeAssetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetName = null;
+            if (parseNode.GetChildNode("associatedAccount") is null) { _explicitNullValueAssociatedAccount = default!; _explicitNullProperties?.Remove("associatedAccount"); }
+            else if (parseNode.GetChildNode("associatedAccount") is { } nullNodeAssociatedAccount && nullNodeAssociatedAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedAccount = null;
+            if (parseNode.GetChildNode("mediaLibraryStatus") is null) { _explicitNullValueMediaLibraryStatus = default!; _explicitNullProperties?.Remove("mediaLibraryStatus"); }
+            else if (parseNode.GetChildNode("mediaLibraryStatus") is { } nullNodeMediaLibraryStatus && nullNodeMediaLibraryStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaLibraryStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the asset in the associatedAccount&apos;s library.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetName { get; set; }
+        public string? AssetName { get => _explicitNullValueAssetName; set { _explicitNullValueAssetName = value; AdditionalData?.Remove("assetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetName"); else _explicitNullProperties?.Remove("assetName"); } }
+        private string? _explicitNullValueAssetName = default!;
 #nullable restore
 #else
-        public string AssetName { get; set; }
+        public string AssetName { get => _explicitNullValueAssetName; set { _explicitNullValueAssetName = value; AdditionalData?.Remove("assetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetName"); else _explicitNullProperties?.Remove("assetName"); } }
+        private string _explicitNullValueAssetName = default!;
 #endif
         /// <summary>The associated account that owns the media library (e.g. urn:li:sponsoredAccount:123). The media library specific metadata fields will be filled with the data from this account&apos;s library.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssociatedAccount { get; set; }
+        public string? AssociatedAccount { get => _explicitNullValueAssociatedAccount; set { _explicitNullValueAssociatedAccount = value; AdditionalData?.Remove("associatedAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedAccount"); else _explicitNullProperties?.Remove("associatedAccount"); } }
+        private string? _explicitNullValueAssociatedAccount = default!;
 #nullable restore
 #else
-        public string AssociatedAccount { get; set; }
+        public string AssociatedAccount { get => _explicitNullValueAssociatedAccount; set { _explicitNullValueAssociatedAccount = value; AdditionalData?.Remove("associatedAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedAccount"); else _explicitNullProperties?.Remove("associatedAccount"); } }
+        private string _explicitNullValueAssociatedAccount = default!;
 #endif
         /// <summary>Status of the asset&apos;s entry in the media library. Defaults to &quot;ACTIVE&quot; on creation.ACTIVE Owner considers asset available and usable. ARCHIVED Owner considers asset archived.Documented type: MediaLibraryStatusRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadataMediaLibraryStatus? MediaLibraryStatus { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadataMediaLibraryStatus? MediaLibraryStatus { get => _explicitNullValueMediaLibraryStatus; set { _explicitNullValueMediaLibraryStatus = value; AdditionalData?.Remove("mediaLibraryStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaLibraryStatus"); else _explicitNullProperties?.Remove("mediaLibraryStatus"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadataMediaLibraryStatus? _explicitNullValueMediaLibraryStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadata"/> and sets the default values.
         /// </summary>
@@ -48,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "assetName", n => { AssetName = n.GetStringValue(); } },
                 { "associatedAccount", n => { AssociatedAccount = n.GetStringValue(); } },
-                { "mediaLibraryStatus", n => { MediaLibraryStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadataMediaLibraryStatus>(); } },
+                { "mediaLibraryStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadataMediaLibraryStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMediaLibraryStatus = default; _explicitNullProperties?.Remove("mediaLibraryStatus"); AdditionalData["mediaLibraryStatus"] = unknown; } else { MediaLibraryStatus = parsed; AdditionalData.Remove("mediaLibraryStatus"); } } },
             };
         }
         /// <summary>
@@ -73,6 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("assetName", AssetName);
             writer.WriteStringValue("associatedAccount", AssociatedAccount);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContent201ResponseElementsItemMediaLibraryMetadataMediaLibraryStatus>("mediaLibraryStatus", MediaLibraryStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

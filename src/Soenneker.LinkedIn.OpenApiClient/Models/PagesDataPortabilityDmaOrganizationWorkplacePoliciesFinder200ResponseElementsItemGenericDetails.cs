@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("featuredBenefits") is null) { _explicitNullValueFeaturedBenefits = default!; _explicitNullProperties?.Remove("featuredBenefits"); }
+            else if (parseNode.GetChildNode("featuredBenefits") is { } nullNodeFeaturedBenefits && nullNodeFeaturedBenefits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeaturedBenefits = null;
+            if (parseNode.GetChildNode("locationBasedPayAdjustment") is null) { _explicitNullValueLocationBasedPayAdjustment = default!; _explicitNullProperties?.Remove("locationBasedPayAdjustment"); }
+            else if (parseNode.GetChildNode("locationBasedPayAdjustment") is { } nullNodeLocationBasedPayAdjustment && nullNodeLocationBasedPayAdjustment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationBasedPayAdjustment = null;
+            if (parseNode.GetChildNode("policyDescription") is null) { _explicitNullValuePolicyDescription = default!; _explicitNullProperties?.Remove("policyDescription"); }
+            else if (parseNode.GetChildNode("policyDescription") is { } nullNodePolicyDescription && nullNodePolicyDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyDescription = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The featuredBenefits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? FeaturedBenefits { get; set; }
+        public UntypedNode? FeaturedBenefits { get => _explicitNullValueFeaturedBenefits; set { _explicitNullValueFeaturedBenefits = value; AdditionalData?.Remove("featuredBenefits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featuredBenefits"); else _explicitNullProperties?.Remove("featuredBenefits"); } }
+        private UntypedNode? _explicitNullValueFeaturedBenefits = default!;
 #nullable restore
 #else
-        public UntypedNode FeaturedBenefits { get; set; }
+        public UntypedNode FeaturedBenefits { get => _explicitNullValueFeaturedBenefits; set { _explicitNullValueFeaturedBenefits = value; AdditionalData?.Remove("featuredBenefits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featuredBenefits"); else _explicitNullProperties?.Remove("featuredBenefits"); } }
+        private UntypedNode _explicitNullValueFeaturedBenefits = default!;
 #endif
         /// <summary>The locationBasedPayAdjustment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationBasedPayAdjustment { get; set; }
+        public string? LocationBasedPayAdjustment { get => _explicitNullValueLocationBasedPayAdjustment; set { _explicitNullValueLocationBasedPayAdjustment = value; AdditionalData?.Remove("locationBasedPayAdjustment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationBasedPayAdjustment"); else _explicitNullProperties?.Remove("locationBasedPayAdjustment"); } }
+        private string? _explicitNullValueLocationBasedPayAdjustment = default!;
 #nullable restore
 #else
-        public string LocationBasedPayAdjustment { get; set; }
+        public string LocationBasedPayAdjustment { get => _explicitNullValueLocationBasedPayAdjustment; set { _explicitNullValueLocationBasedPayAdjustment = value; AdditionalData?.Remove("locationBasedPayAdjustment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationBasedPayAdjustment"); else _explicitNullProperties?.Remove("locationBasedPayAdjustment"); } }
+        private string _explicitNullValueLocationBasedPayAdjustment = default!;
 #endif
         /// <summary>The policyDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetailsPolicyDescription? PolicyDescription { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetailsPolicyDescription? PolicyDescription { get => _explicitNullValuePolicyDescription; set { _explicitNullValuePolicyDescription = value; AdditionalData?.Remove("policyDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policyDescription"); else _explicitNullProperties?.Remove("policyDescription"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetailsPolicyDescription? _explicitNullValuePolicyDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetailsPolicyDescription PolicyDescription { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetailsPolicyDescription PolicyDescription { get => _explicitNullValuePolicyDescription; set { _explicitNullValuePolicyDescription = value; AdditionalData?.Remove("policyDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policyDescription"); else _explicitNullProperties?.Remove("policyDescription"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetailsPolicyDescription _explicitNullValuePolicyDescription = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("featuredBenefits", FeaturedBenefits);
             writer.WriteStringValue("locationBasedPayAdjustment", LocationBasedPayAdjustment);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetailsPolicyDescription>("policyDescription", PolicyDescription);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

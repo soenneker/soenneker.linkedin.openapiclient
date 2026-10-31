@@ -11,13 +11,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationPhotosBatchget200ResponseStatuses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)") is null) { _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 = default!; _explicitNullProperties?.Remove("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)"); }
+            else if (parseNode.GetChildNode("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)") is { } nullNodeUrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 && nullNodeUrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 = null;
+            if (parseNode.GetChildNode("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)") is null) { _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 = default!; _explicitNullProperties?.Remove("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)"); }
+            else if (parseNode.GetChildNode("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)") is { } nullNodeUrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 && nullNodeUrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 property</summary>
-        public long? UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 { get; set; }
+        public long? UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 { get => _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3; set { _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 = value; AdditionalData?.Remove("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)"); else _explicitNullProperties?.Remove("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)"); } }
+        private long? _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 = default!;
         /// <summary>The urnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 property</summary>
-        public long? UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 { get; set; }
+        public long? UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 { get => _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8; set { _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 = value; AdditionalData?.Remove("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)"); else _explicitNullProperties?.Remove("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)"); } }
+        private long? _explicitNullValueUrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosBatchget200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosBatchget200ResponseStatuses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosBatchget200ResponseStatuses();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosBatchget200ResponseStatuses(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)", UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3);
             writer.WriteLongValue("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)", UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

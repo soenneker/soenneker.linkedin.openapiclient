@@ -11,43 +11,69 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetMultiplePostByUrn200ResponseElementsItemAdContext : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dscAdAccount") is null) { _explicitNullValueDscAdAccount = default!; _explicitNullProperties?.Remove("dscAdAccount"); }
+            else if (parseNode.GetChildNode("dscAdAccount") is { } nullNodeDscAdAccount && nullNodeDscAdAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DscAdAccount = null;
+            if (parseNode.GetChildNode("dscAdType") is null) { _explicitNullValueDscAdType = default!; _explicitNullProperties?.Remove("dscAdType"); }
+            else if (parseNode.GetChildNode("dscAdType") is { } nullNodeDscAdType && nullNodeDscAdType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DscAdType = null;
+            if (parseNode.GetChildNode("dscName") is null) { _explicitNullValueDscName = default!; _explicitNullProperties?.Remove("dscName"); }
+            else if (parseNode.GetChildNode("dscName") is { } nullNodeDscName && nullNodeDscName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DscName = null;
+            if (parseNode.GetChildNode("dscStatus") is null) { _explicitNullValueDscStatus = default!; _explicitNullProperties?.Remove("dscStatus"); }
+            else if (parseNode.GetChildNode("dscStatus") is { } nullNodeDscStatus && nullNodeDscStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DscStatus = null;
+            if (parseNode.GetChildNode("isDsc") is null) { _explicitNullValueIsDsc = default!; _explicitNullProperties?.Remove("isDsc"); }
+            else if (parseNode.GetChildNode("isDsc") is { } nullNodeIsDsc && nullNodeIsDsc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDsc = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dscAdAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DscAdAccount { get; set; }
+        public string? DscAdAccount { get => _explicitNullValueDscAdAccount; set { _explicitNullValueDscAdAccount = value; AdditionalData?.Remove("dscAdAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscAdAccount"); else _explicitNullProperties?.Remove("dscAdAccount"); } }
+        private string? _explicitNullValueDscAdAccount = default!;
 #nullable restore
 #else
-        public string DscAdAccount { get; set; }
+        public string DscAdAccount { get => _explicitNullValueDscAdAccount; set { _explicitNullValueDscAdAccount = value; AdditionalData?.Remove("dscAdAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscAdAccount"); else _explicitNullProperties?.Remove("dscAdAccount"); } }
+        private string _explicitNullValueDscAdAccount = default!;
 #endif
         /// <summary>The dscAdType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DscAdType { get; set; }
+        public string? DscAdType { get => _explicitNullValueDscAdType; set { _explicitNullValueDscAdType = value; AdditionalData?.Remove("dscAdType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscAdType"); else _explicitNullProperties?.Remove("dscAdType"); } }
+        private string? _explicitNullValueDscAdType = default!;
 #nullable restore
 #else
-        public string DscAdType { get; set; }
+        public string DscAdType { get => _explicitNullValueDscAdType; set { _explicitNullValueDscAdType = value; AdditionalData?.Remove("dscAdType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscAdType"); else _explicitNullProperties?.Remove("dscAdType"); } }
+        private string _explicitNullValueDscAdType = default!;
 #endif
         /// <summary>The dscName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DscName { get; set; }
+        public string? DscName { get => _explicitNullValueDscName; set { _explicitNullValueDscName = value; AdditionalData?.Remove("dscName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscName"); else _explicitNullProperties?.Remove("dscName"); } }
+        private string? _explicitNullValueDscName = default!;
 #nullable restore
 #else
-        public string DscName { get; set; }
+        public string DscName { get => _explicitNullValueDscName; set { _explicitNullValueDscName = value; AdditionalData?.Remove("dscName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscName"); else _explicitNullProperties?.Remove("dscName"); } }
+        private string _explicitNullValueDscName = default!;
 #endif
         /// <summary>The dscStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DscStatus { get; set; }
+        public string? DscStatus { get => _explicitNullValueDscStatus; set { _explicitNullValueDscStatus = value; AdditionalData?.Remove("dscStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscStatus"); else _explicitNullProperties?.Remove("dscStatus"); } }
+        private string? _explicitNullValueDscStatus = default!;
 #nullable restore
 #else
-        public string DscStatus { get; set; }
+        public string DscStatus { get => _explicitNullValueDscStatus; set { _explicitNullValueDscStatus = value; AdditionalData?.Remove("dscStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dscStatus"); else _explicitNullProperties?.Remove("dscStatus"); } }
+        private string _explicitNullValueDscStatus = default!;
 #endif
         /// <summary>The isDsc property</summary>
-        public bool? IsDsc { get; set; }
+        public bool? IsDsc { get => _explicitNullValueIsDsc; set { _explicitNullValueIsDsc = value; AdditionalData?.Remove("isDsc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDsc"); else _explicitNullProperties?.Remove("isDsc"); } }
+        private bool? _explicitNullValueIsDsc = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemAdContext"/> and sets the default values.
         /// </summary>
@@ -63,7 +89,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemAdContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemAdContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200ResponseElementsItemAdContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +118,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("dscName", DscName);
             writer.WriteStringValue("dscStatus", DscStatus);
             writer.WriteBoolValue("isDsc", IsDsc);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

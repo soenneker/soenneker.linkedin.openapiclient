@@ -11,102 +11,162 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("associatedEntity") is null) { _explicitNullValueAssociatedEntity = default!; _explicitNullProperties?.Remove("associatedEntity"); }
+            else if (parseNode.GetChildNode("associatedEntity") is { } nullNodeAssociatedEntity && nullNodeAssociatedEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedEntity = null;
+            if (parseNode.GetChildNode("associatedEntityInfo") is null) { _explicitNullValueAssociatedEntityInfo = default!; _explicitNullProperties?.Remove("associatedEntityInfo"); }
+            else if (parseNode.GetChildNode("associatedEntityInfo") is { } nullNodeAssociatedEntityInfo && nullNodeAssociatedEntityInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedEntityInfo = null;
+            if (parseNode.GetChildNode("form") is null) { _explicitNullValueForm = default!; _explicitNullProperties?.Remove("form"); }
+            else if (parseNode.GetChildNode("form") is { } nullNodeForm && nullNodeForm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Form = null;
+            if (parseNode.GetChildNode("formResponse") is null) { _explicitNullValueFormResponse = default!; _explicitNullProperties?.Remove("formResponse"); }
+            else if (parseNode.GetChildNode("formResponse") is { } nullNodeFormResponse && nullNodeFormResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormResponse = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("leadMetadataInfo") is null) { _explicitNullValueLeadMetadataInfo = default!; _explicitNullProperties?.Remove("leadMetadataInfo"); }
+            else if (parseNode.GetChildNode("leadMetadataInfo") is { } nullNodeLeadMetadataInfo && nullNodeLeadMetadataInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadMetadataInfo = null;
+            if (parseNode.GetChildNode("leadType") is null) { _explicitNullValueLeadType = default!; _explicitNullProperties?.Remove("leadType"); }
+            else if (parseNode.GetChildNode("leadType") is { } nullNodeLeadType && nullNodeLeadType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadType = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("ownerInfo") is null) { _explicitNullValueOwnerInfo = default!; _explicitNullProperties?.Remove("ownerInfo"); }
+            else if (parseNode.GetChildNode("ownerInfo") is { } nullNodeOwnerInfo && nullNodeOwnerInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerInfo = null;
+            if (parseNode.GetChildNode("responseId") is null) { _explicitNullValueResponseId = default!; _explicitNullProperties?.Remove("responseId"); }
+            else if (parseNode.GetChildNode("responseId") is { } nullNodeResponseId && nullNodeResponseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseId = null;
+            if (parseNode.GetChildNode("submittedAt") is null) { _explicitNullValueSubmittedAt = default!; _explicitNullProperties?.Remove("submittedAt"); }
+            else if (parseNode.GetChildNode("submittedAt") is { } nullNodeSubmittedAt && nullNodeSubmittedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmittedAt = null;
+            if (parseNode.GetChildNode("submitter") is null) { _explicitNullValueSubmitter = default!; _explicitNullProperties?.Remove("submitter"); }
+            else if (parseNode.GetChildNode("submitter") is { } nullNodeSubmitter && nullNodeSubmitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Submitter = null;
+            if (parseNode.GetChildNode("testLead") is null) { _explicitNullValueTestLead = default!; _explicitNullProperties?.Remove("testLead"); }
+            else if (parseNode.GetChildNode("testLead") is { } nullNodeTestLead && nullNodeTestLead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestLead = null;
+            if (parseNode.GetChildNode("versionedLeadGenFormUrn") is null) { _explicitNullValueVersionedLeadGenFormUrn = default!; _explicitNullProperties?.Remove("versionedLeadGenFormUrn"); }
+            else if (parseNode.GetChildNode("versionedLeadGenFormUrn") is { } nullNodeVersionedLeadGenFormUrn && nullNodeVersionedLeadGenFormUrn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionedLeadGenFormUrn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URN identifying which entity the lead is associated with. This field should match with the leadType if there is an associatedEntity. This field is optional for test leads and other use cases where leads don&apos;t have any associatedEntity. If there&apos;s no value, the field is not returned.Documented type: Union of SponsoredCreativeUrn , OrganizationUrn , EventUrn , StandardizedProductUrn, OrganizationLandingPageUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssociatedEntity { get; set; }
+        public string? AssociatedEntity { get => _explicitNullValueAssociatedEntity; set { _explicitNullValueAssociatedEntity = value; AdditionalData?.Remove("associatedEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntity"); else _explicitNullProperties?.Remove("associatedEntity"); } }
+        private string? _explicitNullValueAssociatedEntity = default!;
 #nullable restore
 #else
-        public string AssociatedEntity { get; set; }
+        public string AssociatedEntity { get => _explicitNullValueAssociatedEntity; set { _explicitNullValueAssociatedEntity = value; AdditionalData?.Remove("associatedEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntity"); else _explicitNullProperties?.Remove("associatedEntity"); } }
+        private string _explicitNullValueAssociatedEntity = default!;
 #endif
         /// <summary>The associatedEntityInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo? AssociatedEntityInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo? AssociatedEntityInfo { get => _explicitNullValueAssociatedEntityInfo; set { _explicitNullValueAssociatedEntityInfo = value; AdditionalData?.Remove("associatedEntityInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntityInfo"); else _explicitNullProperties?.Remove("associatedEntityInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo? _explicitNullValueAssociatedEntityInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo AssociatedEntityInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo AssociatedEntityInfo { get => _explicitNullValueAssociatedEntityInfo; set { _explicitNullValueAssociatedEntityInfo = value; AdditionalData?.Remove("associatedEntityInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntityInfo"); else _explicitNullProperties?.Remove("associatedEntityInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo _explicitNullValueAssociatedEntityInfo = default!;
 #endif
         /// <summary>The Lead Gen Form associated to the lead.Documented type: LeadGenForm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm? Form { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm? Form { get => _explicitNullValueForm; set { _explicitNullValueForm = value; AdditionalData?.Remove("form"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form"); else _explicitNullProperties?.Remove("form"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm? _explicitNullValueForm = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm Form { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm Form { get => _explicitNullValueForm; set { _explicitNullValueForm = value; AdditionalData?.Remove("form"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form"); else _explicitNullProperties?.Remove("form"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm _explicitNullValueForm = default!;
 #endif
         /// <summary>Answers provided by the form submitter.Documented type: FormResponse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse? FormResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse? FormResponse { get => _explicitNullValueFormResponse; set { _explicitNullValueFormResponse = value; AdditionalData?.Remove("formResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formResponse"); else _explicitNullProperties?.Remove("formResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse? _explicitNullValueFormResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse FormResponse { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse FormResponse { get => _explicitNullValueFormResponse; set { _explicitNullValueFormResponse = value; AdditionalData?.Remove("formResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formResponse"); else _explicitNullProperties?.Remove("formResponse"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse _explicitNullValueFormResponse = default!;
 #endif
         /// <summary>Unique id to identify the Lead Form Response.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Metadata entity reference details. Record containing a subset of fields resolved on demand from the lead metadata references (e.g. campaign name , campaign type). Can be empty for test leads and cases where no lead metadata is relevant.Documented type: (optional) Union of SponsoredLeadMetadataInfo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo? LeadMetadataInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo? LeadMetadataInfo { get => _explicitNullValueLeadMetadataInfo; set { _explicitNullValueLeadMetadataInfo = value; AdditionalData?.Remove("leadMetadataInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadMetadataInfo"); else _explicitNullProperties?.Remove("leadMetadataInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo? _explicitNullValueLeadMetadataInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo LeadMetadataInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo LeadMetadataInfo { get => _explicitNullValueLeadMetadataInfo; set { _explicitNullValueLeadMetadataInfo = value; AdditionalData?.Remove("leadMetadataInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadMetadataInfo"); else _explicitNullProperties?.Remove("leadMetadataInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo _explicitNullValueLeadMetadataInfo = default!;
 #endif
         /// <summary>Type of the lead that represents the origination of the lead.Documented type: LeadType</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType? LeadType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType? LeadType { get => _explicitNullValueLeadType; set { _explicitNullValueLeadType = value; AdditionalData?.Remove("leadType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadType"); else _explicitNullProperties?.Remove("leadType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType? _explicitNullValueLeadType = default!;
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner? Owner { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner Owner { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>Record containing entity info that owns this Lead Form Response. It&apos;s an optional Union of sponsoredAccountInfo and organizationInfo.Documented type: (optional) LeadGenFormResponseOwnerInfo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo? OwnerInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo? OwnerInfo { get => _explicitNullValueOwnerInfo; set { _explicitNullValueOwnerInfo = value; AdditionalData?.Remove("ownerInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerInfo"); else _explicitNullProperties?.Remove("ownerInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo? _explicitNullValueOwnerInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo OwnerInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo OwnerInfo { get => _explicitNullValueOwnerInfo; set { _explicitNullValueOwnerInfo = value; AdditionalData?.Remove("ownerInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerInfo"); else _explicitNullProperties?.Remove("ownerInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo _explicitNullValueOwnerInfo = default!;
 #endif
         /// <summary>The unique identifier for the form response generated in the front-end when a submitter submits the response.Documented type: TrackingId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ResponseId { get; set; }
+        public UntypedNode? ResponseId { get => _explicitNullValueResponseId; set { _explicitNullValueResponseId = value; AdditionalData?.Remove("responseId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseId"); else _explicitNullProperties?.Remove("responseId"); } }
+        private UntypedNode? _explicitNullValueResponseId = default!;
 #nullable restore
 #else
-        public UntypedNode ResponseId { get; set; }
+        public UntypedNode ResponseId { get => _explicitNullValueResponseId; set { _explicitNullValueResponseId = value; AdditionalData?.Remove("responseId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseId"); else _explicitNullProperties?.Remove("responseId"); } }
+        private UntypedNode _explicitNullValueResponseId = default!;
 #endif
         /// <summary>An epoch timestamp that records when the form response was submitted.Documented type: Time</summary>
-        public long? SubmittedAt { get; set; }
+        public long? SubmittedAt { get => _explicitNullValueSubmittedAt; set { _explicitNullValueSubmittedAt = value; AdditionalData?.Remove("submittedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submittedAt"); else _explicitNullProperties?.Remove("submittedAt"); } }
+        private long? _explicitNullValueSubmittedAt = default!;
         /// <summary>From version 202408 onwards, Guest Leads (when a user submits a form without being logged in) submitted to lead forms, submitter field is treated as a null field and omitted from the JSON response. For non-guest leads, the submitter field is included in the response and provides the person&apos;s URN. Ex: &quot;submitter&quot;: &quot;urn:li:person:MpGcnvaU_p&quot;.Documented type: URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Submitter { get; set; }
+        public string? Submitter { get => _explicitNullValueSubmitter; set { _explicitNullValueSubmitter = value; AdditionalData?.Remove("submitter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitter"); else _explicitNullProperties?.Remove("submitter"); } }
+        private string? _explicitNullValueSubmitter = default!;
 #nullable restore
 #else
-        public string Submitter { get; set; }
+        public string Submitter { get => _explicitNullValueSubmitter; set { _explicitNullValueSubmitter = value; AdditionalData?.Remove("submitter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitter"); else _explicitNullProperties?.Remove("submitter"); } }
+        private string _explicitNullValueSubmitter = default!;
 #endif
         /// <summary>Whether this is a test lead created for testing purposes.Documented type: Boolean</summary>
-        public bool? TestLead { get; set; }
+        public bool? TestLead { get => _explicitNullValueTestLead; set { _explicitNullValueTestLead = value; AdditionalData?.Remove("testLead"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testLead"); else _explicitNullProperties?.Remove("testLead"); } }
+        private bool? _explicitNullValueTestLead = default!;
         /// <summary>The versionedLeadGenFormUrn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionedLeadGenFormUrn { get; set; }
+        public string? VersionedLeadGenFormUrn { get => _explicitNullValueVersionedLeadGenFormUrn; set { _explicitNullValueVersionedLeadGenFormUrn = value; AdditionalData?.Remove("versionedLeadGenFormUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionedLeadGenFormUrn"); else _explicitNullProperties?.Remove("versionedLeadGenFormUrn"); } }
+        private string? _explicitNullValueVersionedLeadGenFormUrn = default!;
 #nullable restore
 #else
-        public string VersionedLeadGenFormUrn { get; set; }
+        public string VersionedLeadGenFormUrn { get => _explicitNullValueVersionedLeadGenFormUrn; set { _explicitNullValueVersionedLeadGenFormUrn = value; AdditionalData?.Remove("versionedLeadGenFormUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionedLeadGenFormUrn"); else _explicitNullProperties?.Remove("versionedLeadGenFormUrn"); } }
+        private string _explicitNullValueVersionedLeadGenFormUrn = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItem"/> and sets the default values.
@@ -123,7 +183,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,7 +199,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "formResponse", n => { FormResponse = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadMetadataInfo", n => { LeadMetadataInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo.CreateFromDiscriminatorValue); } },
-                { "leadType", n => { LeadType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType>(); } },
+                { "leadType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLeadType = default; _explicitNullProperties?.Remove("leadType"); AdditionalData["leadType"] = unknown; } else { LeadType = parsed; AdditionalData.Remove("leadType"); } } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner.CreateFromDiscriminatorValue); } },
                 { "ownerInfo", n => { OwnerInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo.CreateFromDiscriminatorValue); } },
                 { "responseId", n => { ResponseId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -170,6 +230,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("submitter", Submitter);
             writer.WriteBoolValue("testLead", TestLead);
             writer.WriteStringValue("versionedLeadGenFormUrn", VersionedLeadGenFormUrn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

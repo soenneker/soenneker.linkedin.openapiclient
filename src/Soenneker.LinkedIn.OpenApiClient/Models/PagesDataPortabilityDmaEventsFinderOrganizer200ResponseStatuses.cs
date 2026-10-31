@@ -11,17 +11,36 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaEventsFinderOrganizer200ResponseStatuses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("7130604419196358657") is null) { _explicitNullValueSevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven = default!; _explicitNullProperties?.Remove("7130604419196358657"); }
+            else if (parseNode.GetChildNode("7130604419196358657") is { } nullNodeSevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven && nullNodeSevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven = null;
+            if (parseNode.GetChildNode("7130283828383793151") is null) { _explicitNullValueSevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne = default!; _explicitNullProperties?.Remove("7130283828383793151"); }
+            else if (parseNode.GetChildNode("7130283828383793151") is { } nullNodeSevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne && nullNodeSevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne = null;
+            if (parseNode.GetChildNode("7130283397368741889") is null) { _explicitNullValueSevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine = default!; _explicitNullProperties?.Remove("7130283397368741889"); }
+            else if (parseNode.GetChildNode("7130283397368741889") is { } nullNodeSevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine && nullNodeSevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine = null;
+            if (parseNode.GetChildNode("7128514732969357312") is null) { _explicitNullValueSevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo = default!; _explicitNullProperties?.Remove("7128514732969357312"); }
+            else if (parseNode.GetChildNode("7128514732969357312") is { } nullNodeSevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo && nullNodeSevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven property</summary>
-        public long? SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven { get; set; }
+        public long? SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven { get => _explicitNullValueSevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven; set { _explicitNullValueSevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven = value; AdditionalData?.Remove("7130604419196358657"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("7130604419196358657"); else _explicitNullProperties?.Remove("7130604419196358657"); } }
+        private long? _explicitNullValueSevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven = default!;
         /// <summary>The SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne property</summary>
-        public long? SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne { get; set; }
+        public long? SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne { get => _explicitNullValueSevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne; set { _explicitNullValueSevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne = value; AdditionalData?.Remove("7130283828383793151"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("7130283828383793151"); else _explicitNullProperties?.Remove("7130283828383793151"); } }
+        private long? _explicitNullValueSevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne = default!;
         /// <summary>The SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine property</summary>
-        public long? SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine { get; set; }
+        public long? SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine { get => _explicitNullValueSevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine; set { _explicitNullValueSevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine = value; AdditionalData?.Remove("7130283397368741889"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("7130283397368741889"); else _explicitNullProperties?.Remove("7130283397368741889"); } }
+        private long? _explicitNullValueSevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine = default!;
         /// <summary>The SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo property</summary>
-        public long? SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo { get; set; }
+        public long? SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo { get => _explicitNullValueSevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo; set { _explicitNullValueSevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo = value; AdditionalData?.Remove("7128514732969357312"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("7128514732969357312"); else _explicitNullProperties?.Remove("7128514732969357312"); } }
+        private long? _explicitNullValueSevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -37,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseStatuses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseStatuses();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseStatuses(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("7130283828383793151", SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne);
             writer.WriteLongValue("7130283397368741889", SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine);
             writer.WriteLongValue("7128514732969357312", SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

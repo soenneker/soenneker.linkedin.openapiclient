@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("demographicDimensionType") is null) { _explicitNullValueDemographicDimensionType = default!; _explicitNullProperties?.Remove("demographicDimensionType"); }
+            else if (parseNode.GetChildNode("demographicDimensionType") is { } nullNodeDemographicDimensionType && nullNodeDemographicDimensionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DemographicDimensionType = null;
+            if (parseNode.GetChildNode("dimensionMemberCount") is null) { _explicitNullValueDimensionMemberCount = default!; _explicitNullProperties?.Remove("dimensionMemberCount"); }
+            else if (parseNode.GetChildNode("dimensionMemberCount") is { } nullNodeDimensionMemberCount && nullNodeDimensionMemberCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionMemberCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The demographicDimensionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DemographicDimensionType { get; set; }
+        public string? DemographicDimensionType { get => _explicitNullValueDemographicDimensionType; set { _explicitNullValueDemographicDimensionType = value; AdditionalData?.Remove("demographicDimensionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographicDimensionType"); else _explicitNullProperties?.Remove("demographicDimensionType"); } }
+        private string? _explicitNullValueDemographicDimensionType = default!;
 #nullable restore
 #else
-        public string DemographicDimensionType { get; set; }
+        public string DemographicDimensionType { get => _explicitNullValueDemographicDimensionType; set { _explicitNullValueDemographicDimensionType = value; AdditionalData?.Remove("demographicDimensionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographicDimensionType"); else _explicitNullProperties?.Remove("demographicDimensionType"); } }
+        private string _explicitNullValueDemographicDimensionType = default!;
 #endif
         /// <summary>The dimensionMemberCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DimensionMemberCount { get; set; }
+        public UntypedNode? DimensionMemberCount { get => _explicitNullValueDimensionMemberCount; set { _explicitNullValueDimensionMemberCount = value; AdditionalData?.Remove("dimensionMemberCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensionMemberCount"); else _explicitNullProperties?.Remove("dimensionMemberCount"); } }
+        private UntypedNode? _explicitNullValueDimensionMemberCount = default!;
 #nullable restore
 #else
-        public UntypedNode DimensionMemberCount { get; set; }
+        public UntypedNode DimensionMemberCount { get => _explicitNullValueDimensionMemberCount; set { _explicitNullValueDimensionMemberCount = value; AdditionalData?.Remove("dimensionMemberCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensionMemberCount"); else _explicitNullProperties?.Remove("dimensionMemberCount"); } }
+        private UntypedNode _explicitNullValueDimensionMemberCount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("demographicDimensionType", DemographicDimensionType);
             writer.WriteObjectValue<UntypedNode>("dimensionMemberCount", DimensionMemberCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

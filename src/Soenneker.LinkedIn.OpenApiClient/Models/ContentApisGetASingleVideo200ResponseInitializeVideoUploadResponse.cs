@@ -11,50 +11,80 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("captionsUploadUrl") is null) { _explicitNullValueCaptionsUploadUrl = default!; _explicitNullProperties?.Remove("captionsUploadUrl"); }
+            else if (parseNode.GetChildNode("captionsUploadUrl") is { } nullNodeCaptionsUploadUrl && nullNodeCaptionsUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptionsUploadUrl = null;
+            if (parseNode.GetChildNode("thumbnailUploadUrl") is null) { _explicitNullValueThumbnailUploadUrl = default!; _explicitNullProperties?.Remove("thumbnailUploadUrl"); }
+            else if (parseNode.GetChildNode("thumbnailUploadUrl") is { } nullNodeThumbnailUploadUrl && nullNodeThumbnailUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThumbnailUploadUrl = null;
+            if (parseNode.GetChildNode("uploadInstructions") is null) { _explicitNullValueUploadInstructions = default!; _explicitNullProperties?.Remove("uploadInstructions"); }
+            else if (parseNode.GetChildNode("uploadInstructions") is { } nullNodeUploadInstructions && nullNodeUploadInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadInstructions = null;
+            if (parseNode.GetChildNode("uploadToken") is null) { _explicitNullValueUploadToken = default!; _explicitNullProperties?.Remove("uploadToken"); }
+            else if (parseNode.GetChildNode("uploadToken") is { } nullNodeUploadToken && nullNodeUploadToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadToken = null;
+            if (parseNode.GetChildNode("uploadUrlsExpireAt") is null) { _explicitNullValueUploadUrlsExpireAt = default!; _explicitNullProperties?.Remove("uploadUrlsExpireAt"); }
+            else if (parseNode.GetChildNode("uploadUrlsExpireAt") is { } nullNodeUploadUrlsExpireAt && nullNodeUploadUrlsExpireAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUrlsExpireAt = null;
+            if (parseNode.GetChildNode("video") is null) { _explicitNullValueVideo = default!; _explicitNullProperties?.Remove("video"); }
+            else if (parseNode.GetChildNode("video") is { } nullNodeVideo && nullNodeVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Video = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URL for uploading captions. Present only if initializeUploadRequest.uploadCaptions was true.Documented type: URL optionalRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CaptionsUploadUrl { get; set; }
+        public string? CaptionsUploadUrl { get => _explicitNullValueCaptionsUploadUrl; set { _explicitNullValueCaptionsUploadUrl = value; AdditionalData?.Remove("captionsUploadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captionsUploadUrl"); else _explicitNullProperties?.Remove("captionsUploadUrl"); } }
+        private string? _explicitNullValueCaptionsUploadUrl = default!;
 #nullable restore
 #else
-        public string CaptionsUploadUrl { get; set; }
+        public string CaptionsUploadUrl { get => _explicitNullValueCaptionsUploadUrl; set { _explicitNullValueCaptionsUploadUrl = value; AdditionalData?.Remove("captionsUploadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captionsUploadUrl"); else _explicitNullProperties?.Remove("captionsUploadUrl"); } }
+        private string _explicitNullValueCaptionsUploadUrl = default!;
 #endif
         /// <summary>URL for uploading thumbnail. This value is present only if initializeUploadRequest.uploadThumbnail is true.Documented type: URL optionalRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailUploadUrl { get; set; }
+        public string? ThumbnailUploadUrl { get => _explicitNullValueThumbnailUploadUrl; set { _explicitNullValueThumbnailUploadUrl = value; AdditionalData?.Remove("thumbnailUploadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnailUploadUrl"); else _explicitNullProperties?.Remove("thumbnailUploadUrl"); } }
+        private string? _explicitNullValueThumbnailUploadUrl = default!;
 #nullable restore
 #else
-        public string ThumbnailUploadUrl { get; set; }
+        public string ThumbnailUploadUrl { get => _explicitNullValueThumbnailUploadUrl; set { _explicitNullValueThumbnailUploadUrl = value; AdditionalData?.Remove("thumbnailUploadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnailUploadUrl"); else _explicitNullProperties?.Remove("thumbnailUploadUrl"); } }
+        private string _explicitNullValueThumbnailUploadUrl = default!;
 #endif
         /// <summary>Instructions for parts of multi-part video upload. Each entry in the array represents one part of the multi-part upload. It is never be empty. Parts are sorted by non-overlapping byte-range. The first entry is byte range: 0 - 4194303, the next one with 4194304 - 8388607 and so on.firstByte long First byte (inclusive) in the byte range to upload in this part.lastByte long The last byte (inclusive) in the range to upload in this part. uploadUrl URL HTTP upload URL that you&apos;ll use to make HTTP PUT request.Documented type: VideoPartUploadInstruction arrayRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? UploadInstructions { get; set; }
+        public UntypedNode? UploadInstructions { get => _explicitNullValueUploadInstructions; set { _explicitNullValueUploadInstructions = value; AdditionalData?.Remove("uploadInstructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadInstructions"); else _explicitNullProperties?.Remove("uploadInstructions"); } }
+        private UntypedNode? _explicitNullValueUploadInstructions = default!;
 #nullable restore
 #else
-        public UntypedNode UploadInstructions { get; set; }
+        public UntypedNode UploadInstructions { get => _explicitNullValueUploadInstructions; set { _explicitNullValueUploadInstructions = value; AdditionalData?.Remove("uploadInstructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadInstructions"); else _explicitNullProperties?.Remove("uploadInstructions"); } }
+        private UntypedNode _explicitNullValueUploadInstructions = default!;
 #endif
         /// <summary>Identifier for an upload session. You need to pass this in the finalize step to link video parts together.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadToken { get; set; }
+        public string? UploadToken { get => _explicitNullValueUploadToken; set { _explicitNullValueUploadToken = value; AdditionalData?.Remove("uploadToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadToken"); else _explicitNullProperties?.Remove("uploadToken"); } }
+        private string? _explicitNullValueUploadToken = default!;
 #nullable restore
 #else
-        public string UploadToken { get; set; }
+        public string UploadToken { get => _explicitNullValueUploadToken; set { _explicitNullValueUploadToken = value; AdditionalData?.Remove("uploadToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadToken"); else _explicitNullProperties?.Remove("uploadToken"); } }
+        private string _explicitNullValueUploadToken = default!;
 #endif
         /// <summary>Milliseconds since the epoch (1970-01-01 00:00 UTC) when the upload URLs expire. All upload URLs expire at the same time. Trying to upload to expired URLs would throw a 401 error. Typically URLs expire 30 days from the time an upload is initialized.Documented type: TimeRequirement: No</summary>
-        public long? UploadUrlsExpireAt { get; set; }
+        public long? UploadUrlsExpireAt { get => _explicitNullValueUploadUrlsExpireAt; set { _explicitNullValueUploadUrlsExpireAt = value; AdditionalData?.Remove("uploadUrlsExpireAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadUrlsExpireAt"); else _explicitNullProperties?.Remove("uploadUrlsExpireAt"); } }
+        private long? _explicitNullValueUploadUrlsExpireAt = default!;
         /// <summary>Video URN that the uploaded Video is associated withDocumented type: Video URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Video { get; set; }
+        public string? Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; AdditionalData?.Remove("video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private string? _explicitNullValueVideo = default!;
 #nullable restore
 #else
-        public string Video { get; set; }
+        public string Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; AdditionalData?.Remove("video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private string _explicitNullValueVideo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse"/> and sets the default values.
@@ -71,7 +101,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +132,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("uploadToken", UploadToken);
             writer.WriteLongValue("uploadUrlsExpireAt", UploadUrlsExpireAt);
             writer.WriteStringValue("video", Video);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

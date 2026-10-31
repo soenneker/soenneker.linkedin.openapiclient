@@ -11,124 +11,201 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisSendTestInMailRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
-        /// <summary>The account property</summary>
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is null) { _explicitNullValueAccount = default!; _explicitNullProperties?.Remove("account"); }
+            else if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("campaign") is null) { _explicitNullValueCampaign = default!; _explicitNullProperties?.Remove("campaign"); }
+            else if (parseNode.GetChildNode("campaign") is { } nullNodeCampaign && nullNodeCampaign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Campaign = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("createdBy") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("createdBy"); }
+            else if (parseNode.GetChildNode("createdBy") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("customFooter") is null) { _explicitNullValueCustomFooter = default!; _explicitNullProperties?.Remove("customFooter"); }
+            else if (parseNode.GetChildNode("customFooter") is { } nullNodeCustomFooter && nullNodeCustomFooter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFooter = null;
+            if (parseNode.GetChildNode("htmlBody") is null) { _explicitNullValueHtmlBody = default!; _explicitNullProperties?.Remove("htmlBody"); }
+            else if (parseNode.GetChildNode("htmlBody") is { } nullNodeHtmlBody && nullNodeHtmlBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HtmlBody = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("inlineContent") is null) { _explicitNullValueInlineContent = default!; _explicitNullProperties?.Remove("inlineContent"); }
+            else if (parseNode.GetChildNode("inlineContent") is { } nullNodeInlineContent && nullNodeInlineContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InlineContent = null;
+            if (parseNode.GetChildNode("intendedStatus") is null) { _explicitNullValueIntendedStatus = default!; _explicitNullProperties?.Remove("intendedStatus"); }
+            else if (parseNode.GetChildNode("intendedStatus") is { } nullNodeIntendedStatus && nullNodeIntendedStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntendedStatus = null;
+            if (parseNode.GetChildNode("isServing") is null) { _explicitNullValueIsServing = default!; _explicitNullProperties?.Remove("isServing"); }
+            else if (parseNode.GetChildNode("isServing") is { } nullNodeIsServing && nullNodeIsServing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsServing = null;
+            if (parseNode.GetChildNode("lastModifiedAt") is null) { _explicitNullValueLastModifiedAt = default!; _explicitNullProperties?.Remove("lastModifiedAt"); }
+            else if (parseNode.GetChildNode("lastModifiedAt") is { } nullNodeLastModifiedAt && nullNodeLastModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModifiedAt = null;
+            if (parseNode.GetChildNode("lastModifiedBy") is null) { _explicitNullValueLastModifiedBy = default!; _explicitNullProperties?.Remove("lastModifiedBy"); }
+            else if (parseNode.GetChildNode("lastModifiedBy") is { } nullNodeLastModifiedBy && nullNodeLastModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModifiedBy = null;
+            if (parseNode.GetChildNode("leadgenCallToAction") is null) { _explicitNullValueLeadgenCallToAction = default!; _explicitNullProperties?.Remove("leadgenCallToAction"); }
+            else if (parseNode.GetChildNode("leadgenCallToAction") is { } nullNodeLeadgenCallToAction && nullNodeLeadgenCallToAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadgenCallToAction = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("sender") is null) { _explicitNullValueSender = default!; _explicitNullProperties?.Remove("sender"); }
+            else if (parseNode.GetChildNode("sender") is { } nullNodeSender && nullNodeSender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sender = null;
+            if (parseNode.GetChildNode("servingHoldReasons") is null) { _explicitNullValueServingHoldReasons = default!; _explicitNullProperties?.Remove("servingHoldReasons"); }
+            else if (parseNode.GetChildNode("servingHoldReasons") is { } nullNodeServingHoldReasons && nullNodeServingHoldReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServingHoldReasons = null;
+            if (parseNode.GetChildNode("subContent") is null) { _explicitNullValueSubContent = default!; _explicitNullProperties?.Remove("subContent"); }
+            else if (parseNode.GetChildNode("subContent") is { } nullNodeSubContent && nullNodeSubContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubContent = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+        }
+
+        /// <summary>Documented type: SponsoredAccount URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestAccount? Account { get; set; }
+        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestAccount Account { get; set; }
+        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string _explicitNullValueAccount = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URN identifying the campaign associated with the creativeDocumented type: Sponsored Campaign URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Campaign { get; set; }
+        public string? Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; AdditionalData?.Remove("campaign"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
+        private string? _explicitNullValueCampaign = default!;
 #nullable restore
 #else
-        public string Campaign { get; set; }
+        public string Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; AdditionalData?.Remove("campaign"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
+        private string _explicitNullValueCampaign = default!;
 #endif
         /// <summary>Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd. Note: Starting with API version 202610, Creative read responses can also return the read-only StandardUpdateAd or VideoAd content members described below. Clients should continue supporting content.reference, which remains the response shape for earlier API versions and may still be returned when enriched content is unavailable.Documented type: Underlying content URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string _explicitNullValueContent = default!;
 #endif
         /// <summary>The createdAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt? CreatedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt CreatedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt _explicitNullValueCreatedAt = default!;
 #endif
-        /// <summary>The createdBy property</summary>
+        /// <summary>Documented type: URNRequirement: (Read-Only) Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedBy? CreatedBy { get; set; }
+        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("createdBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdBy"); else _explicitNullProperties?.Remove("createdBy"); } }
+        private string? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedBy CreatedBy { get; set; }
-#endif
-        /// <summary>Documented type: stringRequirement: No</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CustomFooter { get; set; }
-#nullable restore
-#else
-        public string CustomFooter { get; set; }
+        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("createdBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdBy"); else _explicitNullProperties?.Remove("createdBy"); } }
+        private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HtmlBody { get; set; }
+        public string? CustomFooter { get => _explicitNullValueCustomFooter; set { _explicitNullValueCustomFooter = value; AdditionalData?.Remove("customFooter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFooter"); else _explicitNullProperties?.Remove("customFooter"); } }
+        private string? _explicitNullValueCustomFooter = default!;
 #nullable restore
 #else
-        public string HtmlBody { get; set; }
+        public string CustomFooter { get => _explicitNullValueCustomFooter; set { _explicitNullValueCustomFooter = value; AdditionalData?.Remove("customFooter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFooter"); else _explicitNullProperties?.Remove("customFooter"); } }
+        private string _explicitNullValueCustomFooter = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId? Id { get; set; }
+        public string? HtmlBody { get => _explicitNullValueHtmlBody; set { _explicitNullValueHtmlBody = value; AdditionalData?.Remove("htmlBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("htmlBody"); else _explicitNullProperties?.Remove("htmlBody"); } }
+        private string? _explicitNullValueHtmlBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId Id { get; set; }
+        public string HtmlBody { get => _explicitNullValueHtmlBody; set { _explicitNullValueHtmlBody = value; AdditionalData?.Remove("htmlBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("htmlBody"); else _explicitNullProperties?.Remove("htmlBody"); } }
+        private string _explicitNullValueHtmlBody = default!;
+#endif
+        /// <summary>Documented type: AdInMailContent URNRequirement: (Read-Only) Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
+#nullable restore
+#else
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Inline content sponsored in the creative such as ugcPost in order to reduce the number of user calls.Documented type: PostRequirement: Required if action is createInline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? InlineContent { get; set; }
+        public UntypedNode? InlineContent { get => _explicitNullValueInlineContent; set { _explicitNullValueInlineContent = value; AdditionalData?.Remove("inlineContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inlineContent"); else _explicitNullProperties?.Remove("inlineContent"); } }
+        private UntypedNode? _explicitNullValueInlineContent = default!;
 #nullable restore
 #else
-        public UntypedNode InlineContent { get; set; }
+        public UntypedNode InlineContent { get => _explicitNullValueInlineContent; set { _explicitNullValueInlineContent = value; AdditionalData?.Remove("inlineContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inlineContent"); else _explicitNullProperties?.Remove("inlineContent"); } }
+        private UntypedNode _explicitNullValueInlineContent = default!;
 #endif
         /// <summary>Creative user intended status. The creative intended status is set independently from parent entity status, but parent entity status overrides creative intended status in effect. For example, parent entity status may be PAUSED while creative status is ACTIVE, in which case the creative&apos;s effective status is PAUSED, and not served.ACTIVE - Creative development is complete and the creative is available for review and can be served. PAUSED - Creative development is complete and the creative is current, but should temporarily not be served.DRAFT - Creative development is incomplete and may still be edited.ARCHIVED - Creative development is complete, but creative shouldn&apos;t be served and should be separated from non-archived creatives in any UI.CANCELED - The creative will be hidden when querying all creatives under a campaign and canceled creatives will be retrievable if the underlying posts are still valid/available. PENDING_DELETION - Denotes that the creative has been requested to be deleted that&apos;s currently pending.REMOVED - Denotes that the creative was deleted, but must remain fetchable due to the existence of performance data.Documented type: ENUMRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus? IntendedStatus { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus? IntendedStatus { get => _explicitNullValueIntendedStatus; set { _explicitNullValueIntendedStatus = value; AdditionalData?.Remove("intendedStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intendedStatus"); else _explicitNullProperties?.Remove("intendedStatus"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus? _explicitNullValueIntendedStatus = default!;
         /// <summary>This indicates whether the creative is currently being served or not. This field is read-only.Documented type: booleanRequirement: No</summary>
-        public bool? IsServing { get; set; }
+        public bool? IsServing { get => _explicitNullValueIsServing; set { _explicitNullValueIsServing = value; AdditionalData?.Remove("isServing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isServing"); else _explicitNullProperties?.Remove("isServing"); } }
+        private bool? _explicitNullValueIsServing = default!;
         /// <summary>The lastModifiedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt? LastModifiedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt? LastModifiedAt { get => _explicitNullValueLastModifiedAt; set { _explicitNullValueLastModifiedAt = value; AdditionalData?.Remove("lastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModifiedAt"); else _explicitNullProperties?.Remove("lastModifiedAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt? _explicitNullValueLastModifiedAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt LastModifiedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt LastModifiedAt { get => _explicitNullValueLastModifiedAt; set { _explicitNullValueLastModifiedAt = value; AdditionalData?.Remove("lastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModifiedAt"); else _explicitNullProperties?.Remove("lastModifiedAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt _explicitNullValueLastModifiedAt = default!;
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Documented type: URNRequirement: (Read-Only) Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy? LastModifiedBy { get; set; }
+        public string? LastModifiedBy { get => _explicitNullValueLastModifiedBy; set { _explicitNullValueLastModifiedBy = value; AdditionalData?.Remove("lastModifiedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModifiedBy"); else _explicitNullProperties?.Remove("lastModifiedBy"); } }
+        private string? _explicitNullValueLastModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy LastModifiedBy { get; set; }
+        public string LastModifiedBy { get => _explicitNullValueLastModifiedBy; set { _explicitNullValueLastModifiedBy = value; AdditionalData?.Remove("lastModifiedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModifiedBy"); else _explicitNullProperties?.Remove("lastModifiedBy"); } }
+        private string _explicitNullValueLastModifiedBy = default!;
 #endif
         /// <summary>The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.Documented type: LeadgenCreativeCallToActionRequirement: Required if campaign objective is LEAD_GENERATION</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction? LeadgenCallToAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction? LeadgenCallToAction { get => _explicitNullValueLeadgenCallToAction; set { _explicitNullValueLeadgenCallToAction = value; AdditionalData?.Remove("leadgenCallToAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadgenCallToAction"); else _explicitNullProperties?.Remove("leadgenCallToAction"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction? _explicitNullValueLeadgenCallToAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction LeadgenCallToAction { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction LeadgenCallToAction { get => _explicitNullValueLeadgenCallToAction; set { _explicitNullValueLeadgenCallToAction = value; AdditionalData?.Remove("leadgenCallToAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadgenCallToAction"); else _explicitNullProperties?.Remove("leadgenCallToAction"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction _explicitNullValueLeadgenCallToAction = default!;
 #endif
         /// <summary>Derived, ad format-specific descriptive metadata for the creative, computed on read from the creative&apos;s underlying content. It&apos;s returned only when explicitly requested using the fields query parameter, and only when retrieving a single creative. Refer to Retrieve creative metadata. This field is read-only. Note: Available for API Versions starting from 202610 and later. Requesting it on a single-creative GET on an earlier version returns a 400 error.Documented type: CreativeMetadataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata? Metadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata Metadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Creative review status. The review status can&apos;t be set/updated via the API but is started when the creative is activated (i.e., moves from draft state to active state). Hence, the review is absent (null) when the creative is in DRAFT state. Read-only.Documented type: CreativeReviewRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,34 +218,42 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sender { get; set; }
+        public string? Sender { get => _explicitNullValueSender; set { _explicitNullValueSender = value; AdditionalData?.Remove("sender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender"); else _explicitNullProperties?.Remove("sender"); } }
+        private string? _explicitNullValueSender = default!;
 #nullable restore
 #else
-        public string Sender { get; set; }
+        public string Sender { get => _explicitNullValueSender; set { _explicitNullValueSender = value; AdditionalData?.Remove("sender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender"); else _explicitNullProperties?.Remove("sender"); } }
+        private string _explicitNullValueSender = default!;
 #endif
         /// <summary>Array that contains all the reasons why the creative is not serving. In the case a creative is being served, this field will be null and not present in the response.Documented type: servingHoldReasonsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ServingHoldReasons { get; set; }
+        public UntypedNode? ServingHoldReasons { get => _explicitNullValueServingHoldReasons; set { _explicitNullValueServingHoldReasons = value; AdditionalData?.Remove("servingHoldReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servingHoldReasons"); else _explicitNullProperties?.Remove("servingHoldReasons"); } }
+        private UntypedNode? _explicitNullValueServingHoldReasons = default!;
 #nullable restore
 #else
-        public UntypedNode ServingHoldReasons { get; set; }
+        public UntypedNode ServingHoldReasons { get => _explicitNullValueServingHoldReasons; set { _explicitNullValueServingHoldReasons = value; AdditionalData?.Remove("servingHoldReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servingHoldReasons"); else _explicitNullProperties?.Remove("servingHoldReasons"); } }
+        private UntypedNode _explicitNullValueServingHoldReasons = default!;
 #endif
         /// <summary>Documented type: AdInMailRegularSubContent, AdInMailGuidedRepliesSubContent, or AdInMailFormSubContent,Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent? SubContent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent? SubContent { get => _explicitNullValueSubContent; set { _explicitNullValueSubContent = value; AdditionalData?.Remove("subContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subContent"); else _explicitNullProperties?.Remove("subContent"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent? _explicitNullValueSubContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent SubContent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent SubContent { get => _explicitNullValueSubContent; set { _explicitNullValueSubContent = value; AdditionalData?.Remove("subContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subContent"); else _explicitNullProperties?.Remove("subContent"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent _explicitNullValueSubContent = default!;
 #endif
         /// <summary>Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get; set; }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get; set; }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequest"/> and sets the default values.
@@ -185,7 +270,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -195,22 +280,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestAccount>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestAccount.CreateFromDiscriminatorValue); } },
+                { "account", n => { Account = n.GetStringValue(); } },
                 { "campaign", n => { Campaign = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt.CreateFromDiscriminatorValue); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedBy>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedBy.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "customFooter", n => { CustomFooter = n.GetStringValue(); } },
                 { "htmlBody", n => { HtmlBody = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "inlineContent", n => { InlineContent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "intendedStatus", n => { IntendedStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus>(); } },
+                { "intendedStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIntendedStatus = default; _explicitNullProperties?.Remove("intendedStatus"); AdditionalData["intendedStatus"] = unknown; } else { IntendedStatus = parsed; AdditionalData.Remove("intendedStatus"); } } },
                 { "isServing", n => { IsServing = n.GetBoolValue(); } },
                 { "lastModifiedAt", n => { LastModifiedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt.CreateFromDiscriminatorValue); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "leadgenCallToAction", n => { LeadgenCallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestReview.CreateFromDiscriminatorValue); } },
                 { "sender", n => { Sender = n.GetStringValue(); } },
                 { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -225,26 +310,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestAccount>("account", Account);
+            writer.WriteStringValue("account", Account);
             writer.WriteStringValue("campaign", Campaign);
             writer.WriteStringValue("content", Content);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedAt>("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestCreatedBy>("createdBy", CreatedBy);
+            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("customFooter", CustomFooter);
             writer.WriteStringValue("htmlBody", HtmlBody);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestId>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<UntypedNode>("inlineContent", InlineContent);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestIntendedStatus>("intendedStatus", IntendedStatus);
             writer.WriteBoolValue("isServing", IsServing);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedAt>("lastModifiedAt", LastModifiedAt);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLastModifiedBy>("lastModifiedBy", LastModifiedBy);
+            writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestLeadgenCallToAction>("leadgenCallToAction", LeadgenCallToAction);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("sender", Sender);
             writer.WriteObjectValue<UntypedNode>("servingHoldReasons", ServingHoldReasons);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSendTestInMailRequestSubContent>("subContent", SubContent);
             writer.WriteStringValue("subject", Subject);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

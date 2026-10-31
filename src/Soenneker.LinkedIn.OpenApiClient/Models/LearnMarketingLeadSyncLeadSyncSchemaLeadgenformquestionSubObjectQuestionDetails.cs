@@ -12,19 +12,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("defaultResponse") is null) { _explicitNullValueDefaultResponse = default!; _explicitNullProperties?.Remove("defaultResponse"); }
+            else if (parseNode.GetChildNode("defaultResponse") is { } nullNodeDefaultResponse && nullNodeDefaultResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultResponse = null;
+            if (parseNode.GetChildNode("maxResponseLength") is null) { _explicitNullValueMaxResponseLength = default!; _explicitNullProperties?.Remove("maxResponseLength"); }
+            else if (parseNode.GetChildNode("maxResponseLength") is { } nullNodeMaxResponseLength && nullNodeMaxResponseLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxResponseLength = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Either the default response to a question as specified by the owner, or the prefilled viewer information for a predefined field. Can be empty in case the owner choose not to specify, or if the response could not be prefilled.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultResponse { get; set; }
+        public string? DefaultResponse { get => _explicitNullValueDefaultResponse; set { _explicitNullValueDefaultResponse = value; AdditionalData?.Remove("defaultResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultResponse"); else _explicitNullProperties?.Remove("defaultResponse"); } }
+        private string? _explicitNullValueDefaultResponse = default!;
 #nullable restore
 #else
-        public string DefaultResponse { get; set; }
+        public string DefaultResponse { get => _explicitNullValueDefaultResponse; set { _explicitNullValueDefaultResponse = value; AdditionalData?.Remove("defaultResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultResponse"); else _explicitNullProperties?.Remove("defaultResponse"); } }
+        private string _explicitNullValueDefaultResponse = default!;
 #endif
         /// <summary>The maximum length of the response, in characters. Default is 300.Documented type: int</summary>
-        public int? MaxResponseLength { get; set; }
+        public int? MaxResponseLength { get => _explicitNullValueMaxResponseLength; set { _explicitNullValueMaxResponseLength = value; AdditionalData?.Remove("maxResponseLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxResponseLength"); else _explicitNullProperties?.Remove("maxResponseLength"); } }
+        private int? _explicitNullValueMaxResponseLength = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails"/> and sets the default values.
         /// </summary>
@@ -40,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("defaultResponse", DefaultResponse);
             writer.WriteIntValue("maxResponseLength", MaxResponseLength);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

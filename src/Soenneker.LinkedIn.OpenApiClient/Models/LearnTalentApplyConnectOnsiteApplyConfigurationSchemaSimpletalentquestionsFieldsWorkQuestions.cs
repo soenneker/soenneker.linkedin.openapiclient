@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customQuestions") is null) { _explicitNullValueCustomQuestions = default!; _explicitNullProperties?.Remove("customQuestions"); }
+            else if (parseNode.GetChildNode("customQuestions") is { } nullNodeCustomQuestions && nullNodeCustomQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomQuestions = null;
+            if (parseNode.GetChildNode("workExperienceQuestionSet") is null) { _explicitNullValueWorkExperienceQuestionSet = default!; _explicitNullProperties?.Remove("workExperienceQuestionSet"); }
+            else if (parseNode.GetChildNode("workExperienceQuestionSet") is { } nullNodeWorkExperienceQuestionSet && nullNodeWorkExperienceQuestionSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkExperienceQuestionSet = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom questions to be included within the Work question section.Documented type: SimpleTalentQuestionDefinition[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>? CustomQuestions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>? CustomQuestions { get => _explicitNullValueCustomQuestions; set { _explicitNullValueCustomQuestions = value; AdditionalData?.Remove("customQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customQuestions"); else _explicitNullProperties?.Remove("customQuestions"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>? _explicitNullValueCustomQuestions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get => _explicitNullValueCustomQuestions; set { _explicitNullValueCustomQuestions = value; AdditionalData?.Remove("customQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customQuestions"); else _explicitNullProperties?.Remove("customQuestions"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> _explicitNullValueCustomQuestions = default!;
 #endif
         /// <summary>A set of repeatable questions on work experience.Documented type: WorkExperienceQuestionSetRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet? WorkExperienceQuestionSet { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet? WorkExperienceQuestionSet { get => _explicitNullValueWorkExperienceQuestionSet; set { _explicitNullValueWorkExperienceQuestionSet = value; AdditionalData?.Remove("workExperienceQuestionSet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workExperienceQuestionSet"); else _explicitNullProperties?.Remove("workExperienceQuestionSet"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet? _explicitNullValueWorkExperienceQuestionSet = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet WorkExperienceQuestionSet { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet WorkExperienceQuestionSet { get => _explicitNullValueWorkExperienceQuestionSet; set { _explicitNullValueWorkExperienceQuestionSet = value; AdditionalData?.Remove("workExperienceQuestionSet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workExperienceQuestionSet"); else _explicitNullProperties?.Remove("workExperienceQuestionSet"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet _explicitNullValueWorkExperienceQuestionSet = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsWorkQuestions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaWorkquestionsFieldsWorkExperienceQuestionSet>("workExperienceQuestionSet", WorkExperienceQuestionSet);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

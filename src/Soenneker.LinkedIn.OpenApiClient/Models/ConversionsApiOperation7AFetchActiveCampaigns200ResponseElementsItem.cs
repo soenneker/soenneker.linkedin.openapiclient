@@ -11,162 +11,272 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is null) { _explicitNullValueAccount = default!; _explicitNullProperties?.Remove("account"); }
+            else if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("accountInfo") is null) { _explicitNullValueAccountInfo = default!; _explicitNullProperties?.Remove("accountInfo"); }
+            else if (parseNode.GetChildNode("accountInfo") is { } nullNodeAccountInfo && nullNodeAccountInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountInfo = null;
+            if (parseNode.GetChildNode("associatedEntity") is null) { _explicitNullValueAssociatedEntity = default!; _explicitNullProperties?.Remove("associatedEntity"); }
+            else if (parseNode.GetChildNode("associatedEntity") is { } nullNodeAssociatedEntity && nullNodeAssociatedEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedEntity = null;
+            if (parseNode.GetChildNode("associatedEntityInfo") is null) { _explicitNullValueAssociatedEntityInfo = default!; _explicitNullProperties?.Remove("associatedEntityInfo"); }
+            else if (parseNode.GetChildNode("associatedEntityInfo") is { } nullNodeAssociatedEntityInfo && nullNodeAssociatedEntityInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedEntityInfo = null;
+            if (parseNode.GetChildNode("audienceExpansionEnabled") is null) { _explicitNullValueAudienceExpansionEnabled = default!; _explicitNullProperties?.Remove("audienceExpansionEnabled"); }
+            else if (parseNode.GetChildNode("audienceExpansionEnabled") is { } nullNodeAudienceExpansionEnabled && nullNodeAudienceExpansionEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceExpansionEnabled = null;
+            if (parseNode.GetChildNode("campaignGroup") is null) { _explicitNullValueCampaignGroup = default!; _explicitNullProperties?.Remove("campaignGroup"); }
+            else if (parseNode.GetChildNode("campaignGroup") is { } nullNodeCampaignGroup && nullNodeCampaignGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignGroup = null;
+            if (parseNode.GetChildNode("campaignGroupInfo") is null) { _explicitNullValueCampaignGroupInfo = default!; _explicitNullProperties?.Remove("campaignGroupInfo"); }
+            else if (parseNode.GetChildNode("campaignGroupInfo") is { } nullNodeCampaignGroupInfo && nullNodeCampaignGroupInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignGroupInfo = null;
+            if (parseNode.GetChildNode("connectedTelevisionOnly") is null) { _explicitNullValueConnectedTelevisionOnly = default!; _explicitNullProperties?.Remove("connectedTelevisionOnly"); }
+            else if (parseNode.GetChildNode("connectedTelevisionOnly") is { } nullNodeConnectedTelevisionOnly && nullNodeConnectedTelevisionOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedTelevisionOnly = null;
+            if (parseNode.GetChildNode("costType") is null) { _explicitNullValueCostType = default!; _explicitNullProperties?.Remove("costType"); }
+            else if (parseNode.GetChildNode("costType") is { } nullNodeCostType && nullNodeCostType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostType = null;
+            if (parseNode.GetChildNode("creativeSelection") is null) { _explicitNullValueCreativeSelection = default!; _explicitNullProperties?.Remove("creativeSelection"); }
+            else if (parseNode.GetChildNode("creativeSelection") is { } nullNodeCreativeSelection && nullNodeCreativeSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreativeSelection = null;
+            if (parseNode.GetChildNode("dailyBudget") is null) { _explicitNullValueDailyBudget = default!; _explicitNullProperties?.Remove("dailyBudget"); }
+            else if (parseNode.GetChildNode("dailyBudget") is { } nullNodeDailyBudget && nullNodeDailyBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyBudget = null;
+            if (parseNode.GetChildNode("format") is null) { _explicitNullValueFormat = default!; _explicitNullProperties?.Remove("format"); }
+            else if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("locale") is null) { _explicitNullValueLocale = default!; _explicitNullProperties?.Remove("locale"); }
+            else if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("objectiveType") is null) { _explicitNullValueObjectiveType = default!; _explicitNullProperties?.Remove("objectiveType"); }
+            else if (parseNode.GetChildNode("objectiveType") is { } nullNodeObjectiveType && nullNodeObjectiveType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectiveType = null;
+            if (parseNode.GetChildNode("offsiteDeliveryEnabled") is null) { _explicitNullValueOffsiteDeliveryEnabled = default!; _explicitNullProperties?.Remove("offsiteDeliveryEnabled"); }
+            else if (parseNode.GetChildNode("offsiteDeliveryEnabled") is { } nullNodeOffsiteDeliveryEnabled && nullNodeOffsiteDeliveryEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffsiteDeliveryEnabled = null;
+            if (parseNode.GetChildNode("offsitePreferences") is null) { _explicitNullValueOffsitePreferences = default!; _explicitNullProperties?.Remove("offsitePreferences"); }
+            else if (parseNode.GetChildNode("offsitePreferences") is { } nullNodeOffsitePreferences && nullNodeOffsitePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffsitePreferences = null;
+            if (parseNode.GetChildNode("optimizationPreference") is null) { _explicitNullValueOptimizationPreference = default!; _explicitNullProperties?.Remove("optimizationPreference"); }
+            else if (parseNode.GetChildNode("optimizationPreference") is { } nullNodeOptimizationPreference && nullNodeOptimizationPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizationPreference = null;
+            if (parseNode.GetChildNode("pacingStrategy") is null) { _explicitNullValuePacingStrategy = default!; _explicitNullProperties?.Remove("pacingStrategy"); }
+            else if (parseNode.GetChildNode("pacingStrategy") is { } nullNodePacingStrategy && nullNodePacingStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PacingStrategy = null;
+            if (parseNode.GetChildNode("politicalIntent") is null) { _explicitNullValuePoliticalIntent = default!; _explicitNullProperties?.Remove("politicalIntent"); }
+            else if (parseNode.GetChildNode("politicalIntent") is { } nullNodePoliticalIntent && nullNodePoliticalIntent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoliticalIntent = null;
+            if (parseNode.GetChildNode("runSchedule") is null) { _explicitNullValueRunSchedule = default!; _explicitNullProperties?.Remove("runSchedule"); }
+            else if (parseNode.GetChildNode("runSchedule") is { } nullNodeRunSchedule && nullNodeRunSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunSchedule = null;
+            if (parseNode.GetChildNode("servingStatuses") is null) { _explicitNullValueServingStatuses = default!; _explicitNullProperties?.Remove("servingStatuses"); }
+            else if (parseNode.GetChildNode("servingStatuses") is { } nullNodeServingStatuses && nullNodeServingStatuses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServingStatuses = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("test") is null) { _explicitNullValueTest = default!; _explicitNullProperties?.Remove("test"); }
+            else if (parseNode.GetChildNode("test") is { } nullNodeTest && nullNodeTest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Test = null;
+            if (parseNode.GetChildNode("totalBudget") is null) { _explicitNullValueTotalBudget = default!; _explicitNullProperties?.Remove("totalBudget"); }
+            else if (parseNode.GetChildNode("totalBudget") is { } nullNodeTotalBudget && nullNodeTotalBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBudget = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("unitCost") is null) { _explicitNullValueUnitCost = default!; _explicitNullProperties?.Remove("unitCost"); }
+            else if (parseNode.GetChildNode("unitCost") is { } nullNodeUnitCost && nullNodeUnitCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitCost = null;
+            if (parseNode.GetChildNode("versionTag") is null) { _explicitNullValueVersionTag = default!; _explicitNullProperties?.Remove("versionTag"); }
+            else if (parseNode.GetChildNode("versionTag") is { } nullNodeVersionTag && nullNodeVersionTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionTag = null;
+        }
+
         /// <summary>URN identifying the advertising account associated with the campaign. This value is immutable once set. Example: urn:li:sponsoredAccount:{id}.Documented type: SponsoredAccountUrnRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get; set; }
+        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public string Account { get; set; }
+        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private string _explicitNullValueAccount = default!;
 #endif
         /// <summary>Information about the advertising account associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: AccountRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo? AccountInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo? AccountInfo { get => _explicitNullValueAccountInfo; set { _explicitNullValueAccountInfo = value; AdditionalData?.Remove("accountInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountInfo"); else _explicitNullProperties?.Remove("accountInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo? _explicitNullValueAccountInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo AccountInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo AccountInfo { get => _explicitNullValueAccountInfo; set { _explicitNullValueAccountInfo = value; AdditionalData?.Remove("accountInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountInfo"); else _explicitNullProperties?.Remove("accountInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo _explicitNullValueAccountInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An URN identifying the intended beneficiary of the advertising campaign such as a specific company or member.Documented type: URNRequirement: False unless campaign will use Sponsored Content, Dynamic Ads, or Lead Gen Forms</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssociatedEntity { get; set; }
+        public string? AssociatedEntity { get => _explicitNullValueAssociatedEntity; set { _explicitNullValueAssociatedEntity = value; AdditionalData?.Remove("associatedEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntity"); else _explicitNullProperties?.Remove("associatedEntity"); } }
+        private string? _explicitNullValueAssociatedEntity = default!;
 #nullable restore
 #else
-        public string AssociatedEntity { get; set; }
+        public string AssociatedEntity { get => _explicitNullValueAssociatedEntity; set { _explicitNullValueAssociatedEntity = value; AdditionalData?.Remove("associatedEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntity"); else _explicitNullProperties?.Remove("associatedEntity"); } }
+        private string _explicitNullValueAssociatedEntity = default!;
 #endif
         /// <summary>Information about the associatedEntity. If the entity is an organization, an OrganizationInfo object is returned. If the entity is a person, a PersonInfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: UnionRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo? AssociatedEntityInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo? AssociatedEntityInfo { get => _explicitNullValueAssociatedEntityInfo; set { _explicitNullValueAssociatedEntityInfo = value; AdditionalData?.Remove("associatedEntityInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntityInfo"); else _explicitNullProperties?.Remove("associatedEntityInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo? _explicitNullValueAssociatedEntityInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo AssociatedEntityInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo AssociatedEntityInfo { get => _explicitNullValueAssociatedEntityInfo; set { _explicitNullValueAssociatedEntityInfo = value; AdditionalData?.Remove("associatedEntityInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associatedEntityInfo"); else _explicitNullProperties?.Remove("associatedEntityInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo _explicitNullValueAssociatedEntityInfo = default!;
 #endif
         /// <summary>Enable Audience Expansion for the campaign provides query expansion for certain targeting criteria.Documented type: boolean, default=&quot;false&quot;Requirement: False</summary>
-        public bool? AudienceExpansionEnabled { get; set; }
+        public bool? AudienceExpansionEnabled { get => _explicitNullValueAudienceExpansionEnabled; set { _explicitNullValueAudienceExpansionEnabled = value; AdditionalData?.Remove("audienceExpansionEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceExpansionEnabled"); else _explicitNullProperties?.Remove("audienceExpansionEnabled"); } }
+        private bool? _explicitNullValueAudienceExpansionEnabled = default!;
         /// <summary>URN identifying the campaign group associated with the campaign. The campaign group URN must be specified for campaign creation starting October 30, 2020.Documented type: Sponsored-CampaignGroup URNRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignGroup { get; set; }
+        public string? CampaignGroup { get => _explicitNullValueCampaignGroup; set { _explicitNullValueCampaignGroup = value; AdditionalData?.Remove("campaignGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignGroup"); else _explicitNullProperties?.Remove("campaignGroup"); } }
+        private string? _explicitNullValueCampaignGroup = default!;
 #nullable restore
 #else
-        public string CampaignGroup { get; set; }
+        public string CampaignGroup { get => _explicitNullValueCampaignGroup; set { _explicitNullValueCampaignGroup = value; AdditionalData?.Remove("campaignGroup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignGroup"); else _explicitNullProperties?.Remove("campaignGroup"); } }
+        private string _explicitNullValueCampaignGroup = default!;
 #endif
         /// <summary>Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: CampaignGroupRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo? CampaignGroupInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo? CampaignGroupInfo { get => _explicitNullValueCampaignGroupInfo; set { _explicitNullValueCampaignGroupInfo = value; AdditionalData?.Remove("campaignGroupInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignGroupInfo"); else _explicitNullProperties?.Remove("campaignGroupInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo? _explicitNullValueCampaignGroupInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo CampaignGroupInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo CampaignGroupInfo { get => _explicitNullValueCampaignGroupInfo; set { _explicitNullValueCampaignGroupInfo = value; AdditionalData?.Remove("campaignGroupInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignGroupInfo"); else _explicitNullProperties?.Remove("campaignGroupInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo _explicitNullValueCampaignGroupInfo = default!;
 #endif
         /// <summary>Flag showing whether this campaign is a Connected Television Only campaign. Allows advertisers to specify when they’re creating a CTV campaign. Not specifying the boolean can be considered false. When &apos;connectedTelevisionOnly = true&apos;, offsiteDeliveryEnabled should be set to true.Documented type: Boolean Optional, default=&quot;False&quot;Requirement: False</summary>
-        public bool? ConnectedTelevisionOnly { get; set; }
+        public bool? ConnectedTelevisionOnly { get => _explicitNullValueConnectedTelevisionOnly; set { _explicitNullValueConnectedTelevisionOnly = value; AdditionalData?.Remove("connectedTelevisionOnly"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedTelevisionOnly"); else _explicitNullProperties?.Remove("connectedTelevisionOnly"); } }
+        private bool? _explicitNullValueConnectedTelevisionOnly = default!;
         /// <summary>CPM- Cost per thousand advertising impressions. If type=SPONSORED_INMAILS; cost per send(CPS) is measured as CPM x 1000. CPC- Cost per individual click on the associated link. CPV- Cost per view for video ads.Documented type: CostTypeRequirement: True</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType? CostType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType? CostType { get => _explicitNullValueCostType; set { _explicitNullValueCostType = value; AdditionalData?.Remove("costType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costType"); else _explicitNullProperties?.Remove("costType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType? _explicitNullValueCostType = default!;
         /// <summary>ROUND_ROBIN - Rotate through available creatives to serve them as evenly as possible. OPTIMIZED - Bias selection taking into account such as expected performance. Not available for Message and Conversation Ads (type=SPONSORED_INMAILS).Documented type: CampaignCreativeSelection, default=&quot;OPTIMIZED&quot;Requirement: False</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection? CreativeSelection { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection? CreativeSelection { get => _explicitNullValueCreativeSelection; set { _explicitNullValueCreativeSelection = value; AdditionalData?.Remove("creativeSelection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creativeSelection"); else _explicitNullProperties?.Remove("creativeSelection"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection? _explicitNullValueCreativeSelection = default!;
         /// <summary>The dailyBudget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget? DailyBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget? DailyBudget { get => _explicitNullValueDailyBudget; set { _explicitNullValueDailyBudget = value; AdditionalData?.Remove("dailyBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dailyBudget"); else _explicitNullProperties?.Remove("dailyBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget? _explicitNullValueDailyBudget = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget DailyBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget DailyBudget { get => _explicitNullValueDailyBudget; set { _explicitNullValueDailyBudget = value; AdditionalData?.Remove("dailyBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dailyBudget"); else _explicitNullProperties?.Remove("dailyBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget _explicitNullValueDailyBudget = default!;
 #endif
         /// <summary>The ad format on campaign level.For more information, refer to: Ad FormatsDocumented type: campaignFormatRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Format { get; set; }
+        public UntypedNode? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private UntypedNode? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public UntypedNode Format { get; set; }
+        public UntypedNode Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private UntypedNode _explicitNullValueFormat = default!;
 #endif
         /// <summary>The id property</summary>
-        public long? Id { get; set; }
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
         /// <summary>The locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale? Locale { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale? _explicitNullValueLocale = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale Locale { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale _explicitNullValueLocale = default!;
 #endif
         /// <summary>The name of the campaign; primarily used to make it easier to reference a campaign and to recall its purpose.Documented type: stringRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Campaign Objective type values. Click here for Campaign Objective descriptions. BRAND_AWARENESSENGAGEMENTJOB_APPLICANTSLEAD_GENERATIONWEBSITE_CONVERSIONSWEBSITE_VISITSVIDEO_VIEWSDocumented type: stringRequirement: False</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType? ObjectiveType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType? ObjectiveType { get => _explicitNullValueObjectiveType; set { _explicitNullValueObjectiveType = value; AdditionalData?.Remove("objectiveType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectiveType"); else _explicitNullProperties?.Remove("objectiveType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType? _explicitNullValueObjectiveType = default!;
         /// <summary>Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.Documented type: Boolean (True/False)Requirement: True</summary>
-        public bool? OffsiteDeliveryEnabled { get; set; }
+        public bool? OffsiteDeliveryEnabled { get => _explicitNullValueOffsiteDeliveryEnabled; set { _explicitNullValueOffsiteDeliveryEnabled = value; AdditionalData?.Remove("offsiteDeliveryEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offsiteDeliveryEnabled"); else _explicitNullProperties?.Remove("offsiteDeliveryEnabled"); } }
+        private bool? _explicitNullValueOffsiteDeliveryEnabled = default!;
         /// <summary>Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferencesDocumented type: OffsitePreferencesRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences? OffsitePreferences { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences? OffsitePreferences { get => _explicitNullValueOffsitePreferences; set { _explicitNullValueOffsitePreferences = value; AdditionalData?.Remove("offsitePreferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offsitePreferences"); else _explicitNullProperties?.Remove("offsitePreferences"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences? _explicitNullValueOffsitePreferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences OffsitePreferences { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences OffsitePreferences { get => _explicitNullValueOffsitePreferences; set { _explicitNullValueOffsitePreferences = value; AdditionalData?.Remove("offsitePreferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offsitePreferences"); else _explicitNullProperties?.Remove("offsitePreferences"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences _explicitNullValueOffsitePreferences = default!;
 #endif
         /// <summary>The optimizationPreference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference? OptimizationPreference { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference? OptimizationPreference { get => _explicitNullValueOptimizationPreference; set { _explicitNullValueOptimizationPreference = value; AdditionalData?.Remove("optimizationPreference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationPreference"); else _explicitNullProperties?.Remove("optimizationPreference"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference? _explicitNullValueOptimizationPreference = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference OptimizationPreference { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference OptimizationPreference { get => _explicitNullValueOptimizationPreference; set { _explicitNullValueOptimizationPreference = value; AdditionalData?.Remove("optimizationPreference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationPreference"); else _explicitNullProperties?.Remove("optimizationPreference"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference _explicitNullValueOptimizationPreference = default!;
 #endif
         /// <summary>Strategy used for pacing the spend of the campaign. If the strategy is not provided, the campaign is paced based on the forecast for the day. This field is set on creation only. If the parent campaign group has budget optimization (smart budget) enabled, any value supplied for this field is ignored and cleared by the backend, and subsequent reads will not return it.Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible.Documented type: stringRequirement: False</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy? PacingStrategy { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy? PacingStrategy { get => _explicitNullValuePacingStrategy; set { _explicitNullValuePacingStrategy = value; AdditionalData?.Remove("pacingStrategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pacingStrategy"); else _explicitNullProperties?.Remove("pacingStrategy"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy? _explicitNullValuePacingStrategy = default!;
         /// <summary>Enum indicating whether a campaign is categorized as a political campaign. This allows advertisers to declare whether their ad constitutes political advertising. This field can be updated when the targeting of campaign changes. The possible values are: POLITICAL: Campaign is political advertising. NOT_POLITICAL: Campaign is not a political advertising. NOT_DECLARED: Indicates that the campaign&apos;s political intent hasn&apos;t been specified.Documented type: stringRequirement: True</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent? PoliticalIntent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent? PoliticalIntent { get => _explicitNullValuePoliticalIntent; set { _explicitNullValuePoliticalIntent = value; AdditionalData?.Remove("politicalIntent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("politicalIntent"); else _explicitNullProperties?.Remove("politicalIntent"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent? _explicitNullValuePoliticalIntent = default!;
         /// <summary>The runSchedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule? RunSchedule { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule? RunSchedule { get => _explicitNullValueRunSchedule; set { _explicitNullValueRunSchedule = value; AdditionalData?.Remove("runSchedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runSchedule"); else _explicitNullProperties?.Remove("runSchedule"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule? _explicitNullValueRunSchedule = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule RunSchedule { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule RunSchedule { get => _explicitNullValueRunSchedule; set { _explicitNullValueRunSchedule = value; AdditionalData?.Remove("runSchedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runSchedule"); else _explicitNullProperties?.Remove("runSchedule"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule _explicitNullValueRunSchedule = default!;
 #endif
         /// <summary>Array of enums that determine whether or not a campaign can be served; unlike &apos;status&apos;, which is user-managed, the values are controlled by the service. This is a read-only field. Possible values are: RUNNABLE Campaign: Eligible for serving.STOPPED: Campaign is currently not servable for reasons other than billing information, budgetary constraints, or termination dates. For instance, an campaign will be STOPPED if it has been PAUSED by the user.ACCOUNT_TOTAL_BUDGET_HOLD: Parent account total budget has been reached.ACCOUNT_END_DATE_HOLD: Parent account end date has been reached. CAMPAIGN_START_DATE_HOLD: Campaign start date is in the future.CAMPAIGN_END_DATE_HOLD: Campaign end date has been reached.CAMPAIGN_TOTAL_BUDGET_HOLD: Campaign total budget has been reached.CAMPAIGN_AUDIENCE_COUNT_HOLD: Campaign is on hold because it has an audience count lower than the threshold.CAMPAIGN_GROUP_START_DATE_HOLD: Campaign group start date is in the future.CAMPAIGN_GROUP_END_DATE_HOLD: Campaign Group end date is in the past.CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD: Campaign group total budget has been reached.CAMPAIGN_GROUP_STATUS_HOLD: Campaign group status is on hold.ACCOUNT_SERVING_HOLD: Parent account is on hold and not eligible for serving.Documented type: stringsRequirement: False</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses? ServingStatuses { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses? ServingStatuses { get => _explicitNullValueServingStatuses; set { _explicitNullValueServingStatuses = value; AdditionalData?.Remove("servingStatuses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servingStatuses"); else _explicitNullProperties?.Remove("servingStatuses"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses? _explicitNullValueServingStatuses = default!;
         /// <summary>ACTIVE - Denotes that the campaign is fully servable. PAUSED - Denotes that the campaign meets all requirements to be served, but temporarily shouldn&apos;t be. ARCHIVED - Denotes that the campaign is presently inactive, and should mostly be hidden in the UI until un-archived. COMPLETED - Denotes that the campaign has reached a specified budgetary or chronological limit. CANCELED - Denotes that the campaign has been permanently canceled, such as when an advertising account is permanently closed. DRAFT - Denotes that the campaign is still being edited and not eligible for serving. Some validation will be postponed until the campaign is activated. PENDING_DELETION - Denotes that the campaign has been requested to be deleted that is currently pending. REMOVED - Denotes that the campaign was deleted, but must remain fetchable due to the existence of performance data.Documented type: stringRequirement: True</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus? Status { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>Flag showing whether this campaign is a test campaign, i.e., belongs to a test account. This is a read-only and immutable field that is set implicitly during creation based on whether the account is a Test Account or not.Documented type: boolean, default=&quot;False&quot;Requirement: False</summary>
-        public bool? Test { get; set; }
+        public bool? Test { get => _explicitNullValueTest; set { _explicitNullValueTest = value; AdditionalData?.Remove("test"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test"); else _explicitNullProperties?.Remove("test"); } }
+        private bool? _explicitNullValueTest = default!;
         /// <summary>The totalBudget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget? TotalBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget? TotalBudget { get => _explicitNullValueTotalBudget; set { _explicitNullValueTotalBudget = value; AdditionalData?.Remove("totalBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalBudget"); else _explicitNullProperties?.Remove("totalBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget? _explicitNullValueTotalBudget = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget TotalBudget { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget TotalBudget { get => _explicitNullValueTotalBudget; set { _explicitNullValueTotalBudget = value; AdditionalData?.Remove("totalBudget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalBudget"); else _explicitNullProperties?.Remove("totalBudget"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget _explicitNullValueTotalBudget = default!;
 #endif
         /// <summary>TEXT_AD - Text-based ads that show up in the right column or top of the page on LinkedIn. SPONSORED_UPDATES - Native ads that promote a company&apos;s content updates in the LinkedIn feed. SPONSORED_INMAILS - Personalized messages with a call-to-action button delivered to a LinkedIn&apos;s member inbox. DYNAMIC - Ads that are dynamically personalized.Documented type: CampaignTypeRequirement: True</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType? Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType? _explicitNullValueType = default!;
         /// <summary>The unitCost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost? UnitCost { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost? UnitCost { get => _explicitNullValueUnitCost; set { _explicitNullValueUnitCost = value; AdditionalData?.Remove("unitCost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitCost"); else _explicitNullProperties?.Remove("unitCost"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost? _explicitNullValueUnitCost = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost UnitCost { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost UnitCost { get => _explicitNullValueUnitCost; set { _explicitNullValueUnitCost = value; AdditionalData?.Remove("unitCost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitCost"); else _explicitNullProperties?.Remove("unitCost"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost _explicitNullValueUnitCost = default!;
 #endif
         /// <summary>Each entity has a version tag associated with it. The version tag is initiated to 1 when the entity is created. Each single update to the entity increases its version tag by 1.Documented type: stringRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionTag { get; set; }
+        public string? VersionTag { get => _explicitNullValueVersionTag; set { _explicitNullValueVersionTag = value; AdditionalData?.Remove("versionTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionTag"); else _explicitNullProperties?.Remove("versionTag"); } }
+        private string? _explicitNullValueVersionTag = default!;
 #nullable restore
 #else
-        public string VersionTag { get; set; }
+        public string VersionTag { get => _explicitNullValueVersionTag; set { _explicitNullValueVersionTag = value; AdditionalData?.Remove("versionTag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionTag"); else _explicitNullProperties?.Remove("versionTag"); } }
+        private string _explicitNullValueVersionTag = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem"/> and sets the default values.
@@ -183,7 +293,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -201,25 +311,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "campaignGroup", n => { CampaignGroup = n.GetStringValue(); } },
                 { "campaignGroupInfo", n => { CampaignGroupInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo.CreateFromDiscriminatorValue); } },
                 { "connectedTelevisionOnly", n => { ConnectedTelevisionOnly = n.GetBoolValue(); } },
-                { "costType", n => { CostType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType>(); } },
-                { "creativeSelection", n => { CreativeSelection = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection>(); } },
+                { "costType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCostType = default; _explicitNullProperties?.Remove("costType"); AdditionalData["costType"] = unknown; } else { CostType = parsed; AdditionalData.Remove("costType"); } } },
+                { "creativeSelection", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreativeSelection = default; _explicitNullProperties?.Remove("creativeSelection"); AdditionalData["creativeSelection"] = unknown; } else { CreativeSelection = parsed; AdditionalData.Remove("creativeSelection"); } } },
                 { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "objectiveType", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType>(); } },
+                { "objectiveType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueObjectiveType = default; _explicitNullProperties?.Remove("objectiveType"); AdditionalData["objectiveType"] = unknown; } else { ObjectiveType = parsed; AdditionalData.Remove("objectiveType"); } } },
                 { "offsiteDeliveryEnabled", n => { OffsiteDeliveryEnabled = n.GetBoolValue(); } },
                 { "offsitePreferences", n => { OffsitePreferences = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences.CreateFromDiscriminatorValue); } },
                 { "optimizationPreference", n => { OptimizationPreference = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference.CreateFromDiscriminatorValue); } },
-                { "pacingStrategy", n => { PacingStrategy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy>(); } },
-                { "politicalIntent", n => { PoliticalIntent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent>(); } },
+                { "pacingStrategy", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePacingStrategy = default; _explicitNullProperties?.Remove("pacingStrategy"); AdditionalData["pacingStrategy"] = unknown; } else { PacingStrategy = parsed; AdditionalData.Remove("pacingStrategy"); } } },
+                { "politicalIntent", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePoliticalIntent = default; _explicitNullProperties?.Remove("politicalIntent"); AdditionalData["politicalIntent"] = unknown; } else { PoliticalIntent = parsed; AdditionalData.Remove("politicalIntent"); } } },
                 { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule.CreateFromDiscriminatorValue); } },
-                { "servingStatuses", n => { ServingStatuses = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus>(); } },
+                { "servingStatuses", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueServingStatuses = default; _explicitNullProperties?.Remove("servingStatuses"); AdditionalData["servingStatuses"] = unknown; } else { ServingStatuses = parsed; AdditionalData.Remove("servingStatuses"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "test", n => { Test = n.GetBoolValue(); } },
                 { "totalBudget", n => { TotalBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "unitCost", n => { UnitCost = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost.CreateFromDiscriminatorValue); } },
                 { "versionTag", n => { VersionTag = n.GetStringValue(); } },
             };
@@ -260,6 +370,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost>("unitCost", UnitCost);
             writer.WriteStringValue("versionTag", VersionTag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

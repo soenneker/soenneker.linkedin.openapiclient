@@ -11,19 +11,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("artifact") is null) { _explicitNullValueArtifact = default!; _explicitNullProperties?.Remove("artifact"); }
+            else if (parseNode.GetChildNode("artifact") is { } nullNodeArtifact && nullNodeArtifact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Artifact = null;
+            if (parseNode.GetChildNode("authorizationMethod") is null) { _explicitNullValueAuthorizationMethod = default!; _explicitNullProperties?.Remove("authorizationMethod"); }
+            else if (parseNode.GetChildNode("authorizationMethod") is { } nullNodeAuthorizationMethod && nullNodeAuthorizationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationMethod = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the artifact this record is related to.Documented type: URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Artifact { get; set; }
+        public string? Artifact { get => _explicitNullValueArtifact; set { _explicitNullValueArtifact = value; AdditionalData?.Remove("artifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifact"); else _explicitNullProperties?.Remove("artifact"); } }
+        private string? _explicitNullValueArtifact = default!;
 #nullable restore
 #else
-        public string Artifact { get; set; }
+        public string Artifact { get => _explicitNullValueArtifact; set { _explicitNullValueArtifact = value; AdditionalData?.Remove("artifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifact"); else _explicitNullProperties?.Remove("artifact"); } }
+        private string _explicitNullValueArtifact = default!;
 #endif
         /// <summary>The authorization method for this artifact. Can be the following enums: NONE - The artifact can not be served to users. PUBLIC - The artifact is public and no authorization is needed to serve. INTERNAL - The artifact is only accessible internally to other systems in the hosting or processing infrastructure. PRIVATE - The artifact is private and only an authorized user can access it.Documented type: String</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItemAuthorizationMethod? AuthorizationMethod { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItemAuthorizationMethod? AuthorizationMethod { get => _explicitNullValueAuthorizationMethod; set { _explicitNullValueAuthorizationMethod = value; AdditionalData?.Remove("authorizationMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorizationMethod"); else _explicitNullProperties?.Remove("authorizationMethod"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItemAuthorizationMethod? _explicitNullValueAuthorizationMethod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItem"/> and sets the default values.
         /// </summary>
@@ -39,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "artifact", n => { Artifact = n.GetStringValue(); } },
-                { "authorizationMethod", n => { AuthorizationMethod = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItemAuthorizationMethod>(); } },
+                { "authorizationMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItemAuthorizationMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthorizationMethod = default; _explicitNullProperties?.Remove("authorizationMethod"); AdditionalData["authorizationMethod"] = unknown; } else { AuthorizationMethod = parsed; AdditionalData.Remove("authorizationMethod"); } } },
             };
         }
         /// <summary>
@@ -62,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("artifact", Artifact);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsMeGetDefaultResponseBackgroundPictureDisplayImageElementsItemAuthorizationMethod>("authorizationMethod", AuthorizationMethod);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

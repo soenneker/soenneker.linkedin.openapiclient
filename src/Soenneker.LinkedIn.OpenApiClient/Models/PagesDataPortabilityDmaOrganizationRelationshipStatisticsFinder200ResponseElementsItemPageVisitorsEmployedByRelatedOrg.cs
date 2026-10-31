@@ -12,26 +12,44 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("percentChange") is null) { _explicitNullValuePercentChange = default!; _explicitNullProperties?.Remove("percentChange"); }
+            else if (parseNode.GetChildNode("percentChange") is { } nullNodePercentChange && nullNodePercentChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentChange = null;
+            if (parseNode.GetChildNode("previousCount") is null) { _explicitNullValuePreviousCount = default!; _explicitNullProperties?.Remove("previousCount"); }
+            else if (parseNode.GetChildNode("previousCount") is { } nullNodePreviousCount && nullNodePreviousCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount? Count { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount? _explicitNullValueCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount Count { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount _explicitNullValueCount = default!;
 #endif
         /// <summary>The percentChange property</summary>
-        public long? PercentChange { get; set; }
+        public long? PercentChange { get => _explicitNullValuePercentChange; set { _explicitNullValuePercentChange = value; AdditionalData?.Remove("percentChange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentChange"); else _explicitNullProperties?.Remove("percentChange"); } }
+        private long? _explicitNullValuePercentChange = default!;
         /// <summary>The previousCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount? PreviousCount { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount? PreviousCount { get => _explicitNullValuePreviousCount; set { _explicitNullValuePreviousCount = value; AdditionalData?.Remove("previousCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCount"); else _explicitNullProperties?.Remove("previousCount"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount? _explicitNullValuePreviousCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount PreviousCount { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount PreviousCount { get => _explicitNullValuePreviousCount; set { _explicitNullValuePreviousCount = value; AdditionalData?.Remove("previousCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCount"); else _explicitNullProperties?.Remove("previousCount"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount _explicitNullValuePreviousCount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg"/> and sets the default values.
@@ -48,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgCount>("count", Count);
             writer.WriteLongValue("percentChange", PercentChange);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrgPreviousCount>("previousCount", PreviousCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

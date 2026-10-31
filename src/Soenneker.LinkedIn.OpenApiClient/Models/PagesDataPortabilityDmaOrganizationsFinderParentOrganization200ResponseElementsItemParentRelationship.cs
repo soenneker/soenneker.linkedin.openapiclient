@@ -11,36 +11,61 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseElementsItemParentRelationship : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("employeesIncludedInParentOrganization") is null) { _explicitNullValueEmployeesIncludedInParentOrganization = default!; _explicitNullProperties?.Remove("employeesIncludedInParentOrganization"); }
+            else if (parseNode.GetChildNode("employeesIncludedInParentOrganization") is { } nullNodeEmployeesIncludedInParentOrganization && nullNodeEmployeesIncludedInParentOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeesIncludedInParentOrganization = null;
+            if (parseNode.GetChildNode("jobsIncludedInParentOrganization") is null) { _explicitNullValueJobsIncludedInParentOrganization = default!; _explicitNullProperties?.Remove("jobsIncludedInParentOrganization"); }
+            else if (parseNode.GetChildNode("jobsIncludedInParentOrganization") is { } nullNodeJobsIncludedInParentOrganization && nullNodeJobsIncludedInParentOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobsIncludedInParentOrganization = null;
+            if (parseNode.GetChildNode("organizationRelationshipType") is null) { _explicitNullValueOrganizationRelationshipType = default!; _explicitNullProperties?.Remove("organizationRelationshipType"); }
+            else if (parseNode.GetChildNode("organizationRelationshipType") is { } nullNodeOrganizationRelationshipType && nullNodeOrganizationRelationshipType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationRelationshipType = null;
+            if (parseNode.GetChildNode("parent") is null) { _explicitNullValueParent = default!; _explicitNullProperties?.Remove("parent"); }
+            else if (parseNode.GetChildNode("parent") is { } nullNodeParent && nullNodeParent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parent = null;
+            if (parseNode.GetChildNode("relationshipStatus") is null) { _explicitNullValueRelationshipStatus = default!; _explicitNullProperties?.Remove("relationshipStatus"); }
+            else if (parseNode.GetChildNode("relationshipStatus") is { } nullNodeRelationshipStatus && nullNodeRelationshipStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationshipStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The employeesIncludedInParentOrganization property</summary>
-        public bool? EmployeesIncludedInParentOrganization { get; set; }
+        public bool? EmployeesIncludedInParentOrganization { get => _explicitNullValueEmployeesIncludedInParentOrganization; set { _explicitNullValueEmployeesIncludedInParentOrganization = value; AdditionalData?.Remove("employeesIncludedInParentOrganization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeesIncludedInParentOrganization"); else _explicitNullProperties?.Remove("employeesIncludedInParentOrganization"); } }
+        private bool? _explicitNullValueEmployeesIncludedInParentOrganization = default!;
         /// <summary>The jobsIncludedInParentOrganization property</summary>
-        public bool? JobsIncludedInParentOrganization { get; set; }
+        public bool? JobsIncludedInParentOrganization { get => _explicitNullValueJobsIncludedInParentOrganization; set { _explicitNullValueJobsIncludedInParentOrganization = value; AdditionalData?.Remove("jobsIncludedInParentOrganization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobsIncludedInParentOrganization"); else _explicitNullProperties?.Remove("jobsIncludedInParentOrganization"); } }
+        private bool? _explicitNullValueJobsIncludedInParentOrganization = default!;
         /// <summary>The organizationRelationshipType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationRelationshipType { get; set; }
+        public string? OrganizationRelationshipType { get => _explicitNullValueOrganizationRelationshipType; set { _explicitNullValueOrganizationRelationshipType = value; AdditionalData?.Remove("organizationRelationshipType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationRelationshipType"); else _explicitNullProperties?.Remove("organizationRelationshipType"); } }
+        private string? _explicitNullValueOrganizationRelationshipType = default!;
 #nullable restore
 #else
-        public string OrganizationRelationshipType { get; set; }
+        public string OrganizationRelationshipType { get => _explicitNullValueOrganizationRelationshipType; set { _explicitNullValueOrganizationRelationshipType = value; AdditionalData?.Remove("organizationRelationshipType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationRelationshipType"); else _explicitNullProperties?.Remove("organizationRelationshipType"); } }
+        private string _explicitNullValueOrganizationRelationshipType = default!;
 #endif
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Parent { get; set; }
+        public string? Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; AdditionalData?.Remove("parent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private string? _explicitNullValueParent = default!;
 #nullable restore
 #else
-        public string Parent { get; set; }
+        public string Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; AdditionalData?.Remove("parent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private string _explicitNullValueParent = default!;
 #endif
         /// <summary>The relationshipStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelationshipStatus { get; set; }
+        public string? RelationshipStatus { get => _explicitNullValueRelationshipStatus; set { _explicitNullValueRelationshipStatus = value; AdditionalData?.Remove("relationshipStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationshipStatus"); else _explicitNullProperties?.Remove("relationshipStatus"); } }
+        private string? _explicitNullValueRelationshipStatus = default!;
 #nullable restore
 #else
-        public string RelationshipStatus { get; set; }
+        public string RelationshipStatus { get => _explicitNullValueRelationshipStatus; set { _explicitNullValueRelationshipStatus = value; AdditionalData?.Remove("relationshipStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationshipStatus"); else _explicitNullProperties?.Remove("relationshipStatus"); } }
+        private string _explicitNullValueRelationshipStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseElementsItemParentRelationship"/> and sets the default values.
@@ -57,7 +82,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseElementsItemParentRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseElementsItemParentRelationship();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseElementsItemParentRelationship(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("organizationRelationshipType", OrganizationRelationshipType);
             writer.WriteStringValue("parent", Parent);
             writer.WriteStringValue("relationshipStatus", RelationshipStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

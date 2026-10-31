@@ -11,17 +11,36 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseStatuses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)") is null) { _explicitNullValueUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 = default!; _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)"); }
+            else if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)") is { } nullNodeUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 && nullNodeUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 = null;
+            if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)") is null) { _explicitNullValueUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 = default!; _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)"); }
+            else if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)") is { } nullNodeUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 && nullNodeUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 = null;
+            if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)") is null) { _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 = default!; _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)"); }
+            else if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)") is { } nullNodeUrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 && nullNodeUrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 = null;
+            if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)") is null) { _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 = default!; _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)"); }
+            else if (parseNode.GetChildNode("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)") is { } nullNodeUrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 && nullNodeUrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 property</summary>
-        public long? UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 { get; set; }
+        public long? UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 { get => _explicitNullValueUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592; set { _explicitNullValueUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 = value; AdditionalData?.Remove("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)"); else _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)"); } }
+        private long? _explicitNullValueUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 = default!;
         /// <summary>The urnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 property</summary>
-        public long? UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 { get; set; }
+        public long? UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 { get => _explicitNullValueUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931; set { _explicitNullValueUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 = value; AdditionalData?.Remove("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)"); else _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)"); } }
+        private long? _explicitNullValueUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 = default!;
         /// <summary>The urnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 property</summary>
-        public long? UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 { get; set; }
+        public long? UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 { get => _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784; set { _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 = value; AdditionalData?.Remove("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)"); else _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)"); } }
+        private long? _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 = default!;
         /// <summary>The urnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 property</summary>
-        public long? UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 { get; set; }
+        public long? UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 { get => _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960; set { _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 = value; AdditionalData?.Remove("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)"); else _explicitNullProperties?.Remove("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)"); } }
+        private long? _explicitNullValueUrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -37,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseStatuses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseStatuses();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseStatuses(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)", UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931);
             writer.WriteLongValue("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)", UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784);
             writer.WriteLongValue("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)", UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

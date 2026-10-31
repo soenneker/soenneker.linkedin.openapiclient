@@ -12,100 +12,165 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnLearningReferenceLearningassetsSubassetAsset : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("availability") is null) { _explicitNullValueAvailability = default!; _explicitNullProperties?.Remove("availability"); }
+            else if (parseNode.GetChildNode("availability") is { } nullNodeAvailability && nullNodeAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Availability = null;
+            if (parseNode.GetChildNode("availableLocales") is null) { _explicitNullValueAvailableLocales = default!; _explicitNullProperties?.Remove("availableLocales"); }
+            else if (parseNode.GetChildNode("availableLocales") is { } nullNodeAvailableLocales && nullNodeAvailableLocales.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableLocales = null;
+            if (parseNode.GetChildNode("classifications") is null) { _explicitNullValueClassifications = default!; _explicitNullProperties?.Remove("classifications"); }
+            else if (parseNode.GetChildNode("classifications") is { } nullNodeClassifications && nullNodeClassifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classifications = null;
+            if (parseNode.GetChildNode("contributors") is null) { _explicitNullValueContributors = default!; _explicitNullProperties?.Remove("contributors"); }
+            else if (parseNode.GetChildNode("contributors") is { } nullNodeContributors && nullNodeContributors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contributors = null;
+            if (parseNode.GetChildNode("curatedForLearningManagementSystem") is null) { _explicitNullValueCuratedForLearningManagementSystem = default!; _explicitNullProperties?.Remove("curatedForLearningManagementSystem"); }
+            else if (parseNode.GetChildNode("curatedForLearningManagementSystem") is { } nullNodeCuratedForLearningManagementSystem && nullNodeCuratedForLearningManagementSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CuratedForLearningManagementSystem = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("descriptionIncludingHtml") is null) { _explicitNullValueDescriptionIncludingHtml = default!; _explicitNullProperties?.Remove("descriptionIncludingHtml"); }
+            else if (parseNode.GetChildNode("descriptionIncludingHtml") is { } nullNodeDescriptionIncludingHtml && nullNodeDescriptionIncludingHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionIncludingHtml = null;
+            if (parseNode.GetChildNode("images") is null) { _explicitNullValueImages = default!; _explicitNullProperties?.Remove("images"); }
+            else if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("lastUpdatedAt") is null) { _explicitNullValueLastUpdatedAt = default!; _explicitNullProperties?.Remove("lastUpdatedAt"); }
+            else if (parseNode.GetChildNode("lastUpdatedAt") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("level") is null) { _explicitNullValueLevel = default!; _explicitNullProperties?.Remove("level"); }
+            else if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
+            if (parseNode.GetChildNode("publishedAt") is null) { _explicitNullValuePublishedAt = default!; _explicitNullProperties?.Remove("publishedAt"); }
+            else if (parseNode.GetChildNode("publishedAt") is { } nullNodePublishedAt && nullNodePublishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishedAt = null;
+            if (parseNode.GetChildNode("relationships") is null) { _explicitNullValueRelationships = default!; _explicitNullProperties?.Remove("relationships"); }
+            else if (parseNode.GetChildNode("relationships") is { } nullNodeRelationships && nullNodeRelationships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relationships = null;
+            if (parseNode.GetChildNode("retiredAt") is null) { _explicitNullValueRetiredAt = default!; _explicitNullProperties?.Remove("retiredAt"); }
+            else if (parseNode.GetChildNode("retiredAt") is { } nullNodeRetiredAt && nullNodeRetiredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetiredAt = null;
+            if (parseNode.GetChildNode("shortDescription") is null) { _explicitNullValueShortDescription = default!; _explicitNullProperties?.Remove("shortDescription"); }
+            else if (parseNode.GetChildNode("shortDescription") is { } nullNodeShortDescription && nullNodeShortDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShortDescription = null;
+            if (parseNode.GetChildNode("timeToComplete") is null) { _explicitNullValueTimeToComplete = default!; _explicitNullProperties?.Remove("timeToComplete"); }
+            else if (parseNode.GetChildNode("timeToComplete") is { } nullNodeTimeToComplete && nullNodeTimeToComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeToComplete = null;
+            if (parseNode.GetChildNode("urls") is null) { _explicitNullValueUrls = default!; _explicitNullProperties?.Remove("urls"); }
+            else if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The availability of the learning asset.Documented type: AvailabilityRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability? Availability { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability? Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; AdditionalData?.Remove("availability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability? _explicitNullValueAvailability = default!;
         /// <summary>The locales the learning asset is available in.Documented type: Locale []Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale>? AvailableLocales { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale>? AvailableLocales { get => _explicitNullValueAvailableLocales; set { _explicitNullValueAvailableLocales = value; AdditionalData?.Remove("availableLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableLocales"); else _explicitNullProperties?.Remove("availableLocales"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale>? _explicitNullValueAvailableLocales = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale> AvailableLocales { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale> AvailableLocales { get => _explicitNullValueAvailableLocales; set { _explicitNullValueAvailableLocales = value; AdditionalData?.Remove("availableLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableLocales"); else _explicitNullProperties?.Remove("availableLocales"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale> _explicitNullValueAvailableLocales = default!;
 #endif
         /// <summary>The learning classifications the learning asset is tagged with.Documented type: AssetClassification []Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification>? Classifications { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification>? Classifications { get => _explicitNullValueClassifications; set { _explicitNullValueClassifications = value; AdditionalData?.Remove("classifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classifications"); else _explicitNullProperties?.Remove("classifications"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification>? _explicitNullValueClassifications = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification> Classifications { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification> Classifications { get => _explicitNullValueClassifications; set { _explicitNullValueClassifications = value; AdditionalData?.Remove("classifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classifications"); else _explicitNullProperties?.Remove("classifications"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification> _explicitNullValueClassifications = default!;
 #endif
         /// <summary>The contributors involved in the lifecycle of the learning asset - for example, authors or publishers.Documented type: Contributor []Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor>? Contributors { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor>? Contributors { get => _explicitNullValueContributors; set { _explicitNullValueContributors = value; AdditionalData?.Remove("contributors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contributors"); else _explicitNullProperties?.Remove("contributors"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor>? _explicitNullValueContributors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor> Contributors { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor> Contributors { get => _explicitNullValueContributors; set { _explicitNullValueContributors = value; AdditionalData?.Remove("contributors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contributors"); else _explicitNullProperties?.Remove("contributors"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor> _explicitNullValueContributors = default!;
 #endif
         /// <summary>Indicates whether the learning asset was curated for Learning Management System consumption by an account administrator in LinkedIn Learning. Currently applies only to video assetsDocumented type: BooleanRequirement: No</summary>
-        public bool? CuratedForLearningManagementSystem { get; set; }
+        public bool? CuratedForLearningManagementSystem { get => _explicitNullValueCuratedForLearningManagementSystem; set { _explicitNullValueCuratedForLearningManagementSystem = value; AdditionalData?.Remove("curatedForLearningManagementSystem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("curatedForLearningManagementSystem"); else _explicitNullProperties?.Remove("curatedForLearningManagementSystem"); } }
+        private bool? _explicitNullValueCuratedForLearningManagementSystem = default!;
         /// <summary>If present, the text-only description of the learning asset, localized if available. Any HTML markup will be stripped from this description.Documented type: LocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescription? Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescription? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescription Description { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescription _explicitNullValueDescription = default!;
 #endif
         /// <summary>If present, the description - including any HTML markup - of the learning asset, localized if available.Documented type: LocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml? DescriptionIncludingHtml { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml? DescriptionIncludingHtml { get => _explicitNullValueDescriptionIncludingHtml; set { _explicitNullValueDescriptionIncludingHtml = value; AdditionalData?.Remove("descriptionIncludingHtml"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionIncludingHtml"); else _explicitNullProperties?.Remove("descriptionIncludingHtml"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml? _explicitNullValueDescriptionIncludingHtml = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml DescriptionIncludingHtml { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml DescriptionIncludingHtml { get => _explicitNullValueDescriptionIncludingHtml; set { _explicitNullValueDescriptionIncludingHtml = value; AdditionalData?.Remove("descriptionIncludingHtml"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionIncludingHtml"); else _explicitNullProperties?.Remove("descriptionIncludingHtml"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml _explicitNullValueDescriptionIncludingHtml = default!;
 #endif
         /// <summary>The images that can be used to represent the learning asset.Documented type: AssetImagesRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages? Images { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages Images { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages _explicitNullValueImages = default!;
 #endif
         /// <summary>The epoch time in milliseconds indicating when the learning asset was last updated.Documented type: TimeRequirement: Yes</summary>
-        public long? LastUpdatedAt { get; set; }
+        public long? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("lastUpdatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdatedAt"); else _explicitNullProperties?.Remove("lastUpdatedAt"); } }
+        private long? _explicitNullValueLastUpdatedAt = default!;
         /// <summary>If present, the difficulty level of the learning asset.Documented type: DifficultyLevelRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel? Level { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; AdditionalData?.Remove("level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel? _explicitNullValueLevel = default!;
         /// <summary>The epoch time in milliseconds indicating when the learning asset was published.Documented type: TimeRequirement: Yes</summary>
-        public long? PublishedAt { get; set; }
+        public long? PublishedAt { get => _explicitNullValuePublishedAt; set { _explicitNullValuePublishedAt = value; AdditionalData?.Remove("publishedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishedAt"); else _explicitNullProperties?.Remove("publishedAt"); } }
+        private long? _explicitNullValuePublishedAt = default!;
         /// <summary>The value of this field is currently always an empty array. Future versions of the API may use this field to indicate relationships the learning asset has to other learning assets.Documented type: ArrayRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Relationships { get; set; }
+        public UntypedNode? Relationships { get => _explicitNullValueRelationships; set { _explicitNullValueRelationships = value; AdditionalData?.Remove("relationships"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationships"); else _explicitNullProperties?.Remove("relationships"); } }
+        private UntypedNode? _explicitNullValueRelationships = default!;
 #nullable restore
 #else
-        public UntypedNode Relationships { get; set; }
+        public UntypedNode Relationships { get => _explicitNullValueRelationships; set { _explicitNullValueRelationships = value; AdditionalData?.Remove("relationships"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationships"); else _explicitNullProperties?.Remove("relationships"); } }
+        private UntypedNode _explicitNullValueRelationships = default!;
 #endif
         /// <summary>If present, the epoch time in milliseconds indicating when the learning asset was retired.Documented type: TimeRequirement: No</summary>
-        public long? RetiredAt { get; set; }
+        public long? RetiredAt { get => _explicitNullValueRetiredAt; set { _explicitNullValueRetiredAt = value; AdditionalData?.Remove("retiredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retiredAt"); else _explicitNullProperties?.Remove("retiredAt"); } }
+        private long? _explicitNullValueRetiredAt = default!;
         /// <summary>Localized text only short description of the learning asset.Documented type: LocaleStringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription? ShortDescription { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription? ShortDescription { get => _explicitNullValueShortDescription; set { _explicitNullValueShortDescription = value; AdditionalData?.Remove("shortDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortDescription"); else _explicitNullProperties?.Remove("shortDescription"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription? _explicitNullValueShortDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription ShortDescription { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription ShortDescription { get => _explicitNullValueShortDescription; set { _explicitNullValueShortDescription = value; AdditionalData?.Remove("shortDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortDescription"); else _explicitNullProperties?.Remove("shortDescription"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription _explicitNullValueShortDescription = default!;
 #endif
         /// <summary>If present, the time span indicating how long the learning asset takes to complete.Documented type: TimeSpanRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete? TimeToComplete { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete? TimeToComplete { get => _explicitNullValueTimeToComplete; set { _explicitNullValueTimeToComplete = value; AdditionalData?.Remove("timeToComplete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeToComplete"); else _explicitNullProperties?.Remove("timeToComplete"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete? _explicitNullValueTimeToComplete = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete TimeToComplete { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete TimeToComplete { get => _explicitNullValueTimeToComplete; set { _explicitNullValueTimeToComplete = value; AdditionalData?.Remove("timeToComplete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeToComplete"); else _explicitNullProperties?.Remove("timeToComplete"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete _explicitNullValueTimeToComplete = default!;
 #endif
         /// <summary>The URLs that can be used to launch the learning asset.Documented type: AssetUrlsRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls? Urls { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls Urls { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls _explicitNullValueUrls = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsSubassetAsset"/> and sets the default values.
@@ -122,7 +187,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsSubassetAsset CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsSubassetAsset();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsSubassetAsset(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,7 +197,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "availability", n => { Availability = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability>(); } },
+                { "availability", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAvailability = default; _explicitNullProperties?.Remove("availability"); AdditionalData["availability"] = unknown; } else { Availability = parsed; AdditionalData.Remove("availability"); } } },
                 { "availableLocales", n => { AvailableLocales = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "classifications", n => { Classifications = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetclassification.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contributors", n => { Contributors = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsContributor.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -141,7 +206,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "descriptionIncludingHtml", n => { DescriptionIncludingHtml = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsDescriptionIncludingHtml.CreateFromDiscriminatorValue); } },
                 { "images", n => { Images = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsImages.CreateFromDiscriminatorValue); } },
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetLongValue(); } },
-                { "level", n => { Level = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel>(); } },
+                { "level", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLevel = default; _explicitNullProperties?.Remove("level"); AdditionalData["level"] = unknown; } else { Level = parsed; AdditionalData.Remove("level"); } } },
                 { "publishedAt", n => { PublishedAt = n.GetLongValue(); } },
                 { "relationships", n => { Relationships = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "retiredAt", n => { RetiredAt = n.GetLongValue(); } },
@@ -173,6 +238,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsShortDescription>("shortDescription", ShortDescription);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsTimeToComplete>("timeToComplete", TimeToComplete);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsUrls>("urls", Urls);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

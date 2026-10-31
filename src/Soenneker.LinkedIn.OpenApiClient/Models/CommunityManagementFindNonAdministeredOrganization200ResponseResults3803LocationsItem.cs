@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("locationType") is null) { _explicitNullValueLocationType = default!; _explicitNullProperties?.Remove("locationType"); }
+            else if (parseNode.GetChildNode("locationType") is { } nullNodeLocationType && nullNodeLocationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationType = null;
+            if (parseNode.GetChildNode("staffCountRange") is null) { _explicitNullValueStaffCountRange = default!; _explicitNullProperties?.Remove("staffCountRange"); }
+            else if (parseNode.GetChildNode("staffCountRange") is { } nullNodeStaffCountRange && nullNodeStaffCountRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaffCountRange = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItemAddress? Address { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItemAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItemAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItemAddress Address { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItemAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItemAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>The locationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationType { get; set; }
+        public string? LocationType { get => _explicitNullValueLocationType; set { _explicitNullValueLocationType = value; AdditionalData?.Remove("locationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationType"); else _explicitNullProperties?.Remove("locationType"); } }
+        private string? _explicitNullValueLocationType = default!;
 #nullable restore
 #else
-        public string LocationType { get; set; }
+        public string LocationType { get => _explicitNullValueLocationType; set { _explicitNullValueLocationType = value; AdditionalData?.Remove("locationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationType"); else _explicitNullProperties?.Remove("locationType"); } }
+        private string _explicitNullValueLocationType = default!;
 #endif
         /// <summary>The staffCountRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StaffCountRange { get; set; }
+        public string? StaffCountRange { get => _explicitNullValueStaffCountRange; set { _explicitNullValueStaffCountRange = value; AdditionalData?.Remove("staffCountRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staffCountRange"); else _explicitNullProperties?.Remove("staffCountRange"); } }
+        private string? _explicitNullValueStaffCountRange = default!;
 #nullable restore
 #else
-        public string StaffCountRange { get; set; }
+        public string StaffCountRange { get => _explicitNullValueStaffCountRange; set { _explicitNullValueStaffCountRange = value; AdditionalData?.Remove("staffCountRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staffCountRange"); else _explicitNullProperties?.Remove("staffCountRange"); } }
+        private string _explicitNullValueStaffCountRange = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItem"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults3803LocationsItemAddress>("address", Address);
             writer.WriteStringValue("locationType", LocationType);
             writer.WriteStringValue("staffCountRange", StaffCountRange);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,19 +11,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200ResponseElementsItemMetricValueTotalCount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bigDecimal") is null) { _explicitNullValueBigDecimal = default!; _explicitNullProperties?.Remove("bigDecimal"); }
+            else if (parseNode.GetChildNode("bigDecimal") is { } nullNodeBigDecimal && nullNodeBigDecimal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BigDecimal = null;
+            if (parseNode.GetChildNode("long") is null) { _explicitNullValueLong = default!; _explicitNullProperties?.Remove("long"); }
+            else if (parseNode.GetChildNode("long") is { } nullNodeLong && nullNodeLong.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Long = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bigDecimal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BigDecimal { get; set; }
+        public string? BigDecimal { get => _explicitNullValueBigDecimal; set { _explicitNullValueBigDecimal = value; AdditionalData?.Remove("bigDecimal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bigDecimal"); else _explicitNullProperties?.Remove("bigDecimal"); } }
+        private string? _explicitNullValueBigDecimal = default!;
 #nullable restore
 #else
-        public string BigDecimal { get; set; }
+        public string BigDecimal { get => _explicitNullValueBigDecimal; set { _explicitNullValueBigDecimal = value; AdditionalData?.Remove("bigDecimal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bigDecimal"); else _explicitNullProperties?.Remove("bigDecimal"); } }
+        private string _explicitNullValueBigDecimal = default!;
 #endif
         /// <summary>The long property</summary>
-        public long? Long { get; set; }
+        public long? Long { get => _explicitNullValueLong; set { _explicitNullValueLong = value; AdditionalData?.Remove("long"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("long"); else _explicitNullProperties?.Remove("long"); } }
+        private long? _explicitNullValueLong = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200ResponseElementsItemMetricValueTotalCount"/> and sets the default values.
         /// </summary>
@@ -39,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200ResponseElementsItemMetricValueTotalCount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200ResponseElementsItemMetricValueTotalCount();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200ResponseElementsItemMetricValueTotalCount(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bigDecimal", BigDecimal);
             writer.WriteLongValue("long", Long);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

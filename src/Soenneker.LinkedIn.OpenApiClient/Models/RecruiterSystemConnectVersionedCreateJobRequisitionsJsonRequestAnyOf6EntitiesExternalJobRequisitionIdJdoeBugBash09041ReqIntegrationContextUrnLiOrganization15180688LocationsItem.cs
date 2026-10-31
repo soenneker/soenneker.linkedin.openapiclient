@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6EntitiesExternalJobRequisitionIdJdoeBugBash09041ReqIntegrationContextUrnLiOrganization15180688LocationsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("location[GeoUrn](../../DMA/taxonomy/geo.md)") is null) { _explicitNullValueLocationGeoUrnDMATaxonomyGeoMd = default!; _explicitNullProperties?.Remove("location[GeoUrn](../../DMA/taxonomy/geo.md)"); }
+            else if (parseNode.GetChildNode("location[GeoUrn](../../DMA/taxonomy/geo.md)") is { } nullNodeLocationGeoUrnDMATaxonomyGeoMd && nullNodeLocationGeoUrnDMATaxonomyGeoMd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationGeoUrnDMATaxonomyGeoMd = null;
+            if (parseNode.GetChildNode("locationName") is null) { _explicitNullValueLocationName = default!; _explicitNullProperties?.Remove("locationName"); }
+            else if (parseNode.GetChildNode("locationName") is { } nullNodeLocationName && nullNodeLocationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationName = null;
+            if (parseNode.GetChildNode("locationType") is null) { _explicitNullValueLocationType = default!; _explicitNullProperties?.Remove("locationType"); }
+            else if (parseNode.GetChildNode("locationType") is { } nullNodeLocationType && nullNodeLocationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The locationGeoUrnDMATaxonomyGeoMd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationGeoUrnDMATaxonomyGeoMd { get; set; }
+        public string? LocationGeoUrnDMATaxonomyGeoMd { get => _explicitNullValueLocationGeoUrnDMATaxonomyGeoMd; set { _explicitNullValueLocationGeoUrnDMATaxonomyGeoMd = value; AdditionalData?.Remove("location[GeoUrn](../../DMA/taxonomy/geo.md)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location[GeoUrn](../../DMA/taxonomy/geo.md)"); else _explicitNullProperties?.Remove("location[GeoUrn](../../DMA/taxonomy/geo.md)"); } }
+        private string? _explicitNullValueLocationGeoUrnDMATaxonomyGeoMd = default!;
 #nullable restore
 #else
-        public string LocationGeoUrnDMATaxonomyGeoMd { get; set; }
+        public string LocationGeoUrnDMATaxonomyGeoMd { get => _explicitNullValueLocationGeoUrnDMATaxonomyGeoMd; set { _explicitNullValueLocationGeoUrnDMATaxonomyGeoMd = value; AdditionalData?.Remove("location[GeoUrn](../../DMA/taxonomy/geo.md)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location[GeoUrn](../../DMA/taxonomy/geo.md)"); else _explicitNullProperties?.Remove("location[GeoUrn](../../DMA/taxonomy/geo.md)"); } }
+        private string _explicitNullValueLocationGeoUrnDMATaxonomyGeoMd = default!;
 #endif
         /// <summary>The locationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationName { get; set; }
+        public string? LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; AdditionalData?.Remove("locationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string? _explicitNullValueLocationName = default!;
 #nullable restore
 #else
-        public string LocationName { get; set; }
+        public string LocationName { get => _explicitNullValueLocationName; set { _explicitNullValueLocationName = value; AdditionalData?.Remove("locationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationName"); else _explicitNullProperties?.Remove("locationName"); } }
+        private string _explicitNullValueLocationName = default!;
 #endif
         /// <summary>The locationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationType { get; set; }
+        public string? LocationType { get => _explicitNullValueLocationType; set { _explicitNullValueLocationType = value; AdditionalData?.Remove("locationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationType"); else _explicitNullProperties?.Remove("locationType"); } }
+        private string? _explicitNullValueLocationType = default!;
 #nullable restore
 #else
-        public string LocationType { get; set; }
+        public string LocationType { get => _explicitNullValueLocationType; set { _explicitNullValueLocationType = value; AdditionalData?.Remove("locationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationType"); else _explicitNullProperties?.Remove("locationType"); } }
+        private string _explicitNullValueLocationType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6EntitiesExternalJobRequisitionIdJdoeBugBash09041ReqIntegrationContextUrnLiOrganization15180688LocationsItem"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6EntitiesExternalJobRequisitionIdJdoeBugBash09041ReqIntegrationContextUrnLiOrganization15180688LocationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6EntitiesExternalJobRequisitionIdJdoeBugBash09041ReqIntegrationContextUrnLiOrganization15180688LocationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6EntitiesExternalJobRequisitionIdJdoeBugBash09041ReqIntegrationContextUrnLiOrganization15180688LocationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("location[GeoUrn](../../DMA/taxonomy/geo.md)", LocationGeoUrnDMATaxonomyGeoMd);
             writer.WriteStringValue("locationName", LocationName);
             writer.WriteStringValue("locationType", LocationType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

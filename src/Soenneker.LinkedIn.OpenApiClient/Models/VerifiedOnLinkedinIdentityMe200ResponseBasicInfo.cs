@@ -12,48 +12,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VerifiedOnLinkedinIdentityMe200ResponseBasicInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("firstName") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("firstName"); }
+            else if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("lastName") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("lastName"); }
+            else if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("primaryEmailAddress") is null) { _explicitNullValuePrimaryEmailAddress = default!; _explicitNullProperties?.Remove("primaryEmailAddress"); }
+            else if (parseNode.GetChildNode("primaryEmailAddress") is { } nullNodePrimaryEmailAddress && nullNodePrimaryEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryEmailAddress = null;
+            if (parseNode.GetChildNode("profilePicture") is null) { _explicitNullValueProfilePicture = default!; _explicitNullProperties?.Remove("profilePicture"); }
+            else if (parseNode.GetChildNode("profilePicture") is { } nullNodeProfilePicture && nullNodeProfilePicture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfilePicture = null;
+            if (parseNode.GetChildNode("profileUrl") is null) { _explicitNullValueProfileUrl = default!; _explicitNullProperties?.Remove("profileUrl"); }
+            else if (parseNode.GetChildNode("profileUrl") is { } nullNodeProfileUrl && nullNodeProfileUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Member&apos;s first name (localized)Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoFirstName? FirstName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoFirstName? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoFirstName? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoFirstName FirstName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoFirstName FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoFirstName _explicitNullValueFirstName = default!;
 #endif
         /// <summary>Member&apos;s last name (localized)Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoLastName? LastName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoLastName? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoLastName? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoLastName LastName { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoLastName LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoLastName _explicitNullValueLastName = default!;
 #endif
         /// <summary>Member&apos;s primary email addressDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryEmailAddress { get; set; }
+        public string? PrimaryEmailAddress { get => _explicitNullValuePrimaryEmailAddress; set { _explicitNullValuePrimaryEmailAddress = value; AdditionalData?.Remove("primaryEmailAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryEmailAddress"); else _explicitNullProperties?.Remove("primaryEmailAddress"); } }
+        private string? _explicitNullValuePrimaryEmailAddress = default!;
 #nullable restore
 #else
-        public string PrimaryEmailAddress { get; set; }
+        public string PrimaryEmailAddress { get => _explicitNullValuePrimaryEmailAddress; set { _explicitNullValuePrimaryEmailAddress = value; AdditionalData?.Remove("primaryEmailAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryEmailAddress"); else _explicitNullProperties?.Remove("primaryEmailAddress"); } }
+        private string _explicitNullValuePrimaryEmailAddress = default!;
 #endif
         /// <summary>Profile picture with cropped image URL and expiryDocumented type: object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoProfilePicture? ProfilePicture { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoProfilePicture? ProfilePicture { get => _explicitNullValueProfilePicture; set { _explicitNullValueProfilePicture = value; AdditionalData?.Remove("profilePicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profilePicture"); else _explicitNullProperties?.Remove("profilePicture"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoProfilePicture? _explicitNullValueProfilePicture = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoProfilePicture ProfilePicture { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoProfilePicture ProfilePicture { get => _explicitNullValueProfilePicture; set { _explicitNullValueProfilePicture = value; AdditionalData?.Remove("profilePicture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profilePicture"); else _explicitNullProperties?.Remove("profilePicture"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoProfilePicture _explicitNullValueProfilePicture = default!;
 #endif
         /// <summary>Public LinkedIn profile URLDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileUrl { get; set; }
+        public string? ProfileUrl { get => _explicitNullValueProfileUrl; set { _explicitNullValueProfileUrl = value; AdditionalData?.Remove("profileUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileUrl"); else _explicitNullProperties?.Remove("profileUrl"); } }
+        private string? _explicitNullValueProfileUrl = default!;
 #nullable restore
 #else
-        public string ProfileUrl { get; set; }
+        public string ProfileUrl { get => _explicitNullValueProfileUrl; set { _explicitNullValueProfileUrl = value; AdditionalData?.Remove("profileUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileUrl"); else _explicitNullProperties?.Remove("profileUrl"); } }
+        private string _explicitNullValueProfileUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo"/> and sets the default values.
@@ -70,7 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +126,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("primaryEmailAddress", PrimaryEmailAddress);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200ResponseBasicInfoProfilePicture>("profilePicture", ProfilePicture);
             writer.WriteStringValue("profileUrl", ProfileUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

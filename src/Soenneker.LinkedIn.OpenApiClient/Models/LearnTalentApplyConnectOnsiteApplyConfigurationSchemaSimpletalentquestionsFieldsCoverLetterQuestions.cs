@@ -12,21 +12,38 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("coverLetterQuestionRequirement") is null) { _explicitNullValueCoverLetterQuestionRequirement = default!; _explicitNullProperties?.Remove("coverLetterQuestionRequirement"); }
+            else if (parseNode.GetChildNode("coverLetterQuestionRequirement") is { } nullNodeCoverLetterQuestionRequirement && nullNodeCoverLetterQuestionRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverLetterQuestionRequirement = null;
+            if (parseNode.GetChildNode("customQuestions") is null) { _explicitNullValueCustomQuestions = default!; _explicitNullProperties?.Remove("customQuestions"); }
+            else if (parseNode.GetChildNode("customQuestions") is { } nullNodeCustomQuestions && nullNodeCustomQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomQuestions = null;
+            if (parseNode.GetChildNode("textCoverLetterQuestionRequirement") is null) { _explicitNullValueTextCoverLetterQuestionRequirement = default!; _explicitNullProperties?.Remove("textCoverLetterQuestionRequirement"); }
+            else if (parseNode.GetChildNode("textCoverLetterQuestionRequirement") is { } nullNodeTextCoverLetterQuestionRequirement && nullNodeTextCoverLetterQuestionRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextCoverLetterQuestionRequirement = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field captures whether a cover letter file (max 512 KB, accepted file types: &quot;doc&quot;, &quot;docx&quot;, &quot;pdf&quot;) needs to be provided. Defaults to OPTIONAL.Documented type: QuestionRequirementRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement? CoverLetterQuestionRequirement { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement? CoverLetterQuestionRequirement { get => _explicitNullValueCoverLetterQuestionRequirement; set { _explicitNullValueCoverLetterQuestionRequirement = value; AdditionalData?.Remove("coverLetterQuestionRequirement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverLetterQuestionRequirement"); else _explicitNullProperties?.Remove("coverLetterQuestionRequirement"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement? _explicitNullValueCoverLetterQuestionRequirement = default!;
         /// <summary>The custom questions to be included within the Cover Letter section.Documented type: SimpleTalentQuestionDefinition[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>? CustomQuestions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>? CustomQuestions { get => _explicitNullValueCustomQuestions; set { _explicitNullValueCustomQuestions = value; AdditionalData?.Remove("customQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customQuestions"); else _explicitNullProperties?.Remove("customQuestions"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>? _explicitNullValueCustomQuestions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> CustomQuestions { get => _explicitNullValueCustomQuestions; set { _explicitNullValueCustomQuestions = value; AdditionalData?.Remove("customQuestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customQuestions"); else _explicitNullProperties?.Remove("customQuestions"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields> _explicitNullValueCustomQuestions = default!;
 #endif
         /// <summary>This field captures whether to accept a multi-line text input for a cover letter. Defaults to SKIP.Documented type: QuestionRequirementRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement? TextCoverLetterQuestionRequirement { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement? TextCoverLetterQuestionRequirement { get => _explicitNullValueTextCoverLetterQuestionRequirement; set { _explicitNullValueTextCoverLetterQuestionRequirement = value; AdditionalData?.Remove("textCoverLetterQuestionRequirement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textCoverLetterQuestionRequirement"); else _explicitNullProperties?.Remove("textCoverLetterQuestionRequirement"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement? _explicitNullValueTextCoverLetterQuestionRequirement = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions"/> and sets the default values.
         /// </summary>
@@ -42,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsCoverLetterQuestions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,9 +69,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coverLetterQuestionRequirement", n => { CoverLetterQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement>(); } },
+                { "coverLetterQuestionRequirement", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCoverLetterQuestionRequirement = default; _explicitNullProperties?.Remove("coverLetterQuestionRequirement"); AdditionalData["coverLetterQuestionRequirement"] = unknown; } else { CoverLetterQuestionRequirement = parsed; AdditionalData.Remove("coverLetterQuestionRequirement"); } } },
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "textCoverLetterQuestionRequirement", n => { TextCoverLetterQuestionRequirement = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement>(); } },
+                { "textCoverLetterQuestionRequirement", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTextCoverLetterQuestionRequirement = default; _explicitNullProperties?.Remove("textCoverLetterQuestionRequirement"); AdditionalData["textCoverLetterQuestionRequirement"] = unknown; } else { TextCoverLetterQuestionRequirement = parsed; AdditionalData.Remove("textCoverLetterQuestionRequirement"); } } },
             };
         }
         /// <summary>
@@ -67,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsCoverLetterQuestionRequirement>("coverLetterQuestionRequirement", CoverLetterQuestionRequirement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>("customQuestions", CustomQuestions);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaCoverletterquestionsFieldsTextCoverLetterQuestionRequirement>("textCoverLetterQuestionRequirement", TextCoverLetterQuestionRequirement);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

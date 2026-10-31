@@ -11,35 +11,57 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageFollowsFinderFollowee200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("edgeType") is null) { _explicitNullValueEdgeType = default!; _explicitNullProperties?.Remove("edgeType"); }
+            else if (parseNode.GetChildNode("edgeType") is { } nullNodeEdgeType && nullNodeEdgeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeType = null;
+            if (parseNode.GetChildNode("followee") is null) { _explicitNullValueFollowee = default!; _explicitNullProperties?.Remove("followee"); }
+            else if (parseNode.GetChildNode("followee") is { } nullNodeFollowee && nullNodeFollowee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Followee = null;
+            if (parseNode.GetChildNode("follower") is null) { _explicitNullValueFollower = default!; _explicitNullProperties?.Remove("follower"); }
+            else if (parseNode.GetChildNode("follower") is { } nullNodeFollower && nullNodeFollower.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Follower = null;
+            if (parseNode.GetChildNode("lastModifiedAt") is null) { _explicitNullValueLastModifiedAt = default!; _explicitNullProperties?.Remove("lastModifiedAt"); }
+            else if (parseNode.GetChildNode("lastModifiedAt") is { } nullNodeLastModifiedAt && nullNodeLastModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModifiedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The edgeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeType { get; set; }
+        public string? EdgeType { get => _explicitNullValueEdgeType; set { _explicitNullValueEdgeType = value; AdditionalData?.Remove("edgeType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeType"); else _explicitNullProperties?.Remove("edgeType"); } }
+        private string? _explicitNullValueEdgeType = default!;
 #nullable restore
 #else
-        public string EdgeType { get; set; }
+        public string EdgeType { get => _explicitNullValueEdgeType; set { _explicitNullValueEdgeType = value; AdditionalData?.Remove("edgeType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edgeType"); else _explicitNullProperties?.Remove("edgeType"); } }
+        private string _explicitNullValueEdgeType = default!;
 #endif
         /// <summary>The followee property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Followee { get; set; }
+        public string? Followee { get => _explicitNullValueFollowee; set { _explicitNullValueFollowee = value; AdditionalData?.Remove("followee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followee"); else _explicitNullProperties?.Remove("followee"); } }
+        private string? _explicitNullValueFollowee = default!;
 #nullable restore
 #else
-        public string Followee { get; set; }
+        public string Followee { get => _explicitNullValueFollowee; set { _explicitNullValueFollowee = value; AdditionalData?.Remove("followee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followee"); else _explicitNullProperties?.Remove("followee"); } }
+        private string _explicitNullValueFollowee = default!;
 #endif
         /// <summary>The follower property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Follower { get; set; }
+        public string? Follower { get => _explicitNullValueFollower; set { _explicitNullValueFollower = value; AdditionalData?.Remove("follower"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follower"); else _explicitNullProperties?.Remove("follower"); } }
+        private string? _explicitNullValueFollower = default!;
 #nullable restore
 #else
-        public string Follower { get; set; }
+        public string Follower { get => _explicitNullValueFollower; set { _explicitNullValueFollower = value; AdditionalData?.Remove("follower"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follower"); else _explicitNullProperties?.Remove("follower"); } }
+        private string _explicitNullValueFollower = default!;
 #endif
         /// <summary>The lastModifiedAt property</summary>
-        public long? LastModifiedAt { get; set; }
+        public long? LastModifiedAt { get => _explicitNullValueLastModifiedAt; set { _explicitNullValueLastModifiedAt = value; AdditionalData?.Remove("lastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModifiedAt"); else _explicitNullProperties?.Remove("lastModifiedAt"); } }
+        private long? _explicitNullValueLastModifiedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageFollowsFinderFollowee200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -55,7 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageFollowsFinderFollowee200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageFollowsFinderFollowee200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageFollowsFinderFollowee200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("followee", Followee);
             writer.WriteStringValue("follower", Follower);
             writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,13 +12,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dimensionType") is null) { _explicitNullValueDimensionType = default!; _explicitNullProperties?.Remove("dimensionType"); }
+            else if (parseNode.GetChildNode("dimensionType") is { } nullNodeDimensionType && nullNodeDimensionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionType = null;
+            if (parseNode.GetChildNode("dimensionValue") is null) { _explicitNullValueDimensionValue = default!; _explicitNullProperties?.Remove("dimensionValue"); }
+            else if (parseNode.GetChildNode("dimensionValue") is { } nullNodeDimensionValue && nullNodeDimensionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the type of demographic dimension. Possible values are ORGANIZATIONINDUSTRYSENIORITYREGIONORGANIZATION_STAFF_COUNT_RANGEDocumented type: enumRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType? DimensionType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType? DimensionType { get => _explicitNullValueDimensionType; set { _explicitNullValueDimensionType = value; AdditionalData?.Remove("dimensionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensionType"); else _explicitNullProperties?.Remove("dimensionType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType? _explicitNullValueDimensionType = default!;
         /// <summary>Represents the URN value of the demographic dimension. The URN type is determined by the dimension type.ORGANIZATION: OrganizationUrnINDUSTRY: IndustryUrnTITLE: TitleUrn or SuperTitleUrnSENIORITY: SeniorityUrnREGION: GeoUrnORGANIZATION_STAFF_COUNT_RANGE: StaffCountRangeUrnDocumented type: URNRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue? DimensionValue { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue? DimensionValue { get => _explicitNullValueDimensionValue; set { _explicitNullValueDimensionValue = value; AdditionalData?.Remove("dimensionValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensionValue"); else _explicitNullProperties?.Remove("dimensionValue"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue? _explicitNullValueDimensionValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension"/> and sets the default values.
         /// </summary>
@@ -34,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,8 +57,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dimensionType", n => { DimensionType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType>(); } },
-                { "dimensionValue", n => { DimensionValue = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue>(); } },
+                { "dimensionType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDimensionType = default; _explicitNullProperties?.Remove("dimensionType"); AdditionalData["dimensionType"] = unknown; } else { DimensionType = parsed; AdditionalData.Remove("dimensionType"); } } },
+                { "dimensionValue", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDimensionValue = default; _explicitNullProperties?.Remove("dimensionValue"); AdditionalData["dimensionValue"] = unknown; } else { DimensionValue = parsed; AdditionalData.Remove("dimensionValue"); } } },
             };
         }
         /// <summary>
@@ -57,6 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionType>("dimensionType", DimensionType);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimensionDimensionValue>("dimensionValue", DimensionValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

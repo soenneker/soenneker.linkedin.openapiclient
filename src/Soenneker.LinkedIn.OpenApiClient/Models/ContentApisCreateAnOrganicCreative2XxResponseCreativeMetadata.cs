@@ -12,56 +12,87 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentApisCreateAnOrganicCreative2XxResponseCreativeMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adFormat") is null) { _explicitNullValueAdFormat = default!; _explicitNullProperties?.Remove("adFormat"); }
+            else if (parseNode.GetChildNode("adFormat") is { } nullNodeAdFormat && nullNodeAdFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdFormat = null;
+            if (parseNode.GetChildNode("adHeadline") is null) { _explicitNullValueAdHeadline = default!; _explicitNullProperties?.Remove("adHeadline"); }
+            else if (parseNode.GetChildNode("adHeadline") is { } nullNodeAdHeadline && nullNodeAdHeadline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdHeadline = null;
+            if (parseNode.GetChildNode("adIntroductionText") is null) { _explicitNullValueAdIntroductionText = default!; _explicitNullProperties?.Remove("adIntroductionText"); }
+            else if (parseNode.GetChildNode("adIntroductionText") is { } nullNodeAdIntroductionText && nullNodeAdIntroductionText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdIntroductionText = null;
+            if (parseNode.GetChildNode("adLine") is null) { _explicitNullValueAdLine = default!; _explicitNullProperties?.Remove("adLine"); }
+            else if (parseNode.GetChildNode("adLine") is { } nullNodeAdLine && nullNodeAdLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdLine = null;
+            if (parseNode.GetChildNode("assetURL") is null) { _explicitNullValueAssetURL = default!; _explicitNullProperties?.Remove("assetURL"); }
+            else if (parseNode.GetChildNode("assetURL") is { } nullNodeAssetURL && nullNodeAssetURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetURL = null;
+            if (parseNode.GetChildNode("landingPage") is null) { _explicitNullValueLandingPage = default!; _explicitNullProperties?.Remove("landingPage"); }
+            else if (parseNode.GetChildNode("landingPage") is { } nullNodeLandingPage && nullNodeLandingPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad format of the creative, for example TEXT_AD, SPOTLIGHT_V2, or SPONSORED_VIDEO.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdFormat { get; set; }
+        public string? AdFormat { get => _explicitNullValueAdFormat; set { _explicitNullValueAdFormat = value; AdditionalData?.Remove("adFormat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adFormat"); else _explicitNullProperties?.Remove("adFormat"); } }
+        private string? _explicitNullValueAdFormat = default!;
 #nullable restore
 #else
-        public string AdFormat { get; set; }
+        public string AdFormat { get => _explicitNullValueAdFormat; set { _explicitNullValueAdFormat = value; AdditionalData?.Remove("adFormat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adFormat"); else _explicitNullProperties?.Remove("adFormat"); } }
+        private string _explicitNullValueAdFormat = default!;
 #endif
         /// <summary>Headline of the ad. Depending on the ad format, this is the title, a custom string, or the title of the underlying content.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdHeadline { get; set; }
+        public string? AdHeadline { get => _explicitNullValueAdHeadline; set { _explicitNullValueAdHeadline = value; AdditionalData?.Remove("adHeadline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adHeadline"); else _explicitNullProperties?.Remove("adHeadline"); } }
+        private string? _explicitNullValueAdHeadline = default!;
 #nullable restore
 #else
-        public string AdHeadline { get; set; }
+        public string AdHeadline { get => _explicitNullValueAdHeadline; set { _explicitNullValueAdHeadline = value; AdditionalData?.Remove("adHeadline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adHeadline"); else _explicitNullProperties?.Remove("adHeadline"); } }
+        private string _explicitNullValueAdHeadline = default!;
 #endif
         /// <summary>Introductory text of the ad. Depending on the ad format, this is the commentary, forum name, call to action, or company name.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdIntroductionText { get; set; }
+        public string? AdIntroductionText { get => _explicitNullValueAdIntroductionText; set { _explicitNullValueAdIntroductionText = value; AdditionalData?.Remove("adIntroductionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adIntroductionText"); else _explicitNullProperties?.Remove("adIntroductionText"); } }
+        private string? _explicitNullValueAdIntroductionText = default!;
 #nullable restore
 #else
-        public string AdIntroductionText { get; set; }
+        public string AdIntroductionText { get => _explicitNullValueAdIntroductionText; set { _explicitNullValueAdIntroductionText = value; AdditionalData?.Remove("adIntroductionText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adIntroductionText"); else _explicitNullProperties?.Remove("adIntroductionText"); } }
+        private string _explicitNullValueAdIntroductionText = default!;
 #endif
         /// <summary>Supporting body text of the ad. Populated for TEXT_AD (body text) and SPOTLIGHT_V2 (description).Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdLine { get; set; }
+        public string? AdLine { get => _explicitNullValueAdLine; set { _explicitNullValueAdLine = value; AdditionalData?.Remove("adLine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adLine"); else _explicitNullProperties?.Remove("adLine"); } }
+        private string? _explicitNullValueAdLine = default!;
 #nullable restore
 #else
-        public string AdLine { get; set; }
+        public string AdLine { get => _explicitNullValueAdLine; set { _explicitNullValueAdLine = value; AdditionalData?.Remove("adLine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adLine"); else _explicitNullProperties?.Remove("adLine"); } }
+        private string _explicitNullValueAdLine = default!;
 #endif
         /// <summary>URL of the primary visual asset of the ad.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetURL { get; set; }
+        public string? AssetURL { get => _explicitNullValueAssetURL; set { _explicitNullValueAssetURL = value; AdditionalData?.Remove("assetURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetURL"); else _explicitNullProperties?.Remove("assetURL"); } }
+        private string? _explicitNullValueAssetURL = default!;
 #nullable restore
 #else
-        public string AssetURL { get; set; }
+        public string AssetURL { get => _explicitNullValueAssetURL; set { _explicitNullValueAssetURL = value; AdditionalData?.Remove("assetURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetURL"); else _explicitNullProperties?.Remove("assetURL"); } }
+        private string _explicitNullValueAssetURL = default!;
 #endif
         /// <summary>The destination URL a member is taken to when they click the ad.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LandingPage { get; set; }
+        public string? LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; AdditionalData?.Remove("landingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
+        private string? _explicitNullValueLandingPage = default!;
 #nullable restore
 #else
-        public string LandingPage { get; set; }
+        public string LandingPage { get => _explicitNullValueLandingPage; set { _explicitNullValueLandingPage = value; AdditionalData?.Remove("landingPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPage"); else _explicitNullProperties?.Remove("landingPage"); } }
+        private string _explicitNullValueLandingPage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeMetadata"/> and sets the default values.
@@ -78,7 +109,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreative2XxResponseCreativeMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +140,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("adLine", AdLine);
             writer.WriteStringValue("assetURL", AssetURL);
             writer.WriteStringValue("landingPage", LandingPage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

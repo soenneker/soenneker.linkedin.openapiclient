@@ -11,20 +11,37 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("firstByte") is null) { _explicitNullValueFirstByte = default!; _explicitNullProperties?.Remove("firstByte"); }
+            else if (parseNode.GetChildNode("firstByte") is { } nullNodeFirstByte && nullNodeFirstByte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstByte = null;
+            if (parseNode.GetChildNode("lastByte") is null) { _explicitNullValueLastByte = default!; _explicitNullProperties?.Remove("lastByte"); }
+            else if (parseNode.GetChildNode("lastByte") is { } nullNodeLastByte && nullNodeLastByte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastByte = null;
+            if (parseNode.GetChildNode("uploadUrl") is null) { _explicitNullValueUploadUrl = default!; _explicitNullProperties?.Remove("uploadUrl"); }
+            else if (parseNode.GetChildNode("uploadUrl") is { } nullNodeUploadUrl && nullNodeUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The firstByte property</summary>
-        public long? FirstByte { get; set; }
+        public long? FirstByte { get => _explicitNullValueFirstByte; set { _explicitNullValueFirstByte = value; AdditionalData?.Remove("firstByte"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstByte"); else _explicitNullProperties?.Remove("firstByte"); } }
+        private long? _explicitNullValueFirstByte = default!;
         /// <summary>The lastByte property</summary>
-        public long? LastByte { get; set; }
+        public long? LastByte { get => _explicitNullValueLastByte; set { _explicitNullValueLastByte = value; AdditionalData?.Remove("lastByte"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastByte"); else _explicitNullProperties?.Remove("lastByte"); } }
+        private long? _explicitNullValueLastByte = default!;
         /// <summary>The uploadUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadUrl { get; set; }
+        public string? UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; AdditionalData?.Remove("uploadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadUrl"); else _explicitNullProperties?.Remove("uploadUrl"); } }
+        private string? _explicitNullValueUploadUrl = default!;
 #nullable restore
 #else
-        public string UploadUrl { get; set; }
+        public string UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; AdditionalData?.Remove("uploadUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploadUrl"); else _explicitNullProperties?.Remove("uploadUrl"); } }
+        private string _explicitNullValueUploadUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem"/> and sets the default values.
@@ -41,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("firstByte", FirstByte);
             writer.WriteLongValue("lastByte", LastByte);
             writer.WriteStringValue("uploadUrl", UploadUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

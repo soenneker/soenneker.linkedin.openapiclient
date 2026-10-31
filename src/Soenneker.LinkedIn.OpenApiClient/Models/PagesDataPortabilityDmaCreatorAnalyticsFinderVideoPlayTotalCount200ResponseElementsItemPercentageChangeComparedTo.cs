@@ -12,45 +12,74 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateRange") is null) { _explicitNullValueDateRange = default!; _explicitNullProperties?.Remove("dateRange"); }
+            else if (parseNode.GetChildNode("dateRange") is { } nullNodeDateRange && nullNodeDateRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateRange = null;
+            if (parseNode.GetChildNode("demographicDimension") is null) { _explicitNullValueDemographicDimension = default!; _explicitNullProperties?.Remove("demographicDimension"); }
+            else if (parseNode.GetChildNode("demographicDimension") is { } nullNodeDemographicDimension && nullNodeDemographicDimension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DemographicDimension = null;
+            if (parseNode.GetChildNode("metric") is null) { _explicitNullValueMetric = default!; _explicitNullProperties?.Remove("metric"); }
+            else if (parseNode.GetChildNode("metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("percentageChange") is null) { _explicitNullValuePercentageChange = default!; _explicitNullProperties?.Remove("percentageChange"); }
+            else if (parseNode.GetChildNode("percentageChange") is { } nullNodePercentageChange && nullNodePercentageChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentageChange = null;
+            if (parseNode.GetChildNode("targetEntity") is null) { _explicitNullValueTargetEntity = default!; _explicitNullProperties?.Remove("targetEntity"); }
+            else if (parseNode.GetChildNode("targetEntity") is { } nullNodeTargetEntity && nullNodeTargetEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetEntity = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date range that the analytics data point represents. If the value covers the whole analytics data retention period of the target entity, this field is not set.Documented type: DateRangeRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange? DateRange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange? DateRange { get => _explicitNullValueDateRange; set { _explicitNullValueDateRange = value; AdditionalData?.Remove("dateRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateRange"); else _explicitNullProperties?.Remove("dateRange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange? _explicitNullValueDateRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange DateRange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange DateRange { get => _explicitNullValueDateRange; set { _explicitNullValueDateRange = value; AdditionalData?.Remove("dateRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateRange"); else _explicitNullProperties?.Remove("dateRange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange _explicitNullValueDateRange = default!;
 #endif
         /// <summary>The dimension of the analytics data point. The field is present only if the requested queryType is ACTOR_DEMOGRAPHICSDocumented type: DemographicDimensionRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension? DemographicDimension { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension? DemographicDimension { get => _explicitNullValueDemographicDimension; set { _explicitNullValueDemographicDimension = value; AdditionalData?.Remove("demographicDimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographicDimension"); else _explicitNullProperties?.Remove("demographicDimension"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension? _explicitNullValueDemographicDimension = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension DemographicDimension { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension DemographicDimension { get => _explicitNullValueDemographicDimension; set { _explicitNullValueDemographicDimension = value; AdditionalData?.Remove("demographicDimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographicDimension"); else _explicitNullProperties?.Remove("demographicDimension"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension _explicitNullValueDemographicDimension = default!;
 #endif
         /// <summary>The metric type of analytics data point represents. Possible values are VIDEO_PLAYVIDEO_WATCH_TIMEARTICLE_VIEWNEWSLETTER_ARTICLE_VIEWNEWSLETTER_IMPRESSIONNEWSLETTER_SUBSCRIBERNEWSLETTER_ENGAGEMENTVIDEO_VIEWERARTICLE_VIEWERDocumented type: enumRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointMetric? Metric { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointMetric? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; AdditionalData?.Remove("metric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointMetric? _explicitNullValueMetric = default!;
         /// <summary>The percentage change of the analytics data point. The field is missing if the percentage change is not available.Documented type: PercentageChangeRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange? PercentageChange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange? PercentageChange { get => _explicitNullValuePercentageChange; set { _explicitNullValuePercentageChange = value; AdditionalData?.Remove("percentageChange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentageChange"); else _explicitNullProperties?.Remove("percentageChange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange? _explicitNullValuePercentageChange = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange PercentageChange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange PercentageChange { get => _explicitNullValuePercentageChange; set { _explicitNullValuePercentageChange = value; AdditionalData?.Remove("percentageChange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentageChange"); else _explicitNullProperties?.Remove("percentageChange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange _explicitNullValuePercentageChange = default!;
 #endif
         /// <summary>The target entity that the analytics data point is for. The URN type is determined by the content type:If the data point is for a video, this field is a ugc post URN (urn:li:ugcPost:123)If the data point is for an article, this field is an article URN (urn:li:article:123 or urn:li:linkedArticleUrn:456)If the data point is for a newsletter, this field is an contentSeries URN (urn:li:contentSeries:123)Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetEntity { get; set; }
+        public string? TargetEntity { get => _explicitNullValueTargetEntity; set { _explicitNullValueTargetEntity = value; AdditionalData?.Remove("targetEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetEntity"); else _explicitNullProperties?.Remove("targetEntity"); } }
+        private string? _explicitNullValueTargetEntity = default!;
 #nullable restore
 #else
-        public string TargetEntity { get; set; }
+        public string TargetEntity { get => _explicitNullValueTargetEntity; set { _explicitNullValueTargetEntity = value; AdditionalData?.Remove("targetEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetEntity"); else _explicitNullProperties?.Remove("targetEntity"); } }
+        private string _explicitNullValueTargetEntity = default!;
 #endif
         /// <summary>The value of the analytics data point. It is either an integer count or a float percentage number.Documented type: Union [count: long, percentage: float]Requirement: Yes</summary>
-        public long? Value { get; set; }
+        public long? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private long? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo"/> and sets the default values.
         /// </summary>
@@ -66,7 +95,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChangeComparedTo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +107,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "dateRange", n => { DateRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange.CreateFromDiscriminatorValue); } },
                 { "demographicDimension", n => { DemographicDimension = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension.CreateFromDiscriminatorValue); } },
-                { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointMetric>(); } },
+                { "metric", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointMetric>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMetric = default; _explicitNullProperties?.Remove("metric"); AdditionalData["metric"] = unknown; } else { Metric = parsed; AdditionalData.Remove("metric"); } } },
                 { "percentageChange", n => { PercentageChange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange.CreateFromDiscriminatorValue); } },
                 { "targetEntity", n => { TargetEntity = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetLongValue(); } },
@@ -97,6 +126,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointPercentageChange>("percentageChange", PercentageChange);
             writer.WriteStringValue("targetEntity", TargetEntity);
             writer.WriteLongValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

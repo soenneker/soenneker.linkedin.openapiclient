@@ -11,150 +11,234 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectSyncCandidatesRequestAnyOf2EntitiesAtsCandidateIdAtsCandidateId1001DataProviderAtsIntegrationContextUrnLiOrganization1234567890 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addresses") is null) { _explicitNullValueAddresses = default!; _explicitNullProperties?.Remove("addresses"); }
+            else if (parseNode.GetChildNode("addresses") is { } nullNodeAddresses && nullNodeAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Addresses = null;
+            if (parseNode.GetChildNode("atsCreatedAt") is null) { _explicitNullValueAtsCreatedAt = default!; _explicitNullProperties?.Remove("atsCreatedAt"); }
+            else if (parseNode.GetChildNode("atsCreatedAt") is { } nullNodeAtsCreatedAt && nullNodeAtsCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AtsCreatedAt = null;
+            if (parseNode.GetChildNode("atsLastModifiedAt") is null) { _explicitNullValueAtsLastModifiedAt = default!; _explicitNullProperties?.Remove("atsLastModifiedAt"); }
+            else if (parseNode.GetChildNode("atsLastModifiedAt") is { } nullNodeAtsLastModifiedAt && nullNodeAtsLastModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AtsLastModifiedAt = null;
+            if (parseNode.GetChildNode("currentCompanyName") is null) { _explicitNullValueCurrentCompanyName = default!; _explicitNullProperties?.Remove("currentCompanyName"); }
+            else if (parseNode.GetChildNode("currentCompanyName") is { } nullNodeCurrentCompanyName && nullNodeCurrentCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCompanyName = null;
+            if (parseNode.GetChildNode("currentJobTitle") is null) { _explicitNullValueCurrentJobTitle = default!; _explicitNullProperties?.Remove("currentJobTitle"); }
+            else if (parseNode.GetChildNode("currentJobTitle") is { } nullNodeCurrentJobTitle && nullNodeCurrentJobTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentJobTitle = null;
+            if (parseNode.GetChildNode("doNotContact") is null) { _explicitNullValueDoNotContact = default!; _explicitNullProperties?.Remove("doNotContact"); }
+            else if (parseNode.GetChildNode("doNotContact") is { } nullNodeDoNotContact && nullNodeDoNotContact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoNotContact = null;
+            if (parseNode.GetChildNode("emailAddresses") is null) { _explicitNullValueEmailAddresses = default!; _explicitNullProperties?.Remove("emailAddresses"); }
+            else if (parseNode.GetChildNode("emailAddresses") is { } nullNodeEmailAddresses && nullNodeEmailAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddresses = null;
+            if (parseNode.GetChildNode("externalProfileUrl") is null) { _explicitNullValueExternalProfileUrl = default!; _explicitNullProperties?.Remove("externalProfileUrl"); }
+            else if (parseNode.GetChildNode("externalProfileUrl") is { } nullNodeExternalProfileUrl && nullNodeExternalProfileUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalProfileUrl = null;
+            if (parseNode.GetChildNode("firstName") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("firstName"); }
+            else if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("lastName") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("lastName"); }
+            else if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("linkedInProfileUrl") is null) { _explicitNullValueLinkedInProfileUrl = default!; _explicitNullProperties?.Remove("linkedInProfileUrl"); }
+            else if (parseNode.GetChildNode("linkedInProfileUrl") is { } nullNodeLinkedInProfileUrl && nullNodeLinkedInProfileUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedInProfileUrl = null;
+            if (parseNode.GetChildNode("manualMatchedMember") is null) { _explicitNullValueManualMatchedMember = default!; _explicitNullProperties?.Remove("manualMatchedMember"); }
+            else if (parseNode.GetChildNode("manualMatchedMember") is { } nullNodeManualMatchedMember && nullNodeManualMatchedMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManualMatchedMember = null;
+            if (parseNode.GetChildNode("matchedMembers") is null) { _explicitNullValueMatchedMembers = default!; _explicitNullProperties?.Remove("matchedMembers"); }
+            else if (parseNode.GetChildNode("matchedMembers") is { } nullNodeMatchedMembers && nullNodeMatchedMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchedMembers = null;
+            if (parseNode.GetChildNode("middleInitial") is null) { _explicitNullValueMiddleInitial = default!; _explicitNullProperties?.Remove("middleInitial"); }
+            else if (parseNode.GetChildNode("middleInitial") is { } nullNodeMiddleInitial && nullNodeMiddleInitial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MiddleInitial = null;
+            if (parseNode.GetChildNode("phoneNumbers") is null) { _explicitNullValuePhoneNumbers = default!; _explicitNullProperties?.Remove("phoneNumbers"); }
+            else if (parseNode.GetChildNode("phoneNumbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("prefix") is null) { _explicitNullValuePrefix = default!; _explicitNullProperties?.Remove("prefix"); }
+            else if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
+            if (parseNode.GetChildNode("skills") is null) { _explicitNullValueSkills = default!; _explicitNullProperties?.Remove("skills"); }
+            else if (parseNode.GetChildNode("skills") is { } nullNodeSkills && nullNodeSkills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skills = null;
+            if (parseNode.GetChildNode("sources") is null) { _explicitNullValueSources = default!; _explicitNullProperties?.Remove("sources"); }
+            else if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
+            if (parseNode.GetChildNode("suffix") is null) { _explicitNullValueSuffix = default!; _explicitNullProperties?.Remove("suffix"); }
+            else if (parseNode.GetChildNode("suffix") is { } nullNodeSuffix && nullNodeSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suffix = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of personal addresses of the candidate. All fields are optional but must comply with the following rules: Address.Line1 is required if Line 2 or Line3 or Line4 are provided.Address.Line2 is required if Line3 or Line4 are provided.Address.Line3 is required if Line4 is provided.Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.At most 30 addresses can be provided.. May be an empty array.Documented type: Address[]Requirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Addresses { get; set; }
+        public UntypedNode? Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; AdditionalData?.Remove("addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        private UntypedNode? _explicitNullValueAddresses = default!;
 #nullable restore
 #else
-        public UntypedNode Addresses { get; set; }
+        public UntypedNode Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; AdditionalData?.Remove("addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        private UntypedNode _explicitNullValueAddresses = default!;
 #endif
         /// <summary>The timestamp when the content was created within external CRM, in milliseconds since Unix Epoch. Value must be greater than zero. Value cannot be more than atsLastModifiedAt.Documented type: TimeRequirement: Required</summary>
-        public long? AtsCreatedAt { get; set; }
+        public long? AtsCreatedAt { get => _explicitNullValueAtsCreatedAt; set { _explicitNullValueAtsCreatedAt = value; AdditionalData?.Remove("atsCreatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("atsCreatedAt"); else _explicitNullProperties?.Remove("atsCreatedAt"); } }
+        private long? _explicitNullValueAtsCreatedAt = default!;
         /// <summary>The timestamp when the content was last modified within external CRM, in milliseconds since Unix Epoch.Documented type: TimeRequirement: Required</summary>
-        public long? AtsLastModifiedAt { get; set; }
+        public long? AtsLastModifiedAt { get => _explicitNullValueAtsLastModifiedAt; set { _explicitNullValueAtsLastModifiedAt = value; AdditionalData?.Remove("atsLastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("atsLastModifiedAt"); else _explicitNullProperties?.Remove("atsLastModifiedAt"); } }
+        private long? _explicitNullValueAtsLastModifiedAt = default!;
         /// <summary>The candidate&apos;s current company name. If specified, string value cannot be empty or blank spaces.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentCompanyName { get; set; }
+        public string? CurrentCompanyName { get => _explicitNullValueCurrentCompanyName; set { _explicitNullValueCurrentCompanyName = value; AdditionalData?.Remove("currentCompanyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCompanyName"); else _explicitNullProperties?.Remove("currentCompanyName"); } }
+        private string? _explicitNullValueCurrentCompanyName = default!;
 #nullable restore
 #else
-        public string CurrentCompanyName { get; set; }
+        public string CurrentCompanyName { get => _explicitNullValueCurrentCompanyName; set { _explicitNullValueCurrentCompanyName = value; AdditionalData?.Remove("currentCompanyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCompanyName"); else _explicitNullProperties?.Remove("currentCompanyName"); } }
+        private string _explicitNullValueCurrentCompanyName = default!;
 #endif
         /// <summary>The candidate&apos;s current job title. String value cannot be empty or blank spaces. String value cannot be empty or blank spaces.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentJobTitle { get; set; }
+        public string? CurrentJobTitle { get => _explicitNullValueCurrentJobTitle; set { _explicitNullValueCurrentJobTitle = value; AdditionalData?.Remove("currentJobTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentJobTitle"); else _explicitNullProperties?.Remove("currentJobTitle"); } }
+        private string? _explicitNullValueCurrentJobTitle = default!;
 #nullable restore
 #else
-        public string CurrentJobTitle { get; set; }
+        public string CurrentJobTitle { get => _explicitNullValueCurrentJobTitle; set { _explicitNullValueCurrentJobTitle = value; AdditionalData?.Remove("currentJobTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentJobTitle"); else _explicitNullProperties?.Remove("currentJobTitle"); } }
+        private string _explicitNullValueCurrentJobTitle = default!;
 #endif
         /// <summary>Flag indicating whether the candidate is willing to be contacted.Documented type: BooleanRequirement: Optional</summary>
-        public bool? DoNotContact { get; set; }
+        public bool? DoNotContact { get => _explicitNullValueDoNotContact; set { _explicitNullValueDoNotContact = value; AdditionalData?.Remove("doNotContact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doNotContact"); else _explicitNullProperties?.Remove("doNotContact"); } }
+        private bool? _explicitNullValueDoNotContact = default!;
         /// <summary>A list of emails that belong to the candidate. Emails must follow X@X.X pattern. 30 email addresses max.Documented type: String[]Requirement: Required unless manualMatchedMember is provided</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EmailAddresses { get; set; }
+        public List<string>? EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; AdditionalData?.Remove("emailAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailAddresses"); else _explicitNullProperties?.Remove("emailAddresses"); } }
+        private List<string>? _explicitNullValueEmailAddresses = default!;
 #nullable restore
 #else
-        public List<string> EmailAddresses { get; set; }
+        public List<string> EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; AdditionalData?.Remove("emailAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailAddresses"); else _explicitNullProperties?.Remove("emailAddresses"); } }
+        private List<string> _explicitNullValueEmailAddresses = default!;
 #endif
         /// <summary>Link to Profile in CRM An URL that points to the candidate&apos;s external profile page, other than the Linkedin profile.Documented type: UrlRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalProfileUrl { get; set; }
+        public string? ExternalProfileUrl { get => _explicitNullValueExternalProfileUrl; set { _explicitNullValueExternalProfileUrl = value; AdditionalData?.Remove("externalProfileUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalProfileUrl"); else _explicitNullProperties?.Remove("externalProfileUrl"); } }
+        private string? _explicitNullValueExternalProfileUrl = default!;
 #nullable restore
 #else
-        public string ExternalProfileUrl { get; set; }
+        public string ExternalProfileUrl { get => _explicitNullValueExternalProfileUrl; set { _explicitNullValueExternalProfileUrl = value; AdditionalData?.Remove("externalProfileUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalProfileUrl"); else _explicitNullProperties?.Remove("externalProfileUrl"); } }
+        private string _explicitNullValueExternalProfileUrl = default!;
 #endif
         /// <summary>The first name of the candidate within the external CRM. String value cannot be empty or blank spaces.Documented type: StringRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private string? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private string _explicitNullValueFirstName = default!;
 #endif
         /// <summary>The last name of the candidate within the external CRM. Optional if the candidate does not have a last name. String value cannot be empty or blank spaces.Documented type: StringRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private string? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private string _explicitNullValueLastName = default!;
 #endif
         /// <summary>A URL that points to the candidate&apos;s LinkedIn profile page. Can be used to facilitate profile matching within LinkedIn. String value cannot be empty or blank spaces.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkedInProfileUrl { get; set; }
+        public string? LinkedInProfileUrl { get => _explicitNullValueLinkedInProfileUrl; set { _explicitNullValueLinkedInProfileUrl = value; AdditionalData?.Remove("linkedInProfileUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedInProfileUrl"); else _explicitNullProperties?.Remove("linkedInProfileUrl"); } }
+        private string? _explicitNullValueLinkedInProfileUrl = default!;
 #nullable restore
 #else
-        public string LinkedInProfileUrl { get; set; }
+        public string LinkedInProfileUrl { get => _explicitNullValueLinkedInProfileUrl; set { _explicitNullValueLinkedInProfileUrl = value; AdditionalData?.Remove("linkedInProfileUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedInProfileUrl"); else _explicitNullProperties?.Remove("linkedInProfileUrl"); } }
+        private string _explicitNullValueLinkedInProfileUrl = default!;
 #endif
         /// <summary>The member selected manually from the TCRM Profile Widget by a CRM user for this candidate. Must match format urn:li:person:{id}Documented type: PersonUrnRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManualMatchedMember { get; set; }
+        public string? ManualMatchedMember { get => _explicitNullValueManualMatchedMember; set { _explicitNullValueManualMatchedMember = value; AdditionalData?.Remove("manualMatchedMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manualMatchedMember"); else _explicitNullProperties?.Remove("manualMatchedMember"); } }
+        private string? _explicitNullValueManualMatchedMember = default!;
 #nullable restore
 #else
-        public string ManualMatchedMember { get; set; }
+        public string ManualMatchedMember { get => _explicitNullValueManualMatchedMember; set { _explicitNullValueManualMatchedMember = value; AdditionalData?.Remove("manualMatchedMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manualMatchedMember"); else _explicitNullProperties?.Remove("manualMatchedMember"); } }
+        private string _explicitNullValueManualMatchedMember = default!;
 #endif
         /// <summary>A list of LinkedIn members that can be matched to this candidate. If null, the asynchronous process of finding matched members is still being processed. If empty, no LinkedIn member can be matched to this candidate. Items are typed urns (urn:li:person:{id}, etc.). Note: This field should not be present in sync request bodies, only responsesDocumented type: PersonUrn[]Requirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MatchedMembers { get; set; }
+        public List<string>? MatchedMembers { get => _explicitNullValueMatchedMembers; set { _explicitNullValueMatchedMembers = value; AdditionalData?.Remove("matchedMembers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedMembers"); else _explicitNullProperties?.Remove("matchedMembers"); } }
+        private List<string>? _explicitNullValueMatchedMembers = default!;
 #nullable restore
 #else
-        public List<string> MatchedMembers { get; set; }
+        public List<string> MatchedMembers { get => _explicitNullValueMatchedMembers; set { _explicitNullValueMatchedMembers = value; AdditionalData?.Remove("matchedMembers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedMembers"); else _explicitNullProperties?.Remove("matchedMembers"); } }
+        private List<string> _explicitNullValueMatchedMembers = default!;
 #endif
         /// <summary>The middle initial of the candidate. String value cannot be empty or blank spaces.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleInitial { get; set; }
+        public string? MiddleInitial { get => _explicitNullValueMiddleInitial; set { _explicitNullValueMiddleInitial = value; AdditionalData?.Remove("middleInitial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middleInitial"); else _explicitNullProperties?.Remove("middleInitial"); } }
+        private string? _explicitNullValueMiddleInitial = default!;
 #nullable restore
 #else
-        public string MiddleInitial { get; set; }
+        public string MiddleInitial { get => _explicitNullValueMiddleInitial; set { _explicitNullValueMiddleInitial = value; AdditionalData?.Remove("middleInitial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middleInitial"); else _explicitNullProperties?.Remove("middleInitial"); } }
+        private string _explicitNullValueMiddleInitial = default!;
 #endif
         /// <summary>A list of phone numbers of the candidate. Format must follow com.google.i18n.phonenumbers standard. At most 30 phone numbers can be provided. May be an empty array.Documented type: PhoneNumber[]Requirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PhoneNumbers { get; set; }
+        public UntypedNode? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; AdditionalData?.Remove("phoneNumbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumbers"); else _explicitNullProperties?.Remove("phoneNumbers"); } }
+        private UntypedNode? _explicitNullValuePhoneNumbers = default!;
 #nullable restore
 #else
-        public UntypedNode PhoneNumbers { get; set; }
+        public UntypedNode PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; AdditionalData?.Remove("phoneNumbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumbers"); else _explicitNullProperties?.Remove("phoneNumbers"); } }
+        private UntypedNode _explicitNullValuePhoneNumbers = default!;
 #endif
         /// <summary>The prefix name of the candidate, i.e. Mr, Mrs, etc.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get; set; }
+        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        private string? _explicitNullValuePrefix = default!;
 #nullable restore
 #else
-        public string Prefix { get; set; }
+        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        private string _explicitNullValuePrefix = default!;
 #endif
         /// <summary>Array of candidate&apos;s skills as a string, e.g. [&quot;Java&quot;,&quot;Critical Thinking&quot;].Documented type: String[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Skills { get; set; }
+        public List<string>? Skills { get => _explicitNullValueSkills; set { _explicitNullValueSkills = value; AdditionalData?.Remove("skills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skills"); else _explicitNullProperties?.Remove("skills"); } }
+        private List<string>? _explicitNullValueSkills = default!;
 #nullable restore
 #else
-        public List<string> Skills { get; set; }
+        public List<string> Skills { get => _explicitNullValueSkills; set { _explicitNullValueSkills = value; AdditionalData?.Remove("skills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skills"); else _explicitNullProperties?.Remove("skills"); } }
+        private List<string> _explicitNullValueSkills = default!;
 #endif
         /// <summary>List of Candidate&apos;s source.Documented type: Source[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Sources { get; set; }
+        public UntypedNode? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; AdditionalData?.Remove("sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private UntypedNode? _explicitNullValueSources = default!;
 #nullable restore
 #else
-        public UntypedNode Sources { get; set; }
+        public UntypedNode Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; AdditionalData?.Remove("sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private UntypedNode _explicitNullValueSources = default!;
 #endif
         /// <summary>The suffix name of the candidate, i.e. Eng, MD, etc.Documented type: StringRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Suffix { get; set; }
+        public string? Suffix { get => _explicitNullValueSuffix; set { _explicitNullValueSuffix = value; AdditionalData?.Remove("suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suffix"); else _explicitNullProperties?.Remove("suffix"); } }
+        private string? _explicitNullValueSuffix = default!;
 #nullable restore
 #else
-        public string Suffix { get; set; }
+        public string Suffix { get => _explicitNullValueSuffix; set { _explicitNullValueSuffix = value; AdditionalData?.Remove("suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suffix"); else _explicitNullProperties?.Remove("suffix"); } }
+        private string _explicitNullValueSuffix = default!;
 #endif
         /// <summary>Array of candidate&apos;s tags as strings, e.g. [&quot;tag-1&quot;,&quot;tag-2&quot;].Documented type: String[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRequestAnyOf2EntitiesAtsCandidateIdAtsCandidateId1001DataProviderAtsIntegrationContextUrnLiOrganization1234567890"/> and sets the default values.
@@ -171,7 +255,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRequestAnyOf2EntitiesAtsCandidateIdAtsCandidateId1001DataProviderAtsIntegrationContextUrnLiOrganization1234567890 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRequestAnyOf2EntitiesAtsCandidateIdAtsCandidateId1001DataProviderAtsIntegrationContextUrnLiOrganization1234567890();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRequestAnyOf2EntitiesAtsCandidateIdAtsCandidateId1001DataProviderAtsIntegrationContextUrnLiOrganization1234567890(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -230,6 +314,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("sources", Sources);
             writer.WriteStringValue("suffix", Suffix);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

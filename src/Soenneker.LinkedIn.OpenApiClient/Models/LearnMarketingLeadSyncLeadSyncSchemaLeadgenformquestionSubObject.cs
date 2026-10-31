@@ -11,64 +11,107 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
+            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("predefinedField") is null) { _explicitNullValuePredefinedField = default!; _explicitNullProperties?.Remove("predefinedField"); }
+            else if (parseNode.GetChildNode("predefinedField") is { } nullNodePredefinedField && nullNodePredefinedField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PredefinedField = null;
+            if (parseNode.GetChildNode("question") is null) { _explicitNullValueQuestion = default!; _explicitNullProperties?.Remove("question"); }
+            else if (parseNode.GetChildNode("question") is { } nullNodeQuestion && nullNodeQuestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Question = null;
+            if (parseNode.GetChildNode("questionDetails") is null) { _explicitNullValueQuestionDetails = default!; _explicitNullProperties?.Remove("questionDetails"); }
+            else if (parseNode.GetChildNode("questionDetails") is { } nullNodeQuestionDetails && nullNodeQuestionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionDetails = null;
+            if (parseNode.GetChildNode("questionId") is null) { _explicitNullValueQuestionId = default!; _explicitNullProperties?.Remove("questionId"); }
+            else if (parseNode.GetChildNode("questionId") is { } nullNodeQuestionId && nullNodeQuestionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionId = null;
+            if (parseNode.GetChildNode("questionSubmissionCriteria") is null) { _explicitNullValueQuestionSubmissionCriteria = default!; _explicitNullProperties?.Remove("questionSubmissionCriteria"); }
+            else if (parseNode.GetChildNode("questionSubmissionCriteria") is { } nullNodeQuestionSubmissionCriteria && nullNodeQuestionSubmissionCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionSubmissionCriteria = null;
+            if (parseNode.GetChildNode("responseEditable") is null) { _explicitNullValueResponseEditable = default!; _explicitNullProperties?.Remove("responseEditable"); }
+            else if (parseNode.GetChildNode("responseEditable") is { } nullNodeResponseEditable && nullNodeResponseEditable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseEditable = null;
+            if (parseNode.GetChildNode("responseRequired") is null) { _explicitNullValueResponseRequired = default!; _explicitNullProperties?.Remove("responseRequired"); }
+            else if (parseNode.GetChildNode("responseRequired") is { } nullNodeResponseRequired && nullNodeResponseRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseRequired = null;
+            if (parseNode.GetChildNode("textPrompt") is null) { _explicitNullValueTextPrompt = default!; _explicitNullProperties?.Remove("textPrompt"); }
+            else if (parseNode.GetChildNode("textPrompt") is { } nullNodeTextPrompt && nullNodeTextPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextPrompt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(Optional) The label of the question specified by marketers. These labels for the questions are unique within the context of a single form.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get; set; }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get; set; }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>A human-readable, language-agnostic name for the question, used by the form owner to identify it within a form. This name is not visible to the viewer in the rendered form.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>(Optional) The predefined field that the question is requesting. This field is used for specifying viewer specific fields (e.g. First name, City, School, etc.) that should be used to prefill the question response. Customized questions don&apos;t request a predefined field and leave this field empty.Documented type: PredefinedField</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField? PredefinedField { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField? PredefinedField { get => _explicitNullValuePredefinedField; set { _explicitNullValuePredefinedField = value; AdditionalData?.Remove("predefinedField"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("predefinedField"); else _explicitNullProperties?.Remove("predefinedField"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField? _explicitNullValuePredefinedField = default!;
         /// <summary>The question prompt, shown to the viewer.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Question { get; set; }
+        public UntypedNode? Question { get => _explicitNullValueQuestion; set { _explicitNullValueQuestion = value; AdditionalData?.Remove("question"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("question"); else _explicitNullProperties?.Remove("question"); } }
+        private UntypedNode? _explicitNullValueQuestion = default!;
 #nullable restore
 #else
-        public UntypedNode Question { get; set; }
+        public UntypedNode Question { get => _explicitNullValueQuestion; set { _explicitNullValueQuestion = value; AdditionalData?.Remove("question"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("question"); else _explicitNullProperties?.Remove("question"); } }
+        private UntypedNode _explicitNullValueQuestion = default!;
 #endif
         /// <summary>The specific details of the question including default answer, answer restrictions etc. We allow text and selection questions.Documented type: Union of TextQuestionDetails, MultipleChoiceQuestionDetails</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails? QuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails? QuestionDetails { get => _explicitNullValueQuestionDetails; set { _explicitNullValueQuestionDetails = value; AdditionalData?.Remove("questionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionDetails"); else _explicitNullProperties?.Remove("questionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails? _explicitNullValueQuestionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails QuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails QuestionDetails { get => _explicitNullValueQuestionDetails; set { _explicitNullValueQuestionDetails = value; AdditionalData?.Remove("questionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionDetails"); else _explicitNullProperties?.Remove("questionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails _explicitNullValueQuestionDetails = default!;
 #endif
         /// <summary>Unique identifier of the LeadGenFormQuestion.Documented type: long</summary>
-        public long? QuestionId { get; set; }
+        public long? QuestionId { get => _explicitNullValueQuestionId; set { _explicitNullValueQuestionId = value; AdditionalData?.Remove("questionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionId"); else _explicitNullProperties?.Remove("questionId"); } }
+        private long? _explicitNullValueQuestionId = default!;
         /// <summary>(Optional) Criteria for submitting a response to the question. Example: Only non-freemium emails are allowed for the work email question. Applies only to questions using a predefined field.Documented type: Union of WorkEmailSubmissionCriteria</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria? QuestionSubmissionCriteria { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria? QuestionSubmissionCriteria { get => _explicitNullValueQuestionSubmissionCriteria; set { _explicitNullValueQuestionSubmissionCriteria = value; AdditionalData?.Remove("questionSubmissionCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionSubmissionCriteria"); else _explicitNullProperties?.Remove("questionSubmissionCriteria"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria? _explicitNullValueQuestionSubmissionCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria QuestionSubmissionCriteria { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria QuestionSubmissionCriteria { get => _explicitNullValueQuestionSubmissionCriteria; set { _explicitNullValueQuestionSubmissionCriteria = value; AdditionalData?.Remove("questionSubmissionCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionSubmissionCriteria"); else _explicitNullProperties?.Remove("questionSubmissionCriteria"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionSubmissionCriteria _explicitNullValueQuestionSubmissionCriteria = default!;
 #endif
         /// <summary>True if the member viewing the form can edit a pre-filled form response. Default is true.Documented type: boolean</summary>
-        public bool? ResponseEditable { get; set; }
+        public bool? ResponseEditable { get => _explicitNullValueResponseEditable; set { _explicitNullValueResponseEditable = value; AdditionalData?.Remove("responseEditable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseEditable"); else _explicitNullProperties?.Remove("responseEditable"); } }
+        private bool? _explicitNullValueResponseEditable = default!;
         /// <summary>True if the response is required for the question. Default is true.Documented type: boolean</summary>
-        public bool? ResponseRequired { get; set; }
+        public bool? ResponseRequired { get => _explicitNullValueResponseRequired; set { _explicitNullValueResponseRequired = value; AdditionalData?.Remove("responseRequired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseRequired"); else _explicitNullProperties?.Remove("responseRequired"); } }
+        private bool? _explicitNullValueResponseRequired = default!;
         /// <summary>(Optional) The description or hint of the question, shown to the viewer. Empty if no hint is provided.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TextPrompt { get; set; }
+        public UntypedNode? TextPrompt { get => _explicitNullValueTextPrompt; set { _explicitNullValueTextPrompt = value; AdditionalData?.Remove("textPrompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textPrompt"); else _explicitNullProperties?.Remove("textPrompt"); } }
+        private UntypedNode? _explicitNullValueTextPrompt = default!;
 #nullable restore
 #else
-        public UntypedNode TextPrompt { get; set; }
+        public UntypedNode TextPrompt { get => _explicitNullValueTextPrompt; set { _explicitNullValueTextPrompt = value; AdditionalData?.Remove("textPrompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textPrompt"); else _explicitNullProperties?.Remove("textPrompt"); } }
+        private UntypedNode _explicitNullValueTextPrompt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject"/> and sets the default values.
@@ -85,7 +128,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,7 +140,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "predefinedField", n => { PredefinedField = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField>(); } },
+                { "predefinedField", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectPredefinedField>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePredefinedField = default; _explicitNullProperties?.Remove("predefinedField"); AdditionalData["predefinedField"] = unknown; } else { PredefinedField = parsed; AdditionalData.Remove("predefinedField"); } } },
                 { "question", n => { Question = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "questionDetails", n => { QuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObjectQuestionDetails.CreateFromDiscriminatorValue); } },
                 { "questionId", n => { QuestionId = n.GetLongValue(); } },
@@ -124,6 +167,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteBoolValue("responseEditable", ResponseEditable);
             writer.WriteBoolValue("responseRequired", ResponseRequired);
             writer.WriteObjectValue<UntypedNode>("textPrompt", TextPrompt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

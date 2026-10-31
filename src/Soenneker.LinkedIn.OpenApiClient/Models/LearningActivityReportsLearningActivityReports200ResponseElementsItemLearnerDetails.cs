@@ -12,56 +12,87 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customAttributes") is null) { _explicitNullValueCustomAttributes = default!; _explicitNullProperties?.Remove("customAttributes"); }
+            else if (parseNode.GetChildNode("customAttributes") is { } nullNodeCustomAttributes && nullNodeCustomAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAttributes = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("enterpriseGroups") is null) { _explicitNullValueEnterpriseGroups = default!; _explicitNullProperties?.Remove("enterpriseGroups"); }
+            else if (parseNode.GetChildNode("enterpriseGroups") is { } nullNodeEnterpriseGroups && nullNodeEnterpriseGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnterpriseGroups = null;
+            if (parseNode.GetChildNode("entity") is null) { _explicitNullValueEntity = default!; _explicitNullProperties?.Remove("entity"); }
+            else if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("uniqueUserId") is null) { _explicitNullValueUniqueUserId = default!; _explicitNullProperties?.Remove("uniqueUserId"); }
+            else if (parseNode.GetChildNode("uniqueUserId") is { } nullNodeUniqueUserId && nullNodeUniqueUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueUserId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Additional profile attributes provided by the enterprise. This data is generally provided to LinkedIn Learning through a manual or automated user provisioning process during account configuration.Documented type: ObjectRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes? CustomAttributes { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes? CustomAttributes { get => _explicitNullValueCustomAttributes; set { _explicitNullValueCustomAttributes = value; AdditionalData?.Remove("customAttributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customAttributes"); else _explicitNullProperties?.Remove("customAttributes"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes? _explicitNullValueCustomAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes CustomAttributes { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes CustomAttributes { get => _explicitNullValueCustomAttributes; set { _explicitNullValueCustomAttributes = value; AdditionalData?.Remove("customAttributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customAttributes"); else _explicitNullProperties?.Remove("customAttributes"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes _explicitNullValueCustomAttributes = default!;
 #endif
         /// <summary>Email address of the enterprise entity.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>A list of groups that the enterprise profile belongs to.Documented type: ArrayRequirement: Yes (default=[])</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? EnterpriseGroups { get; set; }
+        public UntypedNode? EnterpriseGroups { get => _explicitNullValueEnterpriseGroups; set { _explicitNullValueEnterpriseGroups = value; AdditionalData?.Remove("enterpriseGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enterpriseGroups"); else _explicitNullProperties?.Remove("enterpriseGroups"); } }
+        private UntypedNode? _explicitNullValueEnterpriseGroups = default!;
 #nullable restore
 #else
-        public UntypedNode EnterpriseGroups { get; set; }
+        public UntypedNode EnterpriseGroups { get => _explicitNullValueEnterpriseGroups; set { _explicitNullValueEnterpriseGroups = value; AdditionalData?.Remove("enterpriseGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enterpriseGroups"); else _explicitNullProperties?.Remove("enterpriseGroups"); } }
+        private UntypedNode _explicitNullValueEnterpriseGroups = default!;
 #endif
         /// <summary>The entity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity? Entity { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity? _explicitNullValueEntity = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity Entity { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity _explicitNullValueEntity = default!;
 #endif
         /// <summary>Name of the enterprise entity. An enterprise entity can be an account, group or individual.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>If present, a unique and immutable user identifier. This value is generally provided to LinkedIn Learning through a manual or automated user provisioning process during account configuration. This value is often used to make an association between learner profiles in other enterprise applications like learning management systems (LMSs) or business intelligence (BI) tools.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueUserId { get; set; }
+        public string? UniqueUserId { get => _explicitNullValueUniqueUserId; set { _explicitNullValueUniqueUserId = value; AdditionalData?.Remove("uniqueUserId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueUserId"); else _explicitNullProperties?.Remove("uniqueUserId"); } }
+        private string? _explicitNullValueUniqueUserId = default!;
 #nullable restore
 #else
-        public string UniqueUserId { get; set; }
+        public string UniqueUserId { get => _explicitNullValueUniqueUserId; set { _explicitNullValueUniqueUserId = value; AdditionalData?.Remove("uniqueUserId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueUserId"); else _explicitNullProperties?.Remove("uniqueUserId"); } }
+        private string _explicitNullValueUniqueUserId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails"/> and sets the default values.
@@ -78,7 +109,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +140,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity>("entity", Entity);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("uniqueUserId", UniqueUserId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

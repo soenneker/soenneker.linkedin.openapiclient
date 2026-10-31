@@ -11,19 +11,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TalentCrmConnectSyncTcrmCandidateResumesRequestEntitiesTcrmCandidateIdTcrmCandidateId200DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmResumeIdResumeid200 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("resumeFile") is null) { _explicitNullValueResumeFile = default!; _explicitNullProperties?.Remove("resumeFile"); }
+            else if (parseNode.GetChildNode("resumeFile") is { } nullNodeResumeFile && nullNodeResumeFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumeFile = null;
+            if (parseNode.GetChildNode("tcrmCreatedAt") is null) { _explicitNullValueTcrmCreatedAt = default!; _explicitNullProperties?.Remove("tcrmCreatedAt"); }
+            else if (parseNode.GetChildNode("tcrmCreatedAt") is { } nullNodeTcrmCreatedAt && nullNodeTcrmCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcrmCreatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URN using format urn:li:ambryBlob:{location}Documented type: AmbryBlobUrnRequirement: Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResumeFile { get; set; }
+        public string? ResumeFile { get => _explicitNullValueResumeFile; set { _explicitNullValueResumeFile = value; AdditionalData?.Remove("resumeFile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resumeFile"); else _explicitNullProperties?.Remove("resumeFile"); } }
+        private string? _explicitNullValueResumeFile = default!;
 #nullable restore
 #else
-        public string ResumeFile { get; set; }
+        public string ResumeFile { get => _explicitNullValueResumeFile; set { _explicitNullValueResumeFile = value; AdditionalData?.Remove("resumeFile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resumeFile"); else _explicitNullProperties?.Remove("resumeFile"); } }
+        private string _explicitNullValueResumeFile = default!;
 #endif
         /// <summary>Date record was created in your CRMDocumented type: UTC Epoch MillisecondsRequirement: Required</summary>
-        public long? TcrmCreatedAt { get; set; }
+        public long? TcrmCreatedAt { get => _explicitNullValueTcrmCreatedAt; set { _explicitNullValueTcrmCreatedAt = value; AdditionalData?.Remove("tcrmCreatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcrmCreatedAt"); else _explicitNullProperties?.Remove("tcrmCreatedAt"); } }
+        private long? _explicitNullValueTcrmCreatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidateResumesRequestEntitiesTcrmCandidateIdTcrmCandidateId200DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmResumeIdResumeid200"/> and sets the default values.
         /// </summary>
@@ -39,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidateResumesRequestEntitiesTcrmCandidateIdTcrmCandidateId200DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmResumeIdResumeid200 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidateResumesRequestEntitiesTcrmCandidateIdTcrmCandidateId200DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmResumeIdResumeid200();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.TalentCrmConnectSyncTcrmCandidateResumesRequestEntitiesTcrmCandidateIdTcrmCandidateId200DataProviderPartnerIntegrationContextUrnLiOrganization1234567890TcrmResumeIdResumeid200(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("resumeFile", ResumeFile);
             writer.WriteLongValue("tcrmCreatedAt", TcrmCreatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

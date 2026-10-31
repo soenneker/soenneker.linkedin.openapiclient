@@ -12,34 +12,56 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("consents") is null) { _explicitNullValueConsents = default!; _explicitNullProperties?.Remove("consents"); }
+            else if (parseNode.GetChildNode("consents") is { } nullNodeConsents && nullNodeConsents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Consents = null;
+            if (parseNode.GetChildNode("legalDisclaimer") is null) { _explicitNullValueLegalDisclaimer = default!; _explicitNullProperties?.Remove("legalDisclaimer"); }
+            else if (parseNode.GetChildNode("legalDisclaimer") is { } nullNodeLegalDisclaimer && nullNodeLegalDisclaimer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalDisclaimer = null;
+            if (parseNode.GetChildNode("legalInfoId") is null) { _explicitNullValueLegalInfoId = default!; _explicitNullProperties?.Remove("legalInfoId"); }
+            else if (parseNode.GetChildNode("legalInfoId") is { } nullNodeLegalInfoId && nullNodeLegalInfoId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalInfoId = null;
+            if (parseNode.GetChildNode("privacyPolicyUrl") is null) { _explicitNullValuePrivacyPolicyUrl = default!; _explicitNullProperties?.Remove("privacyPolicyUrl"); }
+            else if (parseNode.GetChildNode("privacyPolicyUrl") is { } nullNodePrivacyPolicyUrl && nullNodePrivacyPolicyUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivacyPolicyUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Additional consents used to obtain member approval for using data collected via the Lead Form. The array can be empty if no viewer consents are required by the owner. By default, this is an empty array.Documented type: LeadGenFormConsent[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject>? Consents { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject>? Consents { get => _explicitNullValueConsents; set { _explicitNullValueConsents = value; AdditionalData?.Remove("consents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consents"); else _explicitNullProperties?.Remove("consents"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject>? _explicitNullValueConsents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject> Consents { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject> Consents { get => _explicitNullValueConsents; set { _explicitNullValueConsents = value; AdditionalData?.Remove("consents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consents"); else _explicitNullProperties?.Remove("consents"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformconsentSubObject> _explicitNullValueConsents = default!;
 #endif
         /// <summary>(Optional) Owner&apos;s legal disclaimer to accompany this form. This field is optional since the owner can use other fields (for example, privacyPolicyUrl or consents) to display the privacy policy. If this field is used, the value must be 1 to 2,000 characters. Don&apos;t set this field to an empty string.Documented type: MultiLocaleString</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? LegalDisclaimer { get; set; }
+        public UntypedNode? LegalDisclaimer { get => _explicitNullValueLegalDisclaimer; set { _explicitNullValueLegalDisclaimer = value; AdditionalData?.Remove("legalDisclaimer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalDisclaimer"); else _explicitNullProperties?.Remove("legalDisclaimer"); } }
+        private UntypedNode? _explicitNullValueLegalDisclaimer = default!;
 #nullable restore
 #else
-        public UntypedNode LegalDisclaimer { get; set; }
+        public UntypedNode LegalDisclaimer { get => _explicitNullValueLegalDisclaimer; set { _explicitNullValueLegalDisclaimer = value; AdditionalData?.Remove("legalDisclaimer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalDisclaimer"); else _explicitNullProperties?.Remove("legalDisclaimer"); } }
+        private UntypedNode _explicitNullValueLegalDisclaimer = default!;
 #endif
         /// <summary>Unique identifier of the LeadGenFormLegalInfo.Documented type: long</summary>
-        public long? LegalInfoId { get; set; }
+        public long? LegalInfoId { get => _explicitNullValueLegalInfoId; set { _explicitNullValueLegalInfoId = value; AdditionalData?.Remove("legalInfoId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalInfoId"); else _explicitNullProperties?.Remove("legalInfoId"); } }
+        private long? _explicitNullValueLegalInfoId = default!;
         /// <summary>(Optional) The URL of the privacy policy that covers any data passed to the owner of the form. Optional since it is not required to be present for all the use cases.Documented type: URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyPolicyUrl { get; set; }
+        public string? PrivacyPolicyUrl { get => _explicitNullValuePrivacyPolicyUrl; set { _explicitNullValuePrivacyPolicyUrl = value; AdditionalData?.Remove("privacyPolicyUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacyPolicyUrl"); else _explicitNullProperties?.Remove("privacyPolicyUrl"); } }
+        private string? _explicitNullValuePrivacyPolicyUrl = default!;
 #nullable restore
 #else
-        public string PrivacyPolicyUrl { get; set; }
+        public string PrivacyPolicyUrl { get => _explicitNullValuePrivacyPolicyUrl; set { _explicitNullValuePrivacyPolicyUrl = value; AdditionalData?.Remove("privacyPolicyUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacyPolicyUrl"); else _explicitNullProperties?.Remove("privacyPolicyUrl"); } }
+        private string _explicitNullValuePrivacyPolicyUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo"/> and sets the default values.
@@ -56,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +105,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("legalDisclaimer", LegalDisclaimer);
             writer.WriteLongValue("legalInfoId", LegalInfoId);
             writer.WriteStringValue("privacyPolicyUrl", PrivacyPolicyUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

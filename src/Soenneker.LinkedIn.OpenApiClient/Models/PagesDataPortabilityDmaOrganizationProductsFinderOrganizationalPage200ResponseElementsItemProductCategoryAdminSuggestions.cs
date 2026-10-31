@@ -11,40 +11,63 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("competingCompanies") is null) { _explicitNullValueCompetingCompanies = default!; _explicitNullProperties?.Remove("competingCompanies"); }
+            else if (parseNode.GetChildNode("competingCompanies") is { } nullNodeCompetingCompanies && nullNodeCompetingCompanies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompetingCompanies = null;
+            if (parseNode.GetChildNode("keywordsAssociatedWithProduct") is null) { _explicitNullValueKeywordsAssociatedWithProduct = default!; _explicitNullProperties?.Remove("keywordsAssociatedWithProduct"); }
+            else if (parseNode.GetChildNode("keywordsAssociatedWithProduct") is { } nullNodeKeywordsAssociatedWithProduct && nullNodeKeywordsAssociatedWithProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordsAssociatedWithProduct = null;
+            if (parseNode.GetChildNode("similarProducts") is null) { _explicitNullValueSimilarProducts = default!; _explicitNullProperties?.Remove("similarProducts"); }
+            else if (parseNode.GetChildNode("similarProducts") is { } nullNodeSimilarProducts && nullNodeSimilarProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimilarProducts = null;
+            if (parseNode.GetChildNode("suggestedCategories") is null) { _explicitNullValueSuggestedCategories = default!; _explicitNullProperties?.Remove("suggestedCategories"); }
+            else if (parseNode.GetChildNode("suggestedCategories") is { } nullNodeSuggestedCategories && nullNodeSuggestedCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuggestedCategories = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The competingCompanies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CompetingCompanies { get; set; }
+        public List<string>? CompetingCompanies { get => _explicitNullValueCompetingCompanies; set { _explicitNullValueCompetingCompanies = value; AdditionalData?.Remove("competingCompanies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("competingCompanies"); else _explicitNullProperties?.Remove("competingCompanies"); } }
+        private List<string>? _explicitNullValueCompetingCompanies = default!;
 #nullable restore
 #else
-        public List<string> CompetingCompanies { get; set; }
+        public List<string> CompetingCompanies { get => _explicitNullValueCompetingCompanies; set { _explicitNullValueCompetingCompanies = value; AdditionalData?.Remove("competingCompanies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("competingCompanies"); else _explicitNullProperties?.Remove("competingCompanies"); } }
+        private List<string> _explicitNullValueCompetingCompanies = default!;
 #endif
         /// <summary>The keywordsAssociatedWithProduct property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsKeywordsAssociatedWithProductItem>? KeywordsAssociatedWithProduct { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsKeywordsAssociatedWithProductItem>? KeywordsAssociatedWithProduct { get => _explicitNullValueKeywordsAssociatedWithProduct; set { _explicitNullValueKeywordsAssociatedWithProduct = value; AdditionalData?.Remove("keywordsAssociatedWithProduct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywordsAssociatedWithProduct"); else _explicitNullProperties?.Remove("keywordsAssociatedWithProduct"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsKeywordsAssociatedWithProductItem>? _explicitNullValueKeywordsAssociatedWithProduct = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsKeywordsAssociatedWithProductItem> KeywordsAssociatedWithProduct { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsKeywordsAssociatedWithProductItem> KeywordsAssociatedWithProduct { get => _explicitNullValueKeywordsAssociatedWithProduct; set { _explicitNullValueKeywordsAssociatedWithProduct = value; AdditionalData?.Remove("keywordsAssociatedWithProduct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywordsAssociatedWithProduct"); else _explicitNullProperties?.Remove("keywordsAssociatedWithProduct"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsKeywordsAssociatedWithProductItem> _explicitNullValueKeywordsAssociatedWithProduct = default!;
 #endif
         /// <summary>The similarProducts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSimilarProductsItem>? SimilarProducts { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSimilarProductsItem>? SimilarProducts { get => _explicitNullValueSimilarProducts; set { _explicitNullValueSimilarProducts = value; AdditionalData?.Remove("similarProducts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarProducts"); else _explicitNullProperties?.Remove("similarProducts"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSimilarProductsItem>? _explicitNullValueSimilarProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSimilarProductsItem> SimilarProducts { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSimilarProductsItem> SimilarProducts { get => _explicitNullValueSimilarProducts; set { _explicitNullValueSimilarProducts = value; AdditionalData?.Remove("similarProducts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarProducts"); else _explicitNullProperties?.Remove("similarProducts"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSimilarProductsItem> _explicitNullValueSimilarProducts = default!;
 #endif
         /// <summary>The suggestedCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSuggestedCategoriesItem>? SuggestedCategories { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSuggestedCategoriesItem>? SuggestedCategories { get => _explicitNullValueSuggestedCategories; set { _explicitNullValueSuggestedCategories = value; AdditionalData?.Remove("suggestedCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestedCategories"); else _explicitNullProperties?.Remove("suggestedCategories"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSuggestedCategoriesItem>? _explicitNullValueSuggestedCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSuggestedCategoriesItem> SuggestedCategories { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSuggestedCategoriesItem> SuggestedCategories { get => _explicitNullValueSuggestedCategories; set { _explicitNullValueSuggestedCategories = value; AdditionalData?.Remove("suggestedCategories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestedCategories"); else _explicitNullProperties?.Remove("suggestedCategories"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSuggestedCategoriesItem> _explicitNullValueSuggestedCategories = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestions"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsKeywordsAssociatedWithProductItem>("keywordsAssociatedWithProduct", KeywordsAssociatedWithProduct);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSimilarProductsItem>("similarProducts", SimilarProducts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsFinderOrganizationalPage200ResponseElementsItemProductCategoryAdminSuggestionsSuggestedCategoriesItem>("suggestedCategories", SuggestedCategories);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

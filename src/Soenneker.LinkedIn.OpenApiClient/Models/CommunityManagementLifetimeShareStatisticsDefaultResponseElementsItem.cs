@@ -11,48 +11,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("organizationalEntity") is null) { _explicitNullValueOrganizationalEntity = default!; _explicitNullProperties?.Remove("organizationalEntity"); }
+            else if (parseNode.GetChildNode("organizationalEntity") is { } nullNodeOrganizationalEntity && nullNodeOrganizationalEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationalEntity = null;
+            if (parseNode.GetChildNode("share") is null) { _explicitNullValueShare = default!; _explicitNullProperties?.Remove("share"); }
+            else if (parseNode.GetChildNode("share") is { } nullNodeShare && nullNodeShare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Share = null;
+            if (parseNode.GetChildNode("timeRange") is null) { _explicitNullValueTimeRange = default!; _explicitNullProperties?.Remove("timeRange"); }
+            else if (parseNode.GetChildNode("timeRange") is { } nullNodeTimeRange && nullNodeTimeRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeRange = null;
+            if (parseNode.GetChildNode("totalShareStatistics") is null) { _explicitNullValueTotalShareStatistics = default!; _explicitNullProperties?.Remove("totalShareStatistics"); }
+            else if (parseNode.GetChildNode("totalShareStatistics") is { } nullNodeTotalShareStatistics && nullNodeTotalShareStatistics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalShareStatistics = null;
+            if (parseNode.GetChildNode("ugcPost") is null) { _explicitNullValueUgcPost = default!; _explicitNullProperties?.Remove("ugcPost"); }
+            else if (parseNode.GetChildNode("ugcPost") is { } nullNodeUgcPost && nullNodeUgcPost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UgcPost = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organizational entity URN for which the statistics represents.Documented type: Organization URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalEntity { get; set; }
+        public string? OrganizationalEntity { get => _explicitNullValueOrganizationalEntity; set { _explicitNullValueOrganizationalEntity = value; AdditionalData?.Remove("organizationalEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationalEntity"); else _explicitNullProperties?.Remove("organizationalEntity"); } }
+        private string? _explicitNullValueOrganizationalEntity = default!;
 #nullable restore
 #else
-        public string OrganizationalEntity { get; set; }
+        public string OrganizationalEntity { get => _explicitNullValueOrganizationalEntity; set { _explicitNullValueOrganizationalEntity = value; AdditionalData?.Remove("organizationalEntity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationalEntity"); else _explicitNullProperties?.Remove("organizationalEntity"); } }
+        private string _explicitNullValueOrganizationalEntity = default!;
 #endif
         /// <summary>The share URN for describing individual share statistics. Is blank for aggregate share statistics.Documented type: Share URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Share { get; set; }
+        public string? Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; AdditionalData?.Remove("share"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        private string? _explicitNullValueShare = default!;
 #nullable restore
 #else
-        public string Share { get; set; }
+        public string Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; AdditionalData?.Remove("share"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        private string _explicitNullValueShare = default!;
 #endif
         /// <summary>The timeRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange? TimeRange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange? TimeRange { get => _explicitNullValueTimeRange; set { _explicitNullValueTimeRange = value; AdditionalData?.Remove("timeRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeRange"); else _explicitNullProperties?.Remove("timeRange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange? _explicitNullValueTimeRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange TimeRange { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange TimeRange { get => _explicitNullValueTimeRange; set { _explicitNullValueTimeRange = value; AdditionalData?.Remove("timeRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeRange"); else _explicitNullProperties?.Remove("timeRange"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange _explicitNullValueTimeRange = default!;
 #endif
         /// <summary>Share statistics representing the total counts.Documented type: ShareStatisticsData</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics? TotalShareStatistics { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics? TotalShareStatistics { get => _explicitNullValueTotalShareStatistics; set { _explicitNullValueTotalShareStatistics = value; AdditionalData?.Remove("totalShareStatistics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalShareStatistics"); else _explicitNullProperties?.Remove("totalShareStatistics"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics? _explicitNullValueTotalShareStatistics = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics TotalShareStatistics { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics TotalShareStatistics { get => _explicitNullValueTotalShareStatistics; set { _explicitNullValueTotalShareStatistics = value; AdditionalData?.Remove("totalShareStatistics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalShareStatistics"); else _explicitNullProperties?.Remove("totalShareStatistics"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics _explicitNullValueTotalShareStatistics = default!;
 #endif
-        /// <summary>The ugcPost property</summary>
+        /// <summary>The UGC Post URN for describing individual share statistics.Documented type: UGC Post</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UgcPost { get; set; }
+        public UntypedNode? UgcPost { get => _explicitNullValueUgcPost; set { _explicitNullValueUgcPost = value; AdditionalData?.Remove("ugcPost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ugcPost"); else _explicitNullProperties?.Remove("ugcPost"); } }
+        private UntypedNode? _explicitNullValueUgcPost = default!;
 #nullable restore
 #else
-        public string UgcPost { get; set; }
+        public UntypedNode UgcPost { get => _explicitNullValueUgcPost; set { _explicitNullValueUgcPost = value; AdditionalData?.Remove("ugcPost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ugcPost"); else _explicitNullProperties?.Remove("ugcPost"); } }
+        private UntypedNode _explicitNullValueUgcPost = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItem"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +110,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "share", n => { Share = n.GetStringValue(); } },
                 { "timeRange", n => { TimeRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange.CreateFromDiscriminatorValue); } },
                 { "totalShareStatistics", n => { TotalShareStatistics = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics.CreateFromDiscriminatorValue); } },
-                { "ugcPost", n => { UgcPost = n.GetStringValue(); } },
+                { "ugcPost", n => { UgcPost = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +124,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("share", Share);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTimeRange>("timeRange", TimeRange);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics>("totalShareStatistics", TotalShareStatistics);
-            writer.WriteStringValue("ugcPost", UgcPost);
+            writer.WriteObjectValue<UntypedNode>("ugcPost", UgcPost);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

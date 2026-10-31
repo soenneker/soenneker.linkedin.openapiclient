@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesIntegrationContextUrn3Ali3Aorganization3AOrgIdIntegrationTypeOneClickExportTenantTypeRecruiterConfigurationNameJobPostingViewersConfigurationValue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("string") is null) { _explicitNullValueString = default!; _explicitNullProperties?.Remove("string"); }
+            else if (parseNode.GetChildNode("string") is { } nullNodeString && nullNodeString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) String = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The string property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? String { get; set; }
+        public string? String { get => _explicitNullValueString; set { _explicitNullValueString = value; AdditionalData?.Remove("string"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string"); else _explicitNullProperties?.Remove("string"); } }
+        private string? _explicitNullValueString = default!;
 #nullable restore
 #else
-        public string String { get; set; }
+        public string String { get => _explicitNullValueString; set { _explicitNullValueString = value; AdditionalData?.Remove("string"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string"); else _explicitNullProperties?.Remove("string"); } }
+        private string _explicitNullValueString = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesIntegrationContextUrn3Ali3Aorganization3AOrgIdIntegrationTypeOneClickExportTenantTypeRecruiterConfigurationNameJobPostingViewersConfigurationValue"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesIntegrationContextUrn3Ali3Aorganization3AOrgIdIntegrationTypeOneClickExportTenantTypeRecruiterConfigurationNameJobPostingViewersConfigurationValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesIntegrationContextUrn3Ali3Aorganization3AOrgIdIntegrationTypeOneClickExportTenantTypeRecruiterConfigurationNameJobPostingViewersConfigurationValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntitiesIntegrationContextUrn3Ali3Aorganization3AOrgIdIntegrationTypeOneClickExportTenantTypeRecruiterConfigurationNameJobPostingViewersConfigurationValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("string", String);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

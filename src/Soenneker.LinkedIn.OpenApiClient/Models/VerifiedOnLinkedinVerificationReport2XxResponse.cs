@@ -11,50 +11,80 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VerifiedOnLinkedinVerificationReport2XxResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lastRefreshedAt") is null) { _explicitNullValueLastRefreshedAt = default!; _explicitNullProperties?.Remove("lastRefreshedAt"); }
+            else if (parseNode.GetChildNode("lastRefreshedAt") is { } nullNodeLastRefreshedAt && nullNodeLastRefreshedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRefreshedAt = null;
+            if (parseNode.GetChildNode("userId") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("userId"); }
+            else if (parseNode.GetChildNode("userId") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("verifications") is null) { _explicitNullValueVerifications = default!; _explicitNullProperties?.Remove("verifications"); }
+            else if (parseNode.GetChildNode("verifications") is { } nullNodeVerifications && nullNodeVerifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verifications = null;
+            if (parseNode.GetChildNode("verificationUrl") is null) { _explicitNullValueVerificationUrl = default!; _explicitNullProperties?.Remove("verificationUrl"); }
+            else if (parseNode.GetChildNode("verificationUrl") is { } nullNodeVerificationUrl && nullNodeVerificationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationUrl = null;
+            if (parseNode.GetChildNode("verifiedDetails") is null) { _explicitNullValueVerifiedDetails = default!; _explicitNullProperties?.Remove("verifiedDetails"); }
+            else if (parseNode.GetChildNode("verifiedDetails") is { } nullNodeVerifiedDetails && nullNodeVerifiedDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedDetails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique identifier for member scoped to your applicationDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Timestamp indicating when verification data was last refreshed (milliseconds since epoch)Documented type: timestamp</summary>
-        public long? LastRefreshedAt { get; set; }
+        public long? LastRefreshedAt { get => _explicitNullValueLastRefreshedAt; set { _explicitNullValueLastRefreshedAt = value; AdditionalData?.Remove("lastRefreshedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastRefreshedAt"); else _explicitNullProperties?.Remove("lastRefreshedAt"); } }
+        private long? _explicitNullValueLastRefreshedAt = default!;
         /// <summary>Legacy identifier format. Partners should use id for new integrations.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("userId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userId"); else _explicitNullProperties?.Remove("userId"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("userId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userId"); else _explicitNullProperties?.Remove("userId"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>Completed verification categories (e.g., [&quot;IDENTITY&quot;, &quot;WORKPLACE&quot;])Documented type: array[string]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Verifications { get; set; }
+        public List<string>? Verifications { get => _explicitNullValueVerifications; set { _explicitNullValueVerifications = value; AdditionalData?.Remove("verifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifications"); else _explicitNullProperties?.Remove("verifications"); } }
+        private List<string>? _explicitNullValueVerifications = default!;
 #nullable restore
 #else
-        public List<string> Verifications { get; set; }
+        public List<string> Verifications { get => _explicitNullValueVerifications; set { _explicitNullValueVerifications = value; AdditionalData?.Remove("verifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifications"); else _explicitNullProperties?.Remove("verifications"); } }
+        private List<string> _explicitNullValueVerifications = default!;
 #endif
         /// <summary>URL to the LinkedIn verification flow. Returned when the member is eligible for additional verifications, or when an existing verification is older than the requested verifiedWithinDays threshold and the member is still eligible to re-verify the existing verification.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerificationUrl { get; set; }
+        public string? VerificationUrl { get => _explicitNullValueVerificationUrl; set { _explicitNullValueVerificationUrl = value; AdditionalData?.Remove("verificationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationUrl"); else _explicitNullProperties?.Remove("verificationUrl"); } }
+        private string? _explicitNullValueVerificationUrl = default!;
 #nullable restore
 #else
-        public string VerificationUrl { get; set; }
+        public string VerificationUrl { get => _explicitNullValueVerificationUrl; set { _explicitNullValueVerificationUrl = value; AdditionalData?.Remove("verificationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationUrl"); else _explicitNullProperties?.Remove("verificationUrl"); } }
+        private string _explicitNullValueVerificationUrl = default!;
 #endif
         /// <summary>Detailed verification metadata for completed verificationsDocumented type: array[object]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? VerifiedDetails { get; set; }
+        public UntypedNode? VerifiedDetails { get => _explicitNullValueVerifiedDetails; set { _explicitNullValueVerifiedDetails = value; AdditionalData?.Remove("verifiedDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedDetails"); else _explicitNullProperties?.Remove("verifiedDetails"); } }
+        private UntypedNode? _explicitNullValueVerifiedDetails = default!;
 #nullable restore
 #else
-        public UntypedNode VerifiedDetails { get; set; }
+        public UntypedNode VerifiedDetails { get => _explicitNullValueVerifiedDetails; set { _explicitNullValueVerifiedDetails = value; AdditionalData?.Remove("verifiedDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedDetails"); else _explicitNullProperties?.Remove("verifiedDetails"); } }
+        private UntypedNode _explicitNullValueVerifiedDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponse"/> and sets the default values.
@@ -71,7 +101,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinVerificationReport2XxResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +132,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("verifications", Verifications);
             writer.WriteStringValue("verificationUrl", VerificationUrl);
             writer.WriteObjectValue<UntypedNode>("verifiedDetails", VerifiedDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

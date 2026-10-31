@@ -12,16 +12,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("favorableSymbolicNames") is null) { _explicitNullValueFavorableSymbolicNames = default!; _explicitNullProperties?.Remove("favorableSymbolicNames"); }
+            else if (parseNode.GetChildNode("favorableSymbolicNames") is { } nullNodeFavorableSymbolicNames && nullNodeFavorableSymbolicNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FavorableSymbolicNames = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The symbolicNames from MultipleChoiceQuestionDetails that should be considered favorable. An example could be [“BACHELOR”, “MASTERS”] to indicate that the job poster wants the candidate to have either one of the educational levels.Documented type: String[]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FavorableSymbolicNames { get; set; }
+        public List<string>? FavorableSymbolicNames { get => _explicitNullValueFavorableSymbolicNames; set { _explicitNullValueFavorableSymbolicNames = value; AdditionalData?.Remove("favorableSymbolicNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorableSymbolicNames"); else _explicitNullProperties?.Remove("favorableSymbolicNames"); } }
+        private List<string>? _explicitNullValueFavorableSymbolicNames = default!;
 #nullable restore
 #else
-        public List<string> FavorableSymbolicNames { get; set; }
+        public List<string> FavorableSymbolicNames { get => _explicitNullValueFavorableSymbolicNames; set { _explicitNullValueFavorableSymbolicNames = value; AdditionalData?.Remove("favorableSymbolicNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorableSymbolicNames"); else _explicitNullProperties?.Remove("favorableSymbolicNames"); } }
+        private List<string> _explicitNullValueFavorableSymbolicNames = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer"/> and sets the default values.
@@ -38,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("favorableSymbolicNames", FavorableSymbolicNames);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

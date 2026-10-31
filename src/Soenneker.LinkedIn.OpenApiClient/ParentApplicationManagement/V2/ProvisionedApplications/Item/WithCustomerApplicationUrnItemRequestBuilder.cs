@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.Provis
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use this API Endpoint when partner wants to update JavaScript SDK domain for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.Use this API Endpoint when partner wants to update OAuth2.0 Authorized CallBack URL for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.

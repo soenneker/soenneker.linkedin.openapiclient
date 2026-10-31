@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Posts
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Image Ad Account
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Posts
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This API rerieve content from multiple images.
@@ -104,7 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Rest.Posts
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, (UrlTemplate.Contains("{?", global::System.StringComparison.Ordinal) ? UrlTemplate.Insert(UrlTemplate.IndexOf("{?", global::System.StringComparison.Ordinal), "/") : UrlTemplate + "/"), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve((UrlTemplate.Contains("{?", global::System.StringComparison.Ordinal) ? UrlTemplate.Insert(UrlTemplate.IndexOf("{?", global::System.StringComparison.Ordinal), "/") : UrlTemplate + "/"), RequestAdapter.BaseUrl, "https://api.linkedin.com", "/content-apis/rest/posts/", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;

@@ -12,23 +12,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clickCount") is null) { _explicitNullValueClickCount = default!; _explicitNullProperties?.Remove("clickCount"); }
+            else if (parseNode.GetChildNode("clickCount") is { } nullNodeClickCount && nullNodeClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickCount = null;
+            if (parseNode.GetChildNode("commentCount") is null) { _explicitNullValueCommentCount = default!; _explicitNullProperties?.Remove("commentCount"); }
+            else if (parseNode.GetChildNode("commentCount") is { } nullNodeCommentCount && nullNodeCommentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommentCount = null;
+            if (parseNode.GetChildNode("engagement") is null) { _explicitNullValueEngagement = default!; _explicitNullProperties?.Remove("engagement"); }
+            else if (parseNode.GetChildNode("engagement") is { } nullNodeEngagement && nullNodeEngagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Engagement = null;
+            if (parseNode.GetChildNode("impressionCount") is null) { _explicitNullValueImpressionCount = default!; _explicitNullProperties?.Remove("impressionCount"); }
+            else if (parseNode.GetChildNode("impressionCount") is { } nullNodeImpressionCount && nullNodeImpressionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImpressionCount = null;
+            if (parseNode.GetChildNode("likeCount") is null) { _explicitNullValueLikeCount = default!; _explicitNullProperties?.Remove("likeCount"); }
+            else if (parseNode.GetChildNode("likeCount") is { } nullNodeLikeCount && nullNodeLikeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LikeCount = null;
+            if (parseNode.GetChildNode("shareCount") is null) { _explicitNullValueShareCount = default!; _explicitNullProperties?.Remove("shareCount"); }
+            else if (parseNode.GetChildNode("shareCount") is { } nullNodeShareCount && nullNodeShareCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareCount = null;
+            if (parseNode.GetChildNode("uniqueImpressionsCount") is null) { _explicitNullValueUniqueImpressionsCount = default!; _explicitNullProperties?.Remove("uniqueImpressionsCount"); }
+            else if (parseNode.GetChildNode("uniqueImpressionsCount") is { } nullNodeUniqueImpressionsCount && nullNodeUniqueImpressionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueImpressionsCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of clicks.Documented type: long</summary>
-        public long? ClickCount { get; set; }
+        public long? ClickCount { get => _explicitNullValueClickCount; set { _explicitNullValueClickCount = value; AdditionalData?.Remove("clickCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickCount"); else _explicitNullProperties?.Remove("clickCount"); } }
+        private long? _explicitNullValueClickCount = default!;
         /// <summary>Number of comments.Documented type: long</summary>
-        public long? CommentCount { get; set; }
+        public long? CommentCount { get => _explicitNullValueCommentCount; set { _explicitNullValueCommentCount = value; AdditionalData?.Remove("commentCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commentCount"); else _explicitNullProperties?.Remove("commentCount"); } }
+        private long? _explicitNullValueCommentCount = default!;
         /// <summary>Number of organic clicks, likes, comments, and shares over impressions.Documented type: double</summary>
-        public double? Engagement { get; set; }
+        public double? Engagement { get => _explicitNullValueEngagement; set { _explicitNullValueEngagement = value; AdditionalData?.Remove("engagement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagement"); else _explicitNullProperties?.Remove("engagement"); } }
+        private double? _explicitNullValueEngagement = default!;
         /// <summary>Number of impressions.Documented type: long</summary>
-        public long? ImpressionCount { get; set; }
+        public long? ImpressionCount { get => _explicitNullValueImpressionCount; set { _explicitNullValueImpressionCount = value; AdditionalData?.Remove("impressionCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impressionCount"); else _explicitNullProperties?.Remove("impressionCount"); } }
+        private long? _explicitNullValueImpressionCount = default!;
         /// <summary>Number of likes. This field can become negative when members who liked a sponsored share later unlike it. The like is not counted since it&apos;s not organic, but the unlike is counted as organic.Documented type: long</summary>
-        public long? LikeCount { get; set; }
+        public long? LikeCount { get => _explicitNullValueLikeCount; set { _explicitNullValueLikeCount = value; AdditionalData?.Remove("likeCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("likeCount"); else _explicitNullProperties?.Remove("likeCount"); } }
+        private long? _explicitNullValueLikeCount = default!;
         /// <summary>Number of shares.Documented type: long</summary>
-        public long? ShareCount { get; set; }
+        public long? ShareCount { get => _explicitNullValueShareCount; set { _explicitNullValueShareCount = value; AdditionalData?.Remove("shareCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareCount"); else _explicitNullProperties?.Remove("shareCount"); } }
+        private long? _explicitNullValueShareCount = default!;
         /// <summary>Number of unique impressions.Documented type: long</summary>
-        public long? UniqueImpressionsCount { get; set; }
+        public long? UniqueImpressionsCount { get => _explicitNullValueUniqueImpressionsCount; set { _explicitNullValueUniqueImpressionsCount = value; AdditionalData?.Remove("uniqueImpressionsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueImpressionsCount"); else _explicitNullProperties?.Remove("uniqueImpressionsCount"); } }
+        private long? _explicitNullValueUniqueImpressionsCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics"/> and sets the default values.
         /// </summary>
@@ -44,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementLifetimeShareStatisticsDefaultResponseElementsItemTotalShareStatistics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +105,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("likeCount", LikeCount);
             writer.WriteLongValue("shareCount", ShareCount);
             writer.WriteLongValue("uniqueImpressionsCount", UniqueImpressionsCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

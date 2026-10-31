@@ -11,32 +11,51 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("embedBlock") is null) { _explicitNullValueEmbedBlock = default!; _explicitNullProperties?.Remove("embedBlock"); }
+            else if (parseNode.GetChildNode("embedBlock") is { } nullNodeEmbedBlock && nullNodeEmbedBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmbedBlock = null;
+            if (parseNode.GetChildNode("imageBlock") is null) { _explicitNullValueImageBlock = default!; _explicitNullProperties?.Remove("imageBlock"); }
+            else if (parseNode.GetChildNode("imageBlock") is { } nullNodeImageBlock && nullNodeImageBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageBlock = null;
+            if (parseNode.GetChildNode("textBlock") is null) { _explicitNullValueTextBlock = default!; _explicitNullProperties?.Remove("textBlock"); }
+            else if (parseNode.GetChildNode("textBlock") is { } nullNodeTextBlock && nullNodeTextBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextBlock = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The embedBlock property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemEmbedBlock? EmbedBlock { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemEmbedBlock? EmbedBlock { get => _explicitNullValueEmbedBlock; set { _explicitNullValueEmbedBlock = value; AdditionalData?.Remove("embedBlock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedBlock"); else _explicitNullProperties?.Remove("embedBlock"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemEmbedBlock? _explicitNullValueEmbedBlock = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemEmbedBlock EmbedBlock { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemEmbedBlock EmbedBlock { get => _explicitNullValueEmbedBlock; set { _explicitNullValueEmbedBlock = value; AdditionalData?.Remove("embedBlock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedBlock"); else _explicitNullProperties?.Remove("embedBlock"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemEmbedBlock _explicitNullValueEmbedBlock = default!;
 #endif
         /// <summary>The imageBlock property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock? ImageBlock { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock? ImageBlock { get => _explicitNullValueImageBlock; set { _explicitNullValueImageBlock = value; AdditionalData?.Remove("imageBlock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageBlock"); else _explicitNullProperties?.Remove("imageBlock"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock? _explicitNullValueImageBlock = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock ImageBlock { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock ImageBlock { get => _explicitNullValueImageBlock; set { _explicitNullValueImageBlock = value; AdditionalData?.Remove("imageBlock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageBlock"); else _explicitNullProperties?.Remove("imageBlock"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock _explicitNullValueImageBlock = default!;
 #endif
         /// <summary>The textBlock property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemTextBlock? TextBlock { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemTextBlock? TextBlock { get => _explicitNullValueTextBlock; set { _explicitNullValueTextBlock = value; AdditionalData?.Remove("textBlock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textBlock"); else _explicitNullProperties?.Remove("textBlock"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemTextBlock? _explicitNullValueTextBlock = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemTextBlock TextBlock { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemTextBlock TextBlock { get => _explicitNullValueTextBlock; set { _explicitNullValueTextBlock = value; AdditionalData?.Remove("textBlock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textBlock"); else _explicitNullProperties?.Remove("textBlock"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemTextBlock _explicitNullValueTextBlock = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItem"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemEmbedBlock>("embedBlock", EmbedBlock);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemImageBlock>("imageBlock", ImageBlock);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesFinderAuthor200ResponseElementsItemStructuredContentContentItemTextBlock>("textBlock", TextBlock);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

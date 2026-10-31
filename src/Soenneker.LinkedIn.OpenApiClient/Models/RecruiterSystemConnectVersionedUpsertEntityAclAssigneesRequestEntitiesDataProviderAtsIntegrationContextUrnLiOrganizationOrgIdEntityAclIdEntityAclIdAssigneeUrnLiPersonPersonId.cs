@@ -11,13 +11,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectVersionedUpsertEntityAclAssigneesRequestEntitiesDataProviderAtsIntegrationContextUrnLiOrganizationOrgIdEntityAclIdEntityAclIdAssigneeUrnLiPersonPersonId : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("externalCreatedAt") is null) { _explicitNullValueExternalCreatedAt = default!; _explicitNullProperties?.Remove("externalCreatedAt"); }
+            else if (parseNode.GetChildNode("externalCreatedAt") is { } nullNodeExternalCreatedAt && nullNodeExternalCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalCreatedAt = null;
+            if (parseNode.GetChildNode("externalLastModifiedAt") is null) { _explicitNullValueExternalLastModifiedAt = default!; _explicitNullProperties?.Remove("externalLastModifiedAt"); }
+            else if (parseNode.GetChildNode("externalLastModifiedAt") is { } nullNodeExternalLastModifiedAt && nullNodeExternalLastModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalLastModifiedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The externalCreatedAt property</summary>
-        public long? ExternalCreatedAt { get; set; }
+        public long? ExternalCreatedAt { get => _explicitNullValueExternalCreatedAt; set { _explicitNullValueExternalCreatedAt = value; AdditionalData?.Remove("externalCreatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalCreatedAt"); else _explicitNullProperties?.Remove("externalCreatedAt"); } }
+        private long? _explicitNullValueExternalCreatedAt = default!;
         /// <summary>The externalLastModifiedAt property</summary>
-        public long? ExternalLastModifiedAt { get; set; }
+        public long? ExternalLastModifiedAt { get => _explicitNullValueExternalLastModifiedAt; set { _explicitNullValueExternalLastModifiedAt = value; AdditionalData?.Remove("externalLastModifiedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalLastModifiedAt"); else _explicitNullProperties?.Remove("externalLastModifiedAt"); } }
+        private long? _explicitNullValueExternalLastModifiedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclAssigneesRequestEntitiesDataProviderAtsIntegrationContextUrnLiOrganizationOrgIdEntityAclIdEntityAclIdAssigneeUrnLiPersonPersonId"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclAssigneesRequestEntitiesDataProviderAtsIntegrationContextUrnLiOrganizationOrgIdEntityAclIdEntityAclIdAssigneeUrnLiPersonPersonId CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclAssigneesRequestEntitiesDataProviderAtsIntegrationContextUrnLiOrganizationOrgIdEntityAclIdEntityAclIdAssigneeUrnLiPersonPersonId();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpsertEntityAclAssigneesRequestEntitiesDataProviderAtsIntegrationContextUrnLiOrganizationOrgIdEntityAclIdEntityAclIdAssigneeUrnLiPersonPersonId(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("externalCreatedAt", ExternalCreatedAt);
             writer.WriteLongValue("externalLastModifiedAt", ExternalLastModifiedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

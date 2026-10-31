@@ -12,24 +12,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnMarketingCommunityManagementSharesUgcPostApiSharemediaLandingPage : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("landingPageTitle") is null) { _explicitNullValueLandingPageTitle = default!; _explicitNullProperties?.Remove("landingPageTitle"); }
+            else if (parseNode.GetChildNode("landingPageTitle") is { } nullNodeLandingPageTitle && nullNodeLandingPageTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPageTitle = null;
+            if (parseNode.GetChildNode("landingPageUrl") is null) { _explicitNullValueLandingPageUrl = default!; _explicitNullProperties?.Remove("landingPageUrl"); }
+            else if (parseNode.GetChildNode("landingPageUrl") is { } nullNodeLandingPageUrl && nullNodeLandingPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPageUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If present, this content entity will be rendered as a CTA with landingPageTitle as the CTA text and landingPageUrl as the click through URL.Documented type: StringRequirement: Optional Possible values are- LEARN_MORE APPLY_NOW DOWNLOAD GET_QUOTE SIGN_UP SUBSCRIBE REGISTER</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LandingPageTitle { get; set; }
+        public string? LandingPageTitle { get => _explicitNullValueLandingPageTitle; set { _explicitNullValueLandingPageTitle = value; AdditionalData?.Remove("landingPageTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPageTitle"); else _explicitNullProperties?.Remove("landingPageTitle"); } }
+        private string? _explicitNullValueLandingPageTitle = default!;
 #nullable restore
 #else
-        public string LandingPageTitle { get; set; }
+        public string LandingPageTitle { get => _explicitNullValueLandingPageTitle; set { _explicitNullValueLandingPageTitle = value; AdditionalData?.Remove("landingPageTitle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPageTitle"); else _explicitNullProperties?.Remove("landingPageTitle"); } }
+        private string _explicitNullValueLandingPageTitle = default!;
 #endif
         /// <summary>The click through URL. Maximum length is 2000 characters.Documented type: StringRequirement: Yes if landing page present</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LandingPageUrl { get; set; }
+        public string? LandingPageUrl { get => _explicitNullValueLandingPageUrl; set { _explicitNullValueLandingPageUrl = value; AdditionalData?.Remove("landingPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPageUrl"); else _explicitNullProperties?.Remove("landingPageUrl"); } }
+        private string? _explicitNullValueLandingPageUrl = default!;
 #nullable restore
 #else
-        public string LandingPageUrl { get; set; }
+        public string LandingPageUrl { get => _explicitNullValueLandingPageUrl; set { _explicitNullValueLandingPageUrl = value; AdditionalData?.Remove("landingPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPageUrl"); else _explicitNullProperties?.Remove("landingPageUrl"); } }
+        private string _explicitNullValueLandingPageUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaLandingPage"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaLandingPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaLandingPage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiSharemediaLandingPage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("landingPageTitle", LandingPageTitle);
             writer.WriteStringValue("landingPageUrl", LandingPageUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,18 +11,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("memberExperienceViewableState") is null) { _explicitNullValueMemberExperienceViewableState = default!; _explicitNullProperties?.Remove("memberExperienceViewableState"); }
+            else if (parseNode.GetChildNode("memberExperienceViewableState") is { } nullNodeMemberExperienceViewableState && nullNodeMemberExperienceViewableState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberExperienceViewableState = null;
+            if (parseNode.GetChildNode("standardizedProduct") is null) { _explicitNullValueStandardizedProduct = default!; _explicitNullProperties?.Remove("standardizedProduct"); }
+            else if (parseNode.GetChildNode("standardizedProduct") is { } nullNodeStandardizedProduct && nullNodeStandardizedProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StandardizedProduct = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the viewability of the combined organization and product page entity relationship in the member experience. Value enums include COMBINEDORGANIZATIONDocumented type: CombinedOrganizationProductPageEntityMemberExperienceViewableStateRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPageMemberExperienceViewableState? MemberExperienceViewableState { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPageMemberExperienceViewableState? MemberExperienceViewableState { get => _explicitNullValueMemberExperienceViewableState; set { _explicitNullValueMemberExperienceViewableState = value; AdditionalData?.Remove("memberExperienceViewableState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberExperienceViewableState"); else _explicitNullProperties?.Remove("memberExperienceViewableState"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPageMemberExperienceViewableState? _explicitNullValueMemberExperienceViewableState = default!;
         /// <summary>Denotes a product.Documented type: StandardizedProductUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StandardizedProduct { get; set; }
+        public string? StandardizedProduct { get => _explicitNullValueStandardizedProduct; set { _explicitNullValueStandardizedProduct = value; AdditionalData?.Remove("standardizedProduct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standardizedProduct"); else _explicitNullProperties?.Remove("standardizedProduct"); } }
+        private string? _explicitNullValueStandardizedProduct = default!;
 #nullable restore
 #else
-        public string StandardizedProduct { get; set; }
+        public string StandardizedProduct { get => _explicitNullValueStandardizedProduct; set { _explicitNullValueStandardizedProduct = value; AdditionalData?.Remove("standardizedProduct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standardizedProduct"); else _explicitNullProperties?.Remove("standardizedProduct"); } }
+        private string _explicitNullValueStandardizedProduct = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPage"/> and sets the default values.
@@ -39,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "memberExperienceViewableState", n => { MemberExperienceViewableState = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPageMemberExperienceViewableState>(); } },
+                { "memberExperienceViewableState", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPageMemberExperienceViewableState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMemberExperienceViewableState = default; _explicitNullProperties?.Remove("memberExperienceViewableState"); AdditionalData["memberExperienceViewableState"] = unknown; } else { MemberExperienceViewableState = parsed; AdditionalData.Remove("memberExperienceViewableState"); } } },
                 { "standardizedProduct", n => { StandardizedProduct = n.GetStringValue(); } },
             };
         }
@@ -62,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponsePageProfileEntityCombinedOrganizationProductPageMemberExperienceViewableState>("memberExperienceViewableState", MemberExperienceViewableState);
             writer.WriteStringValue("standardizedProduct", StandardizedProduct);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

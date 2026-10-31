@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand456DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("manualMatchedMember") is null) { _explicitNullValueManualMatchedMember = default!; _explicitNullProperties?.Remove("manualMatchedMember"); }
+            else if (parseNode.GetChildNode("manualMatchedMember") is { } nullNodeManualMatchedMember && nullNodeManualMatchedMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManualMatchedMember = null;
+            if (parseNode.GetChildNode("matchedMembers") is null) { _explicitNullValueMatchedMembers = default!; _explicitNullProperties?.Remove("matchedMembers"); }
+            else if (parseNode.GetChildNode("matchedMembers") is { } nullNodeMatchedMembers && nullNodeMatchedMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchedMembers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The candidate match specified by the customer (for example, via the Profile Plugin). Use this as the preferred match if present.Documented type: Person URN null or not returned when customer hasn&apos;t specified a matchRequirement: no</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManualMatchedMember { get; set; }
+        public string? ManualMatchedMember { get => _explicitNullValueManualMatchedMember; set { _explicitNullValueManualMatchedMember = value; AdditionalData?.Remove("manualMatchedMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manualMatchedMember"); else _explicitNullProperties?.Remove("manualMatchedMember"); } }
+        private string? _explicitNullValueManualMatchedMember = default!;
 #nullable restore
 #else
-        public string ManualMatchedMember { get; set; }
+        public string ManualMatchedMember { get => _explicitNullValueManualMatchedMember; set { _explicitNullValueManualMatchedMember = value; AdditionalData?.Remove("manualMatchedMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manualMatchedMember"); else _explicitNullProperties?.Remove("manualMatchedMember"); } }
+        private string _explicitNullValueManualMatchedMember = default!;
 #endif
         /// <summary>LinkedIn&apos;s algorithmic profile matches for this candidate. If multiple results are present, you should use the first element.Documented type: array of Person URN null or not returned when matching hasn&apos;t yet occurred Empty when no matches could be foundRequirement: no</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MatchedMembers { get; set; }
+        public List<string>? MatchedMembers { get => _explicitNullValueMatchedMembers; set { _explicitNullValueMatchedMembers = value; AdditionalData?.Remove("matchedMembers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedMembers"); else _explicitNullProperties?.Remove("matchedMembers"); } }
+        private List<string>? _explicitNullValueMatchedMembers = default!;
 #nullable restore
 #else
-        public List<string> MatchedMembers { get; set; }
+        public List<string> MatchedMembers { get => _explicitNullValueMatchedMembers; set { _explicitNullValueMatchedMembers = value; AdditionalData?.Remove("matchedMembers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedMembers"); else _explicitNullProperties?.Remove("matchedMembers"); } }
+        private List<string> _explicitNullValueMatchedMembers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand456DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand456DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand456DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand456DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("manualMatchedMember", ManualMatchedMember);
             writer.WriteCollectionOfPrimitiveValues<string>("matchedMembers", MatchedMembers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

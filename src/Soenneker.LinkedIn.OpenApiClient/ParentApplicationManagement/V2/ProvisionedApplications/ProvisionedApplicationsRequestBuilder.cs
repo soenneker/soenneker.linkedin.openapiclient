@@ -62,7 +62,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.Provis
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use this API Endpoint when partner wants to create a child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#create-application) for more information.
@@ -82,7 +82,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.Provis
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use this API Endpoint when partner wants to fetch a child application for any of our mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#get-application) for more information.

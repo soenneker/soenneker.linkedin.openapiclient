@@ -11,17 +11,36 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assetType") is null) { _explicitNullValueAssetType = default!; _explicitNullProperties?.Remove("assetType"); }
+            else if (parseNode.GetChildNode("assetType") is { } nullNodeAssetType && nullNodeAssetType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetType = null;
+            if (parseNode.GetChildNode("engagementType") is null) { _explicitNullValueEngagementType = default!; _explicitNullProperties?.Remove("engagementType"); }
+            else if (parseNode.GetChildNode("engagementType") is { } nullNodeEngagementType && nullNodeEngagementType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EngagementType = null;
+            if (parseNode.GetChildNode("engagementValue") is null) { _explicitNullValueEngagementValue = default!; _explicitNullProperties?.Remove("engagementValue"); }
+            else if (parseNode.GetChildNode("engagementValue") is { } nullNodeEngagementValue && nullNodeEngagementValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EngagementValue = null;
+            if (parseNode.GetChildNode("lastEngagedAt") is null) { _explicitNullValueLastEngagedAt = default!; _explicitNullProperties?.Remove("lastEngagedAt"); }
+            else if (parseNode.GetChildNode("lastEngagedAt") is { } nullNodeLastEngagedAt && nullNodeLastEngagedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEngagedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of asset for the content whose report is generated. Supported values include: COURSEVIDEODocumented type: AssetTypeRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType? AssetType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType? AssetType { get => _explicitNullValueAssetType; set { _explicitNullValueAssetType = value; AdditionalData?.Remove("assetType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetType"); else _explicitNullProperties?.Remove("assetType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType? _explicitNullValueAssetType = default!;
         /// <summary>An engagement type metric by which the results should be sorted. Supported values include: SECONDS_VIEWEDCOMPLETIONSDAYS_ACTIVEMARKED_AS_DONEPROGRESS_PERCENTAGEVIEWSENGAGED_LEARNERSDocumented type: EngagementMetricTypeRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType? EngagementType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType? EngagementType { get => _explicitNullValueEngagementType; set { _explicitNullValueEngagementType = value; AdditionalData?.Remove("engagementType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagementType"); else _explicitNullProperties?.Remove("engagementType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType? _explicitNullValueEngagementType = default!;
         /// <summary>Value of the engagement for the engagement type. For example, number of seconds views or course completions.Documented type: LongRequirement: No</summary>
-        public long? EngagementValue { get; set; }
+        public long? EngagementValue { get => _explicitNullValueEngagementValue; set { _explicitNullValueEngagementValue = value; AdditionalData?.Remove("engagementValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagementValue"); else _explicitNullProperties?.Remove("engagementValue"); } }
+        private long? _explicitNullValueEngagementValue = default!;
         /// <summary>The time when the content was last engaged. For example, the date the content was last viewed or completed. For COMPLETIONS this is the time when the content was completed.Documented type: TimeRequirement: No</summary>
-        public long? LastEngagedAt { get; set; }
+        public long? LastEngagedAt { get => _explicitNullValueLastEngagedAt; set { _explicitNullValueLastEngagedAt = value; AdditionalData?.Remove("lastEngagedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastEngagedAt"); else _explicitNullProperties?.Remove("lastEngagedAt"); } }
+        private long? _explicitNullValueLastEngagedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric"/> and sets the default values.
         /// </summary>
@@ -37,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,8 +66,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assetType", n => { AssetType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType>(); } },
-                { "engagementType", n => { EngagementType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>(); } },
+                { "assetType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAssetType = default; _explicitNullProperties?.Remove("assetType"); AdditionalData["assetType"] = unknown; } else { AssetType = parsed; AdditionalData.Remove("assetType"); } } },
+                { "engagementType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEngagementType = default; _explicitNullProperties?.Remove("engagementType"); AdditionalData["engagementType"] = unknown; } else { EngagementType = parsed; AdditionalData.Remove("engagementType"); } } },
                 { "engagementValue", n => { EngagementValue = n.GetLongValue(); } },
                 { "lastEngagedAt", n => { LastEngagedAt = n.GetLongValue(); } },
             };
@@ -64,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>("engagementType", EngagementType);
             writer.WriteLongValue("engagementValue", EngagementValue);
             writer.WriteLongValue("lastEngagedAt", LastEngagedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

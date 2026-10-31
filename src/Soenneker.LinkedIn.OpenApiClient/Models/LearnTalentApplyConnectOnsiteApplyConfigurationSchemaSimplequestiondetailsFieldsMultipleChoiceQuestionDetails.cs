@@ -12,37 +12,62 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("choices") is null) { _explicitNullValueChoices = default!; _explicitNullProperties?.Remove("choices"); }
+            else if (parseNode.GetChildNode("choices") is { } nullNodeChoices && nullNodeChoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Choices = null;
+            if (parseNode.GetChildNode("defaultValueSymbolicName") is null) { _explicitNullValueDefaultValueSymbolicName = default!; _explicitNullProperties?.Remove("defaultValueSymbolicName"); }
+            else if (parseNode.GetChildNode("defaultValueSymbolicName") is { } nullNodeDefaultValueSymbolicName && nullNodeDefaultValueSymbolicName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultValueSymbolicName = null;
+            if (parseNode.GetChildNode("favorableMultipleChoiceAnswer") is null) { _explicitNullValueFavorableMultipleChoiceAnswer = default!; _explicitNullProperties?.Remove("favorableMultipleChoiceAnswer"); }
+            else if (parseNode.GetChildNode("favorableMultipleChoiceAnswer") is { } nullNodeFavorableMultipleChoiceAnswer && nullNodeFavorableMultipleChoiceAnswer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FavorableMultipleChoiceAnswer = null;
+            if (parseNode.GetChildNode("preferredFormComponent") is null) { _explicitNullValuePreferredFormComponent = default!; _explicitNullProperties?.Remove("preferredFormComponent"); }
+            else if (parseNode.GetChildNode("preferredFormComponent") is { } nullNodePreferredFormComponent && nullNodePreferredFormComponent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredFormComponent = null;
+            if (parseNode.GetChildNode("selectMultiple") is null) { _explicitNullValueSelectMultiple = default!; _explicitNullProperties?.Remove("selectMultiple"); }
+            else if (parseNode.GetChildNode("selectMultiple") is { } nullNodeSelectMultiple && nullNodeSelectMultiple.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectMultiple = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of possible answers to this question.Documented type: MultipleChoiceAnswerOption[]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields>? Choices { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields>? Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields>? _explicitNullValueChoices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields> Choices { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields> Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields> _explicitNullValueChoices = default!;
 #endif
         /// <summary>The symbolic name for the default answer value from the array of choices.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultValueSymbolicName { get; set; }
+        public string? DefaultValueSymbolicName { get => _explicitNullValueDefaultValueSymbolicName; set { _explicitNullValueDefaultValueSymbolicName = value; AdditionalData?.Remove("defaultValueSymbolicName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValueSymbolicName"); else _explicitNullProperties?.Remove("defaultValueSymbolicName"); } }
+        private string? _explicitNullValueDefaultValueSymbolicName = default!;
 #nullable restore
 #else
-        public string DefaultValueSymbolicName { get; set; }
+        public string DefaultValueSymbolicName { get => _explicitNullValueDefaultValueSymbolicName; set { _explicitNullValueDefaultValueSymbolicName = value; AdditionalData?.Remove("defaultValueSymbolicName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValueSymbolicName"); else _explicitNullProperties?.Remove("defaultValueSymbolicName"); } }
+        private string _explicitNullValueDefaultValueSymbolicName = default!;
 #endif
         /// <summary>The field that contains the favorable multiple choice answer value for this question. This should only be present for which the question has a preferred/required qualification.Documented type: FavorableMultipleChoiceAnswerRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer? FavorableMultipleChoiceAnswer { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer? FavorableMultipleChoiceAnswer { get => _explicitNullValueFavorableMultipleChoiceAnswer; set { _explicitNullValueFavorableMultipleChoiceAnswer = value; AdditionalData?.Remove("favorableMultipleChoiceAnswer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorableMultipleChoiceAnswer"); else _explicitNullProperties?.Remove("favorableMultipleChoiceAnswer"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer? _explicitNullValueFavorableMultipleChoiceAnswer = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer FavorableMultipleChoiceAnswer { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer FavorableMultipleChoiceAnswer { get => _explicitNullValueFavorableMultipleChoiceAnswer; set { _explicitNullValueFavorableMultipleChoiceAnswer = value; AdditionalData?.Remove("favorableMultipleChoiceAnswer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorableMultipleChoiceAnswer"); else _explicitNullProperties?.Remove("favorableMultipleChoiceAnswer"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer _explicitNullValueFavorableMultipleChoiceAnswer = default!;
 #endif
         /// <summary>This field indicates whether a set of radio buttons, a dropdown, and so on should be used to display this question.Documented type: FormComponentRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent? PreferredFormComponent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent? PreferredFormComponent { get => _explicitNullValuePreferredFormComponent; set { _explicitNullValuePreferredFormComponent = value; AdditionalData?.Remove("preferredFormComponent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredFormComponent"); else _explicitNullProperties?.Remove("preferredFormComponent"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent? _explicitNullValuePreferredFormComponent = default!;
         /// <summary>This field indicates whether the applicant is allowed to select more than one option when FormComponent is CHECKBOXES. Defaults to false.Documented type: BooleanRequirement: No</summary>
-        public bool? SelectMultiple { get; set; }
+        public bool? SelectMultiple { get => _explicitNullValueSelectMultiple; set { _explicitNullValueSelectMultiple = value; AdditionalData?.Remove("selectMultiple"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectMultiple"); else _explicitNullProperties?.Remove("selectMultiple"); } }
+        private bool? _explicitNullValueSelectMultiple = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails"/> and sets the default values.
         /// </summary>
@@ -58,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsMultipleChoiceQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "choices", n => { Choices = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoiceansweroptionFields.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "defaultValueSymbolicName", n => { DefaultValueSymbolicName = n.GetStringValue(); } },
                 { "favorableMultipleChoiceAnswer", n => { FavorableMultipleChoiceAnswer = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer.CreateFromDiscriminatorValue); } },
-                { "preferredFormComponent", n => { PreferredFormComponent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent>(); } },
+                { "preferredFormComponent", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreferredFormComponent = default; _explicitNullProperties?.Remove("preferredFormComponent"); AdditionalData["preferredFormComponent"] = unknown; } else { PreferredFormComponent = parsed; AdditionalData.Remove("preferredFormComponent"); } } },
                 { "selectMultiple", n => { SelectMultiple = n.GetBoolValue(); } },
             };
         }
@@ -87,6 +112,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsFavorableMultipleChoiceAnswer>("favorableMultipleChoiceAnswer", FavorableMultipleChoiceAnswer);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaMultiplechoicequestiondetailsFieldsPreferredFormComponent>("preferredFormComponent", PreferredFormComponent);
             writer.WriteBoolValue("selectMultiple", SelectMultiple);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

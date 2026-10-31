@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.VerifiedOnLinkedin.Rest.IdentityMe
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinIdentityMe200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The **Identity API** (`/identityMe`) provides a simple way for partners to retrieve LinkedIn Member profile details. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.

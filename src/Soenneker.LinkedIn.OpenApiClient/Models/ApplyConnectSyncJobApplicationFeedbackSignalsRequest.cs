@@ -11,56 +11,87 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApplyConnectSyncJobApplicationFeedbackSignalsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
-        /// <summary>The action property</summary>
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("integrationContext") is null) { _explicitNullValueIntegrationContext = default!; _explicitNullProperties?.Remove("integrationContext"); }
+            else if (parseNode.GetChildNode("integrationContext") is { } nullNodeIntegrationContext && nullNodeIntegrationContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationContext = null;
+            if (parseNode.GetChildNode("jobApplicationId") is null) { _explicitNullValueJobApplicationId = default!; _explicitNullProperties?.Remove("jobApplicationId"); }
+            else if (parseNode.GetChildNode("jobApplicationId") is { } nullNodeJobApplicationId && nullNodeJobApplicationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobApplicationId = null;
+            if (parseNode.GetChildNode("memberIdentifier") is null) { _explicitNullValueMemberIdentifier = default!; _explicitNullProperties?.Remove("memberIdentifier"); }
+            else if (parseNode.GetChildNode("memberIdentifier") is { } nullNodeMemberIdentifier && nullNodeMemberIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberIdentifier = null;
+            if (parseNode.GetChildNode("partnerJobCode") is null) { _explicitNullValuePartnerJobCode = default!; _explicitNullProperties?.Remove("partnerJobCode"); }
+            else if (parseNode.GetChildNode("partnerJobCode") is { } nullNodePartnerJobCode && nullNodePartnerJobCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerJobCode = null;
+            if (parseNode.GetChildNode("performedAt") is null) { _explicitNullValuePerformedAt = default!; _explicitNullProperties?.Remove("performedAt"); }
+            else if (parseNode.GetChildNode("performedAt") is { } nullNodePerformedAt && nullNodePerformedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformedAt = null;
+        }
+
+        /// <summary>The action which was taken on the given job application. Possible enum values: APPLICATION_VIEWED, RESUME_DOWNLOADED, APPLICATION_REJECTED, SCREENED, INTERVIEWED, or HIRED.Documented type: EnumRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestAction? Action { get; set; }
+        public string? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private string? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestAction Action { get; set; }
+        public string Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private string _explicitNullValueAction = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The integrationContext property</summary>
+        /// <summary>The integration context, which must be of the form urn:li:organization:12345.Documented type: OrganizationUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestIntegrationContext? IntegrationContext { get; set; }
+        public string? IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string? _explicitNullValueIntegrationContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestIntegrationContext IntegrationContext { get; set; }
+        public string IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string _explicitNullValueIntegrationContext = default!;
 #endif
-        /// <summary>The jobApplicationId property</summary>
+        /// <summary>The LinkedIn job application ID for which an action has been taken.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestJobApplicationId? JobApplicationId { get; set; }
+        public string? JobApplicationId { get => _explicitNullValueJobApplicationId; set { _explicitNullValueJobApplicationId = value; AdditionalData?.Remove("jobApplicationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobApplicationId"); else _explicitNullProperties?.Remove("jobApplicationId"); } }
+        private string? _explicitNullValueJobApplicationId = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestJobApplicationId JobApplicationId { get; set; }
+        public string JobApplicationId { get => _explicitNullValueJobApplicationId; set { _explicitNullValueJobApplicationId = value; AdditionalData?.Remove("jobApplicationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobApplicationId"); else _explicitNullProperties?.Remove("jobApplicationId"); } }
+        private string _explicitNullValueJobApplicationId = default!;
 #endif
         /// <summary>The encoded member ID of the applicant.Documented type: StringRequirement: Yes for Apply with LinkedIn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberIdentifier { get; set; }
+        public string? MemberIdentifier { get => _explicitNullValueMemberIdentifier; set { _explicitNullValueMemberIdentifier = value; AdditionalData?.Remove("memberIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIdentifier"); else _explicitNullProperties?.Remove("memberIdentifier"); } }
+        private string? _explicitNullValueMemberIdentifier = default!;
 #nullable restore
 #else
-        public string MemberIdentifier { get; set; }
+        public string MemberIdentifier { get => _explicitNullValueMemberIdentifier; set { _explicitNullValueMemberIdentifier = value; AdditionalData?.Remove("memberIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIdentifier"); else _explicitNullProperties?.Remove("memberIdentifier"); } }
+        private string _explicitNullValueMemberIdentifier = default!;
 #endif
         /// <summary>The unique job posting ID within the company&apos;s system. LinkedIn uses this value to identify the job and track applications.Documented type: StringRequirement: Yes for Apply with LinkedIn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerJobCode { get; set; }
+        public string? PartnerJobCode { get => _explicitNullValuePartnerJobCode; set { _explicitNullValuePartnerJobCode = value; AdditionalData?.Remove("partnerJobCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerJobCode"); else _explicitNullProperties?.Remove("partnerJobCode"); } }
+        private string? _explicitNullValuePartnerJobCode = default!;
 #nullable restore
 #else
-        public string PartnerJobCode { get; set; }
+        public string PartnerJobCode { get => _explicitNullValuePartnerJobCode; set { _explicitNullValuePartnerJobCode = value; AdditionalData?.Remove("partnerJobCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerJobCode"); else _explicitNullProperties?.Remove("partnerJobCode"); } }
+        private string _explicitNullValuePartnerJobCode = default!;
 #endif
         /// <summary>The performedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt? PerformedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt? PerformedAt { get => _explicitNullValuePerformedAt; set { _explicitNullValuePerformedAt = value; AdditionalData?.Remove("performedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performedAt"); else _explicitNullProperties?.Remove("performedAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt? _explicitNullValuePerformedAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt PerformedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt PerformedAt { get => _explicitNullValuePerformedAt; set { _explicitNullValuePerformedAt = value; AdditionalData?.Remove("performedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performedAt"); else _explicitNullProperties?.Remove("performedAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt _explicitNullValuePerformedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequest"/> and sets the default values.
@@ -77,7 +108,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,9 +118,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestAction.CreateFromDiscriminatorValue); } },
-                { "integrationContext", n => { IntegrationContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestIntegrationContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestIntegrationContext.CreateFromDiscriminatorValue); } },
-                { "jobApplicationId", n => { JobApplicationId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestJobApplicationId>(global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestJobApplicationId.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetStringValue(); } },
+                { "integrationContext", n => { IntegrationContext = n.GetStringValue(); } },
+                { "jobApplicationId", n => { JobApplicationId = n.GetStringValue(); } },
                 { "memberIdentifier", n => { MemberIdentifier = n.GetStringValue(); } },
                 { "partnerJobCode", n => { PartnerJobCode = n.GetStringValue(); } },
                 { "performedAt", n => { PerformedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt.CreateFromDiscriminatorValue); } },
@@ -102,12 +133,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestIntegrationContext>("integrationContext", IntegrationContext);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestJobApplicationId>("jobApplicationId", JobApplicationId);
+            writer.WriteStringValue("action", Action);
+            writer.WriteStringValue("integrationContext", IntegrationContext);
+            writer.WriteStringValue("jobApplicationId", JobApplicationId);
             writer.WriteStringValue("memberIdentifier", MemberIdentifier);
             writer.WriteStringValue("partnerJobCode", PartnerJobCode);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobApplicationFeedbackSignalsRequestPerformedAt>("performedAt", PerformedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

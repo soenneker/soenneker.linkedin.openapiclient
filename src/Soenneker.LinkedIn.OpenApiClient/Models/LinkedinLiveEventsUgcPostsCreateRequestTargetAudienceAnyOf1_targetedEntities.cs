@@ -12,96 +12,147 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1_targetedEntities : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("degrees") is null) { _explicitNullValueDegrees = default!; _explicitNullProperties?.Remove("degrees"); }
+            else if (parseNode.GetChildNode("degrees") is { } nullNodeDegrees && nullNodeDegrees.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Degrees = null;
+            if (parseNode.GetChildNode("fieldsOfStudy") is null) { _explicitNullValueFieldsOfStudy = default!; _explicitNullProperties?.Remove("fieldsOfStudy"); }
+            else if (parseNode.GetChildNode("fieldsOfStudy") is { } nullNodeFieldsOfStudy && nullNodeFieldsOfStudy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldsOfStudy = null;
+            if (parseNode.GetChildNode("geoLocations") is null) { _explicitNullValueGeoLocations = default!; _explicitNullProperties?.Remove("geoLocations"); }
+            else if (parseNode.GetChildNode("geoLocations") is { } nullNodeGeoLocations && nullNodeGeoLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeoLocations = null;
+            if (parseNode.GetChildNode("industries") is null) { _explicitNullValueIndustries = default!; _explicitNullProperties?.Remove("industries"); }
+            else if (parseNode.GetChildNode("industries") is { } nullNodeIndustries && nullNodeIndustries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Industries = null;
+            if (parseNode.GetChildNode("interfaceLocales") is null) { _explicitNullValueInterfaceLocales = default!; _explicitNullProperties?.Remove("interfaceLocales"); }
+            else if (parseNode.GetChildNode("interfaceLocales") is { } nullNodeInterfaceLocales && nullNodeInterfaceLocales.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterfaceLocales = null;
+            if (parseNode.GetChildNode("jobFunctions") is null) { _explicitNullValueJobFunctions = default!; _explicitNullProperties?.Remove("jobFunctions"); }
+            else if (parseNode.GetChildNode("jobFunctions") is { } nullNodeJobFunctions && nullNodeJobFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobFunctions = null;
+            if (parseNode.GetChildNode("locations") is null) { _explicitNullValueLocations = default!; _explicitNullProperties?.Remove("locations"); }
+            else if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
+            if (parseNode.GetChildNode("organizations") is null) { _explicitNullValueOrganizations = default!; _explicitNullProperties?.Remove("organizations"); }
+            else if (parseNode.GetChildNode("organizations") is { } nullNodeOrganizations && nullNodeOrganizations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organizations = null;
+            if (parseNode.GetChildNode("schools") is null) { _explicitNullValueSchools = default!; _explicitNullProperties?.Remove("schools"); }
+            else if (parseNode.GetChildNode("schools") is { } nullNodeSchools && nullNodeSchools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schools = null;
+            if (parseNode.GetChildNode("seniorities") is null) { _explicitNullValueSeniorities = default!; _explicitNullProperties?.Remove("seniorities"); }
+            else if (parseNode.GetChildNode("seniorities") is { } nullNodeSeniorities && nullNodeSeniorities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seniorities = null;
+            if (parseNode.GetChildNode("staffCountRanges") is null) { _explicitNullValueStaffCountRanges = default!; _explicitNullProperties?.Remove("staffCountRanges"); }
+            else if (parseNode.GetChildNode("staffCountRanges") is { } nullNodeStaffCountRanges && nullNodeStaffCountRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaffCountRanges = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Targeted standardized degreesDocumented type: Array of Degree URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Degrees { get; set; }
+        public List<string>? Degrees { get => _explicitNullValueDegrees; set { _explicitNullValueDegrees = value; AdditionalData?.Remove("degrees"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("degrees"); else _explicitNullProperties?.Remove("degrees"); } }
+        private List<string>? _explicitNullValueDegrees = default!;
 #nullable restore
 #else
-        public List<string> Degrees { get; set; }
+        public List<string> Degrees { get => _explicitNullValueDegrees; set { _explicitNullValueDegrees = value; AdditionalData?.Remove("degrees"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("degrees"); else _explicitNullProperties?.Remove("degrees"); } }
+        private List<string> _explicitNullValueDegrees = default!;
 #endif
         /// <summary>Targeted standardized fields of studyDocumented type: Array of FieldOfStudy URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FieldsOfStudy { get; set; }
+        public List<string>? FieldsOfStudy { get => _explicitNullValueFieldsOfStudy; set { _explicitNullValueFieldsOfStudy = value; AdditionalData?.Remove("fieldsOfStudy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldsOfStudy"); else _explicitNullProperties?.Remove("fieldsOfStudy"); } }
+        private List<string>? _explicitNullValueFieldsOfStudy = default!;
 #nullable restore
 #else
-        public List<string> FieldsOfStudy { get; set; }
+        public List<string> FieldsOfStudy { get => _explicitNullValueFieldsOfStudy; set { _explicitNullValueFieldsOfStudy = value; AdditionalData?.Remove("fieldsOfStudy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldsOfStudy"); else _explicitNullProperties?.Remove("fieldsOfStudy"); } }
+        private List<string> _explicitNullValueFieldsOfStudy = default!;
 #endif
         /// <summary>Targeted GeoLocationsDocumented type: Array of Geo URN. Learn more</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GeoLocations { get; set; }
+        public List<string>? GeoLocations { get => _explicitNullValueGeoLocations; set { _explicitNullValueGeoLocations = value; AdditionalData?.Remove("geoLocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoLocations"); else _explicitNullProperties?.Remove("geoLocations"); } }
+        private List<string>? _explicitNullValueGeoLocations = default!;
 #nullable restore
 #else
-        public List<string> GeoLocations { get; set; }
+        public List<string> GeoLocations { get => _explicitNullValueGeoLocations; set { _explicitNullValueGeoLocations = value; AdditionalData?.Remove("geoLocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoLocations"); else _explicitNullProperties?.Remove("geoLocations"); } }
+        private List<string> _explicitNullValueGeoLocations = default!;
 #endif
         /// <summary>Targeted industriesDocumented type: Array of Industry URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Industries { get; set; }
+        public List<string>? Industries { get => _explicitNullValueIndustries; set { _explicitNullValueIndustries = value; AdditionalData?.Remove("industries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industries"); else _explicitNullProperties?.Remove("industries"); } }
+        private List<string>? _explicitNullValueIndustries = default!;
 #nullable restore
 #else
-        public List<string> Industries { get; set; }
+        public List<string> Industries { get => _explicitNullValueIndustries; set { _explicitNullValueIndustries = value; AdditionalData?.Remove("industries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industries"); else _explicitNullProperties?.Remove("industries"); } }
+        private List<string> _explicitNullValueIndustries = default!;
 #endif
         /// <summary>Interface locales to be targeted.Documented type: Array of Locale</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? InterfaceLocales { get; set; }
+        public UntypedNode? InterfaceLocales { get => _explicitNullValueInterfaceLocales; set { _explicitNullValueInterfaceLocales = value; AdditionalData?.Remove("interfaceLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interfaceLocales"); else _explicitNullProperties?.Remove("interfaceLocales"); } }
+        private UntypedNode? _explicitNullValueInterfaceLocales = default!;
 #nullable restore
 #else
-        public UntypedNode InterfaceLocales { get; set; }
+        public UntypedNode InterfaceLocales { get => _explicitNullValueInterfaceLocales; set { _explicitNullValueInterfaceLocales = value; AdditionalData?.Remove("interfaceLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interfaceLocales"); else _explicitNullProperties?.Remove("interfaceLocales"); } }
+        private UntypedNode _explicitNullValueInterfaceLocales = default!;
 #endif
         /// <summary>Targeted top level groupings of supertitlesDocumented type: Array of Function URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? JobFunctions { get; set; }
+        public List<string>? JobFunctions { get => _explicitNullValueJobFunctions; set { _explicitNullValueJobFunctions = value; AdditionalData?.Remove("jobFunctions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobFunctions"); else _explicitNullProperties?.Remove("jobFunctions"); } }
+        private List<string>? _explicitNullValueJobFunctions = default!;
 #nullable restore
 #else
-        public List<string> JobFunctions { get; set; }
+        public List<string> JobFunctions { get => _explicitNullValueJobFunctions; set { _explicitNullValueJobFunctions = value; AdditionalData?.Remove("jobFunctions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobFunctions"); else _explicitNullProperties?.Remove("jobFunctions"); } }
+        private List<string> _explicitNullValueJobFunctions = default!;
 #endif
         /// <summary>Deprecated. Please use geoLocations field instead. Location to be targeted. The URNs don&apos;t need to all be of the same type. The permitted URN types are: &apos;countryGroup&apos;, &apos;country&apos;, &apos;state&apos;, and &apos;region&apos;Documented type: Array of Location URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Locations { get; set; }
+        public List<string>? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<string>? _explicitNullValueLocations = default!;
 #nullable restore
 #else
-        public List<string> Locations { get; set; }
+        public List<string> Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; AdditionalData?.Remove("locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<string> _explicitNullValueLocations = default!;
 #endif
         /// <summary>School Organizations to be targeted. Retrieve school organization URN using Organization Lookup APIDocumented type: Array of Organization URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Organizations { get; set; }
+        public List<string>? Organizations { get => _explicitNullValueOrganizations; set { _explicitNullValueOrganizations = value; AdditionalData?.Remove("organizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizations"); else _explicitNullProperties?.Remove("organizations"); } }
+        private List<string>? _explicitNullValueOrganizations = default!;
 #nullable restore
 #else
-        public List<string> Organizations { get; set; }
+        public List<string> Organizations { get => _explicitNullValueOrganizations; set { _explicitNullValueOrganizations = value; AdditionalData?.Remove("organizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizations"); else _explicitNullProperties?.Remove("organizations"); } }
+        private List<string> _explicitNullValueOrganizations = default!;
 #endif
         /// <summary>Deprecated. Please use organizations field instead. Standardized schools to be targeted.Documented type: Array of School URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Schools { get; set; }
+        public List<string>? Schools { get => _explicitNullValueSchools; set { _explicitNullValueSchools = value; AdditionalData?.Remove("schools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schools"); else _explicitNullProperties?.Remove("schools"); } }
+        private List<string>? _explicitNullValueSchools = default!;
 #nullable restore
 #else
-        public List<string> Schools { get; set; }
+        public List<string> Schools { get => _explicitNullValueSchools; set { _explicitNullValueSchools = value; AdditionalData?.Remove("schools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schools"); else _explicitNullProperties?.Remove("schools"); } }
+        private List<string> _explicitNullValueSchools = default!;
 #endif
         /// <summary>Seniorities to be targetedDocumented type: Array of Seniority URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Seniorities { get; set; }
+        public List<string>? Seniorities { get => _explicitNullValueSeniorities; set { _explicitNullValueSeniorities = value; AdditionalData?.Remove("seniorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seniorities"); else _explicitNullProperties?.Remove("seniorities"); } }
+        private List<string>? _explicitNullValueSeniorities = default!;
 #nullable restore
 #else
-        public List<string> Seniorities { get; set; }
+        public List<string> Seniorities { get => _explicitNullValueSeniorities; set { _explicitNullValueSeniorities = value; AdditionalData?.Remove("seniorities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seniorities"); else _explicitNullProperties?.Remove("seniorities"); } }
+        private List<string> _explicitNullValueSeniorities = default!;
 #endif
         /// <summary>Organization sizes to be targeted. Can be the following enum values: SIZE_1 SIZE_2_TO_10 SIZE_11_TO_50 SIZE_51_TO_200 SIZE_201_TO_500 SIZE_501_TO_1000 SIZE_1001_TO_5000 SIZE_5001_TO_10000 SIZE_10001_OR_MOREDocumented type: Array of StaffCountRange</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiTargetaudienceTargetedEntitiesStaffCountRangesItem?>? StaffCountRanges { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiTargetaudienceTargetedEntitiesStaffCountRangesItem?>? StaffCountRanges { get => _explicitNullValueStaffCountRanges; set { _explicitNullValueStaffCountRanges = value; AdditionalData?.Remove("staffCountRanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staffCountRanges"); else _explicitNullProperties?.Remove("staffCountRanges"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiTargetaudienceTargetedEntitiesStaffCountRangesItem?>? _explicitNullValueStaffCountRanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiTargetaudienceTargetedEntitiesStaffCountRangesItem?> StaffCountRanges { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiTargetaudienceTargetedEntitiesStaffCountRangesItem?> StaffCountRanges { get => _explicitNullValueStaffCountRanges; set { _explicitNullValueStaffCountRanges = value; AdditionalData?.Remove("staffCountRanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staffCountRanges"); else _explicitNullProperties?.Remove("staffCountRanges"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiTargetaudienceTargetedEntitiesStaffCountRangesItem?> _explicitNullValueStaffCountRanges = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1_targetedEntities"/> and sets the default values.
@@ -118,7 +169,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1_targetedEntities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1_targetedEntities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestTargetAudienceAnyOf1_targetedEntities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,6 +210,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("schools", Schools);
             writer.WriteCollectionOfPrimitiveValues<string>("seniorities", Seniorities);
             writer.WriteCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementSharesUgcPostApiTargetaudienceTargetedEntitiesStaffCountRangesItem>("staffCountRanges", StaffCountRanges);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

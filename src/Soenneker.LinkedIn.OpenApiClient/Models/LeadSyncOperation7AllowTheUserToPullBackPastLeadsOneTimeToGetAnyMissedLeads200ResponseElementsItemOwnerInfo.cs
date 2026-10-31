@@ -12,48 +12,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("localizedOrganizationName") is null) { _explicitNullValueLocalizedOrganizationName = default!; _explicitNullProperties?.Remove("localizedOrganizationName"); }
+            else if (parseNode.GetChildNode("localizedOrganizationName") is { } nullNodeLocalizedOrganizationName && nullNodeLocalizedOrganizationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalizedOrganizationName = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("organizationInfo") is null) { _explicitNullValueOrganizationInfo = default!; _explicitNullProperties?.Remove("organizationInfo"); }
+            else if (parseNode.GetChildNode("organizationInfo") is { } nullNodeOrganizationInfo && nullNodeOrganizationInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationInfo = null;
+            if (parseNode.GetChildNode("sponsoredAccount") is null) { _explicitNullValueSponsoredAccount = default!; _explicitNullProperties?.Remove("sponsoredAccount"); }
+            else if (parseNode.GetChildNode("sponsoredAccount") is { } nullNodeSponsoredAccount && nullNodeSponsoredAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SponsoredAccount = null;
+            if (parseNode.GetChildNode("sponsoredAccountInfo") is null) { _explicitNullValueSponsoredAccountInfo = default!; _explicitNullProperties?.Remove("sponsoredAccountInfo"); }
+            else if (parseNode.GetChildNode("sponsoredAccountInfo") is { } nullNodeSponsoredAccountInfo && nullNodeSponsoredAccountInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SponsoredAccountInfo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The locale-specific name of the organization associated with this ad accountDocumented type: (Optional) string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalizedOrganizationName { get; set; }
+        public string? LocalizedOrganizationName { get => _explicitNullValueLocalizedOrganizationName; set { _explicitNullValueLocalizedOrganizationName = value; AdditionalData?.Remove("localizedOrganizationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedOrganizationName"); else _explicitNullProperties?.Remove("localizedOrganizationName"); } }
+        private string? _explicitNullValueLocalizedOrganizationName = default!;
 #nullable restore
 #else
-        public string LocalizedOrganizationName { get; set; }
+        public string LocalizedOrganizationName { get => _explicitNullValueLocalizedOrganizationName; set { _explicitNullValueLocalizedOrganizationName = value; AdditionalData?.Remove("localizedOrganizationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localizedOrganizationName"); else _explicitNullProperties?.Remove("localizedOrganizationName"); } }
+        private string _explicitNullValueLocalizedOrganizationName = default!;
 #endif
         /// <summary>Name of the advertising account, useful for labeling an accountDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The organizationInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo? OrganizationInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo? OrganizationInfo { get => _explicitNullValueOrganizationInfo; set { _explicitNullValueOrganizationInfo = value; AdditionalData?.Remove("organizationInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationInfo"); else _explicitNullProperties?.Remove("organizationInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo? _explicitNullValueOrganizationInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo OrganizationInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo OrganizationInfo { get => _explicitNullValueOrganizationInfo; set { _explicitNullValueOrganizationInfo = value; AdditionalData?.Remove("organizationInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationInfo"); else _explicitNullProperties?.Remove("organizationInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo _explicitNullValueOrganizationInfo = default!;
 #endif
         /// <summary>Identifier for the advertising accountDocumented type: sponsoredAccountUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SponsoredAccount { get; set; }
+        public string? SponsoredAccount { get => _explicitNullValueSponsoredAccount; set { _explicitNullValueSponsoredAccount = value; AdditionalData?.Remove("sponsoredAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredAccount"); else _explicitNullProperties?.Remove("sponsoredAccount"); } }
+        private string? _explicitNullValueSponsoredAccount = default!;
 #nullable restore
 #else
-        public string SponsoredAccount { get; set; }
+        public string SponsoredAccount { get => _explicitNullValueSponsoredAccount; set { _explicitNullValueSponsoredAccount = value; AdditionalData?.Remove("sponsoredAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredAccount"); else _explicitNullProperties?.Remove("sponsoredAccount"); } }
+        private string _explicitNullValueSponsoredAccount = default!;
 #endif
         /// <summary>The sponsoredAccountInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo? SponsoredAccountInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo? SponsoredAccountInfo { get => _explicitNullValueSponsoredAccountInfo; set { _explicitNullValueSponsoredAccountInfo = value; AdditionalData?.Remove("sponsoredAccountInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredAccountInfo"); else _explicitNullProperties?.Remove("sponsoredAccountInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo? _explicitNullValueSponsoredAccountInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo SponsoredAccountInfo { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo SponsoredAccountInfo { get => _explicitNullValueSponsoredAccountInfo; set { _explicitNullValueSponsoredAccountInfo = value; AdditionalData?.Remove("sponsoredAccountInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredAccountInfo"); else _explicitNullProperties?.Remove("sponsoredAccountInfo"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo _explicitNullValueSponsoredAccountInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo"/> and sets the default values.
@@ -70,7 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +126,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo>("organizationInfo", OrganizationInfo);
             writer.WriteStringValue("sponsoredAccount", SponsoredAccount);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo>("sponsoredAccountInfo", SponsoredAccountInfo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

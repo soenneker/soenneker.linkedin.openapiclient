@@ -12,22 +12,42 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsTextQuestionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maxLength") is null) { _explicitNullValueMaxLength = default!; _explicitNullProperties?.Remove("maxLength"); }
+            else if (parseNode.GetChildNode("maxLength") is { } nullNodeMaxLength && nullNodeMaxLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLength = null;
+            if (parseNode.GetChildNode("minLength") is null) { _explicitNullValueMinLength = default!; _explicitNullProperties?.Remove("minLength"); }
+            else if (parseNode.GetChildNode("minLength") is { } nullNodeMinLength && nullNodeMinLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinLength = null;
+            if (parseNode.GetChildNode("preferredFormComponent") is null) { _explicitNullValuePreferredFormComponent = default!; _explicitNullProperties?.Remove("preferredFormComponent"); }
+            else if (parseNode.GetChildNode("preferredFormComponent") is { } nullNodePreferredFormComponent && nullNodePreferredFormComponent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredFormComponent = null;
+            if (parseNode.GetChildNode("suggestedValue") is null) { _explicitNullValueSuggestedValue = default!; _explicitNullProperties?.Remove("suggestedValue"); }
+            else if (parseNode.GetChildNode("suggestedValue") is { } nullNodeSuggestedValue && nullNodeSuggestedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuggestedValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum text length for the answer. The value should be greater than 0.Documented type: IntegerRequirement: No</summary>
-        public int? MaxLength { get; set; }
+        public int? MaxLength { get => _explicitNullValueMaxLength; set { _explicitNullValueMaxLength = value; AdditionalData?.Remove("maxLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLength"); else _explicitNullProperties?.Remove("maxLength"); } }
+        private int? _explicitNullValueMaxLength = default!;
         /// <summary>The minimum text length for the answer. Defaults to 0.Documented type: IntegerRequirement: No</summary>
-        public int? MinLength { get; set; }
+        public int? MinLength { get => _explicitNullValueMinLength; set { _explicitNullValueMinLength = value; AdditionalData?.Remove("minLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minLength"); else _explicitNullProperties?.Remove("minLength"); } }
+        private int? _explicitNullValueMinLength = default!;
         /// <summary>This field indicates whether a one-line or multi-line text input should be used. The value should be TEXT or MULTILINE_TEXT.Documented type: FormComponentRequirement: No</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent? PreferredFormComponent { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent? PreferredFormComponent { get => _explicitNullValuePreferredFormComponent; set { _explicitNullValuePreferredFormComponent = value; AdditionalData?.Remove("preferredFormComponent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredFormComponent"); else _explicitNullProperties?.Remove("preferredFormComponent"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent? _explicitNullValuePreferredFormComponent = default!;
         /// <summary>The suggested answer that is prefilled for the applicant being asked the question.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SuggestedValue { get; set; }
+        public string? SuggestedValue { get => _explicitNullValueSuggestedValue; set { _explicitNullValueSuggestedValue = value; AdditionalData?.Remove("suggestedValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestedValue"); else _explicitNullProperties?.Remove("suggestedValue"); } }
+        private string? _explicitNullValueSuggestedValue = default!;
 #nullable restore
 #else
-        public string SuggestedValue { get; set; }
+        public string SuggestedValue { get => _explicitNullValueSuggestedValue; set { _explicitNullValueSuggestedValue = value; AdditionalData?.Remove("suggestedValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestedValue"); else _explicitNullProperties?.Remove("suggestedValue"); } }
+        private string _explicitNullValueSuggestedValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsTextQuestionDetails"/> and sets the default values.
@@ -44,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsTextQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsTextQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsTextQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "maxLength", n => { MaxLength = n.GetIntValue(); } },
                 { "minLength", n => { MinLength = n.GetIntValue(); } },
-                { "preferredFormComponent", n => { PreferredFormComponent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent>(); } },
+                { "preferredFormComponent", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreferredFormComponent = default; _explicitNullProperties?.Remove("preferredFormComponent"); AdditionalData["preferredFormComponent"] = unknown; } else { PreferredFormComponent = parsed; AdditionalData.Remove("preferredFormComponent"); } } },
                 { "suggestedValue", n => { SuggestedValue = n.GetStringValue(); } },
             };
         }
@@ -71,6 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteIntValue("minLength", MinLength);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaTextquestiondetailsFieldsPreferredFormComponent>("preferredFormComponent", PreferredFormComponent);
             writer.WriteStringValue("suggestedValue", SuggestedValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

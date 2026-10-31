@@ -11,13 +11,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequencySinglePointMetric : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("budgetMicros") is null) { _explicitNullValueBudgetMicros = default!; _explicitNullProperties?.Remove("budgetMicros"); }
+            else if (parseNode.GetChildNode("budgetMicros") is { } nullNodeBudgetMicros && nullNodeBudgetMicros.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BudgetMicros = null;
+            if (parseNode.GetChildNode("metricValue") is null) { _explicitNullValueMetricValue = default!; _explicitNullProperties?.Remove("metricValue"); }
+            else if (parseNode.GetChildNode("metricValue") is { } nullNodeMetricValue && nullNodeMetricValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The budgetMicros property</summary>
-        public long? BudgetMicros { get; set; }
+        public long? BudgetMicros { get => _explicitNullValueBudgetMicros; set { _explicitNullValueBudgetMicros = value; AdditionalData?.Remove("budgetMicros"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("budgetMicros"); else _explicitNullProperties?.Remove("budgetMicros"); } }
+        private long? _explicitNullValueBudgetMicros = default!;
         /// <summary>The metricValue property</summary>
-        public double? MetricValue { get; set; }
+        public double? MetricValue { get => _explicitNullValueMetricValue; set { _explicitNullValueMetricValue = value; AdditionalData?.Remove("metricValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricValue"); else _explicitNullProperties?.Remove("metricValue"); } }
+        private double? _explicitNullValueMetricValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequencySinglePointMetric"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequencySinglePointMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequencySinglePointMetric();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveDefaultResponseValueAverageFrequencySinglePointMetric(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("budgetMicros", BudgetMicros);
             writer.WriteDoubleValue("metricValue", MetricValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

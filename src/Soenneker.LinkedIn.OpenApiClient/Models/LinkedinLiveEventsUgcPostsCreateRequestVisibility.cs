@@ -12,7 +12,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkedinLiveEventsUgcPostsCreateRequestVisibility : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1"/></summary>
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1? LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2"/></summary>
@@ -42,19 +47,30 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibility();
-            if(parseNode.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1>() is global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1Value)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("CONNECTIONS".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "PUBLIC".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "LOGGED_IN".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "CONTAINER".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "DARK".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1>() is global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1Value)
             {
                 result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 = linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1Value;
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4>() is global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4Value)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue1 && ("CONNECTIONS".Equals(unionEnumValue1.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "PUBLIC".Equals(unionEnumValue1.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4>() is global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4Value)
             {
                 result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 = linkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4Value;
             }
             else {
-                result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2();
-                result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3();
+                
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("com.linkedin.ugc.MemberNetworkVisibility") || (((shapeMembers1["com.linkedin.ugc.MemberNetworkVisibility"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("com.linkedin.ugc.MemberNetworkVisibility") || (((shapeMembers1["com.linkedin.ugc.MemberNetworkVisibility"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 == null && result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 == null && result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 == null && result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3(), parseNode);
+            if (result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 == null && result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 == null && result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 == null && result.LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +78,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 != null || LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3);
@@ -74,6 +92,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 == null && LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 == null && LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 == null && LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 != null) selectedUnionBranches++;
+            if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 != null) selectedUnionBranches++;
+            if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 != null) selectedUnionBranches++;
+            if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf4 != null) selectedUnionBranches++;
+            if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 != null && selectedUnionBranches == 1) { if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf2); return; }
+            if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 != null && selectedUnionBranches == 1) { if (LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(LinkedinLiveEventsUgcPostsCreateRequestVisibilityAnyOf1 != null)
             {

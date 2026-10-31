@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1Metadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assetTypeFacetMetadata") is null) { _explicitNullValueAssetTypeFacetMetadata = default!; _explicitNullProperties?.Remove("assetTypeFacetMetadata"); }
+            else if (parseNode.GetChildNode("assetTypeFacetMetadata") is { } nullNodeAssetTypeFacetMetadata && nullNodeAssetTypeFacetMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTypeFacetMetadata = null;
+            if (parseNode.GetChildNode("difficultyLevelFacetMetadata") is null) { _explicitNullValueDifficultyLevelFacetMetadata = default!; _explicitNullProperties?.Remove("difficultyLevelFacetMetadata"); }
+            else if (parseNode.GetChildNode("difficultyLevelFacetMetadata") is { } nullNodeDifficultyLevelFacetMetadata && nullNodeDifficultyLevelFacetMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DifficultyLevelFacetMetadata = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The assetTypeFacetMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataAssetTypeFacetMetadataItem>? AssetTypeFacetMetadata { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataAssetTypeFacetMetadataItem>? AssetTypeFacetMetadata { get => _explicitNullValueAssetTypeFacetMetadata; set { _explicitNullValueAssetTypeFacetMetadata = value; AdditionalData?.Remove("assetTypeFacetMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetTypeFacetMetadata"); else _explicitNullProperties?.Remove("assetTypeFacetMetadata"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataAssetTypeFacetMetadataItem>? _explicitNullValueAssetTypeFacetMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataAssetTypeFacetMetadataItem> AssetTypeFacetMetadata { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataAssetTypeFacetMetadataItem> AssetTypeFacetMetadata { get => _explicitNullValueAssetTypeFacetMetadata; set { _explicitNullValueAssetTypeFacetMetadata = value; AdditionalData?.Remove("assetTypeFacetMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assetTypeFacetMetadata"); else _explicitNullProperties?.Remove("assetTypeFacetMetadata"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataAssetTypeFacetMetadataItem> _explicitNullValueAssetTypeFacetMetadata = default!;
 #endif
         /// <summary>The difficultyLevelFacetMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataDifficultyLevelFacetMetadataItem>? DifficultyLevelFacetMetadata { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataDifficultyLevelFacetMetadataItem>? DifficultyLevelFacetMetadata { get => _explicitNullValueDifficultyLevelFacetMetadata; set { _explicitNullValueDifficultyLevelFacetMetadata = value; AdditionalData?.Remove("difficultyLevelFacetMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("difficultyLevelFacetMetadata"); else _explicitNullProperties?.Remove("difficultyLevelFacetMetadata"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataDifficultyLevelFacetMetadataItem>? _explicitNullValueDifficultyLevelFacetMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataDifficultyLevelFacetMetadataItem> DifficultyLevelFacetMetadata { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataDifficultyLevelFacetMetadataItem> DifficultyLevelFacetMetadata { get => _explicitNullValueDifficultyLevelFacetMetadata; set { _explicitNullValueDifficultyLevelFacetMetadata = value; AdditionalData?.Remove("difficultyLevelFacetMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("difficultyLevelFacetMetadata"); else _explicitNullProperties?.Remove("difficultyLevelFacetMetadata"); } }
+        private List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataDifficultyLevelFacetMetadataItem> _explicitNullValueDifficultyLevelFacetMetadata = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1Metadata"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1Metadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1Metadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1Metadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataAssetTypeFacetMetadataItem>("assetTypeFacetMetadata", AssetTypeFacetMetadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1MetadataDifficultyLevelFacetMetadataItem>("difficultyLevelFacetMetadata", DifficultyLevelFacetMetadata);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

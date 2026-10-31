@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("89758488") is null) { _explicitNullValueEightNineSevenFiveEightFourEightEight = default!; _explicitNullProperties?.Remove("89758488"); }
+            else if (parseNode.GetChildNode("89758488") is { } nullNodeEightNineSevenFiveEightFourEightEight && nullNodeEightNineSevenFiveEightFourEightEight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EightNineSevenFiveEightFourEightEight = null;
+            if (parseNode.GetChildNode("35625943") is null) { _explicitNullValueThreeFiveSixTwoFiveNineFourThree = default!; _explicitNullProperties?.Remove("35625943"); }
+            else if (parseNode.GetChildNode("35625943") is { } nullNodeThreeFiveSixTwoFiveNineFourThree && nullNodeThreeFiveSixTwoFiveNineFourThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeFiveSixTwoFiveNineFourThree = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The EightNineSevenFiveEightFourEightEight property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults89758488? EightNineSevenFiveEightFourEightEight { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults89758488? EightNineSevenFiveEightFourEightEight { get => _explicitNullValueEightNineSevenFiveEightFourEightEight; set { _explicitNullValueEightNineSevenFiveEightFourEightEight = value; AdditionalData?.Remove("89758488"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("89758488"); else _explicitNullProperties?.Remove("89758488"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults89758488? _explicitNullValueEightNineSevenFiveEightFourEightEight = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults89758488 EightNineSevenFiveEightFourEightEight { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults89758488 EightNineSevenFiveEightFourEightEight { get => _explicitNullValueEightNineSevenFiveEightFourEightEight; set { _explicitNullValueEightNineSevenFiveEightFourEightEight = value; AdditionalData?.Remove("89758488"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("89758488"); else _explicitNullProperties?.Remove("89758488"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults89758488 _explicitNullValueEightNineSevenFiveEightFourEightEight = default!;
 #endif
         /// <summary>The ThreeFiveSixTwoFiveNineFourThree property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults35625943? ThreeFiveSixTwoFiveNineFourThree { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults35625943? ThreeFiveSixTwoFiveNineFourThree { get => _explicitNullValueThreeFiveSixTwoFiveNineFourThree; set { _explicitNullValueThreeFiveSixTwoFiveNineFourThree = value; AdditionalData?.Remove("35625943"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("35625943"); else _explicitNullProperties?.Remove("35625943"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults35625943? _explicitNullValueThreeFiveSixTwoFiveNineFourThree = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults35625943 ThreeFiveSixTwoFiveNineFourThree { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults35625943 ThreeFiveSixTwoFiveNineFourThree { get => _explicitNullValueThreeFiveSixTwoFiveNineFourThree; set { _explicitNullValueThreeFiveSixTwoFiveNineFourThree = value; AdditionalData?.Remove("35625943"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("35625943"); else _explicitNullProperties?.Remove("35625943"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults35625943 _explicitNullValueThreeFiveSixTwoFiveNineFourThree = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults89758488>("89758488", EightNineSevenFiveEightFourEightEight);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseResults35625943>("35625943", ThreeFiveSixTwoFiveNineFourThree);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

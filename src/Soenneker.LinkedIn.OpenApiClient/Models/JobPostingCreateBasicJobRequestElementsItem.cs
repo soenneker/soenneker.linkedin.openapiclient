@@ -11,208 +11,308 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class JobPostingCreateBasicJobRequestElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alternateLocations") is null) { _explicitNullValueAlternateLocations = default!; _explicitNullProperties?.Remove("alternateLocations"); }
+            else if (parseNode.GetChildNode("alternateLocations") is { } nullNodeAlternateLocations && nullNodeAlternateLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlternateLocations = null;
+            if (parseNode.GetChildNode("availability") is null) { _explicitNullValueAvailability = default!; _explicitNullProperties?.Remove("availability"); }
+            else if (parseNode.GetChildNode("availability") is { } nullNodeAvailability && nullNodeAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Availability = null;
+            if (parseNode.GetChildNode("company") is null) { _explicitNullValueCompany = default!; _explicitNullProperties?.Remove("company"); }
+            else if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
+            if (parseNode.GetChildNode("companyApplyUrl") is null) { _explicitNullValueCompanyApplyUrl = default!; _explicitNullProperties?.Remove("companyApplyUrl"); }
+            else if (parseNode.GetChildNode("companyApplyUrl") is { } nullNodeCompanyApplyUrl && nullNodeCompanyApplyUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyApplyUrl = null;
+            if (parseNode.GetChildNode("companyJobCode") is null) { _explicitNullValueCompanyJobCode = default!; _explicitNullProperties?.Remove("companyJobCode"); }
+            else if (parseNode.GetChildNode("companyJobCode") is { } nullNodeCompanyJobCode && nullNodeCompanyJobCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyJobCode = null;
+            if (parseNode.GetChildNode("companyName") is null) { _explicitNullValueCompanyName = default!; _explicitNullProperties?.Remove("companyName"); }
+            else if (parseNode.GetChildNode("companyName") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
+            if (parseNode.GetChildNode("companyPageUrl") is null) { _explicitNullValueCompanyPageUrl = default!; _explicitNullProperties?.Remove("companyPageUrl"); }
+            else if (parseNode.GetChildNode("companyPageUrl") is { } nullNodeCompanyPageUrl && nullNodeCompanyPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyPageUrl = null;
+            if (parseNode.GetChildNode("compensation") is null) { _explicitNullValueCompensation = default!; _explicitNullProperties?.Remove("compensation"); }
+            else if (parseNode.GetChildNode("compensation") is { } nullNodeCompensation && nullNodeCompensation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compensation = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("employmentStatus") is null) { _explicitNullValueEmploymentStatus = default!; _explicitNullProperties?.Remove("employmentStatus"); }
+            else if (parseNode.GetChildNode("employmentStatus") is { } nullNodeEmploymentStatus && nullNodeEmploymentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentStatus = null;
+            if (parseNode.GetChildNode("experienceLevel") is null) { _explicitNullValueExperienceLevel = default!; _explicitNullProperties?.Remove("experienceLevel"); }
+            else if (parseNode.GetChildNode("experienceLevel") is { } nullNodeExperienceLevel && nullNodeExperienceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExperienceLevel = null;
+            if (parseNode.GetChildNode("expireAt") is null) { _explicitNullValueExpireAt = default!; _explicitNullProperties?.Remove("expireAt"); }
+            else if (parseNode.GetChildNode("expireAt") is { } nullNodeExpireAt && nullNodeExpireAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpireAt = null;
+            if (parseNode.GetChildNode("externalJobPostingId") is null) { _explicitNullValueExternalJobPostingId = default!; _explicitNullProperties?.Remove("externalJobPostingId"); }
+            else if (parseNode.GetChildNode("externalJobPostingId") is { } nullNodeExternalJobPostingId && nullNodeExternalJobPostingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalJobPostingId = null;
+            if (parseNode.GetChildNode("integrationContext") is null) { _explicitNullValueIntegrationContext = default!; _explicitNullProperties?.Remove("integrationContext"); }
+            else if (parseNode.GetChildNode("integrationContext") is { } nullNodeIntegrationContext && nullNodeIntegrationContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationContext = null;
+            if (parseNode.GetChildNode("jobPostingOperationType") is null) { _explicitNullValueJobPostingOperationType = default!; _explicitNullProperties?.Remove("jobPostingOperationType"); }
+            else if (parseNode.GetChildNode("jobPostingOperationType") is { } nullNodeJobPostingOperationType && nullNodeJobPostingOperationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobPostingOperationType = null;
+            if (parseNode.GetChildNode("listedAt") is null) { _explicitNullValueListedAt = default!; _explicitNullProperties?.Remove("listedAt"); }
+            else if (parseNode.GetChildNode("listedAt") is { } nullNodeListedAt && nullNodeListedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListedAt = null;
+            if (parseNode.GetChildNode("listingType") is null) { _explicitNullValueListingType = default!; _explicitNullProperties?.Remove("listingType"); }
+            else if (parseNode.GetChildNode("listingType") is { } nullNodeListingType && nullNodeListingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListingType = null;
+            if (parseNode.GetChildNode("location") is null) { _explicitNullValueLocation = default!; _explicitNullProperties?.Remove("location"); }
+            else if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("onsiteApplyConfiguration") is null) { _explicitNullValueOnsiteApplyConfiguration = default!; _explicitNullProperties?.Remove("onsiteApplyConfiguration"); }
+            else if (parseNode.GetChildNode("onsiteApplyConfiguration") is { } nullNodeOnsiteApplyConfiguration && nullNodeOnsiteApplyConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnsiteApplyConfiguration = null;
+            if (parseNode.GetChildNode("partnerRequisitionId") is null) { _explicitNullValuePartnerRequisitionId = default!; _explicitNullProperties?.Remove("partnerRequisitionId"); }
+            else if (parseNode.GetChildNode("partnerRequisitionId") is { } nullNodePartnerRequisitionId && nullNodePartnerRequisitionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerRequisitionId = null;
+            if (parseNode.GetChildNode("posterEmail") is null) { _explicitNullValuePosterEmail = default!; _explicitNullProperties?.Remove("posterEmail"); }
+            else if (parseNode.GetChildNode("posterEmail") is { } nullNodePosterEmail && nullNodePosterEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PosterEmail = null;
+            if (parseNode.GetChildNode("skillsDescription") is null) { _explicitNullValueSkillsDescription = default!; _explicitNullProperties?.Remove("skillsDescription"); }
+            else if (parseNode.GetChildNode("skillsDescription") is { } nullNodeSkillsDescription && nullNodeSkillsDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkillsDescription = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("trackingPixelUrl") is null) { _explicitNullValueTrackingPixelUrl = default!; _explicitNullProperties?.Remove("trackingPixelUrl"); }
+            else if (parseNode.GetChildNode("trackingPixelUrl") is { } nullNodeTrackingPixelUrl && nullNodeTrackingPixelUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingPixelUrl = null;
+            if (parseNode.GetChildNode("workplaceTypes") is null) { _explicitNullValueWorkplaceTypes = default!; _explicitNullProperties?.Remove("workplaceTypes"); }
+            else if (parseNode.GetChildNode("workplaceTypes") is { } nullNodeWorkplaceTypes && nullNodeWorkplaceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkplaceTypes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents alternate locations for a job with multiple locations. This field takes the locations as input (including the one set in the location field). This field is null if the job has only one location. Maximum up to seven alternate locations are allowed. US locations - City Non-US locations - City, Country/Region (for example, “London, United Kingdom”) NOTE: Alternate locations are not supported for RSC and CRM ConnectDocumented type: String ArrayRequirement: Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AlternateLocations { get; set; }
+        public List<string>? AlternateLocations { get => _explicitNullValueAlternateLocations; set { _explicitNullValueAlternateLocations = value; AdditionalData?.Remove("alternateLocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternateLocations"); else _explicitNullProperties?.Remove("alternateLocations"); } }
+        private List<string>? _explicitNullValueAlternateLocations = default!;
 #nullable restore
 #else
-        public List<string> AlternateLocations { get; set; }
+        public List<string> AlternateLocations { get => _explicitNullValueAlternateLocations; set { _explicitNullValueAlternateLocations = value; AdditionalData?.Remove("alternateLocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternateLocations"); else _explicitNullProperties?.Remove("alternateLocations"); } }
+        private List<string> _explicitNullValueAlternateLocations = default!;
 #endif
         /// <summary>The availability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemAvailability? Availability { get; set; }
+        public string? Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; AdditionalData?.Remove("availability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private string? _explicitNullValueAvailability = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemAvailability Availability { get; set; }
+        public string Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; AdditionalData?.Remove("availability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private string _explicitNullValueAvailability = default!;
 #endif
         /// <summary>Company URN of the this job, previously referred via integrationcontext field. You can use company lookup API to fetch company details.Documented type: StringRequirement: Yes, if neither companyPageUrl nor companyName is available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Company { get; set; }
+        public string? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; AdditionalData?.Remove("company"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private string? _explicitNullValueCompany = default!;
 #nullable restore
 #else
-        public string Company { get; set; }
+        public string Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; AdditionalData?.Remove("company"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        private string _explicitNullValueCompany = default!;
 #endif
         /// <summary>The companyApplyUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyApplyUrl? CompanyApplyUrl { get; set; }
+        public string? CompanyApplyUrl { get => _explicitNullValueCompanyApplyUrl; set { _explicitNullValueCompanyApplyUrl = value; AdditionalData?.Remove("companyApplyUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyApplyUrl"); else _explicitNullProperties?.Remove("companyApplyUrl"); } }
+        private string? _explicitNullValueCompanyApplyUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyApplyUrl CompanyApplyUrl { get; set; }
+        public string CompanyApplyUrl { get => _explicitNullValueCompanyApplyUrl; set { _explicitNullValueCompanyApplyUrl = value; AdditionalData?.Remove("companyApplyUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyApplyUrl"); else _explicitNullProperties?.Remove("companyApplyUrl"); } }
+        private string _explicitNullValueCompanyApplyUrl = default!;
 #endif
-        /// <summary>The companyJobCode property</summary>
+        /// <summary>A unique job identifier. ATSs provide jobRequisitionId, and job distributors use externalJobPostingId when jobRequisitionId isn’t available. LinkedIn tracks and links jobs across sources using these identifiers to detect duplicates.Documented type: StringRequirement: Yes, if available on career site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyJobCode? CompanyJobCode { get; set; }
+        public string? CompanyJobCode { get => _explicitNullValueCompanyJobCode; set { _explicitNullValueCompanyJobCode = value; AdditionalData?.Remove("companyJobCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyJobCode"); else _explicitNullProperties?.Remove("companyJobCode"); } }
+        private string? _explicitNullValueCompanyJobCode = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyJobCode CompanyJobCode { get; set; }
+        public string CompanyJobCode { get => _explicitNullValueCompanyJobCode; set { _explicitNullValueCompanyJobCode = value; AdditionalData?.Remove("companyJobCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyJobCode"); else _explicitNullProperties?.Remove("companyJobCode"); } }
+        private string _explicitNullValueCompanyJobCode = default!;
 #endif
-        /// <summary>The companyName property</summary>
+        /// <summary>The company name for which this job posting is created for. This field should be used in lieu of integrationContext only if the customer does not have contract with LinkedIn and cannot access the Customer Onboarding WidgetDocumented type: StringRequirement: Yes, if integrationContext or companyPageUrl is not available, and only if none of them is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyName? CompanyName { get; set; }
+        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("companyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        private string? _explicitNullValueCompanyName = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyName CompanyName { get; set; }
+        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("companyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        private string _explicitNullValueCompanyName = default!;
 #endif
-        /// <summary>The companyPageUrl property</summary>
+        /// <summary>The URL of the customer’s LinkedIn Company Page they would like their jobs posted to (e.g. https://www.linkedin.com/company/{company_page}/)Documented type: StringRequirement: Yes, if integrationContext or companyName is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyPageUrl? CompanyPageUrl { get; set; }
+        public string? CompanyPageUrl { get => _explicitNullValueCompanyPageUrl; set { _explicitNullValueCompanyPageUrl = value; AdditionalData?.Remove("companyPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyPageUrl"); else _explicitNullProperties?.Remove("companyPageUrl"); } }
+        private string? _explicitNullValueCompanyPageUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyPageUrl CompanyPageUrl { get; set; }
+        public string CompanyPageUrl { get => _explicitNullValueCompanyPageUrl; set { _explicitNullValueCompanyPageUrl = value; AdditionalData?.Remove("companyPageUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyPageUrl"); else _explicitNullProperties?.Remove("companyPageUrl"); } }
+        private string _explicitNullValueCompanyPageUrl = default!;
 #endif
         /// <summary>Compensation provided by the job poster.Documented type: PosterProvidedCompensationRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation? Compensation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation? Compensation { get => _explicitNullValueCompensation; set { _explicitNullValueCompensation = value; AdditionalData?.Remove("compensation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compensation"); else _explicitNullProperties?.Remove("compensation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation? _explicitNullValueCompensation = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation Compensation { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation Compensation { get => _explicitNullValueCompensation; set { _explicitNullValueCompensation = value; AdditionalData?.Remove("compensation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compensation"); else _explicitNullProperties?.Remove("compensation"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation _explicitNullValueCompensation = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemDescription? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemDescription Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The employmentStatus property</summary>
+        /// <summary>Represents employment status of the job position. Available options are: FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP, TEMPORARY, VOLUNTEER. If predefined LinkedIn values are provided, they are displayed on the LinkedIn job posting. If a non-standard value is provided, LinkedIn attempts to standardize and match it to the closest pre-defined value. If no values are provided, LinkedIn standardizes to the closest matched value based on other fields in the job postingDocumented type: StringRequirement: Yes, if available on career site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemEmploymentStatus? EmploymentStatus { get; set; }
+        public string? EmploymentStatus { get => _explicitNullValueEmploymentStatus; set { _explicitNullValueEmploymentStatus = value; AdditionalData?.Remove("employmentStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employmentStatus"); else _explicitNullProperties?.Remove("employmentStatus"); } }
+        private string? _explicitNullValueEmploymentStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemEmploymentStatus EmploymentStatus { get; set; }
+        public string EmploymentStatus { get => _explicitNullValueEmploymentStatus; set { _explicitNullValueEmploymentStatus = value; AdditionalData?.Remove("employmentStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employmentStatus"); else _explicitNullProperties?.Remove("employmentStatus"); } }
+        private string _explicitNullValueEmploymentStatus = default!;
 #endif
         /// <summary>Represents experience level of the job position to hire. Available options are: ENTRY_LEVEL, MID_SENIOR_LEVEL, DIRECTOR, EXECUTIVE, INTERNSHIP, ASSOCIATE, NOT_APPLICABLE. If predefined LinkedIn values are provided, they are displayed on the LinkedIn job posting. If a non-standard value is provided, LinkedIn attempts to standardize and match it to the closest pre-defined value. If no values are provided, LinkedIn standardizes to the closest matched value based on other fields in the job postingDocumented type: StringRequirement: Yes, if available on customer career sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExperienceLevel { get; set; }
+        public string? ExperienceLevel { get => _explicitNullValueExperienceLevel; set { _explicitNullValueExperienceLevel = value; AdditionalData?.Remove("experienceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experienceLevel"); else _explicitNullProperties?.Remove("experienceLevel"); } }
+        private string? _explicitNullValueExperienceLevel = default!;
 #nullable restore
 #else
-        public string ExperienceLevel { get; set; }
+        public string ExperienceLevel { get => _explicitNullValueExperienceLevel; set { _explicitNullValueExperienceLevel = value; AdditionalData?.Remove("experienceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experienceLevel"); else _explicitNullProperties?.Remove("experienceLevel"); } }
+        private string _explicitNullValueExperienceLevel = default!;
 #endif
         /// <summary>The expireAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExpireAt? ExpireAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemExpireAt? ExpireAt { get => _explicitNullValueExpireAt; set { _explicitNullValueExpireAt = value; AdditionalData?.Remove("expireAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expireAt"); else _explicitNullProperties?.Remove("expireAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemExpireAt? _explicitNullValueExpireAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExpireAt ExpireAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemExpireAt ExpireAt { get => _explicitNullValueExpireAt; set { _explicitNullValueExpireAt = value; AdditionalData?.Remove("expireAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expireAt"); else _explicitNullProperties?.Remove("expireAt"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemExpireAt _explicitNullValueExpireAt = default!;
 #endif
         /// <summary>The externalJobPostingId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExternalJobPostingId? ExternalJobPostingId { get; set; }
+        public string? ExternalJobPostingId { get => _explicitNullValueExternalJobPostingId; set { _explicitNullValueExternalJobPostingId = value; AdditionalData?.Remove("externalJobPostingId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalJobPostingId"); else _explicitNullProperties?.Remove("externalJobPostingId"); } }
+        private string? _explicitNullValueExternalJobPostingId = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExternalJobPostingId ExternalJobPostingId { get; set; }
+        public string ExternalJobPostingId { get => _explicitNullValueExternalJobPostingId; set { _explicitNullValueExternalJobPostingId = value; AdditionalData?.Remove("externalJobPostingId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalJobPostingId"); else _explicitNullProperties?.Remove("externalJobPostingId"); } }
+        private string _explicitNullValueExternalJobPostingId = default!;
 #endif
         /// <summary>The integrationContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemIntegrationContext? IntegrationContext { get; set; }
+        public string? IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string? _explicitNullValueIntegrationContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemIntegrationContext IntegrationContext { get; set; }
+        public string IntegrationContext { get => _explicitNullValueIntegrationContext; set { _explicitNullValueIntegrationContext = value; AdditionalData?.Remove("integrationContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationContext"); else _explicitNullProperties?.Remove("integrationContext"); } }
+        private string _explicitNullValueIntegrationContext = default!;
 #endif
         /// <summary>The jobPostingOperationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemJobPostingOperationType? JobPostingOperationType { get; set; }
+        public string? JobPostingOperationType { get => _explicitNullValueJobPostingOperationType; set { _explicitNullValueJobPostingOperationType = value; AdditionalData?.Remove("jobPostingOperationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobPostingOperationType"); else _explicitNullProperties?.Remove("jobPostingOperationType"); } }
+        private string? _explicitNullValueJobPostingOperationType = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemJobPostingOperationType JobPostingOperationType { get; set; }
+        public string JobPostingOperationType { get => _explicitNullValueJobPostingOperationType; set { _explicitNullValueJobPostingOperationType = value; AdditionalData?.Remove("jobPostingOperationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobPostingOperationType"); else _explicitNullProperties?.Remove("jobPostingOperationType"); } }
+        private string _explicitNullValueJobPostingOperationType = default!;
 #endif
         /// <summary>The listedAt property</summary>
+        public int? ListedAt { get => _explicitNullValueListedAt; set { _explicitNullValueListedAt = value; AdditionalData?.Remove("listedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listedAt"); else _explicitNullProperties?.Remove("listedAt"); } }
+        private int? _explicitNullValueListedAt = default!;
+        /// <summary>Represents the type of the job posting. Value of PREMIUM should be provided only if integration is build for Premium Job Posting Extension schema. For everything else, value of this field should be BASIC. Default value is BASIC.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListedAt? ListedAt { get; set; }
+        public string? ListingType { get => _explicitNullValueListingType; set { _explicitNullValueListingType = value; AdditionalData?.Remove("listingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listingType"); else _explicitNullProperties?.Remove("listingType"); } }
+        private string? _explicitNullValueListingType = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListedAt ListedAt { get; set; }
-#endif
-        /// <summary>The listingType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListingType? ListingType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListingType ListingType { get; set; }
+        public string ListingType { get => _explicitNullValueListingType; set { _explicitNullValueListingType = value; AdditionalData?.Remove("listingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listingType"); else _explicitNullProperties?.Remove("listingType"); } }
+        private string _explicitNullValueListingType = default!;
 #endif
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemLocation? Location { get; set; }
+        public string? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private string? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemLocation Location { get; set; }
+        public string Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private string _explicitNullValueLocation = default!;
 #endif
         /// <summary>The onsiteApplyConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration? OnsiteApplyConfiguration { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration? OnsiteApplyConfiguration { get => _explicitNullValueOnsiteApplyConfiguration; set { _explicitNullValueOnsiteApplyConfiguration = value; AdditionalData?.Remove("onsiteApplyConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onsiteApplyConfiguration"); else _explicitNullProperties?.Remove("onsiteApplyConfiguration"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration? _explicitNullValueOnsiteApplyConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration OnsiteApplyConfiguration { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration OnsiteApplyConfiguration { get => _explicitNullValueOnsiteApplyConfiguration; set { _explicitNullValueOnsiteApplyConfiguration = value; AdditionalData?.Remove("onsiteApplyConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onsiteApplyConfiguration"); else _explicitNullProperties?.Remove("onsiteApplyConfiguration"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration _explicitNullValueOnsiteApplyConfiguration = default!;
 #endif
         /// <summary>Unique ID of job requisition, used to link job posting and job requisition. Required for RSC customers who sync requisitions via RSC integration. It should be the unique ID of the job requisition for this job posting. A job requisition will be mapped to the ATS job requirement, Where all sourced candidates and job applications are managed.Documented type: StringRequirement: No. Yes for RSC customers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerRequisitionId { get; set; }
+        public string? PartnerRequisitionId { get => _explicitNullValuePartnerRequisitionId; set { _explicitNullValuePartnerRequisitionId = value; AdditionalData?.Remove("partnerRequisitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerRequisitionId"); else _explicitNullProperties?.Remove("partnerRequisitionId"); } }
+        private string? _explicitNullValuePartnerRequisitionId = default!;
 #nullable restore
 #else
-        public string PartnerRequisitionId { get; set; }
+        public string PartnerRequisitionId { get => _explicitNullValuePartnerRequisitionId; set { _explicitNullValuePartnerRequisitionId = value; AdditionalData?.Remove("partnerRequisitionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerRequisitionId"); else _explicitNullProperties?.Remove("partnerRequisitionId"); } }
+        private string _explicitNullValuePartnerRequisitionId = default!;
 #endif
         /// <summary>The posterEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemPosterEmail? PosterEmail { get; set; }
+        public string? PosterEmail { get => _explicitNullValuePosterEmail; set { _explicitNullValuePosterEmail = value; AdditionalData?.Remove("posterEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posterEmail"); else _explicitNullProperties?.Remove("posterEmail"); } }
+        private string? _explicitNullValuePosterEmail = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemPosterEmail PosterEmail { get; set; }
+        public string PosterEmail { get => _explicitNullValuePosterEmail; set { _explicitNullValuePosterEmail = value; AdditionalData?.Remove("posterEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posterEmail"); else _explicitNullProperties?.Remove("posterEmail"); } }
+        private string _explicitNullValuePosterEmail = default!;
 #endif
-        /// <summary>The skillsDescription property</summary>
+        /// <summary>A text description of the desired skills and experiences for the job position. The maximum allowed length is 4000 characters. A Limited set of HTML tags is accepted. Note that, including skills in this field or the description field does not affect job search visibility or promotion capabilities.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemSkillsDescription? SkillsDescription { get; set; }
+        public string? SkillsDescription { get => _explicitNullValueSkillsDescription; set { _explicitNullValueSkillsDescription = value; AdditionalData?.Remove("skillsDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skillsDescription"); else _explicitNullProperties?.Remove("skillsDescription"); } }
+        private string? _explicitNullValueSkillsDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemSkillsDescription SkillsDescription { get; set; }
+        public string SkillsDescription { get => _explicitNullValueSkillsDescription; set { _explicitNullValueSkillsDescription = value; AdditionalData?.Remove("skillsDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skillsDescription"); else _explicitNullProperties?.Remove("skillsDescription"); } }
+        private string _explicitNullValueSkillsDescription = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTitle? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTitle Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The trackingPixelUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTrackingPixelUrl? TrackingPixelUrl { get; set; }
+        public string? TrackingPixelUrl { get => _explicitNullValueTrackingPixelUrl; set { _explicitNullValueTrackingPixelUrl = value; AdditionalData?.Remove("trackingPixelUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackingPixelUrl"); else _explicitNullProperties?.Remove("trackingPixelUrl"); } }
+        private string? _explicitNullValueTrackingPixelUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTrackingPixelUrl TrackingPixelUrl { get; set; }
+        public string TrackingPixelUrl { get => _explicitNullValueTrackingPixelUrl; set { _explicitNullValueTrackingPixelUrl = value; AdditionalData?.Remove("trackingPixelUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackingPixelUrl"); else _explicitNullProperties?.Remove("trackingPixelUrl"); } }
+        private string _explicitNullValueTrackingPixelUrl = default!;
 #endif
         /// <summary>Represents the workplace nature of the job. Available options are On-siteHybrid Remote Remote value should be provided when employee is allowed to work remotely. Hybrid should be provided if the employee is expected to work some days from home and some days from the designated office. On-Site should be used when it is mandatory for employee to work only from the designated office. Remote jobs require either Country only, City and Country, or Country Cluster. For On-site and Hybrid jobs, location field should be in either of the following formats &quot;CITY, STATE, COUNTRY&quot;, &quot;CITY,STATE&quot;, &quot;CITY, PROVINCE&quot;, &quot;CITY, COUNTRY&quot; or &quot;POSTALCODE, COUNTRYCODE&quot; It is recommended to default set the value of this field as On-site, if an employer is unsure about the workplace type of a particular jobDocumented type: Array of String. Currently accepts single element array with one of the following values On-site, Hybrid, RemoteRequirement: Yes, if available on career site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WorkplaceTypes { get; set; }
+        public List<string>? WorkplaceTypes { get => _explicitNullValueWorkplaceTypes; set { _explicitNullValueWorkplaceTypes = value; AdditionalData?.Remove("workplaceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workplaceTypes"); else _explicitNullProperties?.Remove("workplaceTypes"); } }
+        private List<string>? _explicitNullValueWorkplaceTypes = default!;
 #nullable restore
 #else
-        public List<string> WorkplaceTypes { get; set; }
+        public List<string> WorkplaceTypes { get => _explicitNullValueWorkplaceTypes; set { _explicitNullValueWorkplaceTypes = value; AdditionalData?.Remove("workplaceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workplaceTypes"); else _explicitNullProperties?.Remove("workplaceTypes"); } }
+        private List<string> _explicitNullValueWorkplaceTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItem"/> and sets the default values.
@@ -229,7 +329,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -240,29 +340,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alternateLocations", n => { AlternateLocations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "availability", n => { Availability = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemAvailability>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemAvailability.CreateFromDiscriminatorValue); } },
+                { "availability", n => { Availability = n.GetStringValue(); } },
                 { "company", n => { Company = n.GetStringValue(); } },
-                { "companyApplyUrl", n => { CompanyApplyUrl = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyApplyUrl>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyApplyUrl.CreateFromDiscriminatorValue); } },
-                { "companyJobCode", n => { CompanyJobCode = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyJobCode>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyJobCode.CreateFromDiscriminatorValue); } },
-                { "companyName", n => { CompanyName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyName>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyName.CreateFromDiscriminatorValue); } },
-                { "companyPageUrl", n => { CompanyPageUrl = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyPageUrl>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyPageUrl.CreateFromDiscriminatorValue); } },
+                { "companyApplyUrl", n => { CompanyApplyUrl = n.GetStringValue(); } },
+                { "companyJobCode", n => { CompanyJobCode = n.GetStringValue(); } },
+                { "companyName", n => { CompanyName = n.GetStringValue(); } },
+                { "companyPageUrl", n => { CompanyPageUrl = n.GetStringValue(); } },
                 { "compensation", n => { Compensation = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemDescription.CreateFromDiscriminatorValue); } },
-                { "employmentStatus", n => { EmploymentStatus = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemEmploymentStatus>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemEmploymentStatus.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "employmentStatus", n => { EmploymentStatus = n.GetStringValue(); } },
                 { "experienceLevel", n => { ExperienceLevel = n.GetStringValue(); } },
-                { "expireAt", n => { ExpireAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExpireAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExpireAt.CreateFromDiscriminatorValue); } },
-                { "externalJobPostingId", n => { ExternalJobPostingId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExternalJobPostingId>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExternalJobPostingId.CreateFromDiscriminatorValue); } },
-                { "integrationContext", n => { IntegrationContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemIntegrationContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemIntegrationContext.CreateFromDiscriminatorValue); } },
-                { "jobPostingOperationType", n => { JobPostingOperationType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemJobPostingOperationType>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemJobPostingOperationType.CreateFromDiscriminatorValue); } },
-                { "listedAt", n => { ListedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListedAt.CreateFromDiscriminatorValue); } },
-                { "listingType", n => { ListingType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListingType>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListingType.CreateFromDiscriminatorValue); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemLocation>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemLocation.CreateFromDiscriminatorValue); } },
+                { "expireAt", n => { ExpireAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemExpireAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemExpireAt.CreateFromDiscriminatorValue); } },
+                { "externalJobPostingId", n => { ExternalJobPostingId = n.GetStringValue(); } },
+                { "integrationContext", n => { IntegrationContext = n.GetStringValue(); } },
+                { "jobPostingOperationType", n => { JobPostingOperationType = n.GetStringValue(); } },
+                { "listedAt", n => { ListedAt = n.GetIntValue(); } },
+                { "listingType", n => { ListingType = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
                 { "onsiteApplyConfiguration", n => { OnsiteApplyConfiguration = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration.CreateFromDiscriminatorValue); } },
                 { "partnerRequisitionId", n => { PartnerRequisitionId = n.GetStringValue(); } },
-                { "posterEmail", n => { PosterEmail = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemPosterEmail>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemPosterEmail.CreateFromDiscriminatorValue); } },
-                { "skillsDescription", n => { SkillsDescription = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemSkillsDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemSkillsDescription.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTitle.CreateFromDiscriminatorValue); } },
-                { "trackingPixelUrl", n => { TrackingPixelUrl = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTrackingPixelUrl>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTrackingPixelUrl.CreateFromDiscriminatorValue); } },
+                { "posterEmail", n => { PosterEmail = n.GetStringValue(); } },
+                { "skillsDescription", n => { SkillsDescription = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "trackingPixelUrl", n => { TrackingPixelUrl = n.GetStringValue(); } },
                 { "workplaceTypes", n => { WorkplaceTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -274,30 +374,31 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("alternateLocations", AlternateLocations);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemAvailability>("availability", Availability);
+            writer.WriteStringValue("availability", Availability);
             writer.WriteStringValue("company", Company);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyApplyUrl>("companyApplyUrl", CompanyApplyUrl);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyJobCode>("companyJobCode", CompanyJobCode);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyName>("companyName", CompanyName);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompanyPageUrl>("companyPageUrl", CompanyPageUrl);
+            writer.WriteStringValue("companyApplyUrl", CompanyApplyUrl);
+            writer.WriteStringValue("companyJobCode", CompanyJobCode);
+            writer.WriteStringValue("companyName", CompanyName);
+            writer.WriteStringValue("companyPageUrl", CompanyPageUrl);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemCompensation>("compensation", Compensation);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemEmploymentStatus>("employmentStatus", EmploymentStatus);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("employmentStatus", EmploymentStatus);
             writer.WriteStringValue("experienceLevel", ExperienceLevel);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExpireAt>("expireAt", ExpireAt);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemExternalJobPostingId>("externalJobPostingId", ExternalJobPostingId);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemIntegrationContext>("integrationContext", IntegrationContext);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemJobPostingOperationType>("jobPostingOperationType", JobPostingOperationType);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListedAt>("listedAt", ListedAt);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemListingType>("listingType", ListingType);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemLocation>("location", Location);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ApplyConnectSyncJobsRequestElementsItemExpireAt>("expireAt", ExpireAt);
+            writer.WriteStringValue("externalJobPostingId", ExternalJobPostingId);
+            writer.WriteStringValue("integrationContext", IntegrationContext);
+            writer.WriteStringValue("jobPostingOperationType", JobPostingOperationType);
+            writer.WriteIntValue("listedAt", ListedAt);
+            writer.WriteStringValue("listingType", ListingType);
+            writer.WriteStringValue("location", Location);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemOnsiteApplyConfiguration>("onsiteApplyConfiguration", OnsiteApplyConfiguration);
             writer.WriteStringValue("partnerRequisitionId", PartnerRequisitionId);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemPosterEmail>("posterEmail", PosterEmail);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemSkillsDescription>("skillsDescription", SkillsDescription);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTitle>("title", Title);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingCreateBasicJobRequestElementsItemTrackingPixelUrl>("trackingPixelUrl", TrackingPixelUrl);
+            writer.WriteStringValue("posterEmail", PosterEmail);
+            writer.WriteStringValue("skillsDescription", SkillsDescription);
+            writer.WriteStringValue("title", Title);
+            writer.WriteStringValue("trackingPixelUrl", TrackingPixelUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("workplaceTypes", WorkplaceTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

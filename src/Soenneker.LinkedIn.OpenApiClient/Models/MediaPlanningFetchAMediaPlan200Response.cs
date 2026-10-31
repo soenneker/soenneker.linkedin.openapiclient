@@ -11,106 +11,172 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MediaPlanningFetchAMediaPlan200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("creator") is null) { _explicitNullValueCreator = default!; _explicitNullProperties?.Remove("creator"); }
+            else if (parseNode.GetChildNode("creator") is { } nullNodeCreator && nullNodeCreator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creator = null;
+            if (parseNode.GetChildNode("ctvOnly") is null) { _explicitNullValueCtvOnly = default!; _explicitNullProperties?.Remove("ctvOnly"); }
+            else if (parseNode.GetChildNode("ctvOnly") is { } nullNodeCtvOnly && nullNodeCtvOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtvOnly = null;
+            if (parseNode.GetChildNode("currencyCode") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currencyCode"); }
+            else if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("enableAudienceExpansion") is null) { _explicitNullValueEnableAudienceExpansion = default!; _explicitNullProperties?.Remove("enableAudienceExpansion"); }
+            else if (parseNode.GetChildNode("enableAudienceExpansion") is { } nullNodeEnableAudienceExpansion && nullNodeEnableAudienceExpansion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAudienceExpansion = null;
+            if (parseNode.GetChildNode("enableAudienceNetwork") is null) { _explicitNullValueEnableAudienceNetwork = default!; _explicitNullProperties?.Remove("enableAudienceNetwork"); }
+            else if (parseNode.GetChildNode("enableAudienceNetwork") is { } nullNodeEnableAudienceNetwork && nullNodeEnableAudienceNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAudienceNetwork = null;
+            if (parseNode.GetChildNode("endDateOn") is null) { _explicitNullValueEndDateOn = default!; _explicitNullProperties?.Remove("endDateOn"); }
+            else if (parseNode.GetChildNode("endDateOn") is { } nullNodeEndDateOn && nullNodeEndDateOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDateOn = null;
+            if (parseNode.GetChildNode("mediaPlanUrn") is null) { _explicitNullValueMediaPlanUrn = default!; _explicitNullProperties?.Remove("mediaPlanUrn"); }
+            else if (parseNode.GetChildNode("mediaPlanUrn") is { } nullNodeMediaPlanUrn && nullNodeMediaPlanUrn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaPlanUrn = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("objectiveType") is null) { _explicitNullValueObjectiveType = default!; _explicitNullProperties?.Remove("objectiveType"); }
+            else if (parseNode.GetChildNode("objectiveType") is { } nullNodeObjectiveType && nullNodeObjectiveType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectiveType = null;
+            if (parseNode.GetChildNode("optimizationType") is null) { _explicitNullValueOptimizationType = default!; _explicitNullProperties?.Remove("optimizationType"); }
+            else if (parseNode.GetChildNode("optimizationType") is { } nullNodeOptimizationType && nullNodeOptimizationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizationType = null;
+            if (parseNode.GetChildNode("reachCurve") is null) { _explicitNullValueReachCurve = default!; _explicitNullProperties?.Remove("reachCurve"); }
+            else if (parseNode.GetChildNode("reachCurve") is { } nullNodeReachCurve && nullNodeReachCurve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReachCurve = null;
+            if (parseNode.GetChildNode("sponsoredAccountUrn") is null) { _explicitNullValueSponsoredAccountUrn = default!; _explicitNullProperties?.Remove("sponsoredAccountUrn"); }
+            else if (parseNode.GetChildNode("sponsoredAccountUrn") is { } nullNodeSponsoredAccountUrn && nullNodeSponsoredAccountUrn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SponsoredAccountUrn = null;
+            if (parseNode.GetChildNode("startDateOn") is null) { _explicitNullValueStartDateOn = default!; _explicitNullProperties?.Remove("startDateOn"); }
+            else if (parseNode.GetChildNode("startDateOn") is { } nullNodeStartDateOn && nullNodeStartDateOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDateOn = null;
+            if (parseNode.GetChildNode("targetBudgetMicros") is null) { _explicitNullValueTargetBudgetMicros = default!; _explicitNullProperties?.Remove("targetBudgetMicros"); }
+            else if (parseNode.GetChildNode("targetBudgetMicros") is { } nullNodeTargetBudgetMicros && nullNodeTargetBudgetMicros.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetBudgetMicros = null;
+            if (parseNode.GetChildNode("targetingCriteria") is null) { _explicitNullValueTargetingCriteria = default!; _explicitNullProperties?.Remove("targetingCriteria"); }
+            else if (parseNode.GetChildNode("targetingCriteria") is { } nullNodeTargetingCriteria && nullNodeTargetingCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetingCriteria = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
-        public long? CreatedAt { get; set; }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private long? _explicitNullValueCreatedAt = default!;
         /// <summary>The creator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Creator { get; set; }
+        public string? Creator { get => _explicitNullValueCreator; set { _explicitNullValueCreator = value; AdditionalData?.Remove("creator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator"); else _explicitNullProperties?.Remove("creator"); } }
+        private string? _explicitNullValueCreator = default!;
 #nullable restore
 #else
-        public string Creator { get; set; }
+        public string Creator { get => _explicitNullValueCreator; set { _explicitNullValueCreator = value; AdditionalData?.Remove("creator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator"); else _explicitNullProperties?.Remove("creator"); } }
+        private string _explicitNullValueCreator = default!;
 #endif
         /// <summary>The ctvOnly property</summary>
-        public bool? CtvOnly { get; set; }
+        public bool? CtvOnly { get => _explicitNullValueCtvOnly; set { _explicitNullValueCtvOnly = value; AdditionalData?.Remove("ctvOnly"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ctvOnly"); else _explicitNullProperties?.Remove("ctvOnly"); } }
+        private bool? _explicitNullValueCtvOnly = default!;
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get; set; }
+        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        private string? _explicitNullValueCurrencyCode = default!;
 #nullable restore
 #else
-        public string CurrencyCode { get; set; }
+        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        private string _explicitNullValueCurrencyCode = default!;
 #endif
         /// <summary>The enableAudienceExpansion property</summary>
-        public bool? EnableAudienceExpansion { get; set; }
+        public bool? EnableAudienceExpansion { get => _explicitNullValueEnableAudienceExpansion; set { _explicitNullValueEnableAudienceExpansion = value; AdditionalData?.Remove("enableAudienceExpansion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAudienceExpansion"); else _explicitNullProperties?.Remove("enableAudienceExpansion"); } }
+        private bool? _explicitNullValueEnableAudienceExpansion = default!;
         /// <summary>The enableAudienceNetwork property</summary>
-        public bool? EnableAudienceNetwork { get; set; }
+        public bool? EnableAudienceNetwork { get => _explicitNullValueEnableAudienceNetwork; set { _explicitNullValueEnableAudienceNetwork = value; AdditionalData?.Remove("enableAudienceNetwork"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAudienceNetwork"); else _explicitNullProperties?.Remove("enableAudienceNetwork"); } }
+        private bool? _explicitNullValueEnableAudienceNetwork = default!;
         /// <summary>The endDateOn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseEndDateOn? EndDateOn { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseEndDateOn? EndDateOn { get => _explicitNullValueEndDateOn; set { _explicitNullValueEndDateOn = value; AdditionalData?.Remove("endDateOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDateOn"); else _explicitNullProperties?.Remove("endDateOn"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseEndDateOn? _explicitNullValueEndDateOn = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseEndDateOn EndDateOn { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseEndDateOn EndDateOn { get => _explicitNullValueEndDateOn; set { _explicitNullValueEndDateOn = value; AdditionalData?.Remove("endDateOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDateOn"); else _explicitNullProperties?.Remove("endDateOn"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseEndDateOn _explicitNullValueEndDateOn = default!;
 #endif
         /// <summary>The mediaPlanUrn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaPlanUrn { get; set; }
+        public string? MediaPlanUrn { get => _explicitNullValueMediaPlanUrn; set { _explicitNullValueMediaPlanUrn = value; AdditionalData?.Remove("mediaPlanUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaPlanUrn"); else _explicitNullProperties?.Remove("mediaPlanUrn"); } }
+        private string? _explicitNullValueMediaPlanUrn = default!;
 #nullable restore
 #else
-        public string MediaPlanUrn { get; set; }
+        public string MediaPlanUrn { get => _explicitNullValueMediaPlanUrn; set { _explicitNullValueMediaPlanUrn = value; AdditionalData?.Remove("mediaPlanUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mediaPlanUrn"); else _explicitNullProperties?.Remove("mediaPlanUrn"); } }
+        private string _explicitNullValueMediaPlanUrn = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The objectiveType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectiveType { get; set; }
+        public string? ObjectiveType { get => _explicitNullValueObjectiveType; set { _explicitNullValueObjectiveType = value; AdditionalData?.Remove("objectiveType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectiveType"); else _explicitNullProperties?.Remove("objectiveType"); } }
+        private string? _explicitNullValueObjectiveType = default!;
 #nullable restore
 #else
-        public string ObjectiveType { get; set; }
+        public string ObjectiveType { get => _explicitNullValueObjectiveType; set { _explicitNullValueObjectiveType = value; AdditionalData?.Remove("objectiveType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectiveType"); else _explicitNullProperties?.Remove("objectiveType"); } }
+        private string _explicitNullValueObjectiveType = default!;
 #endif
         /// <summary>The optimizationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OptimizationType { get; set; }
+        public string? OptimizationType { get => _explicitNullValueOptimizationType; set { _explicitNullValueOptimizationType = value; AdditionalData?.Remove("optimizationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationType"); else _explicitNullProperties?.Remove("optimizationType"); } }
+        private string? _explicitNullValueOptimizationType = default!;
 #nullable restore
 #else
-        public string OptimizationType { get; set; }
+        public string OptimizationType { get => _explicitNullValueOptimizationType; set { _explicitNullValueOptimizationType = value; AdditionalData?.Remove("optimizationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationType"); else _explicitNullProperties?.Remove("optimizationType"); } }
+        private string _explicitNullValueOptimizationType = default!;
 #endif
         /// <summary>The reachCurve property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseReachCurve? ReachCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseReachCurve? ReachCurve { get => _explicitNullValueReachCurve; set { _explicitNullValueReachCurve = value; AdditionalData?.Remove("reachCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reachCurve"); else _explicitNullProperties?.Remove("reachCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseReachCurve? _explicitNullValueReachCurve = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseReachCurve ReachCurve { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseReachCurve ReachCurve { get => _explicitNullValueReachCurve; set { _explicitNullValueReachCurve = value; AdditionalData?.Remove("reachCurve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reachCurve"); else _explicitNullProperties?.Remove("reachCurve"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseReachCurve _explicitNullValueReachCurve = default!;
 #endif
         /// <summary>The sponsoredAccountUrn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SponsoredAccountUrn { get; set; }
+        public string? SponsoredAccountUrn { get => _explicitNullValueSponsoredAccountUrn; set { _explicitNullValueSponsoredAccountUrn = value; AdditionalData?.Remove("sponsoredAccountUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredAccountUrn"); else _explicitNullProperties?.Remove("sponsoredAccountUrn"); } }
+        private string? _explicitNullValueSponsoredAccountUrn = default!;
 #nullable restore
 #else
-        public string SponsoredAccountUrn { get; set; }
+        public string SponsoredAccountUrn { get => _explicitNullValueSponsoredAccountUrn; set { _explicitNullValueSponsoredAccountUrn = value; AdditionalData?.Remove("sponsoredAccountUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sponsoredAccountUrn"); else _explicitNullProperties?.Remove("sponsoredAccountUrn"); } }
+        private string _explicitNullValueSponsoredAccountUrn = default!;
 #endif
         /// <summary>The startDateOn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseStartDateOn? StartDateOn { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseStartDateOn? StartDateOn { get => _explicitNullValueStartDateOn; set { _explicitNullValueStartDateOn = value; AdditionalData?.Remove("startDateOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDateOn"); else _explicitNullProperties?.Remove("startDateOn"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseStartDateOn? _explicitNullValueStartDateOn = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseStartDateOn StartDateOn { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseStartDateOn StartDateOn { get => _explicitNullValueStartDateOn; set { _explicitNullValueStartDateOn = value; AdditionalData?.Remove("startDateOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDateOn"); else _explicitNullProperties?.Remove("startDateOn"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseStartDateOn _explicitNullValueStartDateOn = default!;
 #endif
         /// <summary>The targetBudgetMicros property</summary>
-        public long? TargetBudgetMicros { get; set; }
+        public long? TargetBudgetMicros { get => _explicitNullValueTargetBudgetMicros; set { _explicitNullValueTargetBudgetMicros = value; AdditionalData?.Remove("targetBudgetMicros"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetBudgetMicros"); else _explicitNullProperties?.Remove("targetBudgetMicros"); } }
+        private long? _explicitNullValueTargetBudgetMicros = default!;
         /// <summary>The targetingCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseTargetingCriteria? TargetingCriteria { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseTargetingCriteria? TargetingCriteria { get => _explicitNullValueTargetingCriteria; set { _explicitNullValueTargetingCriteria = value; AdditionalData?.Remove("targetingCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetingCriteria"); else _explicitNullProperties?.Remove("targetingCriteria"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseTargetingCriteria? _explicitNullValueTargetingCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseTargetingCriteria TargetingCriteria { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseTargetingCriteria TargetingCriteria { get => _explicitNullValueTargetingCriteria; set { _explicitNullValueTargetingCriteria = value; AdditionalData?.Remove("targetingCriteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetingCriteria"); else _explicitNullProperties?.Remove("targetingCriteria"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseTargetingCriteria _explicitNullValueTargetingCriteria = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200Response"/> and sets the default values.
@@ -127,7 +193,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -178,6 +244,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseStartDateOn>("startDateOn", StartDateOn);
             writer.WriteLongValue("targetBudgetMicros", TargetBudgetMicros);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAMediaPlan200ResponseTargetingCriteria>("targetingCriteria", TargetingCriteria);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

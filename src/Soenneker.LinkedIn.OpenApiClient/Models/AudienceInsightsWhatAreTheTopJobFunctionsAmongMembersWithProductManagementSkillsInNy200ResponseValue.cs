@@ -11,19 +11,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audienceInsight") is null) { _explicitNullValueAudienceInsight = default!; _explicitNullProperties?.Remove("audienceInsight"); }
+            else if (parseNode.GetChildNode("audienceInsight") is { } nullNodeAudienceInsight && nullNodeAudienceInsight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceInsight = null;
+            if (parseNode.GetChildNode("totalAudienceCount") is null) { _explicitNullValueTotalAudienceCount = default!; _explicitNullProperties?.Remove("totalAudienceCount"); }
+            else if (parseNode.GetChildNode("totalAudienceCount") is { } nullNodeTotalAudienceCount && nullNodeTotalAudienceCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalAudienceCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Audience Insight object which gives a breakdown of the audience in the request into segments grouped by the selected ad facet.Documented type: audienceInsight object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight? AudienceInsight { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight? AudienceInsight { get => _explicitNullValueAudienceInsight; set { _explicitNullValueAudienceInsight = value; AdditionalData?.Remove("audienceInsight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceInsight"); else _explicitNullProperties?.Remove("audienceInsight"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight? _explicitNullValueAudienceInsight = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight AudienceInsight { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight AudienceInsight { get => _explicitNullValueAudienceInsight; set { _explicitNullValueAudienceInsight = value; AdditionalData?.Remove("audienceInsight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceInsight"); else _explicitNullProperties?.Remove("audienceInsight"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight _explicitNullValueAudienceInsight = default!;
 #endif
         /// <summary>The full audience count of the base audience provided in the request, which can be used to calculate percentages from the segmentations.Documented type: long</summary>
-        public long? TotalAudienceCount { get; set; }
+        public long? TotalAudienceCount { get => _explicitNullValueTotalAudienceCount; set { _explicitNullValueTotalAudienceCount = value; AdditionalData?.Remove("totalAudienceCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalAudienceCount"); else _explicitNullProperties?.Remove("totalAudienceCount"); } }
+        private long? _explicitNullValueTotalAudienceCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValue"/> and sets the default values.
         /// </summary>
@@ -39,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight>("audienceInsight", AudienceInsight);
             writer.WriteLongValue("totalAudienceCount", TotalAudienceCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

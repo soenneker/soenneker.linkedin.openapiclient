@@ -7,36 +7,33 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
-    {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The locale property</summary>
+    public partial class LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale? Locale { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch? LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale Locale { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch? LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName"/> and sets the default values.
-        /// </summary>
-        public LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +42,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName();
+            var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName();
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("locale") && shapeMembers1.ContainsKey("value") && (!shapeMembers1.ContainsKey("locale") || (((shapeMembers1["locale"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["locale"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject2 || (shapeObject2.GetValue() is var shapeMembers3 && (shapeMembers3.ContainsKey("language") && (!shapeMembers3.ContainsKey("country") || (((shapeMembers3["country"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers3.ContainsKey("language") || (((shapeMembers3["language"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers3.ContainsKey("variant") || (((shapeMembers3["variant"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))) && (!shapeMembers1.ContainsKey("value") || (((shapeMembers1["value"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("value") || (((shapeMembers1["value"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("locale") || (((shapeMembers1["locale"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["locale"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject4 || (shapeObject4.GetValue() is var shapeMembers5 && ((!shapeMembers5.ContainsKey("country") || (((shapeMembers5["country"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers5.ContainsKey("language") || (((shapeMembers5["language"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch == null && result.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch(), parseNode);
+            if (result.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch == null && result.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,11 +64,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch != null || LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch != null)
             {
-                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale.CreateFromDiscriminatorValue); } },
-                { "value", n => { Value = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch, LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -65,10 +78,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch == null && LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch != null) selectedUnionBranches++;
+            if (LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch != null) selectedUnionBranches++;
+            if (LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch != null && selectedUnionBranches == 1) { if (LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch); return; }
+            if (LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch != null && selectedUnionBranches == 1) { if (LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale>("locale", Locale);
-            writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch>(null, LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch, LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch);
         }
     }
 }

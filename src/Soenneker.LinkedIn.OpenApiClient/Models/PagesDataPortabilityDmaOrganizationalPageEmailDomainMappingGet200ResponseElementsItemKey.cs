@@ -12,27 +12,45 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("emailDomain") is null) { _explicitNullValueEmailDomain = default!; _explicitNullProperties?.Remove("emailDomain"); }
+            else if (parseNode.GetChildNode("emailDomain") is { } nullNodeEmailDomain && nullNodeEmailDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDomain = null;
+            if (parseNode.GetChildNode("organizationalPageUrn") is null) { _explicitNullValueOrganizationalPageUrn = default!; _explicitNullProperties?.Remove("organizationalPageUrn"); }
+            else if (parseNode.GetChildNode("organizationalPageUrn") is { } nullNodeOrganizationalPageUrn && nullNodeOrganizationalPageUrn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationalPageUrn = null;
+            if (parseNode.GetChildNode("useCase") is null) { _explicitNullValueUseCase = default!; _explicitNullProperties?.Remove("useCase"); }
+            else if (parseNode.GetChildNode("useCase") is { } nullNodeUseCase && nullNodeUseCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCase = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Email domain associated with the organizational page and use case.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailDomain { get; set; }
+        public string? EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; AdditionalData?.Remove("emailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
+        private string? _explicitNullValueEmailDomain = default!;
 #nullable restore
 #else
-        public string EmailDomain { get; set; }
+        public string EmailDomain { get => _explicitNullValueEmailDomain; set { _explicitNullValueEmailDomain = value; AdditionalData?.Remove("emailDomain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailDomain"); else _explicitNullProperties?.Remove("emailDomain"); } }
+        private string _explicitNullValueEmailDomain = default!;
 #endif
         /// <summary>The organizational page urn associated with the email domain and use case. It is of type urn:li:organizationalPage:{ID}.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalPageUrn { get; set; }
+        public string? OrganizationalPageUrn { get => _explicitNullValueOrganizationalPageUrn; set { _explicitNullValueOrganizationalPageUrn = value; AdditionalData?.Remove("organizationalPageUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationalPageUrn"); else _explicitNullProperties?.Remove("organizationalPageUrn"); } }
+        private string? _explicitNullValueOrganizationalPageUrn = default!;
 #nullable restore
 #else
-        public string OrganizationalPageUrn { get; set; }
+        public string OrganizationalPageUrn { get => _explicitNullValueOrganizationalPageUrn; set { _explicitNullValueOrganizationalPageUrn = value; AdditionalData?.Remove("organizationalPageUrn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationalPageUrn"); else _explicitNullProperties?.Remove("organizationalPageUrn"); } }
+        private string _explicitNullValueOrganizationalPageUrn = default!;
 #endif
         /// <summary>Use case associated with the organizational page and email domain. Value enums include: JOB_POSTINGMY_COMPANYLINKEDIN_SALES_SOLUTIONS_PRODUCTSDocumented type: OrganizationEmailDomainMappingUseCaseRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase? UseCase { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase? UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; AdditionalData?.Remove("useCase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useCase"); else _explicitNullProperties?.Remove("useCase"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase? _explicitNullValueUseCase = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey"/> and sets the default values.
         /// </summary>
@@ -48,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "organizationalPageUrn", n => { OrganizationalPageUrn = n.GetStringValue(); } },
-                { "useCase", n => { UseCase = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase>(); } },
+                { "useCase", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUseCase = default; _explicitNullProperties?.Remove("useCase"); AdditionalData["useCase"] = unknown; } else { UseCase = parsed; AdditionalData.Remove("useCase"); } } },
             };
         }
         /// <summary>
@@ -73,6 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteStringValue("organizationalPageUrn", OrganizationalPageUrn);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase>("useCase", UseCase);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

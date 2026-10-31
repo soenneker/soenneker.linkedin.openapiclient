@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrors : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)") is null) { _explicitNullValuePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = default!; _explicitNullProperties?.Remove("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)"); }
+            else if (parseNode.GetChildNode("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)") is { } nullNodePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME && nullNodePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATION_HOME property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrorsPageUrn3Ali3AorganizationalPage3A10002687TopicOrganizationHome? PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrorsPageUrn3Ali3AorganizationalPage3A10002687TopicOrganizationHome? PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME { get => _explicitNullValuePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME; set { _explicitNullValuePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = value; AdditionalData?.Remove("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)"); else _explicitNullProperties?.Remove("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrorsPageUrn3Ali3AorganizationalPage3A10002687TopicOrganizationHome? _explicitNullValuePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrorsPageUrn3Ali3AorganizationalPage3A10002687TopicOrganizationHome PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrorsPageUrn3Ali3AorganizationalPage3A10002687TopicOrganizationHome PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME { get => _explicitNullValuePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME; set { _explicitNullValuePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = value; AdditionalData?.Remove("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)"); else _explicitNullProperties?.Remove("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrorsPageUrn3Ali3AorganizationalPage3A10002687TopicOrganizationHome _explicitNullValuePageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrors"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrors CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrors();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrors(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseErrorsPageUrn3Ali3AorganizationalPage3A10002687TopicOrganizationHome>("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)", PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

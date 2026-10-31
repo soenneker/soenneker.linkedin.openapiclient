@@ -11,28 +11,49 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemContentEventAd : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("directSponsoredContent") is null) { _explicitNullValueDirectSponsoredContent = default!; _explicitNullProperties?.Remove("directSponsoredContent"); }
+            else if (parseNode.GetChildNode("directSponsoredContent") is { } nullNodeDirectSponsoredContent && nullNodeDirectSponsoredContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectSponsoredContent = null;
+            if (parseNode.GetChildNode("event") is null) { _explicitNullValueEvent = default!; _explicitNullProperties?.Remove("event"); }
+            else if (parseNode.GetChildNode("event") is { } nullNodeEvent && nullNodeEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Event = null;
+            if (parseNode.GetChildNode("hidePreviewVideo") is null) { _explicitNullValueHidePreviewVideo = default!; _explicitNullProperties?.Remove("hidePreviewVideo"); }
+            else if (parseNode.GetChildNode("hidePreviewVideo") is { } nullNodeHidePreviewVideo && nullNodeHidePreviewVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HidePreviewVideo = null;
+            if (parseNode.GetChildNode("post") is null) { _explicitNullValuePost = default!; _explicitNullProperties?.Remove("post"); }
+            else if (parseNode.GetChildNode("post") is { } nullNodePost && nullNodePost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Post = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The directSponsoredContent property</summary>
-        public bool? DirectSponsoredContent { get; set; }
+        public bool? DirectSponsoredContent { get => _explicitNullValueDirectSponsoredContent; set { _explicitNullValueDirectSponsoredContent = value; AdditionalData?.Remove("directSponsoredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directSponsoredContent"); else _explicitNullProperties?.Remove("directSponsoredContent"); } }
+        private bool? _explicitNullValueDirectSponsoredContent = default!;
         /// <summary>The event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Event { get; set; }
+        public string? Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; AdditionalData?.Remove("event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private string? _explicitNullValueEvent = default!;
 #nullable restore
 #else
-        public string Event { get; set; }
+        public string Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; AdditionalData?.Remove("event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private string _explicitNullValueEvent = default!;
 #endif
         /// <summary>The hidePreviewVideo property</summary>
-        public bool? HidePreviewVideo { get; set; }
+        public bool? HidePreviewVideo { get => _explicitNullValueHidePreviewVideo; set { _explicitNullValueHidePreviewVideo = value; AdditionalData?.Remove("hidePreviewVideo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hidePreviewVideo"); else _explicitNullProperties?.Remove("hidePreviewVideo"); } }
+        private bool? _explicitNullValueHidePreviewVideo = default!;
         /// <summary>The post property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Post { get; set; }
+        public string? Post { get => _explicitNullValuePost; set { _explicitNullValuePost = value; AdditionalData?.Remove("post"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post"); else _explicitNullProperties?.Remove("post"); } }
+        private string? _explicitNullValuePost = default!;
 #nullable restore
 #else
-        public string Post { get; set; }
+        public string Post { get => _explicitNullValuePost; set { _explicitNullValuePost = value; AdditionalData?.Remove("post"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post"); else _explicitNullProperties?.Remove("post"); } }
+        private string _explicitNullValuePost = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemContentEventAd"/> and sets the default values.
@@ -49,7 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemContentEventAd CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemContentEventAd();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchCreativeUsingCriteria200ResponseElementsItemContentEventAd(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("event", Event);
             writer.WriteBoolValue("hidePreviewVideo", HidePreviewVideo);
             writer.WriteStringValue("post", Post);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1? ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch? ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2? ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch? ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,9 +43,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser();
-            result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1();
-            result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2();
-            return result;
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("externalIds") || (((shapeMembers1["externalIds"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("userIds") || (((((shapeMembers1["userIds"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray))) && (((shapeMembers1["userIds"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))) && (!shapeMembers1.ContainsKey("userInfo") || (((shapeMembers1["userInfo"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["userInfo"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject10 || (shapeObject10.GetValue() is var shapeMembers11 && ((!shapeMembers11.ContainsKey("companyName") || (((shapeMembers11["companyName"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers11.ContainsKey("countryCode") || (((shapeMembers11["countryCode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers11.ContainsKey("firstName") || (((shapeMembers11["firstName"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers11.ContainsKey("lastName") || (((shapeMembers11["lastName"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers11.ContainsKey("title") || (((shapeMembers11["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))) && (!shapeMembers1.ContainsKey("lead") || (((shapeMembers1["lead"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("userIds") || (((((shapeMembers1["userIds"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray))) && (((shapeMembers1["userIds"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))) && (!shapeMembers1.ContainsKey("externalIds") || (((shapeMembers1["externalIds"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("lead") || (((shapeMembers1["lead"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("userInfo") || (((shapeMembers1["userInfo"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["userInfo"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject12 || (shapeObject12.GetValue() is var shapeMembers13 && ((!shapeMembers13.ContainsKey("companyName") || (((shapeMembers13["companyName"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers13.ContainsKey("countryCode") || (((shapeMembers13["countryCode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers13.ContainsKey("firstName") || (((shapeMembers13["firstName"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers13.ContainsKey("lastName") || (((shapeMembers13["lastName"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers13.ContainsKey("title") || (((shapeMembers13["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch == null && result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch(), parseNode);
+            if (result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch == null && result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,9 +64,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 != null || ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch != null || ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -60,8 +78,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch == null && ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch != null) selectedUnionBranches++;
+            if (ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch != null) selectedUnionBranches++;
+            if (ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch != null && selectedUnionBranches == 1) { if (ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch); return; }
+            if (ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch != null && selectedUnionBranches == 1) { if (ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1>(null, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch>(null, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1Branch, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2Branch);
         }
     }
 }

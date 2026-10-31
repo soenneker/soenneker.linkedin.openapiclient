@@ -12,28 +12,49 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("ctaType") is null) { _explicitNullValueCtaType = default!; _explicitNullProperties?.Remove("ctaType"); }
+            else if (parseNode.GetChildNode("ctaType") is { } nullNodeCtaType && nullNodeCtaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaType = null;
+            if (parseNode.GetChildNode("privacyPolicy") is null) { _explicitNullValuePrivacyPolicy = default!; _explicitNullProperties?.Remove("privacyPolicy"); }
+            else if (parseNode.GetChildNode("privacyPolicy") is { } nullNodePrivacyPolicy && nullNodePrivacyPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivacyPolicy = null;
+            if (parseNode.GetChildNode("redirectUrl") is null) { _explicitNullValueRedirectUrl = default!; _explicitNullProperties?.Remove("redirectUrl"); }
+            else if (parseNode.GetChildNode("redirectUrl") is { } nullNodeRedirectUrl && nullNodeRedirectUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUrl = null;
+        }
+
         /// <summary>Whether or not CTA should be active. If the CTA is active, it will be visible for both members and admins. If its inactive, it will be visible to neither, though admins can access the last ctaType and redirectUrl values that were inputted in case they wish to reactivate it with the same values.Documented type: BooleanRequirement: Yes</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Verb of the message that should be conveyed, such as a request for an estimate for the product. Value enums includes BUY_NOWDOWNLOADGET_STARTEDREQUEST_DEMOTRYCONTACT_USLEARN_MORELEAD_GEN_FORMDocumented type: ProductCallToActionTypeRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType? CtaType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType? CtaType { get => _explicitNullValueCtaType; set { _explicitNullValueCtaType = value; AdditionalData?.Remove("ctaType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ctaType"); else _explicitNullProperties?.Remove("ctaType"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType? _explicitNullValueCtaType = default!;
         /// <summary>URL specified by product admins when configuring a product to use a lead generation form. The URL will point to a given organization’s privacy policy web page.Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyPolicy { get; set; }
+        public string? PrivacyPolicy { get => _explicitNullValuePrivacyPolicy; set { _explicitNullValuePrivacyPolicy = value; AdditionalData?.Remove("privacyPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacyPolicy"); else _explicitNullProperties?.Remove("privacyPolicy"); } }
+        private string? _explicitNullValuePrivacyPolicy = default!;
 #nullable restore
 #else
-        public string PrivacyPolicy { get; set; }
+        public string PrivacyPolicy { get => _explicitNullValuePrivacyPolicy; set { _explicitNullValuePrivacyPolicy = value; AdditionalData?.Remove("privacyPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacyPolicy"); else _explicitNullProperties?.Remove("privacyPolicy"); } }
+        private string _explicitNullValuePrivacyPolicy = default!;
 #endif
         /// <summary>URL to redirect users to when they interact with CTA (call to action).Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectUrl { get; set; }
+        public string? RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; AdditionalData?.Remove("redirectUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
+        private string? _explicitNullValueRedirectUrl = default!;
 #nullable restore
 #else
-        public string RedirectUrl { get; set; }
+        public string RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; AdditionalData?.Remove("redirectUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
+        private string _explicitNullValueRedirectUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction"/> and sets the default values.
@@ -50,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +82,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
-                { "ctaType", n => { CtaType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType>(); } },
+                { "ctaType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCtaType = default; _explicitNullProperties?.Remove("ctaType"); AdditionalData["ctaType"] = unknown; } else { CtaType = parsed; AdditionalData.Remove("ctaType"); } } },
                 { "privacyPolicy", n => { PrivacyPolicy = n.GetStringValue(); } },
                 { "redirectUrl", n => { RedirectUrl = n.GetStringValue(); } },
             };
@@ -77,6 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType>("ctaType", CtaType);
             writer.WriteStringValue("privacyPolicy", PrivacyPolicy);
             writer.WriteStringValue("redirectUrl", RedirectUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

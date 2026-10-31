@@ -11,13 +11,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContentApisGetMultipleSponsoredConversations2XxResponseStatuses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:sponsoredConversation:703695") is null) { _explicitNullValueUrnLiSponsoredConversation703695 = default!; _explicitNullProperties?.Remove("urn:li:sponsoredConversation:703695"); }
+            else if (parseNode.GetChildNode("urn:li:sponsoredConversation:703695") is { } nullNodeUrnLiSponsoredConversation703695 && nullNodeUrnLiSponsoredConversation703695.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiSponsoredConversation703695 = null;
+            if (parseNode.GetChildNode("urn:li:sponsoredConversation:704255") is null) { _explicitNullValueUrnLiSponsoredConversation704255 = default!; _explicitNullProperties?.Remove("urn:li:sponsoredConversation:704255"); }
+            else if (parseNode.GetChildNode("urn:li:sponsoredConversation:704255") is { } nullNodeUrnLiSponsoredConversation704255 && nullNodeUrnLiSponsoredConversation704255.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiSponsoredConversation704255 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiSponsoredConversation703695 property</summary>
-        public long? UrnLiSponsoredConversation703695 { get; set; }
+        public long? UrnLiSponsoredConversation703695 { get => _explicitNullValueUrnLiSponsoredConversation703695; set { _explicitNullValueUrnLiSponsoredConversation703695 = value; AdditionalData?.Remove("urn:li:sponsoredConversation:703695"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:sponsoredConversation:703695"); else _explicitNullProperties?.Remove("urn:li:sponsoredConversation:703695"); } }
+        private long? _explicitNullValueUrnLiSponsoredConversation703695 = default!;
         /// <summary>The urnLiSponsoredConversation704255 property</summary>
-        public long? UrnLiSponsoredConversation704255 { get; set; }
+        public long? UrnLiSponsoredConversation704255 { get => _explicitNullValueUrnLiSponsoredConversation704255; set { _explicitNullValueUrnLiSponsoredConversation704255 = value; AdditionalData?.Remove("urn:li:sponsoredConversation:704255"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:sponsoredConversation:704255"); else _explicitNullProperties?.Remove("urn:li:sponsoredConversation:704255"); } }
+        private long? _explicitNullValueUrnLiSponsoredConversation704255 = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultipleSponsoredConversations2XxResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultipleSponsoredConversations2XxResponseStatuses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultipleSponsoredConversations2XxResponseStatuses();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultipleSponsoredConversations2XxResponseStatuses(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("urn:li:sponsoredConversation:703695", UrnLiSponsoredConversation703695);
             writer.WriteLongValue("urn:li:sponsoredConversation:704255", UrnLiSponsoredConversation704255);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

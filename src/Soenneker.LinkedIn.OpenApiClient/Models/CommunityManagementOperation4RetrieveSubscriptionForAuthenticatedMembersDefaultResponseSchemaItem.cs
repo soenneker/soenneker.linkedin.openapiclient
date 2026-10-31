@@ -12,42 +12,65 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseSchemaItem : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("developerApplication") is null) { _explicitNullValueDeveloperApplication = default!; _explicitNullProperties?.Remove("developerApplication"); }
+            else if (parseNode.GetChildNode("developerApplication") is { } nullNodeDeveloperApplication && nullNodeDeveloperApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeveloperApplication = null;
+            if (parseNode.GetChildNode("entity") is null) { _explicitNullValueEntity = default!; _explicitNullProperties?.Remove("entity"); }
+            else if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
+            if (parseNode.GetChildNode("eventType") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("eventType"); }
+            else if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("user") is null) { _explicitNullValueUser = default!; _explicitNullProperties?.Remove("user"); }
+            else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of your developer application. Must be in the format urn:li:developerApplication:{id}. Your developer application id can be found within the URL of your application in the developer application portalDocumented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeveloperApplication { get; set; }
+        public string? DeveloperApplication { get => _explicitNullValueDeveloperApplication; set { _explicitNullValueDeveloperApplication = value; AdditionalData?.Remove("developerApplication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("developerApplication"); else _explicitNullProperties?.Remove("developerApplication"); } }
+        private string? _explicitNullValueDeveloperApplication = default!;
 #nullable restore
 #else
-        public string DeveloperApplication { get; set; }
+        public string DeveloperApplication { get => _explicitNullValueDeveloperApplication; set { _explicitNullValueDeveloperApplication = value; AdditionalData?.Remove("developerApplication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("developerApplication"); else _explicitNullProperties?.Remove("developerApplication"); } }
+        private string _explicitNullValueDeveloperApplication = default!;
 #endif
-        /// <summary>The entity property</summary>
+        /// <summary>The organizational entity being subscribed to. Must be in the format urn:li:organization:{id}.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEntity? Entity { get; set; }
+        public string? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        private string? _explicitNullValueEntity = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEntity Entity { get; set; }
+        public string Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        private string _explicitNullValueEntity = default!;
 #endif
-        /// <summary>The eventType property</summary>
+        /// <summary>Notification type being subscribed to. Supported values:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONSDocumented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEventType? EventType { get; set; }
+        public string? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("eventType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        private string? _explicitNullValueEventType = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEventType EventType { get; set; }
+        public string EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("eventType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        private string _explicitNullValueEventType = default!;
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The Person URN of the authenticated user. Must be in the format urn:li:person:{id}.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? User { get; set; }
+        public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private string? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public string User { get; set; }
+        public string User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private string _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseSchemaItem"/> and sets the default values.
@@ -64,7 +87,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,8 +98,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "developerApplication", n => { DeveloperApplication = n.GetStringValue(); } },
-                { "entity", n => { Entity = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEntity>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEntity.CreateFromDiscriminatorValue); } },
-                { "eventType", n => { EventType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEventType>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEventType.CreateFromDiscriminatorValue); } },
+                { "entity", n => { Entity = n.GetStringValue(); } },
+                { "eventType", n => { EventType = n.GetStringValue(); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
         }
@@ -88,9 +111,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("developerApplication", DeveloperApplication);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEntity>("entity", Entity);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseItemEventType>("eventType", EventType);
+            writer.WriteStringValue("entity", Entity);
+            writer.WriteStringValue("eventType", EventType);
             writer.WriteStringValue("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

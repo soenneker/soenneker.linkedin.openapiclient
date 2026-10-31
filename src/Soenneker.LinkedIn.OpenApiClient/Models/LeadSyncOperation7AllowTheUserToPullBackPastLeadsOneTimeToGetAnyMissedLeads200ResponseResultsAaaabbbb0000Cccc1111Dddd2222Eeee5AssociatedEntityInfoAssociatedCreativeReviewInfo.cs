@@ -12,21 +12,38 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("lastUpdated") is null) { _explicitNullValueLastUpdated = default!; _explicitNullProperties?.Remove("lastUpdated"); }
+            else if (parseNode.GetChildNode("lastUpdated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+            if (parseNode.GetChildNode("rejectionReasons") is null) { _explicitNullValueRejectionReasons = default!; _explicitNullProperties?.Remove("rejectionReasons"); }
+            else if (parseNode.GetChildNode("rejectionReasons") is { } nullNodeRejectionReasons && nullNodeRejectionReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectionReasons = null;
+            if (parseNode.GetChildNode("reviewStatus") is null) { _explicitNullValueReviewStatus = default!; _explicitNullProperties?.Remove("reviewStatus"); }
+            else if (parseNode.GetChildNode("reviewStatus") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The epoch time in millisecond indicating when the review status is initiated/last updated.Documented type: Time</summary>
-        public long? LastUpdated { get; set; }
+        public long? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; AdditionalData?.Remove("lastUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdated"); else _explicitNullProperties?.Remove("lastUpdated"); } }
+        private long? _explicitNullValueLastUpdated = default!;
         /// <summary>An array of rejection reasons for the Lead Form. It&apos;s Non-empty if the review status is REJECTED in the latest review.Documented type: RejectionReason</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RejectionReasons { get; set; }
+        public UntypedNode? RejectionReasons { get => _explicitNullValueRejectionReasons; set { _explicitNullValueRejectionReasons = value; AdditionalData?.Remove("rejectionReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectionReasons"); else _explicitNullProperties?.Remove("rejectionReasons"); } }
+        private UntypedNode? _explicitNullValueRejectionReasons = default!;
 #nullable restore
 #else
-        public UntypedNode RejectionReasons { get; set; }
+        public UntypedNode RejectionReasons { get => _explicitNullValueRejectionReasons; set { _explicitNullValueRejectionReasons = value; AdditionalData?.Remove("rejectionReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejectionReasons"); else _explicitNullProperties?.Remove("rejectionReasons"); } }
+        private UntypedNode _explicitNullValueRejectionReasons = default!;
 #endif
         /// <summary>Indicate the state of review for the Lead Form.Documented type: LeadGenFormReviewStatus</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus? ReviewStatus { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; AdditionalData?.Remove("reviewStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewStatus"); else _explicitNullProperties?.Remove("reviewStatus"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus? _explicitNullValueReviewStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfo"/> and sets the default values.
         /// </summary>
@@ -42,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfoAssociatedCreativeReviewInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "lastUpdated", n => { LastUpdated = n.GetLongValue(); } },
                 { "rejectionReasons", n => { RejectionReasons = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "reviewStatus", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus>(); } },
+                { "reviewStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReviewStatus = default; _explicitNullProperties?.Remove("reviewStatus"); AdditionalData["reviewStatus"] = unknown; } else { ReviewStatus = parsed; AdditionalData.Remove("reviewStatus"); } } },
             };
         }
         /// <summary>
@@ -67,6 +84,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteLongValue("lastUpdated", LastUpdated);
             writer.WriteObjectValue<UntypedNode>("rejectionReasons", RejectionReasons);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenreviewinfoSubObjectReviewStatus>("reviewStatus", ReviewStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

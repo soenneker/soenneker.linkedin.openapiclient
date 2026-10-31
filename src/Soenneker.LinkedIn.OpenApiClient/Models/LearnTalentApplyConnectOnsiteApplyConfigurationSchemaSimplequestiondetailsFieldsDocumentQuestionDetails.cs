@@ -12,19 +12,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acceptableFileExtensions") is null) { _explicitNullValueAcceptableFileExtensions = default!; _explicitNullProperties?.Remove("acceptableFileExtensions"); }
+            else if (parseNode.GetChildNode("acceptableFileExtensions") is { } nullNodeAcceptableFileExtensions && nullNodeAcceptableFileExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptableFileExtensions = null;
+            if (parseNode.GetChildNode("maximumSize") is null) { _explicitNullValueMaximumSize = default!; _explicitNullProperties?.Remove("maximumSize"); }
+            else if (parseNode.GetChildNode("maximumSize") is { } nullNodeMaximumSize && nullNodeMaximumSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumSize = null;
+        }
+
         /// <summary>The file extensions that you accept (for example, doc, docx, pdf). These should always be listed in lowercase. Leaving out this optional field indicates that the ATS has no restrictions. An empty array indicates that the ATS only accepts files with no extension.Documented type: String[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AcceptableFileExtensions { get; set; }
+        public List<string>? AcceptableFileExtensions { get => _explicitNullValueAcceptableFileExtensions; set { _explicitNullValueAcceptableFileExtensions = value; AdditionalData?.Remove("acceptableFileExtensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptableFileExtensions"); else _explicitNullProperties?.Remove("acceptableFileExtensions"); } }
+        private List<string>? _explicitNullValueAcceptableFileExtensions = default!;
 #nullable restore
 #else
-        public List<string> AcceptableFileExtensions { get; set; }
+        public List<string> AcceptableFileExtensions { get => _explicitNullValueAcceptableFileExtensions; set { _explicitNullValueAcceptableFileExtensions = value; AdditionalData?.Remove("acceptableFileExtensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptableFileExtensions"); else _explicitNullProperties?.Remove("acceptableFileExtensions"); } }
+        private List<string> _explicitNullValueAcceptableFileExtensions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum allowed size of the attachment in bytes. For resume 2 MB max size limit and cover letter 512 KB max size limit. Defaults to 100 MB.Documented type: longRequirement: No</summary>
-        public long? MaximumSize { get; set; }
+        public long? MaximumSize { get => _explicitNullValueMaximumSize; set { _explicitNullValueMaximumSize = value; AdditionalData?.Remove("maximumSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumSize"); else _explicitNullProperties?.Remove("maximumSize"); } }
+        private long? _explicitNullValueMaximumSize = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails"/> and sets the default values.
         /// </summary>
@@ -40,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimplequestiondetailsFieldsDocumentQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("acceptableFileExtensions", AcceptableFileExtensions);
             writer.WriteLongValue("maximumSize", MaximumSize);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

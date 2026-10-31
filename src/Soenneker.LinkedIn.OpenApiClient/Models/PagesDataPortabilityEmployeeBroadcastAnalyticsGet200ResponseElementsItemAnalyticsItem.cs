@@ -11,19 +11,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponseElementsItemAnalyticsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analyticsType") is null) { _explicitNullValueAnalyticsType = default!; _explicitNullProperties?.Remove("analyticsType"); }
+            else if (parseNode.GetChildNode("analyticsType") is { } nullNodeAnalyticsType && nullNodeAnalyticsType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsType = null;
+            if (parseNode.GetChildNode("analyticsValue") is null) { _explicitNullValueAnalyticsValue = default!; _explicitNullProperties?.Remove("analyticsValue"); }
+            else if (parseNode.GetChildNode("analyticsValue") is { } nullNodeAnalyticsValue && nullNodeAnalyticsValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The analyticsType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalyticsType { get; set; }
+        public string? AnalyticsType { get => _explicitNullValueAnalyticsType; set { _explicitNullValueAnalyticsType = value; AdditionalData?.Remove("analyticsType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsType"); else _explicitNullProperties?.Remove("analyticsType"); } }
+        private string? _explicitNullValueAnalyticsType = default!;
 #nullable restore
 #else
-        public string AnalyticsType { get; set; }
+        public string AnalyticsType { get => _explicitNullValueAnalyticsType; set { _explicitNullValueAnalyticsType = value; AdditionalData?.Remove("analyticsType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsType"); else _explicitNullProperties?.Remove("analyticsType"); } }
+        private string _explicitNullValueAnalyticsType = default!;
 #endif
         /// <summary>The analyticsValue property</summary>
-        public long? AnalyticsValue { get; set; }
+        public long? AnalyticsValue { get => _explicitNullValueAnalyticsValue; set { _explicitNullValueAnalyticsValue = value; AdditionalData?.Remove("analyticsValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsValue"); else _explicitNullProperties?.Remove("analyticsValue"); } }
+        private long? _explicitNullValueAnalyticsValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponseElementsItemAnalyticsItem"/> and sets the default values.
         /// </summary>
@@ -39,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponseElementsItemAnalyticsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponseElementsItemAnalyticsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponseElementsItemAnalyticsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("analyticsType", AnalyticsType);
             writer.WriteLongValue("analyticsValue", AnalyticsValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

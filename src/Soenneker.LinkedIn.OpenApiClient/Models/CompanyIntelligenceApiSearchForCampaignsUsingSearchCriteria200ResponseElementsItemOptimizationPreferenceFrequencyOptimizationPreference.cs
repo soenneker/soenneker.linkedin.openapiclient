@@ -11,26 +11,44 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreference : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frequency") is null) { _explicitNullValueFrequency = default!; _explicitNullProperties?.Remove("frequency"); }
+            else if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("optimizationType") is null) { _explicitNullValueOptimizationType = default!; _explicitNullProperties?.Remove("optimizationType"); }
+            else if (parseNode.GetChildNode("optimizationType") is { } nullNodeOptimizationType && nullNodeOptimizationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizationType = null;
+            if (parseNode.GetChildNode("timeSpan") is null) { _explicitNullValueTimeSpan = default!; _explicitNullProperties?.Remove("timeSpan"); }
+            else if (parseNode.GetChildNode("timeSpan") is { } nullNodeTimeSpan && nullNodeTimeSpan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeSpan = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of times the campaign is shown to a member. For MAX_FREQUENCY, the maximum allowable frequency is between 3 and 30.Documented type: int</summary>
-        public int? Frequency { get; set; }
+        public int? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        private int? _explicitNullValueFrequency = default!;
         /// <summary>Type of frequency optimization strategy, such as MAX_FREQUENCY, which indicates that a viewer can be shown the campaign no more than the specified number of times within the given time span.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OptimizationType { get; set; }
+        public string? OptimizationType { get => _explicitNullValueOptimizationType; set { _explicitNullValueOptimizationType = value; AdditionalData?.Remove("optimizationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationType"); else _explicitNullProperties?.Remove("optimizationType"); } }
+        private string? _explicitNullValueOptimizationType = default!;
 #nullable restore
 #else
-        public string OptimizationType { get; set; }
+        public string OptimizationType { get => _explicitNullValueOptimizationType; set { _explicitNullValueOptimizationType = value; AdditionalData?.Remove("optimizationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationType"); else _explicitNullProperties?.Remove("optimizationType"); } }
+        private string _explicitNullValueOptimizationType = default!;
 #endif
         /// <summary>Time span of the frequency optimization rule.Documented type: TimeSpan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan? TimeSpan { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan? TimeSpan { get => _explicitNullValueTimeSpan; set { _explicitNullValueTimeSpan = value; AdditionalData?.Remove("timeSpan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeSpan"); else _explicitNullProperties?.Remove("timeSpan"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan? _explicitNullValueTimeSpan = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan TimeSpan { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan TimeSpan { get => _explicitNullValueTimeSpan; set { _explicitNullValueTimeSpan = value; AdditionalData?.Remove("timeSpan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeSpan"); else _explicitNullProperties?.Remove("timeSpan"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan _explicitNullValueTimeSpan = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreference"/> and sets the default values.
@@ -47,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreference();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreference(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteIntValue("frequency", Frequency);
             writer.WriteStringValue("optimizationType", OptimizationType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan>("timeSpan", TimeSpan);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,16 +12,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("partnerQuestionIdentifier") is null) { _explicitNullValuePartnerQuestionIdentifier = default!; _explicitNullProperties?.Remove("partnerQuestionIdentifier"); }
+            else if (parseNode.GetChildNode("partnerQuestionIdentifier") is { } nullNodePartnerQuestionIdentifier && nullNodePartnerQuestionIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerQuestionIdentifier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The identifier for custom questions. Each custom question has an identifier specified in partnerQuestionIdentifier under SimpleTalentQuestionDefinition.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerQuestionIdentifier { get; set; }
+        public string? PartnerQuestionIdentifier { get => _explicitNullValuePartnerQuestionIdentifier; set { _explicitNullValuePartnerQuestionIdentifier = value; AdditionalData?.Remove("partnerQuestionIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerQuestionIdentifier"); else _explicitNullProperties?.Remove("partnerQuestionIdentifier"); } }
+        private string? _explicitNullValuePartnerQuestionIdentifier = default!;
 #nullable restore
 #else
-        public string PartnerQuestionIdentifier { get; set; }
+        public string PartnerQuestionIdentifier { get => _explicitNullValuePartnerQuestionIdentifier; set { _explicitNullValuePartnerQuestionIdentifier = value; AdditionalData?.Remove("partnerQuestionIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerQuestionIdentifier"); else _explicitNullProperties?.Remove("partnerQuestionIdentifier"); } }
+        private string _explicitNullValuePartnerQuestionIdentifier = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion"/> and sets the default values.
@@ -38,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaPrerequisitequestionresponseFieldsPrerequisiteQuestion(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("partnerQuestionIdentifier", PartnerQuestionIdentifier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

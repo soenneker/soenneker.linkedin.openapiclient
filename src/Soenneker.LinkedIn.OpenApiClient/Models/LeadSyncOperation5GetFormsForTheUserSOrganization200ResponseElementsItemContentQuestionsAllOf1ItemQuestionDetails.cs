@@ -11,24 +11,39 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("multipleChoiceQuestionDetails") is null) { _explicitNullValueMultipleChoiceQuestionDetails = default!; _explicitNullProperties?.Remove("multipleChoiceQuestionDetails"); }
+            else if (parseNode.GetChildNode("multipleChoiceQuestionDetails") is { } nullNodeMultipleChoiceQuestionDetails && nullNodeMultipleChoiceQuestionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultipleChoiceQuestionDetails = null;
+            if (parseNode.GetChildNode("textQuestionDetails") is null) { _explicitNullValueTextQuestionDetails = default!; _explicitNullProperties?.Remove("textQuestionDetails"); }
+            else if (parseNode.GetChildNode("textQuestionDetails") is { } nullNodeTextQuestionDetails && nullNodeTextQuestionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextQuestionDetails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The multipleChoiceQuestionDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsMultipleChoiceQuestionDetails? MultipleChoiceQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsMultipleChoiceQuestionDetails? MultipleChoiceQuestionDetails { get => _explicitNullValueMultipleChoiceQuestionDetails; set { _explicitNullValueMultipleChoiceQuestionDetails = value; AdditionalData?.Remove("multipleChoiceQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multipleChoiceQuestionDetails"); else _explicitNullProperties?.Remove("multipleChoiceQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsMultipleChoiceQuestionDetails? _explicitNullValueMultipleChoiceQuestionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsMultipleChoiceQuestionDetails MultipleChoiceQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsMultipleChoiceQuestionDetails MultipleChoiceQuestionDetails { get => _explicitNullValueMultipleChoiceQuestionDetails; set { _explicitNullValueMultipleChoiceQuestionDetails = value; AdditionalData?.Remove("multipleChoiceQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multipleChoiceQuestionDetails"); else _explicitNullProperties?.Remove("multipleChoiceQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsMultipleChoiceQuestionDetails _explicitNullValueMultipleChoiceQuestionDetails = default!;
 #endif
         /// <summary>The textQuestionDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsTextQuestionDetails? TextQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsTextQuestionDetails? TextQuestionDetails { get => _explicitNullValueTextQuestionDetails; set { _explicitNullValueTextQuestionDetails = value; AdditionalData?.Remove("textQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textQuestionDetails"); else _explicitNullProperties?.Remove("textQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsTextQuestionDetails? _explicitNullValueTextQuestionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsTextQuestionDetails TextQuestionDetails { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsTextQuestionDetails TextQuestionDetails { get => _explicitNullValueTextQuestionDetails; set { _explicitNullValueTextQuestionDetails = value; AdditionalData?.Remove("textQuestionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textQuestionDetails"); else _explicitNullProperties?.Remove("textQuestionDetails"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsTextQuestionDetails _explicitNullValueTextQuestionDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetails"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsMultipleChoiceQuestionDetails>("multipleChoiceQuestionDetails", MultipleChoiceQuestionDetails);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContentQuestionsAllOf1ItemQuestionDetailsTextQuestionDetails>("textQuestionDetails", TextQuestionDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

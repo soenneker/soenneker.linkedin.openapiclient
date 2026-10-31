@@ -11,42 +11,76 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("averageDaysToClose") is null) { _explicitNullValueAverageDaysToClose = default!; _explicitNullProperties?.Remove("averageDaysToClose"); }
+            else if (parseNode.GetChildNode("averageDaysToClose") is { } nullNodeAverageDaysToClose && nullNodeAverageDaysToClose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDaysToClose = null;
+            if (parseNode.GetChildNode("averageDealSizeInUsd") is null) { _explicitNullValueAverageDealSizeInUsd = default!; _explicitNullProperties?.Remove("averageDealSizeInUsd"); }
+            else if (parseNode.GetChildNode("averageDealSizeInUsd") is { } nullNodeAverageDealSizeInUsd && nullNodeAverageDealSizeInUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDealSizeInUsd = null;
+            if (parseNode.GetChildNode("closedWonOpportunities") is null) { _explicitNullValueClosedWonOpportunities = default!; _explicitNullProperties?.Remove("closedWonOpportunities"); }
+            else if (parseNode.GetChildNode("closedWonOpportunities") is { } nullNodeClosedWonOpportunities && nullNodeClosedWonOpportunities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosedWonOpportunities = null;
+            if (parseNode.GetChildNode("openOpportunities") is null) { _explicitNullValueOpenOpportunities = default!; _explicitNullProperties?.Remove("openOpportunities"); }
+            else if (parseNode.GetChildNode("openOpportunities") is { } nullNodeOpenOpportunities && nullNodeOpenOpportunities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenOpportunities = null;
+            if (parseNode.GetChildNode("opportunityAmountInUsd") is null) { _explicitNullValueOpportunityAmountInUsd = default!; _explicitNullProperties?.Remove("opportunityAmountInUsd"); }
+            else if (parseNode.GetChildNode("opportunityAmountInUsd") is { } nullNodeOpportunityAmountInUsd && nullNodeOpportunityAmountInUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpportunityAmountInUsd = null;
+            if (parseNode.GetChildNode("opportunityWinRate") is null) { _explicitNullValueOpportunityWinRate = default!; _explicitNullProperties?.Remove("opportunityWinRate"); }
+            else if (parseNode.GetChildNode("opportunityWinRate") is { } nullNodeOpportunityWinRate && nullNodeOpportunityWinRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpportunityWinRate = null;
+            if (parseNode.GetChildNode("returnOnAdSpend") is null) { _explicitNullValueReturnOnAdSpend = default!; _explicitNullProperties?.Remove("returnOnAdSpend"); }
+            else if (parseNode.GetChildNode("returnOnAdSpend") is { } nullNodeReturnOnAdSpend && nullNodeReturnOnAdSpend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnOnAdSpend = null;
+            if (parseNode.GetChildNode("revenueWonInUsd") is null) { _explicitNullValueRevenueWonInUsd = default!; _explicitNullProperties?.Remove("revenueWonInUsd"); }
+            else if (parseNode.GetChildNode("revenueWonInUsd") is { } nullNodeRevenueWonInUsd && nullNodeRevenueWonInUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevenueWonInUsd = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The average number of days to close a won deal attributed to LinkedIn marketing.(Opportunity length in days / closedWonOpportunities)Documented type: double</summary>
-        public double? AverageDaysToClose { get; set; }
+        public double? AverageDaysToClose { get => _explicitNullValueAverageDaysToClose; set { _explicitNullValueAverageDaysToClose = value; AdditionalData?.Remove("averageDaysToClose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageDaysToClose"); else _explicitNullProperties?.Remove("averageDaysToClose"); } }
+        private double? _explicitNullValueAverageDaysToClose = default!;
         /// <summary>The averageDealSizeInUsd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AverageDealSizeInUsd { get; set; }
+        public string? AverageDealSizeInUsd { get => _explicitNullValueAverageDealSizeInUsd; set { _explicitNullValueAverageDealSizeInUsd = value; AdditionalData?.Remove("averageDealSizeInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageDealSizeInUsd"); else _explicitNullProperties?.Remove("averageDealSizeInUsd"); } }
+        private string? _explicitNullValueAverageDealSizeInUsd = default!;
 #nullable restore
 #else
-        public string AverageDealSizeInUsd { get; set; }
+        public string AverageDealSizeInUsd { get => _explicitNullValueAverageDealSizeInUsd; set { _explicitNullValueAverageDealSizeInUsd = value; AdditionalData?.Remove("averageDealSizeInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageDealSizeInUsd"); else _explicitNullProperties?.Remove("averageDealSizeInUsd"); } }
+        private string _explicitNullValueAverageDealSizeInUsd = default!;
 #endif
         /// <summary>Number of closed-won opportunities attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.Documented type: long</summary>
-        public long? ClosedWonOpportunities { get; set; }
+        public long? ClosedWonOpportunities { get => _explicitNullValueClosedWonOpportunities; set { _explicitNullValueClosedWonOpportunities = value; AdditionalData?.Remove("closedWonOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closedWonOpportunities"); else _explicitNullProperties?.Remove("closedWonOpportunities"); } }
+        private long? _explicitNullValueClosedWonOpportunities = default!;
         /// <summary>Number of open opportunities (CRM deals in progress) attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.This metric is available only when date range includes current day.Documented type: long</summary>
-        public long? OpenOpportunities { get; set; }
+        public long? OpenOpportunities { get => _explicitNullValueOpenOpportunities; set { _explicitNullValueOpenOpportunities = value; AdditionalData?.Remove("openOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openOpportunities"); else _explicitNullProperties?.Remove("openOpportunities"); } }
+        private long? _explicitNullValueOpenOpportunities = default!;
         /// <summary>The opportunityAmountInUsd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OpportunityAmountInUsd { get; set; }
+        public string? OpportunityAmountInUsd { get => _explicitNullValueOpportunityAmountInUsd; set { _explicitNullValueOpportunityAmountInUsd = value; AdditionalData?.Remove("opportunityAmountInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunityAmountInUsd"); else _explicitNullProperties?.Remove("opportunityAmountInUsd"); } }
+        private string? _explicitNullValueOpportunityAmountInUsd = default!;
 #nullable restore
 #else
-        public string OpportunityAmountInUsd { get; set; }
+        public string OpportunityAmountInUsd { get => _explicitNullValueOpportunityAmountInUsd; set { _explicitNullValueOpportunityAmountInUsd = value; AdditionalData?.Remove("opportunityAmountInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunityAmountInUsd"); else _explicitNullProperties?.Remove("opportunityAmountInUsd"); } }
+        private string _explicitNullValueOpportunityAmountInUsd = default!;
 #endif
         /// <summary>Rate at which the opportunities are won out of all the closed opportunities. (closedWonOpportunities / Number of closed opportunities)Documented type: double</summary>
-        public double? OpportunityWinRate { get; set; }
+        public double? OpportunityWinRate { get => _explicitNullValueOpportunityWinRate; set { _explicitNullValueOpportunityWinRate = value; AdditionalData?.Remove("opportunityWinRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunityWinRate"); else _explicitNullProperties?.Remove("opportunityWinRate"); } }
+        private double? _explicitNullValueOpportunityWinRate = default!;
         /// <summary>Ratio of total revenue won attributed to LinkedIn marketing divided by LinkedIn ad spend. Attribution credit is distributed at a business level across multiple ad accounts. (revenueWonInUsd / costInUsd)Documented type: double</summary>
-        public double? ReturnOnAdSpend { get; set; }
+        public double? ReturnOnAdSpend { get => _explicitNullValueReturnOnAdSpend; set { _explicitNullValueReturnOnAdSpend = value; AdditionalData?.Remove("returnOnAdSpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnOnAdSpend"); else _explicitNullProperties?.Remove("returnOnAdSpend"); } }
+        private double? _explicitNullValueReturnOnAdSpend = default!;
         /// <summary>The revenueWonInUsd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RevenueWonInUsd { get; set; }
+        public string? RevenueWonInUsd { get => _explicitNullValueRevenueWonInUsd; set { _explicitNullValueRevenueWonInUsd = value; AdditionalData?.Remove("revenueWonInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revenueWonInUsd"); else _explicitNullProperties?.Remove("revenueWonInUsd"); } }
+        private string? _explicitNullValueRevenueWonInUsd = default!;
 #nullable restore
 #else
-        public string RevenueWonInUsd { get; set; }
+        public string RevenueWonInUsd { get => _explicitNullValueRevenueWonInUsd; set { _explicitNullValueRevenueWonInUsd = value; AdditionalData?.Remove("revenueWonInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revenueWonInUsd"); else _explicitNullProperties?.Remove("revenueWonInUsd"); } }
+        private string _explicitNullValueRevenueWonInUsd = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics"/> and sets the default values.
@@ -63,7 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +132,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteDoubleValue("opportunityWinRate", OpportunityWinRate);
             writer.WriteDoubleValue("returnOnAdSpend", ReturnOnAdSpend);
             writer.WriteStringValue("revenueWonInUsd", RevenueWonInUsd);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

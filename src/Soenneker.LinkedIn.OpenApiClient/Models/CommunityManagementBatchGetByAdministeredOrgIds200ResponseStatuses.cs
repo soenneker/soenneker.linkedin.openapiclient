@@ -11,13 +11,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CommunityManagementBatchGetByAdministeredOrgIds200ResponseStatuses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("79988552") is null) { _explicitNullValueSevenNineNineEightEightFiveFiveTwo = default!; _explicitNullProperties?.Remove("79988552"); }
+            else if (parseNode.GetChildNode("79988552") is { } nullNodeSevenNineNineEightEightFiveFiveTwo && nullNodeSevenNineNineEightEightFiveFiveTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SevenNineNineEightEightFiveFiveTwo = null;
+            if (parseNode.GetChildNode("3803") is null) { _explicitNullValueThreeEightZeroThree = default!; _explicitNullProperties?.Remove("3803"); }
+            else if (parseNode.GetChildNode("3803") is { } nullNodeThreeEightZeroThree && nullNodeThreeEightZeroThree.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeEightZeroThree = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SevenNineNineEightEightFiveFiveTwo property</summary>
-        public long? SevenNineNineEightEightFiveFiveTwo { get; set; }
+        public long? SevenNineNineEightEightFiveFiveTwo { get => _explicitNullValueSevenNineNineEightEightFiveFiveTwo; set { _explicitNullValueSevenNineNineEightEightFiveFiveTwo = value; AdditionalData?.Remove("79988552"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("79988552"); else _explicitNullProperties?.Remove("79988552"); } }
+        private long? _explicitNullValueSevenNineNineEightEightFiveFiveTwo = default!;
         /// <summary>The ThreeEightZeroThree property</summary>
-        public long? ThreeEightZeroThree { get; set; }
+        public long? ThreeEightZeroThree { get => _explicitNullValueThreeEightZeroThree; set { _explicitNullValueThreeEightZeroThree = value; AdditionalData?.Remove("3803"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3803"); else _explicitNullProperties?.Remove("3803"); } }
+        private long? _explicitNullValueThreeEightZeroThree = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseStatuses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseStatuses();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseStatuses(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("79988552", SevenNineNineEightEightFiveFiveTwo);
             writer.WriteLongValue("3803", ThreeEightZeroThree);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

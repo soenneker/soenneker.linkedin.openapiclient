@@ -11,16 +11,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CampaignManagementCreateACreativeRequestElementsItemVariablesData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("com.linkedin.ads.TextAdCreativeVariables") is null) { _explicitNullValueComLinkedinAdsTextAdCreativeVariables = default!; _explicitNullProperties?.Remove("com.linkedin.ads.TextAdCreativeVariables"); }
+            else if (parseNode.GetChildNode("com.linkedin.ads.TextAdCreativeVariables") is { } nullNodeComLinkedinAdsTextAdCreativeVariables && nullNodeComLinkedinAdsTextAdCreativeVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComLinkedinAdsTextAdCreativeVariables = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comLinkedinAdsTextAdCreativeVariables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesDataComLinkedinAdsTextAdCreativeVariables? ComLinkedinAdsTextAdCreativeVariables { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesDataComLinkedinAdsTextAdCreativeVariables? ComLinkedinAdsTextAdCreativeVariables { get => _explicitNullValueComLinkedinAdsTextAdCreativeVariables; set { _explicitNullValueComLinkedinAdsTextAdCreativeVariables = value; AdditionalData?.Remove("com.linkedin.ads.TextAdCreativeVariables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("com.linkedin.ads.TextAdCreativeVariables"); else _explicitNullProperties?.Remove("com.linkedin.ads.TextAdCreativeVariables"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesDataComLinkedinAdsTextAdCreativeVariables? _explicitNullValueComLinkedinAdsTextAdCreativeVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesDataComLinkedinAdsTextAdCreativeVariables ComLinkedinAdsTextAdCreativeVariables { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesDataComLinkedinAdsTextAdCreativeVariables ComLinkedinAdsTextAdCreativeVariables { get => _explicitNullValueComLinkedinAdsTextAdCreativeVariables; set { _explicitNullValueComLinkedinAdsTextAdCreativeVariables = value; AdditionalData?.Remove("com.linkedin.ads.TextAdCreativeVariables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("com.linkedin.ads.TextAdCreativeVariables"); else _explicitNullProperties?.Remove("com.linkedin.ads.TextAdCreativeVariables"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesDataComLinkedinAdsTextAdCreativeVariables _explicitNullValueComLinkedinAdsTextAdCreativeVariables = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesData"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACreativeRequestElementsItemVariablesDataComLinkedinAdsTextAdCreativeVariables>("com.linkedin.ads.TextAdCreativeVariables", ComLinkedinAdsTextAdCreativeVariables);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,56 +11,87 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteriaIncludeAndItemOr : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("urn:li:adTargetingFacet:interests") is null) { _explicitNullValueUrnLiAdTargetingFacetInterests = default!; _explicitNullProperties?.Remove("urn:li:adTargetingFacet:interests"); }
+            else if (parseNode.GetChildNode("urn:li:adTargetingFacet:interests") is { } nullNodeUrnLiAdTargetingFacetInterests && nullNodeUrnLiAdTargetingFacetInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiAdTargetingFacetInterests = null;
+            if (parseNode.GetChildNode("urn:li:adTargetingFacet:interfaceLocales") is null) { _explicitNullValueUrnLiAdTargetingFacetInterfaceLocales = default!; _explicitNullProperties?.Remove("urn:li:adTargetingFacet:interfaceLocales"); }
+            else if (parseNode.GetChildNode("urn:li:adTargetingFacet:interfaceLocales") is { } nullNodeUrnLiAdTargetingFacetInterfaceLocales && nullNodeUrnLiAdTargetingFacetInterfaceLocales.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiAdTargetingFacetInterfaceLocales = null;
+            if (parseNode.GetChildNode("urn:li:adTargetingFacet:jobFunctions") is null) { _explicitNullValueUrnLiAdTargetingFacetJobFunctions = default!; _explicitNullProperties?.Remove("urn:li:adTargetingFacet:jobFunctions"); }
+            else if (parseNode.GetChildNode("urn:li:adTargetingFacet:jobFunctions") is { } nullNodeUrnLiAdTargetingFacetJobFunctions && nullNodeUrnLiAdTargetingFacetJobFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiAdTargetingFacetJobFunctions = null;
+            if (parseNode.GetChildNode("urn:li:adTargetingFacet:locations") is null) { _explicitNullValueUrnLiAdTargetingFacetLocations = default!; _explicitNullProperties?.Remove("urn:li:adTargetingFacet:locations"); }
+            else if (parseNode.GetChildNode("urn:li:adTargetingFacet:locations") is { } nullNodeUrnLiAdTargetingFacetLocations && nullNodeUrnLiAdTargetingFacetLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiAdTargetingFacetLocations = null;
+            if (parseNode.GetChildNode("urn:li:adTargetingFacet:skills") is null) { _explicitNullValueUrnLiAdTargetingFacetSkills = default!; _explicitNullProperties?.Remove("urn:li:adTargetingFacet:skills"); }
+            else if (parseNode.GetChildNode("urn:li:adTargetingFacet:skills") is { } nullNodeUrnLiAdTargetingFacetSkills && nullNodeUrnLiAdTargetingFacetSkills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiAdTargetingFacetSkills = null;
+            if (parseNode.GetChildNode("urn:li:adTargetingFacet:titles") is null) { _explicitNullValueUrnLiAdTargetingFacetTitles = default!; _explicitNullProperties?.Remove("urn:li:adTargetingFacet:titles"); }
+            else if (parseNode.GetChildNode("urn:li:adTargetingFacet:titles") is { } nullNodeUrnLiAdTargetingFacetTitles && nullNodeUrnLiAdTargetingFacetTitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrnLiAdTargetingFacetTitles = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiAdTargetingFacetInterests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UrnLiAdTargetingFacetInterests { get; set; }
+        public List<string>? UrnLiAdTargetingFacetInterests { get => _explicitNullValueUrnLiAdTargetingFacetInterests; set { _explicitNullValueUrnLiAdTargetingFacetInterests = value; AdditionalData?.Remove("urn:li:adTargetingFacet:interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:interests"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:interests"); } }
+        private List<string>? _explicitNullValueUrnLiAdTargetingFacetInterests = default!;
 #nullable restore
 #else
-        public List<string> UrnLiAdTargetingFacetInterests { get; set; }
+        public List<string> UrnLiAdTargetingFacetInterests { get => _explicitNullValueUrnLiAdTargetingFacetInterests; set { _explicitNullValueUrnLiAdTargetingFacetInterests = value; AdditionalData?.Remove("urn:li:adTargetingFacet:interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:interests"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:interests"); } }
+        private List<string> _explicitNullValueUrnLiAdTargetingFacetInterests = default!;
 #endif
         /// <summary>The urnLiAdTargetingFacetInterfaceLocales property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UrnLiAdTargetingFacetInterfaceLocales { get; set; }
+        public List<string>? UrnLiAdTargetingFacetInterfaceLocales { get => _explicitNullValueUrnLiAdTargetingFacetInterfaceLocales; set { _explicitNullValueUrnLiAdTargetingFacetInterfaceLocales = value; AdditionalData?.Remove("urn:li:adTargetingFacet:interfaceLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:interfaceLocales"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:interfaceLocales"); } }
+        private List<string>? _explicitNullValueUrnLiAdTargetingFacetInterfaceLocales = default!;
 #nullable restore
 #else
-        public List<string> UrnLiAdTargetingFacetInterfaceLocales { get; set; }
+        public List<string> UrnLiAdTargetingFacetInterfaceLocales { get => _explicitNullValueUrnLiAdTargetingFacetInterfaceLocales; set { _explicitNullValueUrnLiAdTargetingFacetInterfaceLocales = value; AdditionalData?.Remove("urn:li:adTargetingFacet:interfaceLocales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:interfaceLocales"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:interfaceLocales"); } }
+        private List<string> _explicitNullValueUrnLiAdTargetingFacetInterfaceLocales = default!;
 #endif
         /// <summary>The urnLiAdTargetingFacetJobFunctions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UrnLiAdTargetingFacetJobFunctions { get; set; }
+        public List<string>? UrnLiAdTargetingFacetJobFunctions { get => _explicitNullValueUrnLiAdTargetingFacetJobFunctions; set { _explicitNullValueUrnLiAdTargetingFacetJobFunctions = value; AdditionalData?.Remove("urn:li:adTargetingFacet:jobFunctions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:jobFunctions"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:jobFunctions"); } }
+        private List<string>? _explicitNullValueUrnLiAdTargetingFacetJobFunctions = default!;
 #nullable restore
 #else
-        public List<string> UrnLiAdTargetingFacetJobFunctions { get; set; }
+        public List<string> UrnLiAdTargetingFacetJobFunctions { get => _explicitNullValueUrnLiAdTargetingFacetJobFunctions; set { _explicitNullValueUrnLiAdTargetingFacetJobFunctions = value; AdditionalData?.Remove("urn:li:adTargetingFacet:jobFunctions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:jobFunctions"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:jobFunctions"); } }
+        private List<string> _explicitNullValueUrnLiAdTargetingFacetJobFunctions = default!;
 #endif
         /// <summary>The urnLiAdTargetingFacetLocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UrnLiAdTargetingFacetLocations { get; set; }
+        public List<string>? UrnLiAdTargetingFacetLocations { get => _explicitNullValueUrnLiAdTargetingFacetLocations; set { _explicitNullValueUrnLiAdTargetingFacetLocations = value; AdditionalData?.Remove("urn:li:adTargetingFacet:locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:locations"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:locations"); } }
+        private List<string>? _explicitNullValueUrnLiAdTargetingFacetLocations = default!;
 #nullable restore
 #else
-        public List<string> UrnLiAdTargetingFacetLocations { get; set; }
+        public List<string> UrnLiAdTargetingFacetLocations { get => _explicitNullValueUrnLiAdTargetingFacetLocations; set { _explicitNullValueUrnLiAdTargetingFacetLocations = value; AdditionalData?.Remove("urn:li:adTargetingFacet:locations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:locations"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:locations"); } }
+        private List<string> _explicitNullValueUrnLiAdTargetingFacetLocations = default!;
 #endif
         /// <summary>The urnLiAdTargetingFacetSkills property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UrnLiAdTargetingFacetSkills { get; set; }
+        public List<string>? UrnLiAdTargetingFacetSkills { get => _explicitNullValueUrnLiAdTargetingFacetSkills; set { _explicitNullValueUrnLiAdTargetingFacetSkills = value; AdditionalData?.Remove("urn:li:adTargetingFacet:skills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:skills"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:skills"); } }
+        private List<string>? _explicitNullValueUrnLiAdTargetingFacetSkills = default!;
 #nullable restore
 #else
-        public List<string> UrnLiAdTargetingFacetSkills { get; set; }
+        public List<string> UrnLiAdTargetingFacetSkills { get => _explicitNullValueUrnLiAdTargetingFacetSkills; set { _explicitNullValueUrnLiAdTargetingFacetSkills = value; AdditionalData?.Remove("urn:li:adTargetingFacet:skills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:skills"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:skills"); } }
+        private List<string> _explicitNullValueUrnLiAdTargetingFacetSkills = default!;
 #endif
         /// <summary>The urnLiAdTargetingFacetTitles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UrnLiAdTargetingFacetTitles { get; set; }
+        public List<string>? UrnLiAdTargetingFacetTitles { get => _explicitNullValueUrnLiAdTargetingFacetTitles; set { _explicitNullValueUrnLiAdTargetingFacetTitles = value; AdditionalData?.Remove("urn:li:adTargetingFacet:titles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:titles"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:titles"); } }
+        private List<string>? _explicitNullValueUrnLiAdTargetingFacetTitles = default!;
 #nullable restore
 #else
-        public List<string> UrnLiAdTargetingFacetTitles { get; set; }
+        public List<string> UrnLiAdTargetingFacetTitles { get => _explicitNullValueUrnLiAdTargetingFacetTitles; set { _explicitNullValueUrnLiAdTargetingFacetTitles = value; AdditionalData?.Remove("urn:li:adTargetingFacet:titles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urn:li:adTargetingFacet:titles"); else _explicitNullProperties?.Remove("urn:li:adTargetingFacet:titles"); } }
+        private List<string> _explicitNullValueUrnLiAdTargetingFacetTitles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteriaIncludeAndItemOr"/> and sets the default values.
@@ -77,7 +108,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteriaIncludeAndItemOr CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteriaIncludeAndItemOr();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteriaIncludeAndItemOr(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +139,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:locations", UrnLiAdTargetingFacetLocations);
             writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:skills", UrnLiAdTargetingFacetSkills);
             writer.WriteCollectionOfPrimitiveValues<string>("urn:li:adTargetingFacet:titles", UrnLiAdTargetingFacetTitles);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

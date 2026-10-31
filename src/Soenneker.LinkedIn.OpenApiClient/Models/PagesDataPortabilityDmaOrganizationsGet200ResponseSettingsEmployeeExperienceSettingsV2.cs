@@ -12,13 +12,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("myCompanyEmployeeVerificationRequired") is null) { _explicitNullValueMyCompanyEmployeeVerificationRequired = default!; _explicitNullProperties?.Remove("myCompanyEmployeeVerificationRequired"); }
+            else if (parseNode.GetChildNode("myCompanyEmployeeVerificationRequired") is { } nullNodeMyCompanyEmployeeVerificationRequired && nullNodeMyCompanyEmployeeVerificationRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MyCompanyEmployeeVerificationRequired = null;
+            if (parseNode.GetChildNode("trendingContentVisibility") is null) { _explicitNullValueTrendingContentVisibility = default!; _explicitNullProperties?.Remove("trendingContentVisibility"); }
+            else if (parseNode.GetChildNode("trendingContentVisibility") is { } nullNodeTrendingContentVisibility && nullNodeTrendingContentVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrendingContentVisibility = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This setting will enable admins to require that members verify that they are employees of this organization prior to accessing the MyCompany tab. If this field is null, it will be interpreted as false for backwards compatibility.Documented type: booleanRequirement: No</summary>
-        public bool? MyCompanyEmployeeVerificationRequired { get; set; }
+        public bool? MyCompanyEmployeeVerificationRequired { get => _explicitNullValueMyCompanyEmployeeVerificationRequired; set { _explicitNullValueMyCompanyEmployeeVerificationRequired = value; AdditionalData?.Remove("myCompanyEmployeeVerificationRequired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("myCompanyEmployeeVerificationRequired"); else _explicitNullProperties?.Remove("myCompanyEmployeeVerificationRequired"); } }
+        private bool? _explicitNullValueMyCompanyEmployeeVerificationRequired = default!;
         /// <summary>Visibility settings for trending content. This field could be set by admins, default is ALL_EMPLOYEES. Value enums include: NONEVERIFIED_EMPLOYEESALL_EMPLOYEESDocumented type: EmployeeExperienceContentVisibilityRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2TrendingContentVisibility? TrendingContentVisibility { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2TrendingContentVisibility? TrendingContentVisibility { get => _explicitNullValueTrendingContentVisibility; set { _explicitNullValueTrendingContentVisibility = value; AdditionalData?.Remove("trendingContentVisibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trendingContentVisibility"); else _explicitNullProperties?.Remove("trendingContentVisibility"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2TrendingContentVisibility? _explicitNullValueTrendingContentVisibility = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2"/> and sets the default values.
         /// </summary>
@@ -34,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "myCompanyEmployeeVerificationRequired", n => { MyCompanyEmployeeVerificationRequired = n.GetBoolValue(); } },
-                { "trendingContentVisibility", n => { TrendingContentVisibility = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2TrendingContentVisibility>(); } },
+                { "trendingContentVisibility", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2TrendingContentVisibility>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrendingContentVisibility = default; _explicitNullProperties?.Remove("trendingContentVisibility"); AdditionalData["trendingContentVisibility"] = unknown; } else { TrendingContentVisibility = parsed; AdditionalData.Remove("trendingContentVisibility"); } } },
             };
         }
         /// <summary>
@@ -57,6 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("myCompanyEmployeeVerificationRequired", MyCompanyEmployeeVerificationRequired);
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2TrendingContentVisibility>("trendingContentVisibility", TrendingContentVisibility);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

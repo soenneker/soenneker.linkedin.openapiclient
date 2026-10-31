@@ -12,18 +12,32 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesDataPortabilityDmaOrganizationsGet200ResponseSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adSetting") is null) { _explicitNullValueAdSetting = default!; _explicitNullProperties?.Remove("adSetting"); }
+            else if (parseNode.GetChildNode("adSetting") is { } nullNodeAdSetting && nullNodeAdSetting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdSetting = null;
+            if (parseNode.GetChildNode("employeeExperienceSettingsV2") is null) { _explicitNullValueEmployeeExperienceSettingsV2 = default!; _explicitNullProperties?.Remove("employeeExperienceSettingsV2"); }
+            else if (parseNode.GetChildNode("employeeExperienceSettingsV2") is { } nullNodeEmployeeExperienceSettingsV2 && nullNodeEmployeeExperienceSettingsV2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeExperienceSettingsV2 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Setting for displaying ads in an organization page. Value enums include: NO_ADSNO_SECOND_ADSALLOW_ADSDocumented type: AdSettingRequirement: Yes</summary>
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsAdSetting? AdSetting { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsAdSetting? AdSetting { get => _explicitNullValueAdSetting; set { _explicitNullValueAdSetting = value; AdditionalData?.Remove("adSetting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adSetting"); else _explicitNullProperties?.Remove("adSetting"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsAdSetting? _explicitNullValueAdSetting = default!;
         /// <summary>Settings for the Employee Experience tab of an organization page.Documented type: EmployeeExperienceSettingsV2Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2? EmployeeExperienceSettingsV2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2? EmployeeExperienceSettingsV2 { get => _explicitNullValueEmployeeExperienceSettingsV2; set { _explicitNullValueEmployeeExperienceSettingsV2 = value; AdditionalData?.Remove("employeeExperienceSettingsV2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeExperienceSettingsV2"); else _explicitNullProperties?.Remove("employeeExperienceSettingsV2"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2? _explicitNullValueEmployeeExperienceSettingsV2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2 EmployeeExperienceSettingsV2 { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2 EmployeeExperienceSettingsV2 { get => _explicitNullValueEmployeeExperienceSettingsV2; set { _explicitNullValueEmployeeExperienceSettingsV2 = value; AdditionalData?.Remove("employeeExperienceSettingsV2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeExperienceSettingsV2"); else _explicitNullProperties?.Remove("employeeExperienceSettingsV2"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2 _explicitNullValueEmployeeExperienceSettingsV2 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings"/> and sets the default values.
@@ -40,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adSetting", n => { AdSetting = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsAdSetting>(); } },
+                { "adSetting", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsAdSetting>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAdSetting = default; _explicitNullProperties?.Remove("adSetting"); AdditionalData["adSetting"] = unknown; } else { AdSetting = parsed; AdditionalData.Remove("adSetting"); } } },
                 { "employeeExperienceSettingsV2", n => { EmployeeExperienceSettingsV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2.CreateFromDiscriminatorValue); } },
             };
         }
@@ -63,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsAdSetting>("adSetting", AdSetting);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettingsEmployeeExperienceSettingsV2>("employeeExperienceSettingsV2", EmployeeExperienceSettingsV2);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

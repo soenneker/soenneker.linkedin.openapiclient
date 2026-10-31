@@ -11,48 +11,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RecruiterSystemConnectCreateUploadResumeUrlRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blobTtl") is null) { _explicitNullValueBlobTtl = default!; _explicitNullProperties?.Remove("blobTtl"); }
+            else if (parseNode.GetChildNode("blobTtl") is { } nullNodeBlobTtl && nullNodeBlobTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlobTtl = null;
+            if (parseNode.GetChildNode("contentType") is null) { _explicitNullValueContentType = default!; _explicitNullProperties?.Remove("contentType"); }
+            else if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("fileName") is null) { _explicitNullValueFileName = default!; _explicitNullProperties?.Remove("fileName"); }
+            else if (parseNode.GetChildNode("fileName") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("hiringContext") is null) { _explicitNullValueHiringContext = default!; _explicitNullProperties?.Remove("hiringContext"); }
+            else if (parseNode.GetChildNode("hiringContext") is { } nullNodeHiringContext && nullNodeHiringContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiringContext = null;
+            if (parseNode.GetChildNode("usageParameters") is null) { _explicitNullValueUsageParameters = default!; _explicitNullProperties?.Remove("usageParameters"); }
+            else if (parseNode.GetChildNode("usageParameters") is { } nullNodeUsageParameters && nullNodeUsageParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageParameters = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blobTtl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl? BlobTtl { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl? BlobTtl { get => _explicitNullValueBlobTtl; set { _explicitNullValueBlobTtl = value; AdditionalData?.Remove("blobTtl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blobTtl"); else _explicitNullProperties?.Remove("blobTtl"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl? _explicitNullValueBlobTtl = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl BlobTtl { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl BlobTtl { get => _explicitNullValueBlobTtl; set { _explicitNullValueBlobTtl = value; AdditionalData?.Remove("blobTtl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blobTtl"); else _explicitNullProperties?.Remove("blobTtl"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl _explicitNullValueBlobTtl = default!;
 #endif
         /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType? ContentType { get; set; }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("contentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType ContentType { get; set; }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("contentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>The fileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get; set; }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("fileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get; set; }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("fileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>The hiringContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext? HiringContext { get; set; }
+        public string? HiringContext { get => _explicitNullValueHiringContext; set { _explicitNullValueHiringContext = value; AdditionalData?.Remove("hiringContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiringContext"); else _explicitNullProperties?.Remove("hiringContext"); } }
+        private string? _explicitNullValueHiringContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext HiringContext { get; set; }
+        public string HiringContext { get => _explicitNullValueHiringContext; set { _explicitNullValueHiringContext = value; AdditionalData?.Remove("hiringContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiringContext"); else _explicitNullProperties?.Remove("hiringContext"); } }
+        private string _explicitNullValueHiringContext = default!;
 #endif
         /// <summary>The usageParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters? UsageParameters { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters? UsageParameters { get => _explicitNullValueUsageParameters; set { _explicitNullValueUsageParameters = value; AdditionalData?.Remove("usageParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usageParameters"); else _explicitNullProperties?.Remove("usageParameters"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters? _explicitNullValueUsageParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters UsageParameters { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters UsageParameters { get => _explicitNullValueUsageParameters; set { _explicitNullValueUsageParameters = value; AdditionalData?.Remove("usageParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usageParameters"); else _explicitNullProperties?.Remove("usageParameters"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters _explicitNullValueUsageParameters = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequest"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,9 +107,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blobTtl", n => { BlobTtl = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl.CreateFromDiscriminatorValue); } },
-                { "contentType", n => { ContentType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType.CreateFromDiscriminatorValue); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
-                { "hiringContext", n => { HiringContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext.CreateFromDiscriminatorValue); } },
+                { "hiringContext", n => { HiringContext = n.GetStringValue(); } },
                 { "usageParameters", n => { UsageParameters = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters.CreateFromDiscriminatorValue); } },
             };
         }
@@ -94,10 +121,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl>("blobTtl", BlobTtl);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType>("contentType", ContentType);
+            writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("fileName", FileName);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext>("hiringContext", HiringContext);
+            writer.WriteStringValue("hiringContext", HiringContext);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters>("usageParameters", UsageParameters);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

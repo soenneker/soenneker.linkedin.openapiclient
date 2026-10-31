@@ -11,48 +11,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("careerPagesImpressions") is null) { _explicitNullValueCareerPagesImpressions = default!; _explicitNullProperties?.Remove("careerPagesImpressions"); }
+            else if (parseNode.GetChildNode("careerPagesImpressions") is { } nullNodeCareerPagesImpressions && nullNodeCareerPagesImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CareerPagesImpressions = null;
+            if (parseNode.GetChildNode("careerPagesVisitors") is null) { _explicitNullValueCareerPagesVisitors = default!; _explicitNullProperties?.Remove("careerPagesVisitors"); }
+            else if (parseNode.GetChildNode("careerPagesVisitors") is { } nullNodeCareerPagesVisitors && nullNodeCareerPagesVisitors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CareerPagesVisitors = null;
+            if (parseNode.GetChildNode("careerPagesVisitorsWhoViewedJobs") is null) { _explicitNullValueCareerPagesVisitorsWhoViewedJobs = default!; _explicitNullProperties?.Remove("careerPagesVisitorsWhoViewedJobs"); }
+            else if (parseNode.GetChildNode("careerPagesVisitorsWhoViewedJobs") is { } nullNodeCareerPagesVisitorsWhoViewedJobs && nullNodeCareerPagesVisitorsWhoViewedJobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CareerPagesVisitorsWhoViewedJobs = null;
+            if (parseNode.GetChildNode("newHires") is null) { _explicitNullValueNewHires = default!; _explicitNullProperties?.Remove("newHires"); }
+            else if (parseNode.GetChildNode("newHires") is { } nullNodeNewHires && nullNodeNewHires.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewHires = null;
+            if (parseNode.GetChildNode("organizationViews") is null) { _explicitNullValueOrganizationViews = default!; _explicitNullProperties?.Remove("organizationViews"); }
+            else if (parseNode.GetChildNode("organizationViews") is { } nullNodeOrganizationViews && nullNodeOrganizationViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationViews = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The careerPagesImpressions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions? CareerPagesImpressions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions? CareerPagesImpressions { get => _explicitNullValueCareerPagesImpressions; set { _explicitNullValueCareerPagesImpressions = value; AdditionalData?.Remove("careerPagesImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("careerPagesImpressions"); else _explicitNullProperties?.Remove("careerPagesImpressions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions? _explicitNullValueCareerPagesImpressions = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions CareerPagesImpressions { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions CareerPagesImpressions { get => _explicitNullValueCareerPagesImpressions; set { _explicitNullValueCareerPagesImpressions = value; AdditionalData?.Remove("careerPagesImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("careerPagesImpressions"); else _explicitNullProperties?.Remove("careerPagesImpressions"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions _explicitNullValueCareerPagesImpressions = default!;
 #endif
         /// <summary>The careerPagesVisitors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors? CareerPagesVisitors { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors? CareerPagesVisitors { get => _explicitNullValueCareerPagesVisitors; set { _explicitNullValueCareerPagesVisitors = value; AdditionalData?.Remove("careerPagesVisitors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("careerPagesVisitors"); else _explicitNullProperties?.Remove("careerPagesVisitors"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors? _explicitNullValueCareerPagesVisitors = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors CareerPagesVisitors { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors CareerPagesVisitors { get => _explicitNullValueCareerPagesVisitors; set { _explicitNullValueCareerPagesVisitors = value; AdditionalData?.Remove("careerPagesVisitors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("careerPagesVisitors"); else _explicitNullProperties?.Remove("careerPagesVisitors"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors _explicitNullValueCareerPagesVisitors = default!;
 #endif
         /// <summary>The careerPagesVisitorsWhoViewedJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitorsWhoViewedJobs? CareerPagesVisitorsWhoViewedJobs { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitorsWhoViewedJobs? CareerPagesVisitorsWhoViewedJobs { get => _explicitNullValueCareerPagesVisitorsWhoViewedJobs; set { _explicitNullValueCareerPagesVisitorsWhoViewedJobs = value; AdditionalData?.Remove("careerPagesVisitorsWhoViewedJobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("careerPagesVisitorsWhoViewedJobs"); else _explicitNullProperties?.Remove("careerPagesVisitorsWhoViewedJobs"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitorsWhoViewedJobs? _explicitNullValueCareerPagesVisitorsWhoViewedJobs = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitorsWhoViewedJobs CareerPagesVisitorsWhoViewedJobs { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitorsWhoViewedJobs CareerPagesVisitorsWhoViewedJobs { get => _explicitNullValueCareerPagesVisitorsWhoViewedJobs; set { _explicitNullValueCareerPagesVisitorsWhoViewedJobs = value; AdditionalData?.Remove("careerPagesVisitorsWhoViewedJobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("careerPagesVisitorsWhoViewedJobs"); else _explicitNullProperties?.Remove("careerPagesVisitorsWhoViewedJobs"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitorsWhoViewedJobs _explicitNullValueCareerPagesVisitorsWhoViewedJobs = default!;
 #endif
         /// <summary>The newHires property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemNewHires? NewHires { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemNewHires? NewHires { get => _explicitNullValueNewHires; set { _explicitNullValueNewHires = value; AdditionalData?.Remove("newHires"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newHires"); else _explicitNullProperties?.Remove("newHires"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemNewHires? _explicitNullValueNewHires = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemNewHires NewHires { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemNewHires NewHires { get => _explicitNullValueNewHires; set { _explicitNullValueNewHires = value; AdditionalData?.Remove("newHires"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newHires"); else _explicitNullProperties?.Remove("newHires"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemNewHires _explicitNullValueNewHires = default!;
 #endif
         /// <summary>The organizationViews property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemOrganizationViews? OrganizationViews { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemOrganizationViews? OrganizationViews { get => _explicitNullValueOrganizationViews; set { _explicitNullValueOrganizationViews = value; AdditionalData?.Remove("organizationViews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationViews"); else _explicitNullProperties?.Remove("organizationViews"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemOrganizationViews? _explicitNullValueOrganizationViews = default!;
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemOrganizationViews OrganizationViews { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemOrganizationViews OrganizationViews { get => _explicitNullValueOrganizationViews; set { _explicitNullValueOrganizationViews = value; AdditionalData?.Remove("organizationViews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationViews"); else _explicitNullProperties?.Remove("organizationViews"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemOrganizationViews _explicitNullValueOrganizationViews = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItem"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +125,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitorsWhoViewedJobs>("careerPagesVisitorsWhoViewedJobs", CareerPagesVisitorsWhoViewedJobs);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemNewHires>("newHires", NewHires);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemOrganizationViews>("organizationViews", OrganizationViews);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
