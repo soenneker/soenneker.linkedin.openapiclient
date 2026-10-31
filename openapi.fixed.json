@@ -496490,25 +496490,6 @@
         },
         "x-linkedin-inferred-from-example": true
       },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch"
-          },
-          {
-            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch"
-          }
-        ]
-      },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemUrn": {
-        "type": "string",
-        "anyOf": [
-          {
-            "type": "string",
-            "description": "The URN of the learning classification. The URN is a unique identifier whose value should be treated as opaque.\n\nDocumented type: String\n\nRequirement: Yes"
-          }
-        ]
-      },
       "LearningContentLearningClassificationByLocaleAndType2XxResponseName": {
         "anyOf": [
           {
@@ -498069,33 +498050,6 @@
         "type": "string",
         "x-linkedin-inferred-from-example": true,
         "x-client-inline-scalar": true
-      },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1": {
-        "required": [
-          "locale",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "locale": {
-            "$ref": "#/components/schemas/LearnLearningReferenceLearningclassificationsLocalestringLocale"
-          },
-          "value": {
-            "type": "string",
-            "description": "The localized string.\n\nDocumented type: String\n\nRequirement: Yes"
-          }
-        },
-        "description": "The localized name of the skill or category.\n\nDocumented type: LocaleString\n\nRequirement: Yes"
-      },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "x-linkedin-inferred-from-example": true
-          }
-        },
-        "x-linkedin-inferred-from-example": true
       },
       "LearningContentLearningClassificationByLocaleAndType2XxResponseNameAnyOf1": {
         "required": [
@@ -505534,24 +505488,16 @@
       "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItem": {
         "type": "object",
         "properties": {
-          "details": {
-            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemDetails"
-          },
           "name": {
             "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName"
           },
-          "owner": {
-            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemOwner"
-          },
           "type": {
-            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemType"
+            "type": "string"
           },
           "urn": {
-            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemUrn"
+            "type": "string"
           }
-        },
-        "x-linkedin-schema": "learning_reference_learningclassifications_response_fields",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#response-fields"
+        }
       },
       "LearningContentLearningClassificationByLocaleAndType2XxResponsePaging": {
         "type": "object",
@@ -513074,17 +513020,6 @@
         },
         "x-linkedin-inferred-from-example": true
       },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale": {
-        "type": "object",
-        "properties": {
-          "country": {
-            "type": "string"
-          },
-          "language": {
-            "type": "string"
-          }
-        }
-      },
       "PagesDataPortabilityDmaLiveVideosBatchgetDefaultResponseAnyOf2Errors": {
         "type": "object",
         "additionalProperties": {
@@ -519164,31 +519099,16 @@
           }
         }
       },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemDetails": {
+      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemName": {
         "type": "object",
         "properties": {
-          "value": {
-            "$ref": "#/components/schemas/LearnLearningReferenceLearningclassificationsSupplementaldetailValue"
-          }
-        },
-        "description": "Specifies additional details for this classification\n\nDocumented type: SupplementalDetail\n\nRequirement: No"
-      },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemOwner": {
-        "required": [
-          "name",
-          "urn"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "$ref": "#/components/schemas/LearnLearningReferenceLearningclassificationsNamedpartyName"
+          "locale": {
+            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale"
           },
-          "urn": {
-            "type": "string",
-            "description": "The URN identifying a person or organization.\n\nDocumented type: String\n\nRequirement: Yes"
+          "value": {
+            "type": "string"
           }
-        },
-        "description": "Specifies which person or organization is responsible for originally creating this classification.\n\nDocumented type: NamedParty\n\nRequirement: Yes"
+        }
       },
       "LearningContentLearningClassificationByLocaleAndType2XxResponsePagingLinksItem": {
         "type": "object",
@@ -531612,6 +531532,17 @@
         "description": "Additional profile attributes provided by the enterprise. This data is generally provided to LinkedIn Learning through a manual or automated user provisioning process during account configuration.\n\nDocumented type: Object\n\nRequirement: No"
       },
       "LearningContentLearningAssetsByCriteriaFinder200ResponseElementsItemTitleLocale": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          }
+        }
+      },
+      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale": {
         "type": "object",
         "properties": {
           "country": {
@@ -558134,54 +558065,6 @@
           ]
         }
       },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemType": {
-        "enum": [
-          "SKILL",
-          "LIBRARY",
-          "SUBJECT",
-          "TOPIC",
-          "CONTINUING_EDUCATION_UNIT",
-          "PROFESSIONAL_CERTIFICATE",
-          "HANDS_ON_PRACTICE"
-        ],
-        "type": "string",
-        "description": "Indicates which type of classification this summary represents.\n\nDocumented type: ClassificationType\n\nRequirement: Yes",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#classificationtype",
-        "x-ms-enum": {
-          "name": "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "SKILL",
-              "name": "Skill"
-            },
-            {
-              "value": "LIBRARY",
-              "name": "Library"
-            },
-            {
-              "value": "SUBJECT",
-              "name": "Subject"
-            },
-            {
-              "value": "TOPIC",
-              "name": "Topic"
-            },
-            {
-              "value": "CONTINUING_EDUCATION_UNIT",
-              "name": "ContinuingEducationUnit"
-            },
-            {
-              "value": "PROFESSIONAL_CERTIFICATE",
-              "name": "ProfessionalCertificate"
-            },
-            {
-              "value": "HANDS_ON_PRACTICE",
-              "name": "HandsOnPractice"
-            }
-          ]
-        }
-      },
       "PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettingsPostSchedule": {
         "enum": [
           "DAILY",
@@ -561784,49 +561667,6 @@
           },
           "userInfo": {
             "$ref": "#/components/schemas/ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserInfo"
-          }
-        }
-      },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf1Branch": {
-        "type": "object",
-        "properties": {
-          "locale": {
-            "type": "object",
-            "properties": {
-              "country": {
-                "type": "string"
-              },
-              "language": {
-                "type": "string"
-              },
-              "variant": {
-                "type": "string",
-                "description": "If present, a vendor or browser-specific code.\n\nDocumented type: String\n\nRequirement: No"
-              }
-            },
-            "required": [
-              "language"
-            ]
-          },
-          "value": {
-            "type": "string",
-            "description": "The localized string.\n\nDocumented type: String\n\nRequirement: Yes"
-          }
-        },
-        "required": [
-          "locale",
-          "value"
-        ]
-      },
-      "LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameAnyOf2Branch": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "x-linkedin-inferred-from-example": true
-          },
-          "locale": {
-            "$ref": "#/components/schemas/LearningContentLearningClassificationByLocaleAndType2XxResponseElementsItemNameLocale"
           }
         }
       },

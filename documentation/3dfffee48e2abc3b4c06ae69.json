@@ -3,7 +3,11 @@
   "Title": "Instant Reposts",
   "Version": "",
   "Error": null,
-  "Links": [],
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/instant-reposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
   "Blocks": [
     {
       "Kind": "text",
