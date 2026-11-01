@@ -1,26 +1,23 @@
 {
   "ChangedPages": [
-    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/instant-reposts",
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-activityurn",
     "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
     "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
-    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/support-content-topic",
     "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin",
-    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
-    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-analytics",
-    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
     "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
-    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
     "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
     "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
-    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities"
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview"
   ],
   "ChangedPostmanCollections": [],
   "PostmanFetchIssues": [
@@ -32,93 +29,6 @@
   ],
   "AddedOperations": [],
   "RemovedOperations": [],
-  "SpecificationChanges": [
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/properties/details",
-      "Before": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_supplementaldetail"
-          }
-        ],
-        "description": "Specifies additional details for this classification\n\nDocumented type: SupplementalDetail\n\nRequirement: No"
-      },
-      "After": null
-    },
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/properties/name/anyOf",
-      "Before": [
-        {
-          "allOf": [
-            {
-              "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_localestring"
-            }
-          ],
-          "description": "The localized name of the skill or category.\n\nDocumented type: LocaleString\n\nRequirement: Yes"
-        },
-        {
-          "properties": {
-            "value": {
-              "type": "string",
-              "x-linkedin-inferred-from-example": true
-            }
-          },
-          "type": "object",
-          "x-linkedin-inferred-from-example": true
-        }
-      ],
-      "After": null
-    },
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/properties/owner",
-      "Before": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_namedparty"
-          }
-        ],
-        "description": "Specifies which person or organization is responsible for originally creating this classification.\n\nDocumented type: NamedParty\n\nRequirement: Yes"
-      },
-      "After": null
-    },
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/properties/type/allOf",
-      "Before": [
-        {
-          "$ref": "#/components/schemas/Learn_learning_reference_learningclassifications_classificationtype"
-        }
-      ],
-      "After": null
-    },
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/properties/type/description",
-      "Before": "Indicates which type of classification this summary represents.\n\nDocumented type: ClassificationType\n\nRequirement: Yes",
-      "After": null
-    },
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/properties/urn/anyOf",
-      "Before": [
-        {
-          "description": "The URN of the learning classification. The URN is a unique identifier whose value should be treated as opaque.\n\nDocumented type: String\n\nRequirement: Yes",
-          "type": "string"
-        },
-        {
-          "type": "string",
-          "x-linkedin-inferred-from-example": true
-        }
-      ],
-      "After": null
-    },
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/x-linkedin-schema",
-      "Before": "learning_reference_learningclassifications_response_fields",
-      "After": null
-    },
-    {
-      "Pointer": "/paths/~1learning-content~1v2~1learningClassifications/get/responses/2XX/content/application~1json/schema/properties/elements/items/x-source-url",
-      "Before": "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#response-fields",
-      "After": null
-    }
-  ],
-  "SpecificationChanged": true
+  "SpecificationChanges": [],
+  "SpecificationChanged": false
 }

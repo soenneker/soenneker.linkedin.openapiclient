@@ -4,11 +4,19 @@
   "Version": "",
   "Error": null,
   "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
     "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
     "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
     "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
     "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
-    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim"
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
   ],
   "Blocks": [
     {
@@ -396,7 +404,7 @@
         "Appendix",
         "User List Clean Up"
       ],
-      "Text": "Log into LinkedIn Learning as an admin and navigate to the People tab.\n\nFilter the user list to only show Active and Invited users.\n\nClick Manage users via CSV \u003E Download filtered users via CSV.\n\nUnder User attributes, add Unique user id.\n\nClick Download CSV.\n\nIn the downloaded CSV file, correct the unique_user_id value for any user record that is incorrect. This value will need to match exactly the unique user identifier that is used for both Provisioning and Single Sign-on. This value is case sensitive.\n\nOnce you have ensured the unique_user_id values are correct, return to the People tab and click Manage users via CSV\u003E Upload Custom Attributes CSV.\n\nSelect your updated CSV file and click Upload. Invitation emails are only sent if you included the license status column in the CSV. If you followed the above instructions, no email notifications will be sent and the option can be ignored.\n\n\n\n\n\nNote\nThe same steps can be followed to make changes to the Primary Email Address values, but these two identifiers cannot be changed in the same upload. If both values need to be corrected, first make adjustments to the unique_user_id column, upload the file, then make changes to the primary_email_address column and upload the file a second time.",
+      "Text": "Log into LinkedIn Learning as an admin and navigate to the People tab.\n\nFilter the user list to only show Active and Invited users.\n\nClick Manage users via CSV \u003E Download filtered users via CSV.\n\nUnder User attributes, add Unique user id.\n\nClick Download CSV.\n\nIn the downloaded CSV file, correct the unique_user_id value for any user record that is incorrect. This value will need to match exactly the unique user identifier that is used for both Provisioning and Single Sign-on. This value is case sensitive.\n\nOnce you have ensured the unique_user_id values are correct, return to the People tab and click Manage users via CSV\u003E Upload Custom Attributes CSV.\n\nSelect your updated CSV file and click Upload. Invitation emails are only sent if you included the license status column in the CSV. If you followed the above instructions, no email notifications will be sent and the option can be ignored.\n\n\n\n\n\n Note\nThe same steps can be followed to make changes to the Primary Email Address values, but these two identifiers cannot be changed in the same upload. If both values need to be corrected, first make adjustments to the unique_user_id column, upload the file, then make changes to the primary_email_address column and upload the file a second time.",
       "Headers": [],
       "Rows": []
     },
