@@ -1,14 +1,31 @@
 {
   "ChangedPages": [
-    "https://learn.microsoft.com/en-us/linkedin/",
     "https://learn.microsoft.com/en-us/linkedin/compliance/",
-    "https://learn.microsoft.com/en-us/linkedin/consumer/",
-    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
     "https://learn.microsoft.com/en-us/linkedin/learning/",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
     "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
-    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
-    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview"
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/developer-webhooks",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes"
   ],
   "ChangedPostmanCollections": [],
   "PostmanFetchIssues": [
@@ -20,6 +37,1862 @@
   ],
   "AddedOperations": [],
   "RemovedOperations": [],
-  "SpecificationChanges": [],
-  "SpecificationChanged": false
+  "SpecificationChanges": [
+    {
+      "Pointer": "/components/schemas/Learn_marketing_account_intel_account_intel_api_response_schema/properties/paidQualifiedLeads/description",
+      "Before": "Number of qualified leads from Conversions API (CAPI) attributed to the target company. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long",
+      "After": "Number of qualified-lead conversions attributed to your ads from members of the target company within the lookback window. Includes conversion types QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD, regardless of how they are sent (for example, through the Conversions API (CAPI)). Conversion events are counted, not unique leads: a lead reported to more than one of these conversion rules (for example, as both an MQL and an SQL) is counted once per rule. Returns 0 when seniority or jobFunction is specified. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_query_parameters/properties/targetPosts/description",
+      "Before": "The post URNs to evaluate. Supported entity types are ugcPost and share. Provide between 1 and 50 values.\n\nDocumented type: Array of URNs.For example, List(urn%3Ali%3AugcPost%3A1234567890, urn%3Ali%3Ashare%3A9876543210)\n\nRequirement: Yes",
+      "After": "The post URNs to evaluate. Supported entity types are ugcPost and share. Provide between 1 and 50 values.\n\nDocumented type: List of URNs.For example, List(urn%3Ali%3AugcPost%3A1234567890, urn%3Ali%3Ashare%3A9876543210)\n\nRequirement: Yes"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body",
+      "Before": {
+        "properties": {
+          "accountUrn": {
+            "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "campaignUrn": {
+            "description": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "The post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "targetPost"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_fields",
+      "Before": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "goal": {
+            "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "productDescription": {
+            "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "runSchedule": {
+            "description": "Campaign schedule to preview. Use the defaultRunSchedule returned by init.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "end": {
+                "description": "End time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start time, in epoch milliseconds.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "targetingCriteria": {
+            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+            "type": "object"
+          },
+          "totalBudget": {
+            "description": "Total budget to preview. Omit it to receive suggested budgets only.\n\nDocumented type: Object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "Three-letter ISO 4217 currency code for the budget.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "account",
+          "goal",
+          "runSchedule",
+          "productDescription"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-fields"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/account",
+      "Before": {
+        "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/accountUrn",
+      "Before": null,
+      "After": {
+        "type": "string",
+        "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/callToActionLabel",
+      "Before": {
+        "properties": {
+          "value": {
+            "description": "Call-to-action label for the creative. Set this field only when goal.value is LEAD_GENERATION; omit it for all other goals. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/callToActionTarget",
+      "Before": {
+        "description": "Destination URL for the call to action. Set this field only when goal.value is LEAD_GENERATION, together with callToActionLabel.\n\nDocumented type: string\n\nRequirement: No",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/campaignUrn",
+      "Before": null,
+      "After": {
+        "type": "string",
+        "description": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).\n\nDocumented type: URN\n\nRequirement: No"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/goal",
+      "Before": {
+        "properties": {
+          "value": {
+            "description": "Boost objective. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: enum string\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/runSchedule",
+      "Before": {
+        "properties": {
+          "end": {
+            "description": "Campaign end time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: long\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "start": {
+            "description": "Campaign start time, in epoch milliseconds. Use the defaultRunSchedule returned by init.\n\nDocumented type: long\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/targetPost/description",
+      "Before": "Target post to boost. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes",
+      "After": "The post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN\n\nRequirement: Yes"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/targetingCriteria",
+      "Before": {
+        "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/properties/totalBudget",
+      "Before": {
+        "properties": {
+          "amount": {
+            "description": "Decimal budget amount, for example 50.00.\n\nDocumented type: string\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "currencyCode": {
+            "description": "ISO currency code for the budget, for example USD.\n\nDocumented type: string\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema/required",
+      "Before": [
+        "targetPost",
+        "account",
+        "targetingCriteria"
+      ],
+      "After": [
+        "targetPost"
+      ]
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema_1",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes"
+          },
+          "goal": {
+            "type": "string",
+            "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes"
+          },
+          "totalBudget": {
+            "type": "object",
+            "description": "Total budget to preview. Omit it to receive suggested budgets only.\n\nDocumented type: Object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "Decimal budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "Three-letter ISO 4217 currency code for the budget.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present"
+              }
+            }
+          },
+          "runSchedule": {
+            "type": "object",
+            "description": "Campaign schedule to preview. Use the defaultRunSchedule returned by init.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Start time, in epoch milliseconds.\n\nDocumented type: Long\n\nRequirement: Yes"
+              },
+              "end": {
+                "type": "integer",
+                "format": "int64",
+                "description": "End time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: Long\n\nRequirement: Yes"
+              }
+            }
+          },
+          "targetingCriteria": {
+            "type": "object",
+            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No"
+          },
+          "productDescription": {
+            "type": "string",
+            "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-schema-1",
+        "required": [
+          "account",
+          "goal",
+          "runSchedule",
+          "productDescription"
+        ]
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_request_body_schema_2",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "targetPost": {
+            "type": "string",
+            "description": "Target post to boost. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes"
+          },
+          "account": {
+            "type": "string",
+            "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes"
+          },
+          "goal": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Boost objective. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: enum string\n\nRequirement: Yes"
+              }
+            }
+          },
+          "totalBudget": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "Decimal budget amount, for example 50.00.\n\nDocumented type: string\n\nRequirement: Yes"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "ISO currency code for the budget, for example USD.\n\nDocumented type: string\n\nRequirement: Yes"
+              }
+            }
+          },
+          "runSchedule": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Campaign start time, in epoch milliseconds. Use the defaultRunSchedule returned by init.\n\nDocumented type: long\n\nRequirement: Yes"
+              },
+              "end": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Campaign end time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: long\n\nRequirement: Yes"
+              }
+            }
+          },
+          "targetingCriteria": {
+            "type": "object",
+            "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes"
+          },
+          "callToActionLabel": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Call-to-action label for the creative. Set this field only when goal.value is LEAD_GENERATION; omit it for all other goals. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No"
+              }
+            }
+          },
+          "callToActionTarget": {
+            "type": "string",
+            "description": "Destination URL for the call to action. Set this field only when goal.value is LEAD_GENERATION, together with callToActionLabel.\n\nDocumented type: string\n\nRequirement: No"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-schema-2",
+        "required": [
+          "targetPost",
+          "account",
+          "targetingCriteria"
+        ]
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_body_fields",
+      "Before": {
+        "properties": {
+          "paging": {
+            "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "count": {
+                "description": "Number of elements requested for the page.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start index of the returned collection.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "paging"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_body_fields_1",
+      "Before": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "Echoed sponsored account URN for the preview.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "audienceCount": {
+                "description": "Estimated audience size for the preview, when available.\n\nDocumented type: Long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              },
+              "consumerPrice": {
+                "description": "Simplified consumer-facing pricing summary, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "campaignTotalBudget": {
+                    "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "totalConsumerPrice": {
+                    "description": "Total consumer price after applicable credits.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "forecast": {
+                "description": "Forecasted delivery estimates, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "clicks": {
+                    "description": "Forecasted clicks range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "impressions": {
+                    "description": "Forecasted impressions range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "spend": {
+                    "description": "Forecasted spend range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "videoViews": {
+                    "description": "Forecasted video views range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "Maximum total budget allowed for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Maximum allowed decimal amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Maximum budget currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "minDailyBudget": {
+                "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "productDescription": {
+                "description": "Echoed product description.\n\nDocumented type: String\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "suggestedTotalBudgets": {
+                "description": "Suggested total budget options, when available.\n\nDocumented type: Array\n\nRequirement: No",
+                "items": {},
+                "type": "array"
+              },
+              "targetingCriteria": {
+                "description": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "totalBudget": {
+                "description": "Echoed total budget. Returned only when the request includes totalBudget.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Echoed decimal budget amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Echoed ISO 4217 currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields-1"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema/properties/paging",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
+        "properties": {
+          "start": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Start index of the returned collection.\n\nDocumented type: Integer\n\nRequirement: Yes"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of elements requested for the page.\n\nDocumented type: Integer\n\nRequirement: Yes"
+          }
+        }
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema/properties/value",
+      "Before": {
+        "properties": {
+          "account": {
+            "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "availableObjectiveTypes": {
+            "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "billingConfigured": {
+            "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+            "type": "boolean"
+          },
+          "campaignUrn": {
+            "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "currencyCode": {
+            "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "defaultObjectiveType": {
+            "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "defaultRunSchedule": {
+            "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "end": {
+                "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "maxTotalBudget": {
+            "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "status": {
+            "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema/required",
+      "Before": null,
+      "After": [
+        "paging"
+      ]
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/account",
+      "Before": {
+        "description": "Sponsored account used for billing.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/callToActionLabel",
+      "Before": {
+        "description": "Call-to-action label applied to the creative.\n\nDocumented type: enum string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/callToActionTarget",
+      "Before": {
+        "description": "Call-to-action destination URL.\n\nDocumented type: string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/campaign",
+      "Before": {
+        "description": "Newly created sponsored campaign URN.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/campaignGroup",
+      "Before": {
+        "description": "Newly created sponsored campaign group URN.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/creative",
+      "Before": {
+        "description": "Newly created sponsored creative URN.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/goal",
+      "Before": {
+        "description": "Objective used to create the boost.\n\nDocumented type: enum string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/targetPost",
+      "Before": {
+        "description": "Post that was boosted.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/totalBudget",
+      "Before": {
+        "properties": {
+          "amount": {
+            "description": "Decimal budget amount applied to the boost.\n\nDocumented type: string",
+            "type": "string"
+          },
+          "currencyCode": {
+            "description": "ISO currency code for the budget.\n\nDocumented type: string",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_1/properties/value",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "targetPost": {
+            "type": "string",
+            "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes"
+          },
+          "status": {
+            "type": "string",
+            "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No"
+          },
+          "account": {
+            "type": "string",
+            "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes"
+          },
+          "billingConfigured": {
+            "type": "boolean",
+            "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes"
+          },
+          "maxTotalBudget": {
+            "type": "object",
+            "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present"
+              }
+            }
+          },
+          "campaignUrn": {
+            "type": "string",
+            "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No"
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No"
+          },
+          "availableObjectiveTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No"
+          },
+          "defaultObjectiveType": {
+            "type": "string",
+            "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No"
+          },
+          "defaultRunSchedule": {
+            "type": "object",
+            "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No"
+              },
+              "end": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_2",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "object",
+            "properties": {
+              "account": {
+                "type": "string",
+                "description": "Echoed sponsored account URN for the preview.\n\nDocumented type: URN\n\nRequirement: Yes"
+              },
+              "totalBudget": {
+                "type": "object",
+                "description": "Echoed total budget. Returned only when the request includes totalBudget.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "description": "Echoed decimal budget amount.\n\nDocumented type: String\n\nRequirement: No"
+                  },
+                  "currencyCode": {
+                    "type": "string",
+                    "description": "Echoed ISO 4217 currency code.\n\nDocumented type: String\n\nRequirement: No"
+                  }
+                }
+              },
+              "productDescription": {
+                "type": "string",
+                "description": "Echoed product description.\n\nDocumented type: String\n\nRequirement: Yes"
+              },
+              "targetingCriteria": {
+                "type": "object",
+                "description": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No"
+              },
+              "audienceCount": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Estimated audience size for the preview, when available.\n\nDocumented type: Long\n\nRequirement: No"
+              },
+              "forecast": {
+                "type": "object",
+                "description": "Forecasted delivery estimates, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "spend": {
+                    "type": "object",
+                    "description": "Forecasted spend range.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "videoViews": {
+                    "type": "object",
+                    "description": "Forecasted video views range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "impressions": {
+                    "type": "object",
+                    "description": "Forecasted impressions range.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "clicks": {
+                    "type": "object",
+                    "description": "Forecasted clicks range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No"
+                  }
+                }
+              },
+              "suggestedTotalBudgets": {
+                "type": "array",
+                "items": {},
+                "description": "Suggested total budget options, when available.\n\nDocumented type: Array\n\nRequirement: No"
+              },
+              "consumerPrice": {
+                "type": "object",
+                "description": "Simplified consumer-facing pricing summary, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "campaignTotalBudget": {
+                    "type": "object",
+                    "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "totalConsumerPrice": {
+                    "type": "object",
+                    "description": "Total consumer price after applicable credits.\n\nDocumented type: Object\n\nRequirement: No"
+                  }
+                }
+              },
+              "maxTotalBudget": {
+                "type": "object",
+                "description": "Maximum total budget allowed for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "description": "Maximum allowed decimal amount.\n\nDocumented type: String\n\nRequirement: No"
+                  },
+                  "currencyCode": {
+                    "type": "string",
+                    "description": "Maximum budget currency code.\n\nDocumented type: String\n\nRequirement: No"
+                  }
+                }
+              },
+              "minDailyBudget": {
+                "type": "object",
+                "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No"
+              }
+            }
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-2"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_member_post_boost_response_schema_3",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "targetPost": {
+            "type": "string",
+            "description": "Post that was boosted.\n\nDocumented type: URN string"
+          },
+          "account": {
+            "type": "string",
+            "description": "Sponsored account used for billing.\n\nDocumented type: URN string"
+          },
+          "goal": {
+            "type": "string",
+            "description": "Objective used to create the boost.\n\nDocumented type: enum string"
+          },
+          "totalBudget": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "Decimal budget amount applied to the boost.\n\nDocumented type: string"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "ISO currency code for the budget.\n\nDocumented type: string"
+              }
+            }
+          },
+          "callToActionLabel": {
+            "type": "string",
+            "description": "Call-to-action label applied to the creative.\n\nDocumented type: enum string"
+          },
+          "callToActionTarget": {
+            "type": "string",
+            "description": "Call-to-action destination URL.\n\nDocumented type: string"
+          },
+          "campaignGroup": {
+            "type": "string",
+            "description": "Newly created sponsored campaign group URN.\n\nDocumented type: URN string"
+          },
+          "campaign": {
+            "type": "string",
+            "description": "Newly created sponsored campaign URN.\n\nDocumented type: URN string"
+          },
+          "creative": {
+            "type": "string",
+            "description": "Newly created sponsored creative URN.\n\nDocumented type: URN string"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-3"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body",
+      "Before": {
+        "properties": {
+          "accountUrn": {
+            "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "campaignUrn": {
+            "description": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "organization": {
+            "description": "The sponsoring organization for the boost. The URN format is urn:li:organization:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "The Company Page post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "targetPost",
+          "organization"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_fields",
+      "Before": {
+        "properties": {
+          "account": {
+            "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "goal": {
+            "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "organization": {
+            "description": "Organization URN for the sponsoring Company Page Boost context. Use urn:li:organization:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "productDescription": {
+            "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "runSchedule": {
+            "description": "Campaign schedule to preview. Use the defaultRunSchedule returned by init.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "end": {
+                "description": "End time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start time, in epoch milliseconds.\n\nDocumented type: Long\n\nRequirement: Yes",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "targetingCriteria": {
+            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+            "type": "object"
+          },
+          "totalBudget": {
+            "description": "Total budget to preview. Omit it to receive suggested budgets only.\n\nDocumented type: Object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "description": "Decimal budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "Three-letter ISO 4217 currency code for the budget.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "account",
+          "goal",
+          "runSchedule",
+          "productDescription",
+          "organization"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-fields"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/account",
+      "Before": {
+        "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/accountUrn",
+      "Before": null,
+      "After": {
+        "type": "string",
+        "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/callToActionLabel",
+      "Before": {
+        "properties": {
+          "value": {
+            "description": "Call-to-action label for the creative. Set this field only when goal.value is LEAD_GENERATION; omit it for all other goals. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/callToActionTarget",
+      "Before": {
+        "description": "Destination URL for the call to action. Set this field only when goal.value is LEAD_GENERATION, together with callToActionLabel.\n\nDocumented type: string\n\nRequirement: No",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/campaignUrn",
+      "Before": null,
+      "After": {
+        "type": "string",
+        "description": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).\n\nDocumented type: URN\n\nRequirement: No"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/goal",
+      "Before": {
+        "properties": {
+          "value": {
+            "description": "Boost objective. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: enum string\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/organization/description",
+      "Before": "Organization that owns the Company Page boost context. Use the format urn:li:organization:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes",
+      "After": "The sponsoring organization for the boost. The URN format is urn:li:organization:{id}.\n\nDocumented type: URN\n\nRequirement: Yes"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/runSchedule",
+      "Before": {
+        "properties": {
+          "end": {
+            "description": "Campaign end time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: long\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "start": {
+            "description": "Campaign start time, in epoch milliseconds. Use the defaultRunSchedule returned by init.\n\nDocumented type: long\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/targetPost/description",
+      "Before": "Target post to boost. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes",
+      "After": "The Company Page post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN\n\nRequirement: Yes"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/targetingCriteria",
+      "Before": {
+        "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/properties/totalBudget",
+      "Before": {
+        "properties": {
+          "amount": {
+            "description": "Decimal budget amount, for example 50.00.\n\nDocumented type: string\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "currencyCode": {
+            "description": "ISO currency code for the budget, for example USD.\n\nDocumented type: string\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema/required",
+      "Before": [
+        "targetPost",
+        "account",
+        "organization",
+        "targetingCriteria"
+      ],
+      "After": [
+        "targetPost",
+        "organization"
+      ]
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema_1",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes"
+          },
+          "goal": {
+            "type": "string",
+            "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes"
+          },
+          "totalBudget": {
+            "type": "object",
+            "description": "Total budget to preview. Omit it to receive suggested budgets only.\n\nDocumented type: Object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "Decimal budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "Three-letter ISO 4217 currency code for the budget.\n\nDocumented type: String\n\nRequirement: Yes, when totalBudget is present"
+              }
+            }
+          },
+          "runSchedule": {
+            "type": "object",
+            "description": "Campaign schedule to preview. Use the defaultRunSchedule returned by init.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Start time, in epoch milliseconds.\n\nDocumented type: Long\n\nRequirement: Yes"
+              },
+              "end": {
+                "type": "integer",
+                "format": "int64",
+                "description": "End time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: Long\n\nRequirement: Yes"
+              }
+            }
+          },
+          "targetingCriteria": {
+            "type": "object",
+            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No"
+          },
+          "productDescription": {
+            "type": "string",
+            "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes"
+          },
+          "organization": {
+            "type": "string",
+            "description": "Organization URN for the sponsoring Company Page Boost context. Use urn:li:organization:{id}.\n\nDocumented type: URN\n\nRequirement: Yes"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-schema-1",
+        "required": [
+          "account",
+          "goal",
+          "runSchedule",
+          "productDescription",
+          "organization"
+        ]
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_request_body_schema_2",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "targetPost": {
+            "type": "string",
+            "description": "Target post to boost. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes"
+          },
+          "account": {
+            "type": "string",
+            "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes"
+          },
+          "organization": {
+            "type": "string",
+            "description": "Organization that owns the Company Page boost context. Use the format urn:li:organization:{id}.\n\nDocumented type: URN string\n\nRequirement: Yes"
+          },
+          "goal": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Boost objective. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: enum string\n\nRequirement: Yes"
+              }
+            }
+          },
+          "totalBudget": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "Decimal budget amount, for example 50.00.\n\nDocumented type: string\n\nRequirement: Yes"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "ISO currency code for the budget, for example USD.\n\nDocumented type: string\n\nRequirement: Yes"
+              }
+            }
+          },
+          "runSchedule": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Campaign start time, in epoch milliseconds. Use the defaultRunSchedule returned by init.\n\nDocumented type: long\n\nRequirement: Yes"
+              },
+              "end": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Campaign end time, in epoch milliseconds. Must be after runSchedule.start.\n\nDocumented type: long\n\nRequirement: Yes"
+              }
+            }
+          },
+          "targetingCriteria": {
+            "type": "object",
+            "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes"
+          },
+          "callToActionLabel": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Call-to-action label for the creative. Set this field only when goal.value is LEAD_GENERATION; omit it for all other goals. Supported values: APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE, UNLOCK_FULL_DOCUMENT, BUY_NOW, SHOP_NOW.\n\nDocumented type: enum string\n\nRequirement: No"
+              }
+            }
+          },
+          "callToActionTarget": {
+            "type": "string",
+            "description": "Destination URL for the call to action. Set this field only when goal.value is LEAD_GENERATION, together with callToActionLabel.\n\nDocumented type: string\n\nRequirement: No"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-schema-2",
+        "required": [
+          "targetPost",
+          "account",
+          "organization",
+          "targetingCriteria"
+        ]
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_body_fields",
+      "Before": {
+        "properties": {
+          "paging": {
+            "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
+            "properties": {
+              "count": {
+                "description": "Number of elements requested for the page.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Start index of the returned collection.\n\nDocumented type: Integer\n\nRequirement: Yes",
+                "format": "int32",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "paging"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-body-fields"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_body_fields_1",
+      "Before": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "Echoed sponsored account URN for the preview.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "audienceCount": {
+                "description": "Estimated audience size for the preview, when available.\n\nDocumented type: Long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              },
+              "consumerPrice": {
+                "description": "Simplified consumer-facing pricing summary, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "campaignTotalBudget": {
+                    "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "totalConsumerPrice": {
+                    "description": "Total consumer price after applicable credits.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "forecast": {
+                "description": "Forecasted delivery estimates, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "clicks": {
+                    "description": "Forecasted clicks range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "impressions": {
+                    "description": "Forecasted impressions range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "spend": {
+                    "description": "Forecasted spend range.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "videoViews": {
+                    "description": "Forecasted video views range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "Maximum total budget allowed for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Maximum allowed decimal amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Maximum budget currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "minDailyBudget": {
+                "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "organization": {
+                "description": "Echoed organization URN for the Company Page Boost context.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "productDescription": {
+                "description": "Echoed product description.\n\nDocumented type: String\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "suggestedTotalBudgets": {
+                "description": "Suggested total budget options, when available.\n\nDocumented type: Array\n\nRequirement: No",
+                "items": {},
+                "type": "array"
+              },
+              "targetingCriteria": {
+                "description": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+                "type": "object"
+              },
+              "totalBudget": {
+                "description": "Echoed total budget. Returned only when the request includes totalBudget.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "Echoed decimal budget amount.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "Echoed ISO 4217 currency code.\n\nDocumented type: String\n\nRequirement: No",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-body-fields-1"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema/properties/paging",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
+        "properties": {
+          "start": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Start index of the returned collection.\n\nDocumented type: Integer\n\nRequirement: Yes"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of elements requested for the page.\n\nDocumented type: Integer\n\nRequirement: Yes"
+          }
+        }
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema/properties/value",
+      "Before": {
+        "properties": {
+          "account": {
+            "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "availableObjectiveTypes": {
+            "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "billingConfigured": {
+            "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+            "type": "boolean"
+          },
+          "campaignUrn": {
+            "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
+            "type": "string"
+          },
+          "currencyCode": {
+            "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "defaultObjectiveType": {
+            "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "defaultRunSchedule": {
+            "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "end": {
+                "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              },
+              "start": {
+                "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "maxTotalBudget": {
+            "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "status": {
+            "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
+            "type": "string"
+          },
+          "targetPost": {
+            "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema/required",
+      "Before": null,
+      "After": [
+        "paging"
+      ]
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/account",
+      "Before": {
+        "description": "Sponsored account used for billing.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/callToActionLabel",
+      "Before": {
+        "description": "Call-to-action label applied to the creative.\n\nDocumented type: enum string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/callToActionTarget",
+      "Before": {
+        "description": "Call-to-action destination URL.\n\nDocumented type: string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/campaign",
+      "Before": {
+        "description": "Newly created sponsored campaign URN.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/campaignGroup",
+      "Before": {
+        "description": "Newly created sponsored campaign group URN.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/creative",
+      "Before": {
+        "description": "Newly created sponsored creative URN.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/goal",
+      "Before": {
+        "description": "Objective used to create the boost.\n\nDocumented type: enum string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/targetPost",
+      "Before": {
+        "description": "Post that was boosted.\n\nDocumented type: URN string",
+        "type": "string"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/totalBudget",
+      "Before": {
+        "properties": {
+          "amount": {
+            "description": "Decimal budget amount applied to the boost.\n\nDocumented type: string",
+            "type": "string"
+          },
+          "currencyCode": {
+            "description": "ISO currency code for the budget.\n\nDocumented type: string",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_1/properties/value",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "targetPost": {
+            "type": "string",
+            "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes"
+          },
+          "status": {
+            "type": "string",
+            "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No"
+          },
+          "account": {
+            "type": "string",
+            "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes"
+          },
+          "billingConfigured": {
+            "type": "boolean",
+            "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes"
+          },
+          "maxTotalBudget": {
+            "type": "object",
+            "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present"
+              }
+            }
+          },
+          "campaignUrn": {
+            "type": "string",
+            "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No"
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No"
+          },
+          "availableObjectiveTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No"
+          },
+          "defaultObjectiveType": {
+            "type": "string",
+            "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No"
+          },
+          "defaultRunSchedule": {
+            "type": "object",
+            "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No"
+              },
+              "end": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_2",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "object",
+            "properties": {
+              "account": {
+                "type": "string",
+                "description": "Echoed sponsored account URN for the preview.\n\nDocumented type: URN\n\nRequirement: Yes"
+              },
+              "totalBudget": {
+                "type": "object",
+                "description": "Echoed total budget. Returned only when the request includes totalBudget.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "description": "Echoed decimal budget amount.\n\nDocumented type: String\n\nRequirement: No"
+                  },
+                  "currencyCode": {
+                    "type": "string",
+                    "description": "Echoed ISO 4217 currency code.\n\nDocumented type: String\n\nRequirement: No"
+                  }
+                }
+              },
+              "productDescription": {
+                "type": "string",
+                "description": "Echoed product description.\n\nDocumented type: String\n\nRequirement: Yes"
+              },
+              "organization": {
+                "type": "string",
+                "description": "Echoed organization URN for the Company Page Boost context.\n\nDocumented type: URN\n\nRequirement: Yes"
+              },
+              "targetingCriteria": {
+                "type": "object",
+                "description": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No"
+              },
+              "audienceCount": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Estimated audience size for the preview, when available.\n\nDocumented type: Long\n\nRequirement: No"
+              },
+              "forecast": {
+                "type": "object",
+                "description": "Forecasted delivery estimates, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "spend": {
+                    "type": "object",
+                    "description": "Forecasted spend range.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "videoViews": {
+                    "type": "object",
+                    "description": "Forecasted video views range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "impressions": {
+                    "type": "object",
+                    "description": "Forecasted impressions range.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "clicks": {
+                    "type": "object",
+                    "description": "Forecasted clicks range, when applicable to the selected goal.\n\nDocumented type: Object\n\nRequirement: No"
+                  }
+                }
+              },
+              "suggestedTotalBudgets": {
+                "type": "array",
+                "items": {},
+                "description": "Suggested total budget options, when available.\n\nDocumented type: Array\n\nRequirement: No"
+              },
+              "consumerPrice": {
+                "type": "object",
+                "description": "Simplified consumer-facing pricing summary, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "campaignTotalBudget": {
+                    "type": "object",
+                    "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No"
+                  },
+                  "totalConsumerPrice": {
+                    "type": "object",
+                    "description": "Total consumer price after applicable credits.\n\nDocumented type: Object\n\nRequirement: No"
+                  }
+                }
+              },
+              "maxTotalBudget": {
+                "type": "object",
+                "description": "Maximum total budget allowed for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "description": "Maximum allowed decimal amount.\n\nDocumented type: String\n\nRequirement: No"
+                  },
+                  "currencyCode": {
+                    "type": "string",
+                    "description": "Maximum budget currency code.\n\nDocumented type: String\n\nRequirement: No"
+                  }
+                }
+              },
+              "minDailyBudget": {
+                "type": "object",
+                "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No"
+              }
+            }
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema-2"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_community_management_boost_organization_post_boost_response_schema_3",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "targetPost": {
+            "type": "string",
+            "description": "Post that was boosted.\n\nDocumented type: URN string"
+          },
+          "account": {
+            "type": "string",
+            "description": "Sponsored account used for billing.\n\nDocumented type: URN string"
+          },
+          "goal": {
+            "type": "string",
+            "description": "Objective used to create the boost.\n\nDocumented type: enum string"
+          },
+          "totalBudget": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "description": "Decimal budget amount applied to the boost.\n\nDocumented type: string"
+              },
+              "currencyCode": {
+                "type": "string",
+                "description": "ISO currency code for the budget.\n\nDocumented type: string"
+              }
+            }
+          },
+          "callToActionLabel": {
+            "type": "string",
+            "description": "Call-to-action label applied to the creative.\n\nDocumented type: enum string"
+          },
+          "callToActionTarget": {
+            "type": "string",
+            "description": "Call-to-action destination URL.\n\nDocumented type: string"
+          },
+          "campaignGroup": {
+            "type": "string",
+            "description": "Newly created sponsored campaign group URN.\n\nDocumented type: URN string"
+          },
+          "campaign": {
+            "type": "string",
+            "description": "Newly created sponsored campaign URN.\n\nDocumented type: URN string"
+          },
+          "creative": {
+            "type": "string",
+            "description": "Newly created sponsored creative URN.\n\nDocumented type: URN string"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema-3"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_integrations_ads_reporting_ads_reporting_schema_metrics_available/properties/impressions/description",
+      "Before": "This is the count of \u0022impressions\u0022 for Sponsored Content and \u0022sends\u0022 for Sponsored Messaging.\n\nDocumented type: long",
+      "After": "The number of times members were shown the ads.\n\nDocumented type: long"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_marketing_integrations_ads_reporting_ads_reporting_schema_metrics_available_553/properties/impressions/description",
+      "Before": "This is the count of \u0022impressions\u0022 for Sponsored Content and \u0022sends\u0022 for Sponsored Messaging.\n\nDocumented type: long",
+      "After": "The number of times members were shown the ads.\n\nDocumented type: long"
+    },
+    {
+      "Pointer": "/paths/~1company-intelligence-api~1accountIntelligence/get/responses/200/content/application~1json/schema/properties/elements/items/properties/paidQualifiedLeads/description",
+      "Before": "Number of qualified leads from Conversions API (CAPI) attributed to the target company. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long",
+      "After": "Number of qualified-lead conversions attributed to your ads from members of the target company within the lookback window. Includes conversion types QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD, regardless of how they are sent (for example, through the Conversions API (CAPI)). Conversion events are counted, not unique leads: a lead reported to more than one of these conversion rules (for example, as both an MQL and an SQL) is counted once per rule. Returns 0 when seniority or jobFunction is specified. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long"
+    },
+    {
+      "Pointer": "/paths/~1lead-sync~1leadNotifications/post/responses/201",
+      "Before": null,
+      "After": {
+        "description": "A successful response returns a 201 Created HTTP status code."
+      }
+    }
+  ],
+  "SpecificationChanged": true
 }

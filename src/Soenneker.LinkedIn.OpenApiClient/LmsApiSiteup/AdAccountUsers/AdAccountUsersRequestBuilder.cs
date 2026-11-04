@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LmsApiSiteup.AdAccountUsers
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LmsApiSiteup.AdAccountUsers.AdAccountUsersRequestBuilder.AdAccountUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/lms-api-siteup/adAccountUsers", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

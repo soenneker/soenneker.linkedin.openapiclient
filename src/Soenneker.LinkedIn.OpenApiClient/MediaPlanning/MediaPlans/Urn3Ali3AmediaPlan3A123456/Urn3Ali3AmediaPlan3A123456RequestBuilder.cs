@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlans.Urn3Ali3Amed
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.MediaPlanning.MediaPlans.Urn3Ali3AmediaPlan3A123456.Urn3Ali3AmediaPlan3A123456RequestBuilder.Urn3Ali3AmediaPlan3A123456RequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/media-planning/mediaPlans/urn%3Ali%3AmediaPlan%3A123456", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

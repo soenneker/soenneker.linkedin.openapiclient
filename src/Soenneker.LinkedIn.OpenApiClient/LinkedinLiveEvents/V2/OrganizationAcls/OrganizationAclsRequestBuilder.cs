@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.OrganizationAcl
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LinkedinLiveEvents.V2.OrganizationAcls.OrganizationAclsRequestBuilder.OrganizationAclsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/linkedin-live-events/v2/organizationAcls", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

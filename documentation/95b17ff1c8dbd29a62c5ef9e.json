@@ -1564,7 +1564,7 @@
       "SectionPath": [
         "Lead Notification Subscriptions"
       ],
-      "Text": "Create up to 1,500 lead notification subscriptions. When you reach this limit, delete subscriptions that are no longer in use before creating new subscriptions. For details, refer to Delete Lead notification URL.",
+      "Text": "Create up to 1,500 lead notification subscriptions per owner and lead type: per ad account for sponsored leads, and per organization for each organic lead type. When you reach this limit for an owner and lead type, delete subscriptions that are no longer in use before creating new subscriptions. For details, refer to Delete Lead notification URL.",
       "Headers": [],
       "Rows": []
     },
@@ -1752,7 +1752,7 @@
         "Lead Notification Subscriptions",
         "Create a Lead Notification Subscription - Owner Level"
       ],
-      "Text": "POST https://api.linkedin.com/rest/leadNotifications --data \u0027{\u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\u0022owner\u0022: {\u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022}, \u0022leadType\u0022: \u0022SPONSORED\u0022}\u0027",
+      "Text": "POST https://api.linkedin.com/rest/leadNotifications",
       "Headers": [],
       "Rows": []
     },
@@ -1764,7 +1764,19 @@
         "Lead Notification Subscriptions",
         "Create a Lead Notification Subscription - Owner Level"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u201D\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n    },\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
+      "Text": "{\n    \u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n    }, \n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n    },\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -1838,7 +1850,7 @@
         "Create a Lead Notification Subscription - Associated Entity Level",
         "Sample Request"
       ],
-      "Text": "POST https://api.linkedin.com/rest/leadNotifications\u201D --data \u2018{\u201Cwebhook\u201D: \u201Chttps://linkedin.com\u201D,\u0022owner\u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\u0022associatedEntity\u0022:{\u0022event\u0022:\u0022urn:li:event:123\u0022}, \u0022leadType\u0022: \u0022SPONSORED\u0022}\u2019",
+      "Text": "POST https://api.linkedin.com/rest/leadNotifications",
       "Headers": [],
       "Rows": []
     },
@@ -1851,7 +1863,20 @@
         "Create a Lead Notification Subscription - Associated Entity Level",
         "Sample Request"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u201D\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner \u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\n    \u0022associatedEntity\u0022:{\u0022event\u0022:\u0022urn:li:event:123\u0022},\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
+      "Text": "{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:1\u0022\n    },\n    \u0022associatedEntity\u0022:{\n        \u0022event\u0022:\u0022urn:li:event:123\u0022\n    }, \n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner \u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\n    \u0022associatedEntity\u0022:{\u0022event\u0022:\u0022urn:li:event:123\u0022},\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -1924,7 +1949,7 @@
         "Lead Notification Subscriptions",
         "Create a Lead Gen Notification Subscription - Form Level"
       ],
-      "Text": "POST https://api.linkedin.com/rest/leadNotifications\u201D --data \u2018{\u201Cwebhook\u201D: \u201Chttps://linkedin.com\u201D,\u0022owner\u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\u0022versionedForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:818,1)\u0022, \u0022leadType\u0022: \u0022SPONSORED\u0022}\u2019",
+      "Text": "POST https://api.linkedin.com/rest/leadNotifications",
       "Headers": [],
       "Rows": []
     },
@@ -1936,7 +1961,19 @@
         "Lead Notification Subscriptions",
         "Create a Lead Gen Notification Subscription - Form Level"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u201D\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner \u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\n    \u0022versionedForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:818,1)\u0022,\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
+      "Text": "{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:1\u0022\n    },\n    \u0022versionedForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:818,1)\u0022, \n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner \u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\n    \u0022versionedForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:818,1)\u0022,\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
       "Headers": [],
       "Rows": []
     },

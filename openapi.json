@@ -10976,7 +10976,7 @@
             "type": "integer"
           },
           "paidQualifiedLeads": {
-            "description": "Number of qualified leads from Conversions API (CAPI) attributed to the target company. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long",
+            "description": "Number of qualified-lead conversions attributed to your ads from members of the target company within the lookback window. Includes conversion types QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD, regardless of how they are sent (for example, through the Conversions API (CAPI)). Conversion events are counted, not unique leads: a lead reported to more than one of these conversion rules (for example, as both an MQL and an SQL) is counted once per rule. Returns 0 when seniority or jobFunction is specified. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long",
             "format": "int64",
             "type": "integer"
           },
@@ -11060,7 +11060,7 @@
             "type": "string"
           },
           "targetPosts": {
-            "description": "The post URNs to evaluate. Supported entity types are ugcPost and share. Provide between 1 and 50 values.\n\nDocumented type: Array of URNs.For example, List(urn%3Ali%3AugcPost%3A1234567890, urn%3Ali%3Ashare%3A9876543210)\n\nRequirement: Yes",
+            "description": "The post URNs to evaluate. Supported entity types are ugcPost and share. Provide between 1 and 50 values.\n\nDocumented type: List of URNs.For example, List(urn%3Ali%3AugcPost%3A1234567890, urn%3Ali%3Ashare%3A9876543210)\n\nRequirement: Yes",
             "items": {
               "type": "string"
             },
@@ -11074,7 +11074,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#query-parameters"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_request_body": {
+      "Learn_marketing_community_management_boost_member_post_boost_request_body_schema": {
         "properties": {
           "accountUrn": {
             "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No",
@@ -11093,9 +11093,9 @@
           "targetPost"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-schema"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_request_body_fields": {
+      "Learn_marketing_community_management_boost_member_post_boost_request_body_schema_1": {
         "properties": {
           "account": {
             "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes",
@@ -11151,9 +11151,9 @@
           "productDescription"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-fields"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-schema-1"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_request_body_schema": {
+      "Learn_marketing_community_management_boost_member_post_boost_request_body_schema_2": {
         "properties": {
           "account": {
             "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes",
@@ -11224,7 +11224,7 @@
           "targetingCriteria"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-schema"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-body-schema-2"
       },
       "Learn_marketing_community_management_boost_member_post_boost_request_parameters": {
         "properties": {
@@ -11245,7 +11245,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#request-parameters"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_response_body_fields": {
+      "Learn_marketing_community_management_boost_member_post_boost_response_schema": {
         "properties": {
           "paging": {
             "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
@@ -11268,9 +11268,85 @@
           "paging"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_response_body_fields_1": {
+      "Learn_marketing_community_management_boost_member_post_boost_response_schema_1": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "availableObjectiveTypes": {
+                "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "billingConfigured": {
+                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+                "type": "boolean"
+              },
+              "campaignUrn": {
+                "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultObjectiveType": {
+                "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultRunSchedule": {
+                "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "end": {
+                    "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "start": {
+                    "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "status": {
+                "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "targetPost": {
+                "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-1"
+      },
+      "Learn_marketing_community_management_boost_member_post_boost_response_schema_2": {
         "properties": {
           "value": {
             "properties": {
@@ -11369,85 +11445,9 @@
           }
         },
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-body-fields-1"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-2"
       },
-      "Learn_marketing_community_management_boost_member_post_boost_response_schema": {
-        "properties": {
-          "value": {
-            "properties": {
-              "account": {
-                "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
-                "type": "string"
-              },
-              "availableObjectiveTypes": {
-                "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
-              },
-              "billingConfigured": {
-                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
-                "type": "boolean"
-              },
-              "campaignUrn": {
-                "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
-                "type": "string"
-              },
-              "currencyCode": {
-                "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
-                "type": "string"
-              },
-              "defaultObjectiveType": {
-                "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
-                "type": "string"
-              },
-              "defaultRunSchedule": {
-                "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
-                "properties": {
-                  "end": {
-                    "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
-                    "format": "int64",
-                    "type": "integer"
-                  },
-                  "start": {
-                    "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
-                    "format": "int64",
-                    "type": "integer"
-                  }
-                },
-                "type": "object"
-              },
-              "maxTotalBudget": {
-                "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
-                "properties": {
-                  "amount": {
-                    "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
-                    "type": "string"
-                  },
-                  "currencyCode": {
-                    "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              },
-              "status": {
-                "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
-                "type": "string"
-              },
-              "targetPost": {
-                "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
-                "type": "string"
-              }
-            },
-            "type": "object"
-          }
-        },
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema"
-      },
-      "Learn_marketing_community_management_boost_member_post_boost_response_schema_1": {
+      "Learn_marketing_community_management_boost_member_post_boost_response_schema_3": {
         "properties": {
           "account": {
             "description": "Sponsored account used for billing.\n\nDocumented type: URN string",
@@ -11496,7 +11496,7 @@
           }
         },
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-1"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-3"
       },
       "Learn_marketing_community_management_boost_organization_post_boost_ineligible_reason_values": {
         "enum": [
@@ -11536,7 +11536,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#query-parameters"
       },
-      "Learn_marketing_community_management_boost_organization_post_boost_request_body": {
+      "Learn_marketing_community_management_boost_organization_post_boost_request_body_schema": {
         "properties": {
           "accountUrn": {
             "description": "Optional sponsored account URN. Used with campaignUrn in the manage-ad flow.\n\nDocumented type: URN\n\nRequirement: No",
@@ -11560,9 +11560,9 @@
           "organization"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-schema"
       },
-      "Learn_marketing_community_management_boost_organization_post_boost_request_body_fields": {
+      "Learn_marketing_community_management_boost_organization_post_boost_request_body_schema_1": {
         "properties": {
           "account": {
             "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes",
@@ -11623,9 +11623,9 @@
           "organization"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-fields"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-schema-1"
       },
-      "Learn_marketing_community_management_boost_organization_post_boost_request_body_schema": {
+      "Learn_marketing_community_management_boost_organization_post_boost_request_body_schema_2": {
         "properties": {
           "account": {
             "description": "Sponsored account that funds the boost. This must be a urn:li:sponsoredAccount:{id} URN.\n\nDocumented type: URN string\n\nRequirement: Yes",
@@ -11701,7 +11701,7 @@
           "targetingCriteria"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-schema"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-body-schema-2"
       },
       "Learn_marketing_community_management_boost_organization_post_boost_request_parameters": {
         "properties": {
@@ -11722,7 +11722,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#request-parameters"
       },
-      "Learn_marketing_community_management_boost_organization_post_boost_response_body_fields": {
+      "Learn_marketing_community_management_boost_organization_post_boost_response_schema": {
         "properties": {
           "paging": {
             "description": "Standard paging metadata for the collection response.\n\nDocumented type: Object\n\nRequirement: Yes",
@@ -11745,9 +11745,85 @@
           "paging"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-body-fields"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema"
       },
-      "Learn_marketing_community_management_boost_organization_post_boost_response_body_fields_1": {
+      "Learn_marketing_community_management_boost_organization_post_boost_response_schema_1": {
+        "properties": {
+          "value": {
+            "properties": {
+              "account": {
+                "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              },
+              "availableObjectiveTypes": {
+                "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "billingConfigured": {
+                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+                "type": "boolean"
+              },
+              "campaignUrn": {
+                "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
+                "type": "string"
+              },
+              "currencyCode": {
+                "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultObjectiveType": {
+                "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "defaultRunSchedule": {
+                "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "end": {
+                    "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "start": {
+                    "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
+                    "format": "int64",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "maxTotalBudget": {
+                "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
+                "properties": {
+                  "amount": {
+                    "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "status": {
+                "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
+                "type": "string"
+              },
+              "targetPost": {
+                "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema-1"
+      },
+      "Learn_marketing_community_management_boost_organization_post_boost_response_schema_2": {
         "properties": {
           "value": {
             "properties": {
@@ -11850,85 +11926,9 @@
           }
         },
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-body-fields-1"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema-2"
       },
-      "Learn_marketing_community_management_boost_organization_post_boost_response_schema": {
-        "properties": {
-          "value": {
-            "properties": {
-              "account": {
-                "description": "The sponsored account billed for the boost. If no eligible account already exists, the API creates one and returns it. The URN format is urn:li:sponsoredAccount:{id}.\n\nDocumented type: URN\n\nRequirement: Yes",
-                "type": "string"
-              },
-              "availableObjectiveTypes": {
-                "description": "Boost objectives available for the post and boost context. Possible values are LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, and ENGAGEMENT. Available objectives vary by post type.\n\nDocumented type: array[string]\n\nRequirement: No",
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
-              },
-              "billingConfigured": {
-                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
-                "type": "boolean"
-              },
-              "campaignUrn": {
-                "description": "The sponsored campaign URN, when the boost backend returns one.\n\nDocumented type: URN\n\nRequirement: No",
-                "type": "string"
-              },
-              "currencyCode": {
-                "description": "ISO 4217 currency code for the sponsored account. Omitted when unavailable.\n\nDocumented type: string\n\nRequirement: No",
-                "type": "string"
-              },
-              "defaultObjectiveType": {
-                "description": "The initially selected objective. This value can fall outside availableObjectiveTypes.\n\nDocumented type: string\n\nRequirement: No",
-                "type": "string"
-              },
-              "defaultRunSchedule": {
-                "description": "The default campaign schedule. Pass this value as runSchedule when you call hydrate and post.\n\nDocumented type: object\n\nRequirement: No",
-                "properties": {
-                  "end": {
-                    "description": "Default end time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
-                    "format": "int64",
-                    "type": "integer"
-                  },
-                  "start": {
-                    "description": "Default start time, in epoch milliseconds. Omitted when unavailable.\n\nDocumented type: long\n\nRequirement: No",
-                    "format": "int64",
-                    "type": "integer"
-                  }
-                },
-                "type": "object"
-              },
-              "maxTotalBudget": {
-                "description": "The maximum total budget allowed for the boost, when available.\n\nDocumented type: object\n\nRequirement: No",
-                "properties": {
-                  "amount": {
-                    "description": "The budget amount.\n\nDocumented type: decimal string\n\nRequirement: Yes, when maxTotalBudget is present",
-                    "type": "string"
-                  },
-                  "currencyCode": {
-                    "description": "ISO 4217 currency code for maxTotalBudget.amount.\n\nDocumented type: string\n\nRequirement: Yes, when maxTotalBudget is present",
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              },
-              "status": {
-                "description": "Boost eligibility or lifecycle state. Returned only in the manage-ad flow, when the request includes campaignUrn. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED, SCHEDULED.\n\nDocumented type: string\n\nRequirement: No",
-                "type": "string"
-              },
-              "targetPost": {
-                "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes",
-                "type": "string"
-              }
-            },
-            "type": "object"
-          }
-        },
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema"
-      },
-      "Learn_marketing_community_management_boost_organization_post_boost_response_schema_1": {
+      "Learn_marketing_community_management_boost_organization_post_boost_response_schema_3": {
         "properties": {
           "account": {
             "description": "Sponsored account used for billing.\n\nDocumented type: URN string",
@@ -11977,7 +11977,7 @@
           }
         },
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema-1"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost#response-schema-3"
       },
       "Learn_marketing_community_management_members_follower_statistics_parameters": {
         "properties": {
@@ -18670,7 +18670,7 @@
             "type": "integer"
           },
           "impressions": {
-            "description": "This is the count of \u0022impressions\u0022 for Sponsored Content and \u0022sends\u0022 for Sponsored Messaging.\n\nDocumented type: long",
+            "description": "The number of times members were shown the ads.\n\nDocumented type: long",
             "format": "int64",
             "type": "integer"
           },
@@ -19220,7 +19220,7 @@
             "type": "integer"
           },
           "impressions": {
-            "description": "This is the count of \u0022impressions\u0022 for Sponsored Content and \u0022sends\u0022 for Sponsored Messaging.\n\nDocumented type: long",
+            "description": "The number of times members were shown the ads.\n\nDocumented type: long",
             "format": "int64",
             "type": "integer"
           },
@@ -99520,7 +99520,7 @@
                             "type": "integer"
                           },
                           "paidQualifiedLeads": {
-                            "description": "Number of qualified leads from Conversions API (CAPI) attributed to the target company. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long",
+                            "description": "Number of qualified-lead conversions attributed to your ads from members of the target company within the lookback window. Includes conversion types QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD, regardless of how they are sent (for example, through the Conversions API (CAPI)). Conversion events are counted, not unique leads: a lead reported to more than one of these conversion rules (for example, as both an MQL and an SQL) is counted once per rule. Returns 0 when seniority or jobFunction is specified. Note: Applicable only from API versions 202603 and later.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
@@ -134701,6 +134701,9 @@
           }
         },
         "responses": {
+          "201": {
+            "description": "A successful response returns a 201 Created HTTP status code."
+          },
           "default": {
             "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }

@@ -91,7 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/community-management/eventSubscriptions/(developerApplication:urn%3Ali%3AdeveloperApplication%3A{applicationId},user:urn%3Ali%3Aperson%3A{personId},entity:urn%3Ali%3Aorganization%3A{organizationId},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -111,7 +111,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/community-management/eventSubscriptions/(developerApplication:urn%3Ali%3AdeveloperApplication%3A{applicationId},user:urn%3Ali%3Aperson%3A{personId},entity:urn%3Ali%3Aorganization%3A{organizationId},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;

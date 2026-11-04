@@ -70,7 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/community-management/eventSubscriptions/(developerApplication:{applicationId},user:{personId},entity:{organizationId},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

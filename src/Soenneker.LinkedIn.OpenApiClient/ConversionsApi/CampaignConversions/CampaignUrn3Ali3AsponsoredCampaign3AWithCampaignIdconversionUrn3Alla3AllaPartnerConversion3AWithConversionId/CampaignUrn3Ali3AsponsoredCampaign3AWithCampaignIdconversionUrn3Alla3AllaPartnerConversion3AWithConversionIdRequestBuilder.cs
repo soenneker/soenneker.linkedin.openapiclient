@@ -72,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ConversionsApi.CampaignConversions.Ca
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/conversions-api/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A{campaignId},conversion:urn%3Alla%3AllaPartnerConversion%3A{conversionId})", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;

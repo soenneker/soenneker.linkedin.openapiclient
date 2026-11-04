@@ -5,16 +5,12 @@
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/integration-requirements-company-intel",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
     "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities"
   ],
@@ -1105,7 +1101,7 @@
             "Values": []
           },
           {
-            "Text": "Number of qualified leads from Conversions API (CAPI) attributed to the target company. Note: Applicable only from API versions 202603 and later.",
+            "Text": "Number of qualified-lead conversions attributed to your ads from members of the target company within the lookback window. Includes conversion types QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD, regardless of how they are sent (for example, through the Conversions API (CAPI)). Conversion events are counted, not unique leads: a lead reported to more than one of these conversion rules (for example, as both an MQL and an SQL) is counted once per rule. Returns 0 when seniority or jobFunction is specified. Note: Applicable only from API versions 202603 and later.",
             "Links": [],
             "Values": []
           }

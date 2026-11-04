@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ConversionsApi.AdAccounts.Item.AdCamp
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ConversionsApi.AdAccounts.Item.AdCampaigns.AdCampaignsRequestBuilder.AdCampaignsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/conversions-api/adAccounts/{sponsoredaccountId}/adCampaigns", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

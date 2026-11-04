@@ -63,7 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Documents
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/campaign-management/documents", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

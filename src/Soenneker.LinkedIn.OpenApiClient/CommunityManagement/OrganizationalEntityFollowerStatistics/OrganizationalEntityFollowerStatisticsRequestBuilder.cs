@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationalEnt
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.OrganizationalEntityFollowerStatistics.OrganizationalEntityFollowerStatisticsRequestBuilder.OrganizationalEntityFollowerStatisticsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "{baseUrl}", "/community-management/organizationalEntityFollowerStatistics", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

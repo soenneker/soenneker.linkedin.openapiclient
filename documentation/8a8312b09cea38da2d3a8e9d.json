@@ -121,7 +121,18 @@
       "SectionPath": [
         "Retrieve boost status"
       ],
-      "Text": "This endpoint is organization-scoped. Pass the sponsoring organization in the organization query parameter, and use an authenticated member who is allowed to act on behalf of that organization.",
+      "Text": "This endpoint is organization-scoped. Pass the sponsoring organization in the organization query parameter, and use an authenticated member access token who can manage the specified organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve boost status",
+      "Anchor": "retrieve-boost-status",
+      "SectionPath": [
+        "Retrieve boost status"
+      ],
+      "Text": "GET /organizationBoostStatus?q=boostStatus\u0026targetPosts=List({ugcPostURN/shareURN})\u0026organization={encodedOrganizationURN}",
       "Headers": [],
       "Rows": []
     },
@@ -211,11 +222,11 @@
     },
     {
       "Kind": "table",
-      "Section": "Response body fields",
-      "Anchor": "response-body-fields",
+      "Section": "Response schema",
+      "Anchor": "response-schema",
       "SectionPath": [
         "Retrieve boost status",
-        "Response body fields"
+        "Response schema"
       ],
       "Text": "",
       "Headers": [
@@ -455,6 +466,7 @@
       "Anchor": "boost-status-lifecycle",
       "SectionPath": [
         "Retrieve boost status",
+        "Response schema",
         "Boost status lifecycle"
       ],
       "Text": "A boost normally moves from ELIGIBLE to IN_REVIEW, then to SCHEDULED or CURRENTLY_BOOSTED, and finally to PREVIOUSLY_BOOSTED.",
@@ -467,6 +479,7 @@
       "Anchor": "boost-status-lifecycle",
       "SectionPath": [
         "Retrieve boost status",
+        "Response schema",
         "Boost status lifecycle"
       ],
       "Text": "",
@@ -494,8 +507,10 @@
             "Values": []
           },
           {
-            "Text": "The post can\u0027t be boosted. Check ineligibleReason for the cause.",
-            "Links": [],
+            "Text": "The post can\u0027t be boosted. Check ineligibleReason for the cause. See Ineligible reason values.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-10\u0026tabs=http#ineligible-reason-values"
+            ],
             "Values": []
           }
         ],
@@ -555,6 +570,7 @@
       "Anchor": "ineligible-reason-values",
       "SectionPath": [
         "Retrieve boost status",
+        "Response schema",
         "Ineligible reason values"
       ],
       "Text": "",
@@ -908,17 +924,28 @@
       "SectionPath": [
         "Initialize a boost"
       ],
-      "Text": "This endpoint resolves Company Page boost context from the authenticated member and the organization URN. Use a member access token for a member who can manage the specified organization.",
+      "Text": "This endpoint resolves Company Page boost context from the organization URN. Use authenticated member access token who can manage the specified organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Initialize a boost",
+      "Anchor": "initialize-a-boost",
+      "SectionPath": [
+        "Initialize a boost"
+      ],
+      "Text": "POST /organizationBoostInit?action=init\n\n{\n  \u0022targetPost\u0022: \u0022{ugcPostURN/shareURN}\u0022,\n  \u0022organization\u0022: \u0022{organizationURN}\u0022\n}",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "table",
-      "Section": "Request body",
-      "Anchor": "request-body",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
       "SectionPath": [
         "Initialize a boost",
-        "Request body"
+        "Request body schema"
       ],
       "Text": "",
       "Headers": [
@@ -1021,7 +1048,7 @@
     {
       "Kind": "table",
       "Section": "Response schema",
-      "Anchor": "response-schema",
+      "Anchor": "response-schema-1",
       "SectionPath": [
         "Initialize a boost",
         "Response schema"
@@ -1602,12 +1629,23 @@
       "Rows": []
     },
     {
+      "Kind": "code",
+      "Section": "Preview a boost",
+      "Anchor": "preview-a-boost",
+      "SectionPath": [
+        "Preview a boost"
+      ],
+      "Text": "POST /organizationBoostHydrate?action=hydrate",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "table",
-      "Section": "Request body fields",
-      "Anchor": "request-body-fields",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema-1",
       "SectionPath": [
         "Preview a boost",
-        "Request body fields"
+        "Request body schema"
       ],
       "Text": "",
       "Headers": [
@@ -1865,11 +1903,11 @@
     },
     {
       "Kind": "table",
-      "Section": "Response body fields",
-      "Anchor": "response-body-fields-1",
+      "Section": "Response schema",
+      "Anchor": "response-schema-2",
       "SectionPath": [
         "Preview a boost",
-        "Response body fields"
+        "Response schema"
       ],
       "Text": "",
       "Headers": [
@@ -2621,7 +2659,7 @@
         "Preview a boost",
         "Sample request"
       ],
-      "Text": "POST https://api.linkedin.com/rest/organizationBoostHydrate?action=hydrate\nLinkedin-Version: 202610\nX-Restli-Protocol-Version: 2.0.0\nAuthorization: Bearer {access_token}\nContent-Type: application/json",
+      "Text": "POST https://api.linkedin.com/rest/organizationBoostHydrate?action=hydrate",
       "Headers": [],
       "Rows": []
     },
@@ -2848,6 +2886,17 @@
       "Rows": []
     },
     {
+      "Kind": "code",
+      "Section": "Create a boost",
+      "Anchor": "create-a-boost",
+      "SectionPath": [
+        "Create a boost"
+      ],
+      "Text": "POST /organizationBoostPost?action=post",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "text",
       "Section": "Create a boost",
       "Anchor": "create-a-boost",
@@ -2861,7 +2910,7 @@
     {
       "Kind": "table",
       "Section": "Request body schema",
-      "Anchor": "request-body-schema",
+      "Anchor": "request-body-schema-2",
       "SectionPath": [
         "Create a boost",
         "Request body schema"
@@ -3123,7 +3172,7 @@
     {
       "Kind": "table",
       "Section": "Response schema",
-      "Anchor": "response-schema-1",
+      "Anchor": "response-schema-3",
       "SectionPath": [
         "Create a boost",
         "Response schema"
@@ -3378,7 +3427,19 @@
         "Create a boost",
         "Sample request"
       ],
-      "Text": "POST https://api.linkedin.com/rest/organizationBoostPost?action=post\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202610\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:123456\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022name\u0022: \u0022Suggested audience\u0022,\n    \u0022type\u0022: \u0022SUGGESTED_AUDIENCE\u0022,\n    \u0022audienceCount\u0022: 150000,\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n                \u0022name\u0022: \u0022Interface Locales\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:locale:en_US\u0022,\n                  \u0022name\u0022: \u0022English\u0022\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n                \u0022name\u0022: \u0022Locations\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:geo:103644278\u0022,\n                  \u0022name\u0022: \u0022United States\u0022\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  }\n}",
+      "Text": "POST https://api.linkedin.com/rest/organizationBoostPost?action=post",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
+      ],
+      "Text": "{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:123456\u0022,\n  \u0022goal\u0022: {\n    \u0022value\u0022: \u0022BRAND_AWARENESS\u0022\n  },\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022name\u0022: \u0022Suggested audience\u0022,\n    \u0022type\u0022: \u0022SUGGESTED_AUDIENCE\u0022,\n    \u0022audienceCount\u0022: 150000,\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n                \u0022name\u0022: \u0022Interface Locales\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:locale:en_US\u0022,\n                  \u0022name\u0022: \u0022English\u0022\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \u0022or\u0022: [\n            {\n              \u0022facet\u0022: {\n                \u0022urn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n                \u0022name\u0022: \u0022Locations\u0022\n              },\n              \u0022segments\u0022: [\n                {\n                  \u0022urn\u0022: \u0022urn:li:geo:103644278\u0022,\n                  \u0022name\u0022: \u0022United States\u0022\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  }\n}",
       "Headers": [],
       "Rows": []
     },
@@ -3641,6 +3702,17 @@
         "Delete a boost campaign"
       ],
       "Text": "Requires the rw_organization_boost permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a boost campaign",
+      "Anchor": "delete-a-boost-campaign",
+      "SectionPath": [
+        "Delete a boost campaign"
+      ],
+      "Text": "DELETE /organizationBoostCampaign/{campaignId}?account={encodedAccountURN}",
       "Headers": [],
       "Rows": []
     },
