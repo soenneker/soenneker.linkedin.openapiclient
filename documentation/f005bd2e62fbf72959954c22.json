@@ -6,19 +6,8 @@
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/money-object",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria"
@@ -545,7 +534,7 @@
           {
             "Text": "TargetingCriteria object",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-10\u0026context=linkedin/marketing/context"
             ],
             "Values": []
           },
@@ -569,7 +558,7 @@
           {
             "Text": "Money amount",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/money-object?view=li-lms-2026-10\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/money-object?view=li-lms-2026-10\u0026context=linkedin/marketing/context"
             ],
             "Values": []
           },

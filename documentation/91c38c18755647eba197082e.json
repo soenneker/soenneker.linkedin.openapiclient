@@ -3,7 +3,10 @@
   "Title": "What is LinkedIn Learning?",
   "Version": "",
   "Error": null,
-  "Links": [],
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/overview-blocking-policy"
+  ],
   "Blocks": [
     {
       "Kind": "text",
