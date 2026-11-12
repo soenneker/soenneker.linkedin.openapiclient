@@ -46,10 +46,10 @@
     },
     {
       "Kind": "table",
-      "Section": "StubProfile Fields",
+      "Section": "StubProfile fields",
       "Anchor": "stubprofile-fields",
       "SectionPath": [
-        "StubProfile Fields"
+        "StubProfile fields"
       ],
       "Text": "",
       "Headers": [
@@ -341,10 +341,10 @@
     },
     {
       "Kind": "table",
-      "Section": "StubProfile Fields",
+      "Section": "StubProfile fields",
       "Anchor": "stubprofile-fields",
       "SectionPath": [
-        "StubProfile Fields"
+        "StubProfile fields"
       ],
       "Text": "",
       "Headers": [
@@ -638,10 +638,10 @@
     },
     {
       "Kind": "text",
-      "Section": "StubProfile Fields",
+      "Section": "StubProfile fields",
       "Anchor": "stubprofile-fields",
       "SectionPath": [
-        "StubProfile Fields"
+        "StubProfile fields"
       ],
       "Text": "Note",
       "Headers": [],
@@ -649,22 +649,34 @@
     },
     {
       "Kind": "text",
-      "Section": "StubProfile Fields",
+      "Section": "StubProfile fields",
       "Anchor": "stubprofile-fields",
       "SectionPath": [
-        "StubProfile Fields"
+        "StubProfile fields"
       ],
       "Text": "One-Click Export (1CE) provides access to additional candidate profile fields including email addresses, years of experience, skills, work positions, and education history. Reach out to your business development manager to request RSC recertification to enable these fields. To learn more about 1CE, see Retrieve Exported Candidates Overview.",
       "Headers": [],
       "Rows": []
     },
     {
-      "Kind": "table",
-      "Section": "Education Schema",
+      "Kind": "text",
+      "Section": "Education schema",
       "Anchor": "education-schema",
       "SectionPath": [
-        "StubProfile Fields",
-        "Education Schema"
+        "StubProfile fields",
+        "Education schema"
+      ],
+      "Text": "The unversioned /v2/exportedCandidates response uses startMonthYear and endMonthYear for education dates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Education schema",
+      "Anchor": "education-schema",
+      "SectionPath": [
+        "StubProfile fields",
+        "Education schema"
       ],
       "Text": "",
       "Headers": [
@@ -791,12 +803,168 @@
       ]
     },
     {
+      "Kind": "text",
+      "Section": "Education schema",
+      "Anchor": "education-schema",
+      "SectionPath": [
+        "StubProfile fields",
+        "Education schema"
+      ],
+      "Text": "The versioned /rest/exportedCandidates response uses startedOn and endedOn for education dates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "table",
-      "Section": "Position Schema",
+      "Section": "Education schema",
+      "Anchor": "education-schema",
+      "SectionPath": [
+        "StubProfile fields",
+        "Education schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "schoolName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the school.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "degreeName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The degree attained at this school.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field of study.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the education.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end date of the education or the expected graduation date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Position schema",
       "Anchor": "position-schema",
       "SectionPath": [
-        "StubProfile Fields",
-        "Position Schema"
+        "StubProfile fields",
+        "Position schema"
+      ],
+      "Text": "The unversioned /v2/exportedCandidates response uses startMonthYear and endMonthYear for position dates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Position schema",
+      "Anchor": "position-schema",
+      "SectionPath": [
+        "StubProfile fields",
+        "Position schema"
       ],
       "Text": "",
       "Headers": [
@@ -879,7 +1047,7 @@
             "Values": []
           },
           {
-            "Text": "The start date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Text": "The start date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
             "Links": [],
             "Values": []
           },
@@ -903,7 +1071,151 @@
             "Values": []
           },
           {
-            "Text": "The end date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Text": "The end date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Position schema",
+      "Anchor": "position-schema",
+      "SectionPath": [
+        "StubProfile fields",
+        "Position schema"
+      ],
+      "Text": "The versioned /rest/exportedCandidates response uses startedOn and endedOn for position dates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Position schema",
+      "Anchor": "position-schema",
+      "SectionPath": [
+        "StubProfile fields",
+        "Position schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company name as entered by the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description for this position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job title of the position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end date of the position.",
             "Links": [],
             "Values": []
           },
@@ -924,11 +1236,11 @@
     },
     {
       "Kind": "table",
-      "Section": "profileLocation Schema",
+      "Section": "profileLocation schema",
       "Anchor": "profilelocation-schema",
       "SectionPath": [
-        "StubProfile Fields",
-        "profileLocation Schema"
+        "StubProfile fields",
+        "profileLocation schema"
       ],
       "Text": "",
       "Headers": [

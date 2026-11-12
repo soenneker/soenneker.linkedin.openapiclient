@@ -81,7 +81,7 @@
       "Section": "Document Ads API",
       "Anchor": "document-ads-api",
       "SectionPath": [],
-      "Text": "If the creative is associated with a Campaign with the Lead Generation objective, we don\u0027t allow the reuse of the same underlying post or document for multiple creatives. If the same asset needs to be used in multiple creatives, it needs to be uploaded multiple times.",
+      "Text": "If the creative is associated with a Campaign with the Lead Generation objective, we don\u0027t allow the reuse of the same underlying post or document for multiple creatives. If the same asset needs to be used in multiple creatives, it needs to be uploaded multiple times. Sponsoring existing document posts is only supported for brand awareness \u0026 engagement objectives.",
       "Headers": [],
       "Rows": []
     },

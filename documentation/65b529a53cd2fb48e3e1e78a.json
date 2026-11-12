@@ -959,7 +959,7 @@
             "Values": []
           },
           {
-            "Text": "The first name of the contact to match the conversion, in plain text. Required for versions earlier than 202609. Starting with the 202609 version, either firstName or hashedFirstName must be provided together with either lastName or hashedLastName.",
+            "Text": "The first name of the contact to match the conversion, in plain text. Required for versions earlier than 202609. Starting with the 202609 version, either firstName and lastName or hashedFirstName and hashedLastName must be provided.",
             "Links": [],
             "Values": []
           },
@@ -981,7 +981,7 @@
             "Values": []
           },
           {
-            "Text": "The last name of the contact to match the conversion, in plain text. Required for versions earlier than 202609. Starting with the 202609 version, either lastName or hashedLastName must be provided together with either firstName or hashedFirstName.",
+            "Text": "The last name of the contact to match the conversion, in plain text. Required for versions earlier than 202609. Starting with the 202609 version, either firstName and lastName or hashedFirstName and hashedLastName must be provided.",
             "Links": [],
             "Values": []
           },
@@ -1123,7 +1123,7 @@
         "Streaming Conversion Events API Schema",
         "Input Data Validation"
       ],
-      "Text": "The conversion URN must be valid with format urn:lla:llaPartnerConversion:\u003Cid\u003E.\nThe authenticated user must have a valid user access role (other than VIEWER role) on the ad account where the conversion rule is created.\nThe userIds field in the input request must include at least one or more of the following unless other valid user identifier is provided:\n\nA valid userId with idType SHA256_EMAIL.\nA valid userId with idType LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID.\nA valid userId with idType ACXIOM_ID.\nA valid userId with idType PLAINTEXT_IP_ADDRESS.\nA valid userId with idType SHA256_IP_ADDRESS.\nA valid userId with idType GOOGLE_AID.\n\n\nIncluding userInfo in the input request can improve match rates. If included, for versions earlier than 202609, it must contain both firstName and lastName in plain text. Starting with the 202609 version, it must contain either firstName or hashedFirstName, together with either lastName or hashedLastName.\nIf you include userInfo or externalIds or lead without any valid idType in userIds, you must use an empty list [] for userIds.\nconversionHappenedAt must be a valid timestamp representing the number of milliseconds since epoch time. The timestamp must be within the past 90 days.",
+      "Text": "The conversion URN must be valid with format urn:lla:llaPartnerConversion:\u003Cid\u003E.\nThe authenticated user must have a valid user access role (other than VIEWER role) on the ad account where the conversion rule is created.\nThe userIds field in the input request must include at least one or more of the following unless other valid user identifier is provided:\n\nA valid userId with idType SHA256_EMAIL.\nA valid userId with idType LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID.\nA valid userId with idType ACXIOM_ID.\nA valid userId with idType PLAINTEXT_IP_ADDRESS.\nA valid userId with idType SHA256_IP_ADDRESS.\nA valid userId with idType GOOGLE_AID.\n\n\nIncluding userInfo in the input request can improve match rates. If included, for versions earlier than 202609, it must contain both firstName and lastName in plain text. Starting with the 202609 version, it must contain either firstName and lastName or hashedFirstName and hashedLastName.\nIf you include userInfo or externalIds or lead without any valid idType in userIds, you must use an empty list [] for userIds.\nconversionHappenedAt must be a valid timestamp representing the number of milliseconds since epoch time. The timestamp must be within the past 90 days.",
       "Headers": [],
       "Rows": []
     }

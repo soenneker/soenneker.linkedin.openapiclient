@@ -547274,6 +547274,30 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#education-schema"
     },
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileEducationSchema1125": {
+      "type": "object",
+      "properties": {
+        "degreeName": {
+          "type": "string",
+          "description": "The degree attained at this school.\n\nDocumented type: String\n\nRequirement: No"
+        },
+        "endedOn": {
+          "description": "The end date of the education or the expected graduation date.\n\nDocumented type: Date\n\nRequirement: No"
+        },
+        "fieldOfStudy": {
+          "type": "string",
+          "description": "The field of study.\n\nDocumented type: String\n\nRequirement: No"
+        },
+        "schoolName": {
+          "type": "string",
+          "description": "The name of the school.\n\nDocumented type: String\n\nRequirement: No"
+        },
+        "startedOn": {
+          "description": "The start date of the education.\n\nDocumented type: Date\n\nRequirement: No"
+        }
+      },
+      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#education-schema"
+    },
     "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofilePositionSchema": {
       "type": "object",
       "properties": {
@@ -547286,14 +547310,38 @@
           "description": "The description for this position.\n\nDocumented type: String\n\nRequirement: No"
         },
         "endMonthYear": {
-          "description": "The end date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
+          "description": "The end date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
         },
         "startMonthYear": {
-          "description": "The start date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
+          "description": "The start date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
         },
         "title": {
           "type": "string",
           "description": "The title name of the position.\n\nDocumented type: String\n\nRequirement: No"
+        }
+      },
+      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#position-schema"
+    },
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofilePositionSchema1127": {
+      "type": "object",
+      "properties": {
+        "companyName": {
+          "type": "string",
+          "description": "The company name as entered by the member.\n\nDocumented type: String\n\nRequirement: No"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description for this position.\n\nDocumented type: String\n\nRequirement: No"
+        },
+        "endedOn": {
+          "description": "The end date of the position.\n\nDocumented type: Date\n\nRequirement: No"
+        },
+        "startedOn": {
+          "description": "The start date of the position.\n\nDocumented type: Date\n\nRequirement: No"
+        },
+        "title": {
+          "type": "string",
+          "description": "The job title of the position.\n\nDocumented type: String\n\nRequirement: No"
         }
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#position-schema"
@@ -547535,31 +547583,14 @@
         ]
       }
     },
-    "LearnTalentRecruiterSystemConnectRscDataDeletion1133": {
+    "LearnTalentRecruiterSystemConnectRscDataDeletion1135": {
       "enum": [
         "Bearer {accessToken}"
       ],
       "type": "string",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
       "x-ms-enum": {
-        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1133",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "Bearer {accessToken}",
-            "name": "BearerLeftBraceAccessTokenRightBrace"
-          }
-        ]
-      }
-    },
-    "LearnTalentRecruiterSystemConnectRscDataDeletion1136": {
-      "enum": [
-        "Bearer {accessToken}"
-      ],
-      "type": "string",
-      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
-      "x-ms-enum": {
-        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1136",
+        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1135",
         "modelAsString": false,
         "values": [
           {
@@ -547594,6 +547625,23 @@
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
       "x-ms-enum": {
         "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1140",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "Bearer {accessToken}",
+            "name": "BearerLeftBraceAccessTokenRightBrace"
+          }
+        ]
+      }
+    },
+    "LearnTalentRecruiterSystemConnectRscDataDeletion1142": {
+      "enum": [
+        "Bearer {accessToken}"
+      ],
+      "type": "string",
+      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
+      "x-ms-enum": {
+        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1142",
         "modelAsString": false,
         "values": [
           {
@@ -547693,7 +547741,7 @@
         ]
       }
     },
-    "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11132": {
+    "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11134": {
       "enum": [
         "Bearer {accessToken}",
         "202603"
@@ -547701,7 +547749,7 @@
       "type": "string",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-1",
       "x-ms-enum": {
-        "name": "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11132",
+        "name": "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11134",
         "modelAsString": false,
         "values": [
           {

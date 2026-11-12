@@ -5,14 +5,24 @@
     "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/identity/people",
     "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
     "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
     "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/",
     "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
     "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile",
     "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-migration-guide",
-    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview"
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes"
   ],
   "ChangedPostmanCollections": [],
   "PostmanFetchIssues": [
@@ -24,6 +34,141 @@
   ],
   "AddedOperations": [],
   "RemovedOperations": [],
-  "SpecificationChanges": [],
-  "SpecificationChanged": false
+  "SpecificationChanges": [
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_education_schema_1125",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "schoolName": {
+            "type": "string",
+            "description": "The name of the school.\n\nDocumented type: String\n\nRequirement: No"
+          },
+          "degreeName": {
+            "type": "string",
+            "description": "The degree attained at this school.\n\nDocumented type: String\n\nRequirement: No"
+          },
+          "fieldOfStudy": {
+            "type": "string",
+            "description": "The field of study.\n\nDocumented type: String\n\nRequirement: No"
+          },
+          "startedOn": {
+            "description": "The start date of the education.\n\nDocumented type: Date\n\nRequirement: No"
+          },
+          "endedOn": {
+            "description": "The end date of the education or the expected graduation date.\n\nDocumented type: Date\n\nRequirement: No"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#education-schema"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_position_schema/properties/endMonthYear/description",
+      "Before": "The end date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No",
+      "After": "The end date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_position_schema/properties/startMonthYear/description",
+      "Before": "The start date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No",
+      "After": "The start date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_position_schema_1127",
+      "Before": null,
+      "After": {
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "description": "The company name as entered by the member.\n\nDocumented type: String\n\nRequirement: No"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description for this position.\n\nDocumented type: String\n\nRequirement: No"
+          },
+          "title": {
+            "type": "string",
+            "description": "The job title of the position.\n\nDocumented type: String\n\nRequirement: No"
+          },
+          "startedOn": {
+            "description": "The start date of the position.\n\nDocumented type: Date\n\nRequirement: No"
+          },
+          "endedOn": {
+            "description": "The end date of the position.\n\nDocumented type: Date\n\nRequirement: No"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#position-schema"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_rsc_data_deletion__1133",
+      "Before": {
+        "enum": [
+          "Bearer {accessToken}"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_rsc_data_deletion__1135",
+      "Before": null,
+      "After": {
+        "type": "string",
+        "enum": [
+          "Bearer {accessToken}"
+        ],
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_rsc_data_deletion__1136",
+      "Before": {
+        "enum": [
+          "Bearer {accessToken}"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_rsc_data_deletion__1142",
+      "Before": null,
+      "After": {
+        "type": "string",
+        "enum": [
+          "Bearer {accessToken}"
+        ],
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
+      }
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1132",
+      "Before": {
+        "enum": [
+          "Bearer {accessToken}",
+          "202603"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-1"
+      },
+      "After": null
+    },
+    {
+      "Pointer": "/components/schemas/Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1134",
+      "Before": null,
+      "After": {
+        "type": "string",
+        "enum": [
+          "Bearer {accessToken}",
+          "202603"
+        ],
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-1"
+      }
+    }
+  ],
+  "SpecificationChanged": true
 }

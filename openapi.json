@@ -33778,6 +33778,30 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#education-schema"
       },
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_education_schema_1125": {
+        "properties": {
+          "degreeName": {
+            "description": "The degree attained at this school.\n\nDocumented type: String\n\nRequirement: No",
+            "type": "string"
+          },
+          "endedOn": {
+            "description": "The end date of the education or the expected graduation date.\n\nDocumented type: Date\n\nRequirement: No"
+          },
+          "fieldOfStudy": {
+            "description": "The field of study.\n\nDocumented type: String\n\nRequirement: No",
+            "type": "string"
+          },
+          "schoolName": {
+            "description": "The name of the school.\n\nDocumented type: String\n\nRequirement: No",
+            "type": "string"
+          },
+          "startedOn": {
+            "description": "The start date of the education.\n\nDocumented type: Date\n\nRequirement: No"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#education-schema"
+      },
       "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_position_schema": {
         "properties": {
           "companyName": {
@@ -33789,13 +33813,37 @@
             "type": "string"
           },
           "endMonthYear": {
-            "description": "The end date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
+            "description": "The end date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
           },
           "startMonthYear": {
-            "description": "The start date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
+            "description": "The start date of the position. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.\n\nDocumented type: Date\n\nRequirement: No"
           },
           "title": {
             "description": "The title name of the position.\n\nDocumented type: String\n\nRequirement: No",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#position-schema"
+      },
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_position_schema_1127": {
+        "properties": {
+          "companyName": {
+            "description": "The company name as entered by the member.\n\nDocumented type: String\n\nRequirement: No",
+            "type": "string"
+          },
+          "description": {
+            "description": "The description for this position.\n\nDocumented type: String\n\nRequirement: No",
+            "type": "string"
+          },
+          "endedOn": {
+            "description": "The end date of the position.\n\nDocumented type: Date\n\nRequirement: No"
+          },
+          "startedOn": {
+            "description": "The start date of the position.\n\nDocumented type: Date\n\nRequirement: No"
+          },
+          "title": {
+            "description": "The job title of the position.\n\nDocumented type: String\n\nRequirement: No",
             "type": "string"
           }
         },
@@ -34016,14 +34064,7 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1133": {
-        "enum": [
-          "Bearer {accessToken}"
-        ],
-        "type": "string",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
-      },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1136": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1135": {
         "enum": [
           "Bearer {accessToken}"
         ],
@@ -34038,6 +34079,13 @@
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
       "Learn_talent_recruiter_system_connect_rsc_data_deletion__1140": {
+        "enum": [
+          "Bearer {accessToken}"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
+      },
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1142": {
         "enum": [
           "Bearer {accessToken}"
         ],
@@ -34080,7 +34128,7 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-13"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1132": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1134": {
         "enum": [
           "Bearer {accessToken}",
           "202603"

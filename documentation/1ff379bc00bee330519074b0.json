@@ -1041,7 +1041,7 @@
             "Values": []
           },
           {
-            "Text": "The required field is missing. Starting with the 202609 version, hashedFirstName/hashedLastName (including mixed plain/hashed combinations) also satisfy the userInfo requirement, even though this error message text still lists only firstName and lastName.",
+            "Text": "The required field is missing. Starting with the 202609 version, the hashedFirstName and hashedLastName pair also satisfies the userInfo requirement, even though this error message text still lists only firstName and lastName.",
             "Links": [],
             "Values": []
           }
