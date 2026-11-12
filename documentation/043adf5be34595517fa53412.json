@@ -29,6 +29,15 @@
       "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
       "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
       "SectionPath": [],
+      "Text": "As a LinkedIn partner, you must complete the setup needed to onboard your customers to RSC. This includes setting up developer applications, enabling RSC, configuring atsIntegration settings, setting up authentication, and meeting compliance requirements. To complete Module 1 certification, demonstrate each applicable test case below to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
+      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
+      "SectionPath": [],
       "Text": "Important",
       "Headers": [],
       "Rows": []
@@ -38,20 +47,42 @@
       "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
       "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
       "SectionPath": [],
-      "Text": "Customers who elect to enable RSC must be able to sync all historical candidates, applications, and jobs during the onboarding process. If additional filters, variations, or modifications from this expectation are built into the application, partners must obtain approval via writing from their LinkedIn\u0027s Business Development Representative.",
+      "Text": "When your customers enable RSC, your application must support syncing all their historical candidates, applications, and jobs during onboarding. If your application filters or otherwise limits this sync, you must obtain written approval from your LinkedIn business development representative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
+      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
+      "SectionPath": [],
+      "Text": "This module includes functional checks to verify that your customer onboarding setup works as expected and compliance checks to confirm that your application meets LinkedIn requirements. For details about rule IDs, test cases, and check types, refer to the certification overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
+      "Text": "Rule IDs are renumbered to make each test case unambiguous to reference. Use the following table to map the rule IDs used in earlier revisions of this page to the current ones.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "table",
-      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
-      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
-      "SectionPath": [],
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
       "Text": "",
       "Headers": [
-        "Rule",
-        "Execution Steps",
-        "Expected Result"
+        "Previous rule",
+        "Current rule",
+        "Test case"
       ],
       "Rows": [
         [
@@ -61,12 +92,12 @@
             "Values": []
           },
           {
-            "Text": "Demonstrate a new customer implementing RSC for the first time.",
+            "Text": "RSC-101-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Demonstrate the test admin will see the appropriately named integration in Recruiter and will be able to enable it. Demonstrate the ATS instance (API key, API secret) and its ATS integration mappings (ATS integration context org urn and contract urn) will be properly stored in ATS. Demonstrate the ATS integration status will be displayed in ATS admin/configuration/setting page.",
+            "Text": "Enable RSC for a new customer",
             "Links": [],
             "Values": []
           }
@@ -78,12 +109,12 @@
             "Values": []
           },
           {
-            "Text": "Demonstrate that a customer should be able to configure the job availability type as PUBLIC or PRIVATE for the jobs synced.",
+            "Text": "RSC-101-013",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Ensure that the ATS provides an option for the customer to choose the job availability type (PUBLIC or PRIVATE). If a partner cannot provide this choice, they should post jobs of type PRIVATE_TO_ATS_INTEGRATION only.",
+            "Text": "Configure job availability types",
             "Links": [],
             "Values": []
           }
@@ -95,12 +126,12 @@
             "Values": []
           },
           {
-            "Text": "Multiple Recruiter contracts onboarding. For partners utilizing provisioning, demonstrate each customer has a unique developer application, and each developer application maps to 1 customer instance. Complete the onboarding experience in two unique instances.",
+            "Text": "RSC-101-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Customers can enable RSC for multiple recruiter contracts simultaneously. Developer applications are created for instances using a unique foreign ID of the instance and are used on behalf of a single instance. Activation for each instance and API traffic corresponds to the API credentials created for that instance.",
+            "Text": "Onboard a customer with multiple Recruiter contracts",
             "Links": [],
             "Values": []
           }
@@ -112,12 +143,12 @@
             "Values": []
           },
           {
-            "Text": "atsIntegration configuration settings are properly stored.",
+            "Text": "RSC-101-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Demonstrate that the atsIntegration configuration setting for callback_url is set. JOB_POSTING_VIEWER, APPLICATIOIN_VIEWER is set to \u201CALL_PRODUCT_USERS\u201C if there\u2019s no ACL setting.",
+            "Text": "Store atsIntegration configuration settings",
             "Links": [],
             "Values": []
           }
@@ -129,12 +160,12 @@
             "Values": []
           },
           {
-            "Text": "Set the JS SDK domain for the provisioned application.",
+            "Text": "RSC-101-004",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Demonstrate in developer portal or in a provisioning API call response that the JS SDK domain is correctly set for to a domain hosting your solution for the customer\u0027s developer application.",
+            "Text": "Configure the JS SDK domain",
             "Links": [],
             "Values": []
           }
@@ -146,12 +177,12 @@
             "Values": []
           },
           {
-            "Text": "Demonstrate access token generation, validation checking.",
+            "Text": "RSC-101-005",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Demonstrate ability to periodically verify that an access token is valid. Demonstrate ability to detect access token expiry. Demonstrate ability to retrigger OAuth 2.0 Client Credentials flow in case token has expired or been invalidated.",
+            "Text": "Verify the access token lifecycle",
             "Links": [],
             "Values": []
           }
@@ -163,12 +194,355 @@
             "Values": []
           },
           {
-            "Text": "Partner agrees to participate in a recorded demo with LinkedIn where they demonstrate all core feature functionality of their ATS. If the partner has been flagged for a TOS violation in the past, or if a new TOS violation is uncovered as part of certification, the partner must demonstrate remediation of the violation to be certified.",
+            "Text": "RSC-101-006",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "",
+            "Text": "Record a demo and demonstrate TOS compliance",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-101-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enable, disable, and re-activate the integration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-101-008",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify full historical sync during onboarding",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-101-009",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide the provisioning mapping",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-101-010",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configure the evaluation callback",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-101-011",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify enabled integration types",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-101-012",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate secure credential storage and rotation",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Certification test cases",
+      "Anchor": "certification-test-cases",
+      "SectionPath": [
+        "Certification test cases"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-101-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enable RSC for a new customer1. As an admin, open the LinkedIn integration admin page in your ATS.2. Locate the RSC integration option for the test contract and select Enable.3. Show that the ATS instance credentials, API key and secret, and the integration mappings, context organization URN and contract URN, are stored in the ATS.4. Refresh the admin page and show that the integration status now reads ENABLED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The admin sees the appropriately named integration in Recruiter and is able to enable it.\u2022 The ATS instance credentials, API key and secret, and the integration mappings, context organization URN and contract URN, are stored on your side.\u2022 The current enablement status of the integration is displayed on the ATS admin page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Onboard a customer with multiple Recruiter contractsFor partners using provisioning.1. Enable RSC for two recruiter contracts of the same company, completing onboarding in two unique instances.2. Show that each instance gets a developerApplication keyed by a unique foreign ID, used on behalf of a single instance, and that the API traffic for each instance uses its own credentials.3. Negative test: run the two-part test. First, one child application with two or more contracts of the same company must succeed. Second, the same child application used to launch a contract of a different company must return an error, because a developer application must not serve more than one company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 A customer can enable RSC for multiple recruiter contracts, both linked to the same company.\u2022 Developer applications are created for instances using a unique foreign ID of the instance, and are used on behalf of a single instance.\u2022 Activation for each instance, and its API traffic, corresponds to the API credentials created for that instance.\u2022 The onboarding experience completes in two unique instances.\u2022 One child application can serve two or more contracts of the same company. Using the same child application to launch a contract of a different company returns an error, because a developer application must not serve more than one company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Store atsIntegration configuration settings1. Show that CALLBACK_URL is set for the provisioned application.2. Verify the settings for each customer through the Integrations Log Screen. The One-Click Export callback URL for each customer must be unique.3. Confirm that CALLBACK_URL is registered before the status moves to ENABLED, because One-Click Export depends on it.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The atsIntegration configuration setting CALLBACK_URL is set.\u2022 CALLBACK_URL is verifiable for each customer for the provisioned application, for example through the Integrations Log Screen.\u2022 Enabling the integration alone doesn\u0027t make One-Click Export functional. The CALLBACK_URL must be registered before the integration status moves to ENABLED.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configure the JS SDK domainFor partners using provisioning.1. In the developer portal, or in a provisioning API call response, show the JS SDK domain set to the domain that hosts your solution for the developer application of the customer.2. Show how you verify the domain for each customer, for example through the Integrations Log Screen.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The JS SDK domain is set correctly to a domain hosting your solution for the developer application of the customer, and is visible in the developer portal or in a provisioning API call response.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-005Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the access token lifecycle1. Generate an access token through the OAuth 2.0 Client Credentials flow.2. Periodically validate that the token is still valid.3. Detect token expiry.4. Re-trigger the flow to refresh the token on expiry or invalidation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 An access token can be periodically verified as valid.\u2022 Access token expiry can be detected.\u2022 The OAuth 2.0 Client Credentials flow can be re-triggered if a token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-006Check type: compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Record a demo and demonstrate TOS compliance1. Schedule and record a demo with LinkedIn that covers all core feature functionality of your ATS.2. If you\u0027re flagged for a TOS violation, demonstrate the remediation.3. Confirm that the trust and safety compliance audit is complete before certification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 You agree to participate in a recorded demo with LinkedIn where you demonstrate all core feature functionality of your ATS.\u2022 If you were flagged for a TOS violation that you agreed to remediate as a condition of the partnership, you must demonstrate that the violation has been remediated.\u2022 The trust and safety compliance audit must be complete before certification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-007Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enable, disable, and re-activate the integration1. From the LinkedIn integration admin page in your ATS, enable, disable, and then re-enable the integration, showing the status at each step.2. After disabling, show that the client ID and secret are retained, not deleted.3. On re-activation, show that the same child developerApplication is reused and no new application is created, that widget onboarding is completed again, and that a full historical backfill is triggered.4. Note that full disablement requires contacting LinkedIn support. The ATS toggle alone doesn\u0027t fully disable the integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Enable, disable, and then re-enable the integration. The enablement status must reflect the correct state at each step on the ATS admin page. Enable and disable are toggled from the LinkedIn integration admin page.\u2022 Developer application credentials, client ID and secret, must be retained when the integration is disabled. They must not be deleted.\u2022 On re-activation, the same child developerApplication is reused, a new one must not be created, and widget onboarding must be completed again. A full historical backfill is then triggered.\u2022 Full disablement requires contacting LinkedIn support. The toggle in the ATS alone doesn\u0027t fully disable the integration.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-008Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify full historical sync during onboarding1. Enable RSC for a fresh test customer and complete widget onboarding.2. Show that the full historical sync of all candidates, applications, job requisitions, and other entities begins automatically when onboarding completes, with no manual trigger.3. If any filter or variation from a full sync exists, present the written approval from LinkedIn for it.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 When a customer enables RSC, you must be able to sync all historical candidates, applications, job requisitions, and other entities for that customer, not a partial subset.\u2022 The full historical sync must begin automatically as soon as the customer completes widget onboarding. No manual trigger is required.\u2022 Any deviation, filter, or variation from a full historical sync requires written approval from LinkedIn. You must provide that approval as a deliverable.\u2022 This capability is exercised end-to-end by the historical data syncing test cases in Module 2.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-009Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide the provisioning mappingFor partners using provisioning.1. Produce a mapping of the unique foreign ID of each instance to the provisioned developerApplication client ID.2. Show that the mapping demonstrates the strict relationship of one application to one instance to one company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share a mapping between the unique foreign ID of each instance and its provisioned developerApplication client ID, demonstrating the strict relationship of one application to one instance to one company. This mapping is a certification prerequisite used for verification by LinkedIn during code review.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-010Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configure the evaluation callbackFor Connected Projects.1. Show that EVAL_CALLBACK_URL is set and that the URL is reachable.2. Confirm that the integrationContext (organization URN, urn:li:organization:{id}) used to register EVAL_CALLBACK_URL isn\u0027t mixed up with an integrationContext used in another LinkedIn integration.3. Show that the ATS can receive and handle an EXPORT_APPLICATION_EVALUATION push notification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The atsIntegration configuration setting for EVAL_CALLBACK_URL is set, and the URL is reachable.\u2022 The integrationContext (organization URN) used for EVAL_CALLBACK_URL isn\u0027t mixed up with the integrationContext saved by other LinkedIn integrations.\u2022 The ATS can receive and handle a push notification with the type EXPORT_APPLICATION_EVALUATION. This is exercised end-to-end in Module 3.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-011Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify enabled integration types1. For the developer application of the customer, enumerate the enabled integration types, such as CSA_API, IN_ATS_INDICATOR, ONE_CLICK_EXPORT, and PROFILE_PLUGIN.2. Show how you check which types are enabled or disabled for each customer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For the developer application of the customer, enumerate and verify that each enabled integration type is configured and active, such as CSA_API, IN_ATS_INDICATOR, ONE_CLICK_EXPORT, and PROFILE_PLUGIN. Confirm that you can check which integration types are enabled or disabled for each customer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-012Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate secure credential storage and rotation1. Show that credentials are stored encrypted, not in plaintext, and redacted from all logs.2. Rotate or re-issue a credential and show that OAuth re-triggers correctly. Refer to RSC-101-005.3. Show that credentials are retained across a disable, as described in RSC-101-007, but protected at rest.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 API keys and client secrets are stored securely, not in plaintext, and are never logged. Credentials such as keys, secrets, and tokens must be redacted from any request, response, or debug log.\u2022 Credential rotation and re-issue work, and a rotated or invalidated credential correctly re-triggers the OAuth flow, as described in RSC-101-005.\u2022 Credentials are retained across a disable, as described in RSC-101-007, but protected at rest.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-101-013Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configure job availability types1. In the ATS, show the option that lets the customer choose the job availability type, PUBLIC or PRIVATE, for synced jobs.2. Sync one job of each type and show the resulting availability in LinkedIn.3. If your ATS can\u2019t offer this choice, show that it posts jobs of type PRIVATE_TO_ATS_INTEGRATION only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The ATS provides an option for the customer to choose the job availability type, PUBLIC or PRIVATE.\u2022 If you can\u2019t provide this choice, you post jobs of type PRIVATE_TO_ATS_INTEGRATION only.",
             "Links": [],
             "Values": []
           }
@@ -177,10 +551,12 @@
     },
     {
       "Kind": "text",
-      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
-      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
-      "SectionPath": [],
-      "Text": "Relevant Documentation: Customer Configuration",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Related documentation"
+      ],
+      "Text": "Customer configuration",
       "Headers": [],
       "Rows": []
     }

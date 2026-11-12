@@ -718,7 +718,7 @@
             "Values": []
           },
           {
-            "Text": "PUT /rest/applicationStageDELETE /rest/applicationStageGET /rest/exportedCandidatesGET /rest/atsPurgedExportedCandidatesDELETE /rest/atsApplicationsGET /rest/exportedApplicationEvaluationsGET /rest/simpleJobPostingsGET /rest/simpleJobPostingStatusGET /rest/simpleJobPostingTasksDELETE /rest/jobRequisitionsDELETE /rest/jobRequisitionStages",
+            "Text": "PUT /rest/applicationStageDELETE /rest/applicationStageGET /rest/exportedCandidatesGET /rest/atsPurgedExportedCandidatesDELETE /rest/atsApplicationsGET /rest/exportedApplicationEvaluationGET /rest/simpleJobPostingsGET /rest/simpleJobPostingStatusGET /rest/simpleJobPostingTasksDELETE /rest/jobRequisitionsDELETE /rest/jobRequisitionStages",
             "Links": [],
             "Values": []
           },

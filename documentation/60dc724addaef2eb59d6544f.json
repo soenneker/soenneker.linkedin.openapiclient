@@ -14,6 +14,9 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-history",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-overview",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
@@ -31,15 +34,64 @@
   ],
   "Blocks": [
     {
-      "Kind": "table",
+      "Kind": "text",
       "Section": "Module 3 - Retrieve Data from LinkedIn",
       "Anchor": "module-3---retrieve-data-from-linkedin",
       "SectionPath": [],
+      "Text": "As a LinkedIn partner, you must retrieve LinkedIn data into your customers\u0027 ATS to support their recruiting workflows. Module 3 covers One Click Export (1CE), the Profile Widget, InMail history and stub profiles, contract seatholders, closed candidate profiles, and application evaluations. It also covers push notifications and query tunneling. To complete Module 3 certification, demonstrate each applicable test case below to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Retrieve Data from LinkedIn",
+      "Anchor": "module-3---retrieve-data-from-linkedin",
+      "SectionPath": [],
+      "Text": "All test cases in this module use the functional check type. For the rule ID scheme, how to read each test case, and the check type definitions, refer to the certification overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Retrieve Data from LinkedIn",
+      "Anchor": "module-3---retrieve-data-from-linkedin",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Retrieve Data from LinkedIn",
+      "Anchor": "module-3---retrieve-data-from-linkedin",
+      "SectionPath": [],
+      "Text": "Module 3 is primarily a retrieval module, so the quantitative and qualitative checks don\u0027t apply here. Those live in Module 2. A few test cases carry a data-privacy or legal obligation, such as the closed-candidate purge. Those are called out inline in the expected result rather than as a separate check type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
+      "Text": "Rule IDs were renumbered to make each test case unambiguous to reference. Use the following table to map the rule IDs used in earlier revisions of this page to the current ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
       "Text": "",
       "Headers": [
-        "Rule",
-        "Execution Steps",
-        "Expected Result"
+        "Previous rule",
+        "Current rule",
+        "Test case"
       ],
       "Rows": [
         [
@@ -49,15 +101,13 @@
             "Values": []
           },
           {
-            "Text": "One-Click Export (New Candidate). Export a profile from LinkedIn Recruiter to a job requisition in your ATS.",
+            "Text": "RSC-301-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Demonstrate the candidate appears in the ATS as a candidate for the correct job and the exported candidates are tagged with LI as source in the ATS. 2. Understand which fields are being ingested through 1CE and how are they being displayed in ATS UI . 3. View Profile Widget within the ATS and ensure exact match displays. Relevant Documentation: Retreive Exported Candidates",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04"
-            ],
+            "Text": "Export a new candidate through One-Click Export",
+            "Links": [],
             "Values": []
           }
         ],
@@ -68,12 +118,12 @@
             "Values": []
           },
           {
-            "Text": "Demonstrate or explain which fields are consumed from 1CE and which are consumed from mailstubs, and how they are stored and presented to customers.",
+            "Text": "RSC-301-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Fields consumed through 1CE and from mailStubs are clearly documented in customer facing documentation. LI understands field usage for 1CE and mailstubs.",
+            "Text": "Map field sources and StubProfile fields (certification prerequisite)",
             "Links": [],
             "Values": []
           }
@@ -85,15 +135,13 @@
             "Values": []
           },
           {
-            "Text": "Export update test (Existing Candidate). Edit the ATS record for the candidate exported in the prior step. Export the same candidate to a different job.",
+            "Text": "RSC-301-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Confirm the candidate is not duplicated. 2. Confirm the candidate is associated to both jobs. Relevant Documentation: Retreive Exported Candidates",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04"
-            ],
+            "Text": "Export an existing candidate to a different job",
+            "Links": [],
             "Values": []
           }
         ],
@@ -104,16 +152,13 @@
             "Values": []
           },
           {
-            "Text": "Manual profile link test. 1.Add a candidate to the ATS which does not match a profile on LinkedIn by inventing a name and email address. 2. In the ATS Profile Plugin, manually link this new candidate to a complete LinkedIn profile.",
+            "Text": "RSC-302-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Refresh the page and ensure that the chosen LinkedIn profile is still displayed in the Profile Widget. 2. Ensure that the ATS candidate and LinkedIn profile mappings are updated. Relevant Documentation: Profile Plugin \u0026 Attach Person URN to Candidate",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin?view=li-lts-2026-04",
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04#attach-person-urn-to-candidate"
-            ],
+            "Text": "Manually link a candidate to a LinkedIn profile",
+            "Links": [],
             "Values": []
           }
         ],
@@ -124,15 +169,13 @@
             "Values": []
           },
           {
-            "Text": "Login / logout test Logout of LinkedIn, display the candidate Profile Widget.",
+            "Text": "RSC-302-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure Sign In to LinkedIn widget is displayed. Relevant Documentation: Profile Plugin",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin?view=li-lts-2026-04"
-            ],
+            "Text": "Verify the signed-out widget state",
+            "Links": [],
             "Values": []
           }
         ],
@@ -143,15 +186,13 @@
             "Values": []
           },
           {
-            "Text": "Login / logout test. Login to LinkedIn, display the candidate Profile Widget.",
+            "Text": "RSC-302-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure that scrolling in the Enhanced ATS Profile Widget fits within ATS UI. Relevant Documentation: Profile Plugin",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin?view=li-lts-2026-04"
-            ],
+            "Text": "Verify widget rendering and scrolling when signed in",
+            "Links": [],
             "Values": []
           }
         ],
@@ -162,15 +203,13 @@
             "Values": []
           },
           {
-            "Text": "inMail history test. 1. As a recruiter, send an InMail to a LinkedIn member (1st Connection) from a Recruiter account. 2. As a candidate, (recipient of InMail) reply to InMail. 3. In ATS, display the InMail conversation.",
+            "Text": "RSC-303-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Call the LinkedIn REST API, ensure the pagination and timeRange.start / timeRange.end is used to get all results retrieving a history of received and sent InMails from Recruiter. 2. Ensure that the InMail appears in the results. 3. Ensure both public and private inMail messages are displayed in ATS. Relevant Documentation: Retrieve InMail History",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-history?view=li-lts-2026-04"
-            ],
+            "Text": "Retrieve and display InMail history",
+            "Links": [],
             "Values": []
           }
         ],
@@ -181,15 +220,13 @@
             "Values": []
           },
           {
-            "Text": "Stub Profile Based On InMail Response Test. 1. As a recruiter, send an InMail to a LinkedIn member (1st connection not currently in ATS) on your team from a Recruiter. 2. As a candidate, (recipient of InMail) reply to InMail and share contact email. 3. Display new ATS candidate record. As a recruiter, send an InMail to same LinkedIn member. 4. As a candidate, (recipient of InMail) reply to InMail and share a different contact email and phone number. Display existing ATS candidate record has been updated. 5. Call the LinkedIn REST API, ensure the pagination is used to get all results of stub profiles. Ensure the values for all fields match, including: LinkedIn unique identifier, name, title, company, region, email address, and phone number (if applicable).",
+            "Text": "RSC-303-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Demonstrate the frequency to call stubProfile. If a new candidate - create a new record. (Ensure email fields can not be null, it should be valid email or empty when syncing candidate to LinkedIn). If an existing candidate - update an existing record if applicable. Relevant Documentation: Retrieve InMail Stub Profiles",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04"
-            ],
+            "Text": "Create and update candidates from InMail stub profiles",
+            "Links": [],
             "Values": []
           }
         ],
@@ -200,12 +237,12 @@
             "Values": []
           },
           {
-            "Text": "Retrieve Seat Holders API. To retrieve contract seat holders, use the below API GET https://api.linkedin.com/v2/seatsV2?q=attributes\u0026contracts=urn:li:contract:123456789\u0026start=0\u0026count=10",
+            "Text": "RSC-304-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "If you are implementing the above API, make sure to use the seatsV2 API along with pagination as explained above. Demonstrate the code snippet/screenshot of the codebase where above API is used to confirm that pagination and v2 api version is used.",
+            "Text": "Retrieve contract seatholders",
             "Links": [],
             "Values": []
           }
@@ -217,15 +254,13 @@
             "Values": []
           },
           {
-            "Text": "Retrieve Closed Candidate Profiles. 1. Demo where customers will see or be notified of (and have the option to delete) any LinkedIn member profiles that were deleted from LinkedIn after the customer. 2. 1-Click Exported the relevant profile. Optional: Provide customers the option to delete 1-Click Exported LinkedIn member data globally or at member level (for example, LinkedIn Profile URL).",
+            "Text": "RSC-305-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Ensure that the list of deleted profiles displayed to the customer matches the list retrieved from LinkedIn. Ensure that any profiles deleted by the customer are removed from the ATS. Ensure the push notification sent by LinkedIn for closed profile is processed by your ATS system. Relevant Documentation: Retrieving Closed Candidate Profiles",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04#retrieving-closed-candidate-profiles"
-            ],
+            "Text": "Retrieve closed candidate profiles",
+            "Links": [],
             "Values": []
           }
         ],
@@ -236,15 +271,13 @@
             "Values": []
           },
           {
-            "Text": "Push Notification Handling. Demo how to handle different types of push notification.",
+            "Text": "RSC-307-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Ensure different types of push notification can be handled in your code. ( RSC push notification type includes EXPORT_CANDIDATE_PROFILE, INTEGRATION_STATUS_CHANGE). Relevant Documentation: Receive Push Events",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events?view=li-lts-2026-04"
-            ],
+            "Text": "Handle RSC push notifications",
+            "Links": [],
             "Values": []
           }
         ],
@@ -255,14 +288,506 @@
             "Values": []
           },
           {
-            "Text": "API call with Query tunnelling.",
+            "Text": "RSC-307-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Ensure all the RSC API calls are using query tunnelling. Relevant Documentation: Query Tunnelling",
+            "Text": "Use query tunneling",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Exported candidates (One-Click export)",
+      "Anchor": "exported-candidates-one-click-export",
+      "SectionPath": [
+        "Exported candidates (One-Click export)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-301-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Export a new candidate through One-Click Export1. In LinkedIn Recruiter, One-Click Export a member profile to a job requisition mapped to your ATS.2. Show your callback URL receives an EXPORT_CANDIDATE_PROFILE push, then call GET rest/exportedCandidates?q=request\u0026requestId={id} (with the LinkedIn-Version header) within the 24-hour requestId expiry to retrieve the StubProfile. Demonstrate this through a log snippet from your ATS.3. Verify integrationContext correlates to the callback URL the push was sent to (callback URLs are unique per customer).4. Show the candidate appears in the ATS for the correct job requisition (through referenceEntityType or referenceEntityId), tagged with LinkedIn as the source.5. Open the Profile Widget for the candidate and confirm an exact profile match.6. Demonstrate that the personUrn is saved in your ATS through a DB snapshot, and that you can display this to the customer as well.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The candidate appears in the ATS as a candidate for the correct job, and exported candidates are tagged with LI as source in the ATS.\u2022 You understand which fields are ingested through 1CE and how they are displayed in the ATS UI.\u2022 The Profile Widget within the ATS shows an exact match.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-301-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map field sources and StubProfile fields (certification prerequisite)1. Produce a mapping of the exportedCandidates candidate StubProfile fields (profileUrl, firstName, lastName, currentEmployerNames, member person URN, location, headline) plus the envelope fields (notes, referenceEntityType = REQUISITION/PIPELINE, referenceEntityId, integrationContext, requestedAt, requester, source = LINKEDIN) \u2192 where each is stored or displayed in your ATS.2. Separately document which fields you consume from InMail mailStubs (stub-profile contact info) vs from 1CE, and how each is stored and presented to the customer.3. Explicitly specify which StubProfile fields are incorporated in your ATS (for example, Skills, Years of Experience).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Fields consumed through 1CE and from mailStubs are clearly documented in customer-facing documentation.\u2022 LinkedIn understands field usage for 1CE and mailStubs, including which StubProfile fields are and are not incorporated.\u2022 This mapping is a certification prerequisite used for verification by LinkedIn (code review).Related documentation: InMail stub profiles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-301-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Export an existing candidate to a different job1. Edit the ATS record for the candidate exported in RSC-301-001.2. From Recruiter, One-Click Export the same member to a different job.3. Show retrieval keys on the member person URN or your externalCandidateId so the record upserts rather than duplicating.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The candidate is not duplicated.\u2022 The candidate is associated to both jobs.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Exported candidates (One-Click export)",
+        "Related documentation"
+      ],
+      "Text": "Retrieve exported candidates",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Profile widget",
+      "Anchor": "profile-widget",
+      "SectionPath": [
+        "Profile widget"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-302-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manually link a candidate to a LinkedIn profile1. Add a candidate to the ATS that does not match a LinkedIn profile by inventing a name and email address.2. In the ATS Profile Widget or Plugin, manually link this new candidate to a complete LinkedIn profile (attach the person URN to the candidate).3. Refresh the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 After refresh, the chosen LinkedIn profile is still displayed in the Profile Widget.\u2022 The ATS candidate \u2194 LinkedIn profile mapping is updated (person URN attached).Related documentation: Attach a person URN to a candidate",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04#attach-person-urn-to-candidate"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-302-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the signed-out widget state1. Log out of LinkedIn.2. Display the candidate Profile Widget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The Sign In to LinkedIn widget is displayed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-302-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify widget rendering and scrolling when signed in1. Log in to LinkedIn.2. Display the candidate Profile Widget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Scrolling in the Enhanced ATS Profile Widget fits within the ATS UI.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-1",
+      "SectionPath": [
+        "Profile widget",
+        "Related documentation"
+      ],
+      "Text": "Profile Plugin",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "InMail and stub profiles",
+      "Anchor": "inmail-and-stub-profiles",
+      "SectionPath": [
+        "InMail and stub profiles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-303-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve and display InMail history1. As a recruiter, send an InMail to a LinkedIn member who is a 1st-degree connection (testing with a 1st connection avoids consuming InMail credits).2. As the member (InMail recipient), reply to the InMail.3. In the ATS, call the LinkedIn REST API using pagination and timeRange.start or timeRange.end to retrieve the full history of received and sent InMails from Recruiter.4. Display the InMail conversation in the ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Pagination and timeRange.start or timeRange.end are used to retrieve all results (full history of received and sent InMails from Recruiter).\u2022 The InMail appears in the results.\u2022 Both public and private InMail messages are displayed in the ATS. Private InMail content is returned only when the querying user is the sender; public InMails are not sender-filtered.Related documentation: Retrieve InMail History",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-history?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-303-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and update candidates from InMail stub profiles1. As a Recruiter user (user A), send an InMail to a 1st-degree member not currently in the ATS.2. As the member, reply and share a contact email; show a new ATS candidate record is created from the InMail Stub Profile.3. As a different Recruiter user (user B), send an InMail to the same member.4. As the member, reply and share a different email and phone number; show the existing ATS candidate record is updated (contact info updates even though the second InMail came from a different Recruiter user).5. Call the mailStubs REST API with pagination to retrieve all stub profiles; verify every field matches: LinkedIn unique identifier, name, title, company, region, email address, and phone number (if applicable).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Demonstrate the frequency at which you call mailStubs. A new member creates a new record; an existing member updates the existing record (no duplicate) \u2014 including when the second InMail originates from a different Recruiter user.\u2022 All stub-profile field values match (LinkedIn unique identifier, name, title, company, region, email, phone).\u2022 Pagination is used to retrieve all stub profiles.Related documentation: InMail stub profiles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Seatholders",
+      "Anchor": "seatholders",
+      "SectionPath": [
+        "Seatholders"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-304-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve contract seatholders1. Retrieve contract seatholders through GET rest/seatsV2?q=attributes\u0026contracts=urn:li:contract:{id}\u0026start=0\u0026count=10 with the LinkedIn-Version header (seatsV2 with pagination); filter states=ACTIVE as recommended.2. Match ATS users to seatholders by person URN \u2014 the returned seatId field is the Seat ID (referenced as a Seat URN, for example, urn:li:seat:123456789, in the other Prospect-Interaction APIs).3. Provide a code snippet or screenshot of the codebase where this API is called, confirming pagination and the versioned rest/ endpoint with the LinkedIn-Version header are used (this is a back-end or code-review demonstration, not a front-end screen).4. Clarify the RSC vs CRMC scope for this call.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 If you implement seatholder retrieval, you use the versioned seatsV2 API (rest/seatsV2 with the LinkedIn-Version header) with pagination (start and count). A request without pagination parameters returns only 10 records by default.\u2022 You demonstrate through code snippet or screenshot that pagination and the versioned rest/ endpoint with the LinkedIn-Version header are used.\u2022 Person URN is used to match ATS users to Recruiter seatholders.Related documentation: Retrieve Recruiter contract seatholders",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Closed candidate profiles",
+      "Anchor": "closed-candidate-profiles",
+      "SectionPath": [
+        "Closed candidate profiles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-305-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve closed candidate profiles1. For certification, use your own stub or test data to initiate and demonstrate the closed (purged) candidate handling workflow.2. Periodically (at least once every 30 days) call GET rest/atsPurgedExportedCandidates?q=criteria\u0026exportType=ONE_CLICK_EXPORT\u0026timeRange=(start:..,end:..) with pagination.3. Process the returned closed candidate person URNs and reconcile them against your 1CE-exported records.4. Demo where customers are shown or notified of closed profiles and have the option to delete them (optionally globally or per member, for example, by LinkedIn Profile URL).5. If you cannot remove the closed candidate profile from your ATS, delete the LinkedIn-specific fields from your ATS DB such as personURN and LinkedIn Profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The list of deleted profiles displayed to the customer matches the list retrieved from LinkedIn.\u2022 Any profiles the customer deletes are removed from the ATS.\u2022 LinkedIn-specific fields such as personURN and LinkedIn Profile URL are not saved for a closed candidate.\u2022 Legal obligation: a deleted account can be reactivated within 21 days; after 21 days it is purged into this endpoint. You must query it at least once every 30 days and notify customers they may need to delete data they no longer have a legal basis to process.Related documentation: Retrieve closed candidate profiles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04#retrieving-closed-candidate-profiles"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant evaluation",
+      "Anchor": "applicant-evaluation",
+      "SectionPath": [
+        "Applicant evaluation"
+      ],
+      "Text": "Application Evaluations are generated on demand by LinkedIn Hiring Assistant (LiHA) and\nretrieved into the ATS (through the EXPORT_APPLICATION_EVALUATION push and the\n/exportedApplicationEvaluation endpoint), so they belong with the other Module 3 retrieval\nsurfaces. These checks were previously numbered RSC-2-Eval-* in the consolidated Module 2\nworkbook (where the Applicant Evaluation entity was originally defined); they now follow the\nstandard RSC-306-NNN section scheme.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Applicant evaluation",
+      "Anchor": "applicant-evaluation",
+      "SectionPath": [
+        "Applicant evaluation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-306-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map application evaluation fields to ATS storage (certification prerequisite)1. Produce a mapping of the ApplicationEvaluation response fields (summary, evaluatedAt, evaluationClassification, requiredCriteriaExplanations, preferredCriteriaExplanations) to where they are stored or displayed in the ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A mapping of the ApplicationEvaluation response fields (summary, evaluatedAt, evaluationClassification, requiredCriteriaExplanations, preferredCriteriaExplanations) to where they are stored or displayed in the ATS (application custom field or note) is provided. This mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-306-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Store atsIntegration configuration settings1. Show CALLBACK_URL is set.2. [Connected Projects] Show EVAL_CALLBACK_URL is set and alive; show the ATS can receive and handle an EXPORT_APPLICATION_EVALUATION push.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Demonstrate that the atsIntegration configuration setting for CALLBACK_URL is set.\u2022 [For Connected Projects] Demonstrate the atsIntegration configuration setting for EVAL_CALLBACK_URL is set and the URL is alive. Ensure the ATS can receive and handle a Push Notification with type EXPORT_APPLICATION_EVALUATION whenever a LinkedIn Hiring Assistant Evaluation is made available.Related documentation: Application evaluation customer configuration",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-306-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve application evaluations1. As a recruiter with a LiHA license, trigger an application evaluation; confirm the EXPORT_APPLICATION_EVALUATION push is sent to the ATS.2. Retrieve the evaluation through GET rest/exportedApplicationEvaluation?q=request\u0026requestId={requestId} (with the LinkedIn-Version header), using the requestId from the push notification (it expires in 24 hours).3. Process and store the evaluation (custom field or note).4. Display and parse the response: summary, evaluatedAt, evaluationClassification (filter by TOP_FIT or MIGHT_BE_FIT or MIGHT_NOT_BE_FIT), and criteria explanations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure a recruiter user (with a LiHA license) can trigger an application evaluation, and the EXPORT_APPLICATION_EVALUATION push notification is successfully sent to the ATS.\u2022 The ATS retrieves the evaluation from rest/exportedApplicationEvaluation using the requestId from the push notification, processes it, and stores it correctly in the ATS as an application custom field or note.\u2022 Demonstrate how the Application Evaluation details are displayed and utilized in the ATS (for a specific candidate or application). Ensure the ATS is able to parse the ApplicationEvaluation response and display the following information:\u00A0\u00A0\u2022 summary\u00A0\u00A0\u2022 evaluatedAt (evaluation creation time)\u00A0\u00A0\u2022 evaluationClassification: The ATS should support filtering applicants based on evaluationClassification values TOP_FIT, MIGHT_BE_FIT, MIGHT_NOT_BE_FIT (expected to show \u0022TOP_FIT(LI)\u0022, \u0022MIGHT_BE_FIT(LI)\u0022, \u0022MIGHT_NOT_BE_FIT(LI)\u0022 as filtering categories)\u00A0\u00A0\u2022 Criteria from requiredCriteriaExplanations and preferredCriteriaExplanationsNote: The ATS must not display its own numeric score or rating against LiHA evaluations. If a score is required in the system, alignment with the LinkedIn team is required.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-306-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display applicationEvaluation in profileWidget1. As a recruiter logged into a Recruiter contract, show the applicationEvaluation in the RSC profileWidget under the applicantEvaluation tab.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When a recruiter logs into a LinkedIn Recruiter contract, the applicationEvaluation is displayed in the RSC profileWidget (under the applicantEvaluation tab).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-306-005Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify application evaluation ID correlation1. Show each received evaluation is correlated back to the original atsJobApplicationId you sent (no fabricated IDs, no prefix or suffix).2. Share the code, signature, or payload showing the correlation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application Evaluations are generated by LinkedIn (LiHA) and are not sent by you, so you do not supply an evaluation ID. Fidelity here means the ATS must correlate each received evaluation to the correct application using the same atsJobApplicationId it originally sent to LinkedIn \u2014 with no fabricated IDs and no added prefix or suffix on that application ID.Verification (code review): Calling your own internal API is out of scope for RSC API verification. You must instead share a code block or API signature or sample API payload showing how each evaluation is correlated back to the original atsJobApplicationId, so LinkedIn can confirm the mapping through code review.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-306-006Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify application evaluation referential integrity1. For a sample of Application Evaluations generated by LinkedIn LiHA and retrieved into the ATS, show that each evaluation is correlated to the correct, previously-synced application using the original atsJobApplicationId, as in RSC-306-005.2. Share the ATS code, API signature, or sample payload showing the correlation and how missing or unresolvable application references are flagged. This is a code-review demonstration; do not create or sync evaluation records to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Application Evaluations are generated by LinkedIn LiHA and retrieved by the ATS; the partner does not send evaluations to LinkedIn or supply an evaluation ID.\u2022 Each evaluation is correlated using the original atsJobApplicationId sent to LinkedIn, with no fabricated IDs or added prefixes or suffixes.\u2022 If an application reference cannot be resolved, the ATS flags a correlation error and does not attach the evaluation to an unrelated application.This Functional correlation check aligns with RSC-306-005 and is verified through the shared code or payload.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-2",
+      "SectionPath": [
+        "Applicant evaluation",
+        "Related documentation"
+      ],
+      "Text": "Application evaluation overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "These test cases apply across all retrieval surfaces in Module 3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-307-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use query tunneling1. Historical sync: batch requests (batching is required).2. Regular sync: prefer batching, clubbing the same API calls for one customer together.3. For requests that exceed URL-length limits or are otherwise non-conformant (for example, a GET with too many query parameters), show that they are issued using query tunneling.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Historical sync uses batched requests.\u2022 Regular sync prefers batching, clubbing same-type API calls per customer.\u2022 Oversized or non-conformant requests use query tunneling.Related documentation: Query Tunneling",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-307-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle RSC push notifications1. Trigger each RSC push notification type and show your endpoint receives it, including EXPORT_CANDIDATE_PROFILE and INTEGRATION_STATUS_CHANGE.2. Show how your code branches on the notification type and processes each one.3. Show that an unrecognized notification type is handled without failing the endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Each RSC push notification type is handled in your code. RSC push notification types include EXPORT_CANDIDATE_PROFILE and INTEGRATION_STATUS_CHANGE.\u2022 Processing is routed correctly for each type, and an unknown type doesn\u2019t break the callback endpoint.Related documentation: Receive Push Events",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events?view=li-lts-2026-04"
             ],
             "Values": []
           }

@@ -31,7 +31,7 @@
       "SectionPath": [
         "Overview"
       ],
-      "Text": "Upon completing development, to ensure official certification of LinkedIn Recruiter System Connect, please review each of the test cases mentioned for every Development Module.",
+      "Text": "Upon completing development, to ensure official certification of LinkedIn Recruiter System Connect, review each of the test cases in every certification module.",
       "Headers": [],
       "Rows": []
     },
@@ -59,10 +59,10 @@
     },
     {
       "Kind": "text",
-      "Section": "Certification Process",
+      "Section": "Certification process",
       "Anchor": "certification-process",
       "SectionPath": [
-        "Certification Process"
+        "Certification process"
       ],
       "Text": "Similar to development modules, we have defined 7 certification modules. These describe all the test cases that have to be demoed to LinkedIn for a partner or customer to get certified.",
       "Headers": [],
@@ -70,10 +70,10 @@
     },
     {
       "Kind": "text",
-      "Section": "Certification Process",
+      "Section": "Certification process",
       "Anchor": "certification-process",
       "SectionPath": [
-        "Certification Process"
+        "Certification process"
       ],
       "Text": "Module 1 Certification - Configure Customer Applications and ATS Integrations\nModule 2 Certification - Sync Data from ATS to LinkedIn\nModule 3 Certification - Retrieve Data from LinkedIn\nModule 4 Certification - Sync ACLs\nModule 5 Certification - Data Deletion\nModule 6 Certification - Other\nModule 7 Certification - Job Posting to Job Requisition Migration",
       "Headers": [],
@@ -81,10 +81,10 @@
     },
     {
       "Kind": "text",
-      "Section": "Certification Process",
+      "Section": "Certification process",
       "Anchor": "certification-process",
       "SectionPath": [
-        "Certification Process"
+        "Certification process"
       ],
       "Text": "Module 1 and Module 7 Certification demos are applicable for partners\u0027 ATS only. Certification demo for remaining modules is applicable for both partners and customers.",
       "Headers": [],
@@ -92,10 +92,226 @@
     },
     {
       "Kind": "text",
-      "Section": "Certification Process",
-      "Anchor": "certification-process",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
       "SectionPath": [
-        "Certification Process"
+        "Rule ID scheme"
+      ],
+      "Text": "Each test case in Modules 1 through 6 has a unique rule ID that follows this scheme:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "RSC-MSS-NNN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "M \u2014 the certification module number\nSS \u2014 the section number within the module, zero-padded to two digits, such as 01 or 02\nNNN \u2014 a sequential number within that section, zero-padded to three digits, such as 001 or 002",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "Within a section, test cases are ordered functional, then quantitative, then qualitative, then charter. The check type appears below the rule ID in each test case rather than encoded in the rule ID. Each module page lists its own sections in a rule ID mapping table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID scheme",
+      "Anchor": "rule-id-scheme",
+      "SectionPath": [
+        "Rule ID scheme"
+      ],
+      "Text": "Module 7 uses the same three-column table format but a different rule ID scheme that encodes the check type. Refer to Module 7 certification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to read each test case",
+      "Anchor": "how-to-read-each-test-case",
+      "SectionPath": [
+        "How to read each test case"
+      ],
+      "Text": "Run each test case yourself, then demonstrate it to a LinkedIn reviewer. Test cases in Modules 1 through 6 include the following columns:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "How to read each test case",
+      "Anchor": "how-to-read-each-test-case",
+      "SectionPath": [
+        "How to read each test case"
+      ],
+      "Text": "",
+      "Headers": [
+        "Column",
+        "What it is"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Rule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique rule ID and the check type. Refer to Check types.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification?view=li-lts-2026-04#check-types"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Execution steps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A short scenario heading followed by the ordered actions you perform to demonstrate the behavior. Any conditions that apply to the test appear before the steps.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Expected result",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What must be true after the steps run.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to read each test case",
+      "Anchor": "how-to-read-each-test-case",
+      "SectionPath": [
+        "How to read each test case"
+      ],
+      "Text": "References shared by multiple test cases appear under Related documentation headings for the module or section. Test-specific references appear in the expected result cells.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check types",
+      "Anchor": "check-types",
+      "SectionPath": [
+        "Check types"
+      ],
+      "Text": "Modules 1 through 6 use the subset of check types that applies to each module. The module page states which ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Check types",
+      "Anchor": "check-types",
+      "SectionPath": [
+        "Check types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Check type",
+        "Meaning"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A test of your integration\u0027s behavior that you demonstrate to LinkedIn\u2014create, update, sync, configuration, and authentication flows\u2014and how they appear in LinkedIn Recruiter, plus any required deliverable, such as a data-model mapping or written approval from business development.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An entity count-parity check between your test tenant and LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A data-quality check against the beta-exit data quality thresholds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A re-run of the applicable functional, quantitative, and qualitative checks on charter customer tenants, as a beta gate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A trust and safety or legal review that LinkedIn must sign off on before certification.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Check types",
+      "Anchor": "check-types",
+      "SectionPath": [
+        "Check types"
       ],
       "Text": "Note",
       "Headers": [],
@@ -103,12 +319,12 @@
     },
     {
       "Kind": "text",
-      "Section": "Certification Process",
-      "Anchor": "certification-process",
+      "Section": "Check types",
+      "Anchor": "check-types",
       "SectionPath": [
-        "Certification Process"
+        "Check types"
       ],
-      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development \u0026 testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
+      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development and testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
       "Headers": [],
       "Rows": []
     }

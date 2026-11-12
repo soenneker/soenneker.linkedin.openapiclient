@@ -41,6 +41,12 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module7",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
@@ -60,7 +66,7 @@
       "Section": "RSC Release Notes",
       "Anchor": "rsc-release-notes",
       "SectionPath": [],
-      "Text": "This page documents all RSC API changes by version, plus documentation updates that don\u0027t map to a specific API version. Each version section uses the same sub-heading pattern (New fields, New endpoints, Renamed resources, Data Deletion, Documentation updates, Version summary) so changes are easy to scan.",
+      "Text": "This page documents RSC API changes by version and documentation updates that don\u0027t map to a specific API version. Each update has its own entry. API version identifiers are not documentation publication dates.",
       "Headers": [],
       "Rows": []
     },
@@ -132,7 +138,7 @@
             "Values": []
           },
           {
-            "Text": "exportedApplicationEvaluations",
+            "Text": "exportedApplicationEvaluation",
             "Links": [],
             "Values": []
           },
@@ -626,12 +632,56 @@
     },
     {
       "Kind": "text",
+      "Section": "RSC certification test case updates",
+      "Anchor": "rsc-certification-test-case-updates",
+      "SectionPath": [
+        "RSC certification test case updates"
+      ],
+      "Text": "Updated the test cases in certification Modules 1 through 6. Each test case includes a hierarchical rule ID, execution steps, and a check type. Each module also includes a table mapping previous rule IDs to their current equivalents.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC certification test case updates",
+      "Anchor": "rsc-certification-test-case-updates",
+      "SectionPath": [
+        "RSC certification test case updates"
+      ],
+      "Text": "Refer to Module 1, Module 2, Module 3, Module 4, Module 5, and Module 6.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "Exported candidate date field documentation correction",
       "Anchor": "exported-candidate-date-field-documentation-correction",
       "SectionPath": [
         "Exported candidate date field documentation correction"
       ],
       "Text": "Corrected the StubProfile position and education schemas to reflect existing endpoint-specific date field names. This is a documentation correction, not an API behavior change. Integrations already using startedOn and endedOn on the versioned endpoint need no date-field mapping changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job posting to job requisition migration certification",
+      "Anchor": "job-posting-to-job-requisition-migration-certification",
+      "SectionPath": [
+        "Job posting to job requisition migration certification"
+      ],
+      "Text": "Added Module 7 certification test cases for partners migrating from job postings to job requisitions, covering migration readiness and cutover, job requisition and job requisition stage sync, ID parity and deduplication, application re-linkage, One Click Export continuity, ACL migration, and cross-cutting migration checks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job posting to job requisition migration certification",
+      "Anchor": "job-posting-to-job-requisition-migration-certification",
+      "SectionPath": [
+        "Job posting to job requisition migration certification"
+      ],
+      "Text": "Refer to Module 7 Certification",
       "Headers": [],
       "Rows": []
     },
@@ -666,6 +716,94 @@
         "Applications resource renamed"
       ],
       "Text": "atsApplications renamed to applications:\n\nResource path changed from rest/atsApplications to rest/applications.\nSupported methods: batch_update and batch_delete.\nFor sync request examples, refer to Sync Applications.\nFor delete request examples, refer to Delete Applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload and sync attachments throttle limits",
+      "Anchor": "upload-and-sync-attachments-throttle-limits",
+      "SectionPath": [
+        "Upload and sync attachments throttle limits"
+      ],
+      "Text": "Updated the throttle limit for v2/hireMediaUrl at 1,000,000 requests per day.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload and sync attachments throttle limits",
+      "Anchor": "upload-and-sync-attachments-throttle-limits",
+      "SectionPath": [
+        "Upload and sync attachments throttle limits"
+      ],
+      "Text": "Refer to Upload and Sync Attachments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload and sync attachments DOCX support",
+      "Anchor": "upload-and-sync-attachments-docx-support",
+      "SectionPath": [
+        "Upload and sync attachments DOCX support"
+      ],
+      "Text": "Added DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document) as a supported content type for resume upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload and sync attachments DOCX support",
+      "Anchor": "upload-and-sync-attachments-docx-support",
+      "SectionPath": [
+        "Upload and sync attachments DOCX support"
+      ],
+      "Text": "Refer to Upload and Sync Attachments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC 1.0 and RSC\u002B overview updates",
+      "Anchor": "rsc-10-and-rsc-overview-updates",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B overview updates"
+      ],
+      "Text": "Added RSC 1.0 vs RSC\u002B feature comparison table and Connected Projects section.\nAdded note that existing RSC partners need an amended API agreement to enable RSC\u002B features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC 1.0 and RSC\u002B overview updates",
+      "Anchor": "rsc-10-and-rsc-overview-updates",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B overview updates"
+      ],
+      "Text": "Refer to RSC Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC data quality requirements",
+      "Anchor": "rsc-data-quality-requirements",
+      "SectionPath": [
+        "RSC data quality requirements"
+      ],
+      "Text": "Added new page documenting data quality thresholds that partners must meet before RSC certification and GA. Covers applicant evaluation, sourcing and intake, and ACL completeness metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC data quality requirements",
+      "Anchor": "rsc-data-quality-requirements",
+      "SectionPath": [
+        "RSC data quality requirements"
+      ],
+      "Text": "Refer to RSC data quality requirements",
       "Headers": [],
       "Rows": []
     },
@@ -725,19 +863,7 @@
         "Version 202603",
         "New fields"
       ],
-      "Text": "vanityIdentifier added to jobRequisitions (LinkedIn-Version: 202603):\n\nNew optional field that provides a human-readable, customer-facing identifier for a job requisition (for example, Req ID). This is distinct from the canonical externalJobRequisitionId used internally.\n\nExpand table\n\n\nField\nType\nRequired\nDescription\n\n\n\n\nvanityIdentifier\nString\nOptional\nCustomer-facing display identifier for the job requisition (for example, Req ID).\n\n\n\nSee Sync Job Requisitions",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "text",
-      "Section": "Documentation updates",
-      "Anchor": "documentation-updates",
-      "SectionPath": [
-        "Version 202603",
-        "Documentation updates"
-      ],
-      "Text": "Upload and Sync Attachments throttle limits: Updated the throttle limit for v2/hireMediaUrl at 1,000,000 requests per day.\nSee Upload and Sync Attachments\n\nUpload and Sync Attachments: Added DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document) as a supported content type for resume upload.\nSee Upload and Sync Attachments\n\nRSC 1.0 and RSC\u002B overview updates:\n\nAdded RSC 1.0 vs RSC\u002B feature comparison table and Connected Projects section.\nAdded note that existing RSC partners need an amended API agreement to enable RSC\u002B features.\n\nSee RSC Overview\n\nRSC data quality requirements: Added new page documenting data quality thresholds that partners must meet before RSC certification and GA. Covers applicant evaluation, sourcing and intake, and ACL completeness metrics.\nSee RSC data quality requirements\n\nRemoved Recommended Matches and Unified Search from API docs: All references to Recommended Matches and Unified Search are removed from Recruiter System Connect documentation. The dedicated pages, TOC entries, integration types table rows, and widget URL migration guide entries for these features are no longer available.\n\nJob posting to job requisition migration certification: Added Module 7 certification test cases for partners migrating from job postings to job requisitions, covering migration readiness and cutover, job requisition and job requisition stage sync, ID parity and deduplication, application re-linkage, One Click Export continuity, ACL migration, and cross-cutting migration checks.\nRefer to Module 7 Certification",
+      "Text": "vanityIdentifier added to jobRequisitions (LinkedIn-Version: 202603):\n\nNew optional field that provides a human-readable, customer-facing identifier for a job requisition (for example, Req ID). This is distinct from the canonical externalJobRequisitionId used internally.\n\nExpand table\n\n\nField\nType\nRequired\nDescription\n\n\n\n\nvanityIdentifier\nString\nOptional\nCustomer-facing display identifier for the job requisition (for example, Req ID).\n\n\n\nRefer to Sync Job Requisitions",
       "Headers": [],
       "Rows": []
     },
@@ -782,7 +908,18 @@
       "SectionPath": [
         "Version 202602"
       ],
-      "Text": "candidates renamed:\n\ndataProvider removed\nSupported methods: batch_update, batch_get, batch_delete\nResource renamed from atsCandidates to candidates; three fields renamed:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsCandidates\nrest/candidates\n\n\nKey param\natsCandidateId\nexternalCandidateId\n\n\nBody field\natsCreatedAt\nexternalCreatedAt\n\n\nBody field\natsLastModifiedAt\nexternalLastModifiedAt\n\n\nKey param\ndataProvider\nRemoved\n\n\n\n\nintegrations and integrationConfigurations renamed:\n\nNo field changes\nintegrations supported methods: batch_partial_update, batch_get, finder\nintegrationConfigurations supported methods: batch_update, batch_get\nResource names updated:\n\nExpand table\n\n\nBefore\nAfter\n\n\n\n\nv2/atsIntegrations\nrest/integrations\n\n\nv2/atsIntegrationConfigurations\nrest/integrationConfigurations\n\n\n\nSee Customer Configuration\n\nData Deletion:\n\nAdded DELETE /rest/candidates, replacing DELETE /v2/atsCandidates\nRenamed parameter atsCandidateId to externalCandidateId\n\nSee Data Deletion",
+      "Text": "candidates renamed:\n\ndataProvider removed\nSupported methods: batch_update, batch_get, batch_delete\nResource renamed from atsCandidates to candidates; three fields renamed:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsCandidates\nrest/candidates\n\n\nKey param\natsCandidateId\nexternalCandidateId\n\n\nBody field\natsCreatedAt\nexternalCreatedAt\n\n\nBody field\natsLastModifiedAt\nexternalLastModifiedAt\n\n\nKey param\ndataProvider\nRemoved\n\n\n\n\nintegrations and integrationConfigurations renamed:\n\nNo field changes\nintegrations supported methods: batch_partial_update, batch_get, finder\nintegrationConfigurations supported methods: batch_update, batch_get\nResource names updated:\n\nExpand table\n\n\nBefore\nAfter\n\n\n\n\nv2/atsIntegrations\nrest/integrations\n\n\nv2/atsIntegrationConfigurations\nrest/integrationConfigurations\n\n\n\nRefer to Customer Configuration\n\nData Deletion:\n\nAdded DELETE /rest/candidates, replacing DELETE /v2/atsCandidates\nRenamed parameter atsCandidateId to externalCandidateId\n\nRefer to Data Deletion",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Matches and Unified Search documentation removal",
+      "Anchor": "recommended-matches-and-unified-search-documentation-removal",
+      "SectionPath": [
+        "Recommended Matches and Unified Search documentation removal"
+      ],
+      "Text": "All references to Recommended Matches and Unified Search are removed from Recruiter System Connect documentation. The dedicated pages, TOC entries, integration types table rows, and widget URL migration guide entries for these features are no longer available.",
       "Headers": [],
       "Rows": []
     },
@@ -793,7 +930,7 @@
       "SectionPath": [
         "Version 202512"
       ],
-      "Text": "seatsV2 externalized:\n\nPath updated from v2/seatsV2 to rest/seatsV2\nSupported methods: finder\nTwo response fields changed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nSeat ID\nid\nseatId\n\n\nCreation audit\ncreated.time\ncreatedAt.actor \u002B createdAt.time\n\n\n\nSee Recruiter Seatholders\n\ncandidateNotes and applicationNotes renamed:\n\nResource path changed from v2/atsCandidates/{id}/notes to rest/candidateNotes\nResource path changed from v2/atsApplications/{id}/notes to rest/applicationNotes\ndataProvider removed\nSupported methods: batch_update, batch_delete\nFields renamed:\n\nExpand table\n\n\nField\ncandidateNotes Before \u2192 After\napplicationNotes Before \u2192 After\n\n\n\n\nPath\nv2/atsCandidates/{id}.../notes \u2192 rest/candidateNotes\nv2/atsApplications/{id}.../notes \u2192 rest/applicationNotes\n\n\nCandidate param\natsCandidateId \u2192 externalCandidateId\natsJobApplicationId \u2192 externalJobApplicationId\n\n\nNote param\nids \u2192 externalNoteId\nids \u2192 externalNoteId\n\n\nTimestamp\natsCreatedAt \u2192 externalCreatedAt\n\u2014\n\n\nAdded\nexternalLastModifiedAt\n\u2014\n\n\nRemoved\ndataProvider\ndataProvider\n\n\n\nSee Sync Candidate Notes\n\nData Deletion:\n\nAdded DELETE /rest/candidateNotes and DELETE /rest/applicationNotes\n\nSee Data Deletion",
+      "Text": "seatsV2 externalized:\n\nPath updated from v2/seatsV2 to rest/seatsV2\nSupported methods: finder\nTwo response fields changed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nSeat ID\nid\nseatId\n\n\nCreation audit\ncreated.time\ncreatedAt.actor \u002B createdAt.time\n\n\n\nRefer to Recruiter Seatholders\n\ncandidateNotes and applicationNotes renamed:\n\nResource path changed from v2/atsCandidates/{id}/notes to rest/candidateNotes\nResource path changed from v2/atsApplications/{id}/notes to rest/applicationNotes\ndataProvider removed\nSupported methods: batch_update, batch_delete\nFields renamed:\n\nExpand table\n\n\nField\ncandidateNotes Before \u2192 After\napplicationNotes Before \u2192 After\n\n\n\n\nPath\nv2/atsCandidates/{id}.../notes \u2192 rest/candidateNotes\nv2/atsApplications/{id}.../notes \u2192 rest/applicationNotes\n\n\nCandidate param\natsCandidateId \u2192 externalCandidateId\natsJobApplicationId \u2192 externalJobApplicationId\n\n\nNote param\nids \u2192 externalNoteId\nids \u2192 externalNoteId\n\n\nTimestamp\natsCreatedAt \u2192 externalCreatedAt\n\u2014\n\n\nAdded\nexternalLastModifiedAt\n\u2014\n\n\nRemoved\ndataProvider\ndataProvider\n\n\n\nRefer to Sync Candidate Notes\n\nData Deletion:\n\nAdded DELETE /rest/candidateNotes and DELETE /rest/applicationNotes\n\nRefer to Data Deletion",
       "Headers": [],
       "Rows": []
     },
@@ -804,7 +941,7 @@
       "SectionPath": [
         "Enhanced one-click export field descriptions"
       ],
-      "Text": "One-Click Export context:\n\nAdded description of Enhanced 1CE fields (email addresses, years of experience, skills, work positions, education history). See StubProfile",
+      "Text": "One-Click Export context:\n\nAdded description of Enhanced 1CE fields (email addresses, years of experience, skills, work positions, education history). Refer to StubProfile",
       "Headers": [],
       "Rows": []
     },
@@ -815,7 +952,7 @@
       "SectionPath": [
         "Version 202511"
       ],
-      "Text": "entityAcls and entityAclAssignees renamed:\n\nResources renamed from atsEntityAcls and atsEntityAclAssignees, respectively\nSupported methods: batch_update, batch_delete, finder\nThree key params renamed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nPath\nv2/atsEntityAcls / v2/atsEntityAclAssignees\nrest/entityAcls / rest/entityAclAssignees\n\n\nKey param\natsEntityAclId\nentityAclId\n\n\nKey param\natsEntityId\nentityId\n\n\nKey param\natsEntityType\nentityType\n\n\n\nSee Sync ACLs",
+      "Text": "entityAcls and entityAclAssignees renamed:\n\nResources renamed from atsEntityAcls and atsEntityAclAssignees, respectively\nSupported methods: batch_update, batch_delete, finder\nThree key params renamed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nPath\nv2/atsEntityAcls / v2/atsEntityAclAssignees\nrest/entityAcls / rest/entityAclAssignees\n\n\nKey param\natsEntityAclId\nentityAclId\n\n\nKey param\natsEntityId\nentityId\n\n\nKey param\natsEntityType\nentityType\n\n\n\nRefer to Sync ACLs",
       "Headers": [],
       "Rows": []
     },
@@ -826,7 +963,7 @@
       "SectionPath": [
         "Application evaluation and migration guide updates"
       ],
-      "Text": "Application Evaluation enhancements:\n\nAdded evaluationProfileURL field - link to candidate\u0027s Recruiter profile page for the evaluation\nUpdated criteriaClassification enum value from Meet to Meets\nSee Export Application Evaluation\n\n\nRSC Migration Guide updates:\n\nAdded hiredCount field to /jobRequisitions API\nAdded compensation field (new in Job Requisitions, not available in old API)\nClarified accessRestricted field mapping from extension schema\nUpdated field mapping for requisitionType and owners fields\nClarified job requisition stage purpose for application progression\nSee RSC Migration Guide",
+      "Text": "Application Evaluation enhancements:\n\nAdded evaluationProfileURL field - link to candidate\u0027s Recruiter profile page for the evaluation\nUpdated criteriaClassification enum value from Meet to Meets\nRefer to Export Application Evaluation\n\n\nRSC Migration Guide updates:\n\nAdded hiredCount field to /jobRequisitions API\nAdded compensation field (new in Job Requisitions, not available in old API)\nClarified accessRestricted field mapping from extension schema\nUpdated field mapping for requisitionType and owners fields\nClarified job requisition stage purpose for application progression\nRefer to RSC Migration Guide",
       "Headers": [],
       "Rows": []
     },
@@ -837,7 +974,7 @@
       "SectionPath": [
         "Version 202510"
       ],
-      "Text": "mailStubs externalized:\n\nSupported methods: finder\nPath updated from v2/mailStubs to rest/mailStubs\nlocation response field type changed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nPath\nv2/mailStubs\nrest/mailStubs\n\n\nlocation type\nstring\nprofileLocation object (locationName, countryCode)\n\n\n\nSee Retrieve Exported Candidates\n\nData Deletion:\n\nAdded DELETE /rest/attachments\nSupports deleting synced resume attachments\n\nSee Data Deletion",
+      "Text": "mailStubs externalized:\n\nSupported methods: finder\nPath updated from v2/mailStubs to rest/mailStubs\nlocation response field type changed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nPath\nv2/mailStubs\nrest/mailStubs\n\n\nlocation type\nstring\nprofileLocation object (locationName, countryCode)\n\n\n\nRefer to Retrieve Exported Candidates\n\nData Deletion:\n\nAdded DELETE /rest/attachments\nSupports deleting synced resume attachments\n\nRefer to Data Deletion",
       "Headers": [],
       "Rows": []
     },
@@ -848,7 +985,7 @@
       "SectionPath": [
         "Application secret management and evaluation updates"
       ],
-      "Text": "New Child Application Secret Management APIs:\n\nAdded support for rotating and deleting secrets for parent, child, and standalone applications\nPartners can now maintain up to two active secrets per application, enabling zero-downtime credential updates\nSee Application Secret Management\n\n\nApplication Evaluation documentation updates:\n\nAdded evaluationClassification field to indicate candidate fit (TOP_FIT, MIGHT_BE_FIT, MIGHT_NOT_BE_FIT, UNKNOWN)\nUpdated criteriaClassification enum values from MATCH to MEET/DOES_NOT_MEET\nSee Application Evaluation Overview",
+      "Text": "New Child Application Secret Management APIs:\n\nAdded support for rotating and deleting secrets for parent, child, and standalone applications\nPartners can now maintain up to two active secrets per application, enabling zero-downtime credential updates\nRefer to Application Secret Management\n\n\nApplication Evaluation documentation updates:\n\nAdded evaluationClassification field to indicate candidate fit (TOP_FIT, MIGHT_BE_FIT, MIGHT_NOT_BE_FIT, UNKNOWN)\nUpdated criteriaClassification enum values from MATCH to MEET/DOES_NOT_MEET\nRefer to Application Evaluation Overview",
       "Headers": [],
       "Rows": []
     },
@@ -859,7 +996,7 @@
       "SectionPath": [
         "Application evaluation push notifications"
       ],
-      "Text": "Application Evaluation push notifications:\n\nNew webhook-based push notifications for application evaluations\nPartners can now receive real-time updates when recruiters evaluate candidates\nSee Receive Push Notifications",
+      "Text": "Application Evaluation push notifications:\n\nNew webhook-based push notifications for application evaluations\nPartners can now receive real-time updates when recruiters evaluate candidates\nRefer to Receive Push Notifications",
       "Headers": [],
       "Rows": []
     },
@@ -870,7 +1007,7 @@
       "SectionPath": [
         "Version 202508.02"
       ],
-      "Text": "applicationInterviewFeedbacks renamed:\n\ndataProvider removed from key params\nSupported methods: batch_update, batch_delete\nResource path changed from v2/atsApplications/{id}/interviewFeedback to rest/applicationInterviewFeedbacks:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications/{id}.../interviewFeedback?ids={id}\nrest/applicationInterviewFeedbacks\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\njobApplicationId, interviewFeedbackId, integrationContext\n\n\n\nSee Sync Application Interview Feedback",
+      "Text": "applicationInterviewFeedbacks renamed:\n\ndataProvider removed from key params\nSupported methods: batch_update, batch_delete\nResource path changed from v2/atsApplications/{id}/interviewFeedback to rest/applicationInterviewFeedbacks:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications/{id}.../interviewFeedback?ids={id}\nrest/applicationInterviewFeedbacks\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\njobApplicationId, interviewFeedbackId, integrationContext\n\n\n\nRefer to Sync Application Interview Feedback",
       "Headers": [],
       "Rows": []
     },
@@ -881,7 +1018,7 @@
       "SectionPath": [
         "Version 202508"
       ],
-      "Text": "attachments new endpoint:\n\nNew rest/attachments endpoint for syncing resumes as attachments; supports batch_update, batch_delete\n\nSee Upload and Sync Attachments",
+      "Text": "attachments new endpoint:\n\nNew rest/attachments endpoint for syncing resumes as attachments; supports batch_update, batch_delete\n\nRefer to Upload and Sync Attachments",
       "Headers": [],
       "Rows": []
     },
@@ -892,7 +1029,7 @@
       "SectionPath": [
         "Version 202507"
       ],
-      "Text": "simpleJobPostings REST migration:\n\nPrivate RSC job postings removed from simpleJobPostings\nsimpleJobPostings, simpleJobPostingStatus, and simpleJobPostingTasks moved to rest/ base path:\n\nExpand table\n\n\nEndpoint\nBefore\nAfter\n\n\n\n\nsimpleJobPostings\nv2/simpleJobPostings; supports private (RSC) and public jobs\nrest/simpleJobPostings; private RSC job postings no longer supported; RSC partners must use jobRequisitions\n\n\nsimpleJobPostingStatus\nv2/simpleJobPostingStatus\nrest/simpleJobPostingStatus; no field changes\n\n\nsimpleJobPostingTasks\nv2/simpleJobPostingTasks\nrest/simpleJobPostingTasks; no field changes\n\n\n\nSee Sync Job Postings and RSC Migration Guide\n\napplicationStage renamed:\n\ndataProvider removed\nSupported methods: batch_update, batch_delete\nResource path changed from v2/atsApplications/{id}/stages to rest/applicationStage\nTimestamp fields renamed:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications/{id}.../stages?ids={stageId}\nrest/applicationStage\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\njobApplicationId, jobApplicationStageId, integrationContext\n\n\nTimestamp fields\natsCreatedAt\nexternalCreatedAt, externalLastModifiedAt (added)\n\n\n\nSee Sync Application Stages\n\nexportedApplicationEvaluations new endpoint:\n\nNew GET https://api.linkedin.com/rest/exportedApplicationEvaluations\nRetrieves evaluation data generated by LinkedIn Hiring Assistant (LiHA)\nSupported methods: finder\n\nSee Application Evaluation Overview\n\nexportedCandidates updated:\n\nPath updated to GET https://api.linkedin.com/rest/exportedCandidates\nSupported methods: finder\nField changes:\n\nExpand table\n\n\nChange\nUnversioned /v2/\nVersioned /rest/\n\n\n\n\nRemoved field\nexternalJobPostingId\n\u2014\n\n\nAdded fields\n\u2014\nreferenceEntityType, referenceEntityId, source\n\n\nPosition and education start date fields\nstartMonthYear\nstartedOn\n\n\nPosition and education end date fields\nendMonthYear\nendedOn\n\n\n\nSee Retrieve Exported Candidates\n\natsPurgedExportedCandidates versioned:\n\nPath updated from v2/atsPurgedExportedCandidates to rest/atsPurgedExportedCandidates\nNo field changes\n\nSee Retrieve Exported Candidates\n\natsApplications updated:\n\ndataProvider removed from key params\nPath updated to rest/atsApplications\nTwo body fields added:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications\nrest/atsApplications\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\natsJobApplicationId, integrationContext\n\n\nAdded body fields\n\u2014\natsJobRequisitionId, accessRestricted\n\n\n\nSee Sync Applications\n\nData Deletion:\n\nAdded DELETE endpoints: DELETE /rest/atsApplications, DELETE /rest/applicationInterviewFeedbacks, DELETE /rest/applicationStage, DELETE /rest/jobRequisitions, DELETE /rest/jobRequisitionStages\n\nSee Data Deletion",
+      "Text": "simpleJobPostings REST migration:\n\nPrivate RSC job postings removed from simpleJobPostings\nsimpleJobPostings, simpleJobPostingStatus, and simpleJobPostingTasks moved to rest/ base path:\n\nExpand table\n\n\nEndpoint\nBefore\nAfter\n\n\n\n\nsimpleJobPostings\nv2/simpleJobPostings; supports private (RSC) and public jobs\nrest/simpleJobPostings; private RSC job postings no longer supported; RSC partners must use jobRequisitions\n\n\nsimpleJobPostingStatus\nv2/simpleJobPostingStatus\nrest/simpleJobPostingStatus; no field changes\n\n\nsimpleJobPostingTasks\nv2/simpleJobPostingTasks\nrest/simpleJobPostingTasks; no field changes\n\n\n\nRefer to Sync Job Postings and RSC Migration Guide\n\napplicationStage renamed:\n\ndataProvider removed\nSupported methods: batch_update, batch_delete\nResource path changed from v2/atsApplications/{id}/stages to rest/applicationStage\nTimestamp fields renamed:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications/{id}.../stages?ids={stageId}\nrest/applicationStage\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\njobApplicationId, jobApplicationStageId, integrationContext\n\n\nTimestamp fields\natsCreatedAt\nexternalCreatedAt, externalLastModifiedAt (added)\n\n\n\nRefer to Sync Application Stages\n\nexportedApplicationEvaluation new endpoint:\n\nNew GET https://api.linkedin.com/rest/exportedApplicationEvaluation\nRetrieves evaluation data generated by LinkedIn Hiring Assistant (LiHA)\nSupported methods: finder\n\nRefer to Application Evaluation Overview\n\nexportedCandidates updated:\n\nPath updated to GET https://api.linkedin.com/rest/exportedCandidates\nSupported methods: finder\nField changes:\n\nExpand table\n\n\nChange\nUnversioned /v2/\nVersioned /rest/\n\n\n\n\nRemoved field\nexternalJobPostingId\n\u2014\n\n\nAdded fields\n\u2014\nreferenceEntityType, referenceEntityId, source\n\n\nPosition and education start date fields\nstartMonthYear\nstartedOn\n\n\nPosition and education end date fields\nendMonthYear\nendedOn\n\n\n\nRefer to Retrieve Exported Candidates\n\natsPurgedExportedCandidates versioned:\n\nPath updated from v2/atsPurgedExportedCandidates to rest/atsPurgedExportedCandidates\nNo field changes\n\nRefer to Retrieve Exported Candidates\n\natsApplications updated:\n\ndataProvider removed from key params\nPath updated to rest/atsApplications\nTwo body fields added:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications\nrest/atsApplications\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\natsJobApplicationId, integrationContext\n\n\nAdded body fields\n\u2014\natsJobRequisitionId, accessRestricted\n\n\n\nRefer to Sync Applications\n\nData Deletion:\n\nAdded DELETE endpoints: DELETE /rest/atsApplications, DELETE /rest/applicationInterviewFeedbacks, DELETE /rest/applicationStage, DELETE /rest/jobRequisitions, DELETE /rest/jobRequisitionStages\n\nRefer to Data Deletion",
       "Headers": [],
       "Rows": []
     },
@@ -903,7 +1040,7 @@
       "SectionPath": [
         "Version 202504"
       ],
-      "Text": "jobRequisitions and jobRequisitionStages new endpoints:\n\nNew rest/jobRequisitions endpoint syncs requisition data to LinkedIn; link to job postings via partnerRequisitionId in simpleJobPostings; supports batch_update, batch_delete\nNew rest/jobRequisitionStages endpoint manages requisition lifecycle stages; supports batch_update, batch_delete\n\nSee Job Requisition API Migration Guide",
+      "Text": "jobRequisitions and jobRequisitionStages new endpoints:\n\nNew rest/jobRequisitions endpoint syncs requisition data to LinkedIn; link to job postings via partnerRequisitionId in simpleJobPostings; supports batch_update, batch_delete\nNew rest/jobRequisitionStages endpoint manages requisition lifecycle stages; supports batch_update, batch_delete\n\nRefer to Job Requisition API Migration Guide",
       "Headers": [],
       "Rows": []
     },
@@ -1496,7 +1633,7 @@
       "SectionPath": [
         "March 2018"
       ],
-      "Text": "Referrals - Updated communication that we are no longer accepting new LinkedIn Referrals integrations\nInMail History - Added note that InMail content is only visible to the sender/receiver of the particular InMail.\nProfile Plugin - Added callback function for linking and unlinking profiles. See example below:",
+      "Text": "Referrals - Updated communication that we are no longer accepting new LinkedIn Referrals integrations\nInMail History - Added note that InMail content is only visible to the sender/receiver of the particular InMail.\nProfile Plugin - Added callback function for linking and unlinking profiles. Refer to example below:",
       "Headers": [],
       "Rows": []
     },
@@ -1518,7 +1655,7 @@
       "SectionPath": [
         "March 2018"
       ],
-      "Text": "Records Per Minute Throttle - In addition to our daily call limits we have a per minute throttle applied to batch calls. See example below:",
+      "Text": "Records Per Minute Throttle - In addition to our daily call limits we have a per minute throttle applied to batch calls. Refer to example below:",
       "Headers": [],
       "Rows": []
     },

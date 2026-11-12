@@ -8,13 +8,15 @@
     "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
     "https://learn.microsoft.com/en-us/linkedin/talent/",
     "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
-    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
@@ -33,15 +35,91 @@
   ],
   "Blocks": [
     {
-      "Kind": "table",
+      "Kind": "text",
       "Section": "Module 2 - Sync Data from ATS to LinkedIn",
       "Anchor": "module-2---sync-data-from-ats-to-linkedin",
       "SectionPath": [],
+      "Text": "As a LinkedIn partner, you must sync your customers\u0027 ATS data to LinkedIn to support their recruiting workflows. Module 2 covers creating and updating records, syncing historical data, and verifying data completeness and quality. To complete Module 2 certification, demonstrate each applicable test case below to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync Data from ATS to LinkedIn",
+      "Anchor": "module-2---sync-data-from-ats-to-linkedin",
+      "SectionPath": [],
+      "Text": "Test cases are organized into the following sections:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync Data from ATS to LinkedIn",
+      "Anchor": "module-2---sync-data-from-ats-to-linkedin",
+      "SectionPath": [],
+      "Text": "Candidates\nJob requisitions\nJob requisition stages\nApplications\nApplication stages\nApplication notes\nApplication interview feedback\nCandidate notes\nResumes\nCross-cutting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync Data from ATS to LinkedIn",
+      "Anchor": "module-2---sync-data-from-ats-to-linkedin",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync Data from ATS to LinkedIn",
+      "Anchor": "module-2---sync-data-from-ats-to-linkedin",
+      "SectionPath": [],
+      "Text": "Three checks are identical across every entity: entity ID fidelity, ingestion latency against source timestamps, and completeness. To keep the tables readable, each one is stated once in Cross-cutting as RSC-210-004, RSC-210-006, and RSC-210-005, with a per-entity lookup table, rather than repeated in every section. Referential integrity stays per entity, because the parent key it validates differs by entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync Data from ATS to LinkedIn",
+      "Anchor": "module-2---sync-data-from-ats-to-linkedin",
+      "SectionPath": [],
+      "Text": "Applicant evaluation, which covers retrieving evaluations, is certified in Module 3 alongside the other retrieval surfaces.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync Data from ATS to LinkedIn",
+      "Anchor": "module-2---sync-data-from-ats-to-linkedin",
+      "SectionPath": [],
+      "Text": "Test cases in this module use the functional, quantitative, qualitative, and charter check types. For the rule ID scheme, how to read each test case, and the check type definitions, refer to the certification overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
+      "Text": "Rule IDs were renumbered to make each test case unambiguous to reference. Use the following table to map the rule IDs used in earlier revisions of this page to the current ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
       "Text": "",
       "Headers": [
-        "Rule",
-        "Execution Steps",
-        "Expected Result"
+        "Previous rule",
+        "Current rule",
+        "Test case"
       ],
       "Rows": [
         [
@@ -51,15 +129,13 @@
             "Values": []
           },
           {
-            "Text": "Historical data syncing. Syncing historical jobs requisitions from your ATS system to Linkedin.",
+            "Text": "RSC-202-004",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure all jobs requistions are synced from your ATS to LinkedIn. 2. Ensure at least 2 year history of job requisitions are synced. 3. On LinkedIn Recruiter, ensure all synced jobs requisitions are available via the export dropdown on the member\u0027s profile page. 4. Compare the total number of job requisitions created in past 2 year are successfully synced to Linkedin (including closed job requisitions). Relevant Documentation: Sync JobRequisitions",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
-            ],
+            "Text": "Sync historical job requisition data",
+            "Links": [],
             "Values": []
           }
         ],
@@ -70,15 +146,13 @@
             "Values": []
           },
           {
-            "Text": "Historical data syncing. Syncing historical jobs requisition stages from your ATS system to Linkedin.",
+            "Text": "RSC-203-004",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure all jobs requisition stages are synced from your ATS to LinkedIn. 2. On LinkedIn Recruiter, ensure all synced jobs requisition stages are available on the member\u0027s profile page. 3. Compare the total number of job requisition stages created in past 2 year are successfully synced to Linkedin (including closed job requisitions). Sync JobRequisitionStages",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
-            ],
+            "Text": "Sync historical job requisition stage data",
+            "Links": [],
             "Values": []
           }
         ],
@@ -89,15 +163,13 @@
             "Values": []
           },
           {
-            "Text": "Historical data syncing. Syncing historical candidates from your ATS system to LinkedIn.",
+            "Text": "RSC-201-005",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. On LinkedIn Recruiter, ensure that all synced candidates are available with enhanced in-ATS indicator. 2. On the ATS, in the Enhanced ATS Profile Widget, ensure that the correct LinkedIn profile appears for a candidate. 3. Ensure at least 2 year history of candidates are synced. 4. Compare the total number of candidates in your ATS and LinkedIn. Relevant Documentation: Sync Candidates",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
-            ],
+            "Text": "Sync historical candidate data",
+            "Links": [],
             "Values": []
           }
         ],
@@ -108,15 +180,13 @@
             "Values": []
           },
           {
-            "Text": "Historical data syncing. Syncing historical applications from your ATS system to LinkedIn.",
+            "Text": "RSC-204-004",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. On LinkedIn Recruiter, ensure that all synced applications are available in LinkedIn Recruiter. 2. Ensure at least 2 year history of applications are synced. 3. Ensure the application notes, stages and interview feedbacks associated with the given application are all synced and available in Recruiter. 4. Ensure at least 2 year history of applications data are synced. 5. Compare the total number of applications data in your ATS and LinkedIn. Relevant Documentation: Sync Data from ATS to LinkedIn",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform?view=li-lts-2026-04"
-            ],
+            "Text": "Sync historical application data",
+            "Links": [],
             "Values": []
           }
         ],
@@ -127,16 +197,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate Sync Test. Create a new candidate for a role with unique values for all fields in your ATS system.",
+            "Text": "RSC-201-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure that the unique values for all fields appear in the In-ATS indicator in Recruiter search results and profile page. 2. Ensure the correct LinkedIn profile appears in the ATS Profile Widget. 3. Ensure to get and store person urn in your ATS. Relevant Documentation: Sync Candidates \u0026 Profile Plugin",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04",
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin?view=li-lts-2026-04"
-            ],
+            "Text": "Create a new candidate",
+            "Links": [],
             "Values": []
           }
         ],
@@ -147,15 +214,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate Sync Updates Test. Edit the value of a synced field for the previously created candidate.",
+            "Text": "RSC-201-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the new value is reflected in the In-ATS indicator on the Recruiter profile page and search results. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync Candidates",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
-            ],
+            "Text": "Update a candidate",
+            "Links": [],
             "Values": []
           }
         ],
@@ -166,15 +231,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate Application Sync Test. Create a new candidate application.",
+            "Text": "RSC-204-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the new application appear in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Applications",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
-            ],
+            "Text": "Create a new candidate application",
+            "Links": [],
             "Values": []
           }
         ],
@@ -185,15 +248,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate Application Sync Test. Create or use existing Candidate Application, create Application notes.",
+            "Text": "RSC-206-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure application notes appear in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Application Notes",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
-            ],
+            "Text": "Create and update application notes",
+            "Links": [],
             "Values": []
           }
         ],
@@ -204,15 +265,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate Application Sync Test. Create or use existing Candidate Application, create Application Stages (multiple stages)",
+            "Text": "RSC-205-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure application stages(multiple stages) appear in the In-ATS indicator on Recruiter. (application stages are mandatory to be synced, please demonstrate the application stage history). Relevant Documentation: Sync Application Stages",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages?view=li-lts-2026-04"
-            ],
+            "Text": "Create and update application stages",
+            "Links": [],
             "Values": []
           }
         ],
@@ -223,15 +282,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate Application Sync Test. Create or use existing Candidate Application , create Application interview feedback.",
+            "Text": "RSC-207-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure application interview feedback appears in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Application interview feedback",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
-            ],
+            "Text": "Create and update application interview feedback",
+            "Links": [],
             "Values": []
           }
         ],
@@ -242,15 +299,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate application Update Sync Test. Edit an existing application.",
+            "Text": "RSC-204-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the updated application is relfected in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Applications",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
-            ],
+            "Text": "Update a candidate application",
+            "Links": [],
             "Values": []
           }
         ],
@@ -261,15 +316,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate application Update Sync Test. Edit or add application notes.",
+            "Text": "RSC-206-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the application notes change reflected in the In-ATS indicator for that specific application. Relevant Documentation: Sync Application Notes",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
-            ],
+            "Text": "Create and update application notes",
+            "Links": [],
             "Values": []
           }
         ],
@@ -280,15 +333,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate application Update Sync Test. Edit or add application stages.",
+            "Text": "RSC-205-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the application stages change reflected in the In-ATS indicator for that specific application. Relevant Documentation: Sync Application Stages",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
-            ],
+            "Text": "Create and update application stages",
+            "Links": [],
             "Values": []
           }
         ],
@@ -299,15 +350,13 @@
             "Values": []
           },
           {
-            "Text": "Candidate application Update Sync Test. Edit or add application interview feedback.",
+            "Text": "RSC-207-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the application interview feedback change reflected in the In-ATS indicator for that specific application. Relevant Documentation: Sync Application interview feedback",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
-            ],
+            "Text": "Create and update application interview feedback",
+            "Links": [],
             "Values": []
           }
         ],
@@ -318,15 +367,13 @@
             "Values": []
           },
           {
-            "Text": "Job Requisition Sync Test. Create a new job requisition with unique values for all fields in your ATS system.",
+            "Text": "RSC-202-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the new value is reflected on the Recruiter profile page and One Click Export. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync JobRequisitions",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
-            ],
+            "Text": "Create a new job requisition",
+            "Links": [],
             "Values": []
           }
         ],
@@ -337,15 +384,13 @@
             "Values": []
           },
           {
-            "Text": "Job Requisition Sync Updates Test. Edit the value of a synced field for the previously created job requisition.",
+            "Text": "RSC-202-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the new value is reflected in the In-ATS indicator on the Recruiter profile page and One Click Export. 2.Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync JobRequisitions",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
-            ],
+            "Text": "Update a job requisition",
+            "Links": [],
             "Values": []
           }
         ],
@@ -356,15 +401,13 @@
             "Values": []
           },
           {
-            "Text": "Job Requisition Stage Sync Test. Create a new Job Requisition Stage with unique values for all fields in your ATS System.",
+            "Text": "RSC-203-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure the new value is reflected in the In-ATS indicator on the Recruiter profile page. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency Relevant Documentation: Sync JobRequisitionStages",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
-            ],
+            "Text": "Create a new job requisition stage",
+            "Links": [],
             "Values": []
           }
         ],
@@ -375,15 +418,13 @@
             "Values": []
           },
           {
-            "Text": "Job Requisition Stage Sync Updates Test. Update the new Job Requisition Stage with unique values for all fields in your ATS System.",
+            "Text": "RSC-203-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. nsure the updated value is reflected in the In-ATS indicator on the Recruiter profile page. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync JobRequisitionStages",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
-            ],
+            "Text": "Update a job requisition stage",
+            "Links": [],
             "Values": []
           }
         ],
@@ -394,15 +435,2004 @@
             "Values": []
           },
           {
-            "Text": "Error Handling. Sync data with missing required fields.",
+            "Text": "RSC-210-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Display how data errors are handled and what the customer experiences when this occurs. How does a customer fix data issues? 2. For other unexpected errors (5xx, 4xx), what is the retry logic and logging to identify and report these types of issues? 3. Confirm you can provide a call and response log (including response headers) made to LinkedIn APIs in order to debug customer support issues. 4. If any request in a batch request fails even if the http request returns 200 , then log the failure for the entire request (request body, headers, response headers, response body etc). Include an example link of the batch request. Relevant Documentation: Error Handling",
+            "Text": "Handle errors and track 4XX or 5XX responses",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidates",
+      "Anchor": "candidates",
+      "SectionPath": [
+        "Candidates"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-201-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map your candidate data model (certification prerequisite)1. Produce a field-level mapping of your ATS candidate model \u2192 the LinkedIn candidate schema (externalCandidateId, firstName, lastName, emailAddresses, phoneNumbers, currentCompanyName, currentJobTitle, linkedInProfileUrl, sources and other fields).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share a mapping between your ATS candidate data model and the LinkedIn candidate schema (for example, externalCandidateId, firstName, lastName, emailAddresses, phoneNumbers, currentCompanyName, currentJobTitle, linkedInProfileUrl, sources and other fields). This mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create a new candidate1. Create a new candidate in the ATS with unique values for all fields.2. For the candidate that was synced, find the matched profile in Recruiter search results and profile page, and confirm the unique values appear in the In-ATS indicator.3. Demonstrate that the correct LinkedIn profile appears in the ATS Profile Widget.4. Confirm you get and store the person URN with retry and exponential backoff implemented (share a code snippet or code snapshot).5. Ensure all in-scope fields are synced \u2014 the required fields plus the optional fields in scope (refer to field-scope notes).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The unique values for all synced fields appear in the In-ATS indicator in Recruiter search results and the profile page of the matched candidate.\u2022 The correct LinkedIn profile appears in the ATS Profile Widget.\u2022 The partner stores the person URN in their ATS.\u2022 No error is observed in the LinkedIn API access log.\u2022 Any field not being received at LinkedIn is noted and flagged for approval.Related documentation: Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update a candidate1. Edit the value of a synced field (FirstName or LastName or PhoneNumber) in your ATS for the previously created candidate.2. Find the candidate that was updated on LinkedIn Recruiter. From the In-ATS Indicator and from the ATS tab, check that the changed value is displayed there.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The new value is reflected in the In-ATS indicator or ATS on the Recruiter profile page of the synced candidate and in search results.\u2022 ATS updates are reflected in LinkedIn in real-time (or within your stated sync frequency if not real-time).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify private or anonymous candidate handling1. For a private or anonymous candidate on an active integration, send the candidate and application with all identifying information scrubbed.2. Confirm no resume or attachment is sent for this candidate \u2014 neither during the initial historical sync nor during any ongoing or real-time sync (that is, at no point).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 For a private or anonymous candidate on an active integration, ensure you send the candidate and application with all identifying information scrubbed.\u2022 Ensure the scrubbed candidate or application data does not appear anywhere in the LinkedIn system.\u2022 Ensure you correctly honor the privacy requirements for private and anonymous candidates.\u2022 Resumes and attachments must never be sent for private or anonymous candidates \u2014 this exclusion applies both to the initial historical sync and to all subsequent syncs. For every other (non-private) candidate, resumes or attachments are synced normally at all times (validated in the Resumes section).Related documentation: Sync Documents",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2?view=li-lts-2026-04#resumes",
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-005Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate data1. Sync historical candidates from your ATS to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 On LinkedIn Recruiter, ensure that all synced candidates are available with the In-ATS indicator.\u2022 On the ATS, in the ATS Profile Widget, ensure that the correct LinkedIn profile appears for a candidate.\u2022 Ensure all the candidates are synced from the beginning for the corresponding customer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-006Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify candidate referential integrity1. For a sample of candidates, show each externalCandidateId is unique and non-fabricated (refer to Entity ID Fidelity, RSC-210-004).2. Where multiple source records collapse into one candidate, show the parent candidate\u0027s ID is used consistently across all child applications or attachments or candidate notes.3. Share the code or payload showing how externalCandidateId is populated and how collapses are resolved.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Candidate is a top-level entity and has no parent ATS reference, so referential integrity here means externalCandidateId is stable, unique and non-fabricated.\u2022 Every child entity (application, attachment, candidate note) that references this candidate must use the same externalCandidateId.\u2022 No child entity may reference a candidate id that was never synced.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-007Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate data1. Share the total count of candidates on your side for this particular test tenant.2. Compare the total candidate count on your side vs LinkedIn for the loaded test tenant.3. The LinkedIn team will share the count of records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compare the total number of candidates in your ATS and LinkedIn.(quantitative check: the count of candidates from your side for the loaded customer test tenant is validated against the count of candidates synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-008Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate dataUse the loaded customer test tenant.1. The LinkedIn team will share the data quality report for the records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the data quality requirement of Member match rate \u003E 65% (ATS candidates matched to a LinkedIn member)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-009Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the Candidate schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201-010Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate data1. Once functional, quantitative, and qualitative pass, re-run the same functional, quantitative, and qualitative checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the functional, quantitative, and qualitative checks pass, you are ready for beta. Re-run the same historical sync functional, quantitative, and qualitative checks on the charter customer tenant(s).Charter-phase metrics must be reviewed and signed off by the product managers and the RSC or CRM Connect team before certification (GA).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Candidates",
+        "Related documentation"
+      ],
+      "Text": "Sync candidates",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job requisitions",
+      "Anchor": "job-requisitions",
+      "SectionPath": [
+        "Job requisitions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-202-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map your job requisition data model (certification prerequisite)1. Produce a field-level mapping of your ATS requisition model \u2192 the LinkedIn job requisition schema (externalJobRequisitionId, title, description, locations, requisitionStatus, owners, numberOfOpenings, parentRequisitionId).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share a mapping between your ATS job requisition data model and the LinkedIn job requisition schema (for example, externalJobRequisitionId, title, description, locations, requisitionStatus, owners, numberOfOpenings, parentRequisitionId). This mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create a new job requisition1. Create a new job requisition from your ATS with unique field values.2. [Connected Projects] Create a Connected Project on LinkedIn Recruiter using the same synced job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure the new job requisition is reflected on the Recruiter profile page and One Click Export.\u2022 Demonstrate that the job requisition creation in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure the new job requisition is reflected in Projects (Connect ATS job requisitions) in real-time to LinkedIn (in less than 5 minutes). Create a Connected Project and ensure the job requisition description and other details provided in the job requisition are valid.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update a job requisition1. Edit a synced field on the job requisition from within your ATS, like (title or description or location).2. Verify that the changed title or location of the job requisition is visible on LinkedIn Recruiter \u2192 1CE dropdown.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure the new value is reflected in the In-ATS indicator on the Recruiter profile page (if any application is created for this job requisition) and One Click Export dropdown.\u2022 Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure job requisition updates are reflected in Projects and associated ATS Connected Projects (including title, description, location etc).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition data1. Sync all job requisitions (open and closed), from the beginning of time.2. In Recruiter, confirm all open appear through the One Click Export dropdown on the member\u0027s profile page.3. [Connected Projects] Create a Connected Project and confirm all requisitions and associated applications appear.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure all job requisitions (closed and open) are synced from the beginning.\u2022 In LinkedIn Recruiter, ensure all synced job requisitions are available through the export dropdown on the member\u0027s profile page.\u2022 [For ATS Connected Projects]: Create an ATS Connected Project. In LinkedIn Recruiter, ensure all synced job requisitions are available in Projects (Connect ATS job requisitions). Ensure all or any associated applications are populated in the Connected Project.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-005Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify job requisition referential integrity1. For a sample of job requisitions, show externalJobRequisitionId is unique and non-fabricated.2. Where parentRequisitionId is populated, show it references a valid, already-synced job requisition.3. Show every child job requisition stage or application references a valid, synced job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 If parentRequisitionId is populated, it must reference a valid, synced job requisition (no dangling parent).\u2022 No job requisition stage or application may reference a job requisition id that was never synced.\u2022 externalJobRequisitionId must be unique and non-fabricated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-006Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition data1. Share the total count of job requisitions on your side for this particular test tenant.2. The LinkedIn team will share the count of records present in LinkedIn.3. Compare the total job requisitions count on your side vs LinkedIn for the loaded test tenant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that all job requisitions (including closed requisitions) are successfully synced to LinkedIn from the beginning. The total number of requisitions in the ATS should match the count in LinkedIn.(quantitative check: the count of job requisitions from your side for the loaded customer test tenant is validated against the count of job requisitions synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-007Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition dataUse the loaded customer test tenant.1. Produce the requisition DQ report and confirm all thresholds (description length, title length, geo codes, ACLs) are met.2. The LinkedIn team will share the data quality report for the records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the following data quality requirements are met:\u2022 \u003C 10% of job requisitions have descriptions shorter than 200 characters\u2022 \u003C 5% of job requisitions have titles shorter than 5 characters\u2022 \u003C 5% of job requisitions are missing location or geo codes\u2022 \u003C 5% of job requisitions are without ACLs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-008Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the job requisition schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202-009Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition data1. Once functional, quantitative, and qualitative pass, re-run the same historical sync functional, quantitative, and qualitative checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the functional, quantitative, and qualitative checks pass, you are ready for beta. Re-run the same historical sync functional, quantitative, and qualitative checks on the charter customer tenant(s).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-1",
+      "SectionPath": [
+        "Job requisitions",
+        "Related documentation"
+      ],
+      "Text": "Sync job requisitions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job requisition stages",
+      "Anchor": "job-requisition-stages",
+      "SectionPath": [
+        "Job requisition stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-203-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map your job requisition stage data model (certification prerequisite)1. Produce a field-level mapping of your ATS stage model \u2192 the LinkedIn job requisition stage schema.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share a mapping between your ATS stage data model and the LinkedIn job requisition stage schema. This mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create a new job requisition stageUse unique values for all fields in your ATS.1. Create a new job requisition stage with unique field values.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure the job requisition stages are reflected in the stage dropdown for Applicants within ATS Connected Projects.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update a job requisition stageUse unique values for all fields in your ATS.1. Update the stage with unique field values.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure the updated job requisition stage value is reflected in the stage dropdown for Applicants within ATS Connected Projects. If not, what is the expected frequency.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition stage data1. Sync all historical job requisition stages from the beginning of time.2. Every job requisition can go through a number of job requisition stages. Sync all of them linked with individual job requisitions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Job requisition stages should be linked to valid job requisitions.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure all synced job requisition stages are available in the stage dropdowns for Applicants in ATS Connected Projects.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203-007Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify job requisition stage referential integrity1. For a sample of job requisition stages, show each record\u0027s jobRequisitionId resolves to a valid, already-synced job requisition.2. Attempt to sync a job requisition stage whose jobRequisitionId is missing or invalid and show it is rejected or flagged (not silently accepted).3. Share the code or payload showing how jobRequisitionId is populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every job requisition stage must be linked to a valid, synced job requisition through jobRequisitionId.\u2022 No job requisition stage may reference a missing, invalid, or fabricated job requisition id.\u2022 Orphaned job requisition stages (no valid parent) must be surfaced as a data-quality issue (refer to the job requisition stage DQ check).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203-008Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition stage data1. Compare the total job requisition stage count on your side vs LinkedIn.2. The LinkedIn team will share the count of records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that all the historical job requisition stages are successfully synced to LinkedIn. The total number of job requisition stages in the ATS should match the count in LinkedIn.(quantitative check: the count of job requisition stages from your side for the loaded customer test tenant is validated against the count of job requisition stages synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203-009Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition stage data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the job requisition stage schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203-010Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical job requisition stage data1. Once functional and quantitative pass, re-run the same historical sync functional and quantitative checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the functional and quantitative checks pass, you are ready for beta. Re-run the same historical sync functional and quantitative checks on the charter customer tenant(s).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-2",
+      "SectionPath": [
+        "Job requisition stages",
+        "Related documentation"
+      ],
+      "Text": "Sync job requisition stages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Applications",
+      "Anchor": "applications",
+      "SectionPath": [
+        "Applications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-204-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map your application data model (certification prerequisite)1. Produce a field-level mapping of your ATS application model \u2192 the LinkedIn atsApplication schema.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share a mapping between your ATS application data model and the LinkedIn atsApplication schema. This mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create a new candidate application1. Sync a new candidate (or find an existing one) who is matched to a LinkedIn member.2. Create a new job requisition (or find an existing one).3. Create a new candidate application for the above job requisition from your ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure the new application appears in the In-ATS indicator on Recruiter.\u2022 Ensure the new application appears under the ATS tab in Recruiter for the associated candidate.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure the new application is reflected in the job requisition associated ATS Connected Project.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update a candidate application1. Sync a new Candidate Application (or find an existing one) as mentioned in the previous test case RSC-204-002.2. Edit an existing application linked to that candidate in the ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure the updated application is reflected in the In-ATS indicator on Recruiter.\u2022 Ensure the updated application appears under the ATS tab in Recruiter for the associated candidate.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure the updated application is reflected in the associated ATS Connected Project.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application data1. Sync all the historical applications \u2014 including applications tied to both open and closed job requisitions \u2014 along with their applicationStages, applicationNotes and applicationInterviewFeedback.2. Pull a sample of synced applications plus the total application counts on both the ATS and LinkedIn side.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 On LinkedIn Recruiter, all synced applications (matching the source counts) are available, and the sampled applications are present.\u2022 All historical applications are synced, including applications tied to both open and closed job requisitions (counts match between ATS and Recruiter).\u2022 The applicationNotes, applicationStages and applicationInterviewFeedbacks associated with each application are all synced and available in Recruiter.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, all applications are reflected in the associated ATS Connected Projects.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-006Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify application referential integrity1. For a sample of applications, show each record\u0027s atsJobRequisitionId and atsCandidateId resolves to a valid, already-synced job requisition and candidate.2. Share the code or payload showing how atsJobRequisitionId and atsCandidateId is populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every application must be linked to a valid, synced job requisition and candidate through atsJobRequisitionId and atsCandidateId.\u2022 No application may reference a missing, invalid, or fabricated job requisition and candidate id.\u2022 This referential-integrity requirement is first exercised in RSC-204-002 (application must reference a valid candidate and job requisition).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-007Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application data1. Compare the total application count on your side vs LinkedIn.2. The LinkedIn team will share the count of records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compare the total number of applications data in your ATS and LinkedIn.(quantitative check: the count of applications from your side for the loaded customer test tenant is validated against the counts synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-008Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application dataUse the loaded customer test tenant.1. Produce the application DQ report and confirm all thresholds (candidates, job postings, stages, source, stage-completeness, match rate) are met.2. The LinkedIn team will share the data quality report for the records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the following data quality requirements are met:\u2022 \u003C 5% of applications without candidates\u2022 \u003C 5% of applications without job postings or requisitions\u2022 \u003C 10% of applications without stages\u2022 \u003C 5% of applications without source\u2022 \u003C 10% of stages without applications\u2022 Member match rate \u003E 65% (ATS candidates matched to a LinkedIn member)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-009Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the Application schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204-010Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application data1. Once functional, quantitative, and qualitative pass, re-run the same historical sync functional, quantitative, and qualitative checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the functional, quantitative, and qualitative checks pass, you are ready for beta. Re-run the same historical sync functional, quantitative, and qualitative checks on the charter customer tenant(s).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-3",
+      "SectionPath": [
+        "Applications",
+        "Related documentation"
+      ],
+      "Text": "Sync applications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Application stages",
+      "Anchor": "application-stages",
+      "SectionPath": [
+        "Application stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-205-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and update application stages1. Create applicationStages on a new or existing application in your ATS and ensure they appear in the jobs and feedback section under the ATS tab or In-ATS indicator of a matched candidate on Recruiter.2. Move the candidate application to a new stage from your ATS and demonstrate that the same candidate application has now added a new applicationStage entity, and the new applicationStage is also visible under the jobs and feedback section under the ATS tab or In-ATS indicator of a matched candidate on Recruiter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Create applicationStages on a new or existing application and ensure they appear in the jobs and feedback section under the ATS tab or In-ATS indicator of a matched candidate on Recruiter.\u2022 Move the candidate application to a new stage and ensure a new applicationStage entity is added to the same candidate application (the previously linked stage is not overwritten), and the new applicationStage is reflected in the jobs and feedback section under the ATS tab or In-ATS indicator of a matched candidate on Recruiter.\u2022 [For ATS Connected Projects]: Ensure the current stage and the newly added stage are reflected in the associated ATS Connected Project.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-205-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update application stages and preserve stage history1. Create an application at an initial stage (Stage 1), then move the same application forward through subsequent stages (Stage 2, Stage 3, \u2026).2. Show the full stage history in the In-ATS indicator on Recruiter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Each stage transition must create a new applicationStage entry \u2014 a single application must not be re-linked to the same stage, and a later update must not overwrite or edit the previously linked stage.\u2022 Application stages are mandatory to sync: demonstrate the full application stage history (all stages the application passed through) in the In-ATS indicator on Recruiter.\u2022 [For ATS Connected Projects]: Ensure the current stage and full stage history are reflected in the associated ATS Connected Project.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-205-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application stage data1. Sync all the historical application stages \u2014 including stages for applications tied to both open and closed jobs \u2014 preserving the full stage history for each application.2. Pull a sample plus the full stage-history counts on both the ATS and LinkedIn side.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 On LinkedIn Recruiter, all synced application stages (matching source counts) are available in the jobs and feedback section under the ATS tab or In-ATS indicator of a matched candidate; the sampled stages are present.\u2022 All the historical application stages are synced, including stages for applications tied to both open and closed jobs (requisitions), from the beginning (counts match between ATS and Recruiter).\u2022 The full stage history (all stages each application passed through) is preserved \u2014 no stage is overwritten \u2014 and available in Recruiter.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, all application stages are reflected in the associated ATS Connected Projects.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-205-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify application stage referential integrity1. For a sample of application stages, show each record\u0027s atsJobApplicationId resolves to a valid, already-synced application.2. Share the code or payload showing how atsJobApplicationId is populated.3. For the same sample, show each stage value is among the stages synced for the application\u0027s parent job requisition (that is, it maps to a synced job requisition stage).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every application stage must be linked to a valid, synced application through atsJobApplicationId.\u2022 No application stage may reference a missing, invalid, or fabricated application id.\u2022 Each application stage value must correspond to a stage synced for the application\u0027s parent job requisition \u2014 an application stage must not introduce a stage value that does not exist among that requisition\u0027s synced job requisition stages.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-205-005Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application stage data1. Share the total count of application stages on your side for this particular test tenant.2. The LinkedIn team will share the count of records present in LinkedIn.3. Compare the total application stage count on your side vs LinkedIn for the loaded test tenant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compare the total number of application stages in your ATS and LinkedIn.(quantitative check: the count of application stages from your side for the loaded customer test tenant is validated against the count of application stages synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-205-006Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application stage data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the Application Stage schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-205-007Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application stage data1. Once the Functional checks pass, re-run the same Application Stage functional, quantitative, and qualitative checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the Functional checks pass, you are ready for beta. Re-run the same Application Stage functional, quantitative, and qualitative checks on the charter customer tenant(s).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-4",
+      "SectionPath": [
+        "Application stages",
+        "Related documentation"
+      ],
+      "Text": "Sync application stages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Application notes",
+      "Anchor": "application-notes",
+      "SectionPath": [
+        "Application notes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-206-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and update application notes1. Precondition (certification prerequisite): share a field-level mapping of your ATS application note model \u2192 the LinkedIn applicationNote schema, including the parent reference (atsJobApplicationId \u2192 application).2. Create an application note on a new or existing application in your ATS.3. Edit or add an application note on the same application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The shared data-model mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.\u2022 On create, ensure the note appears in the jobs and feedback section under the ATS tab or In-ATS indicator of a matched candidate on Recruiter, linked to the correct application (atsJobApplicationId).\u2022 On update, ensure the change is reflected in the same location.\u2022 Demonstrate the update syncs in real-time; if not, state the expected frequency.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-206-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application note data1. Sync all historical application notes from the beginning of time, each linked to a valid application.2. Every application can have multiple application notes; sync all of them.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every application note must be synced and linked to a valid application.\u2022 Each and every application note must be synced \u2014 ensure all historical application notes are synced from the beginning, with none dropped.\u2022 On LinkedIn Recruiter, ensure the synced application notes appear in the jobs and feedback section under the ATS tab or In-ATS indicator of the matched candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-206-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify application note referential integrity1. For a sample of application notes, show each record\u0027s atsJobApplicationId resolves to a valid, already-synced application.2. Attempt to sync an application note whose atsJobApplicationId is missing or invalid and show it is rejected or flagged (not silently accepted).3. Share the code or payload showing how atsJobApplicationId is populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every application note must be linked to a valid, synced application through atsJobApplicationId.\u2022 No application note may reference a missing, invalid, or fabricated application id.\u2022 Orphaned application notes (no valid parent) must be surfaced as a data-quality issue (refer to the Application Note DQ check).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-206-004Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application note data1. Share the total count of application notes on your side for this particular test tenant.2. The LinkedIn team will share the count of records present in LinkedIn.3. Compare the total application note count on your side vs LinkedIn for the loaded test tenant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compare the total number of application notes in your ATS and LinkedIn.(quantitative check: the count of application notes from your side for the loaded customer test tenant is validated against the count of application notes synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-206-005Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application note data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the Application Note schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-5",
+      "SectionPath": [
+        "Application notes",
+        "Related documentation"
+      ],
+      "Text": "Sync application notes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Application interview feedback",
+      "Anchor": "application-interview-feedback",
+      "SectionPath": [
+        "Application interview feedback"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-207-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and update application interview feedback1. Precondition (certification prerequisite): share a field-level mapping of your ATS application interview feedback model \u2192 the LinkedIn applicationInterviewFeedback schema, including the parent reference (atsJobApplicationId \u2192 application).2. Create interview feedback on a new or existing application in your ATS.3. Edit or add interview feedback on the same application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The shared data-model mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.\u2022 On create, ensure the feedback appears in the jobs and feedback section under the ATS tab or In-ATS indicator of a matched candidate on Recruiter, linked to the correct application (atsJobApplicationId).\u2022 On update, ensure the change is reflected in the same location.\u2022 Demonstrate the update syncs in real-time; if not, state the expected frequency.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-207-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application interview feedback data1. Sync all historical application interview feedback records from the beginning of time, each linked to a valid application.2. Every application can have multiple application interview feedback records; sync all of them.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every application interview feedback must be synced and linked to a valid application.\u2022 Each and every application interview feedback must be synced \u2014 ensure all historical application interview feedback records are synced from the beginning, with none dropped.\u2022 On LinkedIn Recruiter, ensure the synced application interview feedback records appear in the jobs and feedback section under the ATS tab or In-ATS indicator of the matched candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-207-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify application interview feedback referential integrity1. For a sample of application interview feedback records, show each record\u0027s atsJobApplicationId resolves to a valid, already-synced application.2. Share the code or payload showing how atsJobApplicationId is populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every application interview feedback must be linked to a valid, synced application through atsJobApplicationId.\u2022 No application interview feedback may reference a missing, invalid, or fabricated application id.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-207-004Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application interview feedback data1. Share the total count of application interview feedback records on your side for this particular test tenant.2. The LinkedIn team will share the count of records present in LinkedIn.3. Compare the total application interview feedback count on your side vs LinkedIn for the loaded test tenant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compare the total number of application interview feedback records in your ATS and LinkedIn.(quantitative check: the count of application interview feedback records from your side for the loaded customer test tenant is validated against the count of application interview feedback records synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-207-005Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application interview feedback data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the application interview feedback schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-6",
+      "SectionPath": [
+        "Application interview feedback",
+        "Related documentation"
+      ],
+      "Text": "Sync application interview feedback",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidate notes",
+      "Anchor": "candidate-notes",
+      "SectionPath": [
+        "Candidate notes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-208-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and update candidate notes1. Precondition (certification prerequisite): share a field-level mapping of your ATS candidate note model \u2192 the LinkedIn candidateNote schema, including the parent reference (atsCandidateId \u2192 candidate).2. Create a candidate note on a new or existing candidate in your ATS.3. Edit or add a candidate note on the same candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The shared data-model mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.\u2022 On create, ensure the note appears under the ATS tab or In-ATS indicator of the matched candidate on Recruiter, linked to the correct candidate (atsCandidateId).\u2022 On update, ensure the change is reflected in the same location.\u2022 Demonstrate the update syncs in real-time; if not, state the expected frequency.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-208-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate note data1. Sync all historical candidate notes from the beginning of time, each linked to a valid candidate.2. Every candidate can have multiple candidate notes; sync all of them.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every candidate note must be synced and linked to a valid candidate.\u2022 Each and every candidate note must be synced \u2014 ensure all historical candidate notes are synced from the beginning, with none dropped.\u2022 On LinkedIn Recruiter, ensure the synced candidate notes appear in the jobs and feedback section under the ATS tab or In-ATS indicator of the matched candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-208-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify candidate note referential integrity1. For a sample of candidate notes, show each record\u0027s atsCandidateId resolves to a valid, already-synced candidate.2. Share the code or payload showing how atsCandidateId is populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every candidate note must be linked to a valid, synced candidate through atsCandidateId.\u2022 No candidate note may reference a missing, invalid, or fabricated candidate id.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-208-004Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate note data1. Share the total count of candidate notes on your side for this particular test tenant.2. The LinkedIn team will share the count of records present in LinkedIn.3. Compare the total candidate note count on your side vs LinkedIn for the loaded test tenant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compare the total number of candidate notes in your ATS and LinkedIn.(quantitative check: the count of candidate notes from your side for the loaded customer test tenant is validated against the count of candidate notes synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-208-005Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical candidate note data1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the Candidate Note schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-7",
+      "SectionPath": [
+        "Candidate notes",
+        "Related documentation"
+      ],
+      "Text": "Sync candidate notes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Resumes",
+      "Anchor": "resumes",
+      "SectionPath": [
+        "Resumes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-209-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map your resume or attachment data model (certification prerequisite)1. Produce a field-level mapping of your ATS attachment model \u2192 the LinkedIn attachment schema.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share a mapping between your ATS attachment data model and the LinkedIn attachment schema. This mapping is a certification prerequisite used for testing and data-analysis work by LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create a candidate application resume1. Create a new application resume in the ATS and sync it.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure the new application resume appears in the Attachments tab or the In-ATS tab for a given candidate in LinkedIn Recruiter.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure the new application resume appears in the Attachments and In-ATS tab for an Applicant within an ATS Connected Project.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application resume data1. Sync all application resumes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure all application resumes are synced from your ATS to LinkedIn.\u2022 Ensure all the historical application resumes are synced.\u2022 In LinkedIn Recruiter, ensure all synced application resumes are available through the Attachments tab, the In-ATS tab, or both.\u2022 [For ATS Connected Projects]: In LinkedIn Recruiter, ensure all synced application resumes are available in applications within associated ATS Connected Projects (link the attachment or resume to the application id).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify resume or attachment referential integrity1. For a sample of application resumes, show each record\u0027s externalReferenceEntityId resolves to a valid, already-synced application.2. Share the code or payload showing how externalReferenceEntityId is populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Every application resume must be linked to a valid, synced application through externalReferenceEntityId.\u2022 No application resume may reference a missing, invalid, or fabricated application id.\u2022 Orphaned application resumes (no valid parent) must be surfaced as a data-quality issue (refer to the Resume or attachment DQ check).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209-005Check type: quantitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application resume data1. Compare the total resume count on your side vs LinkedIn.2. The LinkedIn team will share the count of records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total number of resumes in the ATS should match the count in LinkedIn.(quantitative check: the count of application resumes from your side for the loaded customer test tenant is validated against the count of resumes synced at LinkedIn.)A variance of up to 5% between your side and LinkedIn counts is tolerable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209-006Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application resume dataUse the loaded customer test tenant.1. Produce the resume DQ report and confirm \u003C 10% of applications cannot be associated with a Resume.2. The LinkedIn team will share the data quality report for the records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the following data quality requirement is met:\u2022 \u003C 10% of applications cannot be associated with a Resume (looking at both application and candidate resumes, if available)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209-007Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify historical resume or attachment data quality1. The LinkedIn team will share the data quality report for the records synced during loaded test tenant sync and during historical sync in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Ensure that the data quality requirement is matched.\u2022 If any schema field of the Resume or attachment schema is not mapped or synced, mention the same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209-008Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync historical application resume data1. Once functional, quantitative, and qualitative pass, re-run the same historical sync functional, quantitative, and qualitative checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the functional, quantitative, and qualitative checks pass, you are ready for beta. Re-run the same historical sync functional, quantitative, and qualitative checks on the charter customer tenant(s).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation-8",
+      "SectionPath": [
+        "Resumes",
+        "Related documentation"
+      ],
+      "Text": "Sync documents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "These test cases apply across all entities in Module 2. Three of them \u2014\nEntity ID Fidelity (RSC-210-004), Completeness or Filters or Mandatory Fields\n(RSC-210-005), and Ingestion Latency vs Source Timestamps (RSC-210-006) \u2014\nconsolidate checks that were previously repeated per entity; each has a per-entity lookup\ntable immediately below the main table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-210-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Push the full historical dataset on re-activation1. Push the customer\u0027s complete historical data (not a subset).2. De-activate then re-activate the integration.3. On re-activation, show a full historical backfill and that the same child developerApplication is reused (no new application is created).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 You must push the customer\u0027s complete historical data rather than a partial subset.\u2022 A full historical push is also required whenever a customer re-activates the integration after a prior de-activation.\u2022 On re-activation, a full historical backfill occurs and the same child developerApplication is reused. A new one must not be created, as described in RSC-101-007.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-210-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify idempotency and prevent duplicates1. Re-send an already-synced entity (candidate, application, requisition, stage, or resume) using the same external ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Re-send an already-synced entity (candidate, application, job requisition, stage, or resume) using the same external ID.\u2022 LinkedIn must upsert the existing record \u2014 it must not create a second copy.\u2022 This complements Entity ID Fidelity: stable, one-to-one external IDs are what make idempotent upserts possible.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-210-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle errors and track 4XX or 5XX responses1. State whether your ATS allows data syncing with missing required fields during historical or regular sync. If it does, show how errors are handled and surfaced to the customer, and how the customer fixes them.2. Demonstrate this through a historical sync using erroneous data, and through the ATS UI.3. For 4XX and 5XX, describe the retry logic through a code snippet or a written explanation.4. Provide a call-and-response log, including response headers, that is stored in your ATS.5. For a batch request that fails while returning 200, log the full failure, including request and response bodies and headers, with an example screenshot.6. Track the 4XX and 5XX count or rate, especially during the charter phase, and review it at beta-exit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Sync data with missing required fields and show how data errors are handled and surfaced to the customer, and how the customer fixes them.\u2022 For unexpected errors (4XX and 5XX), describe the retry logic and logging used to identify and report issues; provide a call-and-response log (including response headers) for debugging customer-support issues.\u2022 If any request in a batch fails even when the HTTP response is 200, log the failure for the entire request (request body, headers, response headers, response body) with an example link.\u2022 Track the count or rate of 4XX and 5XX responses you receive \u2014 especially during the charter phase \u2014 and review it as part of beta-exit sign-off.Related documentation: Error Handling",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling?view=li-lts-2026-04"
             ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-210-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify entity ID fidelity for all entities1. For each synced entity, show its external ID (and any parent IDs) equals the ID returned by your own API \u2014 strict 1:1, no fabricated IDs, no added prefix or suffix. See the Entity ID Fidelity table below for the field(s) per entity.2. Where multiple source records collapse into one, use the top-level (parent) record\u0027s ID.3. Share a code block or API signature or sample payload showing where each ID is sourced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Each entity\u0027s external ID is identical to the ID returned if we called your own API directly (strict one-to-one mapping).\u2022 Fabricated or generated IDs are not allowed, and no added prefix or suffix is permitted (for job requisitions, the human-readable vanityIdentifier is distinct from the canonical externalJobRequisitionId).\u2022 On record collapse, the parent record\u0027s ID is used consistently across all child entities.\u2022 Verification (code review): Calling your own internal API to diff IDs is out of scope for RSC API verification \u2014 LinkedIn confirms the mapping through the shared code or payload. See the per-entity ID table below.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-210-005Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify sync completeness, filters, and mandatory fields for all entities1. For each synced entity, compare source-vs-LinkedIn record counts for the full historical window (from the beginning of time) to confirm none are dropped.2. Disclose any record types that are intentionally not synced, and any filters applied.3. Confirm your records carry all mandatory fields the corresponding LinkedIn entity requires. See the Completeness scope table below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Per-entity record counts match between source and LinkedIn (allowing only the declared exclusions or filters); all record types for every entity are synced.\u2022 Any excluded record types or applied filters are explicitly noted.\u2022 Mandatory fields required by each LinkedIn entity are present. See the entities-in-scope table below.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-210-006Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compare ingestion latency against source timestamps for all entities1. For each synced entity, measure the delta between your source create or modify timestamps and LinkedIn ingestion time. See the Ingestion Latency table below for the timestamp fields per entity.2. The LinkedIn team will share the delta report for the records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The per-entity delta stays within the expected ingestion SLA of 5\u201330 minutes (near-real-time sync). A delta consistently beyond 30 minutes must be justified and discussed with the LinkedIn team. See the per-entity timestamp table below.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-210-007Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-run note and interview feedback checks during the charter phase1. Once the functional, quantitative, and qualitative checks pass for application notes, application interview feedback and Candidate Notes, re-run those same checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the functional, quantitative, and qualitative checks pass for these lower-priority note or feedback entities, re-run them on the charter customer tenant(s). Charter-phase metrics must be reviewed and signed off by the product managers and the RSC or CRM Connect team before certification (GA). (All other entities carry their own per-entity Charter row.)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Entity ID fidelity \u2014 per-entity IDs (RSC-210-004)",
+      "Anchor": "entity-id-fidelity--per-entity-ids-rsc-210-004",
+      "SectionPath": [
+        "Cross-cutting",
+        "Entity ID fidelity \u2014 per-entity IDs (RSC-210-004)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Entity",
+        "Primary external ID",
+        "Parent or related IDs",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2014 (root entity)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the parent candidate\u0027s ID when source records collapse",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalJobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "parentRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "vanityIdentifier is human-readable and distinct from the canonical ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job requisition stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobRequisitionStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsJobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsCandidateId, atsJobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobApplicationStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobApplicationId (the application\u0027s atsJobApplicationId); stage value must map to a synced job requisition stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the stage ID and parent application ID; refer to RSC-205-004",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalNoteId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalJobApplicationId (the application\u0027s atsJobApplicationId)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the note ID and parent application ID; refer to RSC-206-003",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application interview feedback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "interviewFeedbackId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobApplicationId (the application\u0027s atsJobApplicationId)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the feedback ID and parent application ID; refer to RSC-207-003",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Candidate note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalNoteId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the note ID and parent candidate ID; refer to RSC-208-003",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resume or attachment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalAttachmentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalReferenceEntityId (the application)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Ingestion latency \u2014 per-entity source timestamps (RSC-210-006)",
+      "Anchor": "ingestion-latency--per-entity-source-timestamps-rsc-210-006",
+      "SectionPath": [
+        "Cross-cutting",
+        "Ingestion latency \u2014 per-entity source timestamps (RSC-210-006)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Entity",
+        "Source timestamp fields"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job requisition stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt or atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application Stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application Note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application interview feedback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Candidate Note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resume or attachment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt or externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Completeness, filters, and mandatory fields \u2014 entities in scope (RSC-210-005)",
+      "Anchor": "completeness-filters-and-mandatory-fields--entities-in-scope-rsc-210-005",
+      "SectionPath": [
+        "Cross-cutting",
+        "Completeness, filters, and mandatory fields \u2014 entities in scope (RSC-210-005)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Entity",
+        "\u0022Complete\u0022 means"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All candidates synced from the beginning; disclose any excluded types or filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All requisitions (open and closed) synced from the beginning; disclose filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job requisition stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All stages synced and linked to a valid requisition; disclose filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All applications (open and closed reqs) synced from the beginning; disclose filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application Stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Full stage history synced (no stage overwritten); disclose filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application Note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All notes synced and linked to a valid application; disclose filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application interview feedback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All feedback synced and linked to a valid application; disclose filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Candidate Note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All notes synced and linked to a valid candidate; disclose filters; mandatory fields present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resume or attachment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All resumes synced and linked to a valid application; disclose filters; mandatory fields present",
+            "Links": [],
             "Values": []
           }
         ]

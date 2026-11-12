@@ -7,6 +7,8 @@
     "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
     "https://learn.microsoft.com/en-us/linkedin/talent/",
     "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
@@ -25,15 +27,55 @@
   ],
   "Blocks": [
     {
-      "Kind": "table",
+      "Kind": "text",
       "Section": "Module 4 - Sync ACLs",
       "Anchor": "module-4---sync-acls",
       "SectionPath": [],
+      "Text": "As a LinkedIn partner, you must sync your customers\u0027 access control lists (ACLs) so that their data is visible to the appropriate users in LinkedIn. Module 4 covers linking job requisitions to security groups or roles, assigning users to those groups, and verifying visibility in One Click Export and the In-ATS Indicator. To complete Module 4 certification, demonstrate each applicable test case below to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 4 - Sync ACLs",
+      "Anchor": "module-4---sync-acls",
+      "SectionPath": [],
+      "Text": "Test cases are grouped by the aspect of ACL sync being exercised.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 4 - Sync ACLs",
+      "Anchor": "module-4---sync-acls",
+      "SectionPath": [],
+      "Text": "Test cases in this module use the functional, qualitative, and charter check types. For the rule ID scheme, how to read each test case, and the check type definitions, refer to the certification overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
+      "Text": "The table below maps each test case\u0027s previous Rule ID (used in earlier revisions of\nthis document) to its new Rule ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
       "Text": "",
       "Headers": [
-        "Rule",
-        "Execution Steps",
-        "Expected Result"
+        "Previous rule",
+        "Current rule",
+        "Test case"
       ],
       "Rows": [
         [
@@ -43,12 +85,12 @@
             "Values": []
           },
           {
-            "Text": "One-Click Export Secure Job Posting Test. 1. Create an ACL. 2. Create a new job posting and assign it to the ACL created above. 3.Add one or more users to that ACL.",
+            "Text": "RSC-401-003",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Login to the system as one of the users you assigned the ACL to and ensure that the secure job posting is visible (One-Click Export). 2. Login to the system as a user that was not assigned to the ACL you created and ensure that the securable job posting is not visible (One-Click Export).",
+            "Text": "Add an ACL assignee and verify access to a secured job requisition",
             "Links": [],
             "Values": []
           }
@@ -60,12 +102,12 @@
             "Values": []
           },
           {
-            "Text": "In-ATS Indicator Secure Job Posting Test. 1. Sync a candidate and sync an application to the job associated to the ACL created from the last step. Add application notes, stages, etc. as needed. 2. Add one or more users to the ACL created above.",
+            "Text": "RSC-401-004",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Login to the system as one of the users you assigned the ACL to and ensure that the secure job posting is visible In-ATS indicator. 2. Login to the system as a user that was not assigned to the ACL you created and ensure that the securable job posting is not visible (In-ATS indicator).",
+            "Text": "Verify ACL assignee access to an atsApplication for a secured job requisition",
             "Links": [],
             "Values": []
           }
@@ -77,12 +119,12 @@
             "Values": []
           },
           {
-            "Text": "Remove ACL Assignee Test. Remove user(s) from the ACL.",
+            "Text": "RSC-401-007",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Log in to the system as one of the users you removed from the ACL and ensure that they no longer can see secured job postings in the drop-down list of the One-Click Export feature and in the In-ATS Indicator for any candidate.",
+            "Text": "Update generic ACL group membership",
             "Links": [],
             "Values": []
           }
@@ -94,12 +136,320 @@
             "Values": []
           },
           {
-            "Text": "Re-add user(s) to the security group.",
+            "Text": "RSC-402-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Login to the system as one of the users you re-added to the ACL and ensure that they are able to see the secured job posting(s) in the dropdown list of the One-Click Export feature and in the In-ATS Indicator for any candidate.",
+            "Text": "Re-add an ACL assignee",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-401-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map entity ACL and assignee data models (certification prerequisite)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-401-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify ACL and assignee ID fidelity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-401-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Remove a job requisition from a secured view for a user",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-401-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and manage generic ACL groups",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-403-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify idempotent ACL and assignee upserts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-403-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Keep ACLs current on change",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-403-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify ACL coverage of securable entities",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-403-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-run ACL checks during the charter phase",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ACLs",
+      "Anchor": "acls",
+      "SectionPath": [
+        "ACLs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-401-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map entity ACL and assignee data models (certification prerequisite)1. Produce a field-level mapping of your ATS security-group or role \u2192 the LinkedIn entityAcl schema (entityAclId, entityId, entityType = JOB_REQUISITION, dataProvider = ATS, integrationContext, externalCreatedAt, externalLastModifiedAt).2. Map your user-membership model \u2192 the entityAclAssignee schema (entityAclId, assignee = person URN, dataProvider = ATS, integrationContext, externalCreatedAt, externalLastModifiedAt).3. State how you resolve each user to a person URN (refer to Bind Customer Users).",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Review the mapping between your ATS security-group or role and user-membership models and the LinkedIn entityAcl and entityAclAssignee schemas.\u2022 This mapping is a certification prerequisite used for the LinkedIn testing and verification (code review).Related documentation: ACL overview",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-401-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify ACL and assignee ID fidelity1. Show entityAclId equals your security-group or role id (strict 1:1).2. Show entityId equals your externalJobRequisitionId (the same IDs synced in Module 2) and entityType uses the correct Securable Entity Type enum (JOB_REQUISITION).3. Show assignee equals the user\u0027s bound person URN.4. No fabricated IDs; no added prefix or suffix.5. Share the code block or API signature or sample payload where these IDs are sourced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 entityAclId, entityId (= externalJobRequisitionId), and assignee (person URN) must each be identical to your own source IDs (strict one-to-one).\u2022 Fabricated or generated IDs are not allowed, and no added prefix or suffix is permitted.\u2022 Verification (code review): share a code block or API signature or sample API payload showing where these IDs are sourced, so LinkedIn can confirm the mapping \u2014 analogous to the Module 2 Entity ID Fidelity deliverables.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-401-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add an ACL assignee and verify access to a secured job requisition1. Create two new job requisitions with accessRestricted = true through PUT rest/jobRequisitions, for example, jobReq-1 and jobReq-2.2. Create the ACL group (for example, User1_ACL) securing both job requisitions (jobReq-1, jobReq-2) through PUT rest/entityAcls.3. Assign the user (User1, through person URN) to the ACL group (User1_ACL) through PUT rest/entityAclAssignees.4. Visit User1\u0027s LinkedIn profile within Recruiter and show, from the One-Click Export dropdown, that both job requisitions (jobReq-1, jobReq-2) are visible.5. To list the ACL groups a user belongs to, call GET rest/entityAclAssignees.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All PUT and GET API calls succeed (verify from logs or response status).\u2022 On User1\u0027s LinkedIn profile within Recruiter, both job requisitions (jobReq-1, jobReq-2) are visible in the One-Click Export dropdown.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-401-004Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify ACL assignee access to an atsApplication for a secured job requisition1. Create one new job requisition with accessRestricted = true through PUT rest/jobRequisitions, for example, jobReq-1.2. Create the ACL group (for example, User1_ACL) securing this job requisition (jobReq-1) through PUT rest/entityAcls.3. Assign the Recruiter user (User1, through person URN) to the ACL group (User1_ACL) through PUT rest/entityAclAssignees.4. Create a new atsApplication for this candidate and job requisition combination through PUT rest/applications.5. Visit User1\u0027s LinkedIn profile within Recruiter and show that the created atsApplication is visible in the In-ATS Indicator or under the ATS tab \u2192 Jobs and Feedback section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All PUT and GET API calls succeed (verify from logs or response status).\u2022 On User1\u0027s LinkedIn profile within Recruiter, the application to the job requisition is visible in the In-ATS Indicator and under the ATS tab \u2192 Jobs and Feedback section.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-401-005Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Remove a job requisition from a secured view for a user1. Create two new job requisitions with accessRestricted = true through PUT rest/jobRequisitions, for example, jobReq-1 and jobReq-2.2. Create the ACL group (for example, User1_ACL) securing both job requisitions (jobReq-1, jobReq-2) through PUT rest/entityAcls.3. Assign the user (User1, through person URN) to the ACL group (User1_ACL) through PUT rest/entityAclAssignees.4. Visit User1\u0027s LinkedIn profile within Recruiter and show, from the One-Click Export dropdown, that both job requisitions (jobReq-1, jobReq-2) are visible.5. Remove one of the job requisitions (for example, jobReq-1) from the user\u0027s ACL group through DELETE rest/entityAcls.6. Visit User1\u0027s LinkedIn profile within Recruiter again and confirm, from the One-Click Export dropdown, that jobReq-1 is no longer visible while jobReq-2 still is.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All PUT, GET, and DELETE API calls succeed (verify from logs or response status).\u2022 On User1\u0027s LinkedIn profile within Recruiter, exactly one of the two job requisitions remains visible in the One-Click Export dropdown \u2014 jobReq-2 is visible and jobReq-1 is not.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-401-006Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and manage generic ACL groups1. Create a job requisition (for example, jobReq-1) with accessRestricted = true.2. Create an ACL group (for example, MANAGER) associated with the job requisition (jobReq-1) through PUT rest/entityAcls.3. Add a Recruiter user (for example, User1) to the same ACL group through PUT rest/entityAclAssignees.4. Visit User1\u0027s LinkedIn profile within LinkedIn Recruiter and confirm the One-Click Export dropdown shows the secured job requisition (jobReq-1).5. Visit any other user\u0027s LinkedIn profile within Recruiter and confirm the One-Click Export dropdown does not show the secured job requisition (jobReq-1).6. Add another user (for example, User2) to the same ACL group (MANAGER) and confirm User2 can also view jobReq-1 from the One-Click Export dropdown.7. Add another secured job requisition (for example, jobReq-2, accessRestricted = true) to the same ACL group (MANAGER) and confirm User2 can also view the newly added job requisition (jobReq-2).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All PUT and GET API calls succeed (verify from logs or response status).\u2022 Every user assigned to the MANAGER ACL group (User1, User2) sees the group\u0027s secured job requisitions in the One-Click Export dropdown.\u2022 Any user not assigned to the MANAGER ACL group does not see the group\u0027s secured job requisitions.\u2022 Adding a user to the group grants that user visibility of every job requisition already in the group, and adding a job requisition to the group makes it visible to every user already in the group \u2014 confirming group membership governs visibility for both users and job requisitions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-401-007Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update generic ACL group membership1. Continued from RSC-401-006.2. Remove a job requisition (for example, jobReq-1, accessRestricted = true) from the ACL group (for example, MANAGER).3. Visit the user\u0027s LinkedIn profile within LinkedIn Recruiter and confirm the One-Click Export dropdown no longer shows the secured job requisition (jobReq-1).4. Remove a user (for example, User2) from the ACL group (MANAGER).5. Confirm the removed user (User2) can no longer view the secured job requisitions in the One-Click Export dropdown that were visible earlier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 All PUT, GET, and DELETE API calls succeed (verify from logs or response status).\u2022 After jobReq-1 is removed from the MANAGER group, assigned users no longer see jobReq-1 in the One-Click Export dropdown, while job requisitions still in the group (for example, jobReq-2) remain visible.\u2022 After User2 is removed from the MANAGER group, User2 no longer sees any of the group\u0027s secured job requisitions in the One-Click Export dropdown, while users still in the group retain visibility.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Assignees",
+      "Anchor": "assignees",
+      "SectionPath": [
+        "Assignees"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-402-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-add an ACL assignee1. Re-add the user(s) to the ACL or security group: PUT rest/entityAclAssignees with the user\u0027s person URN.2. Log in as one of the re-added users and check the One-Click Export dropdown and the In-ATS Indicator for any candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Logged in as one of the re-added users, they are able to see the secured job requisitions again in the One-Click Export dropdown and in the In-ATS Indicator for any candidate.",
             "Links": [],
             "Values": []
           }
@@ -108,10 +458,107 @@
     },
     {
       "Kind": "text",
-      "Section": "Module 4 - Sync ACLs",
-      "Anchor": "module-4---sync-acls",
-      "SectionPath": [],
-      "Text": "Relevant Documentation: Sync ACLs",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "These test cases apply across all ACL sync in Module 4.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-403-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify idempotent ACL and assignee upserts1. Re-send an already-synced entityAcl (same entityAclId, entityId, entityType, and integrationContext) and an already-synced entityAclAssignee (same entityAclId, assignee, and integrationContext), keeping the complete key unchanged.2. Show the batch calls are grouped in \u2264 100 records in sequential order.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 LinkedIn upserts the existing ACL or assignee \u2014 it must not create a second copy.\u2022 This complements the Entity ID Fidelity rule (RSC-401-002): stable, one-to-one IDs are what make idempotent upserts possible.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-403-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Keep ACLs current on change1. Add or update a user or a job requisition and show the corresponding entityAcl or entityAclAssignee is re-synced to prevent visibility issues.2. Confirm you do not assign more than 10 ACLs per user.3. Confirm batches are grouped in \u2264 100 records per call, with multiple batches for larger volumes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 ACLs and assignees are updated when users or job requisitions are added or updated, so visibility stays correct.\u2022 No more than 10 ACLs are assigned per user, and batch calls respect the 100-record limit.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-403-003Check type: qualitative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify ACL coverage of securable entitiesUse the loaded customer test tenant.1. Produce the ACL coverage report and confirm the threshold is met.2. The LinkedIn team will share the data quality report for the records present in LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the data quality requirement is met:\u2022 \u003C 5% of securable entities (for example, job requisitions) are without ACLs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-403-004Check type: charter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-run ACL checks during the charter phase1. Once the functional and data quality checks pass, re-run the same ACL functional and qualitative checks on the charter customer tenant(s).2. Obtain sign-off from the product managers and the RSC or CRM Connect team.3. This is a LinkedIn internal checklist item.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once the functional and qualitative checks pass, you are ready for beta. Re-run the same ACL functional and qualitative checks on the charter customer tenant(s). Charter-phase metrics must be reviewed and signed off by the product managers and the RSC or CRM Connect team before certification (GA).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Related documentation"
+      ],
+      "Text": "Sync ACLs",
       "Headers": [],
       "Rows": []
     }

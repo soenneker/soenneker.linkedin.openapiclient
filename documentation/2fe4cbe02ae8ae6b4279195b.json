@@ -24,15 +24,46 @@
   ],
   "Blocks": [
     {
-      "Kind": "table",
+      "Kind": "text",
       "Section": "Module 6 - Other",
       "Anchor": "module-6---other",
       "SectionPath": [],
+      "Text": "Module 6 covers the remaining cross-cutting integration and compliance requirements\nthat are not tied to a single data flow: keeping the integration on versioned APIs, and\nconfirming the partner has reviewed and complies with the LinkedIn Terms of Service and\npartnership agreement (including the Non-Official LinkedIn Content policy). To be\ncertified for this module, you must demonstrate every applicable test case below to\nLinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 6 - Other",
+      "Anchor": "module-6---other",
+      "SectionPath": [],
+      "Text": "Test cases in this module use the Functional and Compliance check types. For the rule ID scheme, how to read each test case, and the check type definitions, refer to the certification overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
+      "Text": "Rule IDs were renumbered to make each test case unambiguous to reference. Use the following table to map the rule IDs used in earlier revisions of this page to the current ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
       "Text": "",
       "Headers": [
-        "Rule",
-        "Execution Steps",
-        "Expected Result"
+        "Previous rule",
+        "Current rule",
+        "Test case"
       ],
       "Rows": [
         [
@@ -42,12 +73,12 @@
             "Values": []
           },
           {
-            "Text": "Support for versioned APIs.",
+            "Text": "RSC-601-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Demonstrate or explain what changes will need to take place to facilitate migration to versioned endpoints. Versioning migration path clearly understood by LinkedIn. Switching consumption to versioned endpoints requires minimal development support.",
+            "Text": "Demonstrate support for versioned APIs",
             "Links": [],
             "Values": []
           }
@@ -59,12 +90,64 @@
             "Values": []
           },
           {
-            "Text": "Partner has reviewed LinkedIn\u0027s Terms of Service and partnership agreement requirements, including references to Non-Official LinkedIn Content.",
+            "Text": "RSC-601-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Demonstrated or explained (at LinkedIn\u0027s option) no known violations at the time of certification and/or recertification.",
+            "Text": "Confirm compliance with the LinkedIn Terms of Service and partnership agreement",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-601-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate support for versioned APIs1. Explain or demonstrate that your integration calls the versioned rest/ endpoints with the LinkedIn-Version header (set to a currently supported API version), rather than the deprecated unversioned or /v2 endpoints.2. Confirm the plan and status for migrating any remaining unversioned calls across all RSC data flows.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The partner uses (or has a concrete, dated plan to migrate to) the versioned rest/ APIs with the correct LinkedIn-Version header across the integration.\u2022 This is the same versioning requirement referenced in Module 5 (RSC-503-001), applied to the integration as a whole.Related documentation: API Versioning",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/versioning?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-601-002Check type: compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm compliance with the LinkedIn Terms of Service and partnership agreement1. Confirm the partner has reviewed the LinkedIn Terms of Service and partnership agreement, including the Non-Official LinkedIn Content policy.2. Demonstrate or explain that there are no known violations at the time of certification.3. Re-confirm this at each recertification.4. Sign off with the LinkedIn Trust and Safety, or partnership, contact.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The partner has reviewed the LinkedIn Terms of Service and partnership agreement (including Non-Official LinkedIn Content) and demonstrated or explained that there are no known violations at certification and recertification.\u2022 This Compliance gate must be signed off with LinkedIn (mirrors the Module 1 T\u0026S onboarding gate).Related documentation: LinkedIn Terms of Service, partnership agreement, and the Non-Official LinkedIn Content policy",
             "Links": [],
             "Values": []
           }

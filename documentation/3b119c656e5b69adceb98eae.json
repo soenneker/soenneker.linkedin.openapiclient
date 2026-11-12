@@ -25,15 +25,73 @@
   ],
   "Blocks": [
     {
-      "Kind": "table",
+      "Kind": "text",
       "Section": "Module 5 - Data Deletion",
       "Anchor": "module-5---data-deletion",
       "SectionPath": [],
+      "Text": "As a LinkedIn partner, you must delete your customers\u0027 data from LinkedIn when they delete the corresponding records in your ATS. Use the Middleware Platform DELETE APIs to remove the data and all its copies. Module 5 covers candidates, applications, job requisitions, and related records, including notes, stages, interview feedback, and attachments. It also verifies that deleted data no longer appears in the Enhanced In-ATS Indicator. To complete Module 5 certification, demonstrate each applicable test case below to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 5 - Data Deletion",
+      "Anchor": "module-5---data-deletion",
+      "SectionPath": [],
+      "Text": "All test cases in this module use the functional check type. For the rule ID scheme, how to read each test case, and the check type definitions, refer to the certification overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 5 - Data Deletion",
+      "Anchor": "module-5---data-deletion",
+      "SectionPath": [],
+      "Text": "In Module 5, the test cases are grouped by purpose:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 5 - Data Deletion",
+      "Anchor": "module-5---data-deletion",
+      "SectionPath": [],
+      "Text": "Candidate deletions: RSC-501-001 and RSC-501-002.\nApplication deletions: RSC-502-001 and RSC-502-002.\nJob requisition and job requisition stage deletions: RSC-504-001, RSC-504-002, and RSC-505-001.\nCross-cutting deletion requirements: RSC-503-001 (versioned APIs), RSC-503-002 (deletion identifier mapping), and RSC-503-003 (deletion confirmation and idempotency).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 5 - Data Deletion",
+      "Anchor": "module-5---data-deletion",
+      "SectionPath": [],
+      "Text": "All DELETE APIs are governed by OAuth 2.0 Client Credentials using your customer application\u0027s client ID and secret and support query tunneling (X-HTTP-Method-Override: DELETE). Candidate and application deletions return HTTP 200 with per-entity 204 statuses in the response body. Job requisition, job requisition stage, and attachment deletions return HTTP 204 with per-entity 204 statuses in the response body. Upon success, all copies of the data are deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
+      "Text": "Rule IDs were renumbered to make each test case unambiguous to reference. Use the following table to map the rule IDs used in earlier revisions of this page to the current ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rule ID mapping",
+      "Anchor": "rule-id-mapping",
+      "SectionPath": [
+        "Rule ID mapping"
+      ],
       "Text": "",
       "Headers": [
-        "Rule",
-        "Execution Steps",
-        "Expected Result"
+        "Previous rule",
+        "Current rule",
+        "Test case"
       ],
       "Rows": [
         [
@@ -43,16 +101,13 @@
             "Values": []
           },
           {
-            "Text": "Delete Candidate Related Entities Test. 1. Select a candidate. 2. Delete that candidate\u0027s notes. 3. Delete that candidate.",
+            "Text": "RSC-501-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure that the deleted notes no longer appear in the Enhanced In-ATS Indicator for that candidate. ul\u003E 2. Ensure that the Enhanced In-ATS indicator no longer appears for that candidate. Relevant Documentation: Delete Candidate Notes \u0026 Delete Candidates",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidate-notes",
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidates"
-            ],
+            "Text": "Delete candidate-related entities",
+            "Links": [],
             "Values": []
           }
         ],
@@ -63,15 +118,13 @@
             "Values": []
           },
           {
-            "Text": "Delete Entire Candidate Test. Select a candidate, delete this candidate in your ATS.",
+            "Text": "RSC-501-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1.Ensure that the deleted notes no longer appear in the Enhanced In-ATS Indicator for that candidate. 2.Ensure that the Enhanced In-ATS indicator no longer appears for that candidate. Relevant Documentation: Delete Candidates",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidates"
-            ],
+            "Text": "Delete an entire candidate",
+            "Links": [],
             "Values": []
           }
         ],
@@ -82,18 +135,13 @@
             "Values": []
           },
           {
-            "Text": "Delete Application Related Entities Test. Select an application and delete the following: - Application notes - Application stages - Application interview feedback - Application",
+            "Text": "RSC-502-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure that the application\u0027s notes no longer appear in the Enhanced In-ATS Indicator. 2. Ensure that the application\u0027s stages no longer appear in the Enhanced In-ATS Indicator. 3. Ensure that the application\u0027s interview feedback no longer appears in the Enhanced In-ATS Indicator. 4. Ensure that the application no longer appears in the Enhanced In-ATS Indicator. Relevant Documentation: Delete Application Notes, Delete Application Stages, Delete Application Interview Feedback \u0026 Delete Applications",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-notes",
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-stages",
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-interview-feedback",
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-applications"
-            ],
+            "Text": "Delete application-related entities",
+            "Links": [],
             "Values": []
           }
         ],
@@ -104,15 +152,13 @@
             "Values": []
           },
           {
-            "Text": "Delete Entire Application Test. Select an application and delete it.",
+            "Text": "RSC-502-002",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "1. Ensure that the application\u0027s notes no longer appear in the Enhanced In-ATS Indicator. 2. Ensure that the application\u0027s stages no longer appear in the Enhanced In-ATS Indicator. 3. Ensure that the application\u0027s interview feedback no longer appears in the Enhanced In-ATS Indicator. 4. Ensure that the application no longer appears in the Enhanced In-ATS Indicator. Relevant Documentation: Delete Applications",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-applications"
-            ],
+            "Text": "Delete an entire application",
+            "Links": [],
             "Values": []
           }
         ],
@@ -123,17 +169,395 @@
             "Values": []
           },
           {
-            "Text": "Support for version API.",
+            "Text": "RSC-503-001",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Demonstrate or explain what changes will need to take place to facilitate migration to versioned endpoints. Versioning migration path clearly understood by LinkedIn. Switching consumption to versioned endpoints requires minimal development support.",
+            "Text": "Demonstrate support for versioned APIs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-503-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map deletion identifiers (certification prerequisite)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-503-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm deletions and verify idempotency",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-504-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete job requisition-related entities",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-504-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete an entire job requisition",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not previously documented",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC-505-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete a job requisition stage",
             "Links": [],
             "Values": []
           }
         ]
       ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidates",
+      "Anchor": "candidates",
+      "SectionPath": [
+        "Candidates"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-501-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete candidate-related entities1. On an existing candidate that has notes, delete the note(s): DELETE rest/candidateNotes with externalCandidateId, integrationContext, externalNoteId.2. Confirm the note is gone from the Enhanced In-ATS Indicator.3. Then delete the candidate: DELETE rest/candidates with externalCandidateId, integrationContext.4. Confirm the Enhanced In-ATS Indicator for that candidate is gone.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 After deleting the candidate note(s), they are removed from the Enhanced In-ATS Indicator.\u2022 After deleting the candidate, the Enhanced In-ATS Indicator for that candidate is removed.\u2022 Each delete returns a per-entity 204, and upon success all copies of the data are deleted.Related documentation: Delete candidate notes, delete candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidate-notes",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidates"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-501-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete an entire candidate1. Delete an existing candidate: DELETE rest/candidates with externalCandidateId, integrationContext.2. Confirm the response returns HTTP 200, and read the per-entity 204 status from the body for the candidate.3. Confirm the Enhanced In-ATS Indicator for that candidate is no longer shown.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The candidate is deleted from LinkedIn and the Enhanced In-ATS Indicator for that candidate is removed.\u2022 Upon success, all copies of the candidate data are deleted.Related documentation: Delete candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidates"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Applications",
+      "Anchor": "applications",
+      "SectionPath": [
+        "Applications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-502-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete application-related entities1. On an existing application, delete its note(s): DELETE rest/applicationNotes with externalJobApplicationId, integrationContext, externalNoteId; confirm gone from the indicator.2. Delete its stage(s): DELETE rest/applicationStage with jobApplicationId, jobApplicationStageId, integrationContext; confirm gone.3. Delete its interview feedback: DELETE rest/applicationInterviewFeedbacks with jobApplicationId, interviewFeedbackId, integrationContext; confirm gone.4. Delete any resume attachment: DELETE rest/attachments with externalReferenceEntityId, externalAttachmentId, integrationContext, externalReferenceEntityType=APPLICATION, attachmentType=RESUME.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 After deleting each related entity (notes, stages, interview feedback, attachments), it is removed from the Enhanced In-ATS Indicator.\u2022 Each delete returns a per-entity 204, and upon success all copies of the data are deleted.Related documentation: Delete application notes, delete application stages, delete application interview feedback, delete attachments",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-notes",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-stages",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-interview-feedback",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-attachments"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-502-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete an entire application1. Delete an existing application: DELETE rest/applications with atsJobApplicationId, integrationContext.2. Confirm the response returns HTTP 200, and read the per-entity 204 status from the body for the application.3. Confirm the Enhanced In-ATS Indicator for that application is no longer shown.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The application is deleted from LinkedIn and the Enhanced In-ATS Indicator for that application is removed.\u2022 Upon success, all copies of the application data are deleted.Related documentation: Delete applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-applications"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "These test cases apply across all deletions in Module 5.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Cross-cutting",
+      "Anchor": "cross-cutting",
+      "SectionPath": [
+        "Cross-cutting"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-503-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate support for versioned APIs1. Explain or demonstrate that your integration uses the versioned rest/ DELETE endpoints with the LinkedIn-Version header (set to a currently supported API version) rather than the deprecated unversioned or /v2 endpoints.2. Confirm the plan and status for migrating any remaining unversioned calls.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The partner uses (or has a concrete plan to migrate to) the versioned rest/ DELETE APIs with the correct LinkedIn-Version header.\u2022 This is the same versioning requirement tracked in Module 6 (RSC-601-001).Related documentation: API versioning",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/versioning?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-503-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map deletion identifiers (certification prerequisite)1. Produce a mapping of each deletable entity \u2192 its DELETE endpoint and required identifiers: candidate (externalCandidateId), candidate note (\u002B externalNoteId), application (atsJobApplicationId), application note (externalJobApplicationId \u002B externalNoteId), application stage (jobApplicationId \u002B jobApplicationStageId), interview feedback (jobApplicationId \u002B interviewFeedbackId), job requisition (externalJobRequisitionId), job requisition stage (\u002B jobRequisitionStageId), attachment (externalReferenceEntityId \u002B externalAttachmentId \u002B externalReferenceEntityType \u002B attachmentType), each with integrationContext (and dataProvider=ATS on legacy /v2 endpoints).2. Confirm the identifiers reuse the same external IDs you synced in Module 2 (strict 1:1).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Share a mapping between each deletable entity and its DELETE endpoint and required identifiers, reusing the identical external IDs synced in Module 2.\u2022 This mapping is a certification prerequisite used for the LinkedIn testing and verification (code review).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-503-003Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm deletions and verify idempotency1. On any delete, inspect the response body and confirm the per-entity 204 status (and check for error statuses on individual entities).2. Re-issue the same delete for an already-deleted entity and confirm it is handled safely (no error surfaced to the customer).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The partner checks the per-entity status in each DELETE response and handles errors for individual entities.\u2022 Re-deleting an already-deleted entity is safe, and upon success all copies of the data are deleted.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Job requisitions",
+      "Anchor": "job-requisitions",
+      "SectionPath": [
+        "Job requisitions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-504-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete job requisition-related entities1. On an existing requisition that has stages, delete the stage(s): DELETE rest/jobRequisitionStages with externalJobRequisitionId, jobRequisitionStageId, integrationContext.2. Confirm the stage is gone from the stage dropdown in the associated ATS Connected Project.3. Then delete the requisition: DELETE rest/jobRequisitions with externalJobRequisitionId, integrationContext.4. Confirm the requisition is no longer available in One Click Export or Connected Projects.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 After deleting the stage(s), they no longer appear for that requisition.\u2022 After deleting the requisition, it is removed from LinkedIn (One Click Export dropdown and any Connected Project).\u2022 Each delete returns a per-entity 204, and upon success all copies of the data are deleted.Related documentation: Delete job requisition stages, delete job requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-job-requisition-stages",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-job-requisitions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-504-002Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete an entire job requisition1. Delete an existing requisition: DELETE rest/jobRequisitions with externalJobRequisitionId, integrationContext.2. Confirm the response returns HTTP 204, and read the per-entity 204 status from the body for the requisition.3. Confirm the requisition no longer appears in One Click Export or Connected Projects.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The requisition is deleted from LinkedIn and is no longer selectable in One Click Export or Connected Projects.\u2022 Upon success, all copies of the requisition data are deleted.Related documentation: Delete job requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-job-requisitions"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Job requisition stages",
+      "Anchor": "job-requisition-stages",
+      "SectionPath": [
+        "Job requisition stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution steps",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-505-001Check type: functional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete a job requisition stage1. Delete an existing stage: DELETE rest/jobRequisitionStages with externalJobRequisitionId, jobRequisitionStageId, integrationContext.2. Confirm the response returns HTTP 204, and read the per-entity 204 status from the body for the stage.3. Confirm the stage no longer appears in the stage dropdown for Applicants in the associated ATS Connected Project.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 The stage is deleted from LinkedIn and no longer appears for that requisition.\u2022 Upon success, all copies of the stage data are deleted.Related documentation: Delete job requisition stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-job-requisition-stages"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Related documentation"
+      ],
+      "Text": "Data deletion",
+      "Headers": [],
+      "Rows": []
     }
   ]
 }
