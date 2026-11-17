@@ -11009,6 +11009,10 @@
       },
       "Learn_marketing_community_management_boost_boost_analytics_query_parameters": {
         "properties": {
+          "organization": {
+            "description": "The sponsoring organization for Company Page analytics. Omit it for member analytics. An organization permission scope alone doesn\u0027t select this context.\n\nDocumented type: URL-encoded organization URN, for example urn%3Ali%3Aorganization%3A2414183.\n\nRequirement: Company Page requests only",
+            "type": "string"
+          },
           "q": {
             "description": "Finder name. Value must be boostAnalytics.\n\nDocumented type: String\n\nRequirement: Yes",
             "type": "string"
@@ -11038,6 +11042,11 @@
         "required": [
           "paging"
         ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#response-body-fields"
+      },
+      "Learn_marketing_community_management_boost_boost_analytics_response_body_fields_425": {
+        "properties": {},
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#response-body-fields"
       },
@@ -11126,7 +11135,7 @@
             "type": "object"
           },
           "targetingCriteria": {
-            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+            "description": "Audience to preview. Omit it for a suggested audience. On 202610, pass the suggested criteria back unchanged. Starting with 202611, use the custom or saved audience model described below.\n\nDocumented type: Object\n\nRequirement: No",
             "type": "object"
           },
           "totalBudget": {
@@ -11201,7 +11210,7 @@
             "type": "string"
           },
           "targetingCriteria": {
-            "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
+            "description": "Audience for the boost. On 202610, pass the suggested criteria back unchanged. On 202611, use the selected criteria previewed by Hydrate. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
             "type": "object"
           },
           "totalBudget": {
@@ -11286,7 +11295,7 @@
                 "type": "array"
               },
               "billingConfigured": {
-                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+                "description": "Whether the sponsored account is ready for billing. Invoice billing qualifies; otherwise business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.\n\nDocumented type: boolean\n\nRequirement: Yes",
                 "type": "boolean"
               },
               "campaignUrn": {
@@ -11364,6 +11373,10 @@
                 "properties": {
                   "campaignTotalBudget": {
                     "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "totalApplicableCredit": {
+                    "description": "The optional credit as a MoneyAmount (amount, currencyCode). Omitted when no credit applies. Available in both 202610 and 202611.\n\nDocumented type: Object\n\nRequirement: No",
                     "type": "object"
                   },
                   "totalConsumerPrice": {
@@ -11597,7 +11610,7 @@
             "type": "object"
           },
           "targetingCriteria": {
-            "description": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No",
+            "description": "Audience to preview. Omit it for a suggested audience. On 202610, pass the suggested criteria back unchanged. Starting with 202611, use the custom or saved audience model described below.\n\nDocumented type: Object\n\nRequirement: No",
             "type": "object"
           },
           "totalBudget": {
@@ -11677,7 +11690,7 @@
             "type": "string"
           },
           "targetingCriteria": {
-            "description": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
+            "description": "Audience for the boost. On 202610, pass the suggested criteria back unchanged. On 202611, use the selected criteria previewed by Hydrate. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes",
             "type": "object"
           },
           "totalBudget": {
@@ -11763,7 +11776,7 @@
                 "type": "array"
               },
               "billingConfigured": {
-                "description": "Whether the sponsored account already has a payment method configured.\n\nDocumented type: boolean\n\nRequirement: Yes",
+                "description": "Whether the sponsored account is ready for billing. Invoice billing qualifies; otherwise business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.\n\nDocumented type: boolean\n\nRequirement: Yes",
                 "type": "boolean"
               },
               "campaignUrn": {
@@ -11841,6 +11854,10 @@
                 "properties": {
                   "campaignTotalBudget": {
                     "description": "Requested campaign total budget.\n\nDocumented type: Object\n\nRequirement: No",
+                    "type": "object"
+                  },
+                  "totalApplicableCredit": {
+                    "description": "The optional credit as a MoneyAmount (amount, currencyCode). Omitted when no credit applies. Available in both 202610 and 202611.\n\nDocumented type: Object\n\nRequirement: No",
                     "type": "object"
                   },
                   "totalConsumerPrice": {
@@ -12198,7 +12215,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#query-parameters-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_query_parameters_1_453": {
+      "Learn_marketing_community_management_members_post_statistics_query_parameters_1_454": {
         "properties": {
           "aggregation": {
             "description": "Type of aggregation.\n\nDocumented type: String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note: DAILY aggregation is not supported for MEMBERS_REACHED, LINK_CLICKS, FOLLOWER_GAINED_FROM_CONTENT or PROFILE_VIEW_FROM_CONTENT. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.\n\nRequirement: Yes",
@@ -12228,7 +12245,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#query-parameters-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_query_parameters_448": {
+      "Learn_marketing_community_management_members_post_statistics_query_parameters_449": {
         "properties": {
           "aggregation": {
             "description": "Type of aggregation.\n\nDocumented type: String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note: DAILY aggregation is not supported for MEMBERS_REACHED, LINK_CLICKS, FOLLOWER_GAINED_FROM_CONTENT or PROFILE_VIEW_FROM_CONTENT. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.\n\nRequirement: Yes",
@@ -12314,7 +12331,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#response-body-fields-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_response_body_fields_1_455": {
+      "Learn_marketing_community_management_members_post_statistics_response_body_fields_1_456": {
         "properties": {
           "count": {
             "description": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.\n\nDocumented type: Long\n\nRequirement: Yes",
@@ -12337,7 +12354,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#response-body-fields-1"
       },
-      "Learn_marketing_community_management_members_post_statistics_response_body_fields_450": {
+      "Learn_marketing_community_management_members_post_statistics_response_body_fields_451": {
         "properties": {
           "count": {
             "description": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.\n\nDocumented type: Long\n\nRequirement: Yes",
@@ -15659,7 +15676,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events#events-1"
       },
-      "Learn_marketing_event_management_events_events_1_543": {
+      "Learn_marketing_event_management_events_events_1_544": {
         "properties": {
           "hasDarkUgc": {
             "description": "When true, the event is backed only by a dark UGC post created through sponsored ad workflows. The event has no LinkedIn Events Detail Page and is suppressed from all organic surfaces regardless of discoveryMode. Default: false.\n\nDocumented type: Boolean",
@@ -15874,6 +15891,10 @@
       },
       "Learn_marketing_integrations_ads_account_structure_create_and_manage_accounts_schema": {
         "properties": {
+          "billingReference": {
+            "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+            "type": "string"
+          },
           "currency": {
             "description": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more\n\nDocumented type: string, default=\u0022USD\u0022\n\nRequirement: False",
             "type": "string"
@@ -16286,7 +16307,7 @@
             "type": "string"
           },
           "offsiteDeliveryEnabled": {
-            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
             "type": "boolean"
           },
           "offsitePreferences": {
@@ -16457,7 +16478,7 @@
                 "$ref": "#/components/schemas/Learn_marketing_integrations_ads_account_structure_create_and_manage_campaigns_publisher_restriction_files"
               }
             ],
-            "description": "This field contains one or more files that have been uploaded by an advertiser. Each file contains a list of web domains/app store URLs. The advertiser can choose if they want to include or exclude this particular campaign from serving on those apps/websites. The API accepts only allowlists under include field and blocklists under exclude field.\n\nDocumented type: optional PublisherRestrictionFiles"
+            "description": "This field contains one or more files that have been uploaded by an advertiser. Each file contains a list of web domains/app store URLs. The advertiser can choose if they want to include or exclude this particular campaign from serving on those apps/websites. The API accepts only allowlists under include field and blocklists under exclude field. Each file\u0027s surface (LAN or CTV) must match the campaign, and the file must belong to the campaign\u0027s sponsored account. See Publisher restriction file validation.\n\nDocumented type: optional PublisherRestrictionFiles"
           }
         },
         "type": "object",
@@ -16505,12 +16526,12 @@
       "Learn_marketing_integrations_ads_account_structure_create_and_manage_campaigns_publisher_restriction_files": {
         "properties": {
           "exclude": {
-            "description": "List of publisher file IDs to whom ad requests cannot be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request cannot be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.\n\nDocumented type: AdPublisherFileUrn[], default=\u0022[]\u0022",
+            "description": "List of publisher file IDs to whom ad requests cannot be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request cannot be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}. Only blocklists are accepted. Each file\u0027s surface must match the campaign. See Publisher restriction file validation.\n\nDocumented type: AdPublisherFileUrn[], default=\u0022[]\u0022",
             "items": {},
             "type": "array"
           },
           "include": {
-            "description": "List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.\n\nDocumented type: AdPublisherFileUrn[], default=\u0022[]\u0022",
+            "description": "List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}. Only allowlists are accepted. Each file\u0027s surface must match the campaign. See Publisher restriction file validation.\n\nDocumented type: AdPublisherFileUrn[], default=\u0022[]\u0022",
             "items": {},
             "type": "array"
           }
@@ -17570,6 +17591,10 @@
             "description": "File name\n\nDocumented type: String\n\nRequirement: NO",
             "type": "string"
           },
+          "surface": {
+            "description": "Surface the list applies to: LAN or CTV. BOTH isn\u0027t accepted. Can\u0027t be changed after the list is created. Required in version 202611 and later. Not supported in earlier versions; omit it.\n\nDocumented type: ENUM\n\nRequirement: Conditional",
+            "type": "string"
+          },
           "type": {
             "description": "File type BLOCKLIST/ALLOWLIST, BLOCKLIST is default\n\nDocumented type: ENUM\n\nRequirement: YES",
             "type": "string"
@@ -17745,6 +17770,10 @@
           },
           "publisherRestrictionId": {
             "description": "Id of the newly created adPublisherRestrictions record\n\nDocumented type: numeric"
+          },
+          "surface": {
+            "description": "Placement the list applies to: LAN (LinkedIn Audience Network), CTV (Connected TV), or BOTH (legacy lists created before surfaces were introduced; read-only). Available in API version 202611 and later. See Publisher List Surfaces.\n\nDocumented type: ENUM",
+            "type": "string"
           },
           "type": {
             "description": "Type of the uploaded file BLOCKLIST/ALLOWLIST\n\nDocumented type: ENUM",
@@ -18550,490 +18579,6 @@
             "format": "int64",
             "type": "integer"
           },
-          "approximateMemberReach": {
-            "description": "Non-demographic pivots only (i.e. not MEMBER_). The estimated number of unique member accounts with at least one impression. This metric is an updated and more accurate version of legacy metric approximateUniqueImpressions. This metric is only available when the number of days in the date range is less than or equal to 92 days. This metric is fully launched in Jan 2024.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "audiencePenetration": {
-            "description": "The approximate number of unique members reached by the advertiser divided by the approximate total target audience size. The field is null if the date range has more than 92 days. This metric supports ACCOUNT, CAMPAIGN_GROUP, or CAMPAIGN pivots, and can be used alongside additional pivots as long as at least one of these primary pivots is included. Note: The audiencePenetration field is only supported from API version 202411 onwards.\n\nDocumented type: double",
-            "type": "number"
-          },
-          "averageDwellTime": {
-            "description": "Average user dwell time (in seconds). It measures the duration for which more than 50% of the ad\u0027s pixels remain visible in the viewport. Note: The averageDwellTime field is only supported from API version 202411 onwards.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "cardClicks": {
-            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of clicks for each card of a carousel ad. The first card click of the carousel ad results in an immediate cardClick and click, whereas scrolling to other cards and clicking counts as an additional cardClick.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "cardImpressions": {
-            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of impressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate cardImpression and impression, whereas scrolling to other cards counts as additional cardImpressions.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "clicks": {
-            "description": "The count of chargeable clicks. Despite not charging for clicks for CPM campaigns, this field still represents those clicks for which we would otherwise charge advertisers based on objective (for example, clicks to view the landing page or company page).\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "commentLikes": {
-            "description": "The count of likes of a comment. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "comments": {
-            "description": "The count of comments. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "companyPageClicks": {
-            "description": "The count of clicks to view the company page.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "conversionValueInLocalCurrency": {
-            "description": "Non-demographic pivots only (i.e. not MEMBER_). Value of the conversions in the account\u0027s local currency based on rules defined by the advertiser. Conversion value is set by the advertiser at a per conversion level, and aggregated across the query time range.\n\nDocumented type: BigDecimal"
-          },
-          "costInLocalCurrency": {
-            "description": "Cost in the account\u0027s local currency based on the pivot and timeGranularity. For example, this would be spend by member company size per month if the pivot is MEMBER_COMPANY_SIZE and timeGranularity is MONTHLY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.\n\nDocumented type: BigDecimal"
-          },
-          "costInUsd": {
-            "description": "Cost in USD based on the pivot and timeGranularity. For example, this would be spend by campaign on a given day if the pivot is CAMPAIGN and timeGranularity is DAILY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.\n\nDocumented type: BigDecimal"
-          },
-          "costPerQualifiedLead": {
-            "description": "How much money was spent per qualified lead. Ratio is costInLocalCurrency / qualifiedLeads.\n\nDocumented type: BigDecimal"
-          },
-          "dateRange": {
-            "description": "Date range covered by the report data point. Date is specified in UTC. Start and end date are inclusive. Start date is required. End date is optional and defaults to today.\n\nDocumented type: DateRange"
-          },
-          "documentCompletions": {
-            "description": "The number of times users reached 100% of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "documentFirstQuartileCompletions": {
-            "description": "The number of times users reached the first quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "documentMidpointCompletions": {
-            "description": "The number of times users reached the second quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "documentThirdQuartileCompletions": {
-            "description": "The number of times users reached the third quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "downloadClicks": {
-            "description": "The number of times users have indicated the intent to download the media in an ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). This metric is only available for ad formats supporting media downloads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "externalWebsiteConversions": {
-            "description": "Total number of times users took a desired action after clicking on or seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.\n\nDocumented type: long, default=\u00220\u0022",
-            "format": "int64",
-            "type": "integer"
-          },
-          "externalWebsitePostClickConversions": {
-            "description": "Total number of times users took a desired action after clicking on your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.\n\nDocumented type: long, default=\u00220\u0022",
-            "format": "int64",
-            "type": "integer"
-          },
-          "externalWebsitePostViewConversions": {
-            "description": "Total number of times users took a desired action after seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.\n\nDocumented type: long, default=\u00220\u0022",
-            "format": "int64",
-            "type": "integer"
-          },
-          "follows": {
-            "description": "The count of follows. Sponsored Content and Follower ads only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "fullScreenPlays": {
-            "description": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "headlineClicks": {
-            "description": "The number of times members clicked on the headline of conversation ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "headlineImpressions": {
-            "description": "The number of times members were shown the headline of conversation ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "impressions": {
-            "description": "The number of times members were shown the ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "jobApplications": {
-            "description": "The number of times a member completed a job application after viewing or clicking on an ad. Currently, this metric is broken down into postViewJobApplications (if the member applied after viewing the ad) and postClickJobApplications (if the member applied after clicking the ad).\n\nDocumented type: BigDecimal"
-          },
-          "jobApplyClicks": {
-            "description": "The number of times a member clicked on the job\u2019s apply button on a LinkedIn jobs page after viewing or clicking on an ad which has a LinkedIn job landing page. Currently, this metric is broken down into postViewJobApplyClicks (if the member performed the action after viewing the ad) and postClickJobApplyClicks (if the member performed the action after clicking the ad).\n\nDocumented type: BigDecimal"
-          },
-          "landingPageClicks": {
-            "description": "The count of clicks which take the user to the creative landing page.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "leadGenerationMailContactInfoShares": {
-            "description": "The number of times users shared contact info through the One Click Lead Gen for Sponsored Messaging ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "leadGenerationMailInterestedClicks": {
-            "description": "The count of Sponsored Messaging ad recipients who clicked to demonstrate interest.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "likes": {
-            "description": "The count of likes. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "oneClickLeadFormOpens": {
-            "description": "The count of times users opened the lead form for a One Click Lead Gen campaign.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "oneClickLeads": {
-            "description": "The count of leads generated through One Click Lead Gen.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "opens": {
-            "description": "The count of opens of Sponsored Messaging ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "otherEngagements": {
-            "description": "The count of user interactions with the ad unit that don\u0027t fit into any other more specific category.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "pivotValues": {
-            "description": "The value of the pivots for a specific record returned. For example, supplying pivots of CREATIVE and CONVERSION results in a list of records, one for each creative/conversion combination. The pivotValues contain serialized URNs for the specific creative and conversion for a record. To resolve these URNs to their corresponding entities, refer to LinkedIn Marketing API URN Resolution.\n\nDocumented type: string[], default=\u0022[]\u0022",
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "postClickJobApplications": {
-            "description": "The number of times a member completed a job application after clicking on an ad. See also jobApplications.\n\nDocumented type: BigDecimal"
-          },
-          "postClickJobApplyClicks": {
-            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on an ad which has a LinkedIn job landing page. See also jobApplyClicks.\n\nDocumented type: BigDecimal"
-          },
-          "postClickRegistrations": {
-            "description": "The number of times a member has registered for an event or seminar after clicking on an ad which has a LinkedIn landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
-          },
-          "postViewJobApplications": {
-            "description": "The number of times a member completed a job application after viewing an ad. See also jobApplications.\n\nDocumented type: BigDecimal"
-          },
-          "postViewJobApplyClicks": {
-            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking an ad which has a LinkedIn job landing page. See also jobApplyClicks.\n\nDocumented type: BigDecimal"
-          },
-          "postViewRegistrations": {
-            "description": "The number of times a member has registered for an event or seminar after viewing an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering. See also registrations.\n\nDocumented type: BigDecimal"
-          },
-          "qualifiedLeads": {
-            "description": "The count of qualified leads shared by the advertiser. Qualified lead is a lead that has been deemed more likely to become a customer compared to other leads, based on their engagement and fit.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "reactions": {
-            "description": "The count of positive reactions on Sponsored Content which can capture, like, interest, praise, and other responses.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "registrations": {
-            "description": "The number of times a member has registered for an event or seminar after viewing or clicking on an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
-          },
-          "revenueAttributionMetrics": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_reporting_ads_reporting_schema_revenue_attribution_metrics"
-              }
-            ],
-            "description": "Metrics that represent LinkedIn Ads-attributed opportunities within the CRM (Customer Relationship Management) system. This field is only available through the attributedRevenueMetrics finder.\n\nDocumented type: RevenueAttributionMetrics"
-          },
-          "sends": {
-            "description": "The count of sends of Sponsored Messaging ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "shares": {
-            "description": "The count of shares. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "subscriptionClicks": {
-            "description": "The count of clicks to subscribe to a series, such as a Newsletter.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "talentLeads": {
-            "description": "Number of leads captured through a talent media campaign.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "textUrlClicks": {
-            "description": "The count of clicks on any links (anchor tags) that were included in the body of the Sponsored Messaging ad.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "totalEngagements": {
-            "description": "The count of all user interactions with the ad unit.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "validWorkEmailLeads": {
-            "description": "The count of leads with a valid work email that doesn\u0027t use an established free or personal email domain.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "videoCompletions": {
-            "description": "The count of video ads that played 97-100% of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "videoFirstQuartileCompletions": {
-            "description": "The count of video ads that played through the first quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "videoMidpointCompletions": {
-            "description": "The count of video ads that played through the midpoint of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "videoStarts": {
-            "description": "The count of video ads that were started by users.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "videoThirdQuartileCompletions": {
-            "description": "The count of video ads that played through the third quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "videoViews": {
-            "description": "A video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to fullscreen mode) doesn\u0027t count as a view.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralCardClicks": {
-            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralClicks for each card of a carousel ad. The first viralCardClick of the carousel ad results in an immediate viralCardClick and viralClick, whereas scrolling to other cards and clicking counts as additional viralCardClick.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralCardImpressions": {
-            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralImpressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate viralCardImpression and viralImpression, whereas scrolling to other cards counts as additional viralCardImpressions.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralClicks": {
-            "description": "The count of clicks on viral impressions. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralCommentLikes": {
-            "description": "The count of likes on comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralComments": {
-            "description": "The count of comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralCompanyPageClicks": {
-            "description": "The count of clicks to view the company page from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralDocumentCompletions": {
-            "description": "The number of times users reached 100% of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralDocumentFirstQuartileCompletions": {
-            "description": "The number of times users reached the first quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralDocumentMidpointCompletions": {
-            "description": "The number of times users reached the second quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralDocumentThirdQuartileCompletions": {
-            "description": "The number of times users reached the third quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralDownloadClicks": {
-            "description": "The number of times users have indicated the intent to download the media in a viral ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). Only available for ads supporting media downloads.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralExternalWebsiteConversions": {
-            "description": "The count of conversions that are attributed to your ads driven by a viral event. See viral impressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralExternalWebsitePostClickConversions": {
-            "description": "The count of post-click conversions that are attributed to your ads driven by a viral click. See viral impressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralExternalWebsitePostViewConversions": {
-            "description": "The count of post-view conversions that are attributed to your ads driven by a viral impression. See viral impressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralFollows": {
-            "description": "The count of follows from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralFullScreenPlays": {
-            "description": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode. See viralImpressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralImpressions": {
-            "description": "The count of viral impressions for this activity. Viral impressions are those resulting from users sharing sponsored content to their own network of connections. Viral impressions are not counted as regular impressions. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralJobApplications": {
-            "description": "The number of times a member completed a job application after viewing or clicking on a viral ad. Currently, this metric is broken down into viralPostViewJobApplications (if the member performed the action after viewing the viral ad) and viralPostClickJobApplications (if the member performed the action after clicking the viral ad).\n\nDocumented type: BigDecimal"
-          },
-          "viralJobApplyClicks": {
-            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing or clicking on a viral ad which has a LinkedIn job landing page during the date range.Currently, this metric is broken down into viralPostViewJobApplyClicks (if the member performed the action after viewing the viral ad) and viralPostClickJobApplyClicks (if the member performed the action after clicking the viral ad).\n\nDocumented type: BigDecimal"
-          },
-          "viralLandingPageClicks": {
-            "description": "The count of clicks on viral impressions to take the user to the creative landing page. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralLikes": {
-            "description": "The count of likes from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralOneClickLeadFormOpens": {
-            "description": "The count of times users opened the lead form for viral impressions from a Lead Gen campaign. See viral impressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralOneClickLeads": {
-            "description": "The count of leads generated through One Click Lead Gen from viral impressions for this activity. See viral impressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralOtherEngagements": {
-            "description": "The count of user interactions with viral impressions that don\u0027t fit into any other more specific category. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralPostClickJobApplications": {
-            "description": "The number of times a member completed a job application after clicking on a viral ad.\n\nDocumented type: BigDecimal"
-          },
-          "viralPostClickJobApplyClicks": {
-            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on a viral ad which has a LinkedIn job landing page.\n\nDocumented type: BigDecimal"
-          },
-          "viralPostClickRegistrations": {
-            "description": "The number of times a member has registered for an event or seminar after clicking on a viral ad which has a LinkedIn landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
-          },
-          "viralPostViewJobApplications": {
-            "description": "The number of times a member completed a job application after viewing a viral ad.\n\nDocumented type: BigDecimal"
-          },
-          "viralPostViewJobApplyClicks": {
-            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing a viral ad which has a LinkedIn job landing page.\n\nDocumented type: BigDecimal"
-          },
-          "viralPostViewRegistrations": {
-            "description": "The number of times a member has registered for an event or seminar after viewing a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
-          },
-          "viralReactions": {
-            "description": "The count of positive reactions on viral Sponsored Content which can capture like, interest, praise, and other responses. See viral impressions definition for details on viral engagements.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralRegistrations": {
-            "description": "The number of times a member has registered for an event or seminar after viewing or clicking on a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
-          },
-          "viralShares": {
-            "description": "The count of shares from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralSubscriptionClicks": {
-            "description": "The count of viral clicks to subscribe to a series, such as a Newsletter.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralTotalEngagements": {
-            "description": "The count of all user interactions with a viral ad unit. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralVideoCompletions": {
-            "description": "The count of viral video ads that played 97-100% of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralVideoFirstQuartileCompletions": {
-            "description": "The count of viral video ads that played through the first quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralVideoMidpointCompletions": {
-            "description": "The count of viral video ads that played through the midpoint of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralVideoStarts": {
-            "description": "The count of viral video ads that were started by users. See viralImpressions definition. Since viral videos are automatically played for ON_SITE, this is the same as viralImpressions if the servingLocation is ON_SITE.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralVideoThirdQuartileCompletions": {
-            "description": "The count of viral video ads that played through the third quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "viralVideoViews": {
-            "description": "A viral video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to full screen mode) doesn\u0027t count as a view. See viralImpressions definition.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          }
-        },
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema#metrics-available"
-      },
-      "Learn_marketing_integrations_ads_reporting_ads_reporting_schema_metrics_available_553": {
-        "properties": {
-          "actionClicks": {
-            "description": "The count of clicks on the action button of the Sponsored Messaging ad.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
-          "adUnitClicks": {
-            "description": "The count of clicks on the ad unit displayed alongside the Sponsored Messaging ad.\n\nDocumented type: long",
-            "format": "int64",
-            "type": "integer"
-          },
           "appointmentsScheduled": {
             "description": "The number of appointments booked through Lead Gen campaigns. Note: The appointmentsScheduled field is only supported from API version 202605 onwards.\n\nDocumented type: long",
             "format": "int64",
@@ -19710,7 +19255,7 @@
       "Learn_marketing_integrations_ads_reporting_conversions_api_schema_conversioneventuser": {
         "properties": {
           "userIds": {
-            "description": "List of one or more identifiers to match the conversion user with objects containing idType and idValue. Currently supported idType are: SHA256_EMAIL LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID ACXIOM_ID PLAINTEXT_IP_ADDRESS SHA256_IP_ADDRESS GOOGLE_AID\n\nDocumented type: List (idType,idValue)",
+            "description": "List of one or more identifiers to match the conversion user with objects containing idType and idValue. Currently supported idType are: SHA256_EMAIL LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID ACXIOM_ID PLAINTEXT_IP_ADDRESS SHA256_IP_ADDRESS GOOGLE_AID SHA256_PHONE(available starting with the 202611 version)\n\nDocumented type: List (idType,idValue)",
             "items": {
               "$ref": "#/components/schemas/Learn_marketing_integrations_ads_reporting_conversions_api_schema_idtype"
             },
@@ -19744,6 +19289,10 @@
           },
           "SHA256_IP_ADDRESS": {
             "description": "IP address of the user, hashed using SHA256. Currently, only IPv4 addresses are supported. The result should be a HEX-encoded string of exactly 64 characters.\n\nDocumented type: string",
+            "type": "string"
+          },
+          "SHA256_PHONE": {
+            "description": "Available starting with the 202611 version. The phone number of the contact associated with the conversion event, hashed using SHA256. Before hashing, normalize the phone number to E.164 format (country calling code plus national number), then remove the leading \u002B so that only digits remain. Apply SHA256 to this digits-only string and hex-encode the digest. The result must be exactly 64 hexadecimal characters. For example, (650) 555-1212 in the US becomes \u002B16505551212 in E.164 format and 16505551212 before hashing, producing e323ec626319ca94ee8bff2e4c87cf613be6ea19919ed1364124e16807ab3176.\n\nDocumented type: string",
             "type": "string"
           }
         },
@@ -53418,6 +52967,10 @@
                     "elements": {
                       "items": {
                         "properties": {
+                          "billingReference": {
+                            "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                            "type": "string"
+                          },
                           "currency": {
                             "description": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more\n\nDocumented type: string, default=\u0022USD\u0022\n\nRequirement: False",
                             "type": "string"
@@ -61972,6 +61525,10 @@
                     "elements": {
                       "items": {
                         "properties": {
+                          "billingReference": {
+                            "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                            "type": "string"
+                          },
                           "currency": {
                             "description": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more\n\nDocumented type: string, default=\u0022USD\u0022\n\nRequirement: False",
                             "type": "string"
@@ -62326,6 +61883,10 @@
               },
               "schema": {
                 "properties": {
+                  "billingReference": {
+                    "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                    "type": "string"
+                  },
                   "currency": {
                     "description": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more\n\nDocumented type: string, default=\u0022USD\u0022\n\nRequirement: False",
                     "type": "string"
@@ -62333,6 +61894,10 @@
                   "elements": {
                     "items": {
                       "properties": {
+                        "billingReference": {
+                          "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                          "type": "string"
+                        },
                         "currency": {
                           "description": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more\n\nDocumented type: string, default=\u0022USD\u0022\n\nRequirement: False",
                           "type": "string"
@@ -62552,6 +62117,10 @@
                     "elements": {
                       "items": {
                         "properties": {
+                          "billingReference": {
+                            "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                            "type": "string"
+                          },
                           "currency": {
                             "description": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more\n\nDocumented type: string, default=\u0022USD\u0022\n\nRequirement: False",
                             "type": "string"
@@ -63192,6 +62761,10 @@
                 },
                 "schema": {
                   "properties": {
+                    "billingReference": {
+                      "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                      "type": "string"
+                    },
                     "changeAuditStamps": {
                       "properties": {
                         "created": {
@@ -64044,6 +63617,64 @@
         },
         "responses": {
           "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string",
+                      "type": "string"
+                    },
+                    "errorDetailType": {
+                      "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string",
+                      "type": "string"
+                    },
+                    "errorDetails": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/Learn_marketing_error_responses_errordetails_schema"
+                        }
+                      ],
+                      "description": "Additional error details. Please see this section for schema. This field may be absent in certain cases.\n\nDocumented type: JSON object"
+                    },
+                    "message": {
+                      "anyOf": [
+                        {
+                          "description": "A description of the error.\n\nDocumented type: string",
+                          "type": "string"
+                        },
+                        {
+                          "type": "string",
+                          "x-linkedin-inferred-from-example": true
+                        }
+                      ]
+                    },
+                    "serviceErrorCode": {
+                      "description": "A subcode that further classifies the error.\n\nDocumented type: int",
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "status": {
+                      "anyOf": [
+                        {
+                          "description": "The HTTP status code.\n\nDocumented type: int",
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        {
+                          "type": "integer",
+                          "x-linkedin-inferred-from-example": true
+                        }
+                      ]
+                    }
+                  },
+                  "type": "object",
+                  "x-linkedin-schema": "marketing_error_responses_new_error_response_schema",
+                  "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses#new-error-response-schema"
+                },
+                "x-linkedin-learn-schema": true
+              }
+            },
             "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
@@ -64067,7 +63698,7 @@
         "tags": [
           "Use Cases / Account structure / Campaign Mangement"
         ],
-        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns#sample-request-3",
+        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns#sample-request-with-an-invalid-publisher-restriction-file",
         "x-postman-variants": [
           {
             "effectiveAuth": {
@@ -70419,7 +70050,7 @@
                       "type": "string"
                     },
                     "offsiteDeliveryEnabled": {
-                      "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                      "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                       "type": "boolean"
                     },
                     "offsitePreferences": {
@@ -76078,7 +75709,7 @@
                             "type": "string"
                           },
                           "offsiteDeliveryEnabled": {
-                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                             "type": "boolean"
                           },
                           "offsitePreferences": {
@@ -76470,7 +76101,7 @@
                             "type": "string"
                           },
                           "offsiteDeliveryEnabled": {
-                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                             "type": "boolean"
                           },
                           "offsitePreferences": {
@@ -77545,7 +77176,7 @@
                           "type": "string"
                         },
                         "offsiteDeliveryEnabled": {
-                          "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                          "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                           "type": "boolean"
                         },
                         "offsitePreferences": {
@@ -77776,7 +77407,7 @@
                   "offsiteDeliveryEnabled": {
                     "anyOf": [
                       {
-                        "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                        "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                         "type": "boolean"
                       },
                       {
@@ -78123,7 +77754,7 @@
                       "type": "string"
                     },
                     "offsiteDeliveryEnabled": {
-                      "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                      "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                       "type": "boolean"
                     },
                     "offsitePreferences": {
@@ -79766,6 +79397,64 @@
             }
           },
           "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string",
+                      "type": "string"
+                    },
+                    "errorDetailType": {
+                      "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string",
+                      "type": "string"
+                    },
+                    "errorDetails": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/Learn_marketing_error_responses_errordetails_schema"
+                        }
+                      ],
+                      "description": "Additional error details. Please see this section for schema. This field may be absent in certain cases.\n\nDocumented type: JSON object"
+                    },
+                    "message": {
+                      "anyOf": [
+                        {
+                          "description": "A description of the error.\n\nDocumented type: string",
+                          "type": "string"
+                        },
+                        {
+                          "type": "string",
+                          "x-linkedin-inferred-from-example": true
+                        }
+                      ]
+                    },
+                    "serviceErrorCode": {
+                      "description": "A subcode that further classifies the error.\n\nDocumented type: int",
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "status": {
+                      "anyOf": [
+                        {
+                          "description": "The HTTP status code.\n\nDocumented type: int",
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        {
+                          "type": "integer",
+                          "x-linkedin-inferred-from-example": true
+                        }
+                      ]
+                    }
+                  },
+                  "type": "object",
+                  "x-linkedin-schema": "marketing_error_responses_new_error_response_schema",
+                  "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses#new-error-response-schema"
+                },
+                "x-linkedin-learn-schema": true
+              }
+            },
             "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
@@ -79789,7 +79478,7 @@
         "tags": [
           "Use Cases / Account structure / Campaign Mangement"
         ],
-        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns#sample-request-3",
+        "x-linkedin-learn-source": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns#sample-request-with-an-invalid-publisher-restriction-file",
         "x-postman-variants": [
           {
             "effectiveAuth": {
@@ -101049,7 +100738,7 @@
                             "type": "string"
                           },
                           "offsiteDeliveryEnabled": {
-                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                             "type": "boolean"
                           },
                           "offsitePreferences": {
@@ -101415,7 +101104,7 @@
                             "type": "string"
                           },
                           "offsiteDeliveryEnabled": {
-                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                             "type": "boolean"
                           },
                           "offsitePreferences": {
@@ -118900,7 +118589,7 @@
                             "type": "string"
                           },
                           "offsiteDeliveryEnabled": {
-                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                             "type": "boolean"
                           },
                           "offsitePreferences": {
@@ -119179,7 +118868,7 @@
                             "type": "string"
                           },
                           "offsiteDeliveryEnabled": {
-                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
+                            "description": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.\n\nDocumented type: Boolean (True/False)\n\nRequirement: True",
                             "type": "boolean"
                           },
                           "offsitePreferences": {
@@ -127885,6 +127574,10 @@
                     "elements": {
                       "items": {
                         "properties": {
+                          "billingReference": {
+                            "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                            "type": "string"
+                          },
                           "currency": {
                             "description": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more\n\nDocumented type: string, default=\u0022USD\u0022\n\nRequirement: False",
                             "type": "string"
@@ -143576,6 +143269,10 @@
               "application/json": {
                 "schema": {
                   "properties": {
+                    "billingReference": {
+                      "description": "A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.\n\nDocumented type: optional URN\n\nRequirement: False",
+                      "type": "string"
+                    },
                     "changeAuditStamps": {
                       "properties": {
                         "created": {
@@ -503398,173 +503095,419 @@
                     "elements": {
                       "items": {
                         "properties": {
+                          "actionClicks": {
+                            "description": "The count of clicks on the action button of the Sponsored Messaging ad.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "adUnitClicks": {
+                            "description": "The count of clicks on the ad unit displayed alongside the Sponsored Messaging ad.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "appointmentsScheduled": {
+                            "description": "The number of appointments booked through Lead Gen campaigns. Note: The appointmentsScheduled field is only supported from API version 202605 onwards.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "approximateMemberReach": {
+                            "description": "Non-demographic pivots only (i.e. not MEMBER_). The estimated number of unique member accounts with at least one impression. This metric is an updated and more accurate version of legacy metric approximateUniqueImpressions. This metric is only available when the number of days in the date range is less than or equal to 92 days. This metric is fully launched in Jan 2024.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
                           "approximateUniqueImpressions": {
                             "format": "int64",
                             "type": "integer"
                           },
+                          "audiencePenetration": {
+                            "description": "The approximate number of unique members reached by the advertiser divided by the approximate total target audience size. The field is null if the date range has more than 92 days. This metric supports ACCOUNT, CAMPAIGN_GROUP, or CAMPAIGN pivots, and can be used alongside additional pivots as long as at least one of these primary pivots is included. Note: The audiencePenetration field is only supported from API version 202411 onwards.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "averageDwellTime": {
+                            "description": "Average user dwell time (in seconds). It measures the duration for which more than 50% of the ad\u0027s pixels remain visible in the viewport. Note: The averageDwellTime field is only supported from API version 202411 onwards.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "averageEventWatchTime": {
+                            "description": "The average watch time of the event in milliseconds.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "averageEventWatchTimeOver15Seconds": {
+                            "description": "The average watch time in milliseconds for users who watched the event for more than 15 seconds.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "averageEventWatchTimeOver2Minutes": {
+                            "description": "The average watch time in milliseconds for users who watched the event for more than 2 minutes.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "averageEventWatchTimeOver30Seconds": {
+                            "description": "The average watch time in milliseconds for users who watched the event for more than 30 seconds.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "averageVideoWatchTime": {
+                            "description": "Average videoWatchTime in milliseconds. Note: This metric may be delayed by up to 48 hours.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "cardClicks": {
+                            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of clicks for each card of a carousel ad. The first card click of the carousel ad results in an immediate cardClick and click, whereas scrolling to other cards and clicking counts as additional cardClick.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "cardImpressions": {
+                            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of impressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate cardImpression and impression, whereas scrolling to other cards counts as additional cardImpressions.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
                           "clicks": {
+                            "description": "The count of chargeable clicks. Despite not charging for clicks for CPM campaigns, this field still represents those clicks for which we would otherwise charge advertisers based on objective (for example, clicks to view the landing page or company page).\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "commentLikes": {
+                            "description": "The count of likes of a comment. Sponsored Content only.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "comments": {
+                            "description": "The count of comments. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "companyPageClicks": {
+                            "description": "The count of clicks to view the company page.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "conversionValueInLocalCurrency": {
+                            "description": "Non-demographic pivots only (i.e. not MEMBER_). Value of the conversions in the account\u0027s local currency based on rules defined by the advertiser. Conversion value is set by the advertiser at a per conversion level, and aggregated across the query time range.\n\nDocumented type: BigDecimal",
                             "type": "string"
                           },
                           "costInLocalCurrency": {
+                            "anyOf": [
+                              {
+                                "description": "Cost in the account\u0027s local currency based on the pivot and timeGranularity. For example, this would be spend by member company size per month if the pivot is MEMBER_COMPANY_SIZE and timeGranularity is MONTHLY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.\n\nDocumented type: BigDecimal"
+                              },
+                              {
+                                "description": "Cost in the account\u0027s local currency based on the pivot and timeGranularity. For example, this would be spend by member company size per month if the pivot is MEMBER_COMPANY_SIZE and timeGranularity is MONTHLY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.\n\nDocumented type: BigDecimal",
+                                "type": "string",
+                                "x-linkedin-inferred-from-example": true
+                              }
+                            ],
                             "type": "string"
                           },
                           "costInUsd": {
+                            "description": "Cost in USD based on the pivot and timeGranularity. For example, this would be spend by campaign on a given day if the pivot is CAMPAIGN and timeGranularity is DAILY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.\n\nDocumented type: BigDecimal",
                             "type": "string"
                           },
+                          "costPerEventView": {
+                            "description": "The cost per view for an event hosted on LinkedIn.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "costPerEventViewOver15Seconds": {
+                            "description": "The cost per view for an event hosted on LinkedIn for users who watched the event for more than 15 seconds.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "costPerEventViewOver2Minutes": {
+                            "description": "The cost per view for an event hosted on LinkedIn for users who watched the event for more than 2 minutes.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "costPerEventViewOver30Seconds": {
+                            "description": "The cost per view for an event hosted on LinkedIn for users who watched the event for more than 30 seconds.\n\nDocumented type: double",
+                            "type": "number"
+                          },
+                          "costPerQualifiedLead": {
+                            "description": "How much money was spent per qualified lead. Ratio is costInLocalCurrency / qualifiedLeads.\n\nDocumented type: BigDecimal"
+                          },
                           "dateRange": {
+                            "anyOf": [
+                              {
+                                "description": "Date range covered by the report data point. Date is specified in UTC. Start and end date are inclusive. Start date is required. End date is optional and defaults to today.\n\nDocumented type: DateRange",
+                                "properties": {
+                                  "end": {
+                                    "properties": {
+                                      "day": {
+                                        "description": "Documented type: Day represented in integer. Valid range from 1 to 31 depending on month.\n\nRequirement: No",
+                                        "format": "int32",
+                                        "type": "integer"
+                                      },
+                                      "month": {
+                                        "description": "Documented type: Month represented in integer. Valid range from 1 to 12.\n\nRequirement: No",
+                                        "format": "int32",
+                                        "type": "integer"
+                                      },
+                                      "year": {
+                                        "description": "Documented type: Year represented in integer.\n\nRequirement: No",
+                                        "format": "int32",
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object",
+                                    "x-linkedin-schema": "shared_references_v2_object_types_date_schema",
+                                    "x-source-url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#date-schema"
+                                  },
+                                  "start": {
+                                    "properties": {
+                                      "day": {
+                                        "description": "Documented type: Day represented in integer. Valid range from 1 to 31 depending on month.\n\nRequirement: No",
+                                        "format": "int32",
+                                        "type": "integer"
+                                      },
+                                      "month": {
+                                        "description": "Documented type: Month represented in integer. Valid range from 1 to 12.\n\nRequirement: No",
+                                        "format": "int32",
+                                        "type": "integer"
+                                      },
+                                      "year": {
+                                        "description": "Documented type: Year represented in integer.\n\nRequirement: No",
+                                        "format": "int32",
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "type": "object",
+                                    "x-linkedin-schema": "shared_references_v2_object_types_date_schema",
+                                    "x-source-url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#date-schema"
+                                  }
+                                },
+                                "type": "object",
+                                "x-linkedin-inferred-from-example": true
+                              },
+                              {
+                                "description": "Date range covered by the report data point. Date is specified in UTC. Start and end date are inclusive. Start date is required. End date is optional and defaults to today.\n\nDocumented type: DateRange"
+                              },
+                              {
+                                "properties": {
+                                  "end": {
+                                    "properties": {
+                                      "day": {
+                                        "type": "integer",
+                                        "x-linkedin-inferred-from-example": true
+                                      },
+                                      "month": {
+                                        "type": "integer",
+                                        "x-linkedin-inferred-from-example": true
+                                      },
+                                      "year": {
+                                        "type": "integer",
+                                        "x-linkedin-inferred-from-example": true
+                                      }
+                                    },
+                                    "type": "object",
+                                    "x-linkedin-inferred-from-example": true
+                                  },
+                                  "start": {
+                                    "properties": {
+                                      "day": {
+                                        "type": "integer",
+                                        "x-linkedin-inferred-from-example": true
+                                      },
+                                      "month": {
+                                        "type": "integer",
+                                        "x-linkedin-inferred-from-example": true
+                                      },
+                                      "year": {
+                                        "type": "integer",
+                                        "x-linkedin-inferred-from-example": true
+                                      }
+                                    },
+                                    "type": "object",
+                                    "x-linkedin-inferred-from-example": true
+                                  }
+                                },
+                                "type": "object",
+                                "x-linkedin-inferred-from-example": true
+                              }
+                            ],
                             "properties": {
                               "end": {
                                 "properties": {
                                   "day": {
-                                    "anyOf": [
-                                      {
-                                        "description": "Documented type: Day represented in integer. Valid range from 1 to 31 depending on month.\n\nRequirement: No",
-                                        "format": "int32",
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "integer",
-                                        "x-linkedin-inferred-from-example": true
-                                      }
-                                    ],
                                     "format": "int64",
                                     "type": "integer"
                                   },
                                   "month": {
-                                    "anyOf": [
-                                      {
-                                        "description": "Documented type: Month represented in integer. Valid range from 1 to 12.\n\nRequirement: No",
-                                        "format": "int32",
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "integer",
-                                        "x-linkedin-inferred-from-example": true
-                                      }
-                                    ],
                                     "format": "int64",
                                     "type": "integer"
                                   },
                                   "year": {
-                                    "anyOf": [
-                                      {
-                                        "description": "Documented type: Year represented in integer.\n\nRequirement: No",
-                                        "format": "int32",
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "integer",
-                                        "x-linkedin-inferred-from-example": true
-                                      }
-                                    ],
                                     "format": "int64",
                                     "type": "integer"
                                   }
                                 },
-                                "type": "object",
-                                "x-linkedin-schema": "shared_references_v2_object_types_date_schema",
-                                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#date-schema"
+                                "type": "object"
                               },
                               "start": {
                                 "properties": {
                                   "day": {
-                                    "anyOf": [
-                                      {
-                                        "description": "Documented type: Day represented in integer. Valid range from 1 to 31 depending on month.\n\nRequirement: No",
-                                        "format": "int32",
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "integer",
-                                        "x-linkedin-inferred-from-example": true
-                                      }
-                                    ],
                                     "format": "int64",
                                     "type": "integer"
                                   },
                                   "month": {
-                                    "anyOf": [
-                                      {
-                                        "description": "Documented type: Month represented in integer. Valid range from 1 to 12.\n\nRequirement: No",
-                                        "format": "int32",
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "integer",
-                                        "x-linkedin-inferred-from-example": true
-                                      }
-                                    ],
                                     "format": "int64",
                                     "type": "integer"
                                   },
                                   "year": {
-                                    "anyOf": [
-                                      {
-                                        "description": "Documented type: Year represented in integer.\n\nRequirement: No",
-                                        "format": "int32",
-                                        "type": "integer"
-                                      },
-                                      {
-                                        "type": "integer",
-                                        "x-linkedin-inferred-from-example": true
-                                      }
-                                    ],
                                     "format": "int64",
                                     "type": "integer"
                                   }
                                 },
-                                "type": "object",
-                                "x-linkedin-schema": "shared_references_v2_object_types_date_schema",
-                                "x-source-url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#date-schema"
+                                "type": "object"
                               }
                             },
                             "type": "object"
                           },
+                          "documentCompletions": {
+                            "description": "The number of times users reached 100% of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "documentFirstQuartileCompletions": {
+                            "description": "The number of times users reached the first quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "documentMidpointCompletions": {
+                            "description": "The number of times users reached the second quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "documentThirdQuartileCompletions": {
+                            "description": "The number of times users reached the third quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "downloadClicks": {
+                            "description": "The number of times users have indicated the intent to download the media in an ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). This metric is only available for ad formats supporting media downloads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "eventViews": {
+                            "description": "The count of valid views for an event hosted on LinkedIn.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "eventViewsOver15Seconds": {
+                            "description": "The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 15 seconds.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "eventViewsOver2Minutes": {
+                            "description": "The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 2 minutes.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "eventViewsOver30Seconds": {
+                            "description": "The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 30 seconds.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "eventWatchTime": {
+                            "description": "The total watch time of the event in milliseconds.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
                           "externalWebsiteConversions": {
+                            "description": "Total number of times users took a desired action after clicking on or seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.\n\nDocumented type: long, default=\u00220\u0022",
                             "format": "int64",
                             "type": "integer"
                           },
                           "externalWebsitePostClickConversions": {
+                            "description": "Total number of times users took a desired action after clicking on your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.\n\nDocumented type: long, default=\u00220\u0022",
                             "format": "int64",
                             "type": "integer"
                           },
                           "externalWebsitePostViewConversions": {
+                            "description": "Total number of times users took a desired action after seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.\n\nDocumented type: long, default=\u00220\u0022",
                             "format": "int64",
                             "type": "integer"
                           },
                           "follows": {
+                            "description": "The count of follows. Sponsored Content and Follower ads only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "fullScreenPlays": {
+                            "description": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "headlineClicks": {
+                            "description": "The number of times members clicked on the headline of conversation ads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "headlineImpressions": {
+                            "description": "The number of times members were shown the headline of conversation ads.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "impressions": {
+                            "anyOf": [
+                              {
+                                "description": "The number of times members were shown the ads.\n\nDocumented type: long",
+                                "format": "int64",
+                                "type": "integer"
+                              },
+                              {
+                                "type": "integer",
+                                "x-linkedin-inferred-from-example": true
+                              }
+                            ],
                             "format": "int64",
                             "type": "integer"
                           },
+                          "jobApplications": {
+                            "description": "The number of times a member completed a job application after viewing or clicking on an ad. Currently, this metric is broken down into postViewJobApplications (if the member applied after viewing the ad) and postClickJobApplications (if the member applied after clicking the ad).\n\nDocumented type: BigDecimal"
+                          },
+                          "jobApplyClicks": {
+                            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing or clicking on an ad which has a LinkedIn job landing page. Currently, this metric is broken down into postViewJobApplyClicks (if the member performed the action after viewing the ad) and postClickJobApplyClicks (if the member performed the action after clicking the ad).\n\nDocumented type: BigDecimal"
+                          },
                           "landingPageClicks": {
+                            "description": "The count of clicks which take the user to the creative landing page.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "leadGenerationMailContactInfoShares": {
+                            "description": "The number of times users shared contact info through the One Click Lead Gen for Sponsored Messaging ads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "leadGenerationMailInterestedClicks": {
+                            "description": "The count of Sponsored Messaging ad recipients who clicked to demonstrate interest.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "likes": {
+                            "description": "The count of likes. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "memberFollows": {
+                            "description": "The count of sponsored member profile follows. This optional metric exists only for Sponsored Updates and member follower display ads, such as Thought Leader Ads. Note: The memberFollows field is only supported from API version 202610 onwards.\n\nDocumented type: optional long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "memberProfileClicks": {
+                            "description": "The count of clicks on the profile of the member who owns the post sponsored in the ad. This optional metric exists only for Sponsored Updates, such as Thought Leader Ads. Note: The memberProfileClicks field is only supported from API version 202610 onwards.\n\nDocumented type: optional long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "oneClickLeadFormOpens": {
+                            "description": "The count of times users opened the lead form for a One Click Lead Gen campaign.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "oneClickLeads": {
+                            "description": "The count of leads generated through One Click Lead Gen.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "opens": {
+                            "description": "The count of opens of Sponsored Messaging ads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "otherEngagements": {
+                            "description": "The count of user interactions with the ad unit that don\u0027t fit into any other more specific category.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
@@ -503575,6 +503518,7 @@
                             "type": "string"
                           },
                           "pivotValues": {
+                            "description": "The value of the pivots for a specific record returned. For example, supplying pivots of CREATIVE and CONVERSION results in a list of records, one for each creative/conversion combination. The pivotValues contain serialized URNs for the specific creative and conversion for a record. To resolve these URNs to their corresponding entities, refer to LinkedIn Marketing API URN Resolution.\n\nDocumented type: string[], default=\u0022[]\u0022",
                             "items": {
                               "type": "string"
                             },
@@ -503720,26 +503664,56 @@
                             },
                             "type": "object"
                           },
-                          "reactions": {
+                          "postClickJobApplications": {
+                            "description": "The number of times a member completed a job application after clicking on an ad. See also jobApplications.\n\nDocumented type: BigDecimal"
+                          },
+                          "postClickJobApplyClicks": {
+                            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on an ad which has a LinkedIn job landing page. See also jobApplyClicks.\n\nDocumented type: BigDecimal"
+                          },
+                          "postClickRegistrations": {
+                            "description": "The number of times a member has registered for an event or seminar after clicking on an ad which has a LinkedIn landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
+                          },
+                          "postViewJobApplications": {
+                            "description": "The number of times a member completed a job application after viewing an ad. See also jobApplications.\n\nDocumented type: BigDecimal"
+                          },
+                          "postViewJobApplyClicks": {
+                            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking an ad which has a LinkedIn job landing page. See also jobApplyClicks.\n\nDocumented type: BigDecimal"
+                          },
+                          "postViewRegistrations": {
+                            "description": "The number of times a member has registered for an event or seminar after viewing an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering. See also registrations.\n\nDocumented type: BigDecimal"
+                          },
+                          "qualifiedLeads": {
+                            "description": "The count of qualified leads shared by the advertiser. Qualified lead is a lead that has been deemed more likely to become a customer compared to other leads, based on their engagement and fit.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
+                          "reactions": {
+                            "description": "The count of positive reactions on Sponsored Content which can capture, like, interest, praise, and other responses.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "registrations": {
+                            "description": "The number of times a member has registered for an event or seminar after viewing or clicking on an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
+                          },
                           "revenueAttributionMetrics": {
+                            "allOf": [
+                              {
+                                "$ref": "#/components/schemas/Learn_marketing_integrations_ads_reporting_ads_reporting_schema_revenue_attribution_metrics"
+                              }
+                            ],
+                            "description": "Metrics that represent LinkedIn Ads-attributed opportunities within the CRM (Customer Relationship Management) system. This field is only available through the attributedRevenueMetrics finder.\n\nDocumented type: RevenueAttributionMetrics",
                             "properties": {
                               "averageDaysToClose": {
-                                "description": "The average number of days to close a won deal attributed to LinkedIn marketing.(Opportunity length in days / closedWonOpportunities)\n\nDocumented type: double",
                                 "type": "number"
                               },
                               "averageDealSizeInUsd": {
                                 "type": "string"
                               },
                               "closedWonOpportunities": {
-                                "description": "Number of closed-won opportunities attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.\n\nDocumented type: long",
                                 "format": "int64",
                                 "type": "integer"
                               },
                               "openOpportunities": {
-                                "description": "Number of open opportunities (CRM deals in progress) attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.This metric is available only when date range includes current day.\n\nDocumented type: long",
                                 "format": "int64",
                                 "type": "integer"
                               },
@@ -503747,43 +503721,278 @@
                                 "type": "string"
                               },
                               "opportunityWinRate": {
-                                "description": "Rate at which the opportunities are won out of all the closed opportunities. (closedWonOpportunities / Number of closed opportunities)\n\nDocumented type: double",
                                 "type": "number"
                               },
                               "returnOnAdSpend": {
-                                "description": "Ratio of total revenue won attributed to LinkedIn marketing divided by LinkedIn ad spend. Attribution credit is distributed at a business level across multiple ad accounts. (revenueWonInUsd / costInUsd)\n\nDocumented type: double",
                                 "type": "number"
                               },
                               "revenueWonInUsd": {
                                 "type": "string"
                               }
                             },
-                            "type": "object",
-                            "x-linkedin-schema": "marketing_integrations_ads_reporting_ads_reporting_schema_revenue_attribution_metrics",
-                            "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema#revenue-attribution-metrics"
+                            "type": "object"
                           },
                           "sends": {
+                            "description": "The count of sends of Sponsored Messaging ads.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "shares": {
+                            "description": "The count of shares. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "subscriptionClicks": {
+                            "description": "The count of clicks to subscribe to a series, such as a Newsletter.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "talentLeads": {
+                            "description": "Number of leads captured through a talent media campaign.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "textUrlClicks": {
+                            "description": "The count of clicks on any links (anchor tags) that were included in the body of the Sponsored Messaging ad.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "totalEngagements": {
+                            "description": "The count of all user interactions with the ad unit.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "validWorkEmailLeads": {
+                            "description": "The count of leads with a valid work email that doesn\u0027t use an established free or personal email domain.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "videoCompletions": {
+                            "description": "The count of video ads that played 97-100% of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "videoFirstQuartileCompletions": {
+                            "description": "The count of video ads that played through the first quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "videoMidpointCompletions": {
+                            "description": "The count of video ads that played through the midpoint of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "videoStarts": {
+                            "description": "The count of video ads that were started by users.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "videoThirdQuartileCompletions": {
+                            "description": "The count of video ads that played through the third quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           },
                           "videoViews": {
+                            "description": "A video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to fullscreen mode) doesn\u0027t count as a view.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "videoWatchTime": {
+                            "description": "The total watch time in milliseconds for a video ad. This metric is populated if a user\u0027s watching behavior is qualified for videoViews metric. Note: This metric may be delayed by up to 48 hours.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralCardClicks": {
+                            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralClicks for each card of a carousel ad. The first viralCardClick of the carousel ad results in an immediate viralCardClick and viralClick, whereas scrolling to other cards and clicking counts as additional viralCardClick.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralCardImpressions": {
+                            "description": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralImpressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate viralCardImpression and viralImpression, whereas scrolling to other cards counts as additional viralCardImpressions.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralClicks": {
+                            "description": "The count of clicks on viral impressions. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralCommentLikes": {
+                            "description": "The count of likes on comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralComments": {
+                            "description": "The count of comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralCompanyPageClicks": {
+                            "description": "The count of clicks to view the company page from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralDocumentCompletions": {
+                            "description": "The number of times users reached 100% of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralDocumentFirstQuartileCompletions": {
+                            "description": "The number of times users reached the first quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralDocumentMidpointCompletions": {
+                            "description": "The number of times users reached the second quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralDocumentThirdQuartileCompletions": {
+                            "description": "The number of times users reached the third quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralDownloadClicks": {
+                            "description": "The number of times users have indicated the intent to download the media in a viral ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). Only available for ads supporting media downloads.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralExternalWebsiteConversions": {
+                            "description": "The count of conversions that are attributed to your ads driven by a viral event. See viral impressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralExternalWebsitePostClickConversions": {
+                            "description": "The count of post-click conversions that are attributed to your ads driven by a viral click. See viral impressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralExternalWebsitePostViewConversions": {
+                            "description": "The count of post-view conversions that are attributed to your ads driven by a viral impression. See viral impressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralFollows": {
+                            "description": "The count of follows from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralFullScreenPlays": {
+                            "description": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode. See viralImpressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralImpressions": {
+                            "description": "The count of viral impressions for this activity. Viral impressions are those resulting from users sharing sponsored content to their own network of connections. Viral impressions are not counted as regular impressions. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralJobApplications": {
+                            "description": "The number of times a member completed a job application after viewing or clicking on a viral ad. Currently, this metric is broken down into viralPostViewJobApplications (if the member performed the action after viewing the viral ad) and viralPostClickJobApplications (if the member performed the action after clicking the viral ad).\n\nDocumented type: BigDecimal"
+                          },
+                          "viralJobApplyClicks": {
+                            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing or clicking on a viral ad which has a LinkedIn job landing page during the date range.Currently, this metric is broken down into viralPostViewJobApplyClicks (if the member performed the action after viewing the viral ad) and viralPostClickJobApplyClicks (if the member performed the action after clicking the viral ad).\n\nDocumented type: BigDecimal"
+                          },
+                          "viralLandingPageClicks": {
+                            "description": "The count of clicks on viral impressions to take the user to the creative landing page. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralLikes": {
+                            "description": "The count of likes from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralOneClickLeadFormOpens": {
+                            "description": "The count of times users opened the lead form for viral impressions from a Lead Gen campaign. See viral impressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralOneClickLeads": {
+                            "description": "The count of leads generated through One Click Lead Gen from viral impressions for this activity. See viral impressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralOtherEngagements": {
+                            "description": "The count of user interactions with viral impressions that don\u0027t fit into any other more specific category. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralPostClickJobApplications": {
+                            "description": "The number of times a member completed a job application after clicking on a viral ad.\n\nDocumented type: BigDecimal"
+                          },
+                          "viralPostClickJobApplyClicks": {
+                            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on a viral ad which has a LinkedIn job landing page.\n\nDocumented type: BigDecimal"
+                          },
+                          "viralPostClickRegistrations": {
+                            "description": "The number of times a member has registered for an event or seminar after clicking on a viral ad which has a LinkedIn landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
+                          },
+                          "viralPostViewJobApplications": {
+                            "description": "The number of times a member completed a job application after viewing a viral ad.\n\nDocumented type: BigDecimal"
+                          },
+                          "viralPostViewJobApplyClicks": {
+                            "description": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing a viral ad which has a LinkedIn job landing page.\n\nDocumented type: BigDecimal"
+                          },
+                          "viralPostViewRegistrations": {
+                            "description": "The number of times a member has registered for an event or seminar after viewing a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
+                          },
+                          "viralReactions": {
+                            "description": "The count of positive reactions on viral Sponsored Content which can capture like, interest, praise, and other responses. See viral impressions definition for details on viral engagements.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralRegistrations": {
+                            "description": "The number of times a member has registered for an event or seminar after viewing or clicking on a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.\n\nDocumented type: BigDecimal"
+                          },
+                          "viralShares": {
+                            "description": "The count of shares from viral impressions for this activity. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralSubscriptionClicks": {
+                            "description": "The count of viral clicks to subscribe to a series, such as a Newsletter.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralTotalEngagements": {
+                            "description": "The count of all user interactions with a viral ad unit. See viral impressions definition. Sponsored Content only.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralVideoCompletions": {
+                            "description": "The count of viral video ads that played 97-100% of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralVideoFirstQuartileCompletions": {
+                            "description": "The count of viral video ads that played through the first quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralVideoMidpointCompletions": {
+                            "description": "The count of viral video ads that played through the midpoint of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralVideoStarts": {
+                            "description": "The count of viral video ads that were started by users. See viralImpressions definition. Since viral videos are automatically played for ON_SITE, this is the same as viralImpressions if the servingLocation is ON_SITE.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralVideoThirdQuartileCompletions": {
+                            "description": "The count of viral video ads that played through the third quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.\n\nDocumented type: long",
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "viralVideoViews": {
+                            "description": "A viral video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to full screen mode) doesn\u0027t count as a view. See viralImpressions definition.\n\nDocumented type: long",
                             "format": "int64",
                             "type": "integer"
                           }
                         },
-                        "type": "object"
+                        "type": "object",
+                        "x-linkedin-schema": "marketing_integrations_ads_reporting_ads_reporting_schema_metrics_available",
+                        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema#metrics-available"
                       },
                       "type": "array"
                     },
@@ -518052,6 +518261,7 @@
   "x-documentation-versions": [
     "li-dma-data-portability-2026-08",
     "li-lms-2026-10",
+    "li-lms-2026-11",
     "li-lts-2026-04",
     "li-lts-unversioned"
   ],

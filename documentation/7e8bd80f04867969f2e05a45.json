@@ -1,0 +1,990 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences",
+  "Title": "Boost targeting and saved audiences",
+  "Version": "li-lms-2026-11",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/manage-boosts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Boost targeting and saved audiences",
+      "Anchor": "boost-targeting-and-saved-audiences",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost targeting and saved audiences",
+      "Anchor": "boost-targeting-and-saved-audiences",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost targeting and saved audiences",
+      "Anchor": "boost-targeting-and-saved-audiences",
+      "SectionPath": [],
+      "Text": "Starting with version 202611, you can build custom Boost targeting and save audiences for reuse. The shared /rest/boostTargetingCriteria resource manages account-owned audiences for both Member Boost and Company Page Boost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost targeting and saved audiences",
+      "Anchor": "boost-targeting-and-saved-audiences",
+      "SectionPath": [],
+      "Text": "Use a member OAuth access token and include Linkedin-Version: 202611 and X-Restli-Protocol-Version: 2.0.0 on every request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Operation",
+        "Member context",
+        "Company Page context"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Find audiences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_member_boost or rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_organization_boost or rw_organization_boost",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Create, edit, or delete audiences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_organization_boost",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Your application must have the relevant Boost permission and the authenticated member must be authorized for the account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting criteria",
+      "Anchor": "targeting-criteria",
+      "SectionPath": [
+        "Targeting criteria"
+      ],
+      "Text": "Version 202611 replaces the October include.and.or and exclude.or representation with includeAll and excludeAny.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Targeting criteria",
+      "Anchor": "targeting-criteria",
+      "SectionPath": [
+        "Targeting criteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "includeAll[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusion entries. A member must match every entry (AND).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "excludeAny[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The exclusion entries. A member matching any entry is excluded (OR).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "includeAll[].facetUrn, excludeAny[].facetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The targeting facet URN. Group all selected values for one facet into one entry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "includeAll[].anyOf[], excludeAny[].anyOf[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The selected values for the facet. A member matches an entry if they match any value (OR).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "anyOf[].urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The targeting value URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "facetName, anyOf[].name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional display names returned with criteria. Requests only need the URNs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The saved-audience ID, absent for an unsaved audience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name, description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The audience name and optional description.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The owning sponsored account. Set it at creation; it can\u0027t be changed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type, ownership, audienceCount, lastAppliedAt, lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The read-only audience category, ownership, estimated size, and timestamps. Timestamps use epoch milliseconds. Account-owned audiences have ownership: ACCOUNT.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting criteria",
+      "Anchor": "targeting-criteria",
+      "SectionPath": [
+        "Targeting criteria"
+      ],
+      "Text": "For example, the following audience includes members in the United States whose interface language is English:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Targeting criteria",
+      "Anchor": "targeting-criteria",
+      "SectionPath": [
+        "Targeting criteria"
+      ],
+      "Text": "{\n  \u0022includeAll\u0022: [\n    {\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n      \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]\n    },\n    {\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n      \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "Init can return value.targetingEntities, an array describing the supported targeting facets. Use this response to build your targeting controls rather than hardcoding available facets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "Your targeting interface must display the targeting discrimination notice, including when it uses only Init\u0027s listed options and doesn\u0027t use typeahead searches:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "LinkedIn tools may not be used to discriminate based on personal characteristics like gender, age, race, or ethnicity. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "facet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The facet URN to use as facetUrn in targeting criteria.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name, description, descriptionUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional label, description, and help URL.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "canExclude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The flag indicating whether the facet supports exclusion.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "selectionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The selection mode: SEARCH, LIST, or SEARCH_AND_LIST. It can be omitted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "incompatibilities.whenIncluded, incompatibilities.whenExcluded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The rules describing facets that can\u0027t be combined with this facet when it is included or excluded. Each contains cannotInclude and cannotExclude facet lists.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "options[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The available options, with urn, optional name and description, targetable, and nested children.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "Keep non-targetable parent options visible so users can discover their targetable children. Don\u0027t submit a non-targetable parent as a selected value. Respect canExclude and the incompatibility rules.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "Selecting a targetable parent already covers its children; select the parent or its children, not both.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "For searchable facets, use the existing adTargetingEntities typeahead. Its request takes q=typeahead, an encoded facet URN, and query. Follow that reference for facet-specific parameters and access requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discover targeting options",
+      "Anchor": "discover-targeting-options",
+      "SectionPath": [
+        "Targeting criteria",
+        "Discover targeting options"
+      ],
+      "Text": "Init and Hydrate accept optional locale objects such as {\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}. Both the language and country/region values must be nonblank; incomplete locales fall back to en_US. Locale supports suggested audience and criteria names, but doesn\u0027t guarantee localization of discovery facet labels or options.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an audience",
+      "Anchor": "create-an-audience",
+      "SectionPath": [
+        "Create an audience"
+      ],
+      "Text": "Send POST /rest/boostTargetingCriteria with the owning account, a nonblank name, and includeAll containing at least one location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample create request",
+      "Anchor": "sample-create-request",
+      "SectionPath": [
+        "Create an audience",
+        "Sample create request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample create request",
+      "Anchor": "sample-create-request",
+      "SectionPath": [
+        "Create an audience",
+        "Sample create request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/boostTargetingCriteria\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022name\u0022: \u0022US English audience\u0022,\n  \u0022description\u0022: \u0022English-speaking members in the United States\u0022,\n  \u0022includeAll\u0022: [\n    {\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n      \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]\n    },\n    {\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n      \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample create request",
+      "Anchor": "sample-create-request",
+      "SectionPath": [
+        "Create an audience",
+        "Sample create request"
+      ],
+      "Text": "curl -i -X POST \u0027https://api.linkedin.com/rest/boostTargetingCriteria\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022name\u0022: \u0022US English audience\u0022,\n  \u0022description\u0022: \u0022English-speaking members in the United States\u0022,\n  \u0022includeAll\u0022: [\n    {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n    {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n  ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample create request",
+      "Anchor": "sample-create-request",
+      "SectionPath": [
+        "Create an audience",
+        "Sample create request"
+      ],
+      "Text": "A successful request returns 201 Created, the new ID in the X-RestLi-Id response header, and no response body. Save this ID for edits and deletion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find account audiences",
+      "Anchor": "find-account-audiences",
+      "SectionPath": [
+        "Find account audiences"
+      ],
+      "Text": "Use GET /rest/boostTargetingCriteria?q=account\u0026account={encodedAccountUrn}. No individual-audience GET operation is supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Find account audiences",
+      "Anchor": "find-account-audiences",
+      "SectionPath": [
+        "Find account audiences"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The finder name, account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL-encoded sponsored account URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The positive maximum number of audiences to return. Omit it for no limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL-encoded campaign URN. Its current audience is placed first.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale for returned criteria names, for example (language:en,country:US).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find account audiences",
+      "Anchor": "find-account-audiences",
+      "SectionPath": [
+        "Find account audiences"
+      ],
+      "Text": "Results are ordered most recently used first, after any campaign audience placed first. This finder doesn\u0027t support start or offset pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample finder request",
+      "Anchor": "sample-finder-request",
+      "SectionPath": [
+        "Find account audiences",
+        "Sample finder request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample finder request",
+      "Anchor": "sample-finder-request",
+      "SectionPath": [
+        "Find account audiences",
+        "Sample finder request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/boostTargetingCriteria?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A987654321\u0026count=10\u0026locale=(language:en,country:US)\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample finder request",
+      "Anchor": "sample-finder-request",
+      "SectionPath": [
+        "Find account audiences",
+        "Sample finder request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/boostTargetingCriteria?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A987654321\u0026count=10\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample finder request",
+      "Anchor": "sample-finder-request",
+      "SectionPath": [
+        "Find account audiences",
+        "Sample finder request"
+      ],
+      "Text": "The response contains an elements array of targeting criteria objects. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample finder request",
+      "Anchor": "sample-finder-request",
+      "SectionPath": [
+        "Find account audiences",
+        "Sample finder request"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: 12345,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n      \u0022ownership\u0022: \u0022ACCOUNT\u0022,\n      \u0022name\u0022: \u0022US English audience\u0022,\n      \u0022includeAll\u0022: [\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n      ]\n    }\n  ],\n  \u0022paging\u0022: {\u0022start\u0022: 0, \u0022count\u0022: 10, \u0022links\u0022: []}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample finder request",
+      "Anchor": "sample-finder-request",
+      "SectionPath": [
+        "Find account audiences",
+        "Sample finder request"
+      ],
+      "Text": "Pass the selected criteria to Hydrate to preview them, then use the previewed criteria in Post. Editing a saved definition isn\u0027t the same operation as changing an existing campaign\u0027s targeting; use Manage boosts for campaign changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edit an audience",
+      "Anchor": "edit-an-audience",
+      "SectionPath": [
+        "Edit an audience"
+      ],
+      "Text": "Use a Rest.li partial update: HTTP POST, X-RestLi-Method: PARTIAL_UPDATE, and a patch body. The path key is the saved-audience ID and the account query parameter is required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edit an audience",
+      "Anchor": "edit-an-audience",
+      "SectionPath": [
+        "Edit an audience"
+      ],
+      "Text": "Only name, description, includeAll, and excludeAny are editable. Omitted fields keep their saved values. A rename-only edit doesn\u0027t require targeting. Any targeting edit must include includeAll with a location; an excludeAny-only edit is rejected. Don\u0027t use $delete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample rename request",
+      "Anchor": "sample-rename-request",
+      "SectionPath": [
+        "Edit an audience",
+        "Sample rename request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample rename request",
+      "Anchor": "sample-rename-request",
+      "SectionPath": [
+        "Edit an audience",
+        "Sample rename request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/boostTargetingCriteria/12345?account=urn%3Ali%3AsponsoredAccount%3A987654321\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nX-RestLi-Method: PARTIAL_UPDATE\nContent-Type: application/json\n\n{\u0022patch\u0022:{\u0022$set\u0022:{\u0022name\u0022:\u0022US launch audience\u0022}}}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample rename request",
+      "Anchor": "sample-rename-request",
+      "SectionPath": [
+        "Edit an audience",
+        "Sample rename request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/boostTargetingCriteria/12345?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\u0022patch\u0022:{\u0022$set\u0022:{\u0022name\u0022:\u0022US launch audience\u0022}}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample rename request",
+      "Anchor": "sample-rename-request",
+      "SectionPath": [
+        "Edit an audience",
+        "Sample rename request"
+      ],
+      "Text": "To edit targeting, use the same request with the following body, including all desired inclusion selections:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample rename request",
+      "Anchor": "sample-rename-request",
+      "SectionPath": [
+        "Edit an audience",
+        "Sample rename request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022includeAll\u0022: [\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n      ]\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample rename request",
+      "Anchor": "sample-rename-request",
+      "SectionPath": [
+        "Edit an audience",
+        "Sample rename request"
+      ],
+      "Text": "A successful edit returns 204 No Content with no body. Find account audiences again to retrieve the saved definition.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete an audience",
+        "Sample delete request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete an audience",
+        "Sample delete request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/boostTargetingCriteria/12345\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete an audience",
+        "Sample delete request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/boostTargetingCriteria/12345\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete an audience",
+        "Sample delete request"
+      ],
+      "Text": "A successful deletion returns 204 No Content with no body. Audience deletion doesn\u0027t use the edit operation\u0027s account query parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation errors",
+      "Anchor": "validation-errors",
+      "SectionPath": [
+        "Validation errors"
+      ],
+      "Text": "Malformed input returns 400. Correct these conditions before retrying:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Validation errors",
+      "Anchor": "validation-errors",
+      "SectionPath": [
+        "Validation errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Operation",
+        "Invalid input",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Create",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing account, blank name, or no location in includeAll.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supply the owning account, a nonblank name, and location targeting.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Find",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Zero or negative count.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Omit count or use a positive value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Edit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing or invalid account, nonpositive ID, empty patch, or no editable fields.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supply a valid key and account, and set at least one editable field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Edit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Blank name or any $delete operation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a nonblank name and $set.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Edit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "excludeAny without includeAll, or targeting without a location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include the desired includeAll selections with a location.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nonpositive ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the saved-audience ID returned at creation.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation errors",
+      "Anchor": "validation-errors",
+      "SectionPath": [
+        "Validation errors"
+      ],
+      "Text": "The audience service can also return 403 for authorization failures, 404 for missing entities, and 422 for unmet preconditions or conflicts. Follow the response message instead of retrying unchanged. Authentication and rate-limit failures can occur before the audience operation runs; service failures return 500.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

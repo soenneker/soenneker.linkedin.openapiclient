@@ -18,6 +18,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("billingReference") is null) { _explicitNullValueBillingReference = default!; _explicitNullProperties?.Remove("billingReference"); }
+            else if (parseNode.GetChildNode("billingReference") is { } nullNodeBillingReference && nullNodeBillingReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingReference = null;
             if (parseNode.GetChildNode("changeAuditStamps") is null) { _explicitNullValueChangeAuditStamps = default!; _explicitNullProperties?.Remove("changeAuditStamps"); }
             else if (parseNode.GetChildNode("changeAuditStamps") is { } nullNodeChangeAuditStamps && nullNodeChangeAuditStamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeAuditStamps = null;
             if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
@@ -56,6 +58,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A reference to the billing object associated with this account, such as a Salesforce contract line item (for example, urn:li:salesforceContractLineItem:{id}). This field applies to ENTERPRISE accounts only. It can be set when the account is created and updated with a partial update; updates are restricted to approved applications. Note: This field is only supported starting from API version 202611.Documented type: optional URNRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingReference { get => _explicitNullValueBillingReference; set { _explicitNullValueBillingReference = value; AdditionalData?.Remove("billingReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingReference"); else _explicitNullProperties?.Remove("billingReference"); } }
+        private string? _explicitNullValueBillingReference = default!;
+#nullable restore
+#else
+        public string BillingReference { get => _explicitNullValueBillingReference; set { _explicitNullValueBillingReference = value; AdditionalData?.Remove("billingReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingReference"); else _explicitNullProperties?.Remove("billingReference"); } }
+        private string _explicitNullValueBillingReference = default!;
+#endif
         /// <summary>The changeAuditStamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,6 +195,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "billingReference", n => { BillingReference = n.GetStringValue(); } },
                 { "changeAuditStamps", n => { ChangeAuditStamps = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LmsApiSiteupFetchTheAdAccountByIdDefaultResponseChangeAuditStamps>(global::Soenneker.LinkedIn.OpenApiClient.Models.LmsApiSiteupFetchTheAdAccountByIdDefaultResponseChangeAuditStamps.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
@@ -209,6 +222,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("billingReference", BillingReference);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LmsApiSiteupFetchTheAdAccountByIdDefaultResponseChangeAuditStamps>("changeAuditStamps", ChangeAuditStamps);
             writer.WriteStringValue("currency", Currency);
             writer.WriteLongValue("id", Id);

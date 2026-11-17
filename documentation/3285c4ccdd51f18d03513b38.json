@@ -1,6 +1,6 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
-  "Title": "Boost Analytics",
+  "Title": "Boost analytics",
   "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
@@ -19,7 +19,7 @@
   "Blocks": [
     {
       "Kind": "text",
-      "Section": "Boost Analytics",
+      "Section": "Boost analytics",
       "Anchor": "boost-analytics",
       "SectionPath": [],
       "Text": "Warning",
@@ -28,16 +28,16 @@
     },
     {
       "Kind": "text",
-      "Section": "Boost Analytics",
+      "Section": "Boost analytics",
       "Anchor": "boost-analytics",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "Boost Analytics",
+      "Section": "Boost analytics",
       "Anchor": "boost-analytics",
       "SectionPath": [],
       "Text": "All requests use the versioned REST base URL https://api.linkedin.com/rest/, require a member access token, and must include the Linkedin-Version header set to 202610 or a higher available version, and the X-Restli-Protocol-Version: 2.0.0 header. For the full boost workflows, see Member Post Boost and Organization Post Boost.",
@@ -114,7 +114,7 @@
       "SectionPath": [
         "Retrieve boost analytics"
       ],
-      "Text": "The boostAnalytics API returns Boost performance analytics for boosted posts owned by the authenticated member or by a sponsoring organization. The response externalizes a curated set of sponsored metrics shown on the boosted post in the LinkedIn flagship app: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, spend, and approximateMemberReach.",
+      "Text": "The boostAnalytics API retrieves analytics for boosted posts owned by the authenticated member or by a sponsoring organization. The response externalizes a curated set of sponsored metrics shown on the boosted post: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, spend, and approximateMemberReach. The response shape and metric availability depend on the requested API version.",
       "Headers": [],
       "Rows": []
     },
@@ -185,6 +185,28 @@
           },
           {
             "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsoring organization for Company Page analytics. Omit it for member analytics. An organization permission scope alone doesn\u0027t select this context.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL-encoded organization URN, for example urn%3Ali%3Aorganization%3A2414183.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company Page requests only",
             "Links": [],
             "Values": []
           }
@@ -419,7 +441,7 @@
             "Values": []
           },
           {
-            "Text": "Approximate number of unique members reached by the boost. This field is omitted for boosts spanning more than 92 days.",
+            "Text": "Approximate reach, omitted for boosts spanning more than 92 days. It isn\u0027t an exact deduplicated union across campaigns.",
             "Links": [],
             "Values": []
           },
@@ -452,6 +474,161 @@
           }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "Version 202611 and above replaces the flat post metric fields with a campaigns array. An empty array doesn\u0027t mean zero delivery or spend. Integrations that require those metrics must not assume equivalent reporting when upgrading from 202610.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "elements[].targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested boosted post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].approximateMemberReach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long, optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The approximate post-level reach, omitted for boosts spanning more than 92 days. It isn\u0027t an exact deduplicated union across campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "elements[].campaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign breakdown. It is empty when campaign data isn\u0027t populated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaigns[].campaign, campaigns[].account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign and owning account, when campaign data is available.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaigns[].metrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign metrics schema: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, and spendInLocalCurrency. Currently unavailable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaigns[].metrics.spendInLocalCurrency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MoneyAmount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The schema for spend in the account\u0027s currency, with decimal-string amount and currencyCode. Local-currency reporting isn\u0027t currently populated.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "Don\u0027t add reach across campaigns: audiences can overlap. Don\u0027t combine monetary amounts with different currencies. The current reach approximation uses the maximum campaign reach, not a deduplicated sum.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "table",
@@ -517,11 +694,23 @@
     },
     {
       "Kind": "text",
-      "Section": "Sample request",
-      "Anchor": "sample-request",
+      "Section": "Sample request for member post analytics",
+      "Anchor": "sample-request-for-member-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
-        "Sample request"
+        "Sample request for member post analytics"
+      ],
+      "Text": "The following request uses member context.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request for member post analytics",
+      "Anchor": "sample-request-for-member-post-analytics",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request for member post analytics"
       ],
       "Text": "http\n\n\ncurl",
       "Headers": [],
@@ -529,11 +718,11 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample request",
-      "Anchor": "sample-request",
+      "Section": "Sample request for member post analytics",
+      "Anchor": "sample-request-for-member-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
-        "Sample request"
+        "Sample request for member post analytics"
       ],
       "Text": "GET https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)",
       "Headers": [],
@@ -541,11 +730,11 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample request",
-      "Anchor": "sample-request",
+      "Section": "Sample request for member post analytics",
+      "Anchor": "sample-request-for-member-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
-        "Sample request"
+        "Sample request for member post analytics"
       ],
       "Text": "curl -X GET \u0027https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3Ashare%3A7325786486870552578,urn%3Ali%3AugcPost%3A7325786486870552579)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
       "Headers": [],
@@ -553,13 +742,85 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample response",
-      "Anchor": "sample-response",
+      "Section": "Sample request for member post analytics",
+      "Anchor": "sample-request-for-member-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
-        "Sample response"
+        "Sample request for member post analytics"
       ],
       "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:share:7325786486870552578\u0022,\n      \u0022impressions\u0022: 12845,\n      \u0022clicks\u0022: 326,\n      \u0022clickThroughRate\u0022: 0.0254,\n      \u0022reactions\u0022: 41,\n      \u0022comments\u0022: 9,\n      \u0022shares\u0022: 7,\n      \u0022follows\u0022: 12,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002237.42\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 11890\n    },\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:7325786486870552579\u0022,\n      \u0022impressions\u0022: 7540,\n      \u0022clicks\u0022: 188,\n      \u0022clickThroughRate\u0022: 0.0249,\n      \u0022reactions\u0022: 23,\n      \u0022comments\u0022: 4,\n      \u0022shares\u0022: 3,\n      \u0022follows\u0022: 6,\n      \u0022spend\u0022: {\n        \u0022amount\u0022: \u002221.15\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022approximateMemberReach\u0022: 7012\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request for organization post analytics",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request for organization post analytics"
+      ],
+      "Text": "For Company Page analytics, append \u0026organization=urn%3Ali%3Aorganization%3A2414183. Omit organization for member analytics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request for organization post analytics",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request for organization post analytics"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request for organization post analytics",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request for organization post analytics"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3AugcPost%3A1234567890)\u0026organization=urn%3Ali%3Aorganization%3A2414183\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request for organization post analytics",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request for organization post analytics"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3AugcPost%3A1234567890)\u0026organization=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request for organization post analytics",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request for organization post analytics"
+      ],
+      "Text": "A response without available reach can have the following shape:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request for organization post analytics",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Sample request for organization post analytics"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n      \u0022campaigns\u0022: []\n    }\n  ],\n  \u0022paging\u0022: {\u0022count\u0022: 10, \u0022start\u0022: 0, \u0022links\u0022: []}\n}",
       "Headers": [],
       "Rows": []
     },
@@ -568,7 +829,6 @@
       "Section": "API error details",
       "Anchor": "api-error-details",
       "SectionPath": [
-        "Retrieve boost analytics",
         "API error details"
       ],
       "Text": "",

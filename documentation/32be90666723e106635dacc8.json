@@ -5,6 +5,7 @@
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
@@ -41,7 +42,7 @@
       "Section": "Manage Audience Restrictions",
       "Anchor": "manage-audience-restrictions",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -673,7 +674,7 @@
         "Viewing Domain Block/Allow Lists",
         "Sample Response"
       ],
-      "Text": "{\n    \u0022fileName\u0022: \u0022Test Block List\u0022,\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1501619504000\n        },\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1501619504000\n        }\n    },\n    \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n    \u0022compressionFormat\u0022: \u0022NONE\u0022,\n    \u0022id\u0022: 1603,\n    \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n    \u0022type\u0022: \u0022BLOCKLIST\u0022\n    \u0022status\u0022: \u0022SUCCESS\u0022\n}",
+      "Text": "{\n    \u0022fileName\u0022: \u0022Test Block List\u0022,\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1501619504000\n        },\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1501619504000\n        }\n    },\n    \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n    \u0022compressionFormat\u0022: \u0022NONE\u0022,\n    \u0022id\u0022: 1603,\n    \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n    \u0022type\u0022: \u0022BLOCKLIST\u0022,\n    \u0022status\u0022: \u0022SUCCESS\u0022,\n    \u0022surface\u0022: \u0022LAN\u0022\n}",
       "Headers": [],
       "Rows": []
     },
@@ -734,7 +735,7 @@
         "Sample Request",
         "Sample Response"
       ],
-      "Text": "{\n    \u0022offsitePreferences\u0022: {\n        \u0022publisherRestrictionFiles\u0022: {\n            \u0022exclude\u0022: [\n                \u0022urn:li:adPublisherFile:1603\u0022\n            ],\n            \u0022exclude~\u0022: [\n                {\n                    \u0022fileName\u0022: \u0022Test Block List\u0022,\n                    \u0022changeAuditStamps\u0022: {\n                        \u0022created\u0022: {\n                            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                            \u0022time\u0022: 1501619504000\n                        },\n                        \u0022lastModified\u0022: {\n                            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                            \u0022time\u0022: 1501619504000\n                        }\n                    },\n                    \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n                    \u0022compressionFormat\u0022: \u0022NONE\u0022,\n                    \u0022id\u0022: 1603,\n                    \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n                    \u0022type\u0022: \u0022BLOCKLIST\u0022,\n                    \u0022status\u0022: \u0022SUCCESS\u0022\n                }\n            ]\n        }\n    },\n    \u0022offsiteDeliveryEnabled\u0022: true,\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022\n}",
+      "Text": "{\n    \u0022offsitePreferences\u0022: {\n        \u0022publisherRestrictionFiles\u0022: {\n            \u0022exclude\u0022: [\n                \u0022urn:li:adPublisherFile:1603\u0022\n            ],\n            \u0022exclude~\u0022: [\n                {\n                    \u0022fileName\u0022: \u0022Test Block List\u0022,\n                    \u0022changeAuditStamps\u0022: {\n                        \u0022created\u0022: {\n                            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                            \u0022time\u0022: 1501619504000\n                        },\n                        \u0022lastModified\u0022: {\n                            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                            \u0022time\u0022: 1501619504000\n                        }\n                    },\n                    \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n                    \u0022compressionFormat\u0022: \u0022NONE\u0022,\n                    \u0022id\u0022: 1603,\n                    \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n                    \u0022type\u0022: \u0022BLOCKLIST\u0022,\n                    \u0022status\u0022: \u0022SUCCESS\u0022,\n                    \u0022surface\u0022: \u0022LAN\u0022\n                }\n            ]\n        }\n    },\n    \u0022offsiteDeliveryEnabled\u0022: true,\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022\n}",
       "Headers": [],
       "Rows": []
     },
@@ -798,7 +799,20 @@
         "Get All Publisher List File Details by Advertiser Account",
         "Sample Response"
       ],
-      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022fileName\u0022: \u0022Test Block List\u0022,\n            \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1501619504000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1501619504000\n                }\n            },\n            \u0022compressionFormat\u0022: \u0022NONE\u0022,\n            \u0022id\u0022: 1603,\n            \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n            \u0022type\u0022: \u0022BLOCKLIST\u0022,\n            \u0022status\u0022: \u0022SUCCESS\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022fileName\u0022: \u0022Test Block List\u0022,\n            \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1501619504000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1501619504000\n                }\n            },\n            \u0022compressionFormat\u0022: \u0022NONE\u0022,\n            \u0022id\u0022: 1603,\n            \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n            \u0022type\u0022: \u0022BLOCKLIST\u0022,\n            \u0022status\u0022: \u0022SUCCESS\u0022,\n            \u0022surface\u0022: \u0022LAN\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get All Publisher List File Details by Advertiser Account",
+        "Sample Response"
+      ],
+      "Text": "In API version 202611 and later, each list also returns surface. Legacy lists may be returned as BOTH or without a surface value. See Publisher List Surfaces.",
       "Headers": [],
       "Rows": []
     },
@@ -1700,8 +1714,127 @@
             "Links": [],
             "Values": []
           }
+        ],
+        [
+          {
+            "Text": "surface",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Placement the list applies to: LAN (LinkedIn Audience Network), CTV (Connected TV), or BOTH (legacy lists created before surfaces were introduced; read-only). Available in API version 202611 and later. See Publisher List Surfaces.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions?view=li-lms-2026-10\u0026tabs=http#publisher-list-surfaces"
+            ],
+            "Values": []
+          }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher List Surfaces",
+      "Anchor": "publisher-list-surfaces",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Publisher List Surfaces"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher List Surfaces",
+      "Anchor": "publisher-list-surfaces",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Publisher List Surfaces"
+      ],
+      "Text": "The surface field is available in API version 202611 (November 2026) and later. Earlier API versions don\u0027t accept or return it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher List Surfaces",
+      "Anchor": "publisher-list-surfaces",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Publisher List Surfaces"
+      ],
+      "Text": "Each publisher list applies to a single surface, and the surface must match the campaigns that use the list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Publisher List Surfaces",
+      "Anchor": "publisher-list-surfaces",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Publisher List Surfaces"
+      ],
+      "Text": "",
+      "Headers": [
+        "Surface",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "LAN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list applies to LinkedIn Audience Network campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CTV",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list applies to Connected TV campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BOTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Legacy list created before surfaces were introduced. Existing campaign and account associations keep applying to both LAN and CTV, but you can\u0027t create new BOTH lists or add a legacy list to a new campaign or account-level association. Legacy lists may also be returned without a surface value.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher List Surfaces",
+      "Anchor": "publisher-list-surfaces",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Publisher List Surfaces"
+      ],
+      "Text": "In version 202611 and later, surface is required when you create a list and must be LAN or CTV.\nsurface can only be set when the list is created. To use a list on a different surface, create a new list.\nWhen you associate a list with a campaign, the list\u0027s surface must match the campaign. Existing partner API accounts have a migration window that ends on December 15, 2026. After that date, a campaign request that uses a list whose surface doesn\u0027t match fails with HTTP 400 on every API version. Lists already attached to campaigns keep working. For the campaign validation rules and a sample INVALID_VALUE_FOR_FIELD error response, see Publisher Restriction Files in Create and Manage Campaigns.\nAccount-level trust preferences don\u0027t have a campaign surface to match. Once surfaces are enabled for the account (enforced for existing partner API accounts on every API version after December 15, 2026), a newly associated list can have either LAN or CTV as its surface. Adding a legacy list (BOTH or unspecified) fails with HTTP 400; lists already applied to the account keep working. See Apply publisher restriction at ad account level.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "text",
@@ -2054,6 +2187,28 @@
             "Links": [],
             "Values": []
           }
+        ],
+        [
+          {
+            "Text": "surface",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Surface the list applies to: LAN or CTV. BOTH isn\u0027t accepted. Can\u0027t be changed after the list is created. Required in version 202611 and later. Not supported in earlier versions; omit it.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Conditional",
+            "Links": [],
+            "Values": []
+          }
         ]
       ]
     },
@@ -2100,6 +2255,19 @@
     },
     {
       "Kind": "text",
+      "Section": "Request Header",
+      "Anchor": "request-header-2",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Request Header"
+      ],
+      "Text": "The following samples use version 202611 and later, so they include surface. For earlier versions, omit surface.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "Sample Request for Allowlist",
       "Anchor": "sample-request-for-allowlist",
       "SectionPath": [
@@ -2133,7 +2301,7 @@
         "Create the Publisher Restriction",
         "Sample Request for Allowlist"
       ],
-      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022Allowlist.csv\u0022,\n  \u0022type\u0022: \u0022ALLOWLIST\u0022\n}",
+      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022Allowlist.csv\u0022,\n  \u0022type\u0022: \u0022ALLOWLIST\u0022,\n  \u0022surface\u0022: \u0022LAN\u0022\n}",
       "Headers": [],
       "Rows": []
     },
@@ -2146,7 +2314,7 @@
         "Create the Publisher Restriction",
         "Sample Request for Allowlist"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022Allowlist.csv\u0022,\n  \u0022type\u0022: \u0022ALLOWLIST\u0022\n\n}\u0027",
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022Allowlist.csv\u0022,\n  \u0022type\u0022: \u0022ALLOWLIST\u0022,\n  \u0022surface\u0022: \u0022LAN\u0022\n}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -2185,7 +2353,7 @@
         "Create the Publisher Restriction",
         "Sample Request for Blocklist"
       ],
-      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022\n}",
+      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022,\n  \u0022surface\u0022: \u0022CTV\u0022\n}",
       "Headers": [],
       "Rows": []
     },
@@ -2198,7 +2366,7 @@
         "Create the Publisher Restriction",
         "Sample Request for Blocklist"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022\n}\u0027",
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022,\n  \u0022surface\u0022: \u0022CTV\u0022\n}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -2225,6 +2393,322 @@
         "Sample Response"
       ],
       "Text": "location: /adPublisherRestrictions/28424",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Errors",
+      "Anchor": "errors",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status",
+        "Error Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In version 202611 and later, surface is missing or isn\u0027t LAN or CTV.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SURFACE_AWARE_API_VERSION_REQUIRED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A request using an earlier API version tries to create a list for a sponsored account that uses separate LAN and CTV lists. Use version 202611 or later and set surface to LAN or CTV.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A partial update tries to change surface on an existing list. Create a new list instead.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Missing or invalid surface",
+      "Anchor": "sample-error-missing-or-invalid-surface",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Missing or invalid surface"
+      ],
+      "Text": "In version 202611 and later, a create request that omits surface or sets it to BOTH fails.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Missing or invalid surface",
+      "Anchor": "sample-error-missing-or-invalid-surface",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Missing or invalid surface"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Missing or invalid surface",
+      "Anchor": "sample-error-missing-or-invalid-surface",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Missing or invalid surface"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions\nLinkedin-Version: 202611",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Missing or invalid surface",
+      "Anchor": "sample-error-missing-or-invalid-surface",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Missing or invalid surface"
+      ],
+      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022,\n  \u0022type\u0022: \u0022BLOCKLIST\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Missing or invalid surface",
+      "Anchor": "sample-error-missing-or-invalid-surface",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Missing or invalid surface"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022,\n  \u0022type\u0022: \u0022BLOCKLIST\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Missing or invalid surface",
+      "Anchor": "sample-error-missing-or-invalid-surface",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Missing or invalid surface"
+      ],
+      "Text": "{\n  \u0022message\u0022: \u0022surface is required when creating a list and must be LAN or CTV.\u0022,\n  \u0022status\u0022: 400\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Surface-aware API version required",
+      "Anchor": "sample-error-surface-aware-api-version-required",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Surface-aware API version required"
+      ],
+      "Text": "A create request that uses an API version earlier than 202611 fails when the sponsored account uses separate LAN and CTV lists. Retry with API version 202611 or later and set surface to LAN or CTV.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Surface-aware API version required",
+      "Anchor": "sample-error-surface-aware-api-version-required",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Surface-aware API version required"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Surface-aware API version required",
+      "Anchor": "sample-error-surface-aware-api-version-required",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Surface-aware API version required"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions\nLinkedin-Version: 202610",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Surface-aware API version required",
+      "Anchor": "sample-error-surface-aware-api-version-required",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Surface-aware API version required"
+      ],
+      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022,\n  \u0022type\u0022: \u0022BLOCKLIST\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Surface-aware API version required",
+      "Anchor": "sample-error-surface-aware-api-version-required",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Surface-aware API version required"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022,\n  \u0022type\u0022: \u0022BLOCKLIST\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Surface-aware API version required",
+      "Anchor": "sample-error-surface-aware-api-version-required",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Surface-aware API version required"
+      ],
+      "Text": "{\n  \u0022code\u0022: \u0022SURFACE_AWARE_API_VERSION_REQUIRED\u0022,\n  \u0022message\u0022: \u0022Separate LAN and CTV publisher lists are enabled for this sponsored account. The requested API version does not support creating these lists. Use a surface-aware API version and specify \u0060surface\u0060 as \u0060LAN\u0060 or \u0060CTV\u0060.\u0022,\n  \u0022status\u0022: 400\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Changing surface after creation",
+      "Anchor": "sample-error-changing-surface-after-creation",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Changing surface after creation"
+      ],
+      "Text": "surface is create-only. A partial update that tries to change it fails with HTTP 422 Unprocessable Entity. To use the list on a different surface, create a new list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Changing surface after creation",
+      "Anchor": "sample-error-changing-surface-after-creation",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Changing surface after creation"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Changing surface after creation",
+      "Anchor": "sample-error-changing-surface-after-creation",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Changing surface after creation"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions/28424\nX-RestLi-Method: PARTIAL_UPDATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Changing surface after creation",
+      "Anchor": "sample-error-changing-surface-after-creation",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Changing surface after creation"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022surface\u0022: \u0022CTV\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Changing surface after creation",
+      "Anchor": "sample-error-changing-surface-after-creation",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Changing surface after creation"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions/28424\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022surface\u0022: \u0022CTV\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Changing surface after creation",
+      "Anchor": "sample-error-changing-surface-after-creation",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Changing surface after creation"
+      ],
+      "Text": "The request fails with the following status. The response body contains a validation message that identifies /surface as a field that can\u0027t be changed after creation. The exact message text may vary, so check the status code rather than the message.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Changing surface after creation",
+      "Anchor": "sample-error-changing-surface-after-creation",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample error: Changing surface after creation"
+      ],
+      "Text": "HTTP/1.1 422 Unprocessable Entity",
       "Headers": [],
       "Rows": []
     },
@@ -2372,6 +2856,19 @@
       ]
     },
     {
+      "Kind": "text",
+      "Section": "Request Schema",
+      "Anchor": "request-schema",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level",
+        "Request Schema"
+      ],
+      "Text": "Each list keeps the surface (LAN, CTV, or legacy BOTH) saved when it was created. Every referenced list must exist; otherwise the request fails with HTTP 400 and the message Invalid publisher list Id(s): [...]. Once publisher list surfaces are enabled for an ad account (enforced for existing partner API accounts on every API version after December 15, 2026), any list newly added to the account-level allowlist or blocklist must be a LAN or CTV list; adding a legacy (BOTH or unspecified) list fails with HTTP 400. Lists already applied to the account keep working.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "table",
       "Section": "Request Header",
       "Anchor": "request-header-3",
@@ -2473,6 +2970,84 @@
         "Sample Response"
       ],
       "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Publisher list not found",
+      "Anchor": "sample-error-publisher-list-not-found",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response",
+        "Sample error: Publisher list not found"
+      ],
+      "Text": "If any referenced publisher list doesn\u0027t exist, the request fails and the response lists the missing IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error: Publisher list not found",
+      "Anchor": "sample-error-publisher-list-not-found",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response",
+        "Sample error: Publisher list not found"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Publisher list not found",
+      "Anchor": "sample-error-publisher-list-not-found",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response",
+        "Sample error: Publisher list not found"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adAccountTrustPreferences/{sponsoredAccountId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Publisher list not found",
+      "Anchor": "sample-error-publisher-list-not-found",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response",
+        "Sample error: Publisher list not found"
+      ],
+      "Text": "{\n  \u0022offsiteAccountPreferences\u0022: {\n    \u0022publisherRestrictionFiles\u0022: {\n      \u0022exclude\u0022: [\n        \u0022urn:li:adPublisherFile:2001\u0022\n      ]\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Publisher list not found",
+      "Anchor": "sample-error-publisher-list-not-found",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response",
+        "Sample error: Publisher list not found"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adAccountTrustPreferences/{sponsoredAccountId}\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022offsiteAccountPreferences\u0022: {\n        \u0022publisherRestrictionFiles\u0022: {\n            \u0022exclude\u0022: [\n                \u0022urn:li:adPublisherFile:2001\u0022\n            ]\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error: Publisher list not found",
+      "Anchor": "sample-error-publisher-list-not-found",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response",
+        "Sample error: Publisher list not found"
+      ],
+      "Text": "{\n  \u0022message\u0022: \u0022Invalid publisher list Id(s): [2001]\u0022,\n  \u0022status\u0022: 400\n}",
       "Headers": [],
       "Rows": []
     }

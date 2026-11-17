@@ -17,20 +17,80 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("actionClicks") is null) { _explicitNullValueActionClicks = default!; _explicitNullProperties?.Remove("actionClicks"); }
+            else if (parseNode.GetChildNode("actionClicks") is { } nullNodeActionClicks && nullNodeActionClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionClicks = null;
+            if (parseNode.GetChildNode("adUnitClicks") is null) { _explicitNullValueAdUnitClicks = default!; _explicitNullProperties?.Remove("adUnitClicks"); }
+            else if (parseNode.GetChildNode("adUnitClicks") is { } nullNodeAdUnitClicks && nullNodeAdUnitClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdUnitClicks = null;
+            if (parseNode.GetChildNode("appointmentsScheduled") is null) { _explicitNullValueAppointmentsScheduled = default!; _explicitNullProperties?.Remove("appointmentsScheduled"); }
+            else if (parseNode.GetChildNode("appointmentsScheduled") is { } nullNodeAppointmentsScheduled && nullNodeAppointmentsScheduled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentsScheduled = null;
+            if (parseNode.GetChildNode("approximateMemberReach") is null) { _explicitNullValueApproximateMemberReach = default!; _explicitNullProperties?.Remove("approximateMemberReach"); }
+            else if (parseNode.GetChildNode("approximateMemberReach") is { } nullNodeApproximateMemberReach && nullNodeApproximateMemberReach.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproximateMemberReach = null;
             if (parseNode.GetChildNode("approximateUniqueImpressions") is null) { _explicitNullValueApproximateUniqueImpressions = default!; _explicitNullProperties?.Remove("approximateUniqueImpressions"); }
             else if (parseNode.GetChildNode("approximateUniqueImpressions") is { } nullNodeApproximateUniqueImpressions && nullNodeApproximateUniqueImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproximateUniqueImpressions = null;
+            if (parseNode.GetChildNode("audiencePenetration") is null) { _explicitNullValueAudiencePenetration = default!; _explicitNullProperties?.Remove("audiencePenetration"); }
+            else if (parseNode.GetChildNode("audiencePenetration") is { } nullNodeAudiencePenetration && nullNodeAudiencePenetration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudiencePenetration = null;
+            if (parseNode.GetChildNode("averageDwellTime") is null) { _explicitNullValueAverageDwellTime = default!; _explicitNullProperties?.Remove("averageDwellTime"); }
+            else if (parseNode.GetChildNode("averageDwellTime") is { } nullNodeAverageDwellTime && nullNodeAverageDwellTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDwellTime = null;
+            if (parseNode.GetChildNode("averageEventWatchTime") is null) { _explicitNullValueAverageEventWatchTime = default!; _explicitNullProperties?.Remove("averageEventWatchTime"); }
+            else if (parseNode.GetChildNode("averageEventWatchTime") is { } nullNodeAverageEventWatchTime && nullNodeAverageEventWatchTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageEventWatchTime = null;
+            if (parseNode.GetChildNode("averageEventWatchTimeOver15Seconds") is null) { _explicitNullValueAverageEventWatchTimeOver15Seconds = default!; _explicitNullProperties?.Remove("averageEventWatchTimeOver15Seconds"); }
+            else if (parseNode.GetChildNode("averageEventWatchTimeOver15Seconds") is { } nullNodeAverageEventWatchTimeOver15Seconds && nullNodeAverageEventWatchTimeOver15Seconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageEventWatchTimeOver15Seconds = null;
+            if (parseNode.GetChildNode("averageEventWatchTimeOver2Minutes") is null) { _explicitNullValueAverageEventWatchTimeOver2Minutes = default!; _explicitNullProperties?.Remove("averageEventWatchTimeOver2Minutes"); }
+            else if (parseNode.GetChildNode("averageEventWatchTimeOver2Minutes") is { } nullNodeAverageEventWatchTimeOver2Minutes && nullNodeAverageEventWatchTimeOver2Minutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageEventWatchTimeOver2Minutes = null;
+            if (parseNode.GetChildNode("averageEventWatchTimeOver30Seconds") is null) { _explicitNullValueAverageEventWatchTimeOver30Seconds = default!; _explicitNullProperties?.Remove("averageEventWatchTimeOver30Seconds"); }
+            else if (parseNode.GetChildNode("averageEventWatchTimeOver30Seconds") is { } nullNodeAverageEventWatchTimeOver30Seconds && nullNodeAverageEventWatchTimeOver30Seconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageEventWatchTimeOver30Seconds = null;
+            if (parseNode.GetChildNode("averageVideoWatchTime") is null) { _explicitNullValueAverageVideoWatchTime = default!; _explicitNullProperties?.Remove("averageVideoWatchTime"); }
+            else if (parseNode.GetChildNode("averageVideoWatchTime") is { } nullNodeAverageVideoWatchTime && nullNodeAverageVideoWatchTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageVideoWatchTime = null;
+            if (parseNode.GetChildNode("cardClicks") is null) { _explicitNullValueCardClicks = default!; _explicitNullProperties?.Remove("cardClicks"); }
+            else if (parseNode.GetChildNode("cardClicks") is { } nullNodeCardClicks && nullNodeCardClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardClicks = null;
+            if (parseNode.GetChildNode("cardImpressions") is null) { _explicitNullValueCardImpressions = default!; _explicitNullProperties?.Remove("cardImpressions"); }
+            else if (parseNode.GetChildNode("cardImpressions") is { } nullNodeCardImpressions && nullNodeCardImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardImpressions = null;
             if (parseNode.GetChildNode("clicks") is null) { _explicitNullValueClicks = default!; _explicitNullProperties?.Remove("clicks"); }
             else if (parseNode.GetChildNode("clicks") is { } nullNodeClicks && nullNodeClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicks = null;
+            if (parseNode.GetChildNode("commentLikes") is null) { _explicitNullValueCommentLikes = default!; _explicitNullProperties?.Remove("commentLikes"); }
+            else if (parseNode.GetChildNode("commentLikes") is { } nullNodeCommentLikes && nullNodeCommentLikes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommentLikes = null;
             if (parseNode.GetChildNode("comments") is null) { _explicitNullValueComments = default!; _explicitNullProperties?.Remove("comments"); }
             else if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
+            if (parseNode.GetChildNode("companyPageClicks") is null) { _explicitNullValueCompanyPageClicks = default!; _explicitNullProperties?.Remove("companyPageClicks"); }
+            else if (parseNode.GetChildNode("companyPageClicks") is { } nullNodeCompanyPageClicks && nullNodeCompanyPageClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyPageClicks = null;
             if (parseNode.GetChildNode("conversionValueInLocalCurrency") is null) { _explicitNullValueConversionValueInLocalCurrency = default!; _explicitNullProperties?.Remove("conversionValueInLocalCurrency"); }
             else if (parseNode.GetChildNode("conversionValueInLocalCurrency") is { } nullNodeConversionValueInLocalCurrency && nullNodeConversionValueInLocalCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionValueInLocalCurrency = null;
             if (parseNode.GetChildNode("costInLocalCurrency") is null) { _explicitNullValueCostInLocalCurrency = default!; _explicitNullProperties?.Remove("costInLocalCurrency"); }
             else if (parseNode.GetChildNode("costInLocalCurrency") is { } nullNodeCostInLocalCurrency && nullNodeCostInLocalCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostInLocalCurrency = null;
             if (parseNode.GetChildNode("costInUsd") is null) { _explicitNullValueCostInUsd = default!; _explicitNullProperties?.Remove("costInUsd"); }
             else if (parseNode.GetChildNode("costInUsd") is { } nullNodeCostInUsd && nullNodeCostInUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostInUsd = null;
+            if (parseNode.GetChildNode("costPerEventView") is null) { _explicitNullValueCostPerEventView = default!; _explicitNullProperties?.Remove("costPerEventView"); }
+            else if (parseNode.GetChildNode("costPerEventView") is { } nullNodeCostPerEventView && nullNodeCostPerEventView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostPerEventView = null;
+            if (parseNode.GetChildNode("costPerEventViewOver15Seconds") is null) { _explicitNullValueCostPerEventViewOver15Seconds = default!; _explicitNullProperties?.Remove("costPerEventViewOver15Seconds"); }
+            else if (parseNode.GetChildNode("costPerEventViewOver15Seconds") is { } nullNodeCostPerEventViewOver15Seconds && nullNodeCostPerEventViewOver15Seconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostPerEventViewOver15Seconds = null;
+            if (parseNode.GetChildNode("costPerEventViewOver2Minutes") is null) { _explicitNullValueCostPerEventViewOver2Minutes = default!; _explicitNullProperties?.Remove("costPerEventViewOver2Minutes"); }
+            else if (parseNode.GetChildNode("costPerEventViewOver2Minutes") is { } nullNodeCostPerEventViewOver2Minutes && nullNodeCostPerEventViewOver2Minutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostPerEventViewOver2Minutes = null;
+            if (parseNode.GetChildNode("costPerEventViewOver30Seconds") is null) { _explicitNullValueCostPerEventViewOver30Seconds = default!; _explicitNullProperties?.Remove("costPerEventViewOver30Seconds"); }
+            else if (parseNode.GetChildNode("costPerEventViewOver30Seconds") is { } nullNodeCostPerEventViewOver30Seconds && nullNodeCostPerEventViewOver30Seconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostPerEventViewOver30Seconds = null;
+            if (parseNode.GetChildNode("costPerQualifiedLead") is null) { _explicitNullValueCostPerQualifiedLead = default!; _explicitNullProperties?.Remove("costPerQualifiedLead"); }
+            else if (parseNode.GetChildNode("costPerQualifiedLead") is { } nullNodeCostPerQualifiedLead && nullNodeCostPerQualifiedLead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostPerQualifiedLead = null;
             if (parseNode.GetChildNode("dateRange") is null) { _explicitNullValueDateRange = default!; _explicitNullProperties?.Remove("dateRange"); }
             else if (parseNode.GetChildNode("dateRange") is { } nullNodeDateRange && nullNodeDateRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateRange = null;
+            if (parseNode.GetChildNode("documentCompletions") is null) { _explicitNullValueDocumentCompletions = default!; _explicitNullProperties?.Remove("documentCompletions"); }
+            else if (parseNode.GetChildNode("documentCompletions") is { } nullNodeDocumentCompletions && nullNodeDocumentCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentCompletions = null;
+            if (parseNode.GetChildNode("documentFirstQuartileCompletions") is null) { _explicitNullValueDocumentFirstQuartileCompletions = default!; _explicitNullProperties?.Remove("documentFirstQuartileCompletions"); }
+            else if (parseNode.GetChildNode("documentFirstQuartileCompletions") is { } nullNodeDocumentFirstQuartileCompletions && nullNodeDocumentFirstQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentFirstQuartileCompletions = null;
+            if (parseNode.GetChildNode("documentMidpointCompletions") is null) { _explicitNullValueDocumentMidpointCompletions = default!; _explicitNullProperties?.Remove("documentMidpointCompletions"); }
+            else if (parseNode.GetChildNode("documentMidpointCompletions") is { } nullNodeDocumentMidpointCompletions && nullNodeDocumentMidpointCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentMidpointCompletions = null;
+            if (parseNode.GetChildNode("documentThirdQuartileCompletions") is null) { _explicitNullValueDocumentThirdQuartileCompletions = default!; _explicitNullProperties?.Remove("documentThirdQuartileCompletions"); }
+            else if (parseNode.GetChildNode("documentThirdQuartileCompletions") is { } nullNodeDocumentThirdQuartileCompletions && nullNodeDocumentThirdQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentThirdQuartileCompletions = null;
+            if (parseNode.GetChildNode("downloadClicks") is null) { _explicitNullValueDownloadClicks = default!; _explicitNullProperties?.Remove("downloadClicks"); }
+            else if (parseNode.GetChildNode("downloadClicks") is { } nullNodeDownloadClicks && nullNodeDownloadClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadClicks = null;
+            if (parseNode.GetChildNode("eventViews") is null) { _explicitNullValueEventViews = default!; _explicitNullProperties?.Remove("eventViews"); }
+            else if (parseNode.GetChildNode("eventViews") is { } nullNodeEventViews && nullNodeEventViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventViews = null;
+            if (parseNode.GetChildNode("eventViewsOver15Seconds") is null) { _explicitNullValueEventViewsOver15Seconds = default!; _explicitNullProperties?.Remove("eventViewsOver15Seconds"); }
+            else if (parseNode.GetChildNode("eventViewsOver15Seconds") is { } nullNodeEventViewsOver15Seconds && nullNodeEventViewsOver15Seconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventViewsOver15Seconds = null;
+            if (parseNode.GetChildNode("eventViewsOver2Minutes") is null) { _explicitNullValueEventViewsOver2Minutes = default!; _explicitNullProperties?.Remove("eventViewsOver2Minutes"); }
+            else if (parseNode.GetChildNode("eventViewsOver2Minutes") is { } nullNodeEventViewsOver2Minutes && nullNodeEventViewsOver2Minutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventViewsOver2Minutes = null;
+            if (parseNode.GetChildNode("eventViewsOver30Seconds") is null) { _explicitNullValueEventViewsOver30Seconds = default!; _explicitNullProperties?.Remove("eventViewsOver30Seconds"); }
+            else if (parseNode.GetChildNode("eventViewsOver30Seconds") is { } nullNodeEventViewsOver30Seconds && nullNodeEventViewsOver30Seconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventViewsOver30Seconds = null;
+            if (parseNode.GetChildNode("eventWatchTime") is null) { _explicitNullValueEventWatchTime = default!; _explicitNullProperties?.Remove("eventWatchTime"); }
+            else if (parseNode.GetChildNode("eventWatchTime") is { } nullNodeEventWatchTime && nullNodeEventWatchTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventWatchTime = null;
             if (parseNode.GetChildNode("externalWebsiteConversions") is null) { _explicitNullValueExternalWebsiteConversions = default!; _explicitNullProperties?.Remove("externalWebsiteConversions"); }
             else if (parseNode.GetChildNode("externalWebsiteConversions") is { } nullNodeExternalWebsiteConversions && nullNodeExternalWebsiteConversions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalWebsiteConversions = null;
             if (parseNode.GetChildNode("externalWebsitePostClickConversions") is null) { _explicitNullValueExternalWebsitePostClickConversions = default!; _explicitNullProperties?.Remove("externalWebsitePostClickConversions"); }
@@ -39,26 +99,62 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             else if (parseNode.GetChildNode("externalWebsitePostViewConversions") is { } nullNodeExternalWebsitePostViewConversions && nullNodeExternalWebsitePostViewConversions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalWebsitePostViewConversions = null;
             if (parseNode.GetChildNode("follows") is null) { _explicitNullValueFollows = default!; _explicitNullProperties?.Remove("follows"); }
             else if (parseNode.GetChildNode("follows") is { } nullNodeFollows && nullNodeFollows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Follows = null;
+            if (parseNode.GetChildNode("fullScreenPlays") is null) { _explicitNullValueFullScreenPlays = default!; _explicitNullProperties?.Remove("fullScreenPlays"); }
+            else if (parseNode.GetChildNode("fullScreenPlays") is { } nullNodeFullScreenPlays && nullNodeFullScreenPlays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullScreenPlays = null;
+            if (parseNode.GetChildNode("headlineClicks") is null) { _explicitNullValueHeadlineClicks = default!; _explicitNullProperties?.Remove("headlineClicks"); }
+            else if (parseNode.GetChildNode("headlineClicks") is { } nullNodeHeadlineClicks && nullNodeHeadlineClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadlineClicks = null;
+            if (parseNode.GetChildNode("headlineImpressions") is null) { _explicitNullValueHeadlineImpressions = default!; _explicitNullProperties?.Remove("headlineImpressions"); }
+            else if (parseNode.GetChildNode("headlineImpressions") is { } nullNodeHeadlineImpressions && nullNodeHeadlineImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadlineImpressions = null;
             if (parseNode.GetChildNode("impressions") is null) { _explicitNullValueImpressions = default!; _explicitNullProperties?.Remove("impressions"); }
             else if (parseNode.GetChildNode("impressions") is { } nullNodeImpressions && nullNodeImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impressions = null;
+            if (parseNode.GetChildNode("jobApplications") is null) { _explicitNullValueJobApplications = default!; _explicitNullProperties?.Remove("jobApplications"); }
+            else if (parseNode.GetChildNode("jobApplications") is { } nullNodeJobApplications && nullNodeJobApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobApplications = null;
+            if (parseNode.GetChildNode("jobApplyClicks") is null) { _explicitNullValueJobApplyClicks = default!; _explicitNullProperties?.Remove("jobApplyClicks"); }
+            else if (parseNode.GetChildNode("jobApplyClicks") is { } nullNodeJobApplyClicks && nullNodeJobApplyClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobApplyClicks = null;
             if (parseNode.GetChildNode("landingPageClicks") is null) { _explicitNullValueLandingPageClicks = default!; _explicitNullProperties?.Remove("landingPageClicks"); }
             else if (parseNode.GetChildNode("landingPageClicks") is { } nullNodeLandingPageClicks && nullNodeLandingPageClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LandingPageClicks = null;
+            if (parseNode.GetChildNode("leadGenerationMailContactInfoShares") is null) { _explicitNullValueLeadGenerationMailContactInfoShares = default!; _explicitNullProperties?.Remove("leadGenerationMailContactInfoShares"); }
+            else if (parseNode.GetChildNode("leadGenerationMailContactInfoShares") is { } nullNodeLeadGenerationMailContactInfoShares && nullNodeLeadGenerationMailContactInfoShares.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadGenerationMailContactInfoShares = null;
+            if (parseNode.GetChildNode("leadGenerationMailInterestedClicks") is null) { _explicitNullValueLeadGenerationMailInterestedClicks = default!; _explicitNullProperties?.Remove("leadGenerationMailInterestedClicks"); }
+            else if (parseNode.GetChildNode("leadGenerationMailInterestedClicks") is { } nullNodeLeadGenerationMailInterestedClicks && nullNodeLeadGenerationMailInterestedClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadGenerationMailInterestedClicks = null;
             if (parseNode.GetChildNode("likes") is null) { _explicitNullValueLikes = default!; _explicitNullProperties?.Remove("likes"); }
             else if (parseNode.GetChildNode("likes") is { } nullNodeLikes && nullNodeLikes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Likes = null;
+            if (parseNode.GetChildNode("memberFollows") is null) { _explicitNullValueMemberFollows = default!; _explicitNullProperties?.Remove("memberFollows"); }
+            else if (parseNode.GetChildNode("memberFollows") is { } nullNodeMemberFollows && nullNodeMemberFollows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberFollows = null;
+            if (parseNode.GetChildNode("memberProfileClicks") is null) { _explicitNullValueMemberProfileClicks = default!; _explicitNullProperties?.Remove("memberProfileClicks"); }
+            else if (parseNode.GetChildNode("memberProfileClicks") is { } nullNodeMemberProfileClicks && nullNodeMemberProfileClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberProfileClicks = null;
             if (parseNode.GetChildNode("oneClickLeadFormOpens") is null) { _explicitNullValueOneClickLeadFormOpens = default!; _explicitNullProperties?.Remove("oneClickLeadFormOpens"); }
             else if (parseNode.GetChildNode("oneClickLeadFormOpens") is { } nullNodeOneClickLeadFormOpens && nullNodeOneClickLeadFormOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneClickLeadFormOpens = null;
             if (parseNode.GetChildNode("oneClickLeads") is null) { _explicitNullValueOneClickLeads = default!; _explicitNullProperties?.Remove("oneClickLeads"); }
             else if (parseNode.GetChildNode("oneClickLeads") is { } nullNodeOneClickLeads && nullNodeOneClickLeads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneClickLeads = null;
             if (parseNode.GetChildNode("opens") is null) { _explicitNullValueOpens = default!; _explicitNullProperties?.Remove("opens"); }
             else if (parseNode.GetChildNode("opens") is { } nullNodeOpens && nullNodeOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opens = null;
+            if (parseNode.GetChildNode("otherEngagements") is null) { _explicitNullValueOtherEngagements = default!; _explicitNullProperties?.Remove("otherEngagements"); }
+            else if (parseNode.GetChildNode("otherEngagements") is { } nullNodeOtherEngagements && nullNodeOtherEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherEngagements = null;
             if (parseNode.GetChildNode("pivot") is null) { _explicitNullValuePivot = default!; _explicitNullProperties?.Remove("pivot"); }
             else if (parseNode.GetChildNode("pivot") is { } nullNodePivot && nullNodePivot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pivot = null;
             if (parseNode.GetChildNode("pivotValue") is null) { _explicitNullValuePivotValue = default!; _explicitNullProperties?.Remove("pivotValue"); }
             else if (parseNode.GetChildNode("pivotValue") is { } nullNodePivotValue && nullNodePivotValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PivotValue = null;
             if (parseNode.GetChildNode("pivotValues") is null) { _explicitNullValuePivotValues = default!; _explicitNullProperties?.Remove("pivotValues"); }
             else if (parseNode.GetChildNode("pivotValues") is { } nullNodePivotValues && nullNodePivotValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PivotValues = null;
+            if (parseNode.GetChildNode("postClickJobApplications") is null) { _explicitNullValuePostClickJobApplications = default!; _explicitNullProperties?.Remove("postClickJobApplications"); }
+            else if (parseNode.GetChildNode("postClickJobApplications") is { } nullNodePostClickJobApplications && nullNodePostClickJobApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostClickJobApplications = null;
+            if (parseNode.GetChildNode("postClickJobApplyClicks") is null) { _explicitNullValuePostClickJobApplyClicks = default!; _explicitNullProperties?.Remove("postClickJobApplyClicks"); }
+            else if (parseNode.GetChildNode("postClickJobApplyClicks") is { } nullNodePostClickJobApplyClicks && nullNodePostClickJobApplyClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostClickJobApplyClicks = null;
+            if (parseNode.GetChildNode("postClickRegistrations") is null) { _explicitNullValuePostClickRegistrations = default!; _explicitNullProperties?.Remove("postClickRegistrations"); }
+            else if (parseNode.GetChildNode("postClickRegistrations") is { } nullNodePostClickRegistrations && nullNodePostClickRegistrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostClickRegistrations = null;
+            if (parseNode.GetChildNode("postViewJobApplications") is null) { _explicitNullValuePostViewJobApplications = default!; _explicitNullProperties?.Remove("postViewJobApplications"); }
+            else if (parseNode.GetChildNode("postViewJobApplications") is { } nullNodePostViewJobApplications && nullNodePostViewJobApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostViewJobApplications = null;
+            if (parseNode.GetChildNode("postViewJobApplyClicks") is null) { _explicitNullValuePostViewJobApplyClicks = default!; _explicitNullProperties?.Remove("postViewJobApplyClicks"); }
+            else if (parseNode.GetChildNode("postViewJobApplyClicks") is { } nullNodePostViewJobApplyClicks && nullNodePostViewJobApplyClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostViewJobApplyClicks = null;
+            if (parseNode.GetChildNode("postViewRegistrations") is null) { _explicitNullValuePostViewRegistrations = default!; _explicitNullProperties?.Remove("postViewRegistrations"); }
+            else if (parseNode.GetChildNode("postViewRegistrations") is { } nullNodePostViewRegistrations && nullNodePostViewRegistrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostViewRegistrations = null;
+            if (parseNode.GetChildNode("qualifiedLeads") is null) { _explicitNullValueQualifiedLeads = default!; _explicitNullProperties?.Remove("qualifiedLeads"); }
+            else if (parseNode.GetChildNode("qualifiedLeads") is { } nullNodeQualifiedLeads && nullNodeQualifiedLeads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualifiedLeads = null;
             if (parseNode.GetChildNode("reactions") is null) { _explicitNullValueReactions = default!; _explicitNullProperties?.Remove("reactions"); }
             else if (parseNode.GetChildNode("reactions") is { } nullNodeReactions && nullNodeReactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reactions = null;
+            if (parseNode.GetChildNode("registrations") is null) { _explicitNullValueRegistrations = default!; _explicitNullProperties?.Remove("registrations"); }
+            else if (parseNode.GetChildNode("registrations") is { } nullNodeRegistrations && nullNodeRegistrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrations = null;
             if (parseNode.GetChildNode("pivotValue~") is null) { _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue = default!; _explicitNullProperties?.Remove("pivotValue~"); }
             else if (parseNode.GetChildNode("pivotValue~") is { } nullNodeReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue && nullNodeReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue = null;
             if (parseNode.GetChildNode("pivotValues~") is null) { _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues = default!; _explicitNullProperties?.Remove("pivotValues~"); }
@@ -69,26 +165,171 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             else if (parseNode.GetChildNode("sends") is { } nullNodeSends && nullNodeSends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sends = null;
             if (parseNode.GetChildNode("shares") is null) { _explicitNullValueShares = default!; _explicitNullProperties?.Remove("shares"); }
             else if (parseNode.GetChildNode("shares") is { } nullNodeShares && nullNodeShares.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shares = null;
+            if (parseNode.GetChildNode("subscriptionClicks") is null) { _explicitNullValueSubscriptionClicks = default!; _explicitNullProperties?.Remove("subscriptionClicks"); }
+            else if (parseNode.GetChildNode("subscriptionClicks") is { } nullNodeSubscriptionClicks && nullNodeSubscriptionClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionClicks = null;
+            if (parseNode.GetChildNode("talentLeads") is null) { _explicitNullValueTalentLeads = default!; _explicitNullProperties?.Remove("talentLeads"); }
+            else if (parseNode.GetChildNode("talentLeads") is { } nullNodeTalentLeads && nullNodeTalentLeads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TalentLeads = null;
+            if (parseNode.GetChildNode("textUrlClicks") is null) { _explicitNullValueTextUrlClicks = default!; _explicitNullProperties?.Remove("textUrlClicks"); }
+            else if (parseNode.GetChildNode("textUrlClicks") is { } nullNodeTextUrlClicks && nullNodeTextUrlClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextUrlClicks = null;
             if (parseNode.GetChildNode("totalEngagements") is null) { _explicitNullValueTotalEngagements = default!; _explicitNullProperties?.Remove("totalEngagements"); }
             else if (parseNode.GetChildNode("totalEngagements") is { } nullNodeTotalEngagements && nullNodeTotalEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalEngagements = null;
+            if (parseNode.GetChildNode("validWorkEmailLeads") is null) { _explicitNullValueValidWorkEmailLeads = default!; _explicitNullProperties?.Remove("validWorkEmailLeads"); }
+            else if (parseNode.GetChildNode("validWorkEmailLeads") is { } nullNodeValidWorkEmailLeads && nullNodeValidWorkEmailLeads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidWorkEmailLeads = null;
             if (parseNode.GetChildNode("videoCompletions") is null) { _explicitNullValueVideoCompletions = default!; _explicitNullProperties?.Remove("videoCompletions"); }
             else if (parseNode.GetChildNode("videoCompletions") is { } nullNodeVideoCompletions && nullNodeVideoCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoCompletions = null;
+            if (parseNode.GetChildNode("videoFirstQuartileCompletions") is null) { _explicitNullValueVideoFirstQuartileCompletions = default!; _explicitNullProperties?.Remove("videoFirstQuartileCompletions"); }
+            else if (parseNode.GetChildNode("videoFirstQuartileCompletions") is { } nullNodeVideoFirstQuartileCompletions && nullNodeVideoFirstQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoFirstQuartileCompletions = null;
+            if (parseNode.GetChildNode("videoMidpointCompletions") is null) { _explicitNullValueVideoMidpointCompletions = default!; _explicitNullProperties?.Remove("videoMidpointCompletions"); }
+            else if (parseNode.GetChildNode("videoMidpointCompletions") is { } nullNodeVideoMidpointCompletions && nullNodeVideoMidpointCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoMidpointCompletions = null;
+            if (parseNode.GetChildNode("videoStarts") is null) { _explicitNullValueVideoStarts = default!; _explicitNullProperties?.Remove("videoStarts"); }
+            else if (parseNode.GetChildNode("videoStarts") is { } nullNodeVideoStarts && nullNodeVideoStarts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoStarts = null;
+            if (parseNode.GetChildNode("videoThirdQuartileCompletions") is null) { _explicitNullValueVideoThirdQuartileCompletions = default!; _explicitNullProperties?.Remove("videoThirdQuartileCompletions"); }
+            else if (parseNode.GetChildNode("videoThirdQuartileCompletions") is { } nullNodeVideoThirdQuartileCompletions && nullNodeVideoThirdQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoThirdQuartileCompletions = null;
             if (parseNode.GetChildNode("videoViews") is null) { _explicitNullValueVideoViews = default!; _explicitNullProperties?.Remove("videoViews"); }
             else if (parseNode.GetChildNode("videoViews") is { } nullNodeVideoViews && nullNodeVideoViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoViews = null;
+            if (parseNode.GetChildNode("videoWatchTime") is null) { _explicitNullValueVideoWatchTime = default!; _explicitNullProperties?.Remove("videoWatchTime"); }
+            else if (parseNode.GetChildNode("videoWatchTime") is { } nullNodeVideoWatchTime && nullNodeVideoWatchTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoWatchTime = null;
+            if (parseNode.GetChildNode("viralCardClicks") is null) { _explicitNullValueViralCardClicks = default!; _explicitNullProperties?.Remove("viralCardClicks"); }
+            else if (parseNode.GetChildNode("viralCardClicks") is { } nullNodeViralCardClicks && nullNodeViralCardClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralCardClicks = null;
+            if (parseNode.GetChildNode("viralCardImpressions") is null) { _explicitNullValueViralCardImpressions = default!; _explicitNullProperties?.Remove("viralCardImpressions"); }
+            else if (parseNode.GetChildNode("viralCardImpressions") is { } nullNodeViralCardImpressions && nullNodeViralCardImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralCardImpressions = null;
+            if (parseNode.GetChildNode("viralClicks") is null) { _explicitNullValueViralClicks = default!; _explicitNullProperties?.Remove("viralClicks"); }
+            else if (parseNode.GetChildNode("viralClicks") is { } nullNodeViralClicks && nullNodeViralClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralClicks = null;
+            if (parseNode.GetChildNode("viralCommentLikes") is null) { _explicitNullValueViralCommentLikes = default!; _explicitNullProperties?.Remove("viralCommentLikes"); }
+            else if (parseNode.GetChildNode("viralCommentLikes") is { } nullNodeViralCommentLikes && nullNodeViralCommentLikes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralCommentLikes = null;
+            if (parseNode.GetChildNode("viralComments") is null) { _explicitNullValueViralComments = default!; _explicitNullProperties?.Remove("viralComments"); }
+            else if (parseNode.GetChildNode("viralComments") is { } nullNodeViralComments && nullNodeViralComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralComments = null;
+            if (parseNode.GetChildNode("viralCompanyPageClicks") is null) { _explicitNullValueViralCompanyPageClicks = default!; _explicitNullProperties?.Remove("viralCompanyPageClicks"); }
+            else if (parseNode.GetChildNode("viralCompanyPageClicks") is { } nullNodeViralCompanyPageClicks && nullNodeViralCompanyPageClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralCompanyPageClicks = null;
+            if (parseNode.GetChildNode("viralDocumentCompletions") is null) { _explicitNullValueViralDocumentCompletions = default!; _explicitNullProperties?.Remove("viralDocumentCompletions"); }
+            else if (parseNode.GetChildNode("viralDocumentCompletions") is { } nullNodeViralDocumentCompletions && nullNodeViralDocumentCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralDocumentCompletions = null;
+            if (parseNode.GetChildNode("viralDocumentFirstQuartileCompletions") is null) { _explicitNullValueViralDocumentFirstQuartileCompletions = default!; _explicitNullProperties?.Remove("viralDocumentFirstQuartileCompletions"); }
+            else if (parseNode.GetChildNode("viralDocumentFirstQuartileCompletions") is { } nullNodeViralDocumentFirstQuartileCompletions && nullNodeViralDocumentFirstQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralDocumentFirstQuartileCompletions = null;
+            if (parseNode.GetChildNode("viralDocumentMidpointCompletions") is null) { _explicitNullValueViralDocumentMidpointCompletions = default!; _explicitNullProperties?.Remove("viralDocumentMidpointCompletions"); }
+            else if (parseNode.GetChildNode("viralDocumentMidpointCompletions") is { } nullNodeViralDocumentMidpointCompletions && nullNodeViralDocumentMidpointCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralDocumentMidpointCompletions = null;
+            if (parseNode.GetChildNode("viralDocumentThirdQuartileCompletions") is null) { _explicitNullValueViralDocumentThirdQuartileCompletions = default!; _explicitNullProperties?.Remove("viralDocumentThirdQuartileCompletions"); }
+            else if (parseNode.GetChildNode("viralDocumentThirdQuartileCompletions") is { } nullNodeViralDocumentThirdQuartileCompletions && nullNodeViralDocumentThirdQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralDocumentThirdQuartileCompletions = null;
+            if (parseNode.GetChildNode("viralDownloadClicks") is null) { _explicitNullValueViralDownloadClicks = default!; _explicitNullProperties?.Remove("viralDownloadClicks"); }
+            else if (parseNode.GetChildNode("viralDownloadClicks") is { } nullNodeViralDownloadClicks && nullNodeViralDownloadClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralDownloadClicks = null;
+            if (parseNode.GetChildNode("viralExternalWebsiteConversions") is null) { _explicitNullValueViralExternalWebsiteConversions = default!; _explicitNullProperties?.Remove("viralExternalWebsiteConversions"); }
+            else if (parseNode.GetChildNode("viralExternalWebsiteConversions") is { } nullNodeViralExternalWebsiteConversions && nullNodeViralExternalWebsiteConversions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralExternalWebsiteConversions = null;
+            if (parseNode.GetChildNode("viralExternalWebsitePostClickConversions") is null) { _explicitNullValueViralExternalWebsitePostClickConversions = default!; _explicitNullProperties?.Remove("viralExternalWebsitePostClickConversions"); }
+            else if (parseNode.GetChildNode("viralExternalWebsitePostClickConversions") is { } nullNodeViralExternalWebsitePostClickConversions && nullNodeViralExternalWebsitePostClickConversions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralExternalWebsitePostClickConversions = null;
+            if (parseNode.GetChildNode("viralExternalWebsitePostViewConversions") is null) { _explicitNullValueViralExternalWebsitePostViewConversions = default!; _explicitNullProperties?.Remove("viralExternalWebsitePostViewConversions"); }
+            else if (parseNode.GetChildNode("viralExternalWebsitePostViewConversions") is { } nullNodeViralExternalWebsitePostViewConversions && nullNodeViralExternalWebsitePostViewConversions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralExternalWebsitePostViewConversions = null;
+            if (parseNode.GetChildNode("viralFollows") is null) { _explicitNullValueViralFollows = default!; _explicitNullProperties?.Remove("viralFollows"); }
+            else if (parseNode.GetChildNode("viralFollows") is { } nullNodeViralFollows && nullNodeViralFollows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralFollows = null;
+            if (parseNode.GetChildNode("viralFullScreenPlays") is null) { _explicitNullValueViralFullScreenPlays = default!; _explicitNullProperties?.Remove("viralFullScreenPlays"); }
+            else if (parseNode.GetChildNode("viralFullScreenPlays") is { } nullNodeViralFullScreenPlays && nullNodeViralFullScreenPlays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralFullScreenPlays = null;
+            if (parseNode.GetChildNode("viralImpressions") is null) { _explicitNullValueViralImpressions = default!; _explicitNullProperties?.Remove("viralImpressions"); }
+            else if (parseNode.GetChildNode("viralImpressions") is { } nullNodeViralImpressions && nullNodeViralImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralImpressions = null;
+            if (parseNode.GetChildNode("viralJobApplications") is null) { _explicitNullValueViralJobApplications = default!; _explicitNullProperties?.Remove("viralJobApplications"); }
+            else if (parseNode.GetChildNode("viralJobApplications") is { } nullNodeViralJobApplications && nullNodeViralJobApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralJobApplications = null;
+            if (parseNode.GetChildNode("viralJobApplyClicks") is null) { _explicitNullValueViralJobApplyClicks = default!; _explicitNullProperties?.Remove("viralJobApplyClicks"); }
+            else if (parseNode.GetChildNode("viralJobApplyClicks") is { } nullNodeViralJobApplyClicks && nullNodeViralJobApplyClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralJobApplyClicks = null;
+            if (parseNode.GetChildNode("viralLandingPageClicks") is null) { _explicitNullValueViralLandingPageClicks = default!; _explicitNullProperties?.Remove("viralLandingPageClicks"); }
+            else if (parseNode.GetChildNode("viralLandingPageClicks") is { } nullNodeViralLandingPageClicks && nullNodeViralLandingPageClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralLandingPageClicks = null;
+            if (parseNode.GetChildNode("viralLikes") is null) { _explicitNullValueViralLikes = default!; _explicitNullProperties?.Remove("viralLikes"); }
+            else if (parseNode.GetChildNode("viralLikes") is { } nullNodeViralLikes && nullNodeViralLikes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralLikes = null;
+            if (parseNode.GetChildNode("viralOneClickLeadFormOpens") is null) { _explicitNullValueViralOneClickLeadFormOpens = default!; _explicitNullProperties?.Remove("viralOneClickLeadFormOpens"); }
+            else if (parseNode.GetChildNode("viralOneClickLeadFormOpens") is { } nullNodeViralOneClickLeadFormOpens && nullNodeViralOneClickLeadFormOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralOneClickLeadFormOpens = null;
+            if (parseNode.GetChildNode("viralOneClickLeads") is null) { _explicitNullValueViralOneClickLeads = default!; _explicitNullProperties?.Remove("viralOneClickLeads"); }
+            else if (parseNode.GetChildNode("viralOneClickLeads") is { } nullNodeViralOneClickLeads && nullNodeViralOneClickLeads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralOneClickLeads = null;
+            if (parseNode.GetChildNode("viralOtherEngagements") is null) { _explicitNullValueViralOtherEngagements = default!; _explicitNullProperties?.Remove("viralOtherEngagements"); }
+            else if (parseNode.GetChildNode("viralOtherEngagements") is { } nullNodeViralOtherEngagements && nullNodeViralOtherEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralOtherEngagements = null;
+            if (parseNode.GetChildNode("viralPostClickJobApplications") is null) { _explicitNullValueViralPostClickJobApplications = default!; _explicitNullProperties?.Remove("viralPostClickJobApplications"); }
+            else if (parseNode.GetChildNode("viralPostClickJobApplications") is { } nullNodeViralPostClickJobApplications && nullNodeViralPostClickJobApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralPostClickJobApplications = null;
+            if (parseNode.GetChildNode("viralPostClickJobApplyClicks") is null) { _explicitNullValueViralPostClickJobApplyClicks = default!; _explicitNullProperties?.Remove("viralPostClickJobApplyClicks"); }
+            else if (parseNode.GetChildNode("viralPostClickJobApplyClicks") is { } nullNodeViralPostClickJobApplyClicks && nullNodeViralPostClickJobApplyClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralPostClickJobApplyClicks = null;
+            if (parseNode.GetChildNode("viralPostClickRegistrations") is null) { _explicitNullValueViralPostClickRegistrations = default!; _explicitNullProperties?.Remove("viralPostClickRegistrations"); }
+            else if (parseNode.GetChildNode("viralPostClickRegistrations") is { } nullNodeViralPostClickRegistrations && nullNodeViralPostClickRegistrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralPostClickRegistrations = null;
+            if (parseNode.GetChildNode("viralPostViewJobApplications") is null) { _explicitNullValueViralPostViewJobApplications = default!; _explicitNullProperties?.Remove("viralPostViewJobApplications"); }
+            else if (parseNode.GetChildNode("viralPostViewJobApplications") is { } nullNodeViralPostViewJobApplications && nullNodeViralPostViewJobApplications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralPostViewJobApplications = null;
+            if (parseNode.GetChildNode("viralPostViewJobApplyClicks") is null) { _explicitNullValueViralPostViewJobApplyClicks = default!; _explicitNullProperties?.Remove("viralPostViewJobApplyClicks"); }
+            else if (parseNode.GetChildNode("viralPostViewJobApplyClicks") is { } nullNodeViralPostViewJobApplyClicks && nullNodeViralPostViewJobApplyClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralPostViewJobApplyClicks = null;
+            if (parseNode.GetChildNode("viralPostViewRegistrations") is null) { _explicitNullValueViralPostViewRegistrations = default!; _explicitNullProperties?.Remove("viralPostViewRegistrations"); }
+            else if (parseNode.GetChildNode("viralPostViewRegistrations") is { } nullNodeViralPostViewRegistrations && nullNodeViralPostViewRegistrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralPostViewRegistrations = null;
+            if (parseNode.GetChildNode("viralReactions") is null) { _explicitNullValueViralReactions = default!; _explicitNullProperties?.Remove("viralReactions"); }
+            else if (parseNode.GetChildNode("viralReactions") is { } nullNodeViralReactions && nullNodeViralReactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralReactions = null;
+            if (parseNode.GetChildNode("viralRegistrations") is null) { _explicitNullValueViralRegistrations = default!; _explicitNullProperties?.Remove("viralRegistrations"); }
+            else if (parseNode.GetChildNode("viralRegistrations") is { } nullNodeViralRegistrations && nullNodeViralRegistrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralRegistrations = null;
+            if (parseNode.GetChildNode("viralShares") is null) { _explicitNullValueViralShares = default!; _explicitNullProperties?.Remove("viralShares"); }
+            else if (parseNode.GetChildNode("viralShares") is { } nullNodeViralShares && nullNodeViralShares.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralShares = null;
+            if (parseNode.GetChildNode("viralSubscriptionClicks") is null) { _explicitNullValueViralSubscriptionClicks = default!; _explicitNullProperties?.Remove("viralSubscriptionClicks"); }
+            else if (parseNode.GetChildNode("viralSubscriptionClicks") is { } nullNodeViralSubscriptionClicks && nullNodeViralSubscriptionClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralSubscriptionClicks = null;
+            if (parseNode.GetChildNode("viralTotalEngagements") is null) { _explicitNullValueViralTotalEngagements = default!; _explicitNullProperties?.Remove("viralTotalEngagements"); }
+            else if (parseNode.GetChildNode("viralTotalEngagements") is { } nullNodeViralTotalEngagements && nullNodeViralTotalEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralTotalEngagements = null;
+            if (parseNode.GetChildNode("viralVideoCompletions") is null) { _explicitNullValueViralVideoCompletions = default!; _explicitNullProperties?.Remove("viralVideoCompletions"); }
+            else if (parseNode.GetChildNode("viralVideoCompletions") is { } nullNodeViralVideoCompletions && nullNodeViralVideoCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralVideoCompletions = null;
+            if (parseNode.GetChildNode("viralVideoFirstQuartileCompletions") is null) { _explicitNullValueViralVideoFirstQuartileCompletions = default!; _explicitNullProperties?.Remove("viralVideoFirstQuartileCompletions"); }
+            else if (parseNode.GetChildNode("viralVideoFirstQuartileCompletions") is { } nullNodeViralVideoFirstQuartileCompletions && nullNodeViralVideoFirstQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralVideoFirstQuartileCompletions = null;
+            if (parseNode.GetChildNode("viralVideoMidpointCompletions") is null) { _explicitNullValueViralVideoMidpointCompletions = default!; _explicitNullProperties?.Remove("viralVideoMidpointCompletions"); }
+            else if (parseNode.GetChildNode("viralVideoMidpointCompletions") is { } nullNodeViralVideoMidpointCompletions && nullNodeViralVideoMidpointCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralVideoMidpointCompletions = null;
+            if (parseNode.GetChildNode("viralVideoStarts") is null) { _explicitNullValueViralVideoStarts = default!; _explicitNullProperties?.Remove("viralVideoStarts"); }
+            else if (parseNode.GetChildNode("viralVideoStarts") is { } nullNodeViralVideoStarts && nullNodeViralVideoStarts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralVideoStarts = null;
+            if (parseNode.GetChildNode("viralVideoThirdQuartileCompletions") is null) { _explicitNullValueViralVideoThirdQuartileCompletions = default!; _explicitNullProperties?.Remove("viralVideoThirdQuartileCompletions"); }
+            else if (parseNode.GetChildNode("viralVideoThirdQuartileCompletions") is { } nullNodeViralVideoThirdQuartileCompletions && nullNodeViralVideoThirdQuartileCompletions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralVideoThirdQuartileCompletions = null;
+            if (parseNode.GetChildNode("viralVideoViews") is null) { _explicitNullValueViralVideoViews = default!; _explicitNullProperties?.Remove("viralVideoViews"); }
+            else if (parseNode.GetChildNode("viralVideoViews") is { } nullNodeViralVideoViews && nullNodeViralVideoViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViralVideoViews = null;
         }
 
+        /// <summary>The count of clicks on the action button of the Sponsored Messaging ad.Documented type: long</summary>
+        public long? ActionClicks { get => _explicitNullValueActionClicks; set { _explicitNullValueActionClicks = value; AdditionalData?.Remove("actionClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionClicks"); else _explicitNullProperties?.Remove("actionClicks"); } }
+        private long? _explicitNullValueActionClicks = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The count of clicks on the ad unit displayed alongside the Sponsored Messaging ad.Documented type: long</summary>
+        public long? AdUnitClicks { get => _explicitNullValueAdUnitClicks; set { _explicitNullValueAdUnitClicks = value; AdditionalData?.Remove("adUnitClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adUnitClicks"); else _explicitNullProperties?.Remove("adUnitClicks"); } }
+        private long? _explicitNullValueAdUnitClicks = default!;
+        /// <summary>The number of appointments booked through Lead Gen campaigns. Note: The appointmentsScheduled field is only supported from API version 202605 onwards.Documented type: long</summary>
+        public long? AppointmentsScheduled { get => _explicitNullValueAppointmentsScheduled; set { _explicitNullValueAppointmentsScheduled = value; AdditionalData?.Remove("appointmentsScheduled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appointmentsScheduled"); else _explicitNullProperties?.Remove("appointmentsScheduled"); } }
+        private long? _explicitNullValueAppointmentsScheduled = default!;
+        /// <summary>Non-demographic pivots only (i.e. not MEMBER_). The estimated number of unique member accounts with at least one impression. This metric is an updated and more accurate version of legacy metric approximateUniqueImpressions. This metric is only available when the number of days in the date range is less than or equal to 92 days. This metric is fully launched in Jan 2024.Documented type: long</summary>
+        public long? ApproximateMemberReach { get => _explicitNullValueApproximateMemberReach; set { _explicitNullValueApproximateMemberReach = value; AdditionalData?.Remove("approximateMemberReach"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approximateMemberReach"); else _explicitNullProperties?.Remove("approximateMemberReach"); } }
+        private long? _explicitNullValueApproximateMemberReach = default!;
         /// <summary>The approximateUniqueImpressions property</summary>
         public long? ApproximateUniqueImpressions { get => _explicitNullValueApproximateUniqueImpressions; set { _explicitNullValueApproximateUniqueImpressions = value; AdditionalData?.Remove("approximateUniqueImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approximateUniqueImpressions"); else _explicitNullProperties?.Remove("approximateUniqueImpressions"); } }
         private long? _explicitNullValueApproximateUniqueImpressions = default!;
-        /// <summary>The clicks property</summary>
+        /// <summary>The approximate number of unique members reached by the advertiser divided by the approximate total target audience size. The field is null if the date range has more than 92 days. This metric supports ACCOUNT, CAMPAIGN_GROUP, or CAMPAIGN pivots, and can be used alongside additional pivots as long as at least one of these primary pivots is included. Note: The audiencePenetration field is only supported from API version 202411 onwards.Documented type: double</summary>
+        public double? AudiencePenetration { get => _explicitNullValueAudiencePenetration; set { _explicitNullValueAudiencePenetration = value; AdditionalData?.Remove("audiencePenetration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audiencePenetration"); else _explicitNullProperties?.Remove("audiencePenetration"); } }
+        private double? _explicitNullValueAudiencePenetration = default!;
+        /// <summary>Average user dwell time (in seconds). It measures the duration for which more than 50% of the ad&apos;s pixels remain visible in the viewport. Note: The averageDwellTime field is only supported from API version 202411 onwards.Documented type: long</summary>
+        public long? AverageDwellTime { get => _explicitNullValueAverageDwellTime; set { _explicitNullValueAverageDwellTime = value; AdditionalData?.Remove("averageDwellTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageDwellTime"); else _explicitNullProperties?.Remove("averageDwellTime"); } }
+        private long? _explicitNullValueAverageDwellTime = default!;
+        /// <summary>The average watch time of the event in milliseconds.Documented type: double</summary>
+        public double? AverageEventWatchTime { get => _explicitNullValueAverageEventWatchTime; set { _explicitNullValueAverageEventWatchTime = value; AdditionalData?.Remove("averageEventWatchTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageEventWatchTime"); else _explicitNullProperties?.Remove("averageEventWatchTime"); } }
+        private double? _explicitNullValueAverageEventWatchTime = default!;
+        /// <summary>The average watch time in milliseconds for users who watched the event for more than 15 seconds.Documented type: double</summary>
+        public double? AverageEventWatchTimeOver15Seconds { get => _explicitNullValueAverageEventWatchTimeOver15Seconds; set { _explicitNullValueAverageEventWatchTimeOver15Seconds = value; AdditionalData?.Remove("averageEventWatchTimeOver15Seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageEventWatchTimeOver15Seconds"); else _explicitNullProperties?.Remove("averageEventWatchTimeOver15Seconds"); } }
+        private double? _explicitNullValueAverageEventWatchTimeOver15Seconds = default!;
+        /// <summary>The average watch time in milliseconds for users who watched the event for more than 2 minutes.Documented type: double</summary>
+        public double? AverageEventWatchTimeOver2Minutes { get => _explicitNullValueAverageEventWatchTimeOver2Minutes; set { _explicitNullValueAverageEventWatchTimeOver2Minutes = value; AdditionalData?.Remove("averageEventWatchTimeOver2Minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageEventWatchTimeOver2Minutes"); else _explicitNullProperties?.Remove("averageEventWatchTimeOver2Minutes"); } }
+        private double? _explicitNullValueAverageEventWatchTimeOver2Minutes = default!;
+        /// <summary>The average watch time in milliseconds for users who watched the event for more than 30 seconds.Documented type: double</summary>
+        public double? AverageEventWatchTimeOver30Seconds { get => _explicitNullValueAverageEventWatchTimeOver30Seconds; set { _explicitNullValueAverageEventWatchTimeOver30Seconds = value; AdditionalData?.Remove("averageEventWatchTimeOver30Seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageEventWatchTimeOver30Seconds"); else _explicitNullProperties?.Remove("averageEventWatchTimeOver30Seconds"); } }
+        private double? _explicitNullValueAverageEventWatchTimeOver30Seconds = default!;
+        /// <summary>Average videoWatchTime in milliseconds. Note: This metric may be delayed by up to 48 hours.Documented type: double</summary>
+        public double? AverageVideoWatchTime { get => _explicitNullValueAverageVideoWatchTime; set { _explicitNullValueAverageVideoWatchTime = value; AdditionalData?.Remove("averageVideoWatchTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageVideoWatchTime"); else _explicitNullProperties?.Remove("averageVideoWatchTime"); } }
+        private double? _explicitNullValueAverageVideoWatchTime = default!;
+        /// <summary>Non-demographic pivots only (i.e. not MEMBER_). The number of clicks for each card of a carousel ad. The first card click of the carousel ad results in an immediate cardClick and click, whereas scrolling to other cards and clicking counts as additional cardClick.Documented type: long</summary>
+        public long? CardClicks { get => _explicitNullValueCardClicks; set { _explicitNullValueCardClicks = value; AdditionalData?.Remove("cardClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardClicks"); else _explicitNullProperties?.Remove("cardClicks"); } }
+        private long? _explicitNullValueCardClicks = default!;
+        /// <summary>Non-demographic pivots only (i.e. not MEMBER_). The number of impressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate cardImpression and impression, whereas scrolling to other cards counts as additional cardImpressions.Documented type: long</summary>
+        public long? CardImpressions { get => _explicitNullValueCardImpressions; set { _explicitNullValueCardImpressions = value; AdditionalData?.Remove("cardImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardImpressions"); else _explicitNullProperties?.Remove("cardImpressions"); } }
+        private long? _explicitNullValueCardImpressions = default!;
+        /// <summary>The count of chargeable clicks. Despite not charging for clicks for CPM campaigns, this field still represents those clicks for which we would otherwise charge advertisers based on objective (for example, clicks to view the landing page or company page).Documented type: long</summary>
         public long? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; AdditionalData?.Remove("clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
         private long? _explicitNullValueClicks = default!;
-        /// <summary>The comments property</summary>
+        /// <summary>The count of likes of a comment. Sponsored Content only.Documented type: long</summary>
+        public long? CommentLikes { get => _explicitNullValueCommentLikes; set { _explicitNullValueCommentLikes = value; AdditionalData?.Remove("commentLikes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commentLikes"); else _explicitNullProperties?.Remove("commentLikes"); } }
+        private long? _explicitNullValueCommentLikes = default!;
+        /// <summary>The count of comments. Sponsored Content only.Documented type: long</summary>
         public long? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; AdditionalData?.Remove("comments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
         private long? _explicitNullValueComments = default!;
-        /// <summary>The conversionValueInLocalCurrency property</summary>
+        /// <summary>The count of clicks to view the company page.Documented type: long</summary>
+        public long? CompanyPageClicks { get => _explicitNullValueCompanyPageClicks; set { _explicitNullValueCompanyPageClicks = value; AdditionalData?.Remove("companyPageClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyPageClicks"); else _explicitNullProperties?.Remove("companyPageClicks"); } }
+        private long? _explicitNullValueCompanyPageClicks = default!;
+        /// <summary>Non-demographic pivots only (i.e. not MEMBER_). Value of the conversions in the account&apos;s local currency based on rules defined by the advertiser. Conversion value is set by the advertiser at a per conversion level, and aggregated across the query time range.Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversionValueInLocalCurrency { get => _explicitNullValueConversionValueInLocalCurrency; set { _explicitNullValueConversionValueInLocalCurrency = value; AdditionalData?.Remove("conversionValueInLocalCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversionValueInLocalCurrency"); else _explicitNullProperties?.Remove("conversionValueInLocalCurrency"); } }
@@ -108,7 +349,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string CostInLocalCurrency { get => _explicitNullValueCostInLocalCurrency; set { _explicitNullValueCostInLocalCurrency = value; AdditionalData?.Remove("costInLocalCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costInLocalCurrency"); else _explicitNullProperties?.Remove("costInLocalCurrency"); } }
         private string _explicitNullValueCostInLocalCurrency = default!;
 #endif
-        /// <summary>The costInUsd property</summary>
+        /// <summary>Cost in USD based on the pivot and timeGranularity. For example, this would be spend by campaign on a given day if the pivot is CAMPAIGN and timeGranularity is DAILY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostInUsd { get => _explicitNullValueCostInUsd; set { _explicitNullValueCostInUsd = value; AdditionalData?.Remove("costInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costInUsd"); else _explicitNullProperties?.Remove("costInUsd"); } }
@@ -117,6 +358,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string CostInUsd { get => _explicitNullValueCostInUsd; set { _explicitNullValueCostInUsd = value; AdditionalData?.Remove("costInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costInUsd"); else _explicitNullProperties?.Remove("costInUsd"); } }
         private string _explicitNullValueCostInUsd = default!;
+#endif
+        /// <summary>The cost per view for an event hosted on LinkedIn.Documented type: double</summary>
+        public double? CostPerEventView { get => _explicitNullValueCostPerEventView; set { _explicitNullValueCostPerEventView = value; AdditionalData?.Remove("costPerEventView"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costPerEventView"); else _explicitNullProperties?.Remove("costPerEventView"); } }
+        private double? _explicitNullValueCostPerEventView = default!;
+        /// <summary>The cost per view for an event hosted on LinkedIn for users who watched the event for more than 15 seconds.Documented type: double</summary>
+        public double? CostPerEventViewOver15Seconds { get => _explicitNullValueCostPerEventViewOver15Seconds; set { _explicitNullValueCostPerEventViewOver15Seconds = value; AdditionalData?.Remove("costPerEventViewOver15Seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costPerEventViewOver15Seconds"); else _explicitNullProperties?.Remove("costPerEventViewOver15Seconds"); } }
+        private double? _explicitNullValueCostPerEventViewOver15Seconds = default!;
+        /// <summary>The cost per view for an event hosted on LinkedIn for users who watched the event for more than 2 minutes.Documented type: double</summary>
+        public double? CostPerEventViewOver2Minutes { get => _explicitNullValueCostPerEventViewOver2Minutes; set { _explicitNullValueCostPerEventViewOver2Minutes = value; AdditionalData?.Remove("costPerEventViewOver2Minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costPerEventViewOver2Minutes"); else _explicitNullProperties?.Remove("costPerEventViewOver2Minutes"); } }
+        private double? _explicitNullValueCostPerEventViewOver2Minutes = default!;
+        /// <summary>The cost per view for an event hosted on LinkedIn for users who watched the event for more than 30 seconds.Documented type: double</summary>
+        public double? CostPerEventViewOver30Seconds { get => _explicitNullValueCostPerEventViewOver30Seconds; set { _explicitNullValueCostPerEventViewOver30Seconds = value; AdditionalData?.Remove("costPerEventViewOver30Seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costPerEventViewOver30Seconds"); else _explicitNullProperties?.Remove("costPerEventViewOver30Seconds"); } }
+        private double? _explicitNullValueCostPerEventViewOver30Seconds = default!;
+        /// <summary>How much money was spent per qualified lead. Ratio is costInLocalCurrency / qualifiedLeads.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CostPerQualifiedLead { get => _explicitNullValueCostPerQualifiedLead; set { _explicitNullValueCostPerQualifiedLead = value; AdditionalData?.Remove("costPerQualifiedLead"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costPerQualifiedLead"); else _explicitNullProperties?.Remove("costPerQualifiedLead"); } }
+        private UntypedNode? _explicitNullValueCostPerQualifiedLead = default!;
+#nullable restore
+#else
+        public UntypedNode CostPerQualifiedLead { get => _explicitNullValueCostPerQualifiedLead; set { _explicitNullValueCostPerQualifiedLead = value; AdditionalData?.Remove("costPerQualifiedLead"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costPerQualifiedLead"); else _explicitNullProperties?.Remove("costPerQualifiedLead"); } }
+        private UntypedNode _explicitNullValueCostPerQualifiedLead = default!;
 #endif
         /// <summary>The dateRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,36 +391,110 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange DateRange { get => _explicitNullValueDateRange; set { _explicitNullValueDateRange = value; AdditionalData?.Remove("dateRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateRange"); else _explicitNullProperties?.Remove("dateRange"); } }
         private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange _explicitNullValueDateRange = default!;
 #endif
-        /// <summary>The externalWebsiteConversions property</summary>
+        /// <summary>The number of times users reached 100% of the document’s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.Documented type: long</summary>
+        public long? DocumentCompletions { get => _explicitNullValueDocumentCompletions; set { _explicitNullValueDocumentCompletions = value; AdditionalData?.Remove("documentCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentCompletions"); else _explicitNullProperties?.Remove("documentCompletions"); } }
+        private long? _explicitNullValueDocumentCompletions = default!;
+        /// <summary>The number of times users reached the first quartile of the document’s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.Documented type: long</summary>
+        public long? DocumentFirstQuartileCompletions { get => _explicitNullValueDocumentFirstQuartileCompletions; set { _explicitNullValueDocumentFirstQuartileCompletions = value; AdditionalData?.Remove("documentFirstQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentFirstQuartileCompletions"); else _explicitNullProperties?.Remove("documentFirstQuartileCompletions"); } }
+        private long? _explicitNullValueDocumentFirstQuartileCompletions = default!;
+        /// <summary>The number of times users reached the second quartile of the document’s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.Documented type: long</summary>
+        public long? DocumentMidpointCompletions { get => _explicitNullValueDocumentMidpointCompletions; set { _explicitNullValueDocumentMidpointCompletions = value; AdditionalData?.Remove("documentMidpointCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentMidpointCompletions"); else _explicitNullProperties?.Remove("documentMidpointCompletions"); } }
+        private long? _explicitNullValueDocumentMidpointCompletions = default!;
+        /// <summary>The number of times users reached the third quartile of the document’s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.Documented type: long</summary>
+        public long? DocumentThirdQuartileCompletions { get => _explicitNullValueDocumentThirdQuartileCompletions; set { _explicitNullValueDocumentThirdQuartileCompletions = value; AdditionalData?.Remove("documentThirdQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentThirdQuartileCompletions"); else _explicitNullProperties?.Remove("documentThirdQuartileCompletions"); } }
+        private long? _explicitNullValueDocumentThirdQuartileCompletions = default!;
+        /// <summary>The number of times users have indicated the intent to download the media in an ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). This metric is only available for ad formats supporting media downloads.Documented type: long</summary>
+        public long? DownloadClicks { get => _explicitNullValueDownloadClicks; set { _explicitNullValueDownloadClicks = value; AdditionalData?.Remove("downloadClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadClicks"); else _explicitNullProperties?.Remove("downloadClicks"); } }
+        private long? _explicitNullValueDownloadClicks = default!;
+        /// <summary>The count of valid views for an event hosted on LinkedIn.Documented type: long</summary>
+        public long? EventViews { get => _explicitNullValueEventViews; set { _explicitNullValueEventViews = value; AdditionalData?.Remove("eventViews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventViews"); else _explicitNullProperties?.Remove("eventViews"); } }
+        private long? _explicitNullValueEventViews = default!;
+        /// <summary>The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 15 seconds.Documented type: long</summary>
+        public long? EventViewsOver15Seconds { get => _explicitNullValueEventViewsOver15Seconds; set { _explicitNullValueEventViewsOver15Seconds = value; AdditionalData?.Remove("eventViewsOver15Seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventViewsOver15Seconds"); else _explicitNullProperties?.Remove("eventViewsOver15Seconds"); } }
+        private long? _explicitNullValueEventViewsOver15Seconds = default!;
+        /// <summary>The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 2 minutes.Documented type: long</summary>
+        public long? EventViewsOver2Minutes { get => _explicitNullValueEventViewsOver2Minutes; set { _explicitNullValueEventViewsOver2Minutes = value; AdditionalData?.Remove("eventViewsOver2Minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventViewsOver2Minutes"); else _explicitNullProperties?.Remove("eventViewsOver2Minutes"); } }
+        private long? _explicitNullValueEventViewsOver2Minutes = default!;
+        /// <summary>The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 30 seconds.Documented type: long</summary>
+        public long? EventViewsOver30Seconds { get => _explicitNullValueEventViewsOver30Seconds; set { _explicitNullValueEventViewsOver30Seconds = value; AdditionalData?.Remove("eventViewsOver30Seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventViewsOver30Seconds"); else _explicitNullProperties?.Remove("eventViewsOver30Seconds"); } }
+        private long? _explicitNullValueEventViewsOver30Seconds = default!;
+        /// <summary>The total watch time of the event in milliseconds.Documented type: long</summary>
+        public long? EventWatchTime { get => _explicitNullValueEventWatchTime; set { _explicitNullValueEventWatchTime = value; AdditionalData?.Remove("eventWatchTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventWatchTime"); else _explicitNullProperties?.Remove("eventWatchTime"); } }
+        private long? _explicitNullValueEventWatchTime = default!;
+        /// <summary>Total number of times users took a desired action after clicking on or seeing your ad. When conversions can&apos;t be attributed to individual users, group level attribution or estimation can be used.Documented type: long, default=&quot;0&quot;</summary>
         public long? ExternalWebsiteConversions { get => _explicitNullValueExternalWebsiteConversions; set { _explicitNullValueExternalWebsiteConversions = value; AdditionalData?.Remove("externalWebsiteConversions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalWebsiteConversions"); else _explicitNullProperties?.Remove("externalWebsiteConversions"); } }
         private long? _explicitNullValueExternalWebsiteConversions = default!;
-        /// <summary>The externalWebsitePostClickConversions property</summary>
+        /// <summary>Total number of times users took a desired action after clicking on your ad. When conversions can&apos;t be attributed to individual users, group level attribution or estimation can be used.Documented type: long, default=&quot;0&quot;</summary>
         public long? ExternalWebsitePostClickConversions { get => _explicitNullValueExternalWebsitePostClickConversions; set { _explicitNullValueExternalWebsitePostClickConversions = value; AdditionalData?.Remove("externalWebsitePostClickConversions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalWebsitePostClickConversions"); else _explicitNullProperties?.Remove("externalWebsitePostClickConversions"); } }
         private long? _explicitNullValueExternalWebsitePostClickConversions = default!;
-        /// <summary>The externalWebsitePostViewConversions property</summary>
+        /// <summary>Total number of times users took a desired action after seeing your ad. When conversions can&apos;t be attributed to individual users, group level attribution or estimation can be used.Documented type: long, default=&quot;0&quot;</summary>
         public long? ExternalWebsitePostViewConversions { get => _explicitNullValueExternalWebsitePostViewConversions; set { _explicitNullValueExternalWebsitePostViewConversions = value; AdditionalData?.Remove("externalWebsitePostViewConversions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalWebsitePostViewConversions"); else _explicitNullProperties?.Remove("externalWebsitePostViewConversions"); } }
         private long? _explicitNullValueExternalWebsitePostViewConversions = default!;
-        /// <summary>The follows property</summary>
+        /// <summary>The count of follows. Sponsored Content and Follower ads only.Documented type: long</summary>
         public long? Follows { get => _explicitNullValueFollows; set { _explicitNullValueFollows = value; AdditionalData?.Remove("follows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follows"); else _explicitNullProperties?.Remove("follows"); } }
         private long? _explicitNullValueFollows = default!;
+        /// <summary>Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode.Documented type: long</summary>
+        public long? FullScreenPlays { get => _explicitNullValueFullScreenPlays; set { _explicitNullValueFullScreenPlays = value; AdditionalData?.Remove("fullScreenPlays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullScreenPlays"); else _explicitNullProperties?.Remove("fullScreenPlays"); } }
+        private long? _explicitNullValueFullScreenPlays = default!;
+        /// <summary>The number of times members clicked on the headline of conversation ads.Documented type: long</summary>
+        public long? HeadlineClicks { get => _explicitNullValueHeadlineClicks; set { _explicitNullValueHeadlineClicks = value; AdditionalData?.Remove("headlineClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headlineClicks"); else _explicitNullProperties?.Remove("headlineClicks"); } }
+        private long? _explicitNullValueHeadlineClicks = default!;
+        /// <summary>The number of times members were shown the headline of conversation ads.Documented type: long</summary>
+        public long? HeadlineImpressions { get => _explicitNullValueHeadlineImpressions; set { _explicitNullValueHeadlineImpressions = value; AdditionalData?.Remove("headlineImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headlineImpressions"); else _explicitNullProperties?.Remove("headlineImpressions"); } }
+        private long? _explicitNullValueHeadlineImpressions = default!;
         /// <summary>The impressions property</summary>
         public long? Impressions { get => _explicitNullValueImpressions; set { _explicitNullValueImpressions = value; AdditionalData?.Remove("impressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impressions"); else _explicitNullProperties?.Remove("impressions"); } }
         private long? _explicitNullValueImpressions = default!;
-        /// <summary>The landingPageClicks property</summary>
+        /// <summary>The number of times a member completed a job application after viewing or clicking on an ad. Currently, this metric is broken down into postViewJobApplications (if the member applied after viewing the ad) and postClickJobApplications (if the member applied after clicking the ad).Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? JobApplications { get => _explicitNullValueJobApplications; set { _explicitNullValueJobApplications = value; AdditionalData?.Remove("jobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobApplications"); else _explicitNullProperties?.Remove("jobApplications"); } }
+        private UntypedNode? _explicitNullValueJobApplications = default!;
+#nullable restore
+#else
+        public UntypedNode JobApplications { get => _explicitNullValueJobApplications; set { _explicitNullValueJobApplications = value; AdditionalData?.Remove("jobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobApplications"); else _explicitNullProperties?.Remove("jobApplications"); } }
+        private UntypedNode _explicitNullValueJobApplications = default!;
+#endif
+        /// <summary>The number of times a member clicked on the job’s apply button on an LinkedIn jobs page after viewing or clicking on an ad which has a LinkedIn job landing page. Currently, this metric is broken down into postViewJobApplyClicks (if the member performed the action after viewing the ad) and postClickJobApplyClicks (if the member performed the action after clicking the ad).Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? JobApplyClicks { get => _explicitNullValueJobApplyClicks; set { _explicitNullValueJobApplyClicks = value; AdditionalData?.Remove("jobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobApplyClicks"); else _explicitNullProperties?.Remove("jobApplyClicks"); } }
+        private UntypedNode? _explicitNullValueJobApplyClicks = default!;
+#nullable restore
+#else
+        public UntypedNode JobApplyClicks { get => _explicitNullValueJobApplyClicks; set { _explicitNullValueJobApplyClicks = value; AdditionalData?.Remove("jobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobApplyClicks"); else _explicitNullProperties?.Remove("jobApplyClicks"); } }
+        private UntypedNode _explicitNullValueJobApplyClicks = default!;
+#endif
+        /// <summary>The count of clicks which take the user to the creative landing page.Documented type: long</summary>
         public long? LandingPageClicks { get => _explicitNullValueLandingPageClicks; set { _explicitNullValueLandingPageClicks = value; AdditionalData?.Remove("landingPageClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("landingPageClicks"); else _explicitNullProperties?.Remove("landingPageClicks"); } }
         private long? _explicitNullValueLandingPageClicks = default!;
-        /// <summary>The likes property</summary>
+        /// <summary>The number of times users shared contact info through the One Click Lead Gen for Sponsored Messaging ads.Documented type: long</summary>
+        public long? LeadGenerationMailContactInfoShares { get => _explicitNullValueLeadGenerationMailContactInfoShares; set { _explicitNullValueLeadGenerationMailContactInfoShares = value; AdditionalData?.Remove("leadGenerationMailContactInfoShares"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadGenerationMailContactInfoShares"); else _explicitNullProperties?.Remove("leadGenerationMailContactInfoShares"); } }
+        private long? _explicitNullValueLeadGenerationMailContactInfoShares = default!;
+        /// <summary>The count of Sponsored Messaging ad recipients who clicked to demonstrate interest.Documented type: long</summary>
+        public long? LeadGenerationMailInterestedClicks { get => _explicitNullValueLeadGenerationMailInterestedClicks; set { _explicitNullValueLeadGenerationMailInterestedClicks = value; AdditionalData?.Remove("leadGenerationMailInterestedClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadGenerationMailInterestedClicks"); else _explicitNullProperties?.Remove("leadGenerationMailInterestedClicks"); } }
+        private long? _explicitNullValueLeadGenerationMailInterestedClicks = default!;
+        /// <summary>The count of likes. Sponsored Content only.Documented type: long</summary>
         public long? Likes { get => _explicitNullValueLikes; set { _explicitNullValueLikes = value; AdditionalData?.Remove("likes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("likes"); else _explicitNullProperties?.Remove("likes"); } }
         private long? _explicitNullValueLikes = default!;
-        /// <summary>The oneClickLeadFormOpens property</summary>
+        /// <summary>The count of sponsored member profile follows. This optional metric exists only for Sponsored Updates and member follower display ads, such as Thought Leader Ads. Note: The memberFollows field is only supported from API version 202610 onwards.Documented type: optional long</summary>
+        public long? MemberFollows { get => _explicitNullValueMemberFollows; set { _explicitNullValueMemberFollows = value; AdditionalData?.Remove("memberFollows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberFollows"); else _explicitNullProperties?.Remove("memberFollows"); } }
+        private long? _explicitNullValueMemberFollows = default!;
+        /// <summary>The count of clicks on the profile of the member who owns the post sponsored in the ad. This optional metric exists only for Sponsored Updates, such as Thought Leader Ads. Note: The memberProfileClicks field is only supported from API version 202610 onwards.Documented type: optional long</summary>
+        public long? MemberProfileClicks { get => _explicitNullValueMemberProfileClicks; set { _explicitNullValueMemberProfileClicks = value; AdditionalData?.Remove("memberProfileClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberProfileClicks"); else _explicitNullProperties?.Remove("memberProfileClicks"); } }
+        private long? _explicitNullValueMemberProfileClicks = default!;
+        /// <summary>The count of times users opened the lead form for a One Click Lead Gen campaign.Documented type: long</summary>
         public long? OneClickLeadFormOpens { get => _explicitNullValueOneClickLeadFormOpens; set { _explicitNullValueOneClickLeadFormOpens = value; AdditionalData?.Remove("oneClickLeadFormOpens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneClickLeadFormOpens"); else _explicitNullProperties?.Remove("oneClickLeadFormOpens"); } }
         private long? _explicitNullValueOneClickLeadFormOpens = default!;
-        /// <summary>The oneClickLeads property</summary>
+        /// <summary>The count of leads generated through One Click Lead Gen.Documented type: long</summary>
         public long? OneClickLeads { get => _explicitNullValueOneClickLeads; set { _explicitNullValueOneClickLeads = value; AdditionalData?.Remove("oneClickLeads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneClickLeads"); else _explicitNullProperties?.Remove("oneClickLeads"); } }
         private long? _explicitNullValueOneClickLeads = default!;
-        /// <summary>The opens property</summary>
+        /// <summary>The count of opens of Sponsored Messaging ads.Documented type: long</summary>
         public long? Opens { get => _explicitNullValueOpens; set { _explicitNullValueOpens = value; AdditionalData?.Remove("opens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens"); else _explicitNullProperties?.Remove("opens"); } }
         private long? _explicitNullValueOpens = default!;
+        /// <summary>The count of user interactions with the ad unit that don&apos;t fit into any other more specific category.Documented type: long</summary>
+        public long? OtherEngagements { get => _explicitNullValueOtherEngagements; set { _explicitNullValueOtherEngagements = value; AdditionalData?.Remove("otherEngagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherEngagements"); else _explicitNullProperties?.Remove("otherEngagements"); } }
+        private long? _explicitNullValueOtherEngagements = default!;
         /// <summary>The pivot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,7 +515,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string PivotValue { get => _explicitNullValuePivotValue; set { _explicitNullValuePivotValue = value; AdditionalData?.Remove("pivotValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivotValue"); else _explicitNullProperties?.Remove("pivotValue"); } }
         private string _explicitNullValuePivotValue = default!;
 #endif
-        /// <summary>The pivotValues property</summary>
+        /// <summary>The value of the pivots for a specific record returned. For example, supplying pivots of CREATIVE and CONVERSION results in a list of records, one for each creative/conversion combination. The pivotValues contain serialized URNs for the specific creative and conversion for a record. To resolve these URNs to their corresponding entities, refer to LinkedIn Marketing API URN Resolution.Documented type: string[], default=&quot;[]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PivotValues { get => _explicitNullValuePivotValues; set { _explicitNullValuePivotValues = value; AdditionalData?.Remove("pivotValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivotValues"); else _explicitNullProperties?.Remove("pivotValues"); } }
@@ -188,9 +525,82 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<string> PivotValues { get => _explicitNullValuePivotValues; set { _explicitNullValuePivotValues = value; AdditionalData?.Remove("pivotValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivotValues"); else _explicitNullProperties?.Remove("pivotValues"); } }
         private List<string> _explicitNullValuePivotValues = default!;
 #endif
-        /// <summary>The reactions property</summary>
+        /// <summary>The number of times a member completed a job application after clicking on an ad. See also jobApplications.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PostClickJobApplications { get => _explicitNullValuePostClickJobApplications; set { _explicitNullValuePostClickJobApplications = value; AdditionalData?.Remove("postClickJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postClickJobApplications"); else _explicitNullProperties?.Remove("postClickJobApplications"); } }
+        private UntypedNode? _explicitNullValuePostClickJobApplications = default!;
+#nullable restore
+#else
+        public UntypedNode PostClickJobApplications { get => _explicitNullValuePostClickJobApplications; set { _explicitNullValuePostClickJobApplications = value; AdditionalData?.Remove("postClickJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postClickJobApplications"); else _explicitNullProperties?.Remove("postClickJobApplications"); } }
+        private UntypedNode _explicitNullValuePostClickJobApplications = default!;
+#endif
+        /// <summary>The number of times a member clicked on the job’s apply button on an LinkedIn jobs page after clicking on an ad which has a LinkedIn job landing page. See also jobApplyClicks.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PostClickJobApplyClicks { get => _explicitNullValuePostClickJobApplyClicks; set { _explicitNullValuePostClickJobApplyClicks = value; AdditionalData?.Remove("postClickJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postClickJobApplyClicks"); else _explicitNullProperties?.Remove("postClickJobApplyClicks"); } }
+        private UntypedNode? _explicitNullValuePostClickJobApplyClicks = default!;
+#nullable restore
+#else
+        public UntypedNode PostClickJobApplyClicks { get => _explicitNullValuePostClickJobApplyClicks; set { _explicitNullValuePostClickJobApplyClicks = value; AdditionalData?.Remove("postClickJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postClickJobApplyClicks"); else _explicitNullProperties?.Remove("postClickJobApplyClicks"); } }
+        private UntypedNode _explicitNullValuePostClickJobApplyClicks = default!;
+#endif
+        /// <summary>The number of times a member has registered for an event or seminar after clicking on an ad which has a LinkedIn landing page. This includes gross registrations and doesn&apos;t account for a user unregistering.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PostClickRegistrations { get => _explicitNullValuePostClickRegistrations; set { _explicitNullValuePostClickRegistrations = value; AdditionalData?.Remove("postClickRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postClickRegistrations"); else _explicitNullProperties?.Remove("postClickRegistrations"); } }
+        private UntypedNode? _explicitNullValuePostClickRegistrations = default!;
+#nullable restore
+#else
+        public UntypedNode PostClickRegistrations { get => _explicitNullValuePostClickRegistrations; set { _explicitNullValuePostClickRegistrations = value; AdditionalData?.Remove("postClickRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postClickRegistrations"); else _explicitNullProperties?.Remove("postClickRegistrations"); } }
+        private UntypedNode _explicitNullValuePostClickRegistrations = default!;
+#endif
+        /// <summary>The number of times a member completed a job application after viewing an ad. See also jobApplications.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PostViewJobApplications { get => _explicitNullValuePostViewJobApplications; set { _explicitNullValuePostViewJobApplications = value; AdditionalData?.Remove("postViewJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postViewJobApplications"); else _explicitNullProperties?.Remove("postViewJobApplications"); } }
+        private UntypedNode? _explicitNullValuePostViewJobApplications = default!;
+#nullable restore
+#else
+        public UntypedNode PostViewJobApplications { get => _explicitNullValuePostViewJobApplications; set { _explicitNullValuePostViewJobApplications = value; AdditionalData?.Remove("postViewJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postViewJobApplications"); else _explicitNullProperties?.Remove("postViewJobApplications"); } }
+        private UntypedNode _explicitNullValuePostViewJobApplications = default!;
+#endif
+        /// <summary>The number of times a member clicked on the job’s apply button on an LinkedIn jobs page after clicking an ad which has a LinkedIn job landing page. See also jobApplyClicks.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PostViewJobApplyClicks { get => _explicitNullValuePostViewJobApplyClicks; set { _explicitNullValuePostViewJobApplyClicks = value; AdditionalData?.Remove("postViewJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postViewJobApplyClicks"); else _explicitNullProperties?.Remove("postViewJobApplyClicks"); } }
+        private UntypedNode? _explicitNullValuePostViewJobApplyClicks = default!;
+#nullable restore
+#else
+        public UntypedNode PostViewJobApplyClicks { get => _explicitNullValuePostViewJobApplyClicks; set { _explicitNullValuePostViewJobApplyClicks = value; AdditionalData?.Remove("postViewJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postViewJobApplyClicks"); else _explicitNullProperties?.Remove("postViewJobApplyClicks"); } }
+        private UntypedNode _explicitNullValuePostViewJobApplyClicks = default!;
+#endif
+        /// <summary>The number of times a member has registered for an event or seminar after viewing an ad which has a LinkedIn event landing page. This includes gross registrations and doesn&apos;t account for a user unregistering. See also registrations.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PostViewRegistrations { get => _explicitNullValuePostViewRegistrations; set { _explicitNullValuePostViewRegistrations = value; AdditionalData?.Remove("postViewRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postViewRegistrations"); else _explicitNullProperties?.Remove("postViewRegistrations"); } }
+        private UntypedNode? _explicitNullValuePostViewRegistrations = default!;
+#nullable restore
+#else
+        public UntypedNode PostViewRegistrations { get => _explicitNullValuePostViewRegistrations; set { _explicitNullValuePostViewRegistrations = value; AdditionalData?.Remove("postViewRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postViewRegistrations"); else _explicitNullProperties?.Remove("postViewRegistrations"); } }
+        private UntypedNode _explicitNullValuePostViewRegistrations = default!;
+#endif
+        /// <summary>The count of qualified leads shared by the advertiser. Qualified lead is a lead that has been deemed more likely to become a customer compared to other leads, based on their engagement and fit.Documented type: long</summary>
+        public long? QualifiedLeads { get => _explicitNullValueQualifiedLeads; set { _explicitNullValueQualifiedLeads = value; AdditionalData?.Remove("qualifiedLeads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualifiedLeads"); else _explicitNullProperties?.Remove("qualifiedLeads"); } }
+        private long? _explicitNullValueQualifiedLeads = default!;
+        /// <summary>The count of positive reactions on Sponsored Content which can capture, like, interest, praise, and other responses.Documented type: long</summary>
         public long? Reactions { get => _explicitNullValueReactions; set { _explicitNullValueReactions = value; AdditionalData?.Remove("reactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reactions"); else _explicitNullProperties?.Remove("reactions"); } }
         private long? _explicitNullValueReactions = default!;
+        /// <summary>The number of times a member has registered for an event or seminar after viewing or clicking on an ad which has a LinkedIn event landing page. This includes gross registrations and doesn&apos;t account for a user unregistering.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Registrations { get => _explicitNullValueRegistrations; set { _explicitNullValueRegistrations = value; AdditionalData?.Remove("registrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrations"); else _explicitNullProperties?.Remove("registrations"); } }
+        private UntypedNode? _explicitNullValueRegistrations = default!;
+#nullable restore
+#else
+        public UntypedNode Registrations { get => _explicitNullValueRegistrations; set { _explicitNullValueRegistrations = value; AdditionalData?.Remove("registrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrations"); else _explicitNullProperties?.Remove("registrations"); } }
+        private UntypedNode _explicitNullValueRegistrations = default!;
+#endif
         /// <summary>The pivotValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -211,7 +621,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem> ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues { get => _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues; set { _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues = value; AdditionalData?.Remove("pivotValues~"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivotValues~"); else _explicitNullProperties?.Remove("pivotValues~"); } }
         private List<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem> _explicitNullValueReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues = default!;
 #endif
-        /// <summary>The revenueAttributionMetrics property</summary>
+        /// <summary>Metrics that represent LinkedIn Ads-attributed opportunities within the CRM (Customer Relationship Management) system. This field is only available through the attributedRevenueMetrics finder.Documented type: RevenueAttributionMetrics</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics? RevenueAttributionMetrics { get => _explicitNullValueRevenueAttributionMetrics; set { _explicitNullValueRevenueAttributionMetrics = value; AdditionalData?.Remove("revenueAttributionMetrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revenueAttributionMetrics"); else _explicitNullProperties?.Remove("revenueAttributionMetrics"); } }
@@ -221,21 +631,234 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics RevenueAttributionMetrics { get => _explicitNullValueRevenueAttributionMetrics; set { _explicitNullValueRevenueAttributionMetrics = value; AdditionalData?.Remove("revenueAttributionMetrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revenueAttributionMetrics"); else _explicitNullProperties?.Remove("revenueAttributionMetrics"); } }
         private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics _explicitNullValueRevenueAttributionMetrics = default!;
 #endif
-        /// <summary>The sends property</summary>
+        /// <summary>The count of sends of Sponsored Messaging ads.Documented type: long</summary>
         public long? Sends { get => _explicitNullValueSends; set { _explicitNullValueSends = value; AdditionalData?.Remove("sends"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sends"); else _explicitNullProperties?.Remove("sends"); } }
         private long? _explicitNullValueSends = default!;
-        /// <summary>The shares property</summary>
+        /// <summary>The count of shares. Sponsored Content only.Documented type: long</summary>
         public long? Shares { get => _explicitNullValueShares; set { _explicitNullValueShares = value; AdditionalData?.Remove("shares"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shares"); else _explicitNullProperties?.Remove("shares"); } }
         private long? _explicitNullValueShares = default!;
-        /// <summary>The totalEngagements property</summary>
+        /// <summary>The count of clicks to subscribe to a series, such as a Newsletter.Documented type: long</summary>
+        public long? SubscriptionClicks { get => _explicitNullValueSubscriptionClicks; set { _explicitNullValueSubscriptionClicks = value; AdditionalData?.Remove("subscriptionClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionClicks"); else _explicitNullProperties?.Remove("subscriptionClicks"); } }
+        private long? _explicitNullValueSubscriptionClicks = default!;
+        /// <summary>Number of leads captured through a talent media campaign.Documented type: long</summary>
+        public long? TalentLeads { get => _explicitNullValueTalentLeads; set { _explicitNullValueTalentLeads = value; AdditionalData?.Remove("talentLeads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("talentLeads"); else _explicitNullProperties?.Remove("talentLeads"); } }
+        private long? _explicitNullValueTalentLeads = default!;
+        /// <summary>The count of clicks on any links (anchor tags) that were included in the body of the Sponsored Messaging ad.Documented type: long</summary>
+        public long? TextUrlClicks { get => _explicitNullValueTextUrlClicks; set { _explicitNullValueTextUrlClicks = value; AdditionalData?.Remove("textUrlClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textUrlClicks"); else _explicitNullProperties?.Remove("textUrlClicks"); } }
+        private long? _explicitNullValueTextUrlClicks = default!;
+        /// <summary>The count of all user interactions with the ad unit.Documented type: long</summary>
         public long? TotalEngagements { get => _explicitNullValueTotalEngagements; set { _explicitNullValueTotalEngagements = value; AdditionalData?.Remove("totalEngagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalEngagements"); else _explicitNullProperties?.Remove("totalEngagements"); } }
         private long? _explicitNullValueTotalEngagements = default!;
-        /// <summary>The videoCompletions property</summary>
+        /// <summary>The count of leads with a valid work email that doesn&apos;t use an established free or personal email domain.Documented type: long</summary>
+        public long? ValidWorkEmailLeads { get => _explicitNullValueValidWorkEmailLeads; set { _explicitNullValueValidWorkEmailLeads = value; AdditionalData?.Remove("validWorkEmailLeads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validWorkEmailLeads"); else _explicitNullProperties?.Remove("validWorkEmailLeads"); } }
+        private long? _explicitNullValueValidWorkEmailLeads = default!;
+        /// <summary>The count of video ads that played 97-100% of the video. This includes watches that skipped to this point if the serving location is ON_SITE.Documented type: long</summary>
         public long? VideoCompletions { get => _explicitNullValueVideoCompletions; set { _explicitNullValueVideoCompletions = value; AdditionalData?.Remove("videoCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoCompletions"); else _explicitNullProperties?.Remove("videoCompletions"); } }
         private long? _explicitNullValueVideoCompletions = default!;
-        /// <summary>The videoViews property</summary>
+        /// <summary>The count of video ads that played through the first quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.Documented type: long</summary>
+        public long? VideoFirstQuartileCompletions { get => _explicitNullValueVideoFirstQuartileCompletions; set { _explicitNullValueVideoFirstQuartileCompletions = value; AdditionalData?.Remove("videoFirstQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoFirstQuartileCompletions"); else _explicitNullProperties?.Remove("videoFirstQuartileCompletions"); } }
+        private long? _explicitNullValueVideoFirstQuartileCompletions = default!;
+        /// <summary>The count of video ads that played through the midpoint of the video. This includes watches that skipped to this point if the serving location is ON_SITE.Documented type: long</summary>
+        public long? VideoMidpointCompletions { get => _explicitNullValueVideoMidpointCompletions; set { _explicitNullValueVideoMidpointCompletions = value; AdditionalData?.Remove("videoMidpointCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoMidpointCompletions"); else _explicitNullProperties?.Remove("videoMidpointCompletions"); } }
+        private long? _explicitNullValueVideoMidpointCompletions = default!;
+        /// <summary>The count of video ads that were started by users.Documented type: long</summary>
+        public long? VideoStarts { get => _explicitNullValueVideoStarts; set { _explicitNullValueVideoStarts = value; AdditionalData?.Remove("videoStarts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoStarts"); else _explicitNullProperties?.Remove("videoStarts"); } }
+        private long? _explicitNullValueVideoStarts = default!;
+        /// <summary>The count of video ads that played through the third quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.Documented type: long</summary>
+        public long? VideoThirdQuartileCompletions { get => _explicitNullValueVideoThirdQuartileCompletions; set { _explicitNullValueVideoThirdQuartileCompletions = value; AdditionalData?.Remove("videoThirdQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoThirdQuartileCompletions"); else _explicitNullProperties?.Remove("videoThirdQuartileCompletions"); } }
+        private long? _explicitNullValueVideoThirdQuartileCompletions = default!;
+        /// <summary>A video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to fullscreen mode) doesn&apos;t count as a view.Documented type: long</summary>
         public long? VideoViews { get => _explicitNullValueVideoViews; set { _explicitNullValueVideoViews = value; AdditionalData?.Remove("videoViews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoViews"); else _explicitNullProperties?.Remove("videoViews"); } }
         private long? _explicitNullValueVideoViews = default!;
+        /// <summary>The total watch time in milliseconds for a video ad. This metric is populated if a user&apos;s watching behavior is qualified for videoViews metric. Note: This metric may be delayed by up to 48 hours.Documented type: long</summary>
+        public long? VideoWatchTime { get => _explicitNullValueVideoWatchTime; set { _explicitNullValueVideoWatchTime = value; AdditionalData?.Remove("videoWatchTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("videoWatchTime"); else _explicitNullProperties?.Remove("videoWatchTime"); } }
+        private long? _explicitNullValueVideoWatchTime = default!;
+        /// <summary>Non-demographic pivots only (i.e. not MEMBER_). The number of viralClicks for each card of a carousel ad. The first viralCardClick of the carousel ad results in an immediate viralCardClick and viralClick, whereas scrolling to other cards and clicking counts as additional viralCardClick.Documented type: long</summary>
+        public long? ViralCardClicks { get => _explicitNullValueViralCardClicks; set { _explicitNullValueViralCardClicks = value; AdditionalData?.Remove("viralCardClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralCardClicks"); else _explicitNullProperties?.Remove("viralCardClicks"); } }
+        private long? _explicitNullValueViralCardClicks = default!;
+        /// <summary>Non-demographic pivots only (i.e. not MEMBER_). The number of viralImpressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate viralCardImpression and viralImpression, whereas scrolling to other cards counts as additional viralCardImpressions.Documented type: long</summary>
+        public long? ViralCardImpressions { get => _explicitNullValueViralCardImpressions; set { _explicitNullValueViralCardImpressions = value; AdditionalData?.Remove("viralCardImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralCardImpressions"); else _explicitNullProperties?.Remove("viralCardImpressions"); } }
+        private long? _explicitNullValueViralCardImpressions = default!;
+        /// <summary>The count of clicks on viral impressions. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralClicks { get => _explicitNullValueViralClicks; set { _explicitNullValueViralClicks = value; AdditionalData?.Remove("viralClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralClicks"); else _explicitNullProperties?.Remove("viralClicks"); } }
+        private long? _explicitNullValueViralClicks = default!;
+        /// <summary>The count of likes on comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralCommentLikes { get => _explicitNullValueViralCommentLikes; set { _explicitNullValueViralCommentLikes = value; AdditionalData?.Remove("viralCommentLikes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralCommentLikes"); else _explicitNullProperties?.Remove("viralCommentLikes"); } }
+        private long? _explicitNullValueViralCommentLikes = default!;
+        /// <summary>The count of comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralComments { get => _explicitNullValueViralComments; set { _explicitNullValueViralComments = value; AdditionalData?.Remove("viralComments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralComments"); else _explicitNullProperties?.Remove("viralComments"); } }
+        private long? _explicitNullValueViralComments = default!;
+        /// <summary>The count of clicks to view the company page from viral impressions for this activity. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralCompanyPageClicks { get => _explicitNullValueViralCompanyPageClicks; set { _explicitNullValueViralCompanyPageClicks = value; AdditionalData?.Remove("viralCompanyPageClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralCompanyPageClicks"); else _explicitNullProperties?.Remove("viralCompanyPageClicks"); } }
+        private long? _explicitNullValueViralCompanyPageClicks = default!;
+        /// <summary>The number of times users reached 100% of the document’s length on a viral post, including those that skipped to this point. This metric is only available for document ads.Documented type: long</summary>
+        public long? ViralDocumentCompletions { get => _explicitNullValueViralDocumentCompletions; set { _explicitNullValueViralDocumentCompletions = value; AdditionalData?.Remove("viralDocumentCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralDocumentCompletions"); else _explicitNullProperties?.Remove("viralDocumentCompletions"); } }
+        private long? _explicitNullValueViralDocumentCompletions = default!;
+        /// <summary>The number of times users reached the first quartile of the document’s length on a viral post, including those that skipped to this point. This metric is only available for document ads.Documented type: long</summary>
+        public long? ViralDocumentFirstQuartileCompletions { get => _explicitNullValueViralDocumentFirstQuartileCompletions; set { _explicitNullValueViralDocumentFirstQuartileCompletions = value; AdditionalData?.Remove("viralDocumentFirstQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralDocumentFirstQuartileCompletions"); else _explicitNullProperties?.Remove("viralDocumentFirstQuartileCompletions"); } }
+        private long? _explicitNullValueViralDocumentFirstQuartileCompletions = default!;
+        /// <summary>The number of times users reached the second quartile of the document’s length on a viral post, including those that skipped to this point. This metric is only available for document ads.Documented type: long</summary>
+        public long? ViralDocumentMidpointCompletions { get => _explicitNullValueViralDocumentMidpointCompletions; set { _explicitNullValueViralDocumentMidpointCompletions = value; AdditionalData?.Remove("viralDocumentMidpointCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralDocumentMidpointCompletions"); else _explicitNullProperties?.Remove("viralDocumentMidpointCompletions"); } }
+        private long? _explicitNullValueViralDocumentMidpointCompletions = default!;
+        /// <summary>The number of times users reached the third quartile of the document’s length on a viral post, including those that skipped to this point. This metric is only available for document ads.Documented type: long</summary>
+        public long? ViralDocumentThirdQuartileCompletions { get => _explicitNullValueViralDocumentThirdQuartileCompletions; set { _explicitNullValueViralDocumentThirdQuartileCompletions = value; AdditionalData?.Remove("viralDocumentThirdQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralDocumentThirdQuartileCompletions"); else _explicitNullProperties?.Remove("viralDocumentThirdQuartileCompletions"); } }
+        private long? _explicitNullValueViralDocumentThirdQuartileCompletions = default!;
+        /// <summary>The number of times users have indicated the intent to download the media in a viral ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). Only available for ads supporting media downloads.Documented type: long</summary>
+        public long? ViralDownloadClicks { get => _explicitNullValueViralDownloadClicks; set { _explicitNullValueViralDownloadClicks = value; AdditionalData?.Remove("viralDownloadClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralDownloadClicks"); else _explicitNullProperties?.Remove("viralDownloadClicks"); } }
+        private long? _explicitNullValueViralDownloadClicks = default!;
+        /// <summary>The count of conversions that are attributed to your ads driven by a viral event. See viral impressions definition.Documented type: long</summary>
+        public long? ViralExternalWebsiteConversions { get => _explicitNullValueViralExternalWebsiteConversions; set { _explicitNullValueViralExternalWebsiteConversions = value; AdditionalData?.Remove("viralExternalWebsiteConversions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralExternalWebsiteConversions"); else _explicitNullProperties?.Remove("viralExternalWebsiteConversions"); } }
+        private long? _explicitNullValueViralExternalWebsiteConversions = default!;
+        /// <summary>The count of post-click conversions that are attributed to your ads driven by a viral click. See viral impressions definition.Documented type: long</summary>
+        public long? ViralExternalWebsitePostClickConversions { get => _explicitNullValueViralExternalWebsitePostClickConversions; set { _explicitNullValueViralExternalWebsitePostClickConversions = value; AdditionalData?.Remove("viralExternalWebsitePostClickConversions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralExternalWebsitePostClickConversions"); else _explicitNullProperties?.Remove("viralExternalWebsitePostClickConversions"); } }
+        private long? _explicitNullValueViralExternalWebsitePostClickConversions = default!;
+        /// <summary>The count of post-view conversions that are attributed to your ads driven by a viral impression. See viral impressions definition.Documented type: long</summary>
+        public long? ViralExternalWebsitePostViewConversions { get => _explicitNullValueViralExternalWebsitePostViewConversions; set { _explicitNullValueViralExternalWebsitePostViewConversions = value; AdditionalData?.Remove("viralExternalWebsitePostViewConversions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralExternalWebsitePostViewConversions"); else _explicitNullProperties?.Remove("viralExternalWebsitePostViewConversions"); } }
+        private long? _explicitNullValueViralExternalWebsitePostViewConversions = default!;
+        /// <summary>The count of follows from viral impressions for this activity. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralFollows { get => _explicitNullValueViralFollows; set { _explicitNullValueViralFollows = value; AdditionalData?.Remove("viralFollows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralFollows"); else _explicitNullProperties?.Remove("viralFollows"); } }
+        private long? _explicitNullValueViralFollows = default!;
+        /// <summary>Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode. See viralImpressions definition.Documented type: long</summary>
+        public long? ViralFullScreenPlays { get => _explicitNullValueViralFullScreenPlays; set { _explicitNullValueViralFullScreenPlays = value; AdditionalData?.Remove("viralFullScreenPlays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralFullScreenPlays"); else _explicitNullProperties?.Remove("viralFullScreenPlays"); } }
+        private long? _explicitNullValueViralFullScreenPlays = default!;
+        /// <summary>The count of viral impressions for this activity. Viral impressions are those resulting from users sharing sponsored content to their own network of connections. Viral impressions are not counted as regular impressions. Sponsored Content only.Documented type: long</summary>
+        public long? ViralImpressions { get => _explicitNullValueViralImpressions; set { _explicitNullValueViralImpressions = value; AdditionalData?.Remove("viralImpressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralImpressions"); else _explicitNullProperties?.Remove("viralImpressions"); } }
+        private long? _explicitNullValueViralImpressions = default!;
+        /// <summary>The number of times a member completed a job application after viewing or clicking on a viral ad. Currently, this metric is broken down into viralPostViewJobApplications (if the member performed the action after viewing the viral ad) and viralPostClickJobApplications (if the member performed the action after clicking the viral ad).Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralJobApplications { get => _explicitNullValueViralJobApplications; set { _explicitNullValueViralJobApplications = value; AdditionalData?.Remove("viralJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralJobApplications"); else _explicitNullProperties?.Remove("viralJobApplications"); } }
+        private UntypedNode? _explicitNullValueViralJobApplications = default!;
+#nullable restore
+#else
+        public UntypedNode ViralJobApplications { get => _explicitNullValueViralJobApplications; set { _explicitNullValueViralJobApplications = value; AdditionalData?.Remove("viralJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralJobApplications"); else _explicitNullProperties?.Remove("viralJobApplications"); } }
+        private UntypedNode _explicitNullValueViralJobApplications = default!;
+#endif
+        /// <summary>The number of times a member clicked on the job’s apply button on an LinkedIn jobs page after viewing or clicking on a viral ad which has a LinkedIn job landing page during the date range.Currently, this metric is broken down into viralPostViewJobApplyClicks (if the member performed the action after viewing the viral ad) and viralPostClickJobApplyClicks (if the member performed the action after clicking the viral ad).Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralJobApplyClicks { get => _explicitNullValueViralJobApplyClicks; set { _explicitNullValueViralJobApplyClicks = value; AdditionalData?.Remove("viralJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralJobApplyClicks"); else _explicitNullProperties?.Remove("viralJobApplyClicks"); } }
+        private UntypedNode? _explicitNullValueViralJobApplyClicks = default!;
+#nullable restore
+#else
+        public UntypedNode ViralJobApplyClicks { get => _explicitNullValueViralJobApplyClicks; set { _explicitNullValueViralJobApplyClicks = value; AdditionalData?.Remove("viralJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralJobApplyClicks"); else _explicitNullProperties?.Remove("viralJobApplyClicks"); } }
+        private UntypedNode _explicitNullValueViralJobApplyClicks = default!;
+#endif
+        /// <summary>The count of clicks on viral impressions to take the user to the creative landing page. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralLandingPageClicks { get => _explicitNullValueViralLandingPageClicks; set { _explicitNullValueViralLandingPageClicks = value; AdditionalData?.Remove("viralLandingPageClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralLandingPageClicks"); else _explicitNullProperties?.Remove("viralLandingPageClicks"); } }
+        private long? _explicitNullValueViralLandingPageClicks = default!;
+        /// <summary>The count of likes from viral impressions for this activity. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralLikes { get => _explicitNullValueViralLikes; set { _explicitNullValueViralLikes = value; AdditionalData?.Remove("viralLikes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralLikes"); else _explicitNullProperties?.Remove("viralLikes"); } }
+        private long? _explicitNullValueViralLikes = default!;
+        /// <summary>The count of times users opened the lead form for viral impressions from a Lead Gen campaign. See viral impressions definition.Documented type: long</summary>
+        public long? ViralOneClickLeadFormOpens { get => _explicitNullValueViralOneClickLeadFormOpens; set { _explicitNullValueViralOneClickLeadFormOpens = value; AdditionalData?.Remove("viralOneClickLeadFormOpens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralOneClickLeadFormOpens"); else _explicitNullProperties?.Remove("viralOneClickLeadFormOpens"); } }
+        private long? _explicitNullValueViralOneClickLeadFormOpens = default!;
+        /// <summary>The count of leads generated through One Click Lead Gen from viral impressions for this activity. See viral impressions definition.Documented type: long</summary>
+        public long? ViralOneClickLeads { get => _explicitNullValueViralOneClickLeads; set { _explicitNullValueViralOneClickLeads = value; AdditionalData?.Remove("viralOneClickLeads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralOneClickLeads"); else _explicitNullProperties?.Remove("viralOneClickLeads"); } }
+        private long? _explicitNullValueViralOneClickLeads = default!;
+        /// <summary>The count of user interactions with viral impressions that don&apos;t fit into any other more specific category. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralOtherEngagements { get => _explicitNullValueViralOtherEngagements; set { _explicitNullValueViralOtherEngagements = value; AdditionalData?.Remove("viralOtherEngagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralOtherEngagements"); else _explicitNullProperties?.Remove("viralOtherEngagements"); } }
+        private long? _explicitNullValueViralOtherEngagements = default!;
+        /// <summary>The number of times a member completed a job application after clicking on a viral ad.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralPostClickJobApplications { get => _explicitNullValueViralPostClickJobApplications; set { _explicitNullValueViralPostClickJobApplications = value; AdditionalData?.Remove("viralPostClickJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostClickJobApplications"); else _explicitNullProperties?.Remove("viralPostClickJobApplications"); } }
+        private UntypedNode? _explicitNullValueViralPostClickJobApplications = default!;
+#nullable restore
+#else
+        public UntypedNode ViralPostClickJobApplications { get => _explicitNullValueViralPostClickJobApplications; set { _explicitNullValueViralPostClickJobApplications = value; AdditionalData?.Remove("viralPostClickJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostClickJobApplications"); else _explicitNullProperties?.Remove("viralPostClickJobApplications"); } }
+        private UntypedNode _explicitNullValueViralPostClickJobApplications = default!;
+#endif
+        /// <summary>The number of times a member clicked on the job’s apply button on an LinkedIn jobs page after clicking on a viral ad which has a LinkedIn job landing page.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralPostClickJobApplyClicks { get => _explicitNullValueViralPostClickJobApplyClicks; set { _explicitNullValueViralPostClickJobApplyClicks = value; AdditionalData?.Remove("viralPostClickJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostClickJobApplyClicks"); else _explicitNullProperties?.Remove("viralPostClickJobApplyClicks"); } }
+        private UntypedNode? _explicitNullValueViralPostClickJobApplyClicks = default!;
+#nullable restore
+#else
+        public UntypedNode ViralPostClickJobApplyClicks { get => _explicitNullValueViralPostClickJobApplyClicks; set { _explicitNullValueViralPostClickJobApplyClicks = value; AdditionalData?.Remove("viralPostClickJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostClickJobApplyClicks"); else _explicitNullProperties?.Remove("viralPostClickJobApplyClicks"); } }
+        private UntypedNode _explicitNullValueViralPostClickJobApplyClicks = default!;
+#endif
+        /// <summary>The number of times a member has registered for an event or seminar after clicking on a viral ad which has a LinkedIn landing page. See viralImpressions definition. This includes gross registrations and doesn&apos;t account for a user unregistering.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralPostClickRegistrations { get => _explicitNullValueViralPostClickRegistrations; set { _explicitNullValueViralPostClickRegistrations = value; AdditionalData?.Remove("viralPostClickRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostClickRegistrations"); else _explicitNullProperties?.Remove("viralPostClickRegistrations"); } }
+        private UntypedNode? _explicitNullValueViralPostClickRegistrations = default!;
+#nullable restore
+#else
+        public UntypedNode ViralPostClickRegistrations { get => _explicitNullValueViralPostClickRegistrations; set { _explicitNullValueViralPostClickRegistrations = value; AdditionalData?.Remove("viralPostClickRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostClickRegistrations"); else _explicitNullProperties?.Remove("viralPostClickRegistrations"); } }
+        private UntypedNode _explicitNullValueViralPostClickRegistrations = default!;
+#endif
+        /// <summary>The number of times a member completed a job application after viewing a viral ad.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralPostViewJobApplications { get => _explicitNullValueViralPostViewJobApplications; set { _explicitNullValueViralPostViewJobApplications = value; AdditionalData?.Remove("viralPostViewJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostViewJobApplications"); else _explicitNullProperties?.Remove("viralPostViewJobApplications"); } }
+        private UntypedNode? _explicitNullValueViralPostViewJobApplications = default!;
+#nullable restore
+#else
+        public UntypedNode ViralPostViewJobApplications { get => _explicitNullValueViralPostViewJobApplications; set { _explicitNullValueViralPostViewJobApplications = value; AdditionalData?.Remove("viralPostViewJobApplications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostViewJobApplications"); else _explicitNullProperties?.Remove("viralPostViewJobApplications"); } }
+        private UntypedNode _explicitNullValueViralPostViewJobApplications = default!;
+#endif
+        /// <summary>The number of times a member clicked on the job’s apply button on an LinkedIn jobs page after viewing a viral ad which has a LinkedIn job landing page.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralPostViewJobApplyClicks { get => _explicitNullValueViralPostViewJobApplyClicks; set { _explicitNullValueViralPostViewJobApplyClicks = value; AdditionalData?.Remove("viralPostViewJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostViewJobApplyClicks"); else _explicitNullProperties?.Remove("viralPostViewJobApplyClicks"); } }
+        private UntypedNode? _explicitNullValueViralPostViewJobApplyClicks = default!;
+#nullable restore
+#else
+        public UntypedNode ViralPostViewJobApplyClicks { get => _explicitNullValueViralPostViewJobApplyClicks; set { _explicitNullValueViralPostViewJobApplyClicks = value; AdditionalData?.Remove("viralPostViewJobApplyClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostViewJobApplyClicks"); else _explicitNullProperties?.Remove("viralPostViewJobApplyClicks"); } }
+        private UntypedNode _explicitNullValueViralPostViewJobApplyClicks = default!;
+#endif
+        /// <summary>The number of times a member has registered for an event or seminar after viewing a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn&apos;t account for a user unregistering.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralPostViewRegistrations { get => _explicitNullValueViralPostViewRegistrations; set { _explicitNullValueViralPostViewRegistrations = value; AdditionalData?.Remove("viralPostViewRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostViewRegistrations"); else _explicitNullProperties?.Remove("viralPostViewRegistrations"); } }
+        private UntypedNode? _explicitNullValueViralPostViewRegistrations = default!;
+#nullable restore
+#else
+        public UntypedNode ViralPostViewRegistrations { get => _explicitNullValueViralPostViewRegistrations; set { _explicitNullValueViralPostViewRegistrations = value; AdditionalData?.Remove("viralPostViewRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralPostViewRegistrations"); else _explicitNullProperties?.Remove("viralPostViewRegistrations"); } }
+        private UntypedNode _explicitNullValueViralPostViewRegistrations = default!;
+#endif
+        /// <summary>The count of positive reactions on viral Sponsored Content which can capture like, interest, praise, and other responses. See viral impressions definition for details on viral engagements.Documented type: long</summary>
+        public long? ViralReactions { get => _explicitNullValueViralReactions; set { _explicitNullValueViralReactions = value; AdditionalData?.Remove("viralReactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralReactions"); else _explicitNullProperties?.Remove("viralReactions"); } }
+        private long? _explicitNullValueViralReactions = default!;
+        /// <summary>The number of times a member has registered for an event or seminar after viewing or clicking on a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn&apos;t account for a user unregistering.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ViralRegistrations { get => _explicitNullValueViralRegistrations; set { _explicitNullValueViralRegistrations = value; AdditionalData?.Remove("viralRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralRegistrations"); else _explicitNullProperties?.Remove("viralRegistrations"); } }
+        private UntypedNode? _explicitNullValueViralRegistrations = default!;
+#nullable restore
+#else
+        public UntypedNode ViralRegistrations { get => _explicitNullValueViralRegistrations; set { _explicitNullValueViralRegistrations = value; AdditionalData?.Remove("viralRegistrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralRegistrations"); else _explicitNullProperties?.Remove("viralRegistrations"); } }
+        private UntypedNode _explicitNullValueViralRegistrations = default!;
+#endif
+        /// <summary>The count of shares from viral impressions for this activity. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralShares { get => _explicitNullValueViralShares; set { _explicitNullValueViralShares = value; AdditionalData?.Remove("viralShares"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralShares"); else _explicitNullProperties?.Remove("viralShares"); } }
+        private long? _explicitNullValueViralShares = default!;
+        /// <summary>The count of viral clicks to subscribe to a series, such as a Newsletter.Documented type: long</summary>
+        public long? ViralSubscriptionClicks { get => _explicitNullValueViralSubscriptionClicks; set { _explicitNullValueViralSubscriptionClicks = value; AdditionalData?.Remove("viralSubscriptionClicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralSubscriptionClicks"); else _explicitNullProperties?.Remove("viralSubscriptionClicks"); } }
+        private long? _explicitNullValueViralSubscriptionClicks = default!;
+        /// <summary>The count of all user interactions with a viral ad unit. See viral impressions definition. Sponsored Content only.Documented type: long</summary>
+        public long? ViralTotalEngagements { get => _explicitNullValueViralTotalEngagements; set { _explicitNullValueViralTotalEngagements = value; AdditionalData?.Remove("viralTotalEngagements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralTotalEngagements"); else _explicitNullProperties?.Remove("viralTotalEngagements"); } }
+        private long? _explicitNullValueViralTotalEngagements = default!;
+        /// <summary>The count of viral video ads that played 97-100% of the video. This includes watches that skipped to this point. See viralImpressions definition.Documented type: long</summary>
+        public long? ViralVideoCompletions { get => _explicitNullValueViralVideoCompletions; set { _explicitNullValueViralVideoCompletions = value; AdditionalData?.Remove("viralVideoCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralVideoCompletions"); else _explicitNullProperties?.Remove("viralVideoCompletions"); } }
+        private long? _explicitNullValueViralVideoCompletions = default!;
+        /// <summary>The count of viral video ads that played through the first quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.Documented type: long</summary>
+        public long? ViralVideoFirstQuartileCompletions { get => _explicitNullValueViralVideoFirstQuartileCompletions; set { _explicitNullValueViralVideoFirstQuartileCompletions = value; AdditionalData?.Remove("viralVideoFirstQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralVideoFirstQuartileCompletions"); else _explicitNullProperties?.Remove("viralVideoFirstQuartileCompletions"); } }
+        private long? _explicitNullValueViralVideoFirstQuartileCompletions = default!;
+        /// <summary>The count of viral video ads that played through the midpoint of the video. This includes watches that skipped to this point. See viralImpressions definition.Documented type: long</summary>
+        public long? ViralVideoMidpointCompletions { get => _explicitNullValueViralVideoMidpointCompletions; set { _explicitNullValueViralVideoMidpointCompletions = value; AdditionalData?.Remove("viralVideoMidpointCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralVideoMidpointCompletions"); else _explicitNullProperties?.Remove("viralVideoMidpointCompletions"); } }
+        private long? _explicitNullValueViralVideoMidpointCompletions = default!;
+        /// <summary>The count of viral video ads that were started by users. See viralImpressions definition. Since viral videos are automatically played for ON_SITE, this is the same as viralImpressions if the servingLocation is ON_SITE.Documented type: long</summary>
+        public long? ViralVideoStarts { get => _explicitNullValueViralVideoStarts; set { _explicitNullValueViralVideoStarts = value; AdditionalData?.Remove("viralVideoStarts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralVideoStarts"); else _explicitNullProperties?.Remove("viralVideoStarts"); } }
+        private long? _explicitNullValueViralVideoStarts = default!;
+        /// <summary>The count of viral video ads that played through the third quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.Documented type: long</summary>
+        public long? ViralVideoThirdQuartileCompletions { get => _explicitNullValueViralVideoThirdQuartileCompletions; set { _explicitNullValueViralVideoThirdQuartileCompletions = value; AdditionalData?.Remove("viralVideoThirdQuartileCompletions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralVideoThirdQuartileCompletions"); else _explicitNullProperties?.Remove("viralVideoThirdQuartileCompletions"); } }
+        private long? _explicitNullValueViralVideoThirdQuartileCompletions = default!;
+        /// <summary>A viral video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to full screen mode) doesn&apos;t count as a view. See viralImpressions definition.Documented type: long</summary>
+        public long? ViralVideoViews { get => _explicitNullValueViralVideoViews; set { _explicitNullValueViralVideoViews = value; AdditionalData?.Remove("viralVideoViews"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viralVideoViews"); else _explicitNullProperties?.Remove("viralVideoViews"); } }
+        private long? _explicitNullValueViralVideoViews = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -261,35 +884,133 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actionClicks", n => { ActionClicks = n.GetLongValue(); } },
+                { "adUnitClicks", n => { AdUnitClicks = n.GetLongValue(); } },
+                { "appointmentsScheduled", n => { AppointmentsScheduled = n.GetLongValue(); } },
+                { "approximateMemberReach", n => { ApproximateMemberReach = n.GetLongValue(); } },
                 { "approximateUniqueImpressions", n => { ApproximateUniqueImpressions = n.GetLongValue(); } },
+                { "audiencePenetration", n => { AudiencePenetration = n.GetDoubleValue(); } },
+                { "averageDwellTime", n => { AverageDwellTime = n.GetLongValue(); } },
+                { "averageEventWatchTime", n => { AverageEventWatchTime = n.GetDoubleValue(); } },
+                { "averageEventWatchTimeOver15Seconds", n => { AverageEventWatchTimeOver15Seconds = n.GetDoubleValue(); } },
+                { "averageEventWatchTimeOver2Minutes", n => { AverageEventWatchTimeOver2Minutes = n.GetDoubleValue(); } },
+                { "averageEventWatchTimeOver30Seconds", n => { AverageEventWatchTimeOver30Seconds = n.GetDoubleValue(); } },
+                { "averageVideoWatchTime", n => { AverageVideoWatchTime = n.GetDoubleValue(); } },
+                { "cardClicks", n => { CardClicks = n.GetLongValue(); } },
+                { "cardImpressions", n => { CardImpressions = n.GetLongValue(); } },
                 { "clicks", n => { Clicks = n.GetLongValue(); } },
+                { "commentLikes", n => { CommentLikes = n.GetLongValue(); } },
                 { "comments", n => { Comments = n.GetLongValue(); } },
+                { "companyPageClicks", n => { CompanyPageClicks = n.GetLongValue(); } },
                 { "conversionValueInLocalCurrency", n => { ConversionValueInLocalCurrency = n.GetStringValue(); } },
                 { "costInLocalCurrency", n => { CostInLocalCurrency = n.GetStringValue(); } },
                 { "costInUsd", n => { CostInUsd = n.GetStringValue(); } },
+                { "costPerEventView", n => { CostPerEventView = n.GetDoubleValue(); } },
+                { "costPerEventViewOver15Seconds", n => { CostPerEventViewOver15Seconds = n.GetDoubleValue(); } },
+                { "costPerEventViewOver2Minutes", n => { CostPerEventViewOver2Minutes = n.GetDoubleValue(); } },
+                { "costPerEventViewOver30Seconds", n => { CostPerEventViewOver30Seconds = n.GetDoubleValue(); } },
+                { "costPerQualifiedLead", n => { CostPerQualifiedLead = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "dateRange", n => { DateRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange.CreateFromDiscriminatorValue); } },
+                { "documentCompletions", n => { DocumentCompletions = n.GetLongValue(); } },
+                { "documentFirstQuartileCompletions", n => { DocumentFirstQuartileCompletions = n.GetLongValue(); } },
+                { "documentMidpointCompletions", n => { DocumentMidpointCompletions = n.GetLongValue(); } },
+                { "documentThirdQuartileCompletions", n => { DocumentThirdQuartileCompletions = n.GetLongValue(); } },
+                { "downloadClicks", n => { DownloadClicks = n.GetLongValue(); } },
+                { "eventViews", n => { EventViews = n.GetLongValue(); } },
+                { "eventViewsOver15Seconds", n => { EventViewsOver15Seconds = n.GetLongValue(); } },
+                { "eventViewsOver2Minutes", n => { EventViewsOver2Minutes = n.GetLongValue(); } },
+                { "eventViewsOver30Seconds", n => { EventViewsOver30Seconds = n.GetLongValue(); } },
+                { "eventWatchTime", n => { EventWatchTime = n.GetLongValue(); } },
                 { "externalWebsiteConversions", n => { ExternalWebsiteConversions = n.GetLongValue(); } },
                 { "externalWebsitePostClickConversions", n => { ExternalWebsitePostClickConversions = n.GetLongValue(); } },
                 { "externalWebsitePostViewConversions", n => { ExternalWebsitePostViewConversions = n.GetLongValue(); } },
                 { "follows", n => { Follows = n.GetLongValue(); } },
+                { "fullScreenPlays", n => { FullScreenPlays = n.GetLongValue(); } },
+                { "headlineClicks", n => { HeadlineClicks = n.GetLongValue(); } },
+                { "headlineImpressions", n => { HeadlineImpressions = n.GetLongValue(); } },
                 { "impressions", n => { Impressions = n.GetLongValue(); } },
+                { "jobApplications", n => { JobApplications = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "jobApplyClicks", n => { JobApplyClicks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "landingPageClicks", n => { LandingPageClicks = n.GetLongValue(); } },
+                { "leadGenerationMailContactInfoShares", n => { LeadGenerationMailContactInfoShares = n.GetLongValue(); } },
+                { "leadGenerationMailInterestedClicks", n => { LeadGenerationMailInterestedClicks = n.GetLongValue(); } },
                 { "likes", n => { Likes = n.GetLongValue(); } },
+                { "memberFollows", n => { MemberFollows = n.GetLongValue(); } },
+                { "memberProfileClicks", n => { MemberProfileClicks = n.GetLongValue(); } },
                 { "oneClickLeadFormOpens", n => { OneClickLeadFormOpens = n.GetLongValue(); } },
                 { "oneClickLeads", n => { OneClickLeads = n.GetLongValue(); } },
                 { "opens", n => { Opens = n.GetLongValue(); } },
+                { "otherEngagements", n => { OtherEngagements = n.GetLongValue(); } },
                 { "pivot", n => { Pivot = n.GetStringValue(); } },
                 { "pivotValue", n => { PivotValue = n.GetStringValue(); } },
                 { "pivotValues", n => { PivotValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "postClickJobApplications", n => { PostClickJobApplications = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "postClickJobApplyClicks", n => { PostClickJobApplyClicks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "postClickRegistrations", n => { PostClickRegistrations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "postViewJobApplications", n => { PostViewJobApplications = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "postViewJobApplyClicks", n => { PostViewJobApplyClicks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "postViewRegistrations", n => { PostViewRegistrations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "qualifiedLeads", n => { QualifiedLeads = n.GetLongValue(); } },
                 { "reactions", n => { Reactions = n.GetLongValue(); } },
+                { "registrations", n => { Registrations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "pivotValue~", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue.CreateFromDiscriminatorValue); } },
                 { "pivotValues~", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "revenueAttributionMetrics", n => { RevenueAttributionMetrics = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics.CreateFromDiscriminatorValue); } },
                 { "sends", n => { Sends = n.GetLongValue(); } },
                 { "shares", n => { Shares = n.GetLongValue(); } },
+                { "subscriptionClicks", n => { SubscriptionClicks = n.GetLongValue(); } },
+                { "talentLeads", n => { TalentLeads = n.GetLongValue(); } },
+                { "textUrlClicks", n => { TextUrlClicks = n.GetLongValue(); } },
                 { "totalEngagements", n => { TotalEngagements = n.GetLongValue(); } },
+                { "validWorkEmailLeads", n => { ValidWorkEmailLeads = n.GetLongValue(); } },
                 { "videoCompletions", n => { VideoCompletions = n.GetLongValue(); } },
+                { "videoFirstQuartileCompletions", n => { VideoFirstQuartileCompletions = n.GetLongValue(); } },
+                { "videoMidpointCompletions", n => { VideoMidpointCompletions = n.GetLongValue(); } },
+                { "videoStarts", n => { VideoStarts = n.GetLongValue(); } },
+                { "videoThirdQuartileCompletions", n => { VideoThirdQuartileCompletions = n.GetLongValue(); } },
                 { "videoViews", n => { VideoViews = n.GetLongValue(); } },
+                { "videoWatchTime", n => { VideoWatchTime = n.GetLongValue(); } },
+                { "viralCardClicks", n => { ViralCardClicks = n.GetLongValue(); } },
+                { "viralCardImpressions", n => { ViralCardImpressions = n.GetLongValue(); } },
+                { "viralClicks", n => { ViralClicks = n.GetLongValue(); } },
+                { "viralCommentLikes", n => { ViralCommentLikes = n.GetLongValue(); } },
+                { "viralComments", n => { ViralComments = n.GetLongValue(); } },
+                { "viralCompanyPageClicks", n => { ViralCompanyPageClicks = n.GetLongValue(); } },
+                { "viralDocumentCompletions", n => { ViralDocumentCompletions = n.GetLongValue(); } },
+                { "viralDocumentFirstQuartileCompletions", n => { ViralDocumentFirstQuartileCompletions = n.GetLongValue(); } },
+                { "viralDocumentMidpointCompletions", n => { ViralDocumentMidpointCompletions = n.GetLongValue(); } },
+                { "viralDocumentThirdQuartileCompletions", n => { ViralDocumentThirdQuartileCompletions = n.GetLongValue(); } },
+                { "viralDownloadClicks", n => { ViralDownloadClicks = n.GetLongValue(); } },
+                { "viralExternalWebsiteConversions", n => { ViralExternalWebsiteConversions = n.GetLongValue(); } },
+                { "viralExternalWebsitePostClickConversions", n => { ViralExternalWebsitePostClickConversions = n.GetLongValue(); } },
+                { "viralExternalWebsitePostViewConversions", n => { ViralExternalWebsitePostViewConversions = n.GetLongValue(); } },
+                { "viralFollows", n => { ViralFollows = n.GetLongValue(); } },
+                { "viralFullScreenPlays", n => { ViralFullScreenPlays = n.GetLongValue(); } },
+                { "viralImpressions", n => { ViralImpressions = n.GetLongValue(); } },
+                { "viralJobApplications", n => { ViralJobApplications = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralJobApplyClicks", n => { ViralJobApplyClicks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralLandingPageClicks", n => { ViralLandingPageClicks = n.GetLongValue(); } },
+                { "viralLikes", n => { ViralLikes = n.GetLongValue(); } },
+                { "viralOneClickLeadFormOpens", n => { ViralOneClickLeadFormOpens = n.GetLongValue(); } },
+                { "viralOneClickLeads", n => { ViralOneClickLeads = n.GetLongValue(); } },
+                { "viralOtherEngagements", n => { ViralOtherEngagements = n.GetLongValue(); } },
+                { "viralPostClickJobApplications", n => { ViralPostClickJobApplications = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralPostClickJobApplyClicks", n => { ViralPostClickJobApplyClicks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralPostClickRegistrations", n => { ViralPostClickRegistrations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralPostViewJobApplications", n => { ViralPostViewJobApplications = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralPostViewJobApplyClicks", n => { ViralPostViewJobApplyClicks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralPostViewRegistrations", n => { ViralPostViewRegistrations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralReactions", n => { ViralReactions = n.GetLongValue(); } },
+                { "viralRegistrations", n => { ViralRegistrations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "viralShares", n => { ViralShares = n.GetLongValue(); } },
+                { "viralSubscriptionClicks", n => { ViralSubscriptionClicks = n.GetLongValue(); } },
+                { "viralTotalEngagements", n => { ViralTotalEngagements = n.GetLongValue(); } },
+                { "viralVideoCompletions", n => { ViralVideoCompletions = n.GetLongValue(); } },
+                { "viralVideoFirstQuartileCompletions", n => { ViralVideoFirstQuartileCompletions = n.GetLongValue(); } },
+                { "viralVideoMidpointCompletions", n => { ViralVideoMidpointCompletions = n.GetLongValue(); } },
+                { "viralVideoStarts", n => { ViralVideoStarts = n.GetLongValue(); } },
+                { "viralVideoThirdQuartileCompletions", n => { ViralVideoThirdQuartileCompletions = n.GetLongValue(); } },
+                { "viralVideoViews", n => { ViralVideoViews = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -299,35 +1020,133 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteLongValue("actionClicks", ActionClicks);
+            writer.WriteLongValue("adUnitClicks", AdUnitClicks);
+            writer.WriteLongValue("appointmentsScheduled", AppointmentsScheduled);
+            writer.WriteLongValue("approximateMemberReach", ApproximateMemberReach);
             writer.WriteLongValue("approximateUniqueImpressions", ApproximateUniqueImpressions);
+            writer.WriteDoubleValue("audiencePenetration", AudiencePenetration);
+            writer.WriteLongValue("averageDwellTime", AverageDwellTime);
+            writer.WriteDoubleValue("averageEventWatchTime", AverageEventWatchTime);
+            writer.WriteDoubleValue("averageEventWatchTimeOver15Seconds", AverageEventWatchTimeOver15Seconds);
+            writer.WriteDoubleValue("averageEventWatchTimeOver2Minutes", AverageEventWatchTimeOver2Minutes);
+            writer.WriteDoubleValue("averageEventWatchTimeOver30Seconds", AverageEventWatchTimeOver30Seconds);
+            writer.WriteDoubleValue("averageVideoWatchTime", AverageVideoWatchTime);
+            writer.WriteLongValue("cardClicks", CardClicks);
+            writer.WriteLongValue("cardImpressions", CardImpressions);
             writer.WriteLongValue("clicks", Clicks);
+            writer.WriteLongValue("commentLikes", CommentLikes);
             writer.WriteLongValue("comments", Comments);
+            writer.WriteLongValue("companyPageClicks", CompanyPageClicks);
             writer.WriteStringValue("conversionValueInLocalCurrency", ConversionValueInLocalCurrency);
             writer.WriteStringValue("costInLocalCurrency", CostInLocalCurrency);
             writer.WriteStringValue("costInUsd", CostInUsd);
+            writer.WriteDoubleValue("costPerEventView", CostPerEventView);
+            writer.WriteDoubleValue("costPerEventViewOver15Seconds", CostPerEventViewOver15Seconds);
+            writer.WriteDoubleValue("costPerEventViewOver2Minutes", CostPerEventViewOver2Minutes);
+            writer.WriteDoubleValue("costPerEventViewOver30Seconds", CostPerEventViewOver30Seconds);
+            writer.WriteObjectValue<UntypedNode>("costPerQualifiedLead", CostPerQualifiedLead);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange>("dateRange", DateRange);
+            writer.WriteLongValue("documentCompletions", DocumentCompletions);
+            writer.WriteLongValue("documentFirstQuartileCompletions", DocumentFirstQuartileCompletions);
+            writer.WriteLongValue("documentMidpointCompletions", DocumentMidpointCompletions);
+            writer.WriteLongValue("documentThirdQuartileCompletions", DocumentThirdQuartileCompletions);
+            writer.WriteLongValue("downloadClicks", DownloadClicks);
+            writer.WriteLongValue("eventViews", EventViews);
+            writer.WriteLongValue("eventViewsOver15Seconds", EventViewsOver15Seconds);
+            writer.WriteLongValue("eventViewsOver2Minutes", EventViewsOver2Minutes);
+            writer.WriteLongValue("eventViewsOver30Seconds", EventViewsOver30Seconds);
+            writer.WriteLongValue("eventWatchTime", EventWatchTime);
             writer.WriteLongValue("externalWebsiteConversions", ExternalWebsiteConversions);
             writer.WriteLongValue("externalWebsitePostClickConversions", ExternalWebsitePostClickConversions);
             writer.WriteLongValue("externalWebsitePostViewConversions", ExternalWebsitePostViewConversions);
             writer.WriteLongValue("follows", Follows);
+            writer.WriteLongValue("fullScreenPlays", FullScreenPlays);
+            writer.WriteLongValue("headlineClicks", HeadlineClicks);
+            writer.WriteLongValue("headlineImpressions", HeadlineImpressions);
             writer.WriteLongValue("impressions", Impressions);
+            writer.WriteObjectValue<UntypedNode>("jobApplications", JobApplications);
+            writer.WriteObjectValue<UntypedNode>("jobApplyClicks", JobApplyClicks);
             writer.WriteLongValue("landingPageClicks", LandingPageClicks);
+            writer.WriteLongValue("leadGenerationMailContactInfoShares", LeadGenerationMailContactInfoShares);
+            writer.WriteLongValue("leadGenerationMailInterestedClicks", LeadGenerationMailInterestedClicks);
             writer.WriteLongValue("likes", Likes);
+            writer.WriteLongValue("memberFollows", MemberFollows);
+            writer.WriteLongValue("memberProfileClicks", MemberProfileClicks);
             writer.WriteLongValue("oneClickLeadFormOpens", OneClickLeadFormOpens);
             writer.WriteLongValue("oneClickLeads", OneClickLeads);
             writer.WriteLongValue("opens", Opens);
+            writer.WriteLongValue("otherEngagements", OtherEngagements);
             writer.WriteStringValue("pivot", Pivot);
             writer.WriteStringValue("pivotValue", PivotValue);
             writer.WriteCollectionOfPrimitiveValues<string>("pivotValues", PivotValues);
+            writer.WriteObjectValue<UntypedNode>("postClickJobApplications", PostClickJobApplications);
+            writer.WriteObjectValue<UntypedNode>("postClickJobApplyClicks", PostClickJobApplyClicks);
+            writer.WriteObjectValue<UntypedNode>("postClickRegistrations", PostClickRegistrations);
+            writer.WriteObjectValue<UntypedNode>("postViewJobApplications", PostViewJobApplications);
+            writer.WriteObjectValue<UntypedNode>("postViewJobApplyClicks", PostViewJobApplyClicks);
+            writer.WriteObjectValue<UntypedNode>("postViewRegistrations", PostViewRegistrations);
+            writer.WriteLongValue("qualifiedLeads", QualifiedLeads);
             writer.WriteLongValue("reactions", Reactions);
+            writer.WriteObjectValue<UntypedNode>("registrations", Registrations);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue>("pivotValue~", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>("pivotValues~", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics>("revenueAttributionMetrics", RevenueAttributionMetrics);
             writer.WriteLongValue("sends", Sends);
             writer.WriteLongValue("shares", Shares);
+            writer.WriteLongValue("subscriptionClicks", SubscriptionClicks);
+            writer.WriteLongValue("talentLeads", TalentLeads);
+            writer.WriteLongValue("textUrlClicks", TextUrlClicks);
             writer.WriteLongValue("totalEngagements", TotalEngagements);
+            writer.WriteLongValue("validWorkEmailLeads", ValidWorkEmailLeads);
             writer.WriteLongValue("videoCompletions", VideoCompletions);
+            writer.WriteLongValue("videoFirstQuartileCompletions", VideoFirstQuartileCompletions);
+            writer.WriteLongValue("videoMidpointCompletions", VideoMidpointCompletions);
+            writer.WriteLongValue("videoStarts", VideoStarts);
+            writer.WriteLongValue("videoThirdQuartileCompletions", VideoThirdQuartileCompletions);
             writer.WriteLongValue("videoViews", VideoViews);
+            writer.WriteLongValue("videoWatchTime", VideoWatchTime);
+            writer.WriteLongValue("viralCardClicks", ViralCardClicks);
+            writer.WriteLongValue("viralCardImpressions", ViralCardImpressions);
+            writer.WriteLongValue("viralClicks", ViralClicks);
+            writer.WriteLongValue("viralCommentLikes", ViralCommentLikes);
+            writer.WriteLongValue("viralComments", ViralComments);
+            writer.WriteLongValue("viralCompanyPageClicks", ViralCompanyPageClicks);
+            writer.WriteLongValue("viralDocumentCompletions", ViralDocumentCompletions);
+            writer.WriteLongValue("viralDocumentFirstQuartileCompletions", ViralDocumentFirstQuartileCompletions);
+            writer.WriteLongValue("viralDocumentMidpointCompletions", ViralDocumentMidpointCompletions);
+            writer.WriteLongValue("viralDocumentThirdQuartileCompletions", ViralDocumentThirdQuartileCompletions);
+            writer.WriteLongValue("viralDownloadClicks", ViralDownloadClicks);
+            writer.WriteLongValue("viralExternalWebsiteConversions", ViralExternalWebsiteConversions);
+            writer.WriteLongValue("viralExternalWebsitePostClickConversions", ViralExternalWebsitePostClickConversions);
+            writer.WriteLongValue("viralExternalWebsitePostViewConversions", ViralExternalWebsitePostViewConversions);
+            writer.WriteLongValue("viralFollows", ViralFollows);
+            writer.WriteLongValue("viralFullScreenPlays", ViralFullScreenPlays);
+            writer.WriteLongValue("viralImpressions", ViralImpressions);
+            writer.WriteObjectValue<UntypedNode>("viralJobApplications", ViralJobApplications);
+            writer.WriteObjectValue<UntypedNode>("viralJobApplyClicks", ViralJobApplyClicks);
+            writer.WriteLongValue("viralLandingPageClicks", ViralLandingPageClicks);
+            writer.WriteLongValue("viralLikes", ViralLikes);
+            writer.WriteLongValue("viralOneClickLeadFormOpens", ViralOneClickLeadFormOpens);
+            writer.WriteLongValue("viralOneClickLeads", ViralOneClickLeads);
+            writer.WriteLongValue("viralOtherEngagements", ViralOtherEngagements);
+            writer.WriteObjectValue<UntypedNode>("viralPostClickJobApplications", ViralPostClickJobApplications);
+            writer.WriteObjectValue<UntypedNode>("viralPostClickJobApplyClicks", ViralPostClickJobApplyClicks);
+            writer.WriteObjectValue<UntypedNode>("viralPostClickRegistrations", ViralPostClickRegistrations);
+            writer.WriteObjectValue<UntypedNode>("viralPostViewJobApplications", ViralPostViewJobApplications);
+            writer.WriteObjectValue<UntypedNode>("viralPostViewJobApplyClicks", ViralPostViewJobApplyClicks);
+            writer.WriteObjectValue<UntypedNode>("viralPostViewRegistrations", ViralPostViewRegistrations);
+            writer.WriteLongValue("viralReactions", ViralReactions);
+            writer.WriteObjectValue<UntypedNode>("viralRegistrations", ViralRegistrations);
+            writer.WriteLongValue("viralShares", ViralShares);
+            writer.WriteLongValue("viralSubscriptionClicks", ViralSubscriptionClicks);
+            writer.WriteLongValue("viralTotalEngagements", ViralTotalEngagements);
+            writer.WriteLongValue("viralVideoCompletions", ViralVideoCompletions);
+            writer.WriteLongValue("viralVideoFirstQuartileCompletions", ViralVideoFirstQuartileCompletions);
+            writer.WriteLongValue("viralVideoMidpointCompletions", ViralVideoMidpointCompletions);
+            writer.WriteLongValue("viralVideoStarts", ViralVideoStarts);
+            writer.WriteLongValue("viralVideoThirdQuartileCompletions", ViralVideoThirdQuartileCompletions);
+            writer.WriteLongValue("viralVideoViews", ViralVideoViews);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

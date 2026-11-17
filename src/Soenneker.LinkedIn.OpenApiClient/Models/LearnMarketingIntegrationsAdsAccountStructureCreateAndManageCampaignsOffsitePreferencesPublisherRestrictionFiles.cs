@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
     /// <summary>
-    /// This field contains one or more files that have been uploaded by an advertiser. Each file contains a list of web domains/app store URLs. The advertiser can choose if they want to include or exclude this particular campaign from serving on those apps/websites. The API accepts only allowlists under include field and blocklists under exclude field.Documented type: optional PublisherRestrictionFiles
+    /// This field contains one or more files that have been uploaded by an advertiser. Each file contains a list of web domains/app store URLs. The advertiser can choose if they want to include or exclude this particular campaign from serving on those apps/websites. The API accepts only allowlists under include field and blocklists under exclude field. Each file&apos;s surface (LAN or CTV) must match the campaign, and the file must belong to the campaign&apos;s sponsored account. See Publisher restriction file validation.Documented type: optional PublisherRestrictionFiles
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCampaignsOffsitePreferencesPublisherRestrictionFiles : IAdditionalDataHolder, IParsable
@@ -26,7 +26,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of publisher file IDs to whom ad requests cannot be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request cannot be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.Documented type: AdPublisherFileUrn[], default=&quot;[]&quot;</summary>
+        /// <summary>List of publisher file IDs to whom ad requests cannot be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request cannot be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}. Only blocklists are accepted. Each file&apos;s surface must match the campaign. See Publisher restriction file validation.Documented type: AdPublisherFileUrn[], default=&quot;[]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
@@ -36,7 +36,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public UntypedNode Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
         private UntypedNode _explicitNullValueExclude = default!;
 #endif
-        /// <summary>List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.Documented type: AdPublisherFileUrn[], default=&quot;[]&quot;</summary>
+        /// <summary>List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}. Only allowlists are accepted. Each file&apos;s surface must match the campaign. See Publisher restriction file validation.Documented type: AdPublisherFileUrn[], default=&quot;[]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }

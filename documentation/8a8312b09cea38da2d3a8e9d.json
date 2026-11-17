@@ -1,13 +1,16 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
-  "Title": "Organization Post Boost",
+  "Title": "Organization post boost",
   "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/manage-boosts",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
@@ -19,7 +22,7 @@
   "Blocks": [
     {
       "Kind": "text",
-      "Section": "Organization Post Boost",
+      "Section": "Organization post boost",
       "Anchor": "organization-post-boost",
       "SectionPath": [],
       "Text": "Warning",
@@ -28,16 +31,16 @@
     },
     {
       "Kind": "text",
-      "Section": "Organization Post Boost",
+      "Section": "Organization post boost",
       "Anchor": "organization-post-boost",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "Organization Post Boost",
+      "Section": "Organization post boost",
       "Anchor": "organization-post-boost",
       "SectionPath": [],
       "Text": "Company Page Boost lets an authenticated member turn an eligible post on a Company Page they can manage into a sponsored ad on behalf of the sponsoring organization. This page documents the full Company Page Boost workflow: checking boost status, initializing boost setup, previewing targeting and pricing, and creating the boost. To retrieve boost analytics, see Boost Analytics. For the equivalent member workflow, see Member Post Boost.",
@@ -46,7 +49,7 @@
     },
     {
       "Kind": "text",
-      "Section": "Organization Post Boost",
+      "Section": "Organization post boost",
       "Anchor": "organization-post-boost",
       "SectionPath": [],
       "Text": "All requests use the versioned REST base URL https://api.linkedin.com/rest/, require a member access token for a member who can manage the specified organization, and must include the Linkedin-Version header set to 202610 or a higher available version, and the X-Restli-Protocol-Version: 2.0.0 header.",
@@ -1139,7 +1142,7 @@
             "Values": []
           },
           {
-            "Text": "Whether the sponsored account already has a payment method configured.",
+            "Text": "Whether the sponsored account is ready for billing. Invoice billing qualifies; otherwise business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.",
             "Links": [],
             "Values": []
           },
@@ -1451,7 +1454,7 @@
         "Initialize a boost",
         "Sample response"
       ],
-      "Text": "When billingConfigured is false, the sponsored account doesn\u0027t have a payment method on file, and boostPost fails until billing is set up. This API doesn\u0027t return a billing URL. Billing is set up directly on LinkedIn; your application never collects payment details.",
+      "Text": "When billingConfigured is false, billing setup is incomplete and boostPost fails until billing is set up. This API version doesn\u0027t return a billing URL. Billing is set up directly on LinkedIn; your application never collects payment details.",
       "Headers": [],
       "Rows": []
     },
@@ -1464,6 +1467,156 @@
         "Sample response"
       ],
       "Text": "Redirect the organization\u0027s admin to https://www.linkedin.com/campaignmanager/boost/billing/{account_id}?origin=partner. Replace {account_id} with the numeric ID at the end of the value.account URN that init returned. For example, for urn:li:sponsoredAccount:525337437, use 525337437.\nAfter billing setup, call init again with the same request.\nContinue to hydrate and post only after the new response returns billingConfigured: true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "",
+      "Headers": [
+        "Additional field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Request locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional object with language, country, and optional variant. Both the language and country/region values must be nonblank; otherwise the backend uses en_US.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Response value.billingUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional LinkedIn billing setup URL when billing isn\u0027t configured.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Response value.targetingEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional targeting discovery response.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences?view=li-lms-2026-10#discover-targeting-options"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "Supply locale to request supported localized audience names. Discovery labels and options aren\u0027t guaranteed to be localized.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/organizationBoostInit?action=init\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\u0022targetPost\u0022:\u0022urn:li:ugcPost:1234567890\u0022,\u0022organization\u0022:\u0022urn:li:organization:2414183\u0022,\u0022locale\u0022:{\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/organizationBoostInit?action=init\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\u0022targetPost\u0022:\u0022urn:li:ugcPost:1234567890\u0022,\u0022organization\u0022:\u0022urn:li:organization:2414183\u0022,\u0022locale\u0022:{\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "When billing isn\u0027t configured, a response can include the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n    \u0022billingConfigured\u0022: false,\n    \u0022billingUrl\u0022: \u0022https://www.linkedin.com/campaignmanager/boost/billing/987654321?origin=partner\u0026partnerAppId=12345\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "Open the returned billingUrl without reconstructing it or dropping attribution query parameters. The URL uses the account returned by Init, which can differ from a supplied account. After billing setup, call Init again and continue only when billingConfigured is true. A configured account omits the billing URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November initialization and billing",
+      "Anchor": "",
+      "SectionPath": [
+        "Initialize a boost",
+        "November initialization and billing"
+      ],
+      "Text": "Invoice billing doesn\u0027t require a card wallet. Other accounts need business information and a bound supported card; unsupported wallet types and credit balances don\u0027t satisfy billing readiness. Init can create a default billing configuration, but false doesn\u0027t mean a new configuration was created. Your application never collects payment details.",
       "Headers": [],
       "Rows": []
     },
@@ -1545,6 +1698,50 @@
           },
           {
             "Text": "Request the rw_organization_boost scope and use a token for a member who can manage the organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service-provided message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The boost setup request references an entity the service couldn\u0027t find.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check the supplied post, organization, account, and campaign identifiers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service-provided message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A boost setup precondition isn\u0027t met, or a conflicting entity already exists.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Correct the condition described in the response before retrying.",
             "Links": [],
             "Values": []
           }
@@ -1843,10 +2040,8 @@
             "Values": []
           },
           {
-            "Text": "Audience to preview. Omit it in the first call so LinkedIn suggests an audience. In later calls, pass back the targetingCriteria returned by the first hydrate call unchanged. See Targeting criteria object.",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-10\u0026tabs=http#targeting-criteria-object"
-            ],
+            "Text": "Audience to preview. Omit it for a suggested audience. On 202610, pass the suggested criteria back unchanged. Starting with 202611, use the custom or saved audience model described below.",
+            "Links": [],
             "Values": []
           },
           {
@@ -2427,6 +2622,28 @@
         ],
         [
           {
+            "Text": "value.consumerPrice.totalApplicableCredit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional credit as a MoneyAmount (amount, currencyCode). Omitted when no credit applies. Available in both 202610 and 202611.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
             "Text": "value.maxTotalBudget",
             "Links": [],
             "Values": []
@@ -2700,6 +2917,154 @@
       "Rows": []
     },
     {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample response"
+      ],
+      "Text": "Use includeAll, excludeAny, and anyOf for custom or saved audiences. These replace October\u0027s include and exclude structure. Preview the selected criteria before sending them to Post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sample response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample response"
+      ],
+      "Text": "",
+      "Headers": [
+        "Additional field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Request locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional object with language, country, and optional variant, using the same fallback rules as Init.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Response value.politicalDeclarationRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional Boolean declaration requirement for the preview. Preserve true, false, and absence as distinct states.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "November preview request",
+      "Anchor": "",
+      "SectionPath": [
+        "Preview a boost",
+        "November preview request"
+      ],
+      "Text": "Use the account and schedule returned by Init; the timestamps below are illustrative. Company Page Boost supports future starts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November preview request",
+      "Anchor": "",
+      "SectionPath": [
+        "Preview a boost",
+        "November preview request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "November preview request",
+      "Anchor": "",
+      "SectionPath": [
+        "Preview a boost",
+        "November preview request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/organizationBoostHydrate?action=hydrate\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n  \u0022goal\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022productDescription\u0022: \u0022Promoting a company announcement\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "November preview request",
+      "Anchor": "",
+      "SectionPath": [
+        "Preview a boost",
+        "November preview request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/organizationBoostHydrate?action=hydrate\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n  \u0022goal\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022productDescription\u0022: \u0022Promoting a company announcement\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November preview request",
+      "Anchor": "",
+      "SectionPath": [
+        "Preview a boost",
+        "November preview request"
+      ],
+      "Text": "Hydrate returns a value wrapper with the resolved criteria and available preview fields. If politicalDeclarationRequired is true, collect an explicit declaration before Post. Absence isn\u0027t a confirmed false; don\u0027t use an absent flag to waive an otherwise required EU-targeting declaration. The flag\u0027s availability depends on rollout. Evaluate declaration requirements for the audience you actually submit, not an earlier suggested audience. LinkedIn prohibits political advertising.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pricing credits",
+      "Anchor": "pricing-credits",
+      "SectionPath": [
+        "Preview a boost",
+        "Pricing credits"
+      ],
+      "Text": "Both 202610 and 202611 can return consumerPrice.totalApplicableCredit. For a preview with a selected budget, the pricing portion can contain:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Pricing credits",
+      "Anchor": "pricing-credits",
+      "SectionPath": [
+        "Preview a boost",
+        "Pricing credits"
+      ],
+      "Text": "{\n  \u0022consumerPrice\u0022: {\n    \u0022campaignTotalBudget\u0022: {\u0022amount\u0022: \u002250.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022},\n    \u0022totalApplicableCredit\u0022: {\u0022amount\u0022: \u002210.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022},\n    \u0022totalConsumerPrice\u0022: {\u0022amount\u0022: \u002240.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022}\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pricing credits",
+      "Anchor": "pricing-credits",
+      "SectionPath": [
+        "Preview a boost",
+        "Pricing credits"
+      ],
+      "Text": "This is a fragment of value, not a complete response. When no credit applies, totalApplicableCredit is omitted. Don\u0027t assume an absent credit is available to fund the boost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "table",
       "Section": "API error details",
       "Anchor": "api-error-details-2",
@@ -2777,7 +3142,7 @@
             "Values": []
           },
           {
-            "Text": "Both runSchedule.start and runSchedule.end are required, and end must be after start. The schedule must cover at least 2 UTC days, counted inclusively. For Member Boost, start can\u0027t be later than the current UTC day.",
+            "Text": "Both runSchedule.start and runSchedule.end are required, and end must be after start. The schedule must cover at least 2 UTC days, counted inclusively. Company Page Boost allows future starts.",
             "Links": [],
             "Values": []
           }
@@ -2812,6 +3177,40 @@
           },
           {
             "Text": "The caller does not have the required rw_organization_boost permission or cannot act on behalf of the specified organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Referenced entity not found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check the account, organization, and other identifiers described in the response message.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Preview precondition or conflict",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Correct the condition described in the response before retrying the preview.",
             "Links": [],
             "Values": []
           }
@@ -3111,7 +3510,7 @@
             "Values": []
           },
           {
-            "Text": "Audience for the boost. Pass back the targetingCriteria returned by hydrate unchanged. See Targeting criteria object.",
+            "Text": "Audience for the boost. On 202610, pass the suggested criteria back unchanged. On 202611, use the selected criteria previewed by Hydrate. See Targeting criteria object.",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-10\u0026tabs=http#targeting-criteria-object"
             ],
@@ -3456,6 +3855,90 @@
       "Rows": []
     },
     {
+      "Kind": "text",
+      "Section": "November create request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "November create request"
+      ],
+      "Text": "Post adds the politicalIntent.value enum string for a required declaration. For a nonpolitical ad, use NOT_POLITICAL after collecting that declaration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November create request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "November create request"
+      ],
+      "Text": "For EU targeting, display the mandatory consent using the required wording and presentation, clearly presented and checked by default before submitting or activating the boost. Sending NOT_POLITICAL alone doesn\u0027t satisfy the consent requirement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November create request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "November create request"
+      ],
+      "Text": "After previewing the chosen configuration and collecting any required declaration, submit it to Post. This example uses Germany targeting and a nonpolitical declaration; use the actual account, budget, schedule, and criteria from your flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November create request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "November create request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "November create request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "November create request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/organizationBoostPost?action=post\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022BRAND_AWARENESS\u0022},\n  \u0022totalBudget\u0022: {\u0022amount\u0022: \u002250.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022},\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  },\n  \u0022politicalIntent\u0022: {\u0022value\u0022: \u0022NOT_POLITICAL\u0022}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "November create request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "November create request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/organizationBoostPost?action=post\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022BRAND_AWARENESS\u0022},\n  \u0022totalBudget\u0022: {\u0022amount\u0022: \u002250.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022},\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  },\n  \u0022politicalIntent\u0022: {\u0022value\u0022: \u0022NOT_POLITICAL\u0022}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November create request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "November create request"
+      ],
+      "Text": "Unlike this action parameter, Manage boosts uses a direct enum string for politicalIntent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "code",
       "Section": "Sample response",
       "Anchor": "sample-response-3",
@@ -3583,7 +4066,7 @@
             "Values": []
           },
           {
-            "Text": "The runSchedule is missing a start or end, end is not after start, the schedule covers fewer than 2 UTC days (counted inclusively), or a Member Boost start is later than the current UTC day.",
+            "Text": "The runSchedule is missing a start or end, end is not after start, or the schedule covers fewer than 2 UTC days (counted inclusively). Company Page Boost allows future starts.",
             "Links": [],
             "Values": []
           },
@@ -3639,6 +4122,50 @@
         ],
         [
           {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service-provided message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The create request references an entity the service couldn\u0027t find.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the post, organization, and account identifiers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service-provided message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A create precondition isn\u0027t met, or a conflicting entity already exists.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resolve the condition described in the response; don\u0027t retry unchanged.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
             "Text": "429",
             "Links": [],
             "Values": []
@@ -3682,6 +4209,17 @@
           }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a boost campaign",
+      "Anchor": "delete-a-boost-campaign",
+      "SectionPath": [
+        "Delete a boost campaign"
+      ],
+      "Text": "Use Manage boosts to retrieve, edit targeting and declarations, or delete an existing boost. The older delete resource below remains available; no removal date is established.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "text",
@@ -3860,6 +4398,94 @@
           },
           {
             "Text": "Pass a urn:li:sponsoredAccount:{id} value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service-provided message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller isn\u0027t authorized to delete the boost.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check the member\u0027s campaign access and rw_organization_boost permission.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service-provided message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The referenced campaign or account can\u0027t be found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the identifiers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service-provided message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A deletion precondition isn\u0027t met.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resolve the condition described in the response before retrying.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service couldn\u0027t complete deletion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry later; contact Developer Support if it persists.",
             "Links": [],
             "Values": []
           }

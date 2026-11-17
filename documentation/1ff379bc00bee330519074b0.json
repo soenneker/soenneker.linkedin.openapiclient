@@ -43,7 +43,7 @@
       "Section": "Conversions API",
       "Anchor": "conversions-api",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -755,6 +755,30 @@
     },
     {
       "Kind": "text",
+      "Section": "Adding Single Conversion Event",
+      "Anchor": "adding-single-conversion-event",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event"
+      ],
+      "Text": "Starting with the 202611 version, use SHA256_PHONE in userIds to send a phone number. Normalize the phone number to E.164 format (country calling code plus national number), remove the leading \u002B and all formatting so that only digits remain, then apply SHA256 and hex-encode the digest. For example, (650) 555-1212 in the US normalizes to 16505551212 before hashing and produces e323ec626319ca94ee8bff2e4c87cf613be6ea19919ed1364124e16807ab3176, as shown in the requests below. Send the hash, not the plain text phone number.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding Single Conversion Event",
+      "Anchor": "adding-single-conversion-event",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event"
+      ],
+      "Text": "The following single-event samples require version 202611 or later. For an earlier supported API version, omit the SHA256_PHONE entry from userIds, retain another supported identifier, and set Linkedin-Version to that earlier version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "Sample Request",
       "Anchor": "sample-request-4",
       "SectionPath": [
@@ -788,7 +812,7 @@
         "Adding Single Conversion Event",
         "Sample Request"
       ],
-      "Text": "{\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n  \u0022conversionHappenedAt\u0022: 1590739275000,\n  \u0022conversionValue\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250.0\u0022\n  },\n  \u0022user\u0022: {\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n        \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n        \u0022idValue\u0022: \u0022103.20.92.12\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n      }\n    ],\n    \u0022userInfo\u0022: {\n      \u0022firstName\u0022: \u0022mike\u0022,\n      \u0022lastName\u0022: \u0022smith\u0022,\n      \u0022title\u0022: \u0022software engineer\u0022,\n      \u0022companyName\u0022: \u0022microsoft\u0022,\n      \u0022countryCode\u0022: \u0022US\u0022\n    },\n    \u0022lead\u0022: \u0022urn:li:leadGenFormResponse:8f7356abcd9-8d5c-49ca-931b-513123abc9-4\u0022,\n    \u0022externalIds\u0022: [\u0022abc-external-123\u0022]\n  },\n  \u0022eventId\u0022: \u0022abc12345\u0022\n}",
+      "Text": "{\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n  \u0022conversionHappenedAt\u0022: 1590739275000,\n  \u0022conversionValue\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250.0\u0022\n  },\n  \u0022user\u0022: {\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n        \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n        \u0022idValue\u0022: \u0022103.20.92.12\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022SHA256_PHONE\u0022,\n        \u0022idValue\u0022: \u0022e323ec626319ca94ee8bff2e4c87cf613be6ea19919ed1364124e16807ab3176\u0022\n      }\n    ],\n    \u0022userInfo\u0022: {\n      \u0022firstName\u0022: \u0022mike\u0022,\n      \u0022lastName\u0022: \u0022smith\u0022,\n      \u0022title\u0022: \u0022software engineer\u0022,\n      \u0022companyName\u0022: \u0022microsoft\u0022,\n      \u0022countryCode\u0022: \u0022US\u0022\n    },\n    \u0022lead\u0022: \u0022urn:li:leadGenFormResponse:8f7356abcd9-8d5c-49ca-931b-513123abc9-4\u0022,\n    \u0022externalIds\u0022: [\u0022abc-external-123\u0022]\n  },\n  \u0022eventId\u0022: \u0022abc12345\u0022\n}",
       "Headers": [],
       "Rows": []
     },
@@ -801,7 +825,7 @@
         "Adding Single Conversion Event",
         "Sample Request"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversionEvents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n  \u0022conversionHappenedAt\u0022: 1590739275000,\n  \u0022conversionValue\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250.0\u0022\n  },\n  \u0022user\u0022: {\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n        \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n        \u0022idValue\u0022: \u0022103.20.92.12\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n      }\n    ],\n    \u0022userInfo\u0022: {\n      \u0022firstName\u0022: \u0022mike\u0022,\n      \u0022lastName\u0022: \u0022smith\u0022,\n      \u0022title\u0022: \u0022software engineer\u0022,\n      \u0022companyName\u0022: \u0022microsoft\u0022,\n      \u0022countryCode\u0022: \u0022US\u0022\n    },\n    \u0022lead\u0022: \u0022urn:li:leadGenFormResponse:8f7356abcd9-8d5c-49ca-931b-513123abc9-4\u0022,\n    \u0022externalIds\u0022: [\u0022abc-external-123\u0022]\n  },\n  \u0022eventId\u0022: \u0022abc12345\u0022\n}\u0027",
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversionEvents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n  \u0022conversionHappenedAt\u0022: 1590739275000,\n  \u0022conversionValue\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250.0\u0022\n  },\n  \u0022user\u0022: {\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n        \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n        \u0022idValue\u0022: \u0022103.20.92.12\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022SHA256_PHONE\u0022,\n        \u0022idValue\u0022: \u0022e323ec626319ca94ee8bff2e4c87cf613be6ea19919ed1364124e16807ab3176\u0022\n      }\n    ],\n    \u0022userInfo\u0022: {\n      \u0022firstName\u0022: \u0022mike\u0022,\n      \u0022lastName\u0022: \u0022smith\u0022,\n      \u0022title\u0022: \u0022software engineer\u0022,\n      \u0022companyName\u0022: \u0022microsoft\u0022,\n      \u0022countryCode\u0022: \u0022US\u0022\n    },\n    \u0022lead\u0022: \u0022urn:li:leadGenFormResponse:8f7356abcd9-8d5c-49ca-931b-513123abc9-4\u0022,\n    \u0022externalIds\u0022: [\u0022abc-external-123\u0022]\n  },\n  \u0022eventId\u0022: \u0022abc12345\u0022\n}\u0027",
       "Headers": [],
       "Rows": []
     },

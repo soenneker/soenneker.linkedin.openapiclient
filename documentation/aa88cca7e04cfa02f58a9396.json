@@ -14,6 +14,7 @@
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-analytics",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
     "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/",
@@ -25,7 +26,19 @@
       "Section": "Product \u0026 Platform Announcements",
       "Anchor": "product--platform-announcements",
       "SectionPath": [
-        "August 2026 - Version 202608 (Latest)",
+        "November 2026 - Version 202611 (Latest)",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Developer Applications API: Get, Batch Get\nPartners can fetch the public details of a LinkedIn developer application: its ID, name and logo. Use it to resolve the developer application URNs (primaryDeveloperApplicationUrn and secondaryDeveloperApplicationUrns) in a product\u0027s connectApplicationAttributes, returned by the Organization Products API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-1",
+      "SectionPath": [
+        "August 2026 - Version 202608",
         "Product \u0026 Platform Announcements"
       ],
       "Text": "No partner-visible API changes were introduced in this version.",
@@ -35,7 +48,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-1",
+      "Anchor": "product--platform-announcements-2",
       "SectionPath": [
         "May 2026 - Version 202605",
         "Product \u0026 Platform Announcements"
@@ -83,7 +96,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-2",
+      "Anchor": "product--platform-announcements-3",
       "SectionPath": [
         "November 2025 - Version 202511",
         "Product \u0026 Platform Announcements"
@@ -95,7 +108,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-3",
+      "Anchor": "product--platform-announcements-4",
       "SectionPath": [
         "August 2025 - Version 202508",
         "Product \u0026 Platform Announcements"
@@ -107,7 +120,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-3",
+      "Anchor": "product--platform-announcements-4",
       "SectionPath": [
         "August 2025 - Version 202508",
         "Product \u0026 Platform Announcements"
@@ -119,7 +132,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-4",
+      "Anchor": "product--platform-announcements-5",
       "SectionPath": [
         "May 2025 - Version 202505",
         "Product \u0026 Platform Announcements"
@@ -131,7 +144,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-4",
+      "Anchor": "product--platform-announcements-5",
       "SectionPath": [
         "May 2025 - Version 202505",
         "Product \u0026 Platform Announcements"
@@ -215,7 +228,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-5",
+      "Anchor": "product--platform-announcements-6",
       "SectionPath": [
         "August 2024 - Version 202408",
         "Product \u0026 Platform Announcements"
@@ -227,7 +240,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-5",
+      "Anchor": "product--platform-announcements-6",
       "SectionPath": [
         "August 2024 - Version 202408",
         "Product \u0026 Platform Announcements"
@@ -239,7 +252,7 @@
     {
       "Kind": "text",
       "Section": "Product \u0026 Platform Announcements",
-      "Anchor": "product--platform-announcements-6",
+      "Anchor": "product--platform-announcements-7",
       "SectionPath": [
         "May 2024 - Version 202405",
         "Product \u0026 Platform Announcements"

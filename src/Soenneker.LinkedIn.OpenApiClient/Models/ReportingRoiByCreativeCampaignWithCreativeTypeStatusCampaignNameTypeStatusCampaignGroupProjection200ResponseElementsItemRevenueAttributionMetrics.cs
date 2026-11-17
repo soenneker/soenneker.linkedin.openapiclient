@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Metrics that represent LinkedIn Ads-attributed opportunities within the CRM (Customer Relationship Management) system. This field is only available through the attributedRevenueMetrics finder.Documented type: RevenueAttributionMetrics
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -40,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The average number of days to close a won deal attributed to LinkedIn marketing.(Opportunity length in days / closedWonOpportunities)Documented type: double</summary>
         public double? AverageDaysToClose { get => _explicitNullValueAverageDaysToClose; set { _explicitNullValueAverageDaysToClose = value; AdditionalData?.Remove("averageDaysToClose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageDaysToClose"); else _explicitNullProperties?.Remove("averageDaysToClose"); } }
         private double? _explicitNullValueAverageDaysToClose = default!;
-        /// <summary>The averageDealSizeInUsd property</summary>
+        /// <summary>Of closed-won opportunities, what&apos;s the average size of the deals Linkedin is driving.(revenueWon / closedWonOpportunities)Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AverageDealSizeInUsd { get => _explicitNullValueAverageDealSizeInUsd; set { _explicitNullValueAverageDealSizeInUsd = value; AdditionalData?.Remove("averageDealSizeInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageDealSizeInUsd"); else _explicitNullProperties?.Remove("averageDealSizeInUsd"); } }
@@ -50,13 +51,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string AverageDealSizeInUsd { get => _explicitNullValueAverageDealSizeInUsd; set { _explicitNullValueAverageDealSizeInUsd = value; AdditionalData?.Remove("averageDealSizeInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageDealSizeInUsd"); else _explicitNullProperties?.Remove("averageDealSizeInUsd"); } }
         private string _explicitNullValueAverageDealSizeInUsd = default!;
 #endif
-        /// <summary>Number of closed-won opportunities attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.Documented type: long</summary>
-        public long? ClosedWonOpportunities { get => _explicitNullValueClosedWonOpportunities; set { _explicitNullValueClosedWonOpportunities = value; AdditionalData?.Remove("closedWonOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closedWonOpportunities"); else _explicitNullProperties?.Remove("closedWonOpportunities"); } }
-        private long? _explicitNullValueClosedWonOpportunities = default!;
-        /// <summary>Number of open opportunities (CRM deals in progress) attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.This metric is available only when date range includes current day.Documented type: long</summary>
-        public long? OpenOpportunities { get => _explicitNullValueOpenOpportunities; set { _explicitNullValueOpenOpportunities = value; AdditionalData?.Remove("openOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openOpportunities"); else _explicitNullProperties?.Remove("openOpportunities"); } }
-        private long? _explicitNullValueOpenOpportunities = default!;
-        /// <summary>The opportunityAmountInUsd property</summary>
+        /// <summary>The closedWonOpportunities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsClosedWonOpportunities? ClosedWonOpportunities { get => _explicitNullValueClosedWonOpportunities; set { _explicitNullValueClosedWonOpportunities = value; AdditionalData?.Remove("closedWonOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closedWonOpportunities"); else _explicitNullProperties?.Remove("closedWonOpportunities"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsClosedWonOpportunities? _explicitNullValueClosedWonOpportunities = default!;
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsClosedWonOpportunities ClosedWonOpportunities { get => _explicitNullValueClosedWonOpportunities; set { _explicitNullValueClosedWonOpportunities = value; AdditionalData?.Remove("closedWonOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closedWonOpportunities"); else _explicitNullProperties?.Remove("closedWonOpportunities"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsClosedWonOpportunities _explicitNullValueClosedWonOpportunities = default!;
+#endif
+        /// <summary>The openOpportunities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsOpenOpportunities? OpenOpportunities { get => _explicitNullValueOpenOpportunities; set { _explicitNullValueOpenOpportunities = value; AdditionalData?.Remove("openOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openOpportunities"); else _explicitNullProperties?.Remove("openOpportunities"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsOpenOpportunities? _explicitNullValueOpenOpportunities = default!;
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsOpenOpportunities OpenOpportunities { get => _explicitNullValueOpenOpportunities; set { _explicitNullValueOpenOpportunities = value; AdditionalData?.Remove("openOpportunities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openOpportunities"); else _explicitNullProperties?.Remove("openOpportunities"); } }
+        private global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsOpenOpportunities _explicitNullValueOpenOpportunities = default!;
+#endif
+        /// <summary>Total revenue in USD of open opportunities (CRM deals in progress) attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.This metric is available only when date range includes current day.Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OpportunityAmountInUsd { get => _explicitNullValueOpportunityAmountInUsd; set { _explicitNullValueOpportunityAmountInUsd = value; AdditionalData?.Remove("opportunityAmountInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opportunityAmountInUsd"); else _explicitNullProperties?.Remove("opportunityAmountInUsd"); } }
@@ -72,7 +87,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Ratio of total revenue won attributed to LinkedIn marketing divided by LinkedIn ad spend. Attribution credit is distributed at a business level across multiple ad accounts. (revenueWonInUsd / costInUsd)Documented type: double</summary>
         public double? ReturnOnAdSpend { get => _explicitNullValueReturnOnAdSpend; set { _explicitNullValueReturnOnAdSpend = value; AdditionalData?.Remove("returnOnAdSpend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnOnAdSpend"); else _explicitNullProperties?.Remove("returnOnAdSpend"); } }
         private double? _explicitNullValueReturnOnAdSpend = default!;
-        /// <summary>The revenueWonInUsd property</summary>
+        /// <summary>Sales revenue in USD in customer&apos;s CRM that can be attributed to being generated through LinkedIn ads. Attribution credit is distributed at a business level across multiple ad accounts.Documented type: BigDecimal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RevenueWonInUsd { get => _explicitNullValueRevenueWonInUsd; set { _explicitNullValueRevenueWonInUsd = value; AdditionalData?.Remove("revenueWonInUsd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revenueWonInUsd"); else _explicitNullProperties?.Remove("revenueWonInUsd"); } }
@@ -109,8 +124,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "averageDaysToClose", n => { AverageDaysToClose = n.GetDoubleValue(); } },
                 { "averageDealSizeInUsd", n => { AverageDealSizeInUsd = n.GetStringValue(); } },
-                { "closedWonOpportunities", n => { ClosedWonOpportunities = n.GetLongValue(); } },
-                { "openOpportunities", n => { OpenOpportunities = n.GetLongValue(); } },
+                { "closedWonOpportunities", n => { ClosedWonOpportunities = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsClosedWonOpportunities>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsClosedWonOpportunities.CreateFromDiscriminatorValue); } },
+                { "openOpportunities", n => { OpenOpportunities = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsOpenOpportunities>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsOpenOpportunities.CreateFromDiscriminatorValue); } },
                 { "opportunityAmountInUsd", n => { OpportunityAmountInUsd = n.GetStringValue(); } },
                 { "opportunityWinRate", n => { OpportunityWinRate = n.GetDoubleValue(); } },
                 { "returnOnAdSpend", n => { ReturnOnAdSpend = n.GetDoubleValue(); } },
@@ -126,8 +141,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("averageDaysToClose", AverageDaysToClose);
             writer.WriteStringValue("averageDealSizeInUsd", AverageDealSizeInUsd);
-            writer.WriteLongValue("closedWonOpportunities", ClosedWonOpportunities);
-            writer.WriteLongValue("openOpportunities", OpenOpportunities);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsClosedWonOpportunities>("closedWonOpportunities", ClosedWonOpportunities);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetricsOpenOpportunities>("openOpportunities", OpenOpportunities);
             writer.WriteStringValue("opportunityAmountInUsd", OpportunityAmountInUsd);
             writer.WriteDoubleValue("opportunityWinRate", OpportunityWinRate);
             writer.WriteDoubleValue("returnOnAdSpend", ReturnOnAdSpend);

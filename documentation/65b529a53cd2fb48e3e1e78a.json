@@ -729,7 +729,7 @@
             "Values": []
           },
           {
-            "Text": "List of one or more identifiers to match the conversion user with objects containing idType and idValue. Currently supported idType are: SHA256_EMAIL LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID ACXIOM_ID PLAINTEXT_IP_ADDRESS SHA256_IP_ADDRESS GOOGLE_AID",
+            "Text": "List of one or more identifiers to match the conversion user with objects containing idType and idValue. Currently supported idType are: SHA256_EMAIL LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID ACXIOM_ID PLAINTEXT_IP_ADDRESS SHA256_IP_ADDRESS GOOGLE_AID SHA256_PHONE(available starting with the 202611 version)",
             "Links": [],
             "Values": [
               "SHA256_EMAIL",
@@ -737,7 +737,8 @@
               "ACXIOM_ID",
               "PLAINTEXT_IP_ADDRESS",
               "SHA256_IP_ADDRESS",
-              "GOOGLE_AID"
+              "GOOGLE_AID",
+              "SHA256_PHONE(available starting with the 202611 version)"
             ]
           }
         ],
@@ -925,6 +926,23 @@
           },
           {
             "Text": "User identifier for matching with Android devices. The Google Advertising ID (GAID or Android Ad ID) is a unique, user-resettable, and anonymous identifier for Android devices.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SHA256_PHONE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available starting with the 202611 version. The phone number of the contact associated with the conversion event, hashed using SHA256. Before hashing, normalize the phone number to E.164 format (country calling code plus national number), then remove the leading \u002B so that only digits remain. Apply SHA256 to this digits-only string and hex-encode the digest. The result must be exactly 64 hexadecimal characters. For example, (650) 555-1212 in the US becomes \u002B16505551212 in E.164 format and 16505551212 before hashing, producing e323ec626319ca94ee8bff2e4c87cf613be6ea19919ed1364124e16807ab3176.",
             "Links": [],
             "Values": []
           }
@@ -1123,7 +1141,7 @@
         "Streaming Conversion Events API Schema",
         "Input Data Validation"
       ],
-      "Text": "The conversion URN must be valid with format urn:lla:llaPartnerConversion:\u003Cid\u003E.\nThe authenticated user must have a valid user access role (other than VIEWER role) on the ad account where the conversion rule is created.\nThe userIds field in the input request must include at least one or more of the following unless other valid user identifier is provided:\n\nA valid userId with idType SHA256_EMAIL.\nA valid userId with idType LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID.\nA valid userId with idType ACXIOM_ID.\nA valid userId with idType PLAINTEXT_IP_ADDRESS.\nA valid userId with idType SHA256_IP_ADDRESS.\nA valid userId with idType GOOGLE_AID.\n\n\nIncluding userInfo in the input request can improve match rates. If included, for versions earlier than 202609, it must contain both firstName and lastName in plain text. Starting with the 202609 version, it must contain either firstName and lastName or hashedFirstName and hashedLastName.\nIf you include userInfo or externalIds or lead without any valid idType in userIds, you must use an empty list [] for userIds.\nconversionHappenedAt must be a valid timestamp representing the number of milliseconds since epoch time. The timestamp must be within the past 90 days.",
+      "Text": "The conversion URN must be valid with format urn:lla:llaPartnerConversion:\u003Cid\u003E.\nThe authenticated user must have a valid user access role (other than VIEWER role) on the ad account where the conversion rule is created.\nThe userIds field in the input request must include at least one or more of the following unless other valid user identifier is provided:\n\nA valid userId with idType SHA256_EMAIL.\nA valid userId with idType LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID.\nA valid userId with idType ACXIOM_ID.\nA valid userId with idType PLAINTEXT_IP_ADDRESS.\nA valid userId with idType SHA256_IP_ADDRESS.\nA valid userId with idType GOOGLE_AID.\nA valid userId with idType SHA256_PHONE, starting with the 202611 version.\n\n\nIncluding userInfo in the input request can improve match rates. If included, for versions earlier than 202609, it must contain both firstName and lastName in plain text. Starting with the 202609 version, it must contain either firstName and lastName or hashedFirstName and hashedLastName.\nIf you include userInfo or externalIds or lead without any valid idType in userIds, you must use an empty list [] for userIds.\nconversionHappenedAt must be a valid timestamp representing the number of milliseconds since epoch time. The timestamp must be within the past 90 days.",
       "Headers": [],
       "Rows": []
     }

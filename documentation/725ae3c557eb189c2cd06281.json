@@ -277,7 +277,7 @@
             "Values": []
           },
           {
-            "Text": "\u2022 By July 31, 2027, /rest/jobRequisitions is the sole path for creating and updating all private job requisitions. \u2022 /v2/atsApplications and /v2/simpleJobPostings receive no requisition traffic. Relevant documentation: RSC Job Requisition Migration Guide",
+            "Text": "\u2022 By July 31, 2028, /rest/jobRequisitions is the sole path for creating and updating all private job requisitions. \u2022 /v2/atsApplications and /v2/simpleJobPostings receive no requisition traffic. Relevant documentation: RSC Job Requisition Migration Guide",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide?view=li-lts-2026-04"
             ],
@@ -1268,7 +1268,7 @@
             "Values": []
           },
           {
-            "Text": "Confirm legacy endpoints are dark for requisitions after cutover. 1. Present traffic evidence that, after cutover, no private job requisitions are sent to /v2/atsApplications or /v2/simpleJobPostings. 2. Confirm this holds ahead of the July 31, 2027 deadline.",
+            "Text": "Confirm legacy endpoints are dark for requisitions after cutover. 1. Present traffic evidence that, after cutover, no private job requisitions are sent to /v2/atsApplications or /v2/simpleJobPostings. 2. Confirm this holds ahead of the July 31, 2028 deadline.",
             "Links": [],
             "Values": []
           },

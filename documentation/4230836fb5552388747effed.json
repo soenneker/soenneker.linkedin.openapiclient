@@ -1,0 +1,859 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/manage-boosts",
+  "Title": "Manage boosts",
+  "Version": "li-lms-2026-11",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/manage-boosts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Manage boosts",
+      "Anchor": "manage-boosts",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage boosts",
+      "Anchor": "manage-boosts",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage boosts",
+      "Anchor": "manage-boosts",
+      "SectionPath": [],
+      "Text": "Starting with version 202611, you can retrieve an existing boost, update its targeting and political declaration, or delete it through dedicated management resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Manage boosts",
+      "Anchor": "manage-boosts",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Context",
+        "Resource"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/memberBoostManage/{campaignId}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company Page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/organizationBoostManage/{campaignId}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage boosts",
+      "Anchor": "manage-boosts",
+      "SectionPath": [],
+      "Text": "Use a member OAuth access token and include Linkedin-Version: 202611 and X-Restli-Protocol-Version: 2.0.0. The path key is the numeric campaign ID, not a campaign URN. For example, use 222222222 from urn:li:sponsoredCampaign:222222222.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Operation",
+        "Member context",
+        "Company Page context"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Retrieve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_member_boost or rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_organization_boost or rw_organization_boost",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Update or delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_member_boost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_organization_boost",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "The authenticated member must be authorized to manage the boost in the selected context.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve a boost",
+      "Anchor": "retrieve-a-boost",
+      "SectionPath": [
+        "Retrieve a boost"
+      ],
+      "Text": "Use Status to look up the campaign and account URNs for the post. Post also returns them when the boost is created. Send a GET to the appropriate management resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Retrieve a boost",
+      "Anchor": "retrieve-a-boost",
+      "SectionPath": [
+        "Retrieve a boost"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "campaignId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The numeric campaign ID in the resource path.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL-encoded sponsored account URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL-encoded boosted ugcPost or share URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL-encoded sponsoring organization URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company Page GET only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Member request",
+      "Anchor": "member-request",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Member request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Member request",
+      "Anchor": "member-request",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Member request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0026targetPost=urn%3Ali%3AugcPost%3A1234567890\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Member request",
+      "Anchor": "member-request",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Member request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0026targetPost=urn%3Ali%3AugcPost%3A1234567890\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Page request",
+      "Anchor": "company-page-request",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Company Page request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Company Page request",
+      "Anchor": "company-page-request",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Company Page request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0026targetPost=urn%3Ali%3AugcPost%3A1234567890\u0026organization=urn%3Ali%3Aorganization%3A2414183\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Company Page request",
+      "Anchor": "company-page-request",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Company Page request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0026targetPost=urn%3Ali%3AugcPost%3A1234567890\u0026organization=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Response schema"
+      ],
+      "Text": "GET returns the boost record directly, without a value wrapper.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Response schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "campaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored campaign URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account billed for the boost.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The boosted post URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The current boost lifecycle state.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign objective.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign start and end timestamps in epoch milliseconds. An omitted end indicates no end date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The budget as a MoneyAmount with amount and currencyCode.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The November targeting criteria.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences?view=li-lms-2026-11#targeting-criteria"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "politicalIntent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The political declaration enum string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "forecast",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The available delivery forecast for the current configuration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Response schema"
+      ],
+      "Text": "For example, a response can contain:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Retrieve a boost",
+        "Response schema"
+      ],
+      "Text": "{\n  \u0022campaignUrn\u0022: \u0022urn:li:sponsoredCampaign:222222222\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022status\u0022: \u0022CURRENTLY_BOOSTED\u0022,\n  \u0022objectiveType\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  },\n  \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Send a Rest.li partial update using HTTP POST, X-RestLi-Method: PARTIAL_UPDATE, and a patch body. Both management resources require the account query parameter. Unlike Company Page GET, update doesn\u0027t require organization or targetPost query parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Only targetingCriteria and politicalIntent are editable. Budget, objective, schedule, and other system-managed fields aren\u0027t editable through this resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "When changing targeting, send the complete desired criteria rather than a delta from the current audience. Keep interface locale targeting consistent with the campaign\u0027s locale. Changing the criteria\u0027s name doesn\u0027t rename a saved audience; use Edit an audience for that operation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Preview the chosen targeting through Hydrate before saving and collect a political declaration when required. For EU targeting, display the mandatory consent using the required wording and presentation, clearly presented and checked by default before submitting the targeting change. Sending NOT_POLITICAL alone doesn\u0027t satisfy the consent requirement. An absent politicalDeclarationRequired field isn\u0027t a confirmed false. A successful management update isn\u0027t proof that a declaration isn\u0027t required. LinkedIn prohibits political advertising.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "The management patch uses a direct enum string, such as \u0022politicalIntent\u0022:\u0022NOT_POLITICAL\u0022, unlike Post\u0027s {\u0022value\u0022:\u0022NOT_POLITICAL\u0022} action parameter. Omitting politicalIntent preserves the current declaration. Don\u0027t delete targetingCriteria or politicalIntent with $delete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample update request",
+      "Anchor": "sample-update-request",
+      "SectionPath": [
+        "Update a boost",
+        "Sample update request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample update request",
+      "Anchor": "sample-update-request",
+      "SectionPath": [
+        "Update a boost",
+        "Sample update request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nX-RestLi-Method: PARTIAL_UPDATE\nContent-Type: application/json\n\n{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022targetingCriteria\u0022: {\n        \u0022includeAll\u0022: [\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n        ]\n      },\n      \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample update request",
+      "Anchor": "sample-update-request",
+      "SectionPath": [
+        "Update a boost",
+        "Sample update request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022targetingCriteria\u0022: {\n        \u0022includeAll\u0022: [\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n        ]\n      },\n      \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample update request",
+      "Anchor": "sample-update-request",
+      "SectionPath": [
+        "Update a boost",
+        "Sample update request"
+      ],
+      "Text": "For a Company Page boost, use /rest/organizationBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321 with the same headers and body. Replace the sample account, campaign, and targeting with the boost\u0027s actual values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample update request",
+      "Anchor": "sample-update-request",
+      "SectionPath": [
+        "Update a boost",
+        "Sample update request"
+      ],
+      "Text": "A successful update returns 204 No Content with no body. Retrieve the boost again to verify its saved configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a boost",
+      "Anchor": "delete-a-boost",
+      "SectionPath": [
+        "Delete a boost"
+      ],
+      "Text": "DELETE removes the boost; it doesn\u0027t pause it. Both resources require account. Company Page DELETE doesn\u0027t require an organization query parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete a boost",
+        "Sample delete request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete a boost",
+        "Sample delete request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/organizationBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete a boost",
+        "Sample delete request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/organizationBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete a boost",
+        "Sample delete request"
+      ],
+      "Text": "For a member boost, use /rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321 instead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample delete request",
+      "Anchor": "sample-delete-request",
+      "SectionPath": [
+        "Delete a boost",
+        "Sample delete request"
+      ],
+      "Text": "A successful deletion returns 204 No Content with no body. Authorization and campaign deletion restrictions still apply.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Earlier management flow",
+      "Anchor": "earlier-management-flow",
+      "SectionPath": [
+        "Earlier management flow"
+      ],
+      "Text": "Version 202610 uses Init with campaignUrn and accountUrn to load existing boost details, and memberBoostCampaign or organizationBoostCampaign to delete a boost. Those resources also remain in version 202611; the new management resources don\u0027t establish a removal date for them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API errors",
+      "Anchor": "api-errors",
+      "SectionPath": [
+        "API errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP status",
+        "Condition",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Malformed account, post, or organization input; malformed patch; or deletion of targetingCriteria or politicalIntent.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Correct the input described in the response. Use $set for editable fields.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The caller isn\u0027t authorized for the boost.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check the permission and member\u0027s access to the selected context and account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service can\u0027t find a referenced entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the campaign, account, and, for GET, post and organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A management precondition isn\u0027t met, or an entity conflicts with the operation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resolve the condition described in the service message before retrying.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service can\u0027t complete the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry later; contact Developer Support if it persists.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API errors",
+      "Anchor": "api-errors",
+      "SectionPath": [
+        "API errors"
+      ],
+      "Text": "Authentication and rate-limit failures can also occur before the management operation runs. Use a valid token and respect retry guidance in rate-limit responses.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

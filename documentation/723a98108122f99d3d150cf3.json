@@ -6,6 +6,7 @@
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -48,7 +49,7 @@
       "Section": "Create and Manage Campaigns",
       "Anchor": "create-and-manage-campaigns",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
@@ -774,8 +775,10 @@
             "Values": []
           },
           {
-            "Text": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.",
-            "Links": [],
+            "Text": "Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set. For LinkedIn Audience Network campaigns (connectedTelevisionOnly isn\u0027t true), publisher restriction files must be LAN lists. See Publisher restriction file validation.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#publisher-restriction-file-validation"
+            ],
             "Values": []
           },
           {
@@ -1609,8 +1612,10 @@
             "Values": []
           },
           {
-            "Text": "This field contains one or more files that have been uploaded by an advertiser. Each file contains a list of web domains/app store URLs. The advertiser can choose if they want to include or exclude this particular campaign from serving on those apps/websites. The API accepts only allowlists under include field and blocklists under exclude field.",
-            "Links": [],
+            "Text": "This field contains one or more files that have been uploaded by an advertiser. Each file contains a list of web domains/app store URLs. The advertiser can choose if they want to include or exclude this particular campaign from serving on those apps/websites. The API accepts only allowlists under include field and blocklists under exclude field. Each file\u0027s surface (LAN or CTV) must match the campaign, and the file must belong to the campaign\u0027s sponsored account. See Publisher restriction file validation.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#publisher-restriction-file-validation"
+            ],
             "Values": []
           }
         ]
@@ -1696,8 +1701,10 @@
             "Values": []
           },
           {
-            "Text": "List of publisher file IDs to whom ad requests cannot be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request cannot be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.",
-            "Links": [],
+            "Text": "List of publisher file IDs to whom ad requests cannot be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request cannot be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}. Only blocklists are accepted. Each file\u0027s surface must match the campaign. See Publisher restriction file validation.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#publisher-restriction-file-validation"
+            ],
             "Values": []
           }
         ],
@@ -1713,12 +1720,282 @@
             "Values": []
           },
           {
-            "Text": "List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.",
+            "Text": "List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}. Only allowlists are accepted. Each file\u0027s surface must match the campaign. See Publisher restriction file validation.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10\u0026tabs=http#publisher-restriction-file-validation"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher restriction file validation",
+      "Anchor": "publisher-restriction-file-validation",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Publisher restriction file validation"
+      ],
+      "Text": "Each publisher list has a surface: LAN (LinkedIn Audience Network), CTV (Connected TV), or legacy BOTH. Lists created before surfaces were introduced may have no surface and are treated as legacy. The surface is set when the list is created and can\u0027t be changed later. For details, see Manage Audience Restrictions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher restriction file validation",
+      "Anchor": "publisher-restriction-file-validation",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Publisher restriction file validation"
+      ],
+      "Text": "When you create or update a campaign, the API validates the files in offsitePreferences.publisherRestrictionFiles against the following rules. A request that breaks a rule fails with HTTP 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher restriction file validation",
+      "Anchor": "publisher-restriction-file-validation",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Publisher restriction file validation"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher restriction file validation",
+      "Anchor": "publisher-restriction-file-validation",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Publisher restriction file validation"
+      ],
+      "Text": "The surface field on publisher lists is introduced in API version 202611 (November 2026). The surface, account, and legacy-list rules for campaigns are enforced separately from that version: existing partner API accounts have a migration window that ends on December 15, 2026. After that date, the rules apply on every API version. Lists already attached to campaigns keep working. For details, see Recent Marketing API Changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Publisher restriction file validation",
+      "Anchor": "publisher-restriction-file-validation",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Publisher restriction file validation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Details",
+        "Error"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "List type matches the field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use allowlists only under include and blocklists only under exclude.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Surface matches the campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use CTV lists for campaigns where connectedTelevisionOnly is true. Use LAN lists for all other campaigns, including campaigns where offsiteDeliveryEnabled is false. The rule depends only on connectedTelevisionOnly, so any list in publisherRestrictionFiles is validated even when offsite delivery is turned off.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400 INVALID_VALUE_FOR_FIELD",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "List belongs to the campaign\u0027s account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Each list must belong to the campaign\u0027s sponsored account. For example, adding a list created under urn:li:sponsoredAccount:111 to a campaign whose account is urn:li:sponsoredAccount:222 fails with 400 INVALID_VALUE_FOR_FIELD. Access checks may reject the request before this validation runs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400 INVALID_VALUE_FOR_FIELD",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "No new legacy associations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "New associations with legacy lists (surface BOTH or no surface) are rejected, including on copied campaigns. An existing campaign can keep a legacy list already associated with it, as long as the campaign stays on the same account and the list stays in the same include or exclude role. After a legacy list is removed and the campaign is saved, it can\u0027t be added back.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400 INVALID_VALUE_FOR_FIELD",
             "Links": [],
             "Values": []
           }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Publisher restriction file validation",
+      "Anchor": "publisher-restriction-file-validation",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Publisher restriction file validation"
+      ],
+      "Text": "The campaign\u0027s account is required for this validation.\nOn an update or batch partial update, the API validates the campaign as it will be after the patch. If account and connectedTelevisionOnly are unchanged, only newly added lists are validated; otherwise all retained lists are revalidated.\nAPI versions that don\u0027t return the list surface still enforce surface matching using the surface saved on the list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request with an invalid publisher restriction file",
+      "Anchor": "sample-request-with-an-invalid-publisher-restriction-file",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample request with an invalid publisher restriction file"
+      ],
+      "Text": "The following request adds a LAN allowlist to a campaign where connectedTelevisionOnly is true. The request fails because the list\u0027s surface doesn\u0027t match the campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request with an invalid publisher restriction file",
+      "Anchor": "sample-request-with-an-invalid-publisher-restriction-file",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample request with an invalid publisher restriction file"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request with an invalid publisher restriction file",
+      "Anchor": "sample-request-with-an-invalid-publisher-restriction-file",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample request with an invalid publisher restriction file"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignID}\nX-RestLi-Method: PARTIAL_UPDATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request with an invalid publisher restriction file",
+      "Anchor": "sample-request-with-an-invalid-publisher-restriction-file",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample request with an invalid publisher restriction file"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022offsitePreferences\u0022: {\n            \u0022$set\u0022: {\n                \u0022publisherRestrictionFiles\u0022: {\n                    \u0022include\u0022: [\n                        \u0022urn:li:adPublisherFile:{lanAllowlistFileID}\u0022\n                    ]\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request with an invalid publisher restriction file",
+      "Anchor": "sample-request-with-an-invalid-publisher-restriction-file",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample request with an invalid publisher restriction file"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignID}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022offsitePreferences\u0022: {\n            \u0022$set\u0022: {\n                \u0022publisherRestrictionFiles\u0022: {\n                    \u0022include\u0022: [\n                        \u0022urn:li:adPublisherFile:{lanAllowlistFileID}\u0022\n                    ]\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error response for a surface, account, or legacy list error",
+      "Anchor": "sample-error-response-for-a-surface-account-or-legacy-list-error",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample error response for a surface, account, or legacy list error"
+      ],
+      "Text": "A list whose surface doesn\u0027t match the campaign, a list that belongs to a different sponsored account, or a new association with a legacy list returns an INVALID_VALUE_FOR_FIELD error. The response follows the error response schema. Check status and code to handle these errors. Don\u0027t parse the message text, which describes the failing list and can change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error response for a surface, account, or legacy list error",
+      "Anchor": "sample-error-response-for-a-surface-account-or-legacy-list-error",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample error response for a surface, account, or legacy list error"
+      ],
+      "Text": "{\n    \u0022status\u0022: 400,\n    \u0022code\u0022: \u0022INVALID_VALUE_FOR_FIELD\u0022,\n    \u0022message\u0022: \u0022{error message}\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample error response for a list type error",
+      "Anchor": "sample-error-response-for-a-list-type-error",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample error response for a list type error"
+      ],
+      "Text": "A blocklist under include, an allowlist under exclude, or a publisher file ID that can\u0027t be found returns the following error. This response has no code field. Identify it by status 400 and the message text.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample error response for a list type error",
+      "Anchor": "sample-error-response-for-a-list-type-error",
+      "SectionPath": [
+        "Campaign Schema",
+        "Offsite Preferences",
+        "Sample error response for a list type error"
+      ],
+      "Text": "{\n    \u0022status\u0022: 400,\n    \u0022message\u0022: \u0022Invalid publisher list Id or association. Use include field for allowlist and exclude field for blocklist.\u0022\n}",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "text",
@@ -5613,7 +5890,7 @@
         "Create a Campaign",
         "Connected Television Only Ad Campaigns"
       ],
-      "Text": "Optimization Target Type can\u0027t be manual bidding.\nObjective Type must be Brand Awareness.\nEnableAudienceNetwork (LAN Enabled-) must be true (REQUIRED.offsiteDelivery()).\nThe target audience must be locale-based, limited to the \u201CUS \u002B CA\u201D region, and the language must be English only.\nEnsure that only CampaignCreativeSelection.ROUND_ROBIN is enabled for CTV Campaign Creation.\nWhen creating or updating the CTV campaign, ensure that dynamic budget optimization is turned off for the associated campaign group.",
+      "Text": "Optimization Target Type can\u0027t be manual bidding.\nObjective Type must be Brand Awareness.\nEnableAudienceNetwork (LAN Enabled-) must be true (REQUIRED.offsiteDelivery()).\nThe target audience must be locale-based, limited to the \u201CUS \u002B CA\u201D region, and the language must be English only.\nEnsure that only CampaignCreativeSelection.ROUND_ROBIN is enabled for CTV Campaign Creation.\nWhen creating or updating the CTV campaign, ensure that dynamic budget optimization is turned off for the associated campaign group.\nPublisher restriction files must be CTV lists. See Publisher restriction file validation.",
       "Headers": [],
       "Rows": []
     },

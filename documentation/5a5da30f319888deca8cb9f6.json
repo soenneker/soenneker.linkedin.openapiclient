@@ -1,13 +1,16 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
-  "Title": "Boost - Overview",
+  "Title": "Boost overview",
   "Version": "li-lms-2026-10",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/manage-boosts",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
@@ -20,8 +23,8 @@
   "Blocks": [
     {
       "Kind": "text",
-      "Section": "Boost - Overview",
-      "Anchor": "boost---overview",
+      "Section": "Boost overview",
+      "Anchor": "boost-overview",
       "SectionPath": [],
       "Text": "Warning",
       "Headers": [],
@@ -29,17 +32,17 @@
     },
     {
       "Kind": "text",
-      "Section": "Boost - Overview",
-      "Anchor": "boost---overview",
+      "Section": "Boost overview",
+      "Anchor": "boost-overview",
       "SectionPath": [],
-      "Text": "Deprecation Notice:\nThe Marketing Version 202511 (Marketing November 2025) will be sunset on November 16, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Text": "Deprecation Notice:\nThe Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "Boost - Overview",
-      "Anchor": "boost---overview",
+      "Section": "Boost overview",
+      "Anchor": "boost-overview",
       "SectionPath": [],
       "Text": "Boost lets a member or a Company Page turn an existing, eligible post into a sponsored ad without leaving the native post-boosting flow. The Boost APIs support two separate identity contexts:",
       "Headers": [],
@@ -47,8 +50,8 @@
     },
     {
       "Kind": "text",
-      "Section": "Boost - Overview",
-      "Anchor": "boost---overview",
+      "Section": "Boost overview",
+      "Anchor": "boost-overview",
       "SectionPath": [],
       "Text": "Member Boost - Boosts a post owned by the authenticated member. See Member Post Boost.\nCompany Page Boost - Boosts a post on behalf of an organization the authenticated member can manage. See Organization Post Boost.",
       "Headers": [],
@@ -56,10 +59,19 @@
     },
     {
       "Kind": "text",
-      "Section": "Boost - Overview",
-      "Anchor": "boost---overview",
+      "Section": "Boost overview",
+      "Anchor": "boost-overview",
       "SectionPath": [],
       "Text": "Each context exposes a parallel set of REST.li actions and finders. Member Boost endpoints are prefixed member (for example, memberBoostInit) and Company Page Boost endpoints are prefixed organization (for example, organizationBoostInit).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Boost overview",
+      "Anchor": "boost-overview",
+      "SectionPath": [],
+      "Text": "The shared targeting and saved-audience resource uses account ownership rather than a member or organization path prefix.",
       "Headers": [],
       "Rows": []
     },
@@ -216,12 +228,194 @@
     },
     {
       "Kind": "text",
-      "Section": "Versioning",
-      "Anchor": "versioning",
+      "Section": "Endpoints",
+      "Anchor": "endpoints",
       "SectionPath": [
-        "Versioning"
+        "Endpoints"
       ],
-      "Text": "All Boost requests require the Linkedin-Version header set to 202610 or a higher available version, and the X-Restli-Protocol-Version: 2.0.0 header. For more information, see Versioning.",
+      "Text": "All paths below are relative to https://api.linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Endpoints",
+      "Anchor": "endpoints",
+      "SectionPath": [
+        "Endpoints"
+      ],
+      "Text": "",
+      "Headers": [
+        "Operation",
+        "Member path",
+        "Company Page path",
+        "Version"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/memberBoostStatus?q=boostStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/organizationBoostStatus?q=boostStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Init",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/memberBoostInit?action=init",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/organizationBoostInit?action=init",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Hydrate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/memberBoostHydrate?action=hydrate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/organizationBoostHydrate?action=hydrate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/memberBoostPost?action=post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/organizationBoostPost?action=post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Analytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/boostAnalytics?q=boostAnalytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Same path, with organization query parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/memberBoostManage/{campaignId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/organizationBoostManage/{campaignId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version 202611 onwards",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Saved audiences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/rest/boostTargetingCriteria and /rest/boostTargetingCriteria/{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Same account-owned resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version 202611 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Endpoints",
+      "Anchor": "endpoints",
+      "SectionPath": [
+        "Endpoints"
+      ],
+      "Text": "For management and audience operation permissions, refer to Manage boosts and Boost targeting and saved audiences.",
       "Headers": [],
       "Rows": []
     },
@@ -232,20 +426,94 @@
       "SectionPath": [
         "Versioning"
       ],
-      "Text": "Note",
+      "Text": "All Boost requests require the Linkedin-Version header set to 202610 or a higher available version, and the X-Restli-Protocol-Version: 2.0.0 header. The new resources require version 202611 or higher. For more information, see Versioning.",
       "Headers": [],
       "Rows": []
     },
     {
-      "Kind": "text",
-      "Section": "Versioning",
-      "Anchor": "versioning",
+      "Kind": "table",
+      "Section": "Version compatibility",
+      "Anchor": "version-compatibility",
       "SectionPath": [
-        "Versioning"
+        "Versioning",
+        "Version compatibility"
       ],
-      "Text": "Applications must be authorized and authenticated before they can fetch data from LinkedIn or get access to LinkedIn member data. To learn more about the OAuth flows, see Authentication.",
-      "Headers": [],
-      "Rows": []
+      "Text": "",
+      "Headers": [
+        "Capability",
+        "Version 202610",
+        "Version 202611 or higher"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Audience targeting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Suggested include.and.or and exclude.or criteria passed back unchanged.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom or saved includeAll and excludeAny criteria, with discovery through Init.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Billing setup",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Construct the account billing URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use Init\u0027s returned billingUrl intact, including attribution parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Existing boosts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Load details with Init; delete with the campaign resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve, update targeting and declarations, or delete through dedicated management resources.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Analytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flat post metrics and USD spend.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "New campaigns shape without flat metrics.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
     },
     {
       "Kind": "text",
@@ -266,6 +534,28 @@
         "Boost workflow"
       ],
       "Text": "Status - Call memberBoostStatus or organizationBoostStatus to confirm the post is eligible to be boosted and to learn why it is ineligible if not.\nInit - Call memberBoostInit or organizationBoostInit to resolve or create the sponsored account and billing configuration that will fund the boost.\nHydrate - Call memberBoostHydrate or organizationBoostHydrate to preview targeting, forecast, and pricing for a hypothetical budget and objective before committing.\nPost - Call memberBoostPost or organizationBoostPost to create the sponsored campaign group, campaign, and creative that make up the boost.\nAnalytics - Call boostAnalytics (see Boost Analytics) to retrieve performance metrics for member and organization posts that have already been boosted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to call the APIs",
+      "Anchor": "how-to-call-the-apis",
+      "SectionPath": [
+        "How to call the APIs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to call the APIs",
+      "Anchor": "how-to-call-the-apis",
+      "SectionPath": [
+        "How to call the APIs"
+      ],
+      "Text": "Applications must be authorized and authenticated before they can fetch data from LinkedIn or get access to LinkedIn member data. To learn more about the OAuth flows, see Authentication.",
       "Headers": [],
       "Rows": []
     },
@@ -311,7 +601,7 @@
         "How to call the APIs",
         "Member Boost flow"
       ],
-      "Text": "Authenticate. Obtain a 3-legged OAuth token for the member with r_member_boost and rw_member_boost.\nCheck eligibility. GET /rest/memberBoostStatus?q=boostStatus\u0026targetPosts=List({postUrn}).\nInitialize the boost. POST /rest/memberBoostInit. If the response returns billingConfigured: false, redirect the member to the billing setup page, then call init again before continuing.\nMake the first hydrate call to get the suggested configuration. POST /rest/memberBoostHydrate.\n\nUse the values from the init response in this first request.\nDon\u0027t set totalBudget in the first hydrate request.\nAfter the first hydrate call returns, the member can change only the objective, run schedule, and budget. Call hydrate each time one of these changes to get the latest forecast. Pass the suggested targetingCriteria into each later hydrate call, and stay within the boost limits (minimum spend) returned by the first hydrate call.\n\n\nCreate and launch the boost. POST /rest/memberBoostPost. Set callToActionLabel.value and callToActionTarget only when the goal is LEAD_GENERATION.\nRetrieve analytics. GET /rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List({postUrn}).\nManage the ad. Use this flow when a member wants to review or stop a boost they already started:\n\nFind the boost. Call GET /rest/memberBoostStatus for the post. If the post has a current or past boost, the status is CURRENTLY_BOOSTED, IN_REVIEW, SCHEDULED, or PREVIOUSLY_BOOSTED, and the response includes the campaign URN and account URN for that boost. You need both URNs for the next steps.\nLoad the boost details. Pass the campaign URN and account URN to POST /rest/memberBoostInit. The response contains the campaign\u0027s objective and run schedule, so you can show the member those settings.\nEnd the boost. When the member confirms they want to stop the boost, call DELETE /rest/memberBoostCampaign with the same campaign and account URNs.",
+      "Text": "Authenticate. Obtain a 3-legged OAuth token for the member with r_member_boost and rw_member_boost.\nCheck eligibility. GET /rest/memberBoostStatus?q=boostStatus\u0026targetPosts=List({encodedPostUrn}).\nInitialize the boost. POST /rest/memberBoostInit?action=init. If the response returns billingConfigured: false, redirect the member to the billing setup page, then call init again before continuing.\nMake the first hydrate call to get the suggested configuration. POST /rest/memberBoostHydrate?action=hydrate.\n\nUse the values from the init response in this first request.\nDon\u0027t set totalBudget in the first hydrate request.\nAfter the first hydrate call returns, the member can change only the objective, run schedule, and budget. Call hydrate each time one of these changes to get the latest forecast. Pass the suggested targetingCriteria into each later hydrate call, and stay within the boost limits (minimum spend) returned by the first hydrate call.\n\n\nCreate and launch the boost. POST /rest/memberBoostPost?action=post. Set callToActionLabel.value and callToActionTarget only when the goal is LEAD_GENERATION.\nRetrieve analytics. GET /rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List({postUrn}).\nManage the ad. Use this flow when a member wants to review or stop a boost they already started:\n\nFind the boost. Call GET /rest/memberBoostStatus for the post. If the post has a current or past boost, the status is CURRENTLY_BOOSTED, IN_REVIEW, SCHEDULED, or PREVIOUSLY_BOOSTED, and the response includes the campaign URN and account URN for that boost. You need both URNs for the next steps.\nLoad the boost details. Pass the campaign URN and account URN to POST /rest/memberBoostInit?action=init. The response contains the campaign\u0027s objective and run schedule, so you can show the member those settings.\nEnd the boost. When the member confirms they want to stop the boost, call DELETE /rest/memberBoostCampaign/{campaignId}?account={encodedAccountUrn} using the numeric campaign ID and URL-encoded account URN.",
       "Headers": [],
       "Rows": []
     },
@@ -359,7 +649,31 @@
         "How to call the APIs",
         "Company Page Boost flow"
       ],
-      "Text": "Authenticate. Obtain a 3-legged OAuth token for the page admin with r_organization_boost and rw_organization_boost.\nCheck eligibility. GET /rest/organizationBoostStatus?q=boostStatus\u0026organization={organizationUrn}\u0026targetPosts=List({postUrn}).\nInitialize the boost. POST /rest/organizationBoostInit. If the response returns billingConfigured: false, redirect the admin to the billing setup page, then call init again before continuing.\nMake the first hydrate call to get the suggested configuration. POST /rest/organizationBoostHydrate.\n\nUse the values from the init response in this first request.\nDon\u0027t set totalBudget in the first hydrate request.\nAfter the first hydrate call returns, the admin can change only the objective, run schedule, and budget. Call hydrate each time one of these changes. Pass the suggested targetingCriteria into each later hydrate call, and stay within the boost limits (minimum spend) returned by the first hydrate call.\n\n\nCreate and launch the boost. POST /rest/organizationBoostPost. Set callToActionLabel.value and callToActionTarget only when the goal is LEAD_GENERATION.\nRetrieve analytics. GET /rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List({postUrn}).\nManage the ad. Follow the same steps as the member flow, using the organization endpoints (organizationBoostStatus, organizationBoostInit, and organizationBoostCampaign).",
+      "Text": "Authenticate. Obtain a 3-legged OAuth token for the page admin with r_organization_boost and rw_organization_boost.\nCheck eligibility. GET /rest/organizationBoostStatus?q=boostStatus\u0026organization={organizationUrn}\u0026targetPosts=List({encodedPostUrn}).\nInitialize the boost. POST /rest/organizationBoostInit?action=init. If the response returns billingConfigured: false, redirect the admin to the billing setup page, then call init again before continuing.\nMake the first hydrate call to get the suggested configuration. POST /rest/organizationBoostHydrate?action=hydrate.\n\nUse the values from the init response in this first request.\nDon\u0027t set totalBudget in the first hydrate request.\nAfter the first hydrate call returns, the admin can change only the objective, run schedule, and budget. Call hydrate each time one of these changes. Pass the suggested targetingCriteria into each later hydrate call, and stay within the boost limits (minimum spend) returned by the first hydrate call.\n\n\nCreate and launch the boost. POST /rest/organizationBoostPost?action=post. Set callToActionLabel.value and callToActionTarget only when the goal is LEAD_GENERATION.\nRetrieve analytics. GET /rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List({postUrn})\u0026organization={encodedOrganizationUrn}.\nManage the ad. Follow the same steps as the member flow, using the organization endpoints (organizationBoostStatus, organizationBoostInit, and organizationBoostCampaign).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Page Boost flow",
+      "Anchor": "company-page-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Company Page Boost flow"
+      ],
+      "Text": "Authenticate with rw_member_boost for Member Boost or rw_organization_boost for Company Page Boost. The end-to-end creation workflow requires write permission; read-only scopes aren\u0027t sufficient for Init, Hydrate, or Post.\nCheck eligibility with GET /rest/memberBoostStatus?q=boostStatus\u0026targetPosts=List({encodedPostUrn}), or the organization equivalent GET /rest/organizationBoostStatus?q=boostStatus\u0026organization={organizationUrn}\u0026targetPosts=List({encodedPostUrn}) with the sponsoring organization.\nInitialize with POST /rest/memberBoostInit?action=init or POST /rest/organizationBoostInit?action=init. The organization action requires organization in its body. Optionally provide a locale with language and country/region.\nIf billingConfigured is false, open the returned billingUrl without rebuilding it or removing query parameters. After setup, call Init again and continue only when billing is configured. Your application never collects payment details.\nUse Init\u0027s targetingEntities to discover targeting options, or select an account-owned saved audience.\nPreview with POST /rest/memberBoostHydrate?action=hydrate or the organization equivalent POST /rest/organizationBoostHydrate?action=hydrate. Omit totalBudget on the first preview to obtain suggestions. Preview changes to audience, objective, schedule, or budget before creating the boost.\nCollect a political declaration when Hydrate returns politicalDeclarationRequired: true. An absent flag isn\u0027t a confirmed false; don\u0027t treat it as permission to skip an otherwise required declaration. For EU targeting, display the mandatory consent using the required wording and presentation, clearly presented and checked by default before submitting or activating the boost. Sending NOT_POLITICAL alone doesn\u0027t satisfy the consent requirement. LinkedIn prohibits political advertising.\nCreate with POST /rest/memberBoostPost?action=post or the organization equivalent POST /rest/organizationBoostPost?action=post. Supply previewed targeting and, when required, politicalIntent: {\u0022value\u0022:\u0022NOT_POLITICAL\u0022}. Use call-to-action fields only for LEAD_GENERATION goal (callToActionLabel.value and callToActionTarget).\nRetrieve analytics with GET /rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List({postUrn}). Include organization for Company Page analytics.\nManage the boost using the returned account and campaign: GET details, POST a partial update to targeting or political declaration, or DELETE after user confirmation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Page Boost flow",
+      "Anchor": "company-page-boost-flow",
+      "SectionPath": [
+        "How to call the APIs",
+        "Company Page Boost flow"
+      ],
+      "Text": "Member Boost still rejects a start on a future UTC day. Company Page Boost supports future starts. Both require start and end timestamps covering at least two UTC calendar days, counted inclusively.",
       "Headers": [],
       "Rows": []
     },
@@ -383,6 +697,30 @@
         "Check boost status on a Company Page"
       ],
       "Text": "The Boost button on the Page posts tab reflects the status returned by organizationBoostStatus. A disabled button indicates the post can\u0027t be boosted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage boost targeting",
+      "Anchor": "",
+      "SectionPath": [
+        "Comparison with native boost experience",
+        "Manage boost targeting"
+      ],
+      "Text": "The Audience dropdown lets the advertiser select a suggested or saved audience. Retrieve saved audiences with GET /rest/boostTargetingCriteria?q=account\u0026account={encodedAccountUrn}, then pass the selected targeting criteria to the hydrate endpoint to refresh the preview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage boost targeting",
+      "Anchor": "",
+      "SectionPath": [
+        "Comparison with native boost experience",
+        "Manage boost targeting"
+      ],
+      "Text": "Selecting Create audience opens the targeting editor, where the advertiser can name an audience and choose attributes to include or exclude. Use Init\u0027s targetingEntities to populate the targeting controls, and save the audience with POST /rest/boostTargetingCriteria. See Boost targeting and saved audiences for discovery, creation, and editing details.",
       "Headers": [],
       "Rows": []
     },

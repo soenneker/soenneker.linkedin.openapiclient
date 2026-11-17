@@ -35,7 +35,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<string> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
         private List<string> _explicitNullValueExclude = default!;
 #endif
-        /// <summary>List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}.Documented type: AdPublisherFileUrn[], default=&quot;[]&quot;</summary>
+        /// <summary>List of publisher file IDs to whom ad requests should be served. These file IDs are references to the file that contains a list of web sites/app store URLs where an ad request should be served. Example: urn:li:adPublisherFile:{fileID}, urn:li:adPublisherFile:{fileID2}. Only allowlists are accepted. Each file&apos;s surface must match the campaign. See Publisher restriction file validation.Documented type: AdPublisherFileUrn[], default=&quot;[]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
