@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
   "Title": "Activities",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -516,14 +516,14 @@
           {
             "Text": "The requested URN is not an ActivityUrn.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
           {
             "Text": "ActivityUrn must match regex urn:li:activity:[0-9]\u002B.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           }

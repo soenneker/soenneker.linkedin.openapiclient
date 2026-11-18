@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
   "Title": "Organization Authorization API",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -145,8 +145,8 @@
           {
             "Text": "union[approved: Approved,denied: Denied]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#approved",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#denied"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#approved",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#denied"
             ],
             "Values": []
           },
@@ -192,7 +192,7 @@
           {
             "Text": "SubjectAndScope",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#subjectandscope"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#subjectandscope"
             ],
             "Values": []
           },
@@ -246,28 +246,28 @@
           {
             "Text": "The action requested, such as \u0022Editing Post XYZ\u0022. It can be one of the following values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
             ],
             "Values": [
               "businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)",
@@ -350,7 +350,7 @@
           {
             "Text": "SubjectAndScope",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#subjectandscope"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#subjectandscope"
             ],
             "Values": []
           },
@@ -404,28 +404,28 @@
           {
             "Text": "The action requested, such as \u0022Editing Post XYZ\u0022. It can be one of below values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
             ],
             "Values": [
               "businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)",
@@ -491,28 +491,28 @@
           {
             "Text": "The action requested, such as \u0022Editing Post XYZ\u0022. It can be one of below values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
             ],
             "Values": [
               "businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)",
@@ -573,7 +573,7 @@
           {
             "Text": "AuthorizationRenderingContext",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#authorizationrenderingcontext"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#authorizationrenderingcontext"
             ],
             "Values": []
           },
@@ -786,14 +786,14 @@
           {
             "Text": "Union [ enterpriseProfile: EnterpriseProfileUrn,member: PersonUrn,enterpriseMember: EnterpriseMember]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#enterprisemember"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#enterprisemember"
             ],
             "Values": []
           },
           {
             "Text": "Represents the subject that can attempt to perform an action on a target. It can be of type urn:li:person:{ID},urn:li:enterpriseProfile:(urn:li:enterpriseAccount:{ID_1},{ID_2}) (see below table for more details on EnterpriseProfileUrn) or EnterpriseMember.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#enterprisemember"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#enterprisemember"
             ],
             "Values": []
           },
@@ -894,8 +894,8 @@
           {
             "Text": "Union[ businessManagerScope: BusinessManagerScope, enterprisePlatformScope: EnterprisePlatformScope ]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerscope",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#enterpriseplatformscope"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#businessmanagerscope",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#enterpriseplatformscope"
             ],
             "Values": []
           },
@@ -1381,7 +1381,7 @@
           {
             "Text": "URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-11#urns"
             ],
             "Values": []
           },
@@ -2197,7 +2197,7 @@
           {
             "Text": "OrganizationAuthorizationKey",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationkey"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationkey"
             ],
             "Values": []
           },
@@ -2324,7 +2324,7 @@
           {
             "Text": "List of OrganizationAuthorizationKey",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationkey"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationkey"
             ],
             "Values": []
           },
@@ -2478,7 +2478,7 @@
           {
             "Text": "List of OrganizationAuthorizationActionCriteria",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationactioncriteria"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationactioncriteria"
             ],
             "Values": []
           },

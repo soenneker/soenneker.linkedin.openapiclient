@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics",
   "Title": "Organizational Page Content Analytics",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -201,7 +201,7 @@
           {
             "Text": "URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-11#urns"
             ],
             "Values": []
           },
@@ -260,7 +260,7 @@
           {
             "Text": "OrganizationalPageContentAnalyticsMetric",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsmetric"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsmetric"
             ],
             "Values": []
           },
@@ -284,7 +284,7 @@
           {
             "Text": "OrganizationalPageContentAnalyticsGesture",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsgesture"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsgesture"
             ],
             "Values": []
           },
@@ -327,7 +327,7 @@
           {
             "Text": "Array[OrganizationalPageAnalyticsDimension]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsdimension"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsdimension"
             ],
             "Values": []
           },
@@ -370,7 +370,7 @@
           {
             "Text": "TimeIntervals",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#timeintervals"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#timeintervals"
             ],
             "Values": []
           },
@@ -394,7 +394,7 @@
           {
             "Text": "OrganizationalPageAnalyticsDimension",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsdimension"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsdimension"
             ],
             "Values": []
           },
@@ -418,7 +418,7 @@
           {
             "Text": "OrganizationalPageAnalyticsValue",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsvalue"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsvalue"
             ],
             "Values": []
           },
@@ -461,7 +461,7 @@
           {
             "Text": "TimeRange",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#timerange"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#timerange"
             ],
             "Values": []
           },
@@ -695,7 +695,7 @@
           {
             "Text": "contentAnalyticsValue: OrganizationalPageContentAnalyticsValue",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsvalue"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsvalue"
             ],
             "Values": []
           },
@@ -834,7 +834,7 @@
           {
             "Text": "URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-11#urns"
             ],
             "Values": []
           },
@@ -858,7 +858,7 @@
           {
             "Text": "URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-11#urns"
             ],
             "Values": []
           },
@@ -1007,7 +1007,7 @@
           {
             "Text": "URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-11#urns"
             ],
             "Values": []
           },
@@ -1068,7 +1068,7 @@
           {
             "Text": "array[OrganizationalPageDimensionFilter]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
             ],
             "Values": []
           },
@@ -1310,7 +1310,7 @@
           {
             "Text": "URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-11#urns"
             ],
             "Values": []
           },
@@ -1379,14 +1379,14 @@
           {
             "Text": "TimeIntervals",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#timeintervals"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#timeintervals"
             ],
             "Values": []
           },
           {
             "Text": "Time interval for which the analytics is to be fetched. Please note that if WEEK is passed in as the granularity in the time interval sponsored value cannot be broken down by weeks. In this case the value of the whole time range will be returned.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsvalue"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsvalue"
             ],
             "Values": []
           },
@@ -1410,7 +1410,7 @@
           {
             "Text": "array[OrganizationalPageDimensionFilter]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
             ],
             "Values": []
           },
@@ -1591,7 +1591,7 @@
           {
             "Text": "URN",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-11#urns"
             ],
             "Values": []
           },
@@ -1652,7 +1652,7 @@
           {
             "Text": "array[OrganizationalPageDimensionFilter]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
             ],
             "Values": []
           },

@@ -18763,7 +18763,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -48488,7 +48488,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -49775,7 +49775,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -75788,7 +75788,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -76144,7 +76144,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -76338,7 +76338,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -115631,7 +115631,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -117823,7 +117823,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -118087,7 +118087,7 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "default": "202610"
+              "default": "202611"
             },
             "examples": {
               "example1": {
@@ -515141,8 +515141,7 @@
     }
   ],
   "x-documentation-versions": [
-    "li-dma-data-portability-2026-08",
-    "li-lms-2026-10",
+    "li-dma-data-portability-2026-11",
     "li-lms-2026-11",
     "li-lts-2026-04",
     "li-lts-unversioned"
@@ -528673,7 +528672,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api#response-schema"
     },
-    "LearnMarketingCommunityManagementBoostBoostAnalyticsMoneyamountObjectSchema": {
+    "LearnMarketingCommunityManagementBoostBoostAnalytics": {
       "required": [
         "amount",
         "currencyCode"
@@ -528689,7 +528688,7 @@
           "description": "ISO currency code. The current response value is USD.\n\nDocumented type: String\n\nRequirement: Yes"
         }
       },
-      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#moneyamount-object-schema"
+      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#"
     },
     "LearnMarketingCommunityManagementBoostBoostAnalyticsQueryParameters": {
       "required": [

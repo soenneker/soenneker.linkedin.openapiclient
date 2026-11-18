@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
   "Title": "InstantRepost API",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -292,7 +292,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-11\u0026tabs=http#auditstamp"
             ],
             "Values": []
           },
@@ -316,7 +316,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-11\u0026tabs=http#auditstamp"
             ],
             "Values": []
           },
@@ -656,7 +656,7 @@
           {
             "Text": "The post URN (urn:li:share or urn:li:ugcPost) for which you want to retrieve reposts. To learn more about posts and how to obtain post URNs, see Posts API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -828,7 +828,7 @@
           {
             "Text": "Set of instantRepostUrns to fetch the instantReposts. Only accepts instantRepostUrns",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-08\u0026tabs=http#instantrepost-urns"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-11\u0026tabs=http#instantrepost-urns"
             ],
             "Values": []
           },

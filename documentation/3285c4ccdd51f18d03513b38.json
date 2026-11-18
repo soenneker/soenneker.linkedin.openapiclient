@@ -1,11 +1,13 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
   "Title": "Boost analytics",
-  "Version": "li-lms-2026-10",
+  "Version": "li-lms-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/manage-boosts",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost",
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
@@ -414,7 +416,7 @@
           {
             "Text": "Object (MoneyAmount)",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics?view=li-lms-2026-10\u0026tabs=http#moneyamount-object-schema"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics?view=li-lms-2026-11\u0026tabs=http#moneyamount-object-schema"
             ],
             "Values": []
           },
@@ -633,7 +635,7 @@
     {
       "Kind": "table",
       "Section": "MoneyAmount object schema",
-      "Anchor": "moneyamount-object-schema",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve boost analytics",
         "MoneyAmount object schema"
@@ -695,7 +697,7 @@
     {
       "Kind": "text",
       "Section": "Sample request for member post analytics",
-      "Anchor": "sample-request-for-member-post-analytics",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for member post analytics"
@@ -707,7 +709,7 @@
     {
       "Kind": "text",
       "Section": "Sample request for member post analytics",
-      "Anchor": "sample-request-for-member-post-analytics",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for member post analytics"
@@ -719,7 +721,7 @@
     {
       "Kind": "code",
       "Section": "Sample request for member post analytics",
-      "Anchor": "sample-request-for-member-post-analytics",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for member post analytics"
@@ -731,7 +733,7 @@
     {
       "Kind": "code",
       "Section": "Sample request for member post analytics",
-      "Anchor": "sample-request-for-member-post-analytics",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for member post analytics"
@@ -743,7 +745,7 @@
     {
       "Kind": "code",
       "Section": "Sample request for member post analytics",
-      "Anchor": "sample-request-for-member-post-analytics",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for member post analytics"
@@ -755,7 +757,7 @@
     {
       "Kind": "text",
       "Section": "Sample request for organization post analytics",
-      "Anchor": "",
+      "Anchor": "sample-request-for-organization-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
@@ -767,7 +769,7 @@
     {
       "Kind": "text",
       "Section": "Sample request for organization post analytics",
-      "Anchor": "",
+      "Anchor": "sample-request-for-organization-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
@@ -779,7 +781,7 @@
     {
       "Kind": "code",
       "Section": "Sample request for organization post analytics",
-      "Anchor": "",
+      "Anchor": "sample-request-for-organization-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
@@ -791,7 +793,7 @@
     {
       "Kind": "code",
       "Section": "Sample request for organization post analytics",
-      "Anchor": "",
+      "Anchor": "sample-request-for-organization-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
@@ -803,7 +805,7 @@
     {
       "Kind": "text",
       "Section": "Sample request for organization post analytics",
-      "Anchor": "",
+      "Anchor": "sample-request-for-organization-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
@@ -815,7 +817,7 @@
     {
       "Kind": "code",
       "Section": "Sample request for organization post analytics",
-      "Anchor": "",
+      "Anchor": "sample-request-for-organization-post-analytics",
       "SectionPath": [
         "Retrieve boost analytics",
         "Sample request for organization post analytics"

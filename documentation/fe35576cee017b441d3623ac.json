@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
   "Title": "Social Metadata API",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -193,7 +193,7 @@
           {
             "Text": "ThreadState",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#threadstate"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-11\u0026tabs=http#threadstate"
             ],
             "Values": []
           },
@@ -217,7 +217,7 @@
           {
             "Text": "CommentSummary",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#commentsummary"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-11\u0026tabs=http#commentsummary"
             ],
             "Values": []
           },
@@ -241,7 +241,7 @@
           {
             "Text": "map[string, ReactionSummary]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#reactionsummary"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-11\u0026tabs=http#reactionsummary"
             ],
             "Values": []
           },
@@ -418,7 +418,7 @@
           {
             "Text": "ReactionType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#reactiontype"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-11\u0026tabs=http#reactiontype"
             ],
             "Values": []
           },
@@ -685,7 +685,7 @@
           {
             "Text": "Set of URNs of specific feed content to fetch the Social Metadata for. Only accepts ActivityUrn, ShareUrn, UserGeneratedContentPostUrn, CommentUrn.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },

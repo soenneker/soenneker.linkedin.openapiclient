@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/events",
   "Title": "Events",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -428,7 +428,7 @@
           {
             "Text": "GeoUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/geo.md?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/geo.md?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -518,14 +518,14 @@
           {
             "Text": "VersionedLeadGenFormUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/lead-gen/lead-gen-form.md?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/lead-gen/lead-gen-form.md?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
           {
             "Text": "VersionedLeadGenFormUrn of the lead gen form associated with the event.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/lead-gen/lead-gen-form.md?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/lead-gen/lead-gen-form.md?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics",
   "Title": "Creator Analytics",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -236,7 +236,7 @@
           {
             "Text": "DateRange",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#daterange"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#daterange"
             ],
             "Values": []
           },
@@ -260,14 +260,14 @@
           {
             "Text": "DemographicDimension",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#demographicdimension"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#demographicdimension"
             ],
             "Values": []
           },
           {
             "Text": "The dimension of the analytics data point. The field is present only if the requested queryType is ACTOR_DEMOGRAPHICS",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#query-type"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#query-type"
             ],
             "Values": []
           },
@@ -286,7 +286,7 @@
           {
             "Text": "PercentageChange",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#percentagechange"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#percentagechange"
             ],
             "Values": []
           },
@@ -342,7 +342,7 @@
           {
             "Text": "Date",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#date"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#date"
             ],
             "Values": []
           },
@@ -366,7 +366,7 @@
           {
             "Text": "Date",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#date"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#date"
             ],
             "Values": []
           },
@@ -553,12 +553,12 @@
           {
             "Text": "Represents the URN value of the demographic dimension. The URN type is determined by the dimension type.ORGANIZATION: OrganizationUrnINDUSTRY: IndustryUrnTITLE: TitleUrn or SuperTitleUrnSENIORITY: SeniorityUrnREGION: GeoUrnORGANIZATION_STAFF_COUNT_RANGE: StaffCountRangeUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry?view=li-dma-data-portability-2026-08",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles?view=li-dma-data-portability-2026-08",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/super-titles?view=li-dma-data-portability-2026-08",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority?view=li-dma-data-portability-2026-08",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-11",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry?view=li-dma-data-portability-2026-11",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles?view=li-dma-data-portability-2026-11",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/super-titles?view=li-dma-data-portability-2026-11",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority?view=li-dma-data-portability-2026-11",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo?view=li-dma-data-portability-2026-11"
             ],
             "Values": [
               "ORGANIZATION: OrganizationUrn",
@@ -643,8 +643,8 @@
           {
             "Text": "Represents what the percentage change value is calculated against. Possible values are PREVIOUS_PERIOD: indicates the percentage is calculated against the previous period of the date range in CreatorAnalyticsDataPoint. For example, if the dateRange in the CreatorAnalyticsDataPoint is 7 days from 2020-01-08 to 2020-01-14, the percentage is calculated against the previous period with the same number of days: 2020-01-01 to 2020-01-07",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#creatoranalyticsdatapoint",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#creatoranalyticsdatapoint"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#creatoranalyticsdatapoint",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#creatoranalyticsdatapoint"
             ],
             "Values": [
               "PREVIOUS_PERIOD: indicates the percentage is calculated against the previous period of the date range in CreatorAnalyticsDataPoint. For example, if the dateRange in the CreatorAnalyticsDataPoint is 7 days from 2020-01-08 to 2020-01-14, the percentage is calculated against the previous period with the same number of days: 2020-01-01 to 2020-01-07"

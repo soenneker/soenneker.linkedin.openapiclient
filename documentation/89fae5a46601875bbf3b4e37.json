@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/content-series",
   "Title": "Content Series",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -142,7 +142,7 @@
           {
             "Text": "PersonUrn/OrganizationUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -171,7 +171,7 @@
           {
             "Text": "URN of the last published issue attached to this series. Will be null if series has no issues. Can be resolved via the Original Articles API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles?view=li-dma-data-portability-2026-08#retrieve-original-article-data"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles?view=li-dma-data-portability-2026-11#retrieve-original-article-data"
             ],
             "Values": []
           },
@@ -371,7 +371,7 @@
           {
             "Text": "The URNs of the issues attached to this series. Can be resolved via the Original Articles API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles?view=li-dma-data-portability-2026-08#retrieve-original-article-data"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles?view=li-dma-data-portability-2026-11#retrieve-original-article-data"
             ],
             "Values": []
           },

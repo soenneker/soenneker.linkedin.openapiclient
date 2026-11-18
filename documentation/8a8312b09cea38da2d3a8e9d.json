@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost",
   "Title": "Organization post boost",
-  "Version": "li-lms-2026-10",
+  "Version": "li-lms-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics",
@@ -297,7 +297,7 @@
           {
             "Text": "The post\u0027s current boost status. Values: ELIGIBLE, INELIGIBLE, IN_REVIEW, SCHEDULED, CURRENTLY_BOOSTED, PREVIOUSLY_BOOSTED. See Boost status lifecycle.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-10\u0026tabs=http#boost-status-lifecycle"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-11\u0026tabs=http#boost-status-lifecycle"
             ],
             "Values": []
           },
@@ -512,7 +512,7 @@
           {
             "Text": "The post can\u0027t be boosted. Check ineligibleReason for the cause. See Ineligible reason values.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-10\u0026tabs=http#ineligible-reason-values"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-11\u0026tabs=http#ineligible-reason-values"
             ],
             "Values": []
           }
@@ -1377,7 +1377,7 @@
     {
       "Kind": "text",
       "Section": "Sample request",
-      "Anchor": "sample-request-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1389,7 +1389,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1401,7 +1401,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1413,7 +1413,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1425,7 +1425,7 @@
     {
       "Kind": "code",
       "Section": "Sample response",
-      "Anchor": "sample-response-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
@@ -1437,7 +1437,7 @@
     {
       "Kind": "text",
       "Section": "Sample response",
-      "Anchor": "sample-response-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
@@ -1449,7 +1449,7 @@
     {
       "Kind": "text",
       "Section": "Sample response",
-      "Anchor": "sample-response-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
@@ -1461,7 +1461,7 @@
     {
       "Kind": "text",
       "Section": "Sample response",
-      "Anchor": "sample-response-1",
+      "Anchor": "",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
@@ -1473,7 +1473,7 @@
     {
       "Kind": "table",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1517,7 +1517,7 @@
           {
             "Text": "The optional targeting discovery response.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences?view=li-lms-2026-10#discover-targeting-options"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences?view=li-lms-2026-11#discover-targeting-options"
             ],
             "Values": []
           }
@@ -1527,7 +1527,7 @@
     {
       "Kind": "text",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1539,7 +1539,7 @@
     {
       "Kind": "text",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1551,7 +1551,7 @@
     {
       "Kind": "code",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1563,7 +1563,7 @@
     {
       "Kind": "code",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1575,7 +1575,7 @@
     {
       "Kind": "text",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1587,7 +1587,7 @@
     {
       "Kind": "code",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1599,7 +1599,7 @@
     {
       "Kind": "text",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -1611,7 +1611,7 @@
     {
       "Kind": "text",
       "Section": "November initialization and billing",
-      "Anchor": "",
+      "Anchor": "november-initialization-and-billing",
       "SectionPath": [
         "Initialize a boost",
         "November initialization and billing"
@@ -2258,7 +2258,7 @@
           {
             "Text": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-10\u0026tabs=http#targeting-criteria-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-11\u0026tabs=http#targeting-criteria-object"
             ],
             "Values": []
           },
@@ -2859,7 +2859,7 @@
     {
       "Kind": "text",
       "Section": "Sample request",
-      "Anchor": "sample-request-2",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
         "Sample request"
@@ -2871,7 +2871,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-2",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
         "Sample request"
@@ -2883,7 +2883,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-2",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
         "Sample request"
@@ -2895,7 +2895,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-2",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
         "Sample request"
@@ -2907,7 +2907,7 @@
     {
       "Kind": "code",
       "Section": "Sample response",
-      "Anchor": "sample-response-2",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
         "Sample response"
@@ -2919,7 +2919,7 @@
     {
       "Kind": "text",
       "Section": "Sample response",
-      "Anchor": "sample-response-2",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
         "Sample response"
@@ -2931,7 +2931,7 @@
     {
       "Kind": "table",
       "Section": "Sample response",
-      "Anchor": "sample-response-2",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
         "Sample response"
@@ -2971,7 +2971,7 @@
     {
       "Kind": "text",
       "Section": "November preview request",
-      "Anchor": "",
+      "Anchor": "november-preview-request",
       "SectionPath": [
         "Preview a boost",
         "November preview request"
@@ -2983,7 +2983,7 @@
     {
       "Kind": "text",
       "Section": "November preview request",
-      "Anchor": "",
+      "Anchor": "november-preview-request",
       "SectionPath": [
         "Preview a boost",
         "November preview request"
@@ -2995,7 +2995,7 @@
     {
       "Kind": "code",
       "Section": "November preview request",
-      "Anchor": "",
+      "Anchor": "november-preview-request",
       "SectionPath": [
         "Preview a boost",
         "November preview request"
@@ -3007,7 +3007,7 @@
     {
       "Kind": "code",
       "Section": "November preview request",
-      "Anchor": "",
+      "Anchor": "november-preview-request",
       "SectionPath": [
         "Preview a boost",
         "November preview request"
@@ -3019,7 +3019,7 @@
     {
       "Kind": "text",
       "Section": "November preview request",
-      "Anchor": "",
+      "Anchor": "november-preview-request",
       "SectionPath": [
         "Preview a boost",
         "November preview request"
@@ -3512,7 +3512,7 @@
           {
             "Text": "Audience for the boost. On 202610, pass the suggested criteria back unchanged. On 202611, use the selected criteria previewed by Hydrate. See Targeting criteria object.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-10\u0026tabs=http#targeting-criteria-object"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/organization-post-boost?view=li-lms-2026-11\u0026tabs=http#targeting-criteria-object"
             ],
             "Values": []
           },
@@ -3809,7 +3809,7 @@
     {
       "Kind": "text",
       "Section": "Sample request",
-      "Anchor": "sample-request-3",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
         "Sample request"
@@ -3821,7 +3821,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-3",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
         "Sample request"
@@ -3833,7 +3833,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-3",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
         "Sample request"
@@ -3845,7 +3845,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-3",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
         "Sample request"
@@ -3857,7 +3857,7 @@
     {
       "Kind": "text",
       "Section": "November create request",
-      "Anchor": "",
+      "Anchor": "november-create-request",
       "SectionPath": [
         "Create a boost",
         "November create request"
@@ -3869,7 +3869,7 @@
     {
       "Kind": "text",
       "Section": "November create request",
-      "Anchor": "",
+      "Anchor": "november-create-request",
       "SectionPath": [
         "Create a boost",
         "November create request"
@@ -3881,7 +3881,7 @@
     {
       "Kind": "text",
       "Section": "November create request",
-      "Anchor": "",
+      "Anchor": "november-create-request",
       "SectionPath": [
         "Create a boost",
         "November create request"
@@ -3893,7 +3893,7 @@
     {
       "Kind": "text",
       "Section": "November create request",
-      "Anchor": "",
+      "Anchor": "november-create-request",
       "SectionPath": [
         "Create a boost",
         "November create request"
@@ -3905,7 +3905,7 @@
     {
       "Kind": "code",
       "Section": "November create request",
-      "Anchor": "",
+      "Anchor": "november-create-request",
       "SectionPath": [
         "Create a boost",
         "November create request"
@@ -3917,7 +3917,7 @@
     {
       "Kind": "code",
       "Section": "November create request",
-      "Anchor": "",
+      "Anchor": "november-create-request",
       "SectionPath": [
         "Create a boost",
         "November create request"
@@ -3929,7 +3929,7 @@
     {
       "Kind": "text",
       "Section": "November create request",
-      "Anchor": "",
+      "Anchor": "november-create-request",
       "SectionPath": [
         "Create a boost",
         "November create request"

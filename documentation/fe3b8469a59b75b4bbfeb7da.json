@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles",
   "Title": "Original Articles",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -174,7 +174,7 @@
           {
             "Text": "The ActivityUrn of the original article.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -198,7 +198,7 @@
           {
             "Text": "The ArticleUrn of the original article, valid only after the article has been published. Can be resolved via the DMA Ingested Content Summaries API.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -217,7 +217,7 @@
           {
             "Text": "PersonUrn / OrganizationUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -664,7 +664,7 @@
           {
             "Text": "The ugcPost created when the article is initially published. Can be resolved via the DMA Posts API\u0027s BATCH_GET.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts?view=li-dma-data-portability-2026-08#batch_get"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts?view=li-dma-data-portability-2026-11#batch_get"
             ],
             "Values": []
           },

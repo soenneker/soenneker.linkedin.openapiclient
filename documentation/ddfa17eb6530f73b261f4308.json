@@ -1,0 +1,137 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
+  "Title": "Talent OpenAPI specification downloads",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Talent OpenAPI specification downloads",
+      "Anchor": "talent-openapi-specification-downloads",
+      "SectionPath": [],
+      "Text": "As a LinkedIn partner, download the Talent OpenAPI specifications below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Download a specification",
+      "Anchor": "download-a-specification",
+      "SectionPath": [
+        "Download a specification"
+      ],
+      "Text": "",
+      "Headers": [
+        "Talent endpoint",
+        "File version",
+        "OpenAPI specification"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Seats",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202611",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Download Seats YAML",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/openapi/seats-v2/202611/seatsv2.yaml?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202611",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Download Candidates YAML",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/openapi/candidates/202611/candidates.yaml?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202611",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Download Applications YAML",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/openapi/applications/202611/applications.yaml?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Attachments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202611",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Download Attachments YAML",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/openapi/attachments/202611/attachments.yaml?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application stages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202611",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Download Application stages YAML",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/openapi/application-stages/202611/applicationstages.yaml?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

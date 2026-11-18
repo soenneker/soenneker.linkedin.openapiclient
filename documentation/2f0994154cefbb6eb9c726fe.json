@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/featuredcommitment-taxonomy-versions",
   "Title": "Featured Commitment Taxonomy Versions",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -176,7 +176,7 @@
           {
             "Text": "FeaturedCommitment name in various locales. Represented as MultiLocaleString type.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#multilocalestring"
             ],
             "Values": []
           }

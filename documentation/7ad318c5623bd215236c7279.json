@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics",
   "Title": "Organizational Page Edge Analytics",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -126,7 +126,7 @@
           {
             "Text": "OrganizationalPageUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -175,7 +175,7 @@
           {
             "Text": "OrganizationalPageAnalyticsDimension",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpageanalyticsdimension"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#organizationalpageanalyticsdimension"
             ],
             "Values": []
           },
@@ -199,7 +199,7 @@
           {
             "Text": "OrganizationalPageAnalyticsValue",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpageanalyticsvalue"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#organizationalpageanalyticsvalue"
             ],
             "Values": []
           },
@@ -223,7 +223,7 @@
           {
             "Text": "TimeIntervals",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timeintervals"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#timeintervals"
             ],
             "Values": []
           },
@@ -364,8 +364,8 @@
           {
             "Text": "union[followerEdgeAnalyticsValue: OrganizationalPageFollowerEdgeAnalyticsValue, visitorEdgeAnalyticsValue: OrganizationalPageVisitorEdgeAnalyticsValue]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpagefolloweredgeanalyticsvalue",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpagevisitoredgeanalyticsvalue"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#organizationalpagefolloweredgeanalyticsvalue",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#organizationalpagevisitoredgeanalyticsvalue"
             ],
             "Values": []
           },
@@ -476,7 +476,7 @@
           {
             "Text": "Unique count. Null if no such value is available. This field won\u0027t be returned by default. If this field is needed, you need to request it through Field Projections.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -544,7 +544,7 @@
           {
             "Text": "Desktop unique count. Null if no such value is available. This field won\u0027t be returned by default. If this field is needed, you need to request it through Field Projections.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -568,7 +568,7 @@
           {
             "Text": "Mobile unique count. Null if no such value is available. This field won\u0027t be returned by default. If this field is needed, you need to request it through Field Projections.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -694,7 +694,7 @@
           {
             "Text": "TimeRange",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timerange"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#timerange"
             ],
             "Values": []
           },
@@ -964,7 +964,7 @@
           {
             "Text": "OrganizationalPageUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -1094,7 +1094,7 @@
           {
             "Text": "TimeRange",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timerange"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#timerange"
             ],
             "Values": []
           },
@@ -1269,7 +1269,7 @@
           {
             "Text": "OrganizationalPageUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -1328,7 +1328,7 @@
           {
             "Text": "TimeIntervals",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timeintervals"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-11\u0026tabs=http#timeintervals"
             ],
             "Values": []
           },

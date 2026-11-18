@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers",
   "Title": "Series Subscribers",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -165,7 +165,7 @@
           {
             "Text": "URN of the subscriber. Only populated if the subscribing member has granted permission to share their data via the DMA API. For details, refer to Member Data Obfuscation.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers?view=li-dma-data-portability-2026-08\u0026tabs=http#member-data-obfuscation"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers?view=li-dma-data-portability-2026-11\u0026tabs=http#member-data-obfuscation"
             ],
             "Values": []
           },

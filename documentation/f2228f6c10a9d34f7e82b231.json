@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
   "Title": "Reactions API",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -472,7 +472,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-11\u0026tabs=http#auditstamp"
             ],
             "Values": []
           },
@@ -496,7 +496,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-11\u0026tabs=http#auditstamp"
             ],
             "Values": []
           },
@@ -676,8 +676,8 @@
           {
             "Text": "Set of ReactionUrns to fetch the reactions. Only accepts reactionUrn or likeUrn.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#reaction-urns",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#like-urns"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-11\u0026tabs=http#reaction-urns",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-11\u0026tabs=http#like-urns"
             ],
             "Values": []
           },

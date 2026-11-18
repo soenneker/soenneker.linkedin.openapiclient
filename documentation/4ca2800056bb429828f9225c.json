@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
   "Title": "Comments API",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -348,7 +348,7 @@
           {
             "Text": "CommentMessage",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#commentmessage"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-11\u0026tabs=http#commentmessage"
             ],
             "Values": []
           },
@@ -394,7 +394,7 @@
           {
             "Text": "array of ContentEntity",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#contententity"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-11\u0026tabs=http#contententity"
             ],
             "Values": []
           },
@@ -418,7 +418,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-11\u0026tabs=http#auditstamp"
             ],
             "Values": []
           },
@@ -442,7 +442,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-11\u0026tabs=http#auditstamp"
             ],
             "Values": []
           },
@@ -506,7 +506,7 @@
           {
             "Text": "array of Attribute",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#attribute"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-11\u0026tabs=http#attribute"
             ],
             "Values": []
           },
@@ -1145,7 +1145,7 @@
           {
             "Text": "Set of CommentUrn to fetch the comments. Only accepts commentUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#comment-urns"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-11\u0026tabs=http#comment-urns"
             ],
             "Values": []
           },

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products",
   "Title": "Organization Products",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -346,7 +346,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -370,7 +370,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -394,7 +394,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -440,7 +440,7 @@
           {
             "Text": "OrganizationalPageUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -521,7 +521,7 @@
           {
             "Text": "The product categories (urn:li:standardizedProductCategory:{ID}) to which a product belongs. Extract the numeric {ID} and use it with the dmaProductCategories taxonomy API to resolve the category name.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/productcategories?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/productcategories?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -540,7 +540,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#locale"
             ],
             "Values": []
           },
@@ -586,7 +586,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#multilocalestring"
             ],
             "Values": []
           },
@@ -610,7 +610,7 @@
           {
             "Text": "MultiLocaleString",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#multilocalestring"
             ],
             "Values": []
           },
@@ -634,7 +634,7 @@
           {
             "Text": "MultiLocaleUrl",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocaleurl"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#multilocaleurl"
             ],
             "Values": []
           },
@@ -658,7 +658,7 @@
           {
             "Text": "Image",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#image"
             ],
             "Values": []
           },
@@ -682,7 +682,7 @@
           {
             "Text": "Array[ProductMediaSection]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productmediasection"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productmediasection"
             ],
             "Values": []
           },
@@ -706,15 +706,15 @@
           {
             "Text": "Array[SkillUrn]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
           {
             "Text": "The list of standardized skills (urn:li:skill:{ID}) associated with the product. Where SkillUrn can be resolved via /dmaSkills.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-08",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/skills?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-11",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/skills?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -733,7 +733,7 @@
           {
             "Text": "ProductCallToAction",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcalltoaction"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productcalltoaction"
             ],
             "Values": []
           },
@@ -779,15 +779,15 @@
           {
             "Text": "Array[TitleUrn]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/titles.md?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/titles.md?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
           {
             "Text": "List of user roles (urn:li:title:{ID}) that are using the product, up to a maximum of 10. Where TitleUrn can be resloved via /dmaTitles",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/titles.md?view=li-dma-data-portability-2026-08",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/titles.md?view=li-dma-data-portability-2026-11",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -806,7 +806,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -852,7 +852,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -898,7 +898,7 @@
           {
             "Text": "LeadGenFormReportLastDownloaded",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenformreportlastdownloaded"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#leadgenformreportlastdownloaded"
             ],
             "Values": []
           },
@@ -922,7 +922,7 @@
           {
             "Text": "ProductCategoryAdminSuggestions",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcategoryadminsuggestions"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productcategoryadminsuggestions"
             ],
             "Values": []
           },
@@ -946,7 +946,7 @@
           {
             "Text": "ProductPricing",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productpricing"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productpricing"
             ],
             "Values": []
           },
@@ -975,7 +975,7 @@
           {
             "Text": "List of products (represented by StandardizedProductUrns, urn:li:standardizedProduct:{ID}) that can be integrated with the product. The {ID} corresponds to the id field of the referenced product resource, and can be resolved via this same API\u0027s GET or BATCH_GET.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#retrieve-organization-products-data"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#retrieve-organization-products-data"
             ],
             "Values": []
           },
@@ -1098,17 +1098,17 @@
           {
             "Text": "union[image: Image , video: Video, ingestedContent: IngestedContentUrn]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#video"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#image",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#video"
             ],
             "Values": []
           },
           {
             "Text": "Media uploaded for the section. Represented via either an Image, Video or urn:li:ingestedContent:{ID}, which can be resolved via dmaIngestedContentSummaries.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#video",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#image",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#video",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -1418,7 +1418,7 @@
           {
             "Text": "Array[MultiLocaleString]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#multilocalestring"
             ],
             "Values": []
           },
@@ -1442,7 +1442,7 @@
           {
             "Text": "Array[MultiLocaleString]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#multilocalestring"
             ],
             "Values": []
           },
@@ -1488,7 +1488,7 @@
           {
             "Text": "Array[union[standardizedProduct: StandardizedProductUrn, productName: MultiLocaleString]]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#multilocalestring"
             ],
             "Values": []
           },
@@ -1512,7 +1512,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -1536,7 +1536,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -1560,7 +1560,7 @@
           {
             "Text": "AuditStamp",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#auditstamp"
             ],
             "Values": []
           },
@@ -1691,7 +1691,7 @@
           {
             "Text": "Array[ProductPricingPlan]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productpricingplan"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productpricingplan"
             ],
             "Values": []
           },
@@ -1778,16 +1778,16 @@
           {
             "Text": "union[freePrice: ProductFreePrice, fixedPrice: ProductFixedPrice, customPrice: ProductCustomPrice]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productfixedprice",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcustomprice"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productfixedprice",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productcustomprice"
             ],
             "Values": []
           },
           {
             "Text": "Pricing details of the plan. ProductFreePrice represents a free-tier for a product. ProductFixedPrice represents a product price that is dependent on charge frequency and payment model. ProductCustomPrice represents a product price that is custom and requires contact with the product sale\u0027s team.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productfixedprice",
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcustomprice"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productfixedprice",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#productcustomprice"
             ],
             "Values": []
           },
@@ -1825,7 +1825,7 @@
           {
             "Text": "MoneyAmount",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/ads/money-object.md?view=li-dma-data-portability-2026-08\u0026context=linkedin%2Fmarketing%2Fcontext"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/ads/money-object.md?view=li-dma-data-portability-2026-11\u0026context=linkedin%2Fmarketing%2Fcontext"
             ],
             "Values": []
           },
@@ -2123,7 +2123,7 @@
           {
             "Text": "array[Caption]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#caption"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#caption"
             ],
             "Values": []
           },
@@ -2147,7 +2147,7 @@
           {
             "Text": "array[Thumbnail]",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#thumbnail"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#thumbnail"
             ],
             "Values": []
           },
@@ -2395,7 +2395,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#locale"
             ],
             "Values": []
           },
@@ -2549,7 +2549,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#locale"
             ],
             "Values": []
           },
@@ -2756,7 +2756,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#locale"
             ],
             "Values": []
           },
@@ -2910,7 +2910,7 @@
           {
             "Text": "OrganizationalPageUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -2939,7 +2939,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#locale"
             ],
             "Values": []
           },
@@ -3120,7 +3120,7 @@
           {
             "Text": "Locale",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-11#locale"
             ],
             "Values": []
           },

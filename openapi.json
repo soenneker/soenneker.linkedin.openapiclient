@@ -10989,7 +10989,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api#response-schema"
       },
-      "Learn_marketing_community_management_boost_boost_analytics_moneyamount_object_schema": {
+      "Learn_marketing_community_management_boost_boost_analytics_": {
         "properties": {
           "amount": {
             "description": "Decimal string representing the spend amount.\n\nDocumented type: String (decimal)\n\nRequirement: Yes",
@@ -11005,7 +11005,7 @@
           "currencyCode"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#moneyamount-object-schema"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#"
       },
       "Learn_marketing_community_management_boost_boost_analytics_query_parameters": {
         "properties": {
@@ -54146,7 +54146,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -89676,7 +89676,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -91148,7 +91148,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -123235,7 +123235,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -123670,7 +123670,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -124023,7 +124023,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -165275,7 +165275,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -167650,7 +167650,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -168122,7 +168122,7 @@
             "in": "header",
             "name": "Linkedin-Version",
             "schema": {
-              "default": "202610",
+              "default": "202611",
               "type": "string"
             }
           },
@@ -518259,8 +518259,7 @@
     }
   ],
   "x-documentation-versions": [
-    "li-dma-data-portability-2026-08",
-    "li-lms-2026-10",
+    "li-dma-data-portability-2026-11",
     "li-lms-2026-11",
     "li-lts-2026-04",
     "li-lts-unversioned"

@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
   "Title": "Manage Audience Restrictions",
-  "Version": "li-lms-2026-10",
+  "Version": "li-lms-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
@@ -1729,7 +1729,7 @@
           {
             "Text": "Placement the list applies to: LAN (LinkedIn Audience Network), CTV (Connected TV), or BOTH (legacy lists created before surfaces were introduced; read-only). Available in API version 202611 and later. See Publisher List Surfaces.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions?view=li-lms-2026-10\u0026tabs=http#publisher-list-surfaces"
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions?view=li-lms-2026-11\u0026tabs=http#publisher-list-surfaces"
             ],
             "Values": []
           }

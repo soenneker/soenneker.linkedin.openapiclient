@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
   "Title": "Organization Life Page Traffic Statistics",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -474,7 +474,7 @@
           {
             "Text": "List of reporting IDs for the Life Page variations (targeted content) you want to retrieve statistics for. These IDs are obtained from the Organization Targeted Contents API. You can request statistics for multiple Life Page variations in a single call.",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },

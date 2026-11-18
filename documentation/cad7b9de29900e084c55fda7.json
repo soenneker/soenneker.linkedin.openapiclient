@@ -1,7 +1,7 @@
 {
   "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
   "Title": "OrganizationalPage Content Ingestion Sources API",
-  "Version": "li-dma-data-portability-2026-08",
+  "Version": "li-dma-data-portability-2026-11",
   "Error": null,
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
@@ -193,7 +193,7 @@
           {
             "Text": "OrganizationalPageUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
@@ -283,7 +283,7 @@
           {
             "Text": "ContentIngestionFeedStatus",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#contentingestionfeedstatus"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#contentingestionfeedstatus"
             ],
             "Values": []
           },
@@ -307,7 +307,7 @@
           {
             "Text": "ContentIngestionFeedContentType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#contentingestionfeedcontenttype"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#contentingestionfeedcontenttype"
             ],
             "Values": []
           },
@@ -331,7 +331,7 @@
           {
             "Text": "ContentIngestionPostCommentaryTextType",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#contentingestionpostcommentarytexttype"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-11\u0026tabs=http%2Cnon-obfuscated#contentingestionpostcommentarytexttype"
             ],
             "Values": []
           },
@@ -717,7 +717,7 @@
           {
             "Text": "OrganizationalPageUrn",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-11"
             ],
             "Values": []
           },
