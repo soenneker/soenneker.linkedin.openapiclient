@@ -126,7 +126,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "adContext", n => { AdContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140151510616682496AdContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140151510616682496AdContext.CreateFromDiscriminatorValue); } },
                 { "distribution", n => { Distribution = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140151510616682496Distribution>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140151510616682496Distribution.CreateFromDiscriminatorValue); } },

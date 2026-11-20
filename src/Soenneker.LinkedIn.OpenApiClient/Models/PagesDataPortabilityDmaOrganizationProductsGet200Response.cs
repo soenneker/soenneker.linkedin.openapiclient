@@ -335,7 +335,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(26)
             {
                 { "callToAction", n => { CallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCreated.CreateFromDiscriminatorValue); } },

@@ -333,7 +333,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(27)
             {
                 { "alternativeNames", n => { AlternativeNames = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiLocalestring>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiLocalestring.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "coverPhotoV2", n => { CoverPhotoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2.CreateFromDiscriminatorValue); } },

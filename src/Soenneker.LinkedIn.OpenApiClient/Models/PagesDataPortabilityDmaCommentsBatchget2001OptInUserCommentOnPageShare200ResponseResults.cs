@@ -164,7 +164,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "urn:li:comment:(urn:li:activity:7127705248256724992,7129994898530848768)", n => { UrnLiCommentUrnLiActivity71277052482567249927129994898530848768 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927129994898530848768>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927129994898530848768.CreateFromDiscriminatorValue); } },
                 { "urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952)", n => { UrnLiCommentUrnLiActivity71277052482567249927137543297882877952 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927137543297882877952>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927137543297882877952.CreateFromDiscriminatorValue); } },

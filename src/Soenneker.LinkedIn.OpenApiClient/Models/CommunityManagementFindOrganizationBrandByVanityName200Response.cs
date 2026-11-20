@@ -104,7 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "elements", n => { Elements = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseErrors>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseErrors.CreateFromDiscriminatorValue); } },

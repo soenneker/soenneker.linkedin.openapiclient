@@ -575,7 +575,29 @@
       "SectionPath": [
         "Update a boost"
       ],
-      "Text": "When changing targeting, send the complete desired criteria rather than a delta from the current audience. Keep interface locale targeting consistent with the campaign\u0027s locale. Changing the criteria\u0027s name doesn\u0027t rename a saved audience; use Edit an audience for that operation.",
+      "Text": "When changing targeting, always send targetingCriteria.type and the complete desired includeAll list, including a location. If type is USER_AUDIENCE, also send the saved-audience id. Omit excludeAny to keep the campaign\u0027s existing exclusions, or send excludeAny: [] to clear them. To replace exclusions, send the desired excludeAny list. An exclusions-only targeting update still requires type, id when applicable, and includeAll with a location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Keep interface locale targeting consistent with the campaign\u0027s locale. Changing the criteria\u0027s name doesn\u0027t rename a saved audience; use Edit an audience for that operation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Retrieve the current boost before previewing a targeting update. If the management patch omits excludeAny to preserve exclusions, explicitly include the current boost\u0027s excludeAny list in the Hydrate request, together with the proposed inclusion rules. Hydrate must preview the effective audience that Manage will save; omitting existing exclusions from the preview can change the forecast and political declaration requirement. When clearing or replacing exclusions, preview the same empty or replacement list that you send in the patch.",
       "Headers": [],
       "Rows": []
     },
@@ -603,6 +625,51 @@
     },
     {
       "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Political intent declaration is a legal requirement when targeting EU countries. For more information, see Political advertising in the European Union.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a boost",
+      "Anchor": "update-a-boost",
+      "SectionPath": [
+        "Update a boost"
+      ],
+      "Text": "Declaring POLITICAL doesn\u0027t itself end the boost or prevent managing and updating the campaign. This API behavior doesn\u0027t override LinkedIn\u0027s prohibition on political advertising or imply approval to serve the ad.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample update request",
+      "Anchor": "sample-update-request",
+      "SectionPath": [
+        "Update a boost",
+        "Sample update request"
+      ],
+      "Text": "This example uses USER_AUDIENCE with saved-audience ID 12345 and preserves existing exclusions by omitting excludeAny.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "Sample update request",
       "Anchor": "sample-update-request",
       "SectionPath": [
@@ -621,7 +688,7 @@
         "Update a boost",
         "Sample update request"
       ],
-      "Text": "POST https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nX-RestLi-Method: PARTIAL_UPDATE\nContent-Type: application/json\n\n{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022targetingCriteria\u0022: {\n        \u0022includeAll\u0022: [\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n        ]\n      },\n      \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022\n    }\n  }\n}",
+      "Text": "POST https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nX-RestLi-Method: PARTIAL_UPDATE\nContent-Type: application/json\n\n{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022targetingCriteria\u0022: {\n        \u0022type\u0022: \u0022USER_AUDIENCE\u0022,\n        \u0022id\u0022: 12345,\n        \u0022includeAll\u0022: [\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n        ]\n      },\n      \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022\n    }\n  }\n}",
       "Headers": [],
       "Rows": []
     },
@@ -633,7 +700,7 @@
         "Update a boost",
         "Sample update request"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022targetingCriteria\u0022: {\n        \u0022includeAll\u0022: [\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n        ]\n      },\n      \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022\n    }\n  }\n}\u0027",
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022targetingCriteria\u0022: {\n        \u0022type\u0022: \u0022USER_AUDIENCE\u0022,\n        \u0022id\u0022: 12345,\n        \u0022includeAll\u0022: [\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n          {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n        ]\n      },\n      \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022\n    }\n  }\n}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -645,7 +712,7 @@
         "Update a boost",
         "Sample update request"
       ],
-      "Text": "For a Company Page boost, use /rest/organizationBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321 with the same headers and body. Replace the sample account, campaign, and targeting with the boost\u0027s actual values.",
+      "Text": "For a Company Page boost, use /rest/organizationBoostManage/222222222?account=urn%3Ali%3AsponsoredAccount%3A987654321 with the same headers and body. Replace the sample account, campaign, saved-audience ID, and targeting with the boost\u0027s actual values.",
       "Headers": [],
       "Rows": []
     },
@@ -739,7 +806,29 @@
       "SectionPath": [
         "Earlier management flow"
       ],
-      "Text": "Version 202610 uses Init with campaignUrn and accountUrn to load existing boost details, and memberBoostCampaign or organizationBoostCampaign to delete a boost. Those resources also remain in version 202611; the new management resources don\u0027t establish a removal date for them.",
+      "Text": "Version 202610 uses Init with campaignUrn and accountUrn to load existing boost details, and memberBoostCampaign or organizationBoostCampaign to delete a boost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Earlier management flow",
+      "Anchor": "earlier-management-flow",
+      "SectionPath": [
+        "Earlier management flow"
+      ],
+      "Text": "In version 202611, both Member and Company Page Init continue to accept optional campaignUrn and accountUrn action parameters. Init returns lifecycle status when a campaign is supplied, and campaignUrn can be present in the response. These Init fields remain supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Earlier management flow",
+      "Anchor": "earlier-management-flow",
+      "SectionPath": [
+        "Earlier management flow"
+      ],
+      "Text": "The legacy memberBoostCampaign and organizationBoostCampaign delete resources are deprecated but remain available in versions 202610 and 202611. For version 202611 and later, use DELETE /rest/memberBoostManage/{campaignId} or DELETE /rest/organizationBoostManage/{campaignId}, with the required account query parameter.",
       "Headers": [],
       "Rows": []
     },
@@ -770,6 +859,23 @@
           },
           {
             "Text": "Correct the input described in the response. Use $set for editable fields.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A targeting update omits type, omits id when type is USER_AUDIENCE, or omits includeAll with a location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include the required targeting fields, even when changing only exclusions.",
             "Links": [],
             "Values": []
           }

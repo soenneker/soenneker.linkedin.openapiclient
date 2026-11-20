@@ -116,7 +116,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "displayAspectRatio", n => { DisplayAspectRatio = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImageDisplayAspectRatio>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImageDisplayAspectRatio.CreateFromDiscriminatorValue); } },
                 { "displaySize", n => { DisplaySize = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseProfilePictureAnyOf4DisplayImageElementsItemDataComLinkedinDigitalmediaMediaartifactStillImageDisplaySize.CreateFromDiscriminatorValue); } },

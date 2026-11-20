@@ -92,7 +92,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "atsCandidateId=CAND123&dataProvider=ATS&integrationContext=urn%3Ali%3Aorganization%3A1000", n => { AtsCandidateIdCAND123DataProviderATSIntegrationContextUrn3Ali3Aorganization3A1000 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand123DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand123DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000.CreateFromDiscriminatorValue); } },
                 { "atsCandidateId=CAND456&dataProvider=ATS&integrationContext=urn%3Ali%3Aorganization%3A1000", n => { AtsCandidateIdCAND456DataProviderATSIntegrationContextUrn3Ali3Aorganization3A1000 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand456DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncCandidatesRetrieveCandidateMatchesDefaultResponseResultsAtsCandidateIdCand456DataProviderAtsIntegrationContextUrn3Ali3Aorganization3A1000.CreateFromDiscriminatorValue); } },

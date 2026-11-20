@@ -92,7 +92,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "averageFrequency", n => { AverageFrequency = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequency>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueAverageFrequency.CreateFromDiscriminatorValue); } },
                 { "impressionCurve", n => { ImpressionCurve = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueImpressionCurve>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurve2XxResponseValueImpressionCurve.CreateFromDiscriminatorValue); } },

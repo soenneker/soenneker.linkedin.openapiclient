@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "assetType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricAssetType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAssetType = default; _explicitNullProperties?.Remove("assetType"); AdditionalData["assetType"] = unknown; } else { AssetType = parsed; AdditionalData.Remove("assetType"); } } },
                 { "engagementType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetricEngagementType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEngagementType = default; _explicitNullProperties?.Remove("engagementType"); AdditionalData["engagementType"] = unknown; } else { EngagementType = parsed; AdditionalData.Remove("engagementType"); } } },

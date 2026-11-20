@@ -104,7 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "urn:li:adTargetingFacet:ageRanges", n => { UrnLiAdTargetingFacetAgeRanges = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "urn:li:adTargetingFacet:industries", n => { UrnLiAdTargetingFacetIndustries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

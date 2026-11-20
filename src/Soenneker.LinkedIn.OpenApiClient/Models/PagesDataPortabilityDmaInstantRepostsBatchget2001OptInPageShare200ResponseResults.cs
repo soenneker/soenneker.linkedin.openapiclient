@@ -92,7 +92,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)", n => { UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592.CreateFromDiscriminatorValue); } },
                 { "urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)", n => { UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931.CreateFromDiscriminatorValue); } },

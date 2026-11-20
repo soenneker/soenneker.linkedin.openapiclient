@@ -129,7 +129,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "additionalQuestions", n => { AdditionalQuestions = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsAdditionalQuestions.CreateFromDiscriminatorValue); } },
                 { "contactInformationQuestions", n => { ContactInformationQuestions = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestionsFieldsContactInformationQuestions.CreateFromDiscriminatorValue); } },

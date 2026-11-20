@@ -953,6 +953,28 @@
             "Links": [],
             "Values": []
           }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional object with language, country, and optional variant. Both the language and country/region values must be nonblank; otherwise the backend uses en_US. Available from 202611 version and onwards.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
         ]
       ]
     },
@@ -1050,7 +1072,7 @@
             "Values": []
           },
           {
-            "Text": "Whether the sponsored account is ready for billing. Invoice billing qualifies; otherwise business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.",
+            "Text": "Whether the sponsored account is ready for billing. Accounts on billing hold return false. Otherwise, invoice billing qualifies, or business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.",
             "Links": [],
             "Values": []
           },
@@ -1279,13 +1301,59 @@
             "Links": [],
             "Values": []
           }
+        ],
+        [
+          {
+            "Text": "value.billingUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn-hosted billing URL, returned regardless of billingConfigured starting with version 202611. Earlier versions omit this field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.targetingEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[object]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional targeting discovery response. Available from 202611 version and onwards.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences?view=li-lms-2026-11#discover-targeting-options"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
         ]
       ]
     },
     {
       "Kind": "text",
       "Section": "Sample request",
-      "Anchor": "",
+      "Anchor": "sample-request-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1297,7 +1365,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "",
+      "Anchor": "sample-request-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1309,7 +1377,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "",
+      "Anchor": "sample-request-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1321,7 +1389,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "",
+      "Anchor": "sample-request-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample request"
@@ -1331,9 +1399,117 @@
       "Rows": []
     },
     {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "When billingConfigured is false, billing setup is incomplete and boostPost fails until billing is set up. This API version doesn\u0027t return a billing URL. Billing is set up directly on LinkedIn; your application never collects payment details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "Redirect the member to https://www.linkedin.com/campaignmanager/boost/billing/{account_id}?origin=partner. Replace {account_id} with the numeric ID at the end of the value.account URN that init returned. For example, for urn:li:sponsoredAccount:525337437, use 525337437.\nAfter billing setup, call init again with the same request.\nContinue to hydrate and post only after the new response returns billingConfigured: true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "Supply locale to request supported localized audience names. Discovery labels and options aren\u0027t guaranteed to be localized.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/memberBoostInit?action=init",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "{\u0022targetPost\u0022:\u0022urn:li:ugcPost:1234567890\u0022,\u0022locale\u0022:{\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostInit?action=init\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\u0022targetPost\u0022:\u0022urn:li:ugcPost:1234567890\u0022,\u0022locale\u0022:{\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample response"
+      ],
+      "Text": "The following example shows fields shared by both versions. Starting with version 202611, Init also returns billingUrl, as shown in the billing example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "code",
       "Section": "Sample response",
-      "Anchor": "",
+      "Anchor": "sample-response-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
@@ -1345,184 +1521,70 @@
     {
       "Kind": "text",
       "Section": "Sample response",
-      "Anchor": "",
+      "Anchor": "sample-response-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
       ],
-      "Text": "Note",
+      "Text": "Init returns billingUrl whether billingConfigured is true or false. The hosted billing page remains usable after setup. For example, a configured account can return:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize a boost",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n    \u0022billingConfigured\u0022: true,\n    \u0022billingUrl\u0022: \u0022https://www.linkedin.com/campaignmanager/boost/billing/987654321?origin=partner\u0026partnerAppId=12345\u0022\n  }\n}",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
       "Section": "Sample response",
-      "Anchor": "",
+      "Anchor": "sample-response-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
       ],
-      "Text": "When billingConfigured is false, billing setup is incomplete and boostPost fails until billing is set up. This API version doesn\u0027t return a billing URL. Billing is set up directly on LinkedIn; your application never collects payment details.",
+      "Text": "Open the returned billingUrl without reconstructing it or dropping attribution query parameters. The URL uses the account returned by Init, which can differ from a supplied account. If billingConfigured is false, complete billing setup or resolve the billing hold, then call Init again and continue only when billingConfigured is true. The presence of billingUrl doesn\u0027t indicate whether billing is configured.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
       "Section": "Sample response",
-      "Anchor": "",
+      "Anchor": "sample-response-1",
       "SectionPath": [
         "Initialize a boost",
         "Sample response"
       ],
-      "Text": "Redirect the member to https://www.linkedin.com/campaignmanager/boost/billing/{account_id}?origin=partner. Replace {account_id} with the numeric ID at the end of the value.account URN that init returned. For example, for urn:li:sponsoredAccount:525337437, use 525337437.\nAfter billing setup, call init again with the same request.\nContinue to hydrate and post only after the new response returns billingConfigured: true.",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "table",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
-      "SectionPath": [
-        "Initialize a boost",
-        "November initialization and billing"
-      ],
-      "Text": "",
-      "Headers": [
-        "Additional field",
-        "Description"
-      ],
-      "Rows": [
-        [
-          {
-            "Text": "Request locale",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The optional object with language, country, and optional variant. Both the language and country/region values must be nonblank; otherwise the backend uses en_US.",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Response value.billingUrl",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The optional LinkedIn billing setup URL when billing isn\u0027t configured.",
-            "Links": [],
-            "Values": []
-          }
-        ],
-        [
-          {
-            "Text": "Response value.targetingEntities",
-            "Links": [],
-            "Values": []
-          },
-          {
-            "Text": "The optional targeting discovery response.",
-            "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-targeting-and-audiences?view=li-lms-2026-11#discover-targeting-options"
-            ],
-            "Values": []
-          }
-        ]
-      ]
-    },
-    {
-      "Kind": "text",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
-      "SectionPath": [
-        "Initialize a boost",
-        "November initialization and billing"
-      ],
-      "Text": "Supply locale to request supported localized audience names. Discovery labels and options aren\u0027t guaranteed to be localized.",
+      "Text": "The advertiser can change the account currency during initial billing setup. Call Init again afterward to get the current currencyCode and use it for all budget amounts. Once billing is configured, the account currency is fixed.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
       "SectionPath": [
         "Initialize a boost",
-        "November initialization and billing"
+        "Sample response"
       ],
-      "Text": "http\n\n\ncurl",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
-      "SectionPath": [
-        "Initialize a boost",
-        "November initialization and billing"
-      ],
-      "Text": "POST https://api.linkedin.com/rest/memberBoostInit?action=init\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\u0022targetPost\u0022:\u0022urn:li:ugcPost:1234567890\u0022,\u0022locale\u0022:{\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}}",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
-      "SectionPath": [
-        "Initialize a boost",
-        "November initialization and billing"
-      ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostInit?action=init\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\u0022targetPost\u0022:\u0022urn:li:ugcPost:1234567890\u0022,\u0022locale\u0022:{\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}}\u0027",
+      "Text": "The default Member Boost run schedule is five days. Use the defaultRunSchedule returned by Init rather than constructing a schedule from this default.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
       "SectionPath": [
         "Initialize a boost",
-        "November initialization and billing"
-      ],
-      "Text": "When billing isn\u0027t configured, a response can include the following fields:",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
-      "SectionPath": [
-        "Initialize a boost",
-        "November initialization and billing"
-      ],
-      "Text": "{\n  \u0022value\u0022: {\n    \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n    \u0022billingConfigured\u0022: false,\n    \u0022billingUrl\u0022: \u0022https://www.linkedin.com/campaignmanager/boost/billing/987654321?origin=partner\u0026partnerAppId=12345\u0022\n  }\n}",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "text",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
-      "SectionPath": [
-        "Initialize a boost",
-        "November initialization and billing"
-      ],
-      "Text": "Open the returned billingUrl without reconstructing it or dropping attribution query parameters. The URL uses the account returned by Init, which can differ from a supplied account. After billing setup, call Init again and continue only when billingConfigured is true. A configured account omits the billing URL.",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "text",
-      "Section": "November initialization and billing",
-      "Anchor": "november-initialization-and-billing",
-      "SectionPath": [
-        "Initialize a boost",
-        "November initialization and billing"
+        "Sample response"
       ],
       "Text": "Invoice billing doesn\u0027t require a card wallet. Other accounts need business information and a bound supported card; unsupported wallet types and credit balances don\u0027t satisfy billing readiness. Init can create a default billing configuration, but false doesn\u0027t mean a new configuration was created. Your application never collects payment details.",
       "Headers": [],
@@ -1767,12 +1829,12 @@
             "Values": []
           },
           {
-            "Text": "String",
+            "Text": "object",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.",
+            "Text": "Advertiser objective for the hypothetical boost, sent as {\u0022value\u0022:\u0022BRAND_AWARENESS\u0022}. Set value to LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, or ENGAGEMENT. A bare enum string isn\u0027t accepted.",
             "Links": [],
             "Values": []
           },
@@ -1948,7 +2010,7 @@
             "Values": []
           },
           {
-            "Text": "Short description of the post or product being boosted. The backend uses this to compute the preview.",
+            "Text": "Description of the post or product being boosted. When requesting a suggested audience, fewer than 50 characters skips AI inference and falls back to the default United States, English-language audience.",
             "Links": [],
             "Values": []
           },
@@ -1957,8 +2019,42 @@
             "Links": [],
             "Values": []
           }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional language, country, and optional variant for supported audience and criteria names. If language or country/region is blank or missing, the backend uses en_US. Available starting with version 202611.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema-1",
+      "SectionPath": [
+        "Preview a boost",
+        "Request body schema"
+      ],
+      "Text": "Omit totalBudget on the first Hydrate request to receive budget limits and suggestions. When the limits are returned, compare totalBudget.amount with minDailyBudget.amount multiplied by the number of UTC run days and with maxTotalBudget.amount. Use the account currency returned by Init. If a minimum or maximum limit is absent, skip that comparison rather than inventing a value; absence doesn\u0027t mean zero or an unlimited budget. Hydrate returns the limits rather than rejecting an out-of-range budget; Post enforces the limits when creating the boost and can reject a budget even when a preview limit was absent.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "table",
@@ -2571,6 +2667,72 @@
             "Links": [],
             "Values": []
           }
+        ],
+        [
+          {
+            "Text": "value.minDailyBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Decimal minimum daily budget amount.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, when minDailyBudget is present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.minDailyBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Three-letter ISO 4217 currency code for the minimum daily budget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, when minDailyBudget is present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value.politicalDeclarationRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the previewed audience requires a political declaration. Preserve true, false, and absence as distinct states. Available starting with version 202611.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
         ]
       ]
     },
@@ -2730,7 +2892,7 @@
         "Preview a boost",
         "Sample request"
       ],
-      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n  \u0022goal\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022\n}",
+      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022ENGAGEMENT\u0022},\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022\n}",
       "Headers": [],
       "Rows": []
     },
@@ -2742,7 +2904,7 @@
         "Preview a boost",
         "Sample request"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n  \u0022goal\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022\n}\u0027",
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202610\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022ENGAGEMENT\u0022},\n  \u0022totalBudget\u0022: {\n    \u0022amount\u0022: \u002250.00\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1791111100002,\n    \u0022end\u0022: 1791543100002\n  },\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022\n}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -2766,7 +2928,7 @@
         "Preview a boost",
         "Sample response"
       ],
-      "Text": "Use includeAll, excludeAny, and anyOf for custom or saved audiences. These replace October\u0027s include and exclude structure. Preview the selected criteria before sending them to Post.",
+      "Text": "targetingCriteria represents a suggested, custom, or saved audience. Custom targeting is supported from version 202611 onward.",
       "Headers": [],
       "Rows": []
     },
@@ -2780,30 +2942,92 @@
       ],
       "Text": "",
       "Headers": [
-        "Additional field",
+        "Field",
+        "Type",
         "Description"
       ],
       "Rows": [
         [
           {
-            "Text": "Request locale",
+            "Text": "name",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "The optional object with language, country, and optional variant, using the same fallback rules as Init.",
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Human-readable audience name, for example Suggested audience.",
             "Links": [],
             "Values": []
           }
         ],
         [
           {
-            "Text": "Response value.politicalDeclarationRequired",
+            "Text": "type",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "The optional Boolean declaration requirement for the preview. Preserve true, false, and absence as distinct states.",
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How the audience was created. For Boost, this is SUGGESTED_AUDIENCE (generated by LinkedIn) or USER_AUDIENCE (built by the advertiser).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "audienceCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Estimated number of LinkedIn members the audience could reach. Read-only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "includeAll",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array\u003CTargetingSegment\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match rules for inclusion. Members must match every entry to be targeted. Include a location facet with at least one value. Interface locale is optional; Boost adds a default language when omitted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "excludeAny",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array\u003CTargetingSegment\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional rules for exclusion. Members who match any entry are excluded.",
             "Links": [],
             "Values": []
           }
@@ -2812,11 +3036,104 @@
     },
     {
       "Kind": "text",
-      "Section": "November preview request",
-      "Anchor": "november-preview-request",
+      "Section": "Sample response",
+      "Anchor": "",
       "SectionPath": [
         "Preview a boost",
-        "November preview request"
+        "Sample response"
+      ],
+      "Text": "Use includeAll, excludeAny, and anyOf for custom or saved audiences. These replace include and exclude structure in previous versions. Preview the selected criteria before sending them to Post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample response"
+      ],
+      "Text": "For a suggested audience, advertisers can edit only locations and interface locales. Preserve all other facets when passing the criteria to Hydrate and Post. See Audience editing rules for saved-audience restrictions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Targeting segment",
+      "Anchor": "targeting-segment",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample response",
+        "Targeting segment"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "facetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The facet, for example urn:li:adTargetingFacet:locations. Use the facet value from targetingEntities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "facetName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The facet\u0027s display name. Returned in responses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "anyOf",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array\u003C{urn, name, description}\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The facet values. A member matches the entry if they match any value. In requests, send only urn. The name and description fields are filled in on responses.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample request"
       ],
       "Text": "Use the account and schedule returned by Init; the timestamps below are illustrative. Member Boost doesn\u0027t allow a start on a future UTC day.",
       "Headers": [],
@@ -2824,11 +3141,11 @@
     },
     {
       "Kind": "text",
-      "Section": "November preview request",
-      "Anchor": "november-preview-request",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
       "SectionPath": [
         "Preview a boost",
-        "November preview request"
+        "Sample request"
       ],
       "Text": "http\n\n\ncurl",
       "Headers": [],
@@ -2836,37 +3153,49 @@
     },
     {
       "Kind": "code",
-      "Section": "November preview request",
-      "Anchor": "november-preview-request",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
       "SectionPath": [
         "Preview a boost",
-        "November preview request"
+        "Sample request"
       ],
-      "Text": "POST https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  }\n}",
+      "Text": "POST https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "code",
-      "Section": "November preview request",
-      "Anchor": "november-preview-request",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
       "SectionPath": [
         "Preview a boost",
-        "November preview request"
+        "Sample request"
       ],
-      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  }\n}\u0027",
+      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022BRAND_AWARENESS\u0022},\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Preview a boost",
+        "Sample request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostHydrate?action=hydrate\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022BRAND_AWARENESS\u0022},\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022productDescription\u0022: \u0022Promoting a product launch update\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  }\n}\u0027",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "November preview request",
-      "Anchor": "november-preview-request",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
       "SectionPath": [
         "Preview a boost",
-        "November preview request"
+        "Sample request"
       ],
-      "Text": "Hydrate returns a value wrapper with the resolved criteria and available preview fields. If politicalDeclarationRequired is true, collect an explicit declaration before Post. Absence isn\u0027t a confirmed false; don\u0027t use an absent flag to waive an otherwise required EU-targeting declaration. The flag\u0027s availability depends on rollout. Evaluate declaration requirements for the audience you actually submit, not an earlier suggested audience. LinkedIn prohibits political advertising.",
+      "Text": "Hydrate returns a value wrapper with the resolved criteria and available preview fields. If politicalDeclarationRequired is true, collect an explicit declaration before Post. Absence isn\u0027t a confirmed false; don\u0027t use an absent flag to waive an otherwise required EU-targeting declaration. Evaluate declaration requirements for the audience you actually submit, not an earlier suggested audience. LinkedIn prohibits political advertising.",
       "Headers": [],
       "Rows": []
     },
@@ -2878,7 +3207,7 @@
         "Preview a boost",
         "Pricing credits"
       ],
-      "Text": "Both 202610 and 202611 can return consumerPrice.totalApplicableCredit. For a preview with a selected budget, the pricing portion can contain:",
+      "Text": "All versions can return consumerPrice.totalApplicableCredit. For a preview with a selected budget, the pricing portion can contain:",
       "Headers": [],
       "Rows": []
     },
@@ -3654,23 +3983,59 @@
     },
     {
       "Kind": "text",
-      "Section": "November create request",
-      "Anchor": "november-create-request",
+      "Section": "Sample request",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
-        "November create request"
+        "Sample request"
       ],
-      "Text": "Post adds the politicalIntent.value enum string for a required declaration. For a nonpolitical ad, use NOT_POLITICAL after collecting that declaration.",
+      "Text": "For versions 202611 and above, Post adds the politicalIntent.value enum string for a required declaration. For a nonpolitical ad, use NOT_POLITICAL after collecting that declaration.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "text",
-      "Section": "November create request",
-      "Anchor": "november-create-request",
+      "Section": "Sample request",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
-        "November create request"
+        "Sample request"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
+      ],
+      "Text": "Political intent declaration is a legal requirement when targeting EU countries. For more information, see Political advertising in the European Union.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
+      ],
+      "Text": "Omitting a required political declaration returns 400 Bad Request. Declaring POLITICAL doesn\u0027t itself end the boost or prevent managing and updating the campaign. This API behavior doesn\u0027t override LinkedIn\u0027s prohibition on political advertising or imply approval to serve the ad.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
       ],
       "Text": "For EU targeting, display the mandatory consent using the required wording and presentation, clearly presented and checked by default before submitting or activating the boost. Sending NOT_POLITICAL alone doesn\u0027t satisfy the consent requirement.",
       "Headers": [],
@@ -3678,11 +4043,11 @@
     },
     {
       "Kind": "text",
-      "Section": "November create request",
-      "Anchor": "november-create-request",
+      "Section": "Sample request",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
-        "November create request"
+        "Sample request"
       ],
       "Text": "After previewing the chosen configuration and collecting any required declaration, submit it to Post. This example uses Germany targeting and a nonpolitical declaration; use the actual account, budget, schedule, and criteria from your flow.",
       "Headers": [],
@@ -3690,11 +4055,11 @@
     },
     {
       "Kind": "text",
-      "Section": "November create request",
-      "Anchor": "november-create-request",
+      "Section": "Sample request",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
-        "November create request"
+        "Sample request"
       ],
       "Text": "http\n\n\ncurl",
       "Headers": [],
@@ -3702,23 +4067,35 @@
     },
     {
       "Kind": "code",
-      "Section": "November create request",
-      "Anchor": "november-create-request",
+      "Section": "Sample request",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
-        "November create request"
+        "Sample request"
       ],
-      "Text": "POST https://api.linkedin.com/rest/memberBoostPost?action=post\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0\nContent-Type: application/json\n\n{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022BRAND_AWARENESS\u0022},\n  \u0022totalBudget\u0022: {\u0022amount\u0022: \u002250.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022},\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  },\n  \u0022politicalIntent\u0022: {\u0022value\u0022: \u0022NOT_POLITICAL\u0022}\n}",
+      "Text": "POST https://api.linkedin.com/rest/memberBoostPost?action=post",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "code",
-      "Section": "November create request",
-      "Anchor": "november-create-request",
+      "Section": "Sample request",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
-        "November create request"
+        "Sample request"
+      ],
+      "Text": "{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022BRAND_AWARENESS\u0022},\n  \u0022totalBudget\u0022: {\u0022amount\u0022: \u002250.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022},\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  },\n  \u0022politicalIntent\u0022: {\u0022value\u0022: \u0022NOT_POLITICAL\u0022}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create a boost",
+        "Sample request"
       ],
       "Text": "curl -X POST \u0027https://api.linkedin.com/rest/memberBoostPost?action=post\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n  \u0022goal\u0022: {\u0022value\u0022: \u0022BRAND_AWARENESS\u0022},\n  \u0022totalBudget\u0022: {\u0022amount\u0022: \u002250.00\u0022, \u0022currencyCode\u0022: \u0022USD\u0022},\n  \u0022runSchedule\u0022: {\u0022start\u0022: 1794268800000, \u0022end\u0022: 1794614400000},\n  \u0022targetingCriteria\u0022: {\n    \u0022includeAll\u0022: [\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:101282230\u0022}]},\n      {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n    ]\n  },\n  \u0022politicalIntent\u0022: {\u0022value\u0022: \u0022NOT_POLITICAL\u0022}\n}\u0027",
       "Headers": [],
@@ -3726,11 +4103,11 @@
     },
     {
       "Kind": "text",
-      "Section": "November create request",
-      "Anchor": "november-create-request",
+      "Section": "Sample request",
+      "Anchor": "",
       "SectionPath": [
         "Create a boost",
-        "November create request"
+        "Sample request"
       ],
       "Text": "Unlike this action parameter, Manage boosts uses a direct enum string for politicalIntent.",
       "Headers": [],
@@ -3848,6 +4225,50 @@
           },
           {
             "Text": "Send a valid runSchedule, for example the defaultRunSchedule returned by init.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Starting with version 202611, a required political declaration is missing.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Collect the advertiser\u0027s declaration and send it in politicalIntent.value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total budget is below the minimum daily budget multiplied by the number of UTC run days, exceeds the maximum total budget, or uses a different currency from the ad account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the limits returned by Hydrate and the account currency returned by Init.",
             "Links": [],
             "Values": []
           }
@@ -3993,7 +4414,7 @@
       "SectionPath": [
         "Delete a boost campaign"
       ],
-      "Text": "Use Manage boosts to retrieve, edit targeting and declarations, or delete an existing boost. The older delete resource below remains available; no removal date is established.",
+      "Text": "The memberBoostCampaign delete resource is deprecated but remains available in versions 202610 and 202611. Use Manage boosts to retrieve, edit targeting and declarations, or delete an existing boost. For deletion, use DELETE /rest/memberBoostManage/{campaignId}?account={encodedAccountURN}.",
       "Headers": [],
       "Rows": []
     },
@@ -4095,7 +4516,7 @@
     {
       "Kind": "text",
       "Section": "Sample request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Delete a boost campaign",
         "Sample request"
@@ -4107,7 +4528,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Delete a boost campaign",
         "Sample request"
@@ -4119,7 +4540,7 @@
     {
       "Kind": "code",
       "Section": "Sample request",
-      "Anchor": "sample-request-4",
+      "Anchor": "sample-request-5",
       "SectionPath": [
         "Delete a boost campaign",
         "Sample request"

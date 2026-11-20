@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "7130604419196358657", n => { SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven = n.GetLongValue(); } },
                 { "7130283828383793151", n => { SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne = n.GetLongValue(); } },

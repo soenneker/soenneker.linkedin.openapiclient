@@ -179,7 +179,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "associatedEntity", n => { AssociatedEntity = n.GetStringValue(); } },
                 { "associatedEntityInfo", n => { AssociatedEntityInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseResultsAaaabbbb0000Cccc1111Dddd2222Eeee5AssociatedEntityInfo.CreateFromDiscriminatorValue); } },

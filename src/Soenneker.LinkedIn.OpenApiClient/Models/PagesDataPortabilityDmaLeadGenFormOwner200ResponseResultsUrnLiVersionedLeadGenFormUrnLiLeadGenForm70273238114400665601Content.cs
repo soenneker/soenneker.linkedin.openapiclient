@@ -92,7 +92,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentDescription.CreateFromDiscriminatorValue); } },
                 { "headline", n => { Headline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentHeadline>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentHeadline.CreateFromDiscriminatorValue); } },

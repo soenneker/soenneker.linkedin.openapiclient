@@ -217,7 +217,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "alternativeNames", n => { AlternativeNames = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "coverPhotoV2", n => { CoverPhotoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552CoverPhotoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552CoverPhotoV2.CreateFromDiscriminatorValue); } },

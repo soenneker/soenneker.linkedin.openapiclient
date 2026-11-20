@@ -448154,7 +448154,7 @@
             "description": "The workplace nature of the job. Currently accepts single element array with one of the following values On-site , Hybrid, Remote\u0022. (Should be one of On-site, Hybrid,Remote)\n\nDocumented type: String[]\n\nRequirement: Optional"
           }
         },
-        "x-linkedin-schema": "talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1076",
+        "x-linkedin-schema": "talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1078",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#api-request-body-fields"
       },
       "RecruiterSystemConnectVersionedCreateJobRequisitionsJsonRequestAnyOf6EntitiesExternalJobRequisitionIdJdoeBugBash09041ReqIntegrationContextUrnLiOrganization15180688": {
@@ -471221,7 +471221,7 @@
             "x-client-inline-scalar": true
           }
         },
-        "x-linkedin-schema": "talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_981",
+        "x-linkedin-schema": "talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_983",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates#response-body-fields"
       },
       "RecruiterSystemConnectVersionedSyncIntegrationConfigurationCallbackUrlMandatoryRequestEntities": {
@@ -471367,7 +471367,7 @@
             "description": "Use the customer\u0027s tenant type obtained in step 2\n\nDocumented type: string\n\nRequirement: Yes"
           }
         },
-        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_963",
+        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_965",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
       },
       "RecruiterSystemConnectSyncJobApplicationsResumeRequestEntities": {
@@ -471429,7 +471429,7 @@
             "description": "Use the customer\u0027s tenant type obtained in step 2\n\nDocumented type: string\n\nRequirement: Yes"
           }
         },
-        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_963",
+        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_965",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
       },
       "RecruiterSystemConnectUpsertEntityAclAssigneesRequestEntities": {
@@ -487591,34 +487591,16 @@
       "PagesDataPortabilityDmaLiveVideosBatchgetDefaultResponseAnyOf2ErrorsAdditionalProperties": {
         "type": "object",
         "properties": {
-          "code": {
-            "type": "string",
-            "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string"
-          },
-          "errorDetailType": {
-            "type": "string",
-            "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string"
-          },
-          "errorDetails": {
-            "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
-          },
           "message": {
             "type": "string",
-            "description": "A description of the error.\n\nDocumented type: string"
-          },
-          "serviceErrorCode": {
-            "type": "integer",
-            "description": "A subcode that further classifies the error.\n\nDocumented type: int",
-            "format": "int32"
+            "x-linkedin-inferred-from-example": true
           },
           "status": {
             "type": "integer",
-            "description": "The HTTP status code.\n\nDocumented type: int",
-            "format": "int32"
+            "x-linkedin-inferred-from-example": true
           }
         },
-        "x-linkedin-schema": "dma_error_responses_error_response",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response"
+        "x-linkedin-inferred-from-example": true
       },
       "PagesDataPortabilityDmaLiveVideosBatchgetDefaultResponseAnyOf2ResultsAdditionalProperties": {
         "required": [
@@ -528731,6 +528713,40 @@
       "type": "object",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/boost-analytics#response-body-fields"
     },
+    "LearnMarketingCommunityManagementBoostMemberPostBoost": {
+      "type": "object",
+      "properties": {
+        "audienceCount": {
+          "type": "integer",
+          "description": "Estimated number of LinkedIn members the audience could reach. Read-only.\n\nDocumented type: long",
+          "format": "int64",
+          "readOnly": true
+        },
+        "excludeAny": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostExcludeAnyItem"
+          },
+          "description": "Optional rules for exclusion. Members who match any entry are excluded.\n\nDocumented type: Array\u003CTargetingSegment\u003E"
+        },
+        "includeAll": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostIncludeAllItem"
+          },
+          "description": "Match rules for inclusion. Members must match every entry to be targeted. Include a location facet with at least one value. Interface locale is optional; Boost adds a default language when omitted.\n\nDocumented type: Array\u003CTargetingSegment\u003E"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable audience name, for example Suggested audience.\n\nDocumented type: string"
+        },
+        "type": {
+          "type": "string",
+          "description": "How the audience was created. For Boost, this is SUGGESTED_AUDIENCE (generated by LinkedIn) or USER_AUDIENCE (built by the advertiser).\n\nDocumented type: string"
+        }
+      },
+      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#"
+    },
     "LearnMarketingCommunityManagementBoostMemberPostBoostIneligibleReasonValues": {
       "enum": [
         "POST_NOT_FOUND",
@@ -528808,6 +528824,9 @@
           "type": "string",
           "description": "Optional sponsored campaign URN. When provided, the request loads the existing boost campaign instead of initializing a new boost (manage-ad flow).\n\nDocumented type: URN\n\nRequirement: No"
         },
+        "locale": {
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchemaLocaleProperty"
+        },
         "targetPost": {
           "type": "string",
           "description": "The post to initialize. Supported URN types are urn:li:ugcPost:{id} and urn:li:share:{id}.\n\nDocumented type: URN\n\nRequirement: Yes"
@@ -528829,12 +528848,14 @@
           "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes"
         },
         "goal": {
-          "type": "string",
-          "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes"
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1GoalProperty"
+        },
+        "locale": {
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1LocaleProperty"
         },
         "productDescription": {
           "type": "string",
-          "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes"
+          "description": "Description of the post or product being boosted. When requesting a suggested audience, fewer than 50 characters skips AI inference and falls back to the default United States, English-language audience.\n\nDocumented type: String\n\nRequirement: Yes"
         },
         "runSchedule": {
           "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1RunSchedule"
@@ -528976,6 +528997,27 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#response-schema-3"
     },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostTargetingSegment": {
+      "type": "object",
+      "properties": {
+        "anyOf": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The facet values. A member matches the entry if they match any value. In requests, send only urn. The name and description fields are filled in on responses.\n\nDocumented type: Array\u003C{urn, name, description}\u003E"
+        },
+        "facetName": {
+          "type": "string",
+          "description": "The facet\u0027s display name. Returned in responses.\n\nDocumented type: string"
+        },
+        "facetUrn": {
+          "type": "string",
+          "description": "The facet, for example urn:li:adTargetingFacet:locations. Use the facet value from targetingEntities.\n\nDocumented type: Urn"
+        }
+      },
+      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/boost/member-post-boost#targeting-segment"
+    },
     "LearnMarketingCommunityManagementBoostOrganizationPostBoostIneligibleReasonValues": {
       "enum": [
         "POST_NOT_FOUND",
@@ -529085,8 +529127,10 @@
           "description": "Sponsored account URN to bill for the hypothetical boost. Must be a urn:li:sponsoredAccount:{id} value.\n\nDocumented type: URN\n\nRequirement: Yes"
         },
         "goal": {
-          "type": "string",
-          "description": "Advertiser objective for the hypothetical boost. Supported values: LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, ENGAGEMENT.\n\nDocumented type: String\n\nRequirement: Yes"
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1GoalProperty"
+        },
+        "locale": {
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1LocaleProperty"
         },
         "organization": {
           "type": "string",
@@ -529094,7 +529138,7 @@
         },
         "productDescription": {
           "type": "string",
-          "description": "Short description of the post or product being boosted. The backend uses this to compute the preview.\n\nDocumented type: String\n\nRequirement: Yes"
+          "description": "Description of the post or product being boosted. When requesting a suggested audience, fewer than 50 characters skips AI inference and falls back to the default United States, English-language audience.\n\nDocumented type: String\n\nRequirement: Yes"
         },
         "runSchedule": {
           "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1RunSchedule"
@@ -529333,7 +529377,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#query-parameters-1"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsQueryParameters1454": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsQueryParameters1456": {
       "required": [
         "q",
         "queryType",
@@ -529363,7 +529407,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#query-parameters-1"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsQueryParameters449": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsQueryParameters451": {
       "required": [
         "q",
         "entity",
@@ -529447,7 +529491,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#response-body-fields-1"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1456": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1458": {
       "required": [
         "count",
         "metricType"
@@ -529460,7 +529504,7 @@
           "format": "int64"
         },
         "dateRange": {
-          "$ref": "#/components/schemas/LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1456DateRangeProperty"
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1458DateRangeProperty"
         },
         "metricType": {
           "type": "string",
@@ -529469,7 +529513,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics#response-body-fields-1"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields451": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields453": {
       "required": [
         "targetEntity",
         "metricType",
@@ -529483,7 +529527,7 @@
           "format": "int64"
         },
         "dateRange": {
-          "$ref": "#/components/schemas/LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields451DateRangeProperty"
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields453DateRangeProperty"
         },
         "metricType": {
           "type": "string",
@@ -531705,7 +531749,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events#events-1"
     },
-    "LearnMarketingEventManagementEventsEvents1544": {
+    "LearnMarketingEventManagementEventsEvents1546": {
       "type": "object",
       "properties": {
         "hasDarkUgc": {
@@ -536071,7 +536115,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema#multiplechoicequestiondetails-sub-object"
     },
-    "LearnMarketingLeadSyncLeadSyncSchemaMultiplechoicequestiondetailsSubObject689": {
+    "LearnMarketingLeadSyncLeadSyncSchemaMultiplechoicequestiondetailsSubObject691": {
       "type": "object",
       "properties": {
         "id": {
@@ -538061,7 +538105,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/article-migration#background"
     },
-    "LearnSharedReferencesMigrationsArticleMigrationBackground779": {
+    "LearnSharedReferencesMigrationsArticleMigrationBackground781": {
       "type": "object",
       "properties": {
         "ugcPost": {
@@ -539729,7 +539773,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields#apply-connect---required-fields"
     },
-    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields831": {
+    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields833": {
       "required": [
         "integrationName",
         "integrationContext",
@@ -539811,7 +539855,7 @@
           "description": "The LinkedIn Easy Apply status of the job posting. This is one of ENABLED, NOT_ENABLED, IN_PROGRESS.\n\nDocumented type: enum\n\nRequirement: Yes, must be displayed if returned."
         },
         "linkedInApplyStatusDetail": {
-          "$ref": "#/components/schemas/LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields831LinkedInApplyStatusDetail"
+          "$ref": "#/components/schemas/LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields833LinkedInApplyStatusDetail"
         },
         "listedAt": {
           "type": "integer",
@@ -539823,7 +539867,7 @@
           "description": "The listing state of the job posting. This is one of LISTED, NOT_LISTED, IN_PROGRESS.\n\nDocumented type: enum\n\nRequirement: Yes, must be displayed if returned."
         },
         "listingStatusDetail": {
-          "$ref": "#/components/schemas/LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields831ListingStatusDetail"
+          "$ref": "#/components/schemas/LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields833ListingStatusDetail"
         },
         "location": {
           "type": "string",
@@ -539843,7 +539887,7 @@
           "description": "The promoted status of the job listing. This is one of PROMOTED, NOT_PROMOTED.\n\nDocumented type: enum\n\nRequirement: Yes, must be displayed if returned."
         },
         "promotionStatusDetail": {
-          "$ref": "#/components/schemas/LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields831PromotionStatusDetail"
+          "$ref": "#/components/schemas/LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields833PromotionStatusDetail"
         },
         "rawLocation": {
           "type": "string",
@@ -542426,14 +542470,14 @@
         ]
       }
     },
-    "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders1965": {
+    "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders1967": {
       "enum": [
         "Bearer {accessToken}"
       ],
       "type": "string",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-headers-1",
       "x-ms-enum": {
-        "name": "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders1965",
+        "name": "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders1967",
         "modelAsString": false,
         "values": [
           {
@@ -542443,7 +542487,7 @@
         ]
       }
     },
-    "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders961": {
+    "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders963": {
       "enum": [
         "batch_partial_update",
         "Bearer {accessToken}"
@@ -542451,7 +542495,7 @@
       "type": "string",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-headers",
       "x-ms-enum": {
-        "name": "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders961",
+        "name": "LearnTalentCrmConnectCrmCustomerConfigurationApiHeaders963",
         "modelAsString": false,
         "values": [
           {
@@ -542493,7 +542537,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
     },
-    "LearnTalentCrmConnectCrmCustomerConfigurationApiRequestBodyFields963": {
+    "LearnTalentCrmConnectCrmCustomerConfigurationApiRequestBodyFields965": {
       "required": [
         "integrationName",
         "integrationContext",
@@ -542780,7 +542824,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-stub-profiles#response-body-fields"
     },
-    "LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields971": {
+    "LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields973": {
       "required": [
         "firstName",
         "lastName",
@@ -542812,14 +542856,14 @@
           "description": "Last name of the member.\n\nDocumented type: string\n\nRequirement: Yes"
         },
         "location": {
-          "$ref": "#/components/schemas/LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields971Location"
+          "$ref": "#/components/schemas/LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields973Location"
         },
         "member": {
           "type": "string",
           "description": "Unique id of the member within LinkedIn system.\n\nDocumented type: PersonUrn in format urn:li:person:{id}\n\nRequirement: Yes"
         },
         "phone": {
-          "$ref": "#/components/schemas/LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields971Phone"
+          "$ref": "#/components/schemas/LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields973Phone"
         },
         "position": {
           "type": "array",
@@ -542868,7 +542912,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recruiter-seatholders#"
     },
-    "LearnTalentCrmConnectCrmRecruiterSeatholders977": {
+    "LearnTalentCrmConnectCrmRecruiterSeatholders979": {
       "required": [
         "actor",
         "time"
@@ -543029,7 +543073,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates#response-body-fields"
     },
-    "LearnTalentCrmConnectRetrieveCrmExportedCandidatesResponseBodyFields981": {
+    "LearnTalentCrmConnectRetrieveCrmExportedCandidatesResponseBodyFields983": {
       "required": [
         "candidate",
         "integrationContext",
@@ -543061,7 +543105,7 @@
           "format": "int64"
         },
         "requester": {
-          "$ref": "#/components/schemas/LearnTalentCrmConnectRetrieveCrmExportedCandidatesResponseBodyFields981Requester"
+          "$ref": "#/components/schemas/LearnTalentCrmConnectRetrieveCrmExportedCandidatesResponseBodyFields983Requester"
         },
         "source": {
           "type": "string",
@@ -543153,7 +543197,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages#sync-candidate-pipeline-stages-api-request-body-fields"
     },
-    "LearnTalentCrmConnectSyncCrmCandidatePipelineStagesSyncCandidatePipelineStagesApiRequestBodyFields988": {
+    "LearnTalentCrmConnectSyncCrmCandidatePipelineStagesSyncCandidatePipelineStagesApiRequestBodyFields990": {
       "required": [
         "integrationContext",
         "externalCandidatePipelineStageId",
@@ -543226,7 +543270,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines#sync-candidate-pipelines-api-request-body-fields"
     },
-    "LearnTalentCrmConnectSyncCrmCandidatePipelinesSyncCandidatePipelinesApiRequestBodyFields990": {
+    "LearnTalentCrmConnectSyncCrmCandidatePipelinesSyncCandidatePipelinesApiRequestBodyFields992": {
       "required": [
         "sources",
         "externalCreatedAt",
@@ -543409,7 +543453,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
     },
-    "LearnTalentCrmConnectSyncCrmCandidates994": {
+    "LearnTalentCrmConnectSyncCrmCandidates996": {
       "type": "object",
       "properties": {
         "city": {
@@ -543454,7 +543498,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
     },
-    "LearnTalentCrmConnectSyncCrmCandidates995": {
+    "LearnTalentCrmConnectSyncCrmCandidates997": {
       "type": "object",
       "properties": {
         "latitude": {
@@ -543468,7 +543512,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
     },
-    "LearnTalentCrmConnectSyncCrmCandidates996": {
+    "LearnTalentCrmConnectSyncCrmCandidates998": {
       "required": [
         "number"
       ],
@@ -543489,7 +543533,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
     },
-    "LearnTalentCrmConnectSyncCrmCandidates997": {
+    "LearnTalentCrmConnectSyncCrmCandidates999": {
       "required": [
         "sourceCategory",
         "sourceDetails"
@@ -543497,7 +543541,7 @@
       "type": "object",
       "properties": {
         "sourceCategory": {
-          "$ref": "#/components/schemas/LearnTalentCrmConnectSyncCrmCandidates997SourceCategory"
+          "$ref": "#/components/schemas/LearnTalentCrmConnectSyncCrmCandidates999SourceCategory"
         },
         "sourceDetails": {
           "type": "string",
@@ -544237,7 +544281,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema"
     },
-    "LearnTalentJobPostingsApiJobPostingApiSchemaFoundationSchema1014": {
+    "LearnTalentJobPostingsApiJobPostingApiSchemaFoundationSchema1016": {
       "required": [
         "jobPostingOperationType",
         "companyApplyUrl",
@@ -544290,7 +544334,7 @@
           "description": "The URL of the customer\u2019s LinkedIn Company Page they would like their jobs posted to (e.g. https://www.linkedin.com/company/{company_page}/)\n\nDocumented type: String\n\nRequirement: Yes if neither company nor companyName is available."
         },
         "compensation": {
-          "$ref": "#/components/schemas/LearnTalentJobPostingsApiJobPostingApiSchemaFoundationSchema1014Compensation"
+          "$ref": "#/components/schemas/LearnTalentJobPostingsApiJobPostingApiSchemaFoundationSchema1016Compensation"
         },
         "description": {
           "type": "string",
@@ -544848,14 +544892,14 @@
         ]
       }
     },
-    "LearnTalentMiddlewarePlatformSyncAclsSecurableEntityTypes1040": {
+    "LearnTalentMiddlewarePlatformSyncAclsSecurableEntityTypes1042": {
       "enum": [
         "JOB_REQUISITION"
       ],
       "type": "string",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#securable-entity-types",
       "x-ms-enum": {
-        "name": "LearnTalentMiddlewarePlatformSyncAclsSecurableEntityTypes1040",
+        "name": "LearnTalentMiddlewarePlatformSyncAclsSecurableEntityTypes1042",
         "modelAsString": false,
         "values": [
           {
@@ -544893,7 +544937,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback#"
     },
-    "LearnTalentMiddlewarePlatformSyncApplicationInterviewFeedback1044": {
+    "LearnTalentMiddlewarePlatformSyncApplicationInterviewFeedback1046": {
       "required": [
         "firstName",
         "lastName"
@@ -544911,7 +544955,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback#"
     },
-    "LearnTalentMiddlewarePlatformSyncApplicationInterviewFeedback1045": {
+    "LearnTalentMiddlewarePlatformSyncApplicationInterviewFeedback1047": {
       "required": [
         "attribute"
       ],
@@ -544983,7 +545027,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes#"
     },
-    "LearnTalentMiddlewarePlatformSyncApplicationNotes1048": {
+    "LearnTalentMiddlewarePlatformSyncApplicationNotes1050": {
       "required": [
         "firstName",
         "lastName"
@@ -545132,7 +545176,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#"
     },
-    "LearnTalentMiddlewarePlatformSyncApplications1057": {
+    "LearnTalentMiddlewarePlatformSyncApplications1059": {
       "required": [
         "atsCreatedAt",
         "resumeFile"
@@ -545207,7 +545251,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#api-request-body-fields"
     },
-    "LearnTalentMiddlewarePlatformSyncApplicationsApiRequestBodyFields1054": {
+    "LearnTalentMiddlewarePlatformSyncApplicationsApiRequestBodyFields1056": {
       "required": [
         "atsCreatedAt",
         "atsLastModifiedAt",
@@ -545315,7 +545359,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes#"
     },
-    "LearnTalentMiddlewarePlatformSyncCandidateNotes1059": {
+    "LearnTalentMiddlewarePlatformSyncCandidateNotes1061": {
       "required": [
         "firstName",
         "lastName"
@@ -545475,7 +545519,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
     },
-    "LearnTalentMiddlewarePlatformSyncCandidates1063": {
+    "LearnTalentMiddlewarePlatformSyncCandidates1065": {
       "type": "object",
       "properties": {
         "city": {
@@ -545517,7 +545561,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
     },
-    "LearnTalentMiddlewarePlatformSyncCandidates1064": {
+    "LearnTalentMiddlewarePlatformSyncCandidates1066": {
       "required": [
         "number"
       ],
@@ -545538,7 +545582,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
     },
-    "LearnTalentMiddlewarePlatformSyncCandidates1065": {
+    "LearnTalentMiddlewarePlatformSyncCandidates1067": {
       "required": [
         "sourceCategory",
         "sourceDetails"
@@ -545546,7 +545590,7 @@
       "type": "object",
       "properties": {
         "sourceCategory": {
-          "$ref": "#/components/schemas/LearnTalentMiddlewarePlatformSyncCandidates1065SourceCategory"
+          "$ref": "#/components/schemas/LearnTalentMiddlewarePlatformSyncCandidates1067SourceCategory"
         },
         "sourceDetails": {
           "type": "string",
@@ -545943,7 +545987,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#api-request-body-fields"
     },
-    "LearnTalentMiddlewarePlatformSyncJobRequisitionsApiRequestBodyFields1076": {
+    "LearnTalentMiddlewarePlatformSyncJobRequisitionsApiRequestBodyFields1078": {
       "required": [
         "accessRestricted",
         "title",
@@ -545975,7 +546019,7 @@
           "description": "Job-specific duties (e.g., Accounting, Marketing, Sales), similar to a \u0022department\u0022 for Job Requisition. Refer to the JobRequisitionJobFunction enum Job Requisition Job Functions reference table. Ensure to provide job function codes in uppercase.\n\nDocumented type: String[]\n\nRequirement: Optional"
         },
         "compensation": {
-          "$ref": "#/components/schemas/LearnTalentMiddlewarePlatformSyncJobRequisitionsApiRequestBodyFields1076Compensation"
+          "$ref": "#/components/schemas/LearnTalentMiddlewarePlatformSyncJobRequisitionsApiRequestBodyFields1078Compensation"
         },
         "description": {
           "type": "string",
@@ -546124,7 +546168,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#money-amount-schema"
     },
-    "LearnTalentMiddlewarePlatformSyncJobRequisitionsOwnerSchema1083": {
+    "LearnTalentMiddlewarePlatformSyncJobRequisitionsOwnerSchema1085": {
       "required": [
         "emailAddress",
         "ownerType"
@@ -546434,7 +546478,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting/job-posting-field-schema#job-posting-field-api-schema"
     },
-    "LearnTalentPremiumJobPostingJobPostingFieldSchemaJobPostingFieldApiSchema1090": {
+    "LearnTalentPremiumJobPostingJobPostingFieldSchemaJobPostingFieldApiSchema1092": {
       "type": "object",
       "properties": {
         "alternateLocationGeoIds": {
@@ -546700,7 +546744,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles#response-body-fields"
     },
-    "LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsInmailStubProfilesResponseBodyFields1097": {
+    "LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsInmailStubProfilesResponseBodyFields1099": {
       "required": [
         "firstName",
         "lastName",
@@ -546740,7 +546784,7 @@
           "description": "Unique id of the member within LinkedIn system.\n\nDocumented type: PersonUrn in format urn:li:person:{id}\n\nRequirement: Yes"
         },
         "phone": {
-          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsInmailStubProfilesResponseBodyFields1097Phone"
+          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsInmailStubProfilesResponseBodyFields1099Phone"
         },
         "position": {
           "type": "array",
@@ -546828,7 +546872,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders#"
     },
-    "LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsRecruiterSeatholders1104": {
+    "LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsRecruiterSeatholders1106": {
       "required": [
         "actor",
         "time"
@@ -547113,7 +547157,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields#job-requisitions-with-stages"
     },
-    "LearnTalentRecruiterSystemConnectRequiredFieldsJobRequisitionsWithStages1109": {
+    "LearnTalentRecruiterSystemConnectRequiredFieldsJobRequisitionsWithStages1111": {
       "required": [
         "integrationContext",
         "jobRequisitionId",
@@ -547334,16 +547378,16 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#"
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1117": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1119": {
       "type": "object",
       "properties": {
         "timeRange": {
-          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1117TimeRange"
+          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1119TimeRange"
         }
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#"
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1119": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1121": {
       "required": [
         "candidate",
         "referenceEntityType",
@@ -547379,7 +547423,7 @@
           "format": "int64"
         },
         "requester": {
-          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1119Requester"
+          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1121Requester"
         }
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#"
@@ -547503,7 +547547,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#education-schema"
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileEducationSchema1125": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileEducationSchema1127": {
       "type": "object",
       "properties": {
         "degreeName": {
@@ -547551,7 +547595,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#position-schema"
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofilePositionSchema1127": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofilePositionSchema1129": {
       "type": "object",
       "properties": {
         "companyName": {
@@ -547665,7 +547709,7 @@
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#stubprofile-fields"
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileStubprofileFields1123": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileStubprofileFields1125": {
       "required": [
         "currentEmployerNames",
         "firstName",
@@ -547709,7 +547753,7 @@
           "description": "The last name of the member.\n\nDocumented type: string\n\nRequirement: Yes"
         },
         "location": {
-          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileStubprofileFields1123Location"
+          "$ref": "#/components/schemas/LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileStubprofileFields1125Location"
         },
         "member": {
           "type": "string",
@@ -547812,31 +547856,14 @@
         ]
       }
     },
-    "LearnTalentRecruiterSystemConnectRscDataDeletion1135": {
+    "LearnTalentRecruiterSystemConnectRscDataDeletion1137": {
       "enum": [
         "Bearer {accessToken}"
       ],
       "type": "string",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
       "x-ms-enum": {
-        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1135",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "Bearer {accessToken}",
-            "name": "BearerLeftBraceAccessTokenRightBrace"
-          }
-        ]
-      }
-    },
-    "LearnTalentRecruiterSystemConnectRscDataDeletion1138": {
-      "enum": [
-        "Bearer {accessToken}"
-      ],
-      "type": "string",
-      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
-      "x-ms-enum": {
-        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1138",
+        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1137",
         "modelAsString": false,
         "values": [
           {
@@ -547871,6 +547898,23 @@
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
       "x-ms-enum": {
         "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1142",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "Bearer {accessToken}",
+            "name": "BearerLeftBraceAccessTokenRightBrace"
+          }
+        ]
+      }
+    },
+    "LearnTalentRecruiterSystemConnectRscDataDeletion1144": {
+      "enum": [
+        "Bearer {accessToken}"
+      ],
+      "type": "string",
+      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#",
+      "x-ms-enum": {
+        "name": "LearnTalentRecruiterSystemConnectRscDataDeletion1144",
         "modelAsString": false,
         "values": [
           {
@@ -547970,7 +548014,7 @@
         ]
       }
     },
-    "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11134": {
+    "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11136": {
       "enum": [
         "Bearer {accessToken}",
         "202603"
@@ -547978,7 +548022,7 @@
       "type": "string",
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-1",
       "x-ms-enum": {
-        "name": "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11134",
+        "name": "LearnTalentRecruiterSystemConnectRscDataDeletionApiRequestHeaders11136",
         "modelAsString": false,
         "values": [
           {
@@ -549741,6 +549785,46 @@
         }
       },
       "description": "This indicates the education credit measurement for the certification content. It will conly be included if the classification type is \u0027CONTINUING_EDUCATION_UNIT\u0027.\n\nDocumented type: ContentCertification\n\nRequirement: No"
+    },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostExcludeAnyItem": {
+      "type": "object",
+      "properties": {
+        "anyOf": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The facet values. A member matches the entry if they match any value. In requests, send only urn. The name and description fields are filled in on responses.\n\nDocumented type: Array\u003C{urn, name, description}\u003E"
+        },
+        "facetName": {
+          "type": "string",
+          "description": "The facet\u0027s display name. Returned in responses.\n\nDocumented type: string"
+        },
+        "facetUrn": {
+          "type": "string",
+          "description": "The facet, for example urn:li:adTargetingFacet:locations. Use the facet value from targetingEntities.\n\nDocumented type: Urn"
+        }
+      }
+    },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostIncludeAllItem": {
+      "type": "object",
+      "properties": {
+        "anyOf": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The facet values. A member matches the entry if they match any value. In requests, send only urn. The name and description fields are filled in on responses.\n\nDocumented type: Array\u003C{urn, name, description}\u003E"
+        },
+        "facetName": {
+          "type": "string",
+          "description": "The facet\u0027s display name. Returned in responses.\n\nDocumented type: string"
+        },
+        "facetUrn": {
+          "type": "string",
+          "description": "The facet, for example urn:li:adTargetingFacet:locations. Use the facet value from targetingEntities.\n\nDocumented type: Urn"
+        }
+      }
     },
     "LearnMarketingCommunityManagementOrganizationsOrganizationLookupApiOrganizationCoverPhotoV2": {
       "type": "object",
@@ -553090,7 +553174,7 @@
       },
       "description": "The instruction message to manage job promotion.\n\nDocumented type: JobPostingStatusDetail\n\nRequirement: Yes, must be displayed if returned."
     },
-    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields831LinkedInApplyStatusDetail": {
+    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields833LinkedInApplyStatusDetail": {
       "type": "object",
       "properties": {
         "statusMessage": {
@@ -553100,7 +553184,7 @@
       },
       "description": "The LinkedIn Easy Apply status detail.\n\nDocumented type: JobPostingStatusDetail\n\nRequirement: Yes, must be displayed if returned."
     },
-    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields831ListingStatusDetail": {
+    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields833ListingStatusDetail": {
       "type": "object",
       "properties": {
         "statusMessage": {
@@ -553110,7 +553194,7 @@
       },
       "description": "The error description for the job, if not listed successfully.\n\nDocumented type: JobPostingStatusDetail\n\nRequirement: Yes, must be displayed if returned."
     },
-    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields831PromotionStatusDetail": {
+    "LearnTalentApplyConnectApplyConnectRequiredFieldsApplyConnectRequiredFields833PromotionStatusDetail": {
       "type": "object",
       "properties": {
         "statusMessage": {
@@ -554882,7 +554966,7 @@
       },
       "description": "Prospect\u0027s phone number at the time of sharing\n\nDocumented type: phoneNumber\n\nRequirement: No"
     },
-    "LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields971Location": {
+    "LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields973Location": {
       "type": "object",
       "properties": {
         "countryCode": {
@@ -554896,7 +554980,7 @@
       },
       "description": "Location of the member (e.g. San Francisco Bay Area or Sunnyvale, California).\n\nDocumented type: profileLocation\n\nRequirement: No"
     },
-    "LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields971Phone": {
+    "LearnTalentCrmConnectCrmInmailStubProfilesResponseBodyFields973Phone": {
       "required": [
         "number"
       ],
@@ -554940,7 +555024,7 @@
       },
       "description": "Requester who initiated the request to export the candidate.\n\nDocumented type: Requester\n\nRequirement: Required"
     },
-    "LearnTalentCrmConnectRetrieveCrmExportedCandidatesResponseBodyFields981Requester": {
+    "LearnTalentCrmConnectRetrieveCrmExportedCandidatesResponseBodyFields983Requester": {
       "required": [
         "firstName",
         "lastName",
@@ -555132,7 +555216,7 @@
       },
       "description": "Compensation provided by the job poster.\n\nDocumented type: PosterProvidedCompensation\n\nRequirement: No"
     },
-    "LearnTalentJobPostingsApiJobPostingApiSchemaFoundationSchema1014Compensation": {
+    "LearnTalentJobPostingsApiJobPostingApiSchemaFoundationSchema1016Compensation": {
       "required": [
         "compensations"
       ],
@@ -555336,7 +555420,7 @@
       },
       "description": "Compensation provided for the job requisition.\n\nDocumented type: PosterProvidedCompensation\n\nRequirement: Optional"
     },
-    "LearnTalentMiddlewarePlatformSyncJobRequisitionsApiRequestBodyFields1076Compensation": {
+    "LearnTalentMiddlewarePlatformSyncJobRequisitionsApiRequestBodyFields1078Compensation": {
       "required": [
         "compensations"
       ],
@@ -555442,7 +555526,7 @@
       },
       "description": "Prospect\u0027s phone number at the time of sharing\n\nDocumented type: phoneNumber\n\nRequirement: No"
     },
-    "LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsInmailStubProfilesResponseBodyFields1097Phone": {
+    "LearnTalentRecruiterSystemConnectRecruiterProspectInteractionsInmailStubProfilesResponseBodyFields1099Phone": {
       "required": [
         "number"
       ],
@@ -555552,7 +555636,7 @@
       },
       "description": "The requester who initiated the request to export the candidate.\n\nDocumented type: Requester\n\nRequirement: Yes"
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1119Requester": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1121Requester": {
       "required": [
         "firstName",
         "lastName",
@@ -555598,7 +555682,7 @@
       },
       "description": "The requester who initiated the request to export the candidate.\n\nDocumented type: Requester\n\nRequirement: Yes"
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileStubprofileFields1123Location": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidatesStubprofileStubprofileFields1125Location": {
       "type": "object",
       "properties": {
         "countryCode": {
@@ -555815,6 +555899,18 @@
       "type": "object",
       "description": "Pagination metadata for the response, including count, start, and links.\n\nDocumented type: Object\n\nRequirement: Yes"
     },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchemaLocale": {
+      "type": "object",
+      "description": "Optional object with language, country, and optional variant. Both the language and country/region values must be nonblank; otherwise the backend uses en_US. Available from 202611 version and onwards.\n\nDocumented type: object\n\nRequirement: No"
+    },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1Goal": {
+      "type": "object",
+      "description": "Advertiser objective for the hypothetical boost, sent as {\u0022value\u0022:\u0022BRAND_AWARENESS\u0022}. Set value to LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, or ENGAGEMENT. A bare enum string isn\u0027t accepted.\n\nDocumented type: object\n\nRequirement: Yes"
+    },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1Locale": {
+      "type": "object",
+      "description": "Optional language, country, and optional variant for supported audience and criteria names. If language or country/region is blank or missing, the backend uses en_US. Available starting with version 202611.\n\nDocumented type: object\n\nRequirement: No"
+    },
     "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1RunSchedule": {
       "type": "object",
       "properties": {
@@ -555931,7 +556027,11 @@
         },
         "billingConfigured": {
           "type": "boolean",
-          "description": "Whether the sponsored account is ready for billing. Invoice billing qualifies; otherwise business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.\n\nDocumented type: boolean\n\nRequirement: Yes"
+          "description": "Whether the sponsored account is ready for billing. Accounts on billing hold return false. Otherwise, invoice billing qualifies, or business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.\n\nDocumented type: boolean\n\nRequirement: Yes"
+        },
+        "billingUrl": {
+          "type": "string",
+          "description": "The LinkedIn-hosted billing URL, returned regardless of billingConfigured starting with version 202611. Earlier versions omit this field.\n\nDocumented type: string\n\nRequirement: No"
         },
         "campaignUrn": {
           "type": "string",
@@ -555958,6 +556058,11 @@
         "targetPost": {
           "type": "string",
           "description": "The post this boost setup applies to.\n\nDocumented type: URN\n\nRequirement: Yes"
+        },
+        "targetingEntities": {
+          "type": "array",
+          "items": {},
+          "description": "The optional targeting discovery response. Available from 202611 version and onwards.\n\nDocumented type: array[object]\n\nRequirement: No"
         }
       }
     },
@@ -555983,7 +556088,11 @@
           "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostResponseSchema2ValueMaxTotalBudget"
         },
         "minDailyBudget": {
-          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostResponseSchema2ValueMinDailyBudgetProperty"
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostMemberPostBoostResponseSchema2ValueMinDailyBudget"
+        },
+        "politicalDeclarationRequired": {
+          "type": "boolean",
+          "description": "Whether the previewed audience requires a political declaration. Preserve true, false, and absence as distinct states. Available starting with version 202611.\n\nDocumented type: boolean\n\nRequirement: No"
         },
         "productDescription": {
           "type": "string",
@@ -556014,6 +556123,14 @@
           "description": "ISO currency code for the budget.\n\nDocumented type: string"
         }
       }
+    },
+    "LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1Goal": {
+      "type": "object",
+      "description": "Advertiser objective for the hypothetical boost, sent as {\u0022value\u0022:\u0022BRAND_AWARENESS\u0022}. Set value to LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, or ENGAGEMENT. A bare enum string isn\u0027t accepted.\n\nDocumented type: object\n\nRequirement: Yes"
+    },
+    "LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1Locale": {
+      "type": "object",
+      "description": "Optional language, country, and optional variant for supported audience and criteria names. If language or country/region is blank or missing, the backend uses en_US. Available starting with version 202611.\n\nDocumented type: object\n\nRequirement: No"
     },
     "LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1RunSchedule": {
       "type": "object",
@@ -556131,7 +556248,7 @@
         },
         "billingConfigured": {
           "type": "boolean",
-          "description": "Whether the sponsored account is ready for billing. Invoice billing qualifies; otherwise business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.\n\nDocumented type: boolean\n\nRequirement: Yes"
+          "description": "Whether the sponsored account is ready for billing. Accounts on billing hold return false. Otherwise, invoice billing qualifies, or business information and a bound supported card are required. A payment-method URN or credit balance alone isn\u0027t sufficient.\n\nDocumented type: boolean\n\nRequirement: Yes"
         },
         "campaignUrn": {
           "type": "string",
@@ -556183,11 +556300,15 @@
           "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostOrganizationPostBoostResponseSchema2ValueMaxTotalBudget"
         },
         "minDailyBudget": {
-          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostOrganizationPostBoostResponseSchema2ValueMinDailyBudgetProperty"
+          "$ref": "#/components/schemas/LearnMarketingCommunityManagementBoostOrganizationPostBoostResponseSchema2ValueMinDailyBudget"
         },
         "organization": {
           "type": "string",
           "description": "Echoed organization URN for the Company Page Boost context.\n\nDocumented type: URN\n\nRequirement: Yes"
+        },
+        "politicalDeclarationRequired": {
+          "type": "boolean",
+          "description": "Whether the previewed audience requires a political declaration. Preserve true, false, and absence as distinct states. Available starting with version 202611.\n\nDocumented type: boolean\n\nRequirement: No"
         },
         "productDescription": {
           "type": "string",
@@ -556261,11 +556382,11 @@
       "type": "object",
       "description": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.\n\nDocumented type: Object\n\nRequirement: No"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1456DateRange": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1458DateRange": {
       "type": "object",
       "description": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.\n\nDocumented type: Object\n\nRequirement: No"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields451DateRange": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields453DateRange": {
       "type": "object",
       "description": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.\n\nDocumented type: Object\n\nRequirement: No"
     },
@@ -557233,7 +557354,7 @@
         }
       }
     },
-    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1117TimeRange": {
+    "LearnTalentRecruiterSystemConnectRetrieveExportedCandidates1119TimeRange": {
       "type": "object",
       "properties": {
         "end": {
@@ -557366,6 +557487,16 @@
     },
     "LearnMarketingCommunityManagementBoostMemberPostBoostResponseSchema2ValueMinDailyBudget": {
       "type": "object",
+      "properties": {
+        "amount": {
+          "type": "string",
+          "description": "Decimal minimum daily budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when minDailyBudget is present"
+        },
+        "currencyCode": {
+          "type": "string",
+          "description": "Three-letter ISO 4217 currency code for the minimum daily budget.\n\nDocumented type: String\n\nRequirement: Yes, when minDailyBudget is present"
+        }
+      },
       "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No"
     },
     "LearnMarketingCommunityManagementBoostMemberPostBoostResponseSchema2ValueTargetingCriteria": {
@@ -557465,6 +557596,16 @@
     },
     "LearnMarketingCommunityManagementBoostOrganizationPostBoostResponseSchema2ValueMinDailyBudget": {
       "type": "object",
+      "properties": {
+        "amount": {
+          "type": "string",
+          "description": "Decimal minimum daily budget amount.\n\nDocumented type: String\n\nRequirement: Yes, when minDailyBudget is present"
+        },
+        "currencyCode": {
+          "type": "string",
+          "description": "Three-letter ISO 4217 currency code for the minimum daily budget.\n\nDocumented type: String\n\nRequirement: Yes, when minDailyBudget is present"
+        }
+      },
       "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No"
     },
     "LearnMarketingCommunityManagementBoostOrganizationPostBoostResponseSchema2ValueTargetingCriteria": {
@@ -559091,6 +559232,18 @@
       "type": "object",
       "description": "Pagination metadata for the response, including count, start, and links.\n\nDocumented type: Object\n\nRequirement: Yes"
     },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchemaLocaleProperty": {
+      "type": "object",
+      "description": "Optional object with language, country, and optional variant. Both the language and country/region values must be nonblank; otherwise the backend uses en_US. Available from 202611 version and onwards.\n\nDocumented type: object\n\nRequirement: No"
+    },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1GoalProperty": {
+      "type": "object",
+      "description": "Advertiser objective for the hypothetical boost, sent as {\u0022value\u0022:\u0022BRAND_AWARENESS\u0022}. Set value to LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, or ENGAGEMENT. A bare enum string isn\u0027t accepted.\n\nDocumented type: object\n\nRequirement: Yes"
+    },
+    "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1LocaleProperty": {
+      "type": "object",
+      "description": "Optional language, country, and optional variant for supported audience and criteria names. If language or country/region is blank or missing, the backend uses en_US. Available starting with version 202611.\n\nDocumented type: object\n\nRequirement: No"
+    },
     "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema1TargetingCriteriaProperty": {
       "type": "object",
       "description": "Audience to preview. Omit it for a suggested audience. On 202610, pass the suggested criteria back unchanged. Starting with 202611, use the custom or saved audience model described below.\n\nDocumented type: Object\n\nRequirement: No"
@@ -559098,6 +559251,14 @@
     "LearnMarketingCommunityManagementBoostMemberPostBoostRequestBodySchema2TargetingCriteriaProperty": {
       "type": "object",
       "description": "Audience for the boost. On 202610, pass the suggested criteria back unchanged. On 202611, use the selected criteria previewed by Hydrate. See Targeting criteria object.\n\nDocumented type: object\n\nRequirement: Yes"
+    },
+    "LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1GoalProperty": {
+      "type": "object",
+      "description": "Advertiser objective for the hypothetical boost, sent as {\u0022value\u0022:\u0022BRAND_AWARENESS\u0022}. Set value to LEAD_GENERATION, VIDEO_VIEW, BRAND_AWARENESS, WEBSITE_VISIT, or ENGAGEMENT. A bare enum string isn\u0027t accepted.\n\nDocumented type: object\n\nRequirement: Yes"
+    },
+    "LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1LocaleProperty": {
+      "type": "object",
+      "description": "Optional language, country, and optional variant for supported audience and criteria names. If language or country/region is blank or missing, the backend uses en_US. Available starting with version 202611.\n\nDocumented type: object\n\nRequirement: No"
     },
     "LearnMarketingCommunityManagementBoostOrganizationPostBoostRequestBodySchema1TargetingCriteriaProperty": {
       "type": "object",
@@ -559115,11 +559276,11 @@
       "type": "object",
       "description": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.\n\nDocumented type: Object\n\nRequirement: No"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1456DateRangeProperty": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields1458DateRangeProperty": {
       "type": "object",
       "description": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.\n\nDocumented type: Object\n\nRequirement: No"
     },
-    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields451DateRangeProperty": {
+    "LearnMarketingCommunityManagementMembersPostStatisticsResponseBodyFields453DateRangeProperty": {
       "type": "object",
       "description": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.\n\nDocumented type: Object\n\nRequirement: No"
     },
@@ -559183,17 +559344,9 @@
       "type": "object",
       "description": "Start date (month and year)\n\nDocumented type: object"
     },
-    "LearnMarketingCommunityManagementBoostMemberPostBoostResponseSchema2ValueMinDailyBudgetProperty": {
-      "type": "object",
-      "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No"
-    },
     "LearnMarketingCommunityManagementBoostMemberPostBoostResponseSchema2ValueTargetingCriteriaProperty": {
       "type": "object",
       "description": "Audience resolved for the preview, such as an AI-generated suggested audience, when available. See Targeting criteria object.\n\nDocumented type: Object\n\nRequirement: No"
-    },
-    "LearnMarketingCommunityManagementBoostOrganizationPostBoostResponseSchema2ValueMinDailyBudgetProperty": {
-      "type": "object",
-      "description": "Minimum daily budget for the preview, when available.\n\nDocumented type: Object\n\nRequirement: No"
     },
     "LearnMarketingCommunityManagementBoostOrganizationPostBoostResponseSchema2ValueTargetingCriteriaProperty": {
       "type": "object",
@@ -567804,7 +567957,7 @@
         ]
       }
     },
-    "LearnTalentCrmConnectSyncCrmCandidates997SourceCategory": {
+    "LearnTalentCrmConnectSyncCrmCandidates999SourceCategory": {
       "enum": [
         "LINKEDIN",
         "EMAIL",
@@ -567820,7 +567973,7 @@
       "type": "string",
       "description": "Category of the candidate\u0027s source. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER\n\nDocumented type: Enum\n\nRequirement: Required",
       "x-ms-enum": {
-        "name": "LearnTalentCrmConnectSyncCrmCandidates997SourceCategory",
+        "name": "LearnTalentCrmConnectSyncCrmCandidates999SourceCategory",
         "modelAsString": false,
         "values": [
           {
@@ -568165,7 +568318,7 @@
         ]
       }
     },
-    "LearnTalentMiddlewarePlatformSyncCandidates1065SourceCategory": {
+    "LearnTalentMiddlewarePlatformSyncCandidates1067SourceCategory": {
       "enum": [
         "LINKEDIN",
         "EMAIL",
@@ -568181,7 +568334,7 @@
       "type": "string",
       "description": "Category of where the candidate originated from. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER\n\nDocumented type: Enum\n\nRequirement: Required",
       "x-ms-enum": {
-        "name": "LearnTalentMiddlewarePlatformSyncCandidates1065SourceCategory",
+        "name": "LearnTalentMiddlewarePlatformSyncCandidates1067SourceCategory",
         "modelAsString": false,
         "values": [
           {

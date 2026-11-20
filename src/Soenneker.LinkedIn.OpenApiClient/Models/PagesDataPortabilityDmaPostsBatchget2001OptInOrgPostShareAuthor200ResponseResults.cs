@@ -104,7 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "urn:li:share:7140151510616682496", n => { UrnLiShare7140151510616682496 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140151510616682496>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140151510616682496.CreateFromDiscriminatorValue); } },
                 { "urn:li:share:7140190856493359105", n => { UrnLiShare7140190856493359105 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140190856493359105>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiShare7140190856493359105.CreateFromDiscriminatorValue); } },

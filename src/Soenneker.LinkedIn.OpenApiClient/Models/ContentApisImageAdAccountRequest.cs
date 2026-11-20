@@ -133,7 +133,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "adContext", n => { AdContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisImageAdAccountRequestAdContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisImageAdAccountRequestAdContext.CreateFromDiscriminatorValue); } },
                 { "author", n => { Author = n.GetStringValue(); } },

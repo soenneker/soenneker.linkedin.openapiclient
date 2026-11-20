@@ -195,7 +195,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "availability", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsAssetdetailsAvailability>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAvailability = default; _explicitNullProperties?.Remove("availability"); AdditionalData["availability"] = unknown; } else { Availability = parsed; AdditionalData.Remove("availability"); } } },
                 { "availableLocales", n => { AvailableLocales = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningassetsLocale.CreateFromDiscriminatorValue)?.AsList(); } },

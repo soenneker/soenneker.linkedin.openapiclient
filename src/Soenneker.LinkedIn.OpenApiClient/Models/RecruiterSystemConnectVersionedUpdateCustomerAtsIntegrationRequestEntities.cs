@@ -92,7 +92,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "integrationContext=urn:li:contract:{{contract_id}}&integrationType=CSA_API&tenantType=RECRUITER", n => { IntegrationContextUrnLiContractContractIdIntegrationTypeCSAAPITenantTypeRECRUITER = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpdateCustomerAtsIntegrationRequestEntitiesIntegrationContextUrnLiContractContractIdIntegrationTypeCsaApiTenantTypeRecruiter>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpdateCustomerAtsIntegrationRequestEntitiesIntegrationContextUrnLiContractContractIdIntegrationTypeCsaApiTenantTypeRecruiter.CreateFromDiscriminatorValue); } },
                 { "integrationContext=urn:li:organization:{{org_id}}&integrationType=IN_ATS_INDICATOR&tenantType=RECRUITER", n => { IntegrationContextUrnLiOrganizationOrgIdIntegrationTypeINATSINDICATORTenantTypeRECRUITER = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpdateCustomerAtsIntegrationRequestEntitiesIntegrationContextUrnLiOrganizationOrgIdIntegrationTypeInAtsIndicatorTenantTypeRecruiter>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedUpdateCustomerAtsIntegrationRequestEntitiesIntegrationContextUrnLiOrganizationOrgIdIntegrationTypeInAtsIndicatorTenantTypeRecruiter.CreateFromDiscriminatorValue); } },

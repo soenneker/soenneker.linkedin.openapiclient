@@ -103,7 +103,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "dateRange", n => { DateRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDateRange.CreateFromDiscriminatorValue); } },
                 { "demographicDimension", n => { DemographicDimension = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsCreatorAnalyticsCreatoranalyticsdatapointDemographicDimension.CreateFromDiscriminatorValue); } },

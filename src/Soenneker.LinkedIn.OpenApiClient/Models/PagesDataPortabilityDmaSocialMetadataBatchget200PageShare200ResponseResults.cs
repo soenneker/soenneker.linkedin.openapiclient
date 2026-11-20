@@ -104,7 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "urn:li:activity:7141537969844256772", n => { UrnLiActivity7141537969844256772 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiActivity7141537969844256772.CreateFromDiscriminatorValue); } },
                 { "urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952)", n => { UrnLiCommentUrnLiActivity71277052482567249927137543297882877952 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927137543297882877952>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaSocialMetadataBatchget200PageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927137543297882877952.CreateFromDiscriminatorValue); } },

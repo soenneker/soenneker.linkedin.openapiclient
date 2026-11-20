@@ -72,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "cellphoneNumberQuestionRequirement", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaContactinformationquestionsFieldsCellphoneNumberQuestionRequirement>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCellphoneNumberQuestionRequirement = default; _explicitNullProperties?.Remove("cellphoneNumberQuestionRequirement"); AdditionalData["cellphoneNumberQuestionRequirement"] = unknown; } else { CellphoneNumberQuestionRequirement = parsed; AdditionalData.Remove("cellphoneNumberQuestionRequirement"); } } },
                 { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnTalentApplyConnectOnsiteApplyConfigurationSchemaSimpletalentquestiondefinitionFields.CreateFromDiscriminatorValue)?.AsList(); } },

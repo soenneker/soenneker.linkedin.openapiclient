@@ -17,7 +17,8 @@
     "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
     "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
     "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
-    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead"
   ],
   "Blocks": [
     {
@@ -148,7 +149,7 @@
             "Values": []
           },
           {
-            "Text": "The inclusion entries. A member must match every entry (AND).",
+            "Text": "The inclusion entries. A member must match every entry (AND). Creation and targeting edits require a location facet with at least one value.",
             "Links": [],
             "Values": []
           }
@@ -251,17 +252,40 @@
         ],
         [
           {
-            "Text": "type, ownership, audienceCount, lastAppliedAt, lastModifiedAt",
+            "Text": "type",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "The read-only audience category, ownership, estimated size, and timestamps. Timestamps use epoch milliseconds. Account-owned audiences have ownership: ACCOUNT.",
+            "Text": "The audience category: SUGGESTED_AUDIENCE for a LinkedIn-generated audience or USER_AUDIENCE for an advertiser-built audience. Read-only on the saved-audience resource.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownership, audienceCount, lastAppliedAt, lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The read-only ownership, estimated size, and timestamps. Timestamps use epoch milliseconds. Account-owned audiences have ownership: ACCOUNT.",
             "Links": [],
             "Values": []
           }
         ]
       ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting criteria",
+      "Anchor": "targeting-criteria",
+      "SectionPath": [
+        "Targeting criteria"
+      ],
+      "Text": "Interface locale targeting is optional. If it is omitted, Boost adds a default language when resolving the criteria. It isn\u0027t a required client-supplied facet.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "text",
@@ -282,6 +306,54 @@
         "Targeting criteria"
       ],
       "Text": "{\n  \u0022includeAll\u0022: [\n    {\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n      \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]\n    },\n    {\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n      \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience editing rules",
+      "Anchor": "audience-editing-rules",
+      "SectionPath": [
+        "Targeting criteria",
+        "Audience editing rules"
+      ],
+      "Text": "Suggested audiences and saved audiences can contain facets that Boost doesn\u0027t offer for custom audience creation. Preserve these facets when passing the audience to Hydrate and Post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience editing rules",
+      "Anchor": "audience-editing-rules",
+      "SectionPath": [
+        "Targeting criteria",
+        "Audience editing rules"
+      ],
+      "Text": "For a SUGGESTED_AUDIENCE, advertisers can edit only locations and interface locales. Keep all other facets unchanged. Suggested audiences don\u0027t have a saved-audience ID and can\u0027t be saved directly through boostTargetingCriteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience editing rules",
+      "Anchor": "audience-editing-rules",
+      "SectionPath": [
+        "Targeting criteria",
+        "Audience editing rules"
+      ],
+      "Text": "For an advertiser-built audience retrieved from Campaign Manager, allow edits only to locations and the facets available through Init\u0027s targetingEntities; display other facets as read-only and preserve their values. Creating a saved audience through boostTargetingCriteria accepts only supported Boost facets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience editing rules",
+      "Anchor": "audience-editing-rules",
+      "SectionPath": [
+        "Targeting criteria",
+        "Audience editing rules"
+      ],
+      "Text": "When applying a selected audience to an existing campaign, follow the Boost Manage targeting requirements, including type and the saved-audience id when required. Updating a saved audience doesn\u0027t automatically update campaigns that use it.",
       "Headers": [],
       "Rows": []
     },
@@ -378,7 +450,7 @@
             "Values": []
           },
           {
-            "Text": "The selection mode: SEARCH, LIST, or SEARCH_AND_LIST. It can be omitted.",
+            "Text": "The selection mode. LIST uses returned options; SEARCH requires typeahead; SEARCH_AND_LIST supports either. It can be omitted.",
             "Links": [],
             "Values": []
           }
@@ -441,7 +513,7 @@
         "Targeting criteria",
         "Discover targeting options"
       ],
-      "Text": "For searchable facets, use the existing adTargetingEntities typeahead. Its request takes q=typeahead, an encoded facet URN, and query. Follow that reference for facet-specific parameters and access requirements.",
+      "Text": "For searchable facets, use the existing adTargetingEntities typeahead. Its request takes q=typeahead, an encoded facet URN, and query. Use queryVersion=QUERY_USES_URNS for targeting URNs. Follow that reference for facet-specific parameters and access requirements.",
       "Headers": [],
       "Rows": []
     },
@@ -454,6 +526,66 @@
         "Discover targeting options"
       ],
       "Text": "Init and Hydrate accept optional locale objects such as {\u0022language\u0022:\u0022en\u0022,\u0022country\u0022:\u0022US\u0022}. Both the language and country/region values must be nonblank; incomplete locales fall back to en_US. Locale supports suggested audience and criteria names, but doesn\u0027t guarantee localization of discovery facet labels or options.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for locations",
+      "Anchor": "search-for-locations",
+      "SectionPath": [
+        "Targeting criteria",
+        "Search for locations"
+      ],
+      "Text": "Use geoTypeahead with q=search and the advertiser\u0027s search text in query to find location values for a custom audience. An optional locale controls the returned display names.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for locations",
+      "Anchor": "search-for-locations",
+      "SectionPath": [
+        "Targeting criteria",
+        "Search for locations"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Search for locations",
+      "Anchor": "search-for-locations",
+      "SectionPath": [
+        "Targeting criteria",
+        "Search for locations"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/geoTypeahead?q=search\u0026query=united\u0026locale=(language:en,country:US)\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Search for locations",
+      "Anchor": "search-for-locations",
+      "SectionPath": [
+        "Targeting criteria",
+        "Search for locations"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/geoTypeahead?q=search\u0026query=united\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027Linkedin-Version: 202611\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for locations",
+      "Anchor": "search-for-locations",
+      "SectionPath": [
+        "Targeting criteria",
+        "Search for locations"
+      ],
+      "Text": "Each result in elements includes displayText and an entity geo URN. Use the entity URN as an anyOf[].urn value under facetUrn: \u0022urn:li:adTargetingFacet:locations\u0022.",
       "Headers": [],
       "Rows": []
     },
@@ -729,7 +861,18 @@
       "SectionPath": [
         "Edit an audience"
       ],
-      "Text": "Only name, description, includeAll, and excludeAny are editable. Omitted fields keep their saved values. A rename-only edit doesn\u0027t require targeting. Any targeting edit must include includeAll with a location; an excludeAny-only edit is rejected. Don\u0027t use $delete.",
+      "Text": "Only name, description, includeAll, and excludeAny are editable. Omitted name and description fields keep their saved values. An edit that changes only the name or description doesn\u0027t require targeting and leaves the saved targeting unchanged. Don\u0027t use $delete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edit an audience",
+      "Anchor": "edit-an-audience",
+      "SectionPath": [
+        "Edit an audience"
+      ],
+      "Text": "For a targeting edit, always send the complete desired includeAll list with a location facet containing at least one value. Omit excludeAny to preserve existing exclusions, send excludeAny: [] to clear them, or send a complete replacement excludeAny list to change them. An excludeAny-only edit is rejected.",
       "Headers": [],
       "Rows": []
     },
@@ -777,7 +920,7 @@
         "Edit an audience",
         "Sample rename request"
       ],
-      "Text": "To edit targeting, use the same request with the following body, including all desired inclusion selections:",
+      "Text": "To edit targeting, use the same request with the following body. This example replaces the inclusion rules and clears all saved exclusions:",
       "Headers": [],
       "Rows": []
     },
@@ -789,7 +932,7 @@
         "Edit an audience",
         "Sample rename request"
       ],
-      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022includeAll\u0022: [\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n      ]\n    }\n  }\n}",
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022includeAll\u0022: [\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:geo:103644278\u0022}]},\n        {\u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022, \u0022anyOf\u0022: [{\u0022urn\u0022: \u0022urn:li:locale:en_US\u0022}]}\n      ],\n      \u0022excludeAny\u0022: []\n    }\n  }\n}",
       "Headers": [],
       "Rows": []
     },
@@ -885,12 +1028,29 @@
             "Values": []
           },
           {
-            "Text": "Missing account, blank name, or no location in includeAll.",
+            "Text": "Missing account, blank name, or no location value in includeAll.",
             "Links": [],
             "Values": []
           },
           {
-            "Text": "Supply the owning account, a nonblank name, and location targeting.",
+            "Text": "Supply the owning account, a nonblank name, and a location facet with at least one value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Create",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A targeting facet isn\u0027t supported by Boost.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use locations and facets available through Init\u0027s targetingEntities.",
             "Links": [],
             "Values": []
           }

@@ -117,7 +117,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "customAttributes", n => { CustomAttributes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },

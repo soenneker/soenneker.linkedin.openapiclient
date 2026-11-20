@@ -91,7 +91,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "ctaType", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPointCtaType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCtaType = default; _explicitNullProperties?.Remove("ctaType"); AdditionalData["ctaType"] = unknown; } else { CtaType = parsed; AdditionalData.Remove("ctaType"); } } },

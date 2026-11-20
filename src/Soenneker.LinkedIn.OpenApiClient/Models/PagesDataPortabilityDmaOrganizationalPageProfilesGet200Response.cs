@@ -236,7 +236,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "coverImage", n => { CoverImage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImage.CreateFromDiscriminatorValue); } },
                 { "coverImageCropMetadata", n => { CoverImageCropMetadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageCropMetadata.CreateFromDiscriminatorValue); } },

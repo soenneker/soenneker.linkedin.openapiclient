@@ -160,7 +160,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "artifact", n => { Artifact = n.GetStringValue(); } },
                 { "authorizationMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectGetPersonIdWith3LeggedOAuthFlowRLiteprofilePermissionDefaultResponseAuthorizationMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthorizationMethod = default; _explicitNullProperties?.Remove("authorizationMethod"); AdditionalData["authorizationMethod"] = unknown; } else { AuthorizationMethod = parsed; AdditionalData.Remove("authorizationMethod"); } } },

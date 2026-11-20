@@ -116,7 +116,7 @@
       "SectionPath": [
         "Retrieve boost analytics"
       ],
-      "Text": "The boostAnalytics API retrieves analytics for boosted posts owned by the authenticated member or by a sponsoring organization. The response externalizes a curated set of sponsored metrics shown on the boosted post: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, spend, and approximateMemberReach. The response shape and metric availability depend on the requested API version.",
+      "Text": "The boostAnalytics API retrieves analytics for boosted posts owned by the authenticated member or by a sponsoring organization. The response externalizes a curated set of sponsored metrics shown on the boosted post: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, and approximateMemberReach. Version 202610 returns flat post metrics with spend in USD. Version 202611 and later returns campaign-level metrics with spendInLocalCurrency in each ad account\u0027s currency, while approximateMemberReach remains at the post level.",
       "Headers": [],
       "Rows": []
     },
@@ -443,7 +443,7 @@
             "Values": []
           },
           {
-            "Text": "Approximate reach, omitted for boosts spanning more than 92 days. It isn\u0027t an exact deduplicated union across campaigns.",
+            "Text": "Approximate reach over up to the most recent 91 days. For boosts longer than 91 days, this covers only the last 91 days, not the boost\u0027s lifetime. Omitted when reach data is unavailable. It uses the maximum per-campaign reach, not a sum or deduplicated union across campaigns.",
             "Links": [],
             "Values": []
           },
@@ -497,7 +497,7 @@
         "Retrieve boost analytics",
         "Response body fields"
       ],
-      "Text": "Version 202611 and above replaces the flat post metric fields with a campaigns array. An empty array doesn\u0027t mean zero delivery or spend. Integrations that require those metrics must not assume equivalent reporting when upgrading from 202610.",
+      "Text": "Version 202611 and above replaces the flat post metric fields with a campaigns array. An empty array doesn\u0027t mean zero delivery or spend.",
       "Headers": [],
       "Rows": []
     },
@@ -545,7 +545,7 @@
             "Values": []
           },
           {
-            "Text": "The approximate post-level reach, omitted for boosts spanning more than 92 days. It isn\u0027t an exact deduplicated union across campaigns.",
+            "Text": "The approximate post-level reach over up to the most recent 91 days. For boosts longer than 91 days, this covers only the last 91 days, not the boost\u0027s lifetime. Omitted when reach data is unavailable. It uses the maximum per-campaign reach, not a sum or deduplicated union across campaigns.",
             "Links": [],
             "Values": []
           }
@@ -562,7 +562,7 @@
             "Values": []
           },
           {
-            "Text": "The campaign breakdown. It is empty when campaign data isn\u0027t populated.",
+            "Text": "The campaign breakdown, with metrics for each campaign.",
             "Links": [],
             "Values": []
           }
@@ -596,7 +596,7 @@
             "Values": []
           },
           {
-            "Text": "The campaign metrics schema: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, and spendInLocalCurrency. Currently unavailable.",
+            "Text": "The campaign metrics: impressions, clicks, clickThroughRate, reactions, comments, shares, follows, and spendInLocalCurrency.",
             "Links": [],
             "Values": []
           }
@@ -613,7 +613,7 @@
             "Values": []
           },
           {
-            "Text": "The schema for spend in the account\u0027s currency, with decimal-string amount and currencyCode. Local-currency reporting isn\u0027t currently populated.",
+            "Text": "Spend in the ad account\u0027s currency, with decimal-string amount and currencyCode.",
             "Links": [],
             "Values": []
           }
@@ -629,6 +629,30 @@
         "Response body fields"
       ],
       "Text": "Don\u0027t add reach across campaigns: audiences can overlap. Don\u0027t combine monetary amounts with different currencies. The current reach approximation uses the maximum campaign reach, not a deduplicated sum.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "Campaign metrics cover up to the past two years. Reach uses a separate reporting period of up to the most recent 91 days, including for boosts that have run longer. The API selects this period; requests don\u0027t accept a date range. Don\u0027t interpret missing reach as zero or the reported value as lifetime or two-year deduplicated reach.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve boost analytics",
+        "Response body fields"
+      ],
+      "Text": "An unboosted post isn\u0027t an error: the API returns 200 OK with an empty campaigns array. Campaign data can also be unavailable, so an empty array alone doesn\u0027t establish zero delivery or spend.",
       "Headers": [],
       "Rows": []
     },
@@ -786,7 +810,7 @@
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
       ],
-      "Text": "GET https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3AugcPost%3A1234567890)\u0026organization=urn%3Ali%3Aorganization%3A2414183\nAuthorization: Bearer {access_token}\nLinkedin-Version: 202611\nX-Restli-Protocol-Version: 2.0.0",
+      "Text": "GET https://api.linkedin.com/rest/boostAnalytics?q=boostAnalytics\u0026targetPosts=List(urn%3Ali%3AugcPost%3A1234567890)\u0026organization=urn%3Ali%3Aorganization%3A2414183",
       "Headers": [],
       "Rows": []
     },
@@ -810,7 +834,7 @@
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
       ],
-      "Text": "A response without available reach can have the following shape:",
+      "Text": "A response with campaign metrics can have the following shape. This example omits the optional post-level reach:",
       "Headers": [],
       "Rows": []
     },
@@ -822,7 +846,7 @@
         "Retrieve boost analytics",
         "Sample request for organization post analytics"
       ],
-      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n      \u0022campaigns\u0022: []\n    }\n  ],\n  \u0022paging\u0022: {\u0022count\u0022: 10, \u0022start\u0022: 0, \u0022links\u0022: []}\n}",
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022targetPost\u0022: \u0022urn:li:ugcPost:1234567890\u0022,\n      \u0022campaigns\u0022: [\n        {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:222222222\u0022,\n          \u0022account\u0022: \u0022urn:li:sponsoredAccount:987654321\u0022,\n          \u0022metrics\u0022: {\n            \u0022impressions\u0022: 10000,\n            \u0022clicks\u0022: 250,\n            \u0022clickThroughRate\u0022: 0.025,\n            \u0022reactions\u0022: 30,\n            \u0022comments\u0022: 5,\n            \u0022shares\u0022: 4,\n            \u0022follows\u0022: 8,\n            \u0022spendInLocalCurrency\u0022: {\n              \u0022amount\u0022: \u002237.42\u0022,\n              \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n          }\n        }\n      ]\n    }\n  ],\n  \u0022paging\u0022: {\u0022count\u0022: 10, \u0022start\u0022: 0, \u0022links\u0022: []}\n}",
       "Headers": [],
       "Rows": []
     },

@@ -186,7 +186,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "backgroundImage", n => { BackgroundImage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7128514732969357312BackgroundImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7128514732969357312BackgroundImage.CreateFromDiscriminatorValue); } },
                 { "broadcastTool", n => { BroadcastTool = n.GetStringValue(); } },

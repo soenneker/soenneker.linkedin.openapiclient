@@ -126,7 +126,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "associatedEntity", n => { AssociatedEntity = n.GetStringValue(); } },
                 { "formResponse", n => { FormResponse = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormResponseOwner200ResponseElementsItemFormResponse>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormResponseOwner200ResponseElementsItemFormResponse.CreateFromDiscriminatorValue); } },

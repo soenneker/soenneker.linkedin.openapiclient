@@ -224,7 +224,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "urn:li:like:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", n => { UrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200ResponseResultsUrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200ResponseResultsUrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448.CreateFromDiscriminatorValue); } },
                 { "urn:li:like:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", n => { UrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200ResponseResultsUrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200ResponseResultsUrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408.CreateFromDiscriminatorValue); } },

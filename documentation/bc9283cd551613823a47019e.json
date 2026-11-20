@@ -119,7 +119,7 @@
         "November 2026 - Version 202611 (Latest)",
         "Product \u0026 Platform Announcements"
       ],
-      "Text": "Ad Accounts API: New billingReference field:\nStarting with the 202611 version, the /adAccounts endpoint returns and accepts billingReference, a URN that references the billing object (for example, a Salesforce contract line item) associated with an ENTERPRISE account. The field can be set when the account is created and updated with a partial update; updates are restricted to approved applications. It is also returned in the accountInfo additional info field of /adCampaignGroups and /adCampaigns. In earlier versions, the field is rejected with a 422 error. This is an additive, backward-compatible change.\n\nBoost API: Custom targeting, saved audiences, and boost management:\nStarting with version 202611, Boost Init provides targeting discovery through targetingEntities, and custom or saved audiences use includeAll and excludeAny criteria. The shared /rest/boostTargetingCriteria resource supports creating, finding, editing, and deleting account-owned audiences for Member and Company Page boosts. The /rest/memberBoostManage/{campaignId} and /rest/organizationBoostManage/{campaignId} resources support retrieving existing boosts, updating targeting and political declarations, and deleting boosts. Budget, objective, and schedule aren\u0027t editable through these management resources. Use Init\u0027s returned billingUrl unchanged for billing setup.\n\nBoost API: Hosted billing setup URL:\nBoost Init returns an optional billingUrl when billingConfigured is false. Partners can direct the advertiser to this LinkedIn-hosted URL to complete billing setup, then call the Init endpoint again before continuing. Partners should not collect payment details themselves. billingConfigured now reflects billing readiness rather than merely the presence of a payment method, so some accounts that previously returned true can return false. Advertisers are expected to complete billing setup before creating a boost.\n\nBoost API: Political-advertising declaration:\nStarting with the 202611 version, Member and Company Page Boost Post actions accept a politicalIntent declaration. Boost Hydrate can return politicalDeclarationRequired to indicate when the evaluated targeting requires an explicit declaration. An absent value isn\u0027t a confirmed false. LinkedIn\u0027s prohibition on political advertising remains unchanged. See the Reminders section below for details.\n\nConversions API: SHA256_PHONE user identifier:\nStarting with the 202611 version, the /conversionEvents endpoint supports SHA256_PHONE as a new idType in userIds for phone-number matching. Normalize the phone number to E.164 format (country calling code plus national number), remove the leading \u002B so that only digits remain, then apply SHA256 and hex-encode the digest. For example, (650) 555-1212 in the US becomes 16505551212 before hashing.\n\nCampaign Management API: surface field for publisher lists (action required):\nStarting with the 202611 version, the /adPublisherRestrictions endpoint supports a required surface field when you create a publisher list. Set it to LAN (LinkedIn Audience Network) or CTV (Connected TV). You can only set surface at creation and can\u0027t change it later. On version 202611 or later, a create request without a valid surface returns a 400 error. The field lets each publisher list target a single placement type. This isn\u0027t backward compatible for publisher-list creation. As announced in October, the migration window for existing partner API accounts ends on December 15, 2026. After that date, the following applies on every API version:\n\nCreating lists on older versions: create requests to /adPublisherRestrictions on versions 202610 or earlier return 400 with the code SURFACE_AWARE_API_VERSION_REQUIRED. Use 202611 or later to create lists.\nExisting legacy lists (surface is BOTH or absent): update requests return 400 with the code LEGACY_PUBLISHER_LIST_UPDATE_NOT_ALLOWED. You can still read these lists, and campaigns they\u0027re already attached to keep working. To change a legacy list, create a new list with surface set to LAN or CTV.\nUsing lists on campaigns: /adAccounts/{id}/adCampaigns only accepts publisher lists whose surface matches the campaign\u0027s placement type. Requests that don\u0027t match return 400.\nUsing lists on account trust preferences: /adAccountTrustPreferences is account-level and has no campaign placement to match. Any list newly added to the account-level allowlist or blocklist must have surface set to LAN or CTV. Adding a legacy list (BOTH or no surface) returns 400. Lists already applied to the account keep working.\n\nMigrate to version 202611 and update your publisher-list integration before December 15, 2026.",
+      "Text": "Ad Accounts API: New billingReference field:\nStarting with the 202611 version, the /adAccounts endpoint returns and accepts billingReference, a URN that references the billing object (for example, a Salesforce contract line item) associated with an ENTERPRISE account. The field can be set when the account is created and updated with a partial update; updates are restricted to approved applications. It is also returned in the accountInfo additional info field of /adCampaignGroups and /adCampaigns. In earlier versions, the field is rejected with a 422 error. This is an additive, backward-compatible change.\n\nBoost API: Simplified audience targeting, locale support, and saved audiences:\nStarting with version 202611, Member and Company Page Boost APIs use simplified targeting criteria: includeAll contains criteria that must all match, excludeAny contains criteria that exclude matching members, and anyOf lists alternative values within a criterion.\nBoost Init returns targetingEntities, describing supported targeting facets, selectable options, exclusion support, and incompatible combinations. Init and Hydrate accept an optional locale for supported audience and criteria names. Localization of discovery facet labels and options isn\u0027t guaranteed.\nThe shared /rest/boostTargetingCriteria resource supports creating, updating, and deleting saved audiences, and finding saved audiences by ad account, for both Member and Company Page Boost. Creation requires an ad account, a nonblank audience name, and location targeting.\nSuggested audiences allow edits only to locations and interface locales; preserve all other facets. Saved audiences created outside Boost can contain additional facets that must remain read-only in the Boost targeting interface. Interface locale isn\u0027t a required client-supplied facet; Boost adds a default language when it is omitted.\n\nBoost API: Manage existing boosts:\nStarting with version 202611, the /rest/memberBoostManage/{campaignId} and /rest/organizationBoostManage/{campaignId} resources support retrieving an existing boost\u0027s campaign details, targeting, budget, schedule, political-advertising declaration, and available forecast, or deleting the boost. Only targetingCriteria and politicalIntent are editable through these resources; budget, objective, and schedule aren\u0027t editable.\nThe legacy memberBoostCampaign and organizationBoostCampaign delete resources are deprecated but remain available in versions 202610 and 202611. For version 202611 and later, migrate delete calls to the corresponding Boost Manage resource.\n\nBoost API: Hosted billing setup URL:\nStarting with version 202611, Boost Init returns billingUrl regardless of whether billingConfigured is true or false; earlier versions omit the URL. Partners can direct the advertiser to this LinkedIn-hosted URL to complete billing setup, and the page remains usable after setup. Open the URL exactly as returned, preserving its query parameters. Partners should not collect payment details themselves. billingConfigured reflects billing readiness rather than merely the presence of a payment method, and accounts on billing hold return false. If it is false, complete billing setup or resolve the hold, then call Init again and continue only when it returns true.\n\nBoost API: Political-advertising declaration:\nStarting with the 202611 version, Member and Company Page Boost Post actions accept a politicalIntent declaration. Boost Hydrate can return politicalDeclarationRequired to indicate when the evaluated targeting requires an explicit declaration. An absent value isn\u0027t a confirmed false. LinkedIn\u0027s prohibition on political advertising remains unchanged. See the Reminders section below for details.\n\nConversions API: SHA256_PHONE user identifier:\nStarting with the 202611 version, the /conversionEvents endpoint supports SHA256_PHONE as a new idType in userIds for phone-number matching. Normalize the phone number to E.164 format (country calling code plus national number), remove the leading \u002B so that only digits remain, then apply SHA256 and hex-encode the digest. For example, (650) 555-1212 in the US becomes 16505551212 before hashing.\n\nCampaign Management API: surface field for publisher lists (action required):\nStarting with the 202611 version, the /adPublisherRestrictions endpoint supports a required surface field when you create a publisher list. Set it to LAN (LinkedIn Audience Network) or CTV (Connected TV). You can only set surface at creation and can\u0027t change it later. On version 202611 or later, a create request without a valid surface returns a 400 error. The field lets each publisher list target a single placement type. This isn\u0027t backward compatible for publisher-list creation. As announced in October, the migration window for existing partner API accounts ends on December 15, 2026. After that date, the following applies on every API version:\n\nCreating lists on older versions: create requests to /adPublisherRestrictions on versions 202610 or earlier return 400 with the code SURFACE_AWARE_API_VERSION_REQUIRED. Use 202611 or later to create lists.\nExisting legacy lists (surface is BOTH or absent): update requests return 400 with the code LEGACY_PUBLISHER_LIST_UPDATE_NOT_ALLOWED. You can still read these lists, and campaigns they\u0027re already attached to keep working. To change a legacy list, create a new list with surface set to LAN or CTV.\nUsing lists on campaigns: /adAccounts/{id}/adCampaigns only accepts publisher lists whose surface matches the campaign\u0027s placement type. Requests that don\u0027t match return 400.\nUsing lists on account trust preferences: /adAccountTrustPreferences is account-level and has no campaign placement to match. Any list newly added to the account-level allowlist or blocklist must have surface set to LAN or CTV. Adding a legacy list (BOTH or no surface) returns 400. Lists already applied to the account keep working.\n\nMigrate to version 202611 and update your publisher-list integration before December 15, 2026.",
       "Headers": [],
       "Rows": []
     },
@@ -131,7 +131,31 @@
         "November 2026 - Version 202611 (Latest)",
         "Breaking changes"
       ],
-      "Text": "Boost Analytics: Response shape and reporting limitation:\nVersion 202611 and later replaces the flat post metric fields with a campaigns array. Campaign metrics, including local-currency spend, aren\u0027t currently populated, so upgrading from 202610 doesn\u0027t preserve equivalent reporting. An empty campaigns array doesn\u0027t mean zero delivery or spend. Integrations that require the October metrics must account for this limitation before upgrading.",
+      "Text": "Boost Analytics: Campaign-level metrics and local-currency spend:\nStarting with version 202611, the boostAnalytics endpoint returns metrics broken down by campaign in a campaigns array, including spendInLocalCurrency in each ad account\u0027s currency. Previously, metrics were aggregated at the post level across campaigns, with spend reported in USD. Integrations upgrading from 202610 must read campaign metrics from the new structure rather than the flat post metric fields. Don\u0027t combine monetary amounts with different currencies.\nCampaign metrics cover up to the past two years. approximateMemberReach uses the maximum per-campaign reach over a reporting window of up to 91 days, not a sum or deduplicated union across campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version sunset",
+      "Anchor": "version-sunset",
+      "SectionPath": [
+        "November 2026 - Version 202611 (Latest)",
+        "Version sunset"
+      ],
+      "Text": "The monthly API versions below will be sunset and removed from the platform on the dates listed. For information on all the supported versions, refer to the migrations documentation. To avoid disruptions to your platform, please migrate to the latest API version launched today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version sunset",
+      "Anchor": "version-sunset",
+      "SectionPath": [
+        "November 2026 - Version 202611 (Latest)",
+        "Version sunset"
+      ],
+      "Text": "202511 - Nov 16, 2026\n202601 - Jan 15, 2027",
       "Headers": [],
       "Rows": []
     },
@@ -174,7 +198,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset",
+      "Anchor": "version-sunset-1",
       "SectionPath": [
         "October 2026 - Version 202610",
         "Version Sunset"
@@ -186,7 +210,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset",
+      "Anchor": "version-sunset-1",
       "SectionPath": [
         "October 2026 - Version 202610",
         "Version Sunset"
@@ -210,7 +234,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-1",
+      "Anchor": "version-sunset-2",
       "SectionPath": [
         "September 2026 - Version 202609",
         "Version Sunset"
@@ -222,7 +246,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-1",
+      "Anchor": "version-sunset-2",
       "SectionPath": [
         "September 2026 - Version 202609",
         "Version Sunset"
@@ -246,7 +270,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-2",
+      "Anchor": "version-sunset-3",
       "SectionPath": [
         "August 2026 - Version 202608",
         "Version Sunset"
@@ -258,7 +282,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-2",
+      "Anchor": "version-sunset-3",
       "SectionPath": [
         "August 2026 - Version 202608",
         "Version Sunset"
@@ -306,7 +330,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-3",
+      "Anchor": "version-sunset-4",
       "SectionPath": [
         "July 2026 - Version 202607",
         "Version Sunset"
@@ -318,7 +342,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-3",
+      "Anchor": "version-sunset-4",
       "SectionPath": [
         "July 2026 - Version 202607",
         "Version Sunset"
@@ -342,7 +366,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-4",
+      "Anchor": "version-sunset-5",
       "SectionPath": [
         "June 2026 - Version 202606",
         "Version Sunset"
@@ -354,7 +378,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-4",
+      "Anchor": "version-sunset-5",
       "SectionPath": [
         "June 2026 - Version 202606",
         "Version Sunset"
@@ -402,7 +426,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-5",
+      "Anchor": "version-sunset-6",
       "SectionPath": [
         "May 2026 - Version 202605",
         "Version Sunset"
@@ -414,7 +438,7 @@
     {
       "Kind": "text",
       "Section": "Version Sunset",
-      "Anchor": "version-sunset-5",
+      "Anchor": "version-sunset-6",
       "SectionPath": [
         "May 2026 - Version 202605",
         "Version Sunset"

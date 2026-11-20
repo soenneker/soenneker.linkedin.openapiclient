@@ -104,7 +104,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "careerPagesImpressions", n => { CareerPagesImpressions = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesImpressions.CreateFromDiscriminatorValue); } },
                 { "careerPagesVisitors", n => { CareerPagesVisitors = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTalentBrandAnalyticSummariesOrganizationAndTimeRange200ResponseElementsItemCareerPagesVisitors.CreateFromDiscriminatorValue); } },
