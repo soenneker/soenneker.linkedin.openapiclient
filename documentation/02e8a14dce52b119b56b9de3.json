@@ -28,11 +28,32 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
     "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
     "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
   ],
   "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "New readOnlyQuestionDetails question type",
+      "Anchor": "new-readonlyquestiondetails-question-type",
+      "SectionPath": [
+        "New readOnlyQuestionDetails question type"
+      ],
+      "Text": "OnsiteApplyConfiguration schema\n\nAdded the readOnlyQuestionDetails question type to SimpleQuestionDetails. This lets you display read-only informational content, for example legal disclaimers or section instructions, within a job application without collecting an answer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Extra questions section",
+      "Anchor": "extra-questions-section",
+      "SectionPath": [
+        "Extra questions section"
+      ],
+      "Text": "OnsiteApplyConfiguration schema\n\nAdded extraQuestionsWrapper field for additional voluntary self identification question sets beyond the primary set.",
+      "Headers": [],
+      "Rows": []
+    },
     {
       "Kind": "text",
       "Section": "Developer Webhooks added to the table of contents",

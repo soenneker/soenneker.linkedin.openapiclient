@@ -12,7 +12,6 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
     "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
     "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
   ],
@@ -32,6 +31,15 @@
       "Anchor": "acl-overview",
       "SectionPath": [],
       "Text": "ACLs consist of two parts - atsEntityAcls and atsEntityAclAssignees . You will create atsEntityAcl records to associate your entities with security groups or roles in your system. Then, you\u0027ll create atsEntityAclAssignee records to associate your users with security groups or roles in your system for a specific entity type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL Overview",
+      "Anchor": "acl-overview",
+      "SectionPath": [],
+      "Text": "ACLs consist of two parts - entityAcls and entityAclAssignees . You will create entityAcl records to associate your entities with security groups or roles in your system. Then, you\u0027ll create entityAclAssignee records to associate your users with those security groups or roles.",
       "Headers": [],
       "Rows": []
     },
@@ -70,6 +78,17 @@
         "1. Configure Customer Entity Visibility Defaults"
       ],
       "Text": "You can control whether the absence of atsEntityAcl records will cause securable entities to be hidden from all users or not. For example, if a customer doesn\u2019t secure entities in your system, you may choose to not send atsEntityAcl records and have LinkedIn products show entities without ACLs to all users. This can be configured per LinkedIn product ( tenantType ) and feature ( integrationType ).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Configure Customer Entity Visibility Defaults",
+      "Anchor": "1-configure-customer-entity-visibility-defaults",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults"
+      ],
+      "Text": "You can control whether the absence of entityAcl records will cause securable entities to be hidden from all users or not. For example, if a customer doesn\u2019t secure entities in your system, you may choose to not send entityAcl records and have LinkedIn products show entities without ACLs to all users. This can be configured per LinkedIn product ( tenantType ) and feature ( integrationType ).",
       "Headers": [],
       "Rows": []
     },
@@ -158,12 +177,47 @@
     },
     {
       "Kind": "text",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "We will hide entities without entityAcl records by default. Do not create (or do delete) this configuration if this behavior is desired for the customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "2. Bind Customer Users",
       "Anchor": "2-bind-customer-users",
       "SectionPath": [
         "2. Bind Customer Users"
       ],
       "Text": "You must store a mapping to a LinkedIn Person Id for each user in your system. This Person Id will be used to specify the target of this security rule when syncing atsEntityAclAssignee records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Bind Customer Users",
+      "Anchor": "2-bind-customer-users",
+      "SectionPath": [
+        "2. Bind Customer Users"
+      ],
+      "Text": "You must store a mapping to a LinkedIn Person Id for each user in your system. This Person Id will be used to specify the target of this security rule when syncing entityAclAssignee records.",
       "Headers": [],
       "Rows": []
     },

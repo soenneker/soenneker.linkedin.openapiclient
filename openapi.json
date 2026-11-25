@@ -25957,6 +25957,19 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema#educationquestions-fields"
       },
+      "Learn_talent_apply_connect_onsite_apply_configuration_schema_extraquestionswrapper_fields": {
+        "properties": {
+          "voluntarySelfIdentificationQuestions": {
+            "description": "Additional sets of voluntary self identification questions. These questions are rendered along with the first set of questions. Each set in this array renders on a new page, and all question sets of the same type render on consecutive pages. Each set follows the same structure as the primary VoluntarySelfIdentificationQuestions section. The schema does not specify a per-set question count limit.\n\nDocumented type: VoluntarySelfIdentificationQuestions[]\n\nRequirement: No",
+            "items": {
+              "$ref": "#/components/schemas/Learn_talent_apply_connect_onsite_apply_configuration_schema_voluntaryselfidentificationquestions_fields"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema#extraquestionswrapper-fields"
+      },
       "Learn_talent_apply_connect_onsite_apply_configuration_schema_favorablemultiplechoiceanswer_fields": {
         "properties": {
           "favorableSymbolicNames": {
@@ -26210,6 +26223,19 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema#questionrequirement-enum-values"
       },
+      "Learn_talent_apply_connect_onsite_apply_configuration_schema_readonlyquestiondetails_fields": {
+        "properties": {
+          "content": {
+            "description": "The informational content to display to the applicant. This field supports Markdown and a limited set of HTML tags, as listed in Supported content formatting. The maximum size is 10 KB. No answer is collected for a read-only question.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema#readonlyquestiondetails-fields"
+      },
       "Learn_talent_apply_connect_onsite_apply_configuration_schema_resumequestions_fields": {
         "properties": {
           "customQuestions": {
@@ -26267,6 +26293,14 @@
               }
             ],
             "description": "The representation of a question where a number must be provided as the answer. If this field is present, all other fields must be null.\n\nDocumented type: NumericQuestionDetails\n\nRequirement: No"
+          },
+          "readOnlyQuestionDetails": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Learn_talent_apply_connect_onsite_apply_configuration_schema_readonlyquestiondetails_fields"
+              }
+            ],
+            "description": "The representation of a read-only informational block that is displayed to the applicant but collects no answer (for example, a legal disclaimer or section instructions). If this field is present, all other fields must be null.\n\nDocumented type: ReadOnlyQuestionDetails\n\nRequirement: No"
           },
           "textQuestionDetails": {
             "allOf": [
@@ -26361,6 +26395,14 @@
               }
             ],
             "description": "The education question section. If this field is null, then no education questions will be asked.\n\nDocumented type: EducationQuestions\n\nRequirement: No"
+          },
+          "extraQuestionsWrapper": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Learn_talent_apply_connect_onsite_apply_configuration_schema_extraquestionswrapper_fields"
+              }
+            ],
+            "description": "A container for extra questions of each type, such as voluntary self identification questions, education questions, and work questions. Currently, only additional voluntary self identification question sets are supported. If this field is null, then no extra questions will be asked.\n\nDocumented type: ExtraQuestionsWrapper\n\nRequirement: No"
           },
           "resumeQuestions": {
             "allOf": [
@@ -28033,14 +28075,14 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-headers-1"
       },
-      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_1_967": {
+      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_1_969": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-headers-1"
       },
-      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_963": {
+      "Learn_talent_crm_connect_crm_customer_configuration_api_headers_965": {
         "enum": [
           "batch_partial_update",
           "Bearer {accessToken}"
@@ -28076,7 +28118,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
       },
-      "Learn_talent_crm_connect_crm_customer_configuration_api_request_body_fields_965": {
+      "Learn_talent_crm_connect_crm_customer_configuration_api_request_body_fields_967": {
         "properties": {
           "dataProvider": {
             "description": "Use \u0022ATS\u0022 as the value for data provider\n\nDocumented type: string\n\nRequirement: Yes",
@@ -28363,7 +28405,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-stub-profiles#response-body-fields"
       },
-      "Learn_talent_crm_connect_crm_inmail_stub_profiles_response_body_fields_973": {
+      "Learn_talent_crm_connect_crm_inmail_stub_profiles_response_body_fields_975": {
         "properties": {
           "createdAt": {
             "description": "Created timestamp\n\nDocumented type: Epoch in Milliseconds (UTC)\n\nRequirement: Yes",
@@ -28461,7 +28503,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recruiter-seatholders#"
       },
-      "Learn_talent_crm_connect_crm_recruiter_seatholders__979": {
+      "Learn_talent_crm_connect_crm_recruiter_seatholders__981": {
         "properties": {
           "actor": {
             "description": "The actor in format of urn:li:enterpriseProfile:xxx\n\nDocumented type: String\n\nRequirement: Required",
@@ -28639,7 +28681,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates#response-body-fields"
       },
-      "Learn_talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_983": {
+      "Learn_talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_985": {
         "properties": {
           "candidate": {
             "description": "LinkedIn stub profile of the candidate being exported.\n\nDocumented type: StubProfile\n\nRequirement: Required"
@@ -28754,7 +28796,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages#sync-candidate-pipeline-stages-api-request-body-fields"
       },
-      "Learn_talent_crm_connect_sync_crm_candidate_pipeline_stages_sync_candidate_pipeline_stages_api_request_body_fields_990": {
+      "Learn_talent_crm_connect_sync_crm_candidate_pipeline_stages_sync_candidate_pipeline_stages_api_request_body_fields_992": {
         "properties": {
           "externalCandidateId": {
             "description": "The unique identifier of the candidate within external system.\n\nDocumented type: String\n\nRequirement: Required",
@@ -28849,7 +28891,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines#sync-candidate-pipelines-api-request-body-fields"
       },
-      "Learn_talent_crm_connect_sync_crm_candidate_pipelines_sync_candidate_pipelines_api_request_body_fields_992": {
+      "Learn_talent_crm_connect_sync_crm_candidate_pipelines_sync_candidate_pipelines_api_request_body_fields_994": {
         "properties": {
           "dispositionReason": {
             "description": "The reason for the disposition of the candidate in this pipeline.\n\nDocumented type: String\n\nRequirement: Optional",
@@ -29032,7 +29074,58 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
       },
-      "Learn_talent_crm_connect_sync_crm_candidates__996": {
+      "Learn_talent_crm_connect_sync_crm_candidates__1000": {
+        "properties": {
+          "countryCode": {
+            "description": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.\n\nDocumented type: String\n\nRequirement: Optional",
+            "type": "string"
+          },
+          "extension": {
+            "description": "Formatted String of the extension\n\nDocumented type: String\n\nRequirement: Optional",
+            "type": "string"
+          },
+          "number": {
+            "description": "Formatted String of the phone number. The length should be no more than 25.\n\nDocumented type: String\n\nRequirement: Required",
+            "type": "string"
+          }
+        },
+        "required": [
+          "number"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
+      },
+      "Learn_talent_crm_connect_sync_crm_candidates__1001": {
+        "properties": {
+          "sourceCategory": {
+            "description": "Category of the candidate\u0027s source. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER\n\nDocumented type: Enum\n\nRequirement: Required",
+            "enum": [
+              "LINKEDIN",
+              "EMAIL",
+              "SOCIAL_MEDIA",
+              "EVENT",
+              "CAREER_SITE",
+              "AGENCY",
+              "REFERRAL",
+              "INTERNAL",
+              "JOB_POSTING",
+              "OTHER"
+            ],
+            "type": "string"
+          },
+          "sourceDetails": {
+            "description": "Description of the candidate source.\n\nDocumented type: String\n\nRequirement: Required",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sourceCategory",
+          "sourceDetails"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
+      },
+      "Learn_talent_crm_connect_sync_crm_candidates__998": {
         "properties": {
           "city": {
             "description": "Address city.\n\nDocumented type: String\n\nRequirement: Optional",
@@ -29077,7 +29170,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
       },
-      "Learn_talent_crm_connect_sync_crm_candidates__997": {
+      "Learn_talent_crm_connect_sync_crm_candidates__999": {
         "properties": {
           "latitude": {
             "description": "Latitude in decimal degrees\n\nDocumented type: Float\n\nRequirement: Optional",
@@ -29088,57 +29181,6 @@
             "type": "number"
           }
         },
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
-      },
-      "Learn_talent_crm_connect_sync_crm_candidates__998": {
-        "properties": {
-          "countryCode": {
-            "description": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.\n\nDocumented type: String\n\nRequirement: Optional",
-            "type": "string"
-          },
-          "extension": {
-            "description": "Formatted String of the extension\n\nDocumented type: String\n\nRequirement: Optional",
-            "type": "string"
-          },
-          "number": {
-            "description": "Formatted String of the phone number. The length should be no more than 25.\n\nDocumented type: String\n\nRequirement: Required",
-            "type": "string"
-          }
-        },
-        "required": [
-          "number"
-        ],
-        "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
-      },
-      "Learn_talent_crm_connect_sync_crm_candidates__999": {
-        "properties": {
-          "sourceCategory": {
-            "description": "Category of the candidate\u0027s source. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER\n\nDocumented type: Enum\n\nRequirement: Required",
-            "enum": [
-              "LINKEDIN",
-              "EMAIL",
-              "SOCIAL_MEDIA",
-              "EVENT",
-              "CAREER_SITE",
-              "AGENCY",
-              "REFERRAL",
-              "INTERNAL",
-              "JOB_POSTING",
-              "OTHER"
-            ],
-            "type": "string"
-          },
-          "sourceDetails": {
-            "description": "Description of the candidate source.\n\nDocumented type: String\n\nRequirement: Required",
-            "type": "string"
-          }
-        },
-        "required": [
-          "sourceCategory",
-          "sourceDetails"
-        ],
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates#"
       },
@@ -29975,7 +30017,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema#foundation-schema"
       },
-      "Learn_talent_job_postings_api_job_posting_api_schema_foundation_schema_1016": {
+      "Learn_talent_job_postings_api_job_posting_api_schema_foundation_schema_1018": {
         "properties": {
           "alternateLocations": {
             "description": "Represents alternate locations for a job with multiple locations. This field takes the locations as input (including the one set in the location field). This field is null if the job has only one location. Maximum up to seven alternate locations are allowed. US locations - City Non-US locations - City, Country/Region (for example, \u201CLondon, United Kingdom\u201D) NOTE: Alternate locations are not supported for RSC and CRM Connect\n\nDocumented type: String Array\n\nRequirement: Optional",
@@ -30569,7 +30611,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#response-body-fields"
       },
-      "Learn_talent_middleware_platform_sync_acls_request_body_fields": {
+      "Learn_talent_middleware_platform_sync_acls_": {
         "properties": {
           "externalCreatedAt": {
             "description": "The timestamp indicating when this entityAcl entry was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
@@ -30585,9 +30627,9 @@
           "externalLastModifiedAt"
         ],
         "type": "object",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields"
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#"
       },
-      "Learn_talent_middleware_platform_sync_acls_request_body_fields_1": {
+      "Learn_talent_middleware_platform_sync_acls__1052": {
         "properties": {
           "externalCreatedAt": {
             "description": "The timestamp indicating when this entityAclAssignee was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
@@ -30605,7 +30647,194 @@
           "externalLastModifiedAt"
         ],
         "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#"
+      },
+      "Learn_talent_middleware_platform_sync_acls_request_body_fields_1": {
+        "properties": {
+          "entityType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_acls_securable_entity_types"
+              }
+            ],
+            "description": "One of the Securable Entity Types enums. Use the same value as in the request key.\n\nDocumented type: Enum\n\nRequirement: Yes"
+          },
+          "externalCreatedAt": {
+            "description": "The timestamp indicating when this entityAcl entry was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "externalEntityAclId": {
+            "description": "Your security group or role id. Use the same value as in the request key.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalEntityId": {
+            "description": "The entity\u0027s ID, from the EntityId Field column in Securable Entity Types. Use the same value as in the request key.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalLastModifiedAt": {
+            "description": "The timestamp indicating when this entityAcl entry was last modified in the partner system, represented in milliseconds since epoch. This value must be greater than 0.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "integrationContext": {
+            "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key.\n\nDocumented type: OrganizationUrn\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "integrationContext",
+          "entityType",
+          "externalEntityId",
+          "externalEntityAclId",
+          "externalCreatedAt",
+          "externalLastModifiedAt"
+        ],
+        "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-1"
+      },
+      "Learn_talent_middleware_platform_sync_acls_request_body_fields_2": {
+        "properties": {
+          "assignee": {
+            "description": "The user\u0027s Person URN, in the format urn:li:person:{id}. Use the same value as in the request key. Read-only key field.\n\nDocumented type: PersonUrn\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalCreatedAt": {
+            "description": "The timestamp indicating when this entityAclAssignee was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "externalEntityAclId": {
+            "description": "Your security group or role id. Use the same value as in the request key. Read-only key field.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalLastModifiedAt": {
+            "description": "The timestamp indicating when this entityAclAssignee was last modified in the partner system, represented in milliseconds since epoch. This value must be greater than 0.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "integrationContext": {
+            "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key. Read-only key field.\n\nDocumented type: OrganizationUrn\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "assignee",
+          "integrationContext",
+          "externalEntityAclId",
+          "externalCreatedAt",
+          "externalLastModifiedAt"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-2"
+      },
+      "Learn_talent_middleware_platform_sync_acls_response_fields": {
+        "properties": {
+          "entityType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_acls_securable_entity_types"
+              }
+            ],
+            "description": "One of the Securable Entity Types enums.\n\nDocumented type: Enum\n\nRequirement: Yes"
+          },
+          "externalCreatedAt": {
+            "description": "The timestamp indicating when this entityAcl entry was created in the partner system, represented in milliseconds since epoch.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: No",
+            "format": "int64",
+            "type": "integer"
+          },
+          "externalEntityAclId": {
+            "description": "Your security group or role id.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalEntityId": {
+            "description": "The entity\u0027s ID, from the EntityId Field column in Securable Entity Types.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalLastModifiedAt": {
+            "description": "The timestamp indicating when this entityAcl entry was last modified in the partner system, represented in milliseconds since epoch.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: No",
+            "format": "int64",
+            "type": "integer"
+          },
+          "integrationContext": {
+            "description": "The customer\u0027s organization, in the format urn:li:organization:{id}.\n\nDocumented type: OrganizationUrn\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "integrationContext",
+          "entityType",
+          "externalEntityId",
+          "externalEntityAclId"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#response-fields"
+      },
+      "Learn_talent_middleware_platform_sync_acls_response_fields_1": {
+        "properties": {
+          "assignee": {
+            "description": "The user\u0027s Person URN, in the format urn:li:person:{id}. Read-only key field.\n\nDocumented type: PersonUrn\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalCreatedAt": {
+            "description": "The timestamp indicating when this entityAclAssignee was created in the partner system, represented in milliseconds since epoch.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: No",
+            "format": "int64",
+            "type": "integer"
+          },
+          "externalEntityAclId": {
+            "description": "Your security group or role id. Read-only key field.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalLastModifiedAt": {
+            "description": "The timestamp indicating when this entityAclAssignee was last modified in the partner system, represented in milliseconds since epoch.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: No",
+            "format": "int64",
+            "type": "integer"
+          },
+          "integrationContext": {
+            "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Read-only key field.\n\nDocumented type: OrganizationUrn\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "assignee",
+          "integrationContext",
+          "externalEntityAclId"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#response-fields-1"
+      },
+      "Learn_talent_middleware_platform_sync_acls_response_fields_2": {
+        "properties": {
+          "assignee": {
+            "description": "The user\u0027s Person URN, in the format urn:li:person:{id}. Read-only key field.\n\nDocumented type: PersonUrn\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalCreatedAt": {
+            "description": "The timestamp indicating when this entityAclAssignee was created in the partner system, represented in milliseconds since epoch.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: No",
+            "format": "int64",
+            "type": "integer"
+          },
+          "externalEntityAclId": {
+            "description": "Your security group or role id. Read-only key field.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalLastModifiedAt": {
+            "description": "The timestamp indicating when this entityAclAssignee was last modified in the partner system, represented in milliseconds since epoch.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: No",
+            "format": "int64",
+            "type": "integer"
+          },
+          "integrationContext": {
+            "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Read-only key field.\n\nDocumented type: OrganizationUrn\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "assignee",
+          "integrationContext",
+          "externalEntityAclId"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#response-fields-2"
       },
       "Learn_talent_middleware_platform_sync_acls_securable_entity_types": {
         "enum": [
@@ -30614,9 +30843,18 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#securable-entity-types"
       },
-      "Learn_talent_middleware_platform_sync_acls_securable_entity_types_1042": {
+      "Learn_talent_middleware_platform_sync_acls_securable_entity_types_1044": {
         "enum": [
           "JOB_REQUISITION"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#securable-entity-types"
+      },
+      "Learn_talent_middleware_platform_sync_acls_securable_entity_types_1045": {
+        "enum": [
+          "JOB_REQUISITION",
+          "PIPELINE",
+          "INTERACTION"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#securable-entity-types"
@@ -30633,7 +30871,7 @@
             "items": {
               "allOf": [
                 {
-                  "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1047"
+                  "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1055"
                 }
               ]
             },
@@ -30649,7 +30887,7 @@
           "interviewer": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1046"
+                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1054"
               }
             ],
             "description": "The person who interviewed the candidate and wrote this evaluation.\n\nDocumented type: Actor\n\nRequirement: No"
@@ -30658,7 +30896,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback#"
       },
-      "Learn_talent_middleware_platform_sync_application_interview_feedback__1046": {
+      "Learn_talent_middleware_platform_sync_application_interview_feedback__1054": {
         "properties": {
           "firstName": {
             "description": "The first name of the actor.\n\nDocumented type: String\n\nRequirement: Required",
@@ -30676,7 +30914,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback#"
       },
-      "Learn_talent_middleware_platform_sync_application_interview_feedback__1047": {
+      "Learn_talent_middleware_platform_sync_application_interview_feedback__1055": {
         "properties": {
           "attribute": {
             "description": "The descriptive name about the qualification the candidate was evaluated for, for example \u0022Verbal Communication\u0022, \u0022Technical Qualifications\u0022.\n\nDocumented type: String\n\nRequirement: Required",
@@ -30720,7 +30958,7 @@
           "interviewer": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1046"
+                "$ref": "#/components/schemas/Learn_talent_middleware_platform_sync_application_interview_feedback__1054"
               }
             ],
             "description": "The person who interviewed the candidate and wrote the evaluation.\n\nDocumented type: Actor\n\nRequirement: No"
@@ -30753,7 +30991,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes#"
       },
-      "Learn_talent_middleware_platform_sync_application_notes__1050": {
+      "Learn_talent_middleware_platform_sync_application_notes__1058": {
         "properties": {
           "firstName": {
             "description": "The first name of the actor.\n\nDocumented type: String\n\nRequirement: Required",
@@ -30902,7 +31140,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#"
       },
-      "Learn_talent_middleware_platform_sync_applications__1059": {
+      "Learn_talent_middleware_platform_sync_applications__1068": {
         "properties": {
           "atsCreatedAt": {
             "description": "Date record was created in your ATS\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
@@ -30977,7 +31215,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#api-request-body-fields"
       },
-      "Learn_talent_middleware_platform_sync_applications_api_request_body_fields_1056": {
+      "Learn_talent_middleware_platform_sync_applications_api_request_body_fields_1064": {
         "properties": {
           "accessRestricted": {
             "description": "Flag indicating whether the application is restricted by ACL. If true, the application is only accessible to a set of Recruiter users specified via ACLs. If false, the application is accessible to all Recruiter users. (Default value: false). NOTE: This field is not applicable from October 2025 version and above.\n\nDocumented type: boolean\n\nRequirement: Optional",
@@ -31041,6 +31279,72 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#api-request-body-fields"
       },
+      "Learn_talent_middleware_platform_sync_applications_api_request_body_fields_1065": {
+        "properties": {
+          "accessRestricted": {
+            "description": "Flag indicating whether the application is restricted by ACL. NOTE: The value of this field is currently hardcoded to false. Support for this field may be added in a future release.\n\nDocumented type: boolean\n\nRequirement: No",
+            "type": "boolean"
+          },
+          "candidateEmail": {
+            "description": "Candidate email address as entered on the application. Email must follow X@X.X pattern. *Candidate email is required whenever available, to match ATS candidates with LinkedIn members. If candidate email is not available for an application, member matching will be attempted using the candidate\u2019s name, job title, and company.\n\nDocumented type: EmailAddress\n\nRequirement: Required if available"
+          },
+          "externalApplicationId": {
+            "description": "The unique identifier of this job application in your ATS. Use the same value as in the request key.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalCandidateId": {
+            "description": "Candidate\u0027s unique identifier in your ATS\n\nDocumented type: String\n\nRequirement: No",
+            "type": "string"
+          },
+          "externalCreatedAt": {
+            "description": "Date record was created in your ATS. Must be greater than 0.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "externalJobPostingName": {
+            "description": "Name in your ATS of the job being applied to. Minimum length: 1.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalJobRequisitionId": {
+            "description": "Unique identifier in your ATS of the job requisition being applied to. Minimum length:1.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "externalLastModifiedAt": {
+            "description": "Date record was last updated in your ATS. Must be greater than 0. Must be greater than or equal to externalCreatedAt.\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
+            "format": "int64",
+            "type": "integer"
+          },
+          "firstName": {
+            "description": "Candidate\u0027s first name as entered on the application. This field can not be null or empty. At least one of the fields \u2014 lastName or firstName \u2014 must be provided. Minimum length: 1.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "integrationContext": {
+            "description": "The customer who owns the application data, in the format urn:li:organization:{id}. Use the same value as in the request key.\n\nDocumented type: OrganizationUrn\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "lastName": {
+            "description": "Candidate\u0027s last name as entered on the application. This field can not be null or empty. At least one of the fields \u2014 lastName or firstName \u2014 must be provided. Minimum length: 1.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          },
+          "source": {
+            "description": "Where the application originated within your ATS. For example, \u0022Job Board\u0022 or \u0022Referral\u0022. Minimum length: 1.\n\nDocumented type: String\n\nRequirement: Yes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "integrationContext",
+          "externalApplicationId",
+          "externalCreatedAt",
+          "externalLastModifiedAt",
+          "externalJobRequisitionId",
+          "externalJobPostingName",
+          "firstName",
+          "lastName",
+          "source"
+        ],
+        "type": "object",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications#api-request-body-fields"
+      },
       "Learn_talent_middleware_platform_sync_applications_request_body_fields_1": {
         "properties": {
           "contentType": {
@@ -31085,7 +31389,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes#"
       },
-      "Learn_talent_middleware_platform_sync_candidate_notes__1061": {
+      "Learn_talent_middleware_platform_sync_candidate_notes__1070": {
         "properties": {
           "firstName": {
             "description": "The first name of the actor.\n\nDocumented type: String\n\nRequirement: Required",
@@ -31245,7 +31549,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
       },
-      "Learn_talent_middleware_platform_sync_candidates__1065": {
+      "Learn_talent_middleware_platform_sync_candidates__1074": {
         "properties": {
           "city": {
             "description": "The city of the candidate\u0027s address.\n\nDocumented type: String\n\nRequirement: No",
@@ -31287,7 +31591,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
       },
-      "Learn_talent_middleware_platform_sync_candidates__1066": {
+      "Learn_talent_middleware_platform_sync_candidates__1075": {
         "properties": {
           "countryCode": {
             "description": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.\n\nDocumented type: String\n\nRequirement: Optional",
@@ -31308,7 +31612,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates#"
       },
-      "Learn_talent_middleware_platform_sync_candidates__1067": {
+      "Learn_talent_middleware_platform_sync_candidates__1076": {
         "properties": {
           "sourceCategory": {
             "description": "Category of where the candidate originated from. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER\n\nDocumented type: Enum\n\nRequirement: Required",
@@ -31744,7 +32048,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#api-request-body-fields"
       },
-      "Learn_talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1078": {
+      "Learn_talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1087": {
         "properties": {
           "accessRestricted": {
             "description": "Flag indicating whether the job requisition is ACL-protected or not.When set to false\u2014all recruiters can view the job requisitions in the 1CE dropdown list.When set to true\u2014if access group settings exist, only recruiters in the access group (ACL group) can view and search job requisitions in the 1CE dropdown list. If no access group settings exist, no recruiter can view or search job requisitions in the 1CE dropdown list.Note (version 202510 and later): The job owner can view all job requisitions regardless of the ACL settings.\n\nDocumented type: Boolean\n\nRequirement: Required",
@@ -32009,7 +32313,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#owner-schema"
       },
-      "Learn_talent_middleware_platform_sync_job_requisitions_owner_schema_1085": {
+      "Learn_talent_middleware_platform_sync_job_requisitions_owner_schema_1094": {
         "properties": {
           "emailAddress": {
             "description": "Email address of the owner. This is mandatory.\n\nDocumented type: String\n\nRequirement: Yes",
@@ -32282,7 +32586,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting/job-posting-field-schema#job-posting-field-api-schema"
       },
-      "Learn_talent_premium_job_posting_job_posting_field_schema_job_posting_field_api_schema_1092": {
+      "Learn_talent_premium_job_posting_job_posting_field_schema_job_posting_field_api_schema_1101": {
         "properties": {
           "alternateLocationGeoIds": {
             "description": "Location IDs for Bing Geo location entities\n\nDocumented type: Long[]\n\nRequirement: No",
@@ -32575,7 +32879,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles#response-body-fields"
       },
-      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_inmail_stub_profiles_response_body_fields_1099": {
+      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_inmail_stub_profiles_response_body_fields_1108": {
         "properties": {
           "createdAt": {
             "description": "Created timestamp\n\nDocumented type: Epoch in Milliseconds (UTC)\n\nRequirement: Yes",
@@ -32708,7 +33012,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders#"
       },
-      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_recruiter_seatholders__1106": {
+      "Learn_talent_recruiter_system_connect_recruiter_prospect_interactions_recruiter_seatholders__1115": {
         "properties": {
           "actor": {
             "description": "The actor in format of urn:li:enterpriseProfile:xxx\n\nDocumented type: String\n\nRequirement: Required",
@@ -32998,7 +33302,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields#job-requisitions-with-stages"
       },
-      "Learn_talent_recruiter_system_connect_required_fields_job_requisitions_with_stages_1111": {
+      "Learn_talent_recruiter_system_connect_required_fields_job_requisitions_with_stages_1120": {
         "properties": {
           "atsCreatedAt": {
             "description": "Date stage record was created in your ATS\n\nDocumented type: UTC Epoch Milliseconds\n\nRequirement: Yes",
@@ -33236,7 +33540,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1119": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1128": {
         "properties": {
           "timeRange": {
             "properties": {
@@ -33257,7 +33561,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates#"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1121": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates__1130": {
         "properties": {
           "candidate": {
             "description": "The LinkedIn stub profile of the candidate being exported.\n\nDocumented type: StubProfile\n\nRequirement: Yes"
@@ -33439,7 +33743,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#education-schema"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_education_schema_1127": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_education_schema_1136": {
         "properties": {
           "degreeName": {
             "description": "The degree attained at this school.\n\nDocumented type: String\n\nRequirement: No",
@@ -33487,7 +33791,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#position-schema"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_position_schema_1129": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_position_schema_1138": {
         "properties": {
           "companyName": {
             "description": "The company name as entered by the member.\n\nDocumented type: String\n\nRequirement: No",
@@ -33601,7 +33905,7 @@
         "type": "object",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile#stubprofile-fields"
       },
-      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_stubprofile_fields_1125": {
+      "Learn_talent_recruiter_system_connect_retrieve_exported_candidates_stubprofile_stubprofile_fields_1134": {
         "properties": {
           "currentEmployerNames": {
             "description": "The names of the member\u0027s current employers. This field remains empty if none are listed.\n\nDocumented type: string[]\n\nRequirement: Yes",
@@ -33725,28 +34029,28 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1137": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1146": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1140": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1150": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1142": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1152": {
         "enum": [
           "Bearer {accessToken}"
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1144": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion__1154": {
         "enum": [
           "Bearer {accessToken}"
         ],
@@ -33789,7 +34093,7 @@
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-13"
       },
-      "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1136": {
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_1_1145": {
         "enum": [
           "Bearer {accessToken}",
           "202603"
@@ -33808,6 +34112,14 @@
       "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_4": {
         "enum": [
           "Bearer {accessToken}"
+        ],
+        "type": "string",
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-4"
+      },
+      "Learn_talent_recruiter_system_connect_rsc_data_deletion_api_request_headers_4_1149": {
+        "enum": [
+          "Bearer {token}",
+          "Refer to per-version sample requests below."
         ],
         "type": "string",
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion#api-request-headers-4"
@@ -296570,7 +296882,9 @@
             "in": "query",
             "name": "entityType",
             "schema": {
-              "type": "string"
+              "description": "One of the Securable Entity Types enums. Use the same value as in the request key.",
+              "type": "string",
+              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-1"
             }
           },
           {
@@ -296582,9 +296896,9 @@
             "in": "query",
             "name": "integrationContext",
             "schema": {
-              "description": "LinkedIn organization URN provided during customer onboarding, e.g. urn:li:organization:1",
+              "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key.",
               "type": "string",
-              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls#"
+              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-1"
             }
           },
           {
@@ -297094,7 +297408,7 @@
                           "source"
                         ],
                         "type": "object",
-                        "x-linkedin-schema": "talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_983",
+                        "x-linkedin-schema": "talent_crm_connect_retrieve_crm_exported_candidates_response_body_fields_985",
                         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates#response-body-fields"
                       },
                       "type": "array"
@@ -299986,50 +300300,6 @@
         },
         "responses": {
           "204": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "results": {
-                      "items": {
-                        "properties": {
-                          "externalJobRequisitionId": {
-                            "anyOf": [
-                              {
-                                "description": "The unique identifier of the job requisition in the partner ATS (maximum 100 characters).\n\nDocumented type: String\n\nRequirement: Yes",
-                                "type": "string"
-                              },
-                              {
-                                "type": "string",
-                                "x-linkedin-inferred-from-example": true
-                              }
-                            ]
-                          },
-                          "integrationContext": {
-                            "anyOf": [
-                              {
-                                "description": "The organization URN in the format urn:li:organization:{id}\n\nDocumented type: String\n\nRequirement: Yes",
-                                "type": "string"
-                              },
-                              {
-                                "type": "string",
-                                "x-linkedin-inferred-from-example": true
-                              }
-                            ]
-                          }
-                        },
-                        "type": "object",
-                        "x-linkedin-schema": "talent_middleware_platform_sync_job_requisitions_api_request_parameters",
-                        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#api-request-parameters"
-                      },
-                      "type": "array"
-                    }
-                  },
-                  "type": "object"
-                },
-                "x-linkedin-learn-schema": true
-              }
-            },
             "description": "A successful request will return a 204 response code, and you will find the status of each entity in the response body."
           },
           "default": {
@@ -300608,7 +300878,7 @@
                               "numberOfOpenings"
                             ],
                             "type": "object",
-                            "x-linkedin-schema": "talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1078",
+                            "x-linkedin-schema": "talent_middleware_platform_sync_job_requisitions_api_request_body_fields_1087",
                             "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions#api-request-body-fields"
                           }
                         },
@@ -302207,9 +302477,9 @@
             "in": "query",
             "name": "assignee",
             "schema": {
-              "description": "Person URN identifier of the user within the external Talent CRM",
+              "description": "The user\u0027s Person URN, in the format urn:li:person:{id}. Use the same value as in the request key. Read-only key field.",
               "type": "string",
-              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acl-assignees#"
+              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-2"
             }
           },
           {
@@ -302235,9 +302505,9 @@
             "in": "query",
             "name": "integrationContext",
             "schema": {
-              "description": "LinkedIn organization URN provided during customer onboarding, e.g. urn:li:organization:1",
+              "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key.",
               "type": "string",
-              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acl-assignees#"
+              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-1"
             }
           },
           {
@@ -302302,7 +302572,7 @@
                           }
                         },
                         "type": "object",
-                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_965",
+                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_967",
                         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
                       },
                       "type": "array"
@@ -305901,9 +306171,9 @@
             "in": "query",
             "name": "assignee",
             "schema": {
-              "description": "Person URN identifier of the user within the external Talent CRM",
+              "description": "The user\u0027s Person URN, in the format urn:li:person:{id}. Use the same value as in the request key. Read-only key field.",
               "type": "string",
-              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acl-assignees#"
+              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-2"
             }
           },
           {
@@ -305929,9 +306199,9 @@
             "in": "query",
             "name": "integrationContext",
             "schema": {
-              "description": "LinkedIn organization URN provided during customer onboarding, e.g. urn:li:organization:1",
+              "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key.",
               "type": "string",
-              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acl-assignees#"
+              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-1"
             }
           },
           {
@@ -305996,7 +306266,7 @@
                           }
                         },
                         "type": "object",
-                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_965",
+                        "x-linkedin-schema": "talent_crm_connect_crm_customer_configuration_api_request_body_fields_967",
                         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration#api-request-body-fields"
                       },
                       "type": "array"
@@ -306575,9 +306845,9 @@
             "in": "query",
             "name": "integrationContext",
             "schema": {
-              "description": "LinkedIn organization URN provided during customer onboarding, e.g. urn:li:organization:1",
+              "description": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key.",
               "type": "string",
-              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls#"
+              "x-source-url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#request-body-fields-1"
             }
           },
           {

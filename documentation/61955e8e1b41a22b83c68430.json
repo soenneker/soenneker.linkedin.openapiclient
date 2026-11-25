@@ -11,7 +11,6 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
@@ -1166,19 +1165,19 @@
         "Delete Applications",
         "API Endpoint"
       ],
-      "Text": "DELETE https://api.linkedin.com/rest/applications?ids[0].atsJobApplicationId={ATSJobApplicationID}\u0026ids[0].integrationContext={organization URN}",
+      "Text": "DELETE https://api.linkedin.com/rest/applications?ids[0].externalApplicationId={ATSJobApplicationID}\u0026ids[0].integrationContext={organization URN}",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "code",
-      "Section": "API Endpoint",
-      "Anchor": "api-endpoint-4",
+      "Section": "Sample request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-3",
       "SectionPath": [
         "Delete Applications",
-        "API Endpoint"
+        "Sample request (with query tunneling)"
       ],
-      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/applications\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n--data \u0027ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:1000\u0027",
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/applications\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[1].externalApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:1000\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -1228,6 +1227,46 @@
           },
           {
             "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {token}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer to per-version sample requests below.",
             "Links": [],
             "Values": []
           }
@@ -1381,6 +1420,68 @@
       ]
     },
     {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].externalApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use your ATS Job Application ID as the value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Customer\u0027s Organization or Company ID The format should be \u0022urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
       "Kind": "code",
       "Section": "Sample Request",
       "Anchor": "",
@@ -1490,13 +1591,13 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample Request",
-      "Anchor": "sample-request-10",
+      "Section": "Sample request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-3",
       "SectionPath": [
         "Delete Applications",
-        "Sample Request"
+        "Sample request (without query tunneling)"
       ],
-      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/applications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: ******\u0027",
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/applications?ids=List((externalApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
       "Headers": [],
       "Rows": []
     },
@@ -1533,6 +1634,18 @@
         "Sample Response Body"
       ],
       "Text": "{\n    \u0022results\u0022: {\n        \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:1000\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:1000\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022(externalApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000)\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
       "Headers": [],
       "Rows": []
     },
@@ -1983,7 +2096,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request (with query tunneling)",
-      "Anchor": "sample-request-with-query-tunneling-5",
+      "Anchor": "sample-request-with-query-tunneling-6",
       "SectionPath": [
         "Delete Application Notes",
         "Sample Request (with query tunneling)"
@@ -1995,7 +2108,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request (without query tunneling)",
-      "Anchor": "sample-request-without-query-tunneling-5",
+      "Anchor": "sample-request-without-query-tunneling-6",
       "SectionPath": [
         "Delete Application Notes",
         "Sample Request (without query tunneling)"
@@ -2523,7 +2636,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request (without query tunneling)",
-      "Anchor": "sample-request-without-query-tunneling-11",
+      "Anchor": "sample-request-without-query-tunneling-12",
       "SectionPath": [
         "Delete Application Interview Feedback",
         "Sample Request (without query tunneling)"
@@ -2535,7 +2648,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request (with query tunneling)",
-      "Anchor": "sample-request-with-query-tunneling-11",
+      "Anchor": "sample-request-with-query-tunneling-12",
       "SectionPath": [
         "Delete Application Interview Feedback",
         "Sample Request (with query tunneling)"
@@ -3039,7 +3152,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-21",
+      "Anchor": "sample-request-20",
       "SectionPath": [
         "Delete Application Stages",
         "Sample Request"
@@ -3335,7 +3448,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-30",
+      "Anchor": "sample-request-29",
       "SectionPath": [
         "Delete Job Requisitions",
         "Sample Request"
@@ -3631,7 +3744,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request",
-      "Anchor": "sample-request-39",
+      "Anchor": "sample-request-38",
       "SectionPath": [
         "Delete Job Requisition Stages",
         "Sample Request"
@@ -3991,7 +4104,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request (without query tunneling)",
-      "Anchor": "sample-request-without-query-tunneling-16",
+      "Anchor": "sample-request-without-query-tunneling-17",
       "SectionPath": [
         "Delete Attachments",
         "Sample Request (without query tunneling)"
@@ -4003,7 +4116,7 @@
     {
       "Kind": "code",
       "Section": "Sample Request (with query tunneling)",
-      "Anchor": "sample-request-with-query-tunneling-16",
+      "Anchor": "sample-request-with-query-tunneling-17",
       "SectionPath": [
         "Delete Attachments",
         "Sample Request (with query tunneling)"

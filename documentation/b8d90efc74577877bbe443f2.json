@@ -27,7 +27,6 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
     "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recommended-matches",
@@ -208,15 +207,15 @@
             "Values": []
           },
           {
-            "Text": "\u2022 Resource path changed from rest/atsApplications in 202603 to rest/applications in 202604",
+            "Text": "\u2022 Resource path changed from rest/atsApplications in 202603 to rest/applications in 202604\u2022 dataProvider removed from entity keys\u2022 atsJobApplicationId \u2192 externalApplicationId\u2022 atsCreatedAt \u2192 externalCreatedAt\u2022 atsLastModifiedAt \u2192 externalLastModifiedAt\u2022 atsCandidateId \u2192 externalCandidateId\u2022 atsJobPostingName \u2192 externalJobPostingName\u2022 externalApplicationId and integrationContext required in each entity\u2022 externalJobRequisitionId added (required)\u2022 accessRestricted added\u2022 atsJobPostingId removed\u2022 dispositionReason removed",
             "Links": [],
             "Values": []
           },
           {
             "Text": "Sync ApplicationsDelete Applications",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04",
-              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-applications"
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04\u0026preserve-view=true",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04\u0026preserve-view=true#delete-applications"
             ],
             "Values": []
           }
@@ -447,14 +446,14 @@
             "Values": []
           },
           {
-            "Text": "\u2022 atsEntityAclId \u2192 entityAclId\u2022 atsEntityId \u2192 entityId\u2022 atsEntityType \u2192 entityType",
+            "Text": "In 202604:\u2022 atsEntityAclId \u2192 externalEntityAclId\u2022 atsEntityId \u2192 externalEntityId\u2022 atsEntityType \u2192 entityType\u2022 dataProvider removed from entity keys",
             "Links": [],
             "Values": []
           },
           {
             "Text": "Sync ACLs",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04"
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04\u0026preserve-view=true"
             ],
             "Values": []
           }
@@ -481,14 +480,14 @@
             "Values": []
           },
           {
-            "Text": "\u2022 atsEntityAclId \u2192 entityAclId\u2022 atsEntityId \u2192 entityId\u2022 atsEntityType \u2192 entityType",
+            "Text": "In 202604:\u2022 atsEntityAclId \u2192 externalEntityAclId\u2022 atsEntityType and dataProvider removed from entity keys",
             "Links": [],
             "Values": []
           },
           {
             "Text": "Sync ACLs",
             "Links": [
-              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04"
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04\u0026preserve-view=true"
             ],
             "Values": []
           }
@@ -633,6 +632,28 @@
     },
     {
       "Kind": "text",
+      "Section": "Entity ACL documentation updates",
+      "Anchor": "entity-acl-documentation-updates",
+      "SectionPath": [
+        "Entity ACL documentation updates"
+      ],
+      "Text": "Documented the acl finder (q=acl) for rest/entityAclAssignees, which retrieves the assignees of an ACL. Corrected the 202604 key fields. For rest/entityAcls, entityAclId is now externalEntityAclId and entityId is now externalEntityId. For rest/entityAclAssignees, entityAclId is now externalEntityAclId. Neither key includes dataProvider. This is a documentation correction, not an API behavior change. If you built against the earlier 202604 documentation, use the corrected key fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Entity ACL documentation updates",
+      "Anchor": "entity-acl-documentation-updates",
+      "SectionPath": [
+        "Entity ACL documentation updates"
+      ],
+      "Text": "Refer to Sync ACLs and Retrieve Entity ACL Assignees by ACL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
       "Section": "RSC certification test case updates",
       "Anchor": "rsc-certification-test-case-updates",
       "SectionPath": [
@@ -716,7 +737,7 @@
         "Version 202604 (latest)",
         "Applications resource renamed"
       ],
-      "Text": "atsApplications renamed to applications:\n\nResource path changed from rest/atsApplications to rest/applications.\nSupported methods: batch_update and batch_delete.\nFor sync request examples, refer to Sync Applications.\nFor delete request examples, refer to Delete Applications.",
+      "Text": "atsApplications renamed to applications:\n\nResource path changed from rest/atsApplications to rest/applications.\nBreaking change: key field renamed: atsJobApplicationId \u2192 externalApplicationId.\nBreaking change: fields renamed: atsCreatedAt \u2192 externalCreatedAt, atsLastModifiedAt \u2192 externalLastModifiedAt, atsCandidateId \u2192 externalCandidateId, atsJobPostingName \u2192 externalJobPostingName, atsJobRequisitionId \u2192 externalJobRequisitionId.\nBreaking change: each batch_update entity must include externalApplicationId and integrationContext, with the same values as the entity key.\ndispositionReason removed.\nSupported methods: batch_update and batch_delete.\nFor sync request examples, refer to Sync Applications.\nFor delete request examples, refer to Delete Applications.",
       "Headers": [],
       "Rows": []
     },

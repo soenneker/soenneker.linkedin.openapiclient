@@ -18,7 +18,6 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
     "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
     "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
     "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
   ],
@@ -47,6 +46,15 @@
       "Anchor": "onsiteapplyconfiguration-schema",
       "SectionPath": [],
       "Text": "Ensure that partnerQuestionIdentifier values are unique and not duplicated in job payloads. Duplicate questions will result in jobs unsuccessfully posting as onsite apply.\nFor all synced jobs, ensure application questions match all questions available on customer career sites.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OnsiteApplyConfiguration schema",
+      "Anchor": "onsiteapplyconfiguration-schema",
+      "SectionPath": [],
+      "Text": "The Required column shows whether a field must be included when its parent object is present. For read-only questions, content is required because it provides the information shown to the applicant; this does not mean the applicant must provide an answer.",
       "Headers": [],
       "Rows": []
     },
@@ -320,8 +328,97 @@
             "Links": [],
             "Values": []
           }
+        ],
+        [
+          {
+            "Text": "extraQuestionsWrapper",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A container for extra questions of each type, such as voluntary self identification questions, education questions, and work questions. Currently, only additional voluntary self identification question sets are supported. If this field is null, then no extra questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ExtraQuestionsWrapper",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#extraquestionswrapper-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
         ]
       ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ExtraQuestionsWrapper fields",
+      "Anchor": "extraquestionswrapper-fields",
+      "SectionPath": [
+        "ExtraQuestionsWrapper fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "voluntarySelfIdentificationQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional sets of voluntary self identification questions. These questions are rendered along with the first set of questions. Each set in this array renders on a new page, and all question sets of the same type render on consecutive pages. Each set follows the same structure as the primary VoluntarySelfIdentificationQuestions section. The schema does not specify a per-set question count limit.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#voluntaryselfidentificationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "VoluntarySelfIdentificationQuestions[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#voluntaryselfidentificationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ExtraQuestionsWrapper fields",
+      "Anchor": "extraquestionswrapper-fields",
+      "SectionPath": [
+        "ExtraQuestionsWrapper fields"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ExtraQuestionsWrapper fields",
+      "Anchor": "extraquestionswrapper-fields",
+      "SectionPath": [
+        "ExtraQuestionsWrapper fields"
+      ],
+      "Text": "A given question requirement can be set to a value other than SKIP in only one question set. For example, if genderQuestionRequirement is set to a value other than SKIP in more than one set, the job is not enabled for Apply Connect. This validation ensures that the same question is not asked more than once.",
+      "Headers": [],
+      "Rows": []
     },
     {
       "Kind": "table",
@@ -1598,6 +1695,39 @@
       ]
     },
     {
+      "Kind": "text",
+      "Section": "SimpleTalentQuestionDefinition fields",
+      "Anchor": "simpletalentquestiondefinition-fields",
+      "SectionPath": [
+        "SimpleTalentQuestionDefinition fields"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SimpleTalentQuestionDefinition fields",
+      "Anchor": "simpletalentquestiondefinition-fields",
+      "SectionPath": [
+        "SimpleTalentQuestionDefinition fields"
+      ],
+      "Text": "When questionDetails contains readOnlyQuestionDetails, the question displays information without collecting an answer. Follow these requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SimpleTalentQuestionDefinition fields",
+      "Anchor": "simpletalentquestiondefinition-fields",
+      "SectionPath": [
+        "SimpleTalentQuestionDefinition fields"
+      ],
+      "Text": "Do not set required to true. Setting it to true causes the job to fall back to offsite apply.\nInclude questionText in the request body and set it to an empty string (\u0022\u0022).\nProvide the text shown to the applicant in readOnlyQuestionDetails.content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
       "Kind": "table",
       "Section": "SimpleQuestionDetails fields",
       "Anchor": "simplequestiondetails-fields",
@@ -1747,6 +1877,30 @@
             "Text": "TextQuestionDetails",
             "Links": [
               "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#textquestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "readOnlyQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The representation of a read-only informational block that is displayed to the applicant but collects no answer (for example, a legal disclaimer or section instructions). If this field is present, all other fields must be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ReadOnlyQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#readonlyquestiondetails-fields"
             ],
             "Values": []
           },
@@ -2745,6 +2899,217 @@
           },
           {
             "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ReadOnlyQuestionDetails fields",
+      "Anchor": "readonlyquestiondetails-fields",
+      "SectionPath": [
+        "ReadOnlyQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The informational content to display to the applicant. This field supports Markdown and a limited set of HTML tags, as listed in Supported content formatting. The maximum size is 10 KB. No answer is collected for a read-only question.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#supported-content-formatting"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported content formatting",
+      "Anchor": "supported-content-formatting",
+      "SectionPath": [
+        "ReadOnlyQuestionDetails fields",
+        "Supported content formatting"
+      ],
+      "Text": "",
+      "Headers": [
+        "Formatting",
+        "Markdown",
+        "HTML tags"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Bold",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "**text**",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Cb\u003E, \u003Cstrong\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Italic",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*text*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Ci\u003E, \u003Cem\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Strikethrough",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not supported",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Cdel\u003E, \u003Cs\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Subscript and superscript",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not supported",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Csub\u003E, \u003Csup\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Unordered list",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- item",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Cul\u003E, \u003Cli\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Ordered list",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. item",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Col\u003E, \u003Cli\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Nested lists",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indent the nested list",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nested \u003Cul\u003E or \u003Col\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Links (HTTPS only)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[text](https://example.com), \u003Chttps://example.com\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Ca href=\u0022https://example.com\u0022\u003Etext\u003C/a\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Line breaks and paragraphs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Blank line",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Cbr\u003E, \u003Cp\u003E",
             "Links": [],
             "Values": []
           }

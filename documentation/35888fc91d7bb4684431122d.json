@@ -6,6 +6,8 @@
   "Links": [
     "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
     "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
     "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users",
@@ -13,7 +15,6 @@
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
     "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
     "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
-    "https://learn.microsoft.com/en-us/linkedin/talent/openapi-downloads",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
     "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
@@ -145,6 +146,56 @@
       ]
     },
     {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rest/entityAcls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/entityAclAssignees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
       "Kind": "text",
       "Section": "Securable Entity Types",
       "Anchor": "securable-entity-types",
@@ -231,6 +282,95 @@
           },
           {
             "Text": "JOB_REQUISITION",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Securable Entity Types",
+      "Anchor": "securable-entity-types",
+      "SectionPath": [
+        "Securable Entity Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Entity",
+        "EntityId Field",
+        "Description",
+        "Enum"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Job Requisition",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A public or private job requisition synced to the Middleware Platform.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOB_REQUISITION",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM Pipeline",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "tcrmPipelineId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A CRM pipeline synced to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PIPELINE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM Interaction",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "tcrmInteractionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A CRM interaction synced to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERACTION",
             "Links": [],
             "Values": []
           }
@@ -723,7 +863,7 @@
     {
       "Kind": "code",
       "Section": "Create or Update Entity ACLs",
-      "Anchor": "create-or-update-entity-acls-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACLs"
       ],
@@ -734,7 +874,7 @@
     {
       "Kind": "text",
       "Section": "Create or Update Entity ACLs",
-      "Anchor": "create-or-update-entity-acls-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACLs"
       ],
@@ -745,7 +885,7 @@
     {
       "Kind": "text",
       "Section": "Create or Update Entity ACLs",
-      "Anchor": "create-or-update-entity-acls-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACLs"
       ],
@@ -756,7 +896,7 @@
     {
       "Kind": "table",
       "Section": "Request Body Fields",
-      "Anchor": "request-body-fields",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACLs",
         "Request Body Fields"
@@ -913,34 +1053,1864 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample Request (query tunneling)",
-      "Anchor": "sample-request-query-tunneling-5",
+      "Section": "Create or update entity ACLs",
+      "Anchor": "create-or-update-entity-acls-2",
       "SectionPath": [
-        "Create or Update Entity ACLs",
-        "Sample Request (query tunneling)"
+        "Create or update entity ACLs"
       ],
-      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAcls\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
+      "Text": "PUT https://api.linkedin.com/rest/entityAcls?ids[0].integrationContext={org_urn}\u0026ids[0].entityType={entity_type}\u0026ids[0].externalEntityId={entity_id}\u0026ids[0].externalEntityAclId={entity_acl_id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or update entity ACLs",
+      "Anchor": "create-or-update-entity-acls-2",
+      "SectionPath": [
+        "Create or update entity ACLs"
+      ],
+      "Text": "The maximum number of records which can be submitted during one batch call is 100. If you would like to submit more than 100 at a time, please group the records in to collections of 100 and make multiple batch calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters",
+      "SectionPath": [
+        "Create or update entity ACLs",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization URN, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of entity secured by the ACL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The secured entity\u0027s identifier in your system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The security group or role identifier in your system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Create or update entity ACLs",
+        "Request body fields"
+      ],
+      "Text": "The request body is an entities map. Each map key is the matching ids[i] key, and each map value has the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Create or update entity ACLs",
+        "Request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the Securable Entity Types enums. Use the same value as in the request key.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u0027s ID, from the EntityId Field column in Securable Entity Types. Use the same value as in the request key.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id. Use the same value as in the request key.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAcl entry was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAcl entry was last modified in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Create or update entity ACLs",
+        "Sample request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAcls\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].externalEntityId=jdoe_acl_job_test_20250715\u0026ids[0].externalEntityAclId=TEST_JOBS\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026externalEntityId=jdoe_acl_job_test_20250715\u0026externalEntityAclId=TEST_JOBS\u0022: {\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022entityType\u0022: \u0022JOB_REQUISITION\u0022,\n      \u0022externalEntityId\u0022: \u0022jdoe_acl_job_test_20250715\u0022,\n      \u0022externalEntityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "code",
-      "Section": "Sample Request (without query tunneling)",
+      "Section": "Sample request (without query tunneling)",
       "Anchor": "sample-request-without-query-tunneling-5",
       "SectionPath": [
-        "Create or Update Entity ACLs",
-        "Sample Request (without query tunneling)"
+        "Create or update entity ACLs",
+        "Sample request (without query tunneling)"
       ],
-      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAcls?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].externalEntityId=jdoe_acl_job_test_20250715\u0026ids[0].externalEntityAclId=TEST_JOBS\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026externalEntityId=jdoe_acl_job_test_20250715\u0026externalEntityAclId=TEST_JOBS\u0022: {\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022entityType\u0022: \u0022JOB_REQUISITION\u0022,\n      \u0022externalEntityId\u0022: \u0022jdoe_acl_job_test_20250715\u0022,\n      \u0022externalEntityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Create or update entity ACLs",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022entityType=JOB_REQUISITION\u0026externalEntityAclId=TEST_JOBS\u0026externalEntityId=jdoe_acl_job_test_20250715\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve entity ACLs",
+      "Anchor": "retrieve-entity-acls-1",
+      "SectionPath": [
+        "Retrieve entity ACLs"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/entityAcls?externalEntityId={entity_id}\u0026entityType={entity_type}\u0026integrationContext={org_urn}\u0026q=criteria\u0026start=0\u0026count=100",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters-1",
+      "SectionPath": [
+        "Retrieve entity ACLs",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the Securable Entity Types enums.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u0027s ID, from the EntityId Field column in Securable Entity Types.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first result to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of results to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response fields",
+      "Anchor": "response-fields",
+      "SectionPath": [
+        "Retrieve entity ACLs",
+        "Response fields"
+      ],
+      "Text": "The response has an elements array and a paging object. The paging object contains start, count and links, and can also include total. Don\u0027t assume total is present. Each item in elements has the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response fields",
+      "Anchor": "response-fields",
+      "SectionPath": [
+        "Retrieve entity ACLs",
+        "Response fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the Securable Entity Types enums.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u0027s ID, from the EntityId Field column in Securable Entity Types.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAcl entry was created in the partner system, represented in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAcl entry was last modified in the partner system, represented in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-6",
+      "SectionPath": [
+        "Retrieve entity ACLs",
+        "Sample request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAcls?externalEntityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=100\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Retrieve entity ACLs",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 100,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022externalLastModifiedAt\u0022: 1762485938000,\n      \u0022externalEntityId\u0022: \u0022jdoe_acl_job_test_20250715\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022externalEntityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022entityType\u0022: \u0022JOB_REQUISITION\u0022,\n      \u0022externalCreatedAt\u0022: 1762485938000\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete entity ACLs",
+      "Anchor": "delete-entity-acls-1",
+      "SectionPath": [
+        "Delete entity ACLs"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/entityAcls?ids[0].integrationContext={org_urn}\u0026ids[0].entityType={entity_type}\u0026ids[0].externalEntityId={entity_id}\u0026ids[0].externalEntityAclId={entity_acl_id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete entity ACLs",
+      "Anchor": "delete-entity-acls-1",
+      "SectionPath": [
+        "Delete entity ACLs"
+      ],
+      "Text": "The maximum number of records which can be submitted during one batch call is 100.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters-2",
+      "SectionPath": [
+        "Delete entity ACLs",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the Securable Entity Types enums.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u0027s ID, from the EntityId Field column in Securable Entity Types.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-7",
+      "SectionPath": [
+        "Delete entity ACLs",
+        "Sample request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAcls?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].externalEntityId=jdoe_acl_job_test_20250715_001\u0026ids[0].externalEntityAclId=TEST_JOBS\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Delete entity ACLs",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022entityType=JOB_REQUISITION\u0026externalEntityAclId=TEST_JOBS\u0026externalEntityId=jdoe_acl_job_test_20250715_001\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or update entity ACL assignees",
+      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "SectionPath": [
+        "Create or update entity ACL assignees"
+      ],
+      "Text": "Use the following endpoint to create and update ACL entities for assignees:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or update entity ACL assignees",
+      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "SectionPath": [
+        "Create or update entity ACL assignees"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/entityAclAssignees?ids[0].externalEntityAclId={entity_acl_id}\u0026ids[0].integrationContext={org_urn}\u0026ids[0].assignee={person_urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or update entity ACL assignees",
+      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "SectionPath": [
+        "Create or update entity ACL assignees"
+      ],
+      "Text": "The maximum number of records which can be submitted during one batch call is 100. If you would like to submit more than 100 at a time, please group the records in to collections of 100 and make multiple batch calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters-3",
+      "SectionPath": [
+        "Create or update entity ACL assignees",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].assignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The assigned user\u0027s Person URN, in the format urn:li:person:{id}. Refer to Bind Customer Users for details on mapping your users to Person URNs.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization URN, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The security group or role identifier in your system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields-2",
+      "SectionPath": [
+        "Create or update entity ACL assignees",
+        "Request body fields"
+      ],
+      "Text": "The request body is an entities map. Each map key is the matching ids[i] key, and each map value has the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields-2",
+      "SectionPath": [
+        "Create or update entity ACL assignees",
+        "Request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "assignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user\u0027s Person URN, in the format urn:li:person:{id}. Use the same value as in the request key. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}. Use the same value as in the request key. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id. Use the same value as in the request key. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAclAssignee was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAclAssignee was last modified in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-1",
+      "SectionPath": [
+        "Create or update entity ACL assignees",
+        "Sample request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAclAssignees\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalEntityAclId=TEST_JOBS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].assignee=urn%3Ali%3Aperson%3AigAqPniMcW\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026externalEntityAclId=TEST_JOBS\u0026assignee=urn:li:person:igAqPniMcW\u0022: {\n      \u0022assignee\u0022: \u0022urn:li:person:igAqPniMcW\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022externalEntityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-8",
+      "SectionPath": [
+        "Create or update entity ACL assignees",
+        "Sample request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAclAssignees?ids[0].externalEntityAclId=TEST_JOBS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027  \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026externalEntityAclId=TEST_JOBS\u0026assignee=urn:li:person:igAqPniMcW\u0022: {\n      \u0022assignee\u0022: \u0022urn:li:person:igAqPniMcW\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022externalEntityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Create or update entity ACL assignees",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0026externalEntityAclId=TEST_JOBS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve entity ACL assignees",
+      "Anchor": "retrieve-entity-acl-assignees-1",
+      "SectionPath": [
+        "Retrieve entity ACL assignees"
+      ],
+      "Text": "Use the following endpoint to retrieve ACL assignees:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve entity ACL assignees",
+      "Anchor": "retrieve-entity-acl-assignees-1",
+      "SectionPath": [
+        "Retrieve entity ACL assignees"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/entityAclAssignees?q=criteria\u0026assignee={person_urn}\u0026integrationContext={org_urn}\u0026start=0\u0026count=10",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters-4",
+      "SectionPath": [
+        "Retrieve entity ACL assignees",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "assignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user\u0027s corresponding Person URN, in the format urn:li:person:{id}. See Bind Customer Users for details on mapping your users with Person Ids.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first result to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of results to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response fields",
+      "Anchor": "response-fields-1",
+      "SectionPath": [
+        "Retrieve entity ACL assignees",
+        "Response fields"
+      ],
+      "Text": "The response has an elements array and a paging object. The paging object contains start, count and links, and can also include total. Don\u0027t assume total is present. Each item in elements has the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response fields",
+      "Anchor": "response-fields-1",
+      "SectionPath": [
+        "Retrieve entity ACL assignees",
+        "Response fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "assignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user\u0027s Person URN, in the format urn:li:person:{id}. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAclAssignee was created in the partner system, represented in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAclAssignee was last modified in the partner system, represented in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-9",
+      "SectionPath": [
+        "Retrieve entity ACL assignees",
+        "Sample request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAclAssignees?assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=10\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Retrieve entity ACL assignees",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022externalLastModifiedAt\u0022: 1762485938000,\n      \u0022assignee\u0022: \u0022urn:li:person:igAqPniMcW\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022externalEntityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022externalCreatedAt\u0022: 1762485938000\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve entity ACL assignees by ACL",
+      "Anchor": "retrieve-entity-acl-assignees-by-acl",
+      "SectionPath": [
+        "Retrieve entity ACL assignees by ACL"
+      ],
+      "Text": "Use the following endpoint to retrieve the assignees of an ACL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve entity ACL assignees by ACL",
+      "Anchor": "retrieve-entity-acl-assignees-by-acl",
+      "SectionPath": [
+        "Retrieve entity ACL assignees by ACL"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/entityAclAssignees?q=acl\u0026externalEntityAclId={entity_acl_id}\u0026integrationContext={org_urn}\u0026start=0\u0026count=10",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters-5",
+      "SectionPath": [
+        "Retrieve entity ACL assignees by ACL",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first result to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of results to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response fields",
+      "Anchor": "response-fields-2",
+      "SectionPath": [
+        "Retrieve entity ACL assignees by ACL",
+        "Response fields"
+      ],
+      "Text": "The response has an elements array and a paging object. The paging object contains start, count and links, and can also include total. Don\u0027t assume total is present. Each item in elements has the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response fields",
+      "Anchor": "response-fields-2",
+      "SectionPath": [
+        "Retrieve entity ACL assignees by ACL",
+        "Response fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "assignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user\u0027s Person URN, in the format urn:li:person:{id}. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id. Read-only key field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAclAssignee was created in the partner system, represented in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAclAssignee was last modified in the partner system, represented in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-10",
+      "SectionPath": [
+        "Retrieve entity ACL assignees by ACL",
+        "Sample request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAclAssignees?externalEntityAclId=TEST_JOBS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=acl\u0026start=0\u0026count=10\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-9",
+      "SectionPath": [
+        "Retrieve entity ACL assignees by ACL",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022externalEntityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022assignee\u0022: \u0022urn:li:person:igAqPniMcW\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete entity ACL assignees",
+      "Anchor": "delete-entity-acl-assignees-1",
+      "SectionPath": [
+        "Delete entity ACL assignees"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/entityAclAssignees?ids[0].externalEntityAclId={entity_acl_id}\u0026ids[0].integrationContext={org_urn}\u0026ids[0].assignee={person_urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete entity ACL assignees",
+      "Anchor": "delete-entity-acl-assignees-1",
+      "SectionPath": [
+        "Delete entity ACL assignees"
+      ],
+      "Text": "The maximum number of records which can be submitted during one batch call is 100.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request parameters",
+      "Anchor": "request-parameters-6",
+      "SectionPath": [
+        "Delete entity ACL assignees",
+        "Request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].assignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user\u0027s Person URN, in the format urn:li:person:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your security group or role id.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-11",
+      "SectionPath": [
+        "Delete entity ACL assignees",
+        "Sample request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAclAssignees?ids[0].externalEntityAclId=TEST_JOBS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-10",
+      "SectionPath": [
+        "Delete entity ACL assignees",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0026externalEntityAclId=TEST_JOBS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-10",
+      "SectionPath": [
+        "Delete entity ACL assignees",
+        "Sample response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-10",
+      "SectionPath": [
+        "Delete entity ACL assignees",
+        "Sample response"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
       "Headers": [],
       "Rows": []
     },
     {
       "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-4",
+      "Anchor": "",
       "SectionPath": [
-        "Create or Update Entity ACLs",
+        "Delete entity ACL assignees",
         "Sample Response"
       ],
       "Text": "{\n  \u0022results\u0022: {\n    \u0022entityAclId=TEST_JOBS\u0026entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
@@ -950,7 +2920,7 @@
     {
       "Kind": "code",
       "Section": "Retrieve Entity ACLs",
-      "Anchor": "retrieve-entity-acls-1",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve Entity ACLs"
       ],
@@ -1008,20 +2978,8 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample Request (without query tunneling)",
-      "Anchor": "sample-request-without-query-tunneling-10",
-      "SectionPath": [
-        "Retrieve Entity ACLs",
-        "Sample Request (without query tunneling)"
-      ],
-      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAcls?entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=100\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-5",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve Entity ACLs",
         "Sample Response"
@@ -1033,7 +2991,7 @@
     {
       "Kind": "code",
       "Section": "Delete Entity ACLs",
-      "Anchor": "delete-entity-acls-1",
+      "Anchor": "",
       "SectionPath": [
         "Delete Entity ACLs"
       ],
@@ -1091,20 +3049,8 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample Request (without query tunneling)",
-      "Anchor": "sample-request-without-query-tunneling-15",
-      "SectionPath": [
-        "Delete Entity ACLs",
-        "Sample Request (without query tunneling)"
-      ],
-      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityId=jdoe_acl_job_test_20250715_001\u0026ids[0].entityType=JOB_REQUISITION\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-6",
+      "Anchor": "",
       "SectionPath": [
         "Delete Entity ACLs",
         "Sample Response"
@@ -1116,7 +3062,7 @@
     {
       "Kind": "text",
       "Section": "Create or Update Entity ACL Assignees",
-      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACL Assignees"
       ],
@@ -1127,7 +3073,7 @@
     {
       "Kind": "code",
       "Section": "Create or Update Entity ACL Assignees",
-      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACL Assignees"
       ],
@@ -1138,7 +3084,7 @@
     {
       "Kind": "text",
       "Section": "Create or Update Entity ACL Assignees",
-      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACL Assignees"
       ],
@@ -1149,7 +3095,7 @@
     {
       "Kind": "text",
       "Section": "Create or Update Entity ACL Assignees",
-      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACL Assignees"
       ],
@@ -1160,7 +3106,7 @@
     {
       "Kind": "text",
       "Section": "Create or Update Entity ACL Assignees",
-      "Anchor": "create-or-update-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACL Assignees"
       ],
@@ -1171,7 +3117,7 @@
     {
       "Kind": "table",
       "Section": "Request Body Fields",
-      "Anchor": "request-body-fields-1",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACL Assignees",
         "Request Body Fields"
@@ -1328,32 +3274,8 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample Request Upsert entityAclAssignee (without query tunneling)",
-      "Anchor": "sample-request-upsert-entityaclassignee-without-query-tunneling-4",
-      "SectionPath": [
-        "Create or Update Entity ACL Assignees",
-        "Sample Request Upsert entityAclAssignee (without query tunneling)"
-      ],
-      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAclAssignees?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027  \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityAclId=TEST_JOBS\u0026assignee=urn:li:person:igAqPniMcW\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
-      "Section": "Sample Request Upsert entityAclAssignee (with query tunneling)",
-      "Anchor": "sample-request-upsert-entityaclassignee-with-query-tunneling-4",
-      "SectionPath": [
-        "Create or Update Entity ACL Assignees",
-        "Sample Request Upsert entityAclAssignee (with query tunneling)"
-      ],
-      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAclAssignees\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].assignee=urn%3Ali%3Aperson%3AigAqPniMcW\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityAclId=TEST_JOBS\u0026assignee=urn:li:person:igAqPniMcW\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-7",
+      "Anchor": "",
       "SectionPath": [
         "Create or Update Entity ACL Assignees",
         "Sample Response"
@@ -1365,7 +3287,7 @@
     {
       "Kind": "text",
       "Section": "Retrieve Entity ACL Assignees",
-      "Anchor": "retrieve-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve Entity ACL Assignees"
       ],
@@ -1376,7 +3298,7 @@
     {
       "Kind": "code",
       "Section": "Retrieve Entity ACL Assignees",
-      "Anchor": "retrieve-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve Entity ACL Assignees"
       ],
@@ -1387,7 +3309,7 @@
     {
       "Kind": "text",
       "Section": "Retrieve Entity ACL Assignees",
-      "Anchor": "retrieve-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve Entity ACL Assignees"
       ],
@@ -1398,7 +3320,7 @@
     {
       "Kind": "text",
       "Section": "Retrieve Entity ACL Assignees",
-      "Anchor": "retrieve-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve Entity ACL Assignees"
       ],
@@ -1456,20 +3378,8 @@
     },
     {
       "Kind": "code",
-      "Section": "Sample Request",
-      "Anchor": "sample-request-5",
-      "SectionPath": [
-        "Retrieve Entity ACL Assignees",
-        "Sample Request"
-      ],
-      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAclAssignees?assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
       "Section": "Sample Response",
-      "Anchor": "sample-response-8",
+      "Anchor": "",
       "SectionPath": [
         "Retrieve Entity ACL Assignees",
         "Sample Response"
@@ -1481,7 +3391,7 @@
     {
       "Kind": "code",
       "Section": "Delete Entity ACL Assignees",
-      "Anchor": "delete-entity-acl-assignees-1",
+      "Anchor": "",
       "SectionPath": [
         "Delete Entity ACL Assignees"
       ],
@@ -1539,20 +3449,8 @@
     },
     {
       "Kind": "code",
-      "Section": "DELETE entityAclAssignee Sample Request (without query tunneling)",
-      "Anchor": "delete-entityaclassignee-sample-request-without-query-tunneling-4",
-      "SectionPath": [
-        "Delete Entity ACL Assignees",
-        "DELETE entityAclAssignee Sample Request (without query tunneling)"
-      ],
-      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAclAssignees?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].assignee=urn%3Ali%3Aperson%3AigAqPniMcW\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
-      "Headers": [],
-      "Rows": []
-    },
-    {
-      "Kind": "code",
       "Section": "DELETE entityAclAssignee Sample Response",
-      "Anchor": "delete-entityaclassignee-sample-response",
+      "Anchor": "",
       "SectionPath": [
         "Delete Entity ACL Assignees",
         "DELETE entityAclAssignee Sample Response"
@@ -1564,7 +3462,7 @@
     {
       "Kind": "text",
       "Section": "DELETE entityAclAssignee Sample Response",
-      "Anchor": "delete-entityaclassignee-sample-response",
+      "Anchor": "",
       "SectionPath": [
         "Delete Entity ACL Assignees",
         "DELETE entityAclAssignee Sample Response"
@@ -1576,7 +3474,7 @@
     {
       "Kind": "text",
       "Section": "DELETE entityAclAssignee Sample Response",
-      "Anchor": "delete-entityaclassignee-sample-response",
+      "Anchor": "",
       "SectionPath": [
         "Delete Entity ACL Assignees",
         "DELETE entityAclAssignee Sample Response"
