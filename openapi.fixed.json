@@ -89799,8 +89799,7 @@
                     "scheduledAt": 1591892529000
                   }
                 }
-              },
-              "x-linkedin-learn-schema": true
+              }
             }
           }
         },
@@ -443280,6 +443279,23 @@
         },
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/shares/ugc-post-api#sharemedia"
       },
+      "LearnConsumerIntegrationsLiveVideoShareMedia": {
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "media": {
+            "type": "string",
+            "description": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No"
+          },
+          "status": {
+            "type": "string",
+            "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes"
+          }
+        },
+        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/#share-media"
+      },
       "LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia": {
         "required": [
           "status"
@@ -457224,6 +457240,9 @@
           },
           {
             "$ref": "#/components/schemas/LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5"
+          },
+          {
+            "$ref": "#/components/schemas/LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6"
           }
         ]
       },
@@ -458477,7 +458496,7 @@
           "media": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia"
+              "$ref": "#/components/schemas/LearnConsumerIntegrationsLiveVideoShareMedia"
             },
             "description": "Use the Asset URN returned from registering the live event.\n\nDocumented type: ShareMedia[]\n\nRequirement: No"
           },
@@ -458493,6 +458512,31 @@
         "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
       },
       "LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf5": {
+        "required": [
+          "shareCommentary",
+          "shareMediaCategory"
+        ],
+        "type": "object",
+        "properties": {
+          "media": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceShareMedia"
+            },
+            "description": "Use the Asset URN returned from registering the live event.\n\nDocumented type: ShareMedia[]\n\nRequirement: No"
+          },
+          "shareCommentary": {
+            "type": "string",
+            "description": "Provides the primary content for the share.\n\nDocumented type: string\n\nRequirement: Yes"
+          },
+          "shareMediaCategory": {
+            "type": "string",
+            "description": "Represents the media assets attached to the share. Possible values include: LIVE_VIDEO - The share contains live event content.\n\nDocumented type: string\n\nRequirement: Yes"
+          }
+        },
+        "description": "Provides additional options while defining the content of the share.\n\nDocumented type: ShareContent\n\nRequirement: Yes"
+      },
+      "LinkedinLiveEventsUgcPostsCreateRequestSpecificContentAnyOf6": {
         "required": [
           "shareCommentary",
           "shareMediaCategory"
@@ -465409,33 +465453,15 @@
         "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/#register"
       },
       "LinkedinLiveEventsLiveVideosRequestAnnouncementImage": {
-        "required": [
-          "status"
-        ],
         "type": "object",
         "properties": {
-          "description": {
-            "type": "string",
-            "description": "Provide a short description for your image or article.\n\nDocumented type: string\n\nRequirement: No"
-          },
           "media": {
-            "type": "string",
-            "description": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No"
-          },
-          "originalUrl": {
-            "type": "string",
-            "description": "Provide the URL of the article you would like to share here.\n\nDocumented type: string\n\nRequirement: No"
-          },
-          "status": {
-            "type": "string",
-            "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes"
+            "type": "string"
           },
           "title": {
             "$ref": "#/components/schemas/LinkedinLiveEventsLiveVideosRequestAnnouncementImageTitle"
           }
-        },
-        "x-linkedin-schema": "consumer_integrations_self_serve_share_on_linkedin_share_media",
-        "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#share-media"
+        }
       },
       "LinkedinLiveEventsLiveVideosRequestAuthor": {
         "type": "object",
@@ -519515,23 +519541,6 @@
         }
       },
       "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/#share-content"
-    },
-    "LearnConsumerIntegrationsLiveVideoShareMedia": {
-      "required": [
-        "status"
-      ],
-      "type": "object",
-      "properties": {
-        "media": {
-          "type": "string",
-          "description": "ID of the uploaded image asset. If you are uploading an article, this field is not required.\n\nDocumented type: DigitalMediaAsset URN\n\nRequirement: No"
-        },
-        "status": {
-          "type": "string",
-          "description": "Must be configured to READY.\n\nDocumented type: string\n\nRequirement: Yes"
-        }
-      },
-      "x-source-url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/#share-media"
     },
     "LearnConsumerIntegrationsLiveVideoLiveVideoTargetAudienceGeoTypeahead": {
       "type": "object",
