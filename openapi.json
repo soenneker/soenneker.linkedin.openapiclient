@@ -234875,17 +234875,35 @@
                         "errors": {
                           "additionalProperties": {
                             "properties": {
+                              "code": {
+                                "description": "The constant error code that defines the category of the error. Please see this section for all possible error codes.\n\nDocumented type: string",
+                                "type": "string"
+                              },
+                              "errorDetailType": {
+                                "description": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.\n\nDocumented type: string",
+                                "type": "string"
+                              },
+                              "errorDetails": {
+                                "description": "Additional error details. This field may be absent in certain cases.\n\nDocumented type: JSON object"
+                              },
                               "message": {
-                                "type": "string",
-                                "x-linkedin-inferred-from-example": true
+                                "description": "A description of the error.\n\nDocumented type: string",
+                                "type": "string"
+                              },
+                              "serviceErrorCode": {
+                                "description": "A subcode that further classifies the error.\n\nDocumented type: int",
+                                "format": "int32",
+                                "type": "integer"
                               },
                               "status": {
-                                "type": "integer",
-                                "x-linkedin-inferred-from-example": true
+                                "description": "The HTTP status code.\n\nDocumented type: int",
+                                "format": "int32",
+                                "type": "integer"
                               }
                             },
                             "type": "object",
-                            "x-linkedin-inferred-from-example": true
+                            "x-linkedin-schema": "dma_error_responses_error_response",
+                            "x-source-url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses#error-response"
                           },
                           "type": "object",
                           "x-linkedin-inferred-from-example": true
